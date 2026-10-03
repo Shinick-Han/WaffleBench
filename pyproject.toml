@@ -1,0 +1,12 @@
+[project]
+name = "falsify-lab"
+version = "0.1.0"
+description = "Find PVT regions where a CMOS delay surrogate fails, using ngspice evidence, orchestrated by Omnigent."
+requires-python = "==3.12.*"
+dependencies = [
+    "mcp==1.30.0",
+    "numpy==2.3.3",
+]
+
+[tool.uv]
+package = false

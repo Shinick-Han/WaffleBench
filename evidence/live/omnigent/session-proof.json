@@ -1,0 +1,446 @@
+{
+  "run_id": "live-adaptive_idw_plus_distance-1001",
+  "agent": "falsify_supervisor",
+  "started_at": "2026-10-03T23:17:15+00:00",
+  "session_id": "42f00735998b48b1ab9737b31e2cdc4e",
+  "agent_id": "f37b7a5afe0c422186b6d0327851b414",
+  "session_created_at": "2026-10-03T23:17:16+00:00",
+  "host": "online local foreground host (id kept local)",
+  "status": "completed",
+  "recovered_at": "2026-10-03T23:36:33+00:00",
+  "attempts": [
+    {
+      "attempt": 1,
+      "mode": "send",
+      "status": "failed",
+      "turn_outcome": "completed",
+      "failure_reasons": [
+        "live run not closed",
+        "0 adaptive updates < 2"
+      ],
+      "finished_at": "2026-10-03T23:17:38+00:00",
+      "response_ids": [
+        "resp_1dc8702b4fe54b7cac29d926"
+      ],
+      "note": "reconstructed from the prior proof's top-level fields"
+    },
+    {
+      "attempt": 2,
+      "mode": "recover",
+      "status": "completed",
+      "turn_outcome": "completed",
+      "error": null,
+      "failure_reasons": [],
+      "finished_at": "2026-10-03T23:37:35+00:00",
+      "response_ids": []
+    }
+  ],
+  "turn_outcome": "completed",
+  "error": null,
+  "elapsed_seconds": 61.141,
+  "finished_at": "2026-10-03T23:37:35+00:00",
+  "response_id": "resp_1dc8702b4fe54b7cac29d926",
+  "response_status": "completed",
+  "usage": {
+    "input_tokens": 12,
+    "output_tokens": 750,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 762,
+    "context_tokens": 14046,
+    "cache_read_input_tokens": 35150,
+    "cache_creation_input_tokens": 14044,
+    "model": "claude-opus-5-5",
+    "cost_usd": null
+  },
+  "responses": [
+    {
+      "response_id": "resp_1dc8702b4fe54b7cac29d926",
+      "event": "response.completed",
+      "status": "completed",
+      "usage": {
+        "input_tokens": 12,
+        "output_tokens": 750,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 762,
+        "context_tokens": 14046,
+        "cache_read_input_tokens": 35150,
+        "cache_creation_input_tokens": 14044,
+        "model": "claude-opus-5-5",
+        "cost_usd": null
+      },
+      "source": "initial_send",
+      "observed_at": "2026-10-03T23:17:38+00:00",
+      "from_prior_attempt": true
+    }
+  ],
+  "usage_note": "responses lists every terminal supervisor response the driver observed (initial send, later wake turns, and any carried over from a prior attempt), each with its own usage; usage/response_id are the last one. A response that ended while no driver was attached is not observed. Sub-agent rows carry each child's last_total_tokens. Subscription use is not converted to money.",
+  "workflow_follow": {
+    "outcome": "settled",
+    "polls": 31,
+    "poll_interval_seconds": 2.0,
+    "settle_grace_seconds": 60.0,
+    "last_poll": {
+      "root_status": "idle",
+      "subtree_busy": false,
+      "ledger_closed": {
+        "failures": 0,
+        "logical_queries": 14,
+        "pending": 0,
+        "pending_decisions": 0,
+        "remaining_budget": 2,
+        "run_id": "live-adaptive_idw_plus_distance-1001",
+        "search_queries": 2,
+        "status": "complete",
+        "termination_reason": "live_finalized"
+      },
+      "updates": 2,
+      "polled_at": "2026-10-03T23:37:35+00:00"
+    },
+    "root_status_events": [],
+    "stream_errors": []
+  },
+  "session": {
+    "status": "idle",
+    "llm_model": "claude-opus-5-5",
+    "harness": "claude-sdk",
+    "reasoning_effort": "medium",
+    "last_total_tokens": 23082,
+    "last_task_error": null
+  },
+  "supervisor": {
+    "tool_calls": [
+      {
+        "name": "ToolSearch",
+        "call_id": "toolu_01WbQZYwyuj6DZ2iPj49TJnJ",
+        "status": "completed",
+        "arguments": "{\"query\": \"select:mcp__omnigent__sys_call_async,mcp__omnigent__sys_read_inbox,mcp__omnigent__sys_agent_list\", \"max_results\": 5}",
+        "output": "<omitted: local tool/agent discovery inventory; raw record retained privately>"
+      },
+      {
+        "name": "ToolSearch",
+        "call_id": "toolu_01NwZ9wBBPGLvLMaKeXGNASB",
+        "status": "completed",
+        "arguments": "{\"query\": \"analyst experimenter delegate\", \"max_results\": 5}",
+        "output": "<omitted: local tool/agent discovery inventory; raw record retained privately>"
+      },
+      {
+        "name": "sys_agent_list",
+        "call_id": "toolu_01WbQZYwyuj6DZ2iPj49TJnJ",
+        "status": "completed",
+        "arguments": "{}",
+        "output": "<omitted: local tool/agent discovery inventory; raw record retained privately>"
+      },
+      {
+        "name": "sys_agent_list",
+        "call_id": "toolu_01LxfHtpHvgkFKmPGTaJc2k7",
+        "status": "completed",
+        "arguments": "{}",
+        "output": "<omitted: local tool/agent discovery inventory; raw record retained privately>"
+      },
+      {
+        "name": "ToolSearch",
+        "call_id": "toolu_01Q2hDReAUZp3BUgr64xjHYe",
+        "status": "completed",
+        "arguments": "{\"query\": \"sub-agent dispatch session create\", \"max_results\": 10}",
+        "output": "<omitted: local tool/agent discovery inventory; raw record retained privately>"
+      },
+      {
+        "name": "sys_session_send",
+        "call_id": "toolu_01NwZ9wBBPGLvLMaKeXGNASB",
+        "status": "completed",
+        "arguments": "{\"agent\": \"analyst\", \"title\": \"analyst\", \"args\": \"Step 1 of the fixed seed-1001 live run. Call analyze_and_plan with finalize=false (initial plan). Return verbatim the recorded decision: decision_sequence, selected point_id and its PVT (corner, VDD, temperature), at least two distinct candidate tests with their score parts, the evidence result_ids, and the budget (used/remaining). Quote all numbers exactly from the tool output; if the tool errors, return the error verbatim.\"}",
+        "output": "{\"task_id\": \"93edcd0f64d84129ba611a3011c43a8d\", \"handle_id\": \"93edcd0f64d84129ba611a3011c43a8d\", \"conversation_id\": \"93edcd0f64d84129ba611a3011c43a8d\", \"kind\": \"sub_agent\", \"agent\": \"analyst\", \"title\": \"analyst\", \"status\": \"launching\", \"message\": \"[System: sub-agent analyst title 'analyst' launching as task 93edcd0f64d84129ba611a3011c43a8d. Result will appear in your inbox; call sys_read_inbox to check or sys_cancel_task to interrupt it. When it finishes, the runtime posts a `[System: sub-agent ... finished ...]` wake notice into this session; that notice comes from the runtime, not from a person.]\"}"
+      },
+      {
+        "name": "sys_session_send",
+        "call_id": "toolu_01Raphxp9gQwoLMJa1xA45oC",
+        "status": "completed",
+        "arguments": "{\"agent\": \"analyst\", \"title\": \"analyst\", \"args\": \"Step 1 of the fixed seed-1001 live run. Call analyze_and_plan with finalize=false (initial plan). Return verbatim the recorded decision: decision_sequence, selected point_id and its PVT (corner, VDD, temperature), at least two distinct candidate tests with their score parts, the evidence result_ids, and the budget (used/remaining). Quote all numbers exactly from the tool output; if the tool errors, return the error verbatim.\"}",
+        "output": "{\"task_id\": \"93edcd0f64d84129ba611a3011c43a8d\", \"handle_id\": \"93edcd0f64d84129ba611a3011c43a8d\", \"conversation_id\": \"93edcd0f64d84129ba611a3011c43a8d\", \"kind\": \"sub_agent\", \"agent\": \"analyst\", \"title\": \"analyst\", \"status\": \"launching\", \"message\": \"[System: sub-agent analyst title 'analyst' launching as task 93edcd0f64d84129ba611a3011c43a8d. Result will appear in your inbox; call sys_read_inbox to check or sys_cancel_task to interrupt it. When it finishes, the runtime posts a `[System: sub-agent ... finished ...]` wake notice into this session; that notice comes from the runtime, not from a person.]\"}"
+      },
+      {
+        "name": "sys_read_inbox",
+        "call_id": "toolu_01BtwinHLyPeHyRX1mjdejRE",
+        "status": "completed",
+        "arguments": "{}",
+        "output": "[System: sub-agent task 93edcd0f64d84129ba611a3011c43a8d completed — analyst:analyst returned: The decision was recorded (step 1, initial plan, finalize=false). Every number below is quoted exactly from the tool output.\n\n**Status:** `decision_recorded`\n**Run:** `live-adaptive_idw_plus_distance-1001` (data label: \"ngspice evidence, demo campaign (not the policy benchmark)\")\n\n**decision_sequence:** 1\n**selected_point_id:** `FF|1.200|125.0`, so corner FF, VDD 1.2, temperature 125.0 °C\n\n**Candidates** (scoring rule: `score = idw_predicted_abs_error + 0.05 * min_normalized_distance / 2`)\n\n| point_id | PVT (corner, vdd, temp_c) | role | score | idw_predicted_abs_error | distance_bonus | min_normalized_distance | cost_queries |\n|---|---|---|---|---|---|---|---|\n| `TT\\|2.200\\|-40.0` | TT, 2.2, -40.0 | exploitation | 0.029118765706353987 | 0.025547337134925418 | 0.00357142857142857 | 0.1428571428571428 | 1 |\n| `FF\\|1.200\\|125.0` | FF, 1.2, 125.0 | exploration | 0.03369489809802645 | 0.01224752124324505 | 0.021447376854781403 | 0.8578950741912561 | 1 |\n\n**evidence_result_ids:**\nres_16f9d0c6086fba43, res_aff3e52fc690ecb6, res_13ee26b7748dae6b, res_365d0c094a54d848, res_954be23199dc4c11, res_c76e1fd71e4cb9f1, res_781eae44e9e14895, res_7a985ec8e3585388, res_bdf20f541154238c, res_be8e7be436f03ff6, res_c60719fe1f130729, res_edf5097a342d3536\n\n**Budget:** limit 16, used 12, remaining 4 (remaining_budget_before_query: 4). Other fields: search_used 0, search_successful 0, search_min 2, search_max 4, adaptive_updates 0, cost_per_candidate_test 1.\n\n**Update:** `null`, because no search result has been observed yet.]"
+      },
+      {
+        "name": "sys_session_send",
+        "call_id": "toolu_019RRbJa7vmfdQ6jWiKoGEb1",
+        "status": "completed",
+        "arguments": "{\"agent\": \"experimenter\", \"title\": \"experimenter\", \"args\": \"Step 2 of the fixed seed-1001 live run (run live-adaptive_idw_plus_distance-1001). Call simulate_pvt_point for exactly the recorded selected point: point_id \\\"FF|1.200|125.0\\\", decision_sequence 1. Do not change the point or retry. Return the stored result_id verbatim along with the tool's reported fields (status, simulated delay, model delay, relative error, budget), quoted exactly. If the tool errors or the simulation fails, return the error verbatim.\"}",
+        "output": "{\"task_id\": \"7234c8807af240a8940509526159f52a\", \"handle_id\": \"7234c8807af240a8940509526159f52a\", \"conversation_id\": \"7234c8807af240a8940509526159f52a\", \"kind\": \"sub_agent\", \"agent\": \"experimenter\", \"title\": \"experimenter\", \"status\": \"launching\", \"message\": \"[System: sub-agent experimenter title 'experimenter' launching as task 7234c8807af240a8940509526159f52a. Result will appear in your inbox; call sys_read_inbox to check or sys_cancel_task to interrupt it. When it finishes, the runtime posts a `[System: sub-agent ... finished ...]` wake notice into this session; that notice comes from the runtime, not from a person.]\"}"
+      },
+      {
+        "name": "sys_read_inbox",
+        "call_id": "toolu_01LqxoQymf4M1gxnaaVa3ruQ",
+        "status": "completed",
+        "arguments": "{}",
+        "output": "[System: sub-agent task 7234c8807af240a8940509526159f52a completed — experimenter:experimenter returned: I ran the simulation once for the recorded point, and it succeeded. It is a clear counterexample: the simulated delay is about 38% below what the model predicted.\n\n**Simulation result (values quoted from the tool output):**\n- **status:** success\n- **result_id:** `res_871bbcf166f64a31`\n- **point_id:** `FF|1.200|125.0`\n- **query_index:** 13\n- **pvt:** `{\"corner\": \"FF\", \"temp_c\": 125.0, \"vdd\": 1.2}`\n- **tphl_s:** 1.50718e-10\n- **tplh_s:** 1.73687e-10\n- **tpd_s (simulated delay):** 1.622025e-10\n\n**Evaluation:**\n- **simulated_tpd_s:** 1.622025e-10\n- **predicted_tpd_s (model delay):** 2.2424373173013034e-10\n- **relative_error:** 0.3824924506720325\n- **abs_relative_error:** 0.3824924506720325\n- **clear_counterexample:** true\n\n**provenance.simulator:** `ngspice-47 : Circuit level simulation program [sha256 22d5cae2bd32b2e39157a8d27bf457122f68285b72a9ebefdf41551b628233ab]`\n\n**budget:** `{\"limit\": 16, \"used\": 13, \"remaining\": 3, \"search_used\": 1, \"search_successful\": 1, \"search_min\": 2, \"search_max\": 4, \"adaptive_updates\": 0, \"cost_per_candidate_test\": 1}`\n\nThe tool labels this data as \"ngspice evidence, demo campaign (not the policy benchmark)\".]"
+      },
+      {
+        "name": "sys_session_send",
+        "call_id": "toolu_01J8jhaLm6Wkr5jGG47W29JZ",
+        "status": "completed",
+        "arguments": "{\"agent\": \"analyst\", \"title\": \"analyst\", \"args\": \"Step 3 of the fixed seed-1001 live run. A new result was stored: res_871bbcf166f64a31 (point FF|1.200|125.0, decision_sequence 1). Call analyze_and_plan with finalize=false (next plan). Return verbatim: (a) the update for the new result, including rank_before, rank_after, selection_changed and any other update fields; (b) the new recorded decision: decision_sequence, selected point_id and its PVT, at least two distinct candidate tests with score parts, evidence result_ids, and budget. Quote all numbers exactly; if the tool errors, return the error verbatim.\"}",
+        "output": "{\"task_id\": \"93edcd0f64d84129ba611a3011c43a8d\", \"handle_id\": \"93edcd0f64d84129ba611a3011c43a8d\", \"conversation_id\": \"93edcd0f64d84129ba611a3011c43a8d\", \"kind\": \"sub_agent\", \"agent\": \"analyst\", \"title\": \"analyst\", \"status\": \"launching\", \"message\": \"[System: sub-agent analyst title 'analyst' launching as task 93edcd0f64d84129ba611a3011c43a8d. Result will appear in your inbox; call sys_read_inbox to check or sys_cancel_task to interrupt it. When it finishes, the runtime posts a `[System: sub-agent ... finished ...]` wake notice into this session; that notice comes from the runtime, not from a person.]\"}"
+      },
+      {
+        "name": "sys_read_inbox",
+        "call_id": "toolu_01Atcm4h9g5s7d83p6B7XQU8",
+        "status": "completed",
+        "arguments": "{}",
+        "output": "[System: sub-agent task 93edcd0f64d84129ba611a3011c43a8d completed — analyst:analyst returned: The new result was a clear counterexample, so the plan changed: the next test is now **FF, VDD 1.5, 125.0 °C**. The tool recorded the update and decision 2 (status `decision_recorded`, run `live-adaptive_idw_plus_distance-1001`). Every number below is quoted exactly from the tool output.\n\n## (a) Update for res_871bbcf166f64a31\n- **update_index:** 1\n- **observed_result_id:** res_871bbcf166f64a31\n- **observed_point_id:** FF|1.200|125.0\n- **query_index:** 13\n- **decision_sequence:** 1\n- **observed_abs_relative_error:** 0.3824924506720325\n- **observed_clear_counterexample:** true\n- **remaining_candidates:** 121\n- **rank_before:** FS|1.500|125.0, FS|1.200|-40.0, FF|1.200|-40.0, SS|1.200|-40.0, SS|3.300|125.0\n- **rank_after:** FF|1.500|125.0, FF|1.200|85.0, FF|1.800|85.0, FF|1.500|27.0, FF|1.200|0.0\n- **selection_changed:** true\n- **next_selected_point_id:** FF|1.500|125.0\n- **next_decision:** recorded\n- **next_candidates:** the same two tests shown in the table in (b)\n- **evidence_result_ids:** the same 13 IDs listed in (b)\n\n## (b) New recorded decision\n- **decision_sequence:** 2\n- **selected_point_id:** `FF|1.500|125.0`, so corner FF, VDD 1.5, temperature 125.0 °C\n- **remaining_budget_before_query:** 3\n\n**Candidates** (scoring rule: `score = idw_predicted_abs_error + 0.05 * min_normalized_distance / 2`)\n\n| point_id | PVT (corner, vdd, temp_c) | role | score | idw_predicted_abs_error | distance_bonus | min_normalized_distance | cost_queries |\n|---|---|---|---|---|---|---|---|\n| `FF\\|1.500\\|125.0` | FF, 1.5, 125.0 | exploitation | 0.31840118427530406 | 0.3148297557038755 | 0.0035714285714285726 | 0.1428571428571429 | 1 |\n| `FS\\|1.500\\|125.0` | FS, 1.5, 125.0 | exploration | 0.0665404691488664 | 0.047508893851357405 | 0.019031575297508995 | 0.7612630119003597 | 1 |\n\n**evidence_result_ids:**\nres_16f9d0c6086fba43, res_aff3e52fc690ecb6, res_13ee26b7748dae6b, res_365d0c094a54d848, res_954be23199dc4c11, res_c76e1fd71e4cb9f1, res_781eae44e9e14895, res_7a985ec8e3585388, res_bdf20f541154238c, res_be8e7be436f03ff6, res_c60719fe1f130729, res_edf5097a342d3536, res_871bbcf166f64a31\n\n**Budget:** limit 16, used 13, remaining 3. Other fields: search_used 1, search_successful 1, search_min 2, search_max 4, adaptive_updates 1, cost_per_candidate_test 1.]"
+      },
+      {
+        "name": "sys_session_send",
+        "call_id": "toolu_01PX9KzMJSFynvzqrT36Kixa",
+        "status": "completed",
+        "arguments": "{\"agent\": \"experimenter\", \"title\": \"experimenter\", \"args\": \"Step 4 of the fixed seed-1001 live run (run live-adaptive_idw_plus_distance-1001). Call simulate_pvt_point for exactly the recorded selected point: point_id \\\"FF|1.500|125.0\\\", decision_sequence 2. Do not change the point or retry. Return the stored result_id verbatim along with the tool's reported fields (status, simulated delay, model delay, relative error, clear_counterexample, budget), quoted exactly. If the tool errors or the simulation fails, return the error verbatim.\"}",
+        "output": "{\"task_id\": \"7234c8807af240a8940509526159f52a\", \"handle_id\": \"7234c8807af240a8940509526159f52a\", \"conversation_id\": \"7234c8807af240a8940509526159f52a\", \"kind\": \"sub_agent\", \"agent\": \"experimenter\", \"title\": \"experimenter\", \"status\": \"launching\", \"message\": \"[System: sub-agent experimenter title 'experimenter' launching as task 7234c8807af240a8940509526159f52a. Result will appear in your inbox; call sys_read_inbox to check or sys_cancel_task to interrupt it. When it finishes, the runtime posts a `[System: sub-agent ... finished ...]` wake notice into this session; that notice comes from the runtime, not from a person.]\"}"
+      },
+      {
+        "name": "sys_read_inbox",
+        "call_id": "toolu_01SgW5ufvmCGjh5LryuVPCZ8",
+        "status": "completed",
+        "arguments": "{}",
+        "output": "[System: sub-agent task 7234c8807af240a8940509526159f52a completed — experimenter:experimenter returned: I ran the simulation once for the recorded point, and it succeeded. It is a clear counterexample: the simulated delay is about 17% below what the model predicted.\n\n**Simulation result (values quoted from the tool output):**\n- **status:** success\n- **result_id:** `res_3f2c406e2cd86440`\n- **point_id:** `FF|1.500|125.0`\n- **query_index:** 14\n- **pvt:** `{\"corner\": \"FF\", \"temp_c\": 125.0, \"vdd\": 1.5}`\n- **tphl_s:** 1.07071e-10\n- **tplh_s:** 1.18474e-10\n- **tpd_s (simulated delay):** 1.1277249999999998e-10\n\n**Evaluation:**\n- **simulated_tpd_s:** 1.1277249999999998e-10\n- **predicted_tpd_s (model delay):** 1.3183220420348646e-10\n- **relative_error:** 0.16901021262707203\n- **abs_relative_error:** 0.16901021262707203\n- **clear_counterexample:** true\n\n**provenance.simulator:** `ngspice-47 : Circuit level simulation program [sha256 22d5cae2bd32b2e39157a8d27bf457122f68285b72a9ebefdf41551b628233ab]`\n\n**budget:** `{\"limit\": 16, \"used\": 14, \"remaining\": 2, \"search_used\": 2, \"search_successful\": 2, \"search_min\": 2, \"search_max\": 4, \"adaptive_updates\": 1, \"cost_per_candidate_test\": 1}`\n\nThe tool labels this data as \"ngspice evidence, demo campaign (not the policy benchmark)\".]"
+      },
+      {
+        "name": "sys_session_send",
+        "call_id": "toolu_01UTHvKza2X9Gz1dxfBTQvPi",
+        "status": "completed",
+        "arguments": "{\"agent\": \"analyst\", \"title\": \"analyst\", \"args\": \"Step 5 (final) of the fixed seed-1001 live run. A new result was stored: res_3f2c406e2cd86440 (point FF|1.500|125.0, decision_sequence 2). Call analyze_and_plan with finalize=true. Return verbatim: the update for res_3f2c406e2cd86440 (rank_before, rank_after, selection_changed, next selected point/candidates if reported), the closed run status, final budget (limit/used/remaining), any summary fields, and evidence result_ids. Then give a short interpretation of what the evidence says about where the frozen model fails and about the hypothesis, citing result_ids. Quote all numbers exactly; do not invent numbers. If the tool errors, return the error verbatim.\"}",
+        "output": "{\"task_id\": \"93edcd0f64d84129ba611a3011c43a8d\", \"handle_id\": \"93edcd0f64d84129ba611a3011c43a8d\", \"conversation_id\": \"93edcd0f64d84129ba611a3011c43a8d\", \"kind\": \"sub_agent\", \"agent\": \"analyst\", \"title\": \"analyst\", \"status\": \"launching\", \"message\": \"[System: sub-agent analyst title 'analyst' launching as task 93edcd0f64d84129ba611a3011c43a8d. Result will appear in your inbox; call sys_read_inbox to check or sys_cancel_task to interrupt it. When it finishes, the runtime posts a `[System: sub-agent ... finished ...]` wake notice into this session; that notice comes from the runtime, not from a person.]\"}"
+      },
+      {
+        "name": "sys_read_inbox",
+        "call_id": "toolu_01FjcrxHNCk18JBsDXVddMBr",
+        "status": "completed",
+        "arguments": "{}",
+        "output": "[System: sub-agent task 93edcd0f64d84129ba611a3011c43a8d completed — analyst:analyst returned: The run is closed, and both adaptive tests were clear counterexamples. The frozen model fails at the FF corner, low VDD and 125.0 °C. Every number below is quoted exactly from the tool output (status `closed`).\n\n## Update for res_3f2c406e2cd86440\n- **update_index:** 2\n- **observed_result_id:** res_3f2c406e2cd86440\n- **observed_point_id:** FF|1.500|125.0\n- **query_index:** 14\n- **decision_sequence:** 2\n- **observed_abs_relative_error:** 0.16901021262707203\n- **observed_clear_counterexample:** true\n- **remaining_candidates:** 120\n- **rank_before:** FF|1.200|85.0, FF|1.800|85.0, FF|1.500|27.0, FF|1.200|0.0, FF|2.200|85.0\n- **rank_after:** FF|1.200|85.0, FF|1.800|85.0, FF|2.200|85.0, FF|1.500|27.0, FF|2.500|125.0\n- **selection_changed:** false\n- **next_selected_point_id:** FF|1.200|85.0\n- **next_decision:** `not_recorded_finalized`. This is a preview only; it was not recorded (`recorded: false`).\n\n**Next candidates (preview, not recorded)** (scoring rule: `score = idw_predicted_abs_error + 0.05 * min_normalized_distance / 2`)\n\n| point_id | PVT (corner, vdd, temp_c) | role | score | idw_predicted_abs_error | distance_bonus | min_normalized_distance | cost_queries |\n|---|---|---|---|---|---|---|---|\n| `FF\\|1.200\\|85.0` | FF, 1.2, 85.0 | exploitation | 0.22107169358019568 | 0.2150110875195896 | 0.0060606060606060615 | 0.24242424242424243 | 1 |\n| `FS\\|1.500\\|125.0` | FS, 1.5, 125.0 | exploration | 0.0771209129102813 | 0.058089337612772296 | 0.019031575297508995 | 0.7612630119003597 | 1 |\n\n## Closed run status\n- **run_id:** live-adaptive_idw_plus_distance-1001\n- **status:** complete\n- **termination_reason:** live_finalized\n- **logical_queries:** 14\n- **failures:** 0\n- **pending:** 0\n- **search_queries:** 2\n- **pending_decisions:** 0\n- **remaining_budget:** 2\n\n## Final budget\nLimit 16, used 14, remaining 2. Other fields: search_used 2, search_successful 2, search_min 2, search_max 4, adaptive_updates 2, cost_per_candidate_test 1.\n\n## Evidence result_ids\n- **Calibration (9):** res_16f9d0c6086fba43, res_aff3e52fc690ecb6, res_13ee26b7748dae6b, res_365d0c094a54d848, res_954be23199dc4c11, res_c76e1fd71e4cb9f1, res_781eae44e9e14895, res_7a985ec8e3585388, res_bdf20f541154238c\n- **Initial search (3):** res_be8e7be436f03ff6, res_c60719fe1f130729, res_edf5097a342d3536\n- **Adaptive search (2):** res_871bbcf166f64a31, res_3f2c406e2cd86440\n\n**Search observations:**\n\n| result_id | point_id | phase | abs_relative_error | clear_counterexample |\n|---|---|---|---|---|\n| res_be8e7be436f03ff6 | SF\\|2.200\\|85.0 | initial | 0.012759230560887541 | false |\n| res_c60719fe1f130729 | FF\\|3.300\\|85.0 | initial | 0.01673734158286803 | false |\n| res_edf5097a342d3536 | SF\\|2.500\\|125.0 | initial | 0.005364770139612456 | false |\n| res_871bbcf166f64a31 | FF\\|1.200\\|125.0 | search (dec 1) | 0.3824924506720325 | true |\n| res_3f2c406e2cd86440 | FF\\|1.500\\|125.0 | search (dec 2) | 0.16901021262707203 | true |\n\n## Interpretation\n- **Where the model fails:** Both adaptive tests failed clearly, and both are at the FF corner, low VDD and 125.0 °C: res_871bbcf166f64a31 at VDD 1.2 and res_3f2c406e2cd86440 at VDD 1.5. The error is larger at 1.2 V (0.3824924506720325) than at 1.5 V (0.16901021262707203), so the failure looks worst at the lowest supply.\n- **Where it holds:** The three initial search points all had small errors and no counterexample. One of them is FF at high VDD (res_c60719fe1f130729, FF|3.300|85.0, error 0.01673734158286803). So the FF corner alone does not cause the failure; low VDD seems to be part of it.\n- **How the search adapted:** After the first counterexample, the top-ranked candidates all moved to FF points (selection_changed true). After the second, the rule's next pick (unrecorded) is FF|1.200|85.0. That is a prediction, not a test result, so it is untested whether the failure carries on at 85.0 °C.\n- **The hypothesis:** The tool output doesn't include the hyp"
+      }
+    ],
+    "tool_call_counts": {
+      "ToolSearch": 3,
+      "sys_agent_list": 2,
+      "sys_session_send": 6,
+      "sys_read_inbox": 5
+    },
+    "assistant_text": "Step 1 has been sent to the analyst for the initial plan. I'm waiting for its recorded decision before going further.\nTwo distinct candidates are listed. Next I'm dispatching the experimenter.\nStep 2 is running: the experimenter is simulating FF|1.200|125.0 (decision 1). I'm waiting for its result_id.\nStep 2 stored res_871bbcf166f64a31 and it is flagged as a clear counterexample. The analyst is now working on step 3, the next plan.\nDecision 2 also lists two distinct candidates and selects FF|1.500|125.0. The experimenter is now running step 4 on that point.\nStep 4 stored res_3f2c406e2cd86440, which is also a clear counterexample. The analyst is now finalizing the run (step 5).\nThe seed-1001 run is closed. It ran both decisions with no failures, and both executed tests were clear counterexamples (|relative error| > 11%). Each decision listed two distinct candidate tests, so the workflow ran all five steps with no errors or retries. Every number below is quoted from the specialists' tool output.\n\n## Decision 1\n- **Question:** where in process corner, VDD and temperature does the frozen five-coefficient CMOS inverter delay model fail against ngspice?\n- **Hypothesis:** picking the next simulation from the observed error map finds clear counterexamples efficiently.\n- **Two candidate tests:**\n  - **`TT|2.200|-40.0` (exploitation):** score 0.029118765706353987, predicted error 0.025547337134925418, distance bonus 0.00357142857142857.\n  - **`FF|1.200|125.0` (exploration):** score 0.03369489809802645, predicted error 0.01224752124324505, distance bonus 0.021447376854781403.\n- **Choice and budget:** the frozen rule picked `FF|1.200|125.0` (FF corner, 1.2 V, 125.0 °C), cost 1. Budget was limit 16, used 12, remaining 4. The evidence was 12 stored results, from res_16f9d0c6086fba43 through res_edf5097a342d3536.\n- **result_id:** `res_871bbcf166f64a31`. Simulated delay was 1.622025e-10 s against a model prediction of 2.2424373173013034e-10 s. The absolute relative error was 0.3824924506720325, a clear counterexample.\n- **Interpretation:** the model fails clearly at FF, low VDD and high temperature.\n- **Updated ranking and next test:**\n  - **Ranking before:** FS|1.500|125.0, FS|1.200|-40.0, FF|1.200|-40.0, SS|1.200|-40.0, SS|3.300|125.0.\n  - **Ranking after:** FF|1.500|125.0, FF|1.200|85.0, FF|1.800|85.0, FF|1.500|27.0, FF|1.200|0.0.\n  - **Selection changed:** true. The next test is `FF|1.500|125.0`.\n\n## Decision 2\n- **Question and hypothesis:** the same as decision 1.\n- **Two candidate tests:**\n  - **`FF|1.500|125.0` (exploitation):** score 0.31840118427530406, predicted error 0.3148297557038755.\n  - **`FS|1.500|125.0` (exploration):** score 0.0665404691488664, predicted error 0.047508893851357405.\n- **Choice and budget:** the rule picked `FF|1.500|125.0`, cost 1. Budget was limit 16, used 13, remaining 3. The evidence was 13 results, now including res_871bbcf166f64a31.\n- **result_id:** `res_3f2c406e2cd86440`. Simulated delay was 1.1277249999999998e-10 s against a model prediction of 1.3183220420348646e-10 s. The absolute relative error was 0.16901021262707203, a clear counterexample.\n- **Interpretation:**\n  - The failure region extends from 1.2 V to 1.5 V at FF and 125.0 °C. The error is smaller at 1.5 V (0.16901021262707203) than at 1.2 V (0.3824924506720325).\n  - Low VDD matters, not just the FF corner: the FF high-VDD point FF|3.300|85.0 (res_c60719fe1f130729) had an error of only 0.01673734158286803.\n- **Updated ranking and next test:**\n  - **Ranking before:** FF|1.200|85.0, FF|1.800|85.0, FF|1.500|27.0, FF|1.200|0.0, FF|2.200|85.0.\n  - **Ranking after:** FF|1.200|85.0, FF|1.800|85.0, FF|2.200|85.0, FF|1.500|27.0, FF|2.500|125.0.\n  - **Selection changed:** false. The next test would be `FF|1.200|85.0`, but that is an unrecorded preview (`not_recorded_finalized`) and was not run.\n\n## Run status\n- **Run:** `live-adaptive_idw_plus_distance-1001` is **complete**, closed as `live_finalized`.\n- **Totals:** 14 logical queries, 2 of them search queries, with 0 failures, 0 pending and 0 pending decisions.\n- **Budget:** limit 16, used 14, **remaining 2**.\n\n**On the hypothesis:** this run supports it but does not prove it. Both picks driven by the error map (2 of 2) found clear counterexamples. None of the 3 shared initial points did (errors 0.012759230560887541, 0.01673734158286803 and 0.005364770139612456). However, this is one seed with only 2 adaptive tests, and the tool labels it a demo campaign, not the policy benchmark. The analyst did not have the hypothesis text and read it as \"the model is accurate everywhere\"; the hypothesis actually being tested is the one stated above.",
+    "stream_function_calls": []
+  },
+  "sub_agents": [
+    {
+      "session_id": "7234c8807af240a8940509526159f52a",
+      "parent_id": "42f00735998b48b1ab9737b31e2cdc4e",
+      "agent_name": null,
+      "tool": "experimenter",
+      "status": "idle",
+      "current_task_status": "completed",
+      "last_total_tokens": 5946,
+      "llm_model": "claude-opus-5-5",
+      "harness": "claude-sdk",
+      "reasoning_effort": "medium",
+      "last_task_error": null,
+      "tool_calls": [
+        {
+          "name": "ToolSearch",
+          "call_id": "toolu_018BsFT8DuCrtFmZkYZJWMNb",
+          "status": "completed",
+          "arguments": "{\"query\": \"select:mcp__omnigent__falsify__simulate_pvt_point\", \"max_results\": 1}",
+          "output": "<omitted: local tool/agent discovery inventory; raw record retained privately>"
+        },
+        {
+          "name": "falsify__simulate_pvt_point",
+          "call_id": "toolu_018BsFT8DuCrtFmZkYZJWMNb",
+          "status": "completed",
+          "arguments": "{\"point_id\": \"FF|1.200|125.0\", \"decision_sequence\": 1}",
+          "output": "{\"status\": \"success\", \"decision_sequence\": 1, \"query_index\": 13, \"observation\": {\"result_id\": \"res_871bbcf166f64a31\", \"run_id\": \"live-adaptive_idw_plus_distance-1001\", \"point_id\": \"FF|1.200|125.0\", \"phase\": \"search\", \"pvt\": {\"corner\": \"FF\", \"temp_c\": 125.0, \"vdd\": 1.2}, \"tphl_s\": 1.50718e-10, \"tplh_s\": 1.73687e-10, \"tpd_s\": 1.622025e-10, \"cache_hit\": false, \"repeat\": false, \"wall_time_s\": 0.025082, \"evaluation\": {\"abs_relative_error\": 0.3824924506720325, \"clear_counterexample\": true, \"model_hash\": \"model_4ab7526d0104d745dd5a7e1f657b509dd7c0697ce0ed94b9131c523f4f4b4f56\", \"predicted_tpd_s\": 2.2424373173013034e-10, \"relative_error\": 0.3824924506720325, \"secondary_counterexample\": true, \"simulated_tpd_s\": 1.622025e-10}, \"provenance\": {\"sim_id\": \"sim_52f967998471d68f9806\", \"netlist_sha256\": \"bb6d6011d398df3fbbba8abbe334f594360af71a0712ff51258caf68e62f9813\", \"simulator\": \"ngspice-47 : Circuit level simulation program [sha256 22d5cae2bd32b2e39157a8d27bf457122f68285b72a9ebefdf41551b628233ab]\", \"setting\": \"basic\", \"raw_meas_lines\": [\"tphl                =  1.50718e-10\", \"tplh                =  1.73687e-10\"]}}, \"budget\": {\"limit\": 16, \"used\": 13, \"remaining\": 3, \"search_used\": 1, \"search_successful\": 1, \"search_min\": 2, \"search_max\": 4, \"adaptive_updates\": 0, \"cost_per_candidate_test\": 1}, \"data_label\": \"ngspice evidence, demo campaign (not the policy benchmark)\"}"
+        },
+        {
+          "name": "falsify__simulate_pvt_point",
+          "call_id": "toolu_01HJ9JksSFGmmiUGtmcWFi8u",
+          "status": "completed",
+          "arguments": "{\"point_id\": \"FF|1.200|125.0\", \"decision_sequence\": 1}",
+          "output": "{\"status\": \"success\", \"decision_sequence\": 1, \"query_index\": 13, \"observation\": {\"result_id\": \"res_871bbcf166f64a31\", \"run_id\": \"live-adaptive_idw_plus_distance-1001\", \"point_id\": \"FF|1.200|125.0\", \"phase\": \"search\", \"pvt\": {\"corner\": \"FF\", \"temp_c\": 125.0, \"vdd\": 1.2}, \"tphl_s\": 1.50718e-10, \"tplh_s\": 1.73687e-10, \"tpd_s\": 1.622025e-10, \"cache_hit\": false, \"repeat\": false, \"wall_time_s\": 0.025082, \"evaluation\": {\"abs_relative_error\": 0.3824924506720325, \"clear_counterexample\": true, \"model_hash\": \"model_4ab7526d0104d745dd5a7e1f657b509dd7c0697ce0ed94b9131c523f4f4b4f56\", \"predicted_tpd_s\": 2.2424373173013034e-10, \"relative_error\": 0.3824924506720325, \"secondary_counterexample\": true, \"simulated_tpd_s\": 1.622025e-10}, \"provenance\": {\"sim_id\": \"sim_52f967998471d68f9806\", \"netlist_sha256\": \"bb6d6011d398df3fbbba8abbe334f594360af71a0712ff51258caf68e62f9813\", \"simulator\": \"ngspice-47 : Circuit level simulation program [sha256 22d5cae2bd32b2e39157a8d27bf457122f68285b72a9ebefdf41551b628233ab]\", \"setting\": \"basic\", \"raw_meas_lines\": [\"tphl                =  1.50718e-10\", \"tplh                =  1.73687e-10\"]}}, \"budget\": {\"limit\": 16, \"used\": 13, \"remaining\": 3, \"search_used\": 1, \"search_successful\": 1, \"search_min\": 2, \"search_max\": 4, \"adaptive_updates\": 0, \"cost_per_candidate_test\": 1}, \"data_label\": \"ngspice evidence, demo campaign (not the policy benchmark)\"}"
+        },
+        {
+          "name": "falsify__simulate_pvt_point",
+          "call_id": "toolu_01R7HRMTXMz6pu8rPBzC5U18",
+          "status": "completed",
+          "arguments": "{\"point_id\": \"FF|1.500|125.0\", \"decision_sequence\": 2}",
+          "output": "{\"status\": \"success\", \"decision_sequence\": 2, \"query_index\": 14, \"observation\": {\"result_id\": \"res_3f2c406e2cd86440\", \"run_id\": \"live-adaptive_idw_plus_distance-1001\", \"point_id\": \"FF|1.500|125.0\", \"phase\": \"search\", \"pvt\": {\"corner\": \"FF\", \"temp_c\": 125.0, \"vdd\": 1.5}, \"tphl_s\": 1.07071e-10, \"tplh_s\": 1.18474e-10, \"tpd_s\": 1.1277249999999998e-10, \"cache_hit\": false, \"repeat\": false, \"wall_time_s\": 0.030311, \"evaluation\": {\"abs_relative_error\": 0.16901021262707203, \"clear_counterexample\": true, \"model_hash\": \"model_4ab7526d0104d745dd5a7e1f657b509dd7c0697ce0ed94b9131c523f4f4b4f56\", \"predicted_tpd_s\": 1.3183220420348646e-10, \"relative_error\": 0.16901021262707203, \"secondary_counterexample\": true, \"simulated_tpd_s\": 1.1277249999999998e-10}, \"provenance\": {\"sim_id\": \"sim_48037907c3a58eb6f9ac\", \"netlist_sha256\": \"5e0e704074b082038ca887ac6d5fb99225a490f9f277c5296b52a322ec50d796\", \"simulator\": \"ngspice-47 : Circuit level simulation program [sha256 22d5cae2bd32b2e39157a8d27bf457122f68285b72a9ebefdf41551b628233ab]\", \"setting\": \"basic\", \"raw_meas_lines\": [\"tphl                =  1.07071e-10\", \"tplh                =  1.18474e-10\"]}}, \"budget\": {\"limit\": 16, \"used\": 14, \"remaining\": 2, \"search_used\": 2, \"search_successful\": 2, \"search_min\": 2, \"search_max\": 4, \"adaptive_updates\": 1, \"cost_per_candidate_test\": 1}, \"data_label\": \"ngspice evidence, demo campaign (not the policy benchmark)\"}"
+        }
+      ],
+      "tool_call_counts": {
+        "ToolSearch": 1,
+        "falsify__simulate_pvt_point": 3
+      },
+      "assistant_text": "I ran the simulation once for the recorded point, and it succeeded. It is a clear counterexample: the simulated delay is about 38% below what the model predicted.\n\n**Simulation result (values quoted from the tool output):**\n- **status:** success\n- **result_id:** `res_871bbcf166f64a31`\n- **point_id:** `FF|1.200|125.0`\n- **query_index:** 13\n- **pvt:** `{\"corner\": \"FF\", \"temp_c\": 125.0, \"vdd\": 1.2}`\n- **tphl_s:** 1.50718e-10\n- **tplh_s:** 1.73687e-10\n- **tpd_s (simulated delay):** 1.622025e-10\n\n**Evaluation:**\n- **simulated_tpd_s:** 1.622025e-10\n- **predicted_tpd_s (model delay):** 2.2424373173013034e-10\n- **relative_error:** 0.3824924506720325\n- **abs_relative_error:** 0.3824924506720325\n- **clear_counterexample:** true\n\n**provenance.simulator:** `ngspice-47 : Circuit level simulation program [sha256 22d5cae2bd32b2e39157a8d27bf457122f68285b72a9ebefdf41551b628233ab]`\n\n**budget:** `{\"limit\": 16, \"used\": 13, \"remaining\": 3, \"search_used\": 1, \"search_successful\": 1, \"search_min\": 2, \"search_max\": 4, \"adaptive_updates\": 0, \"cost_per_candidate_test\": 1}`\n\nThe tool labels this data as \"ngspice evidence, demo campaign (not the policy benchmark)\".\nI ran the simulation once for the recorded point, and it succeeded. It is a clear counterexample: the simulated delay is about 17% below what the model predicted.\n\n**Simulation result (values quoted from the tool output):**\n- **status:** success\n- **result_id:** `res_3f2c406e2cd86440`\n- **point_id:** `FF|1.500|125.0`\n- **query_index:** 14\n- **pvt:** `{\"corner\": \"FF\", \"temp_c\": 125.0, \"vdd\": 1.5}`\n- **tphl_s:** 1.07071e-10\n- **tplh_s:** 1.18474e-10\n- **tpd_s (simulated delay):** 1.1277249999999998e-10\n\n**Evaluation:**\n- **simulated_tpd_s:** 1.1277249999999998e-10\n- **predicted_tpd_s (model delay):** 1.3183220420348646e-10\n- **relative_error:** 0.16901021262707203\n- **abs_relative_error:** 0.16901021262707203\n- **clear_counterexample:** true\n\n**provenance.simulator:** `ngspice-47 : Circuit level simulation program [sha256 22d5cae2bd32b2e39157a8d27bf457122f68285b72a9ebefdf41551b628233ab]`\n\n**budget:** `{\"limit\": 16, \"used\": 14, \"remaining\": 2, \"search_used\": 2, \"search_successful\": 2, \"search_min\": 2, \"search_max\": 4, \"adaptive_updates\": 1, \"cost_per_candidate_test\": 1}`\n\nThe tool labels this data as \"ngspice evidence, demo campaign (not the policy benchmark)\"."
+    },
+    {
+      "session_id": "93edcd0f64d84129ba611a3011c43a8d",
+      "parent_id": "42f00735998b48b1ab9737b31e2cdc4e",
+      "agent_name": null,
+      "tool": "analyst",
+      "status": "idle",
+      "current_task_status": "completed",
+      "last_total_tokens": 14639,
+      "llm_model": "claude-opus-5-5",
+      "harness": "claude-sdk",
+      "reasoning_effort": "medium",
+      "last_task_error": null,
+      "tool_calls": [
+        {
+          "name": "ToolSearch",
+          "call_id": "toolu_01STiX5eBJUjRULPphSbkxCE",
+          "status": "completed",
+          "arguments": "{\"query\": \"select:mcp__omnigent__falsify__analyze_and_plan\", \"max_results\": 1}",
+          "output": "<omitted: local tool/agent discovery inventory; raw record retained privately>"
+        },
+        {
+          "name": "falsify__analyze_and_plan",
+          "call_id": "toolu_01STiX5eBJUjRULPphSbkxCE",
+          "status": "completed",
+          "arguments": "{\"finalize\": false}",
+          "output": "{\"status\": \"decision_recorded\", \"decision\": {\"decision_sequence\": 1, \"selected_point_id\": \"FF|1.200|125.0\", \"candidates\": [{\"point_id\": \"TT|2.200|-40.0\", \"pvt\": {\"corner\": \"TT\", \"vdd\": 2.2, \"temp_c\": -40.0}, \"role\": \"exploitation\", \"score\": 0.029118765706353987, \"idw_predicted_abs_error\": 0.025547337134925418, \"min_normalized_distance\": 0.1428571428571428, \"cost_queries\": 1, \"score_parts\": {\"idw_predicted_abs_error\": 0.025547337134925418, \"distance_bonus\": 0.00357142857142857, \"rule\": \"score = idw_predicted_abs_error + 0.05 * min_normalized_distance / 2\"}}, {\"point_id\": \"FF|1.200|125.0\", \"pvt\": {\"corner\": \"FF\", \"vdd\": 1.2, \"temp_c\": 125.0}, \"role\": \"exploration\", \"score\": 0.03369489809802645, \"idw_predicted_abs_error\": 0.01224752124324505, \"min_normalized_distance\": 0.8578950741912561, \"cost_queries\": 1, \"score_parts\": {\"idw_predicted_abs_error\": 0.01224752124324505, \"distance_bonus\": 0.021447376854781403, \"rule\": \"score = idw_predicted_abs_error + 0.05 * min_normalized_distance / 2\"}}], \"evidence_result_ids\": [\"res_16f9d0c6086fba43\", \"res_aff3e52fc690ecb6\", \"res_13ee26b7748dae6b\", \"res_365d0c094a54d848\", \"res_954be23199dc4c11\", \"res_c76e1fd71e4cb9f1\", \"res_781eae44e9e14895\", \"res_7a985ec8e3585388\", \"res_bdf20f541154238c\", \"res_be8e7be436f03ff6\", \"res_c60719fe1f130729\", \"res_edf5097a342d3536\"], \"remaining_budget_before_query\": 4, \"score_rule\": \"idw + 0.05*min_distance/2\", \"actor\": \"Omnigent analyst\"}, \"update\": null, \"run_id\": \"live-adaptive_idw_plus_distance-1001\", \"data_label\": \"ngspice evidence, demo campaign (not the policy benchmark)\", \"budget\": {\"limit\": 16, \"used\": 12, \"remaining\": 4, \"search_used\": 0, \"search_successful\": 0, \"search_min\": 2, \"search_max\": 4, \"adaptive_updates\": 0, \"cost_per_candidate_test\": 1}, \"calibration_result_ids\": [\"res_16f9d0c6086fba43\", \"res_aff3e52fc690ecb6\", \"res_13ee26b7748dae6b\", \"res_365d0c094a54d848\", \"res_954be23199dc4c11\", \"res_c76e1fd71e4cb9f1\", \"res_781eae44e9e14895\", \"res_7a985ec8e3585388\", \"res_bdf20f541154238c\"], \"search_observations\": [{\"result_id\": \"res_be8e7be436f03ff6\", \"point_id\": \"SF|2.200|85.0\", \"phase\": \"initial\", \"query_index\": 10, \"decision_sequence\": null, \"status\": \"success\", \"abs_relative_error\": 0.012759230560887541, \"clear_counterexample\": false, \"secondary_counterexample\": false}, {\"result_id\": \"res_c60719fe1f130729\", \"point_id\": \"FF|3.300|85.0\", \"phase\": \"initial\", \"query_index\": 11, \"decision_sequence\": null, \"status\": \"success\", \"abs_relative_error\": 0.01673734158286803, \"clear_counterexample\": false, \"secondary_counterexample\": false}, {\"result_id\": \"res_edf5097a342d3536\", \"point_id\": \"SF|2.500|125.0\", \"phase\": \"initial\", \"query_index\": 12, \"decision_sequence\": null, \"status\": \"success\", \"abs_relative_error\": 0.005364770139612456, \"clear_counterexample\": false, \"secondary_counterexample\": false}], \"updates\": []}"
+        },
+        {
+          "name": "falsify__analyze_and_plan",
+          "call_id": "toolu_01HmX649a5sywHsKiyFurbav",
+          "status": "completed",
+          "arguments": "{\"finalize\": false}",
+          "output": "{\"status\": \"decision_recorded\", \"decision\": {\"decision_sequence\": 1, \"selected_point_id\": \"FF|1.200|125.0\", \"candidates\": [{\"point_id\": \"TT|2.200|-40.0\", \"pvt\": {\"corner\": \"TT\", \"vdd\": 2.2, \"temp_c\": -40.0}, \"role\": \"exploitation\", \"score\": 0.029118765706353987, \"idw_predicted_abs_error\": 0.025547337134925418, \"min_normalized_distance\": 0.1428571428571428, \"cost_queries\": 1, \"score_parts\": {\"idw_predicted_abs_error\": 0.025547337134925418, \"distance_bonus\": 0.00357142857142857, \"rule\": \"score = idw_predicted_abs_error + 0.05 * min_normalized_distance / 2\"}}, {\"point_id\": \"FF|1.200|125.0\", \"pvt\": {\"corner\": \"FF\", \"vdd\": 1.2, \"temp_c\": 125.0}, \"role\": \"exploration\", \"score\": 0.03369489809802645, \"idw_predicted_abs_error\": 0.01224752124324505, \"min_normalized_distance\": 0.8578950741912561, \"cost_queries\": 1, \"score_parts\": {\"idw_predicted_abs_error\": 0.01224752124324505, \"distance_bonus\": 0.021447376854781403, \"rule\": \"score = idw_predicted_abs_error + 0.05 * min_normalized_distance / 2\"}}], \"evidence_result_ids\": [\"res_16f9d0c6086fba43\", \"res_aff3e52fc690ecb6\", \"res_13ee26b7748dae6b\", \"res_365d0c094a54d848\", \"res_954be23199dc4c11\", \"res_c76e1fd71e4cb9f1\", \"res_781eae44e9e14895\", \"res_7a985ec8e3585388\", \"res_bdf20f541154238c\", \"res_be8e7be436f03ff6\", \"res_c60719fe1f130729\", \"res_edf5097a342d3536\"], \"remaining_budget_before_query\": 4, \"score_rule\": \"idw + 0.05*min_distance/2\", \"actor\": \"Omnigent analyst\"}, \"update\": null, \"run_id\": \"live-adaptive_idw_plus_distance-1001\", \"data_label\": \"ngspice evidence, demo campaign (not the policy benchmark)\", \"budget\": {\"limit\": 16, \"used\": 12, \"remaining\": 4, \"search_used\": 0, \"search_successful\": 0, \"search_min\": 2, \"search_max\": 4, \"adaptive_updates\": 0, \"cost_per_candidate_test\": 1}, \"calibration_result_ids\": [\"res_16f9d0c6086fba43\", \"res_aff3e52fc690ecb6\", \"res_13ee26b7748dae6b\", \"res_365d0c094a54d848\", \"res_954be23199dc4c11\", \"res_c76e1fd71e4cb9f1\", \"res_781eae44e9e14895\", \"res_7a985ec8e3585388\", \"res_bdf20f541154238c\"], \"search_observations\": [{\"result_id\": \"res_be8e7be436f03ff6\", \"point_id\": \"SF|2.200|85.0\", \"phase\": \"initial\", \"query_index\": 10, \"decision_sequence\": null, \"status\": \"success\", \"abs_relative_error\": 0.012759230560887541, \"clear_counterexample\": false, \"secondary_counterexample\": false}, {\"result_id\": \"res_c60719fe1f130729\", \"point_id\": \"FF|3.300|85.0\", \"phase\": \"initial\", \"query_index\": 11, \"decision_sequence\": null, \"status\": \"success\", \"abs_relative_error\": 0.01673734158286803, \"clear_counterexample\": false, \"secondary_counterexample\": false}, {\"result_id\": \"res_edf5097a342d3536\", \"point_id\": \"SF|2.500|125.0\", \"phase\": \"initial\", \"query_index\": 12, \"decision_sequence\": null, \"status\": \"success\", \"abs_relative_error\": 0.005364770139612456, \"clear_counterexample\": false, \"secondary_counterexample\": false}], \"updates\": []}"
+        },
+        {
+          "name": "falsify__analyze_and_plan",
+          "call_id": "toolu_01Y88knGdCmiWJ3qFDBmyHjv",
+          "status": "completed",
+          "arguments": "{\"finalize\": false}",
+          "output": "{\n  \"status\": \"decision_recorded\",\n  \"decision\": {\n    \"decision_sequence\": 2,\n    \"selected_point_id\": \"FF|1.500|125.0\",\n    \"candidates\": [\n      {\n        \"point_id\": \"FF|1.500|125.0\",\n        \"pvt\": {\n          \"corner\": \"FF\",\n          \"vdd\": 1.5,\n          \"temp_c\": 125.0\n        },\n        \"role\": \"exploitation\",\n        \"score\": 0.31840118427530406,\n        \"idw_predicted_abs_error\": 0.3148297557038755,\n        \"min_normalized_distance\": 0.1428571428571429,\n        \"cost_queries\": 1,\n        \"score_parts\": {\n          \"idw_predicted_abs_error\": 0.3148297557038755,\n          \"distance_bonus\": 0.0035714285714285726,\n          \"rule\": \"score = idw_predicted_abs_error + 0.05 * min_normalized_distance / 2\"\n        }\n      },\n      {\n        \"point_id\": \"FS|1.500|125.0\",\n        \"pvt\": {\n          \"corner\": \"FS\",\n          \"vdd\": 1.5,\n          \"temp_c\": 125.0\n        },\n        \"role\": \"exploration\",\n        \"score\": 0.0665404691488664,\n        \"idw_predicted_abs_error\": 0.047508893851357405,\n        \"min_normalized_distance\": 0.7612630119003597,\n        \"cost_queries\": 1,\n        \"score_parts\": {\n          \"idw_predicted_abs_error\": 0.047508893851357405,\n          \"distance_bonus\": 0.019031575297508995,\n          \"rule\": \"score = idw_predicted_abs_error + 0.05 * min_normalized_distance / 2\"\n        }\n      }\n    ],\n    \"evidence_result_ids\": [\n      \"res_16f9d0c6086fba43\",\n      \"res_aff3e52fc690ecb6\",\n      \"res_13ee26b7748dae6b\",\n      \"res_365d0c094a54d848\",\n      \"res_954be23199dc4c11\",\n      \"res_c76e1fd71e4cb9f1\",\n      \"res_781eae44e9e14895\",\n      \"res_7a985ec8e3585388\",\n      \"res_bdf20f541154238c\",\n      \"res_be8e7be436f03ff6\",\n      \"res_c60719fe1f130729\",\n      \"res_edf5097a342d3536\",\n      \"res_871bbcf166f64a31\"\n    ],\n    \"remaining_budget_before_query\": 3,\n    \"score_rule\": \"idw + 0.05*min_distance/2\",\n    \"actor\": \"Omnigent analyst\"\n  },\n  \"update\": {\n    \"run_id\": \"live-adaptive_idw_plus_distance-1001\",\n    \"actor\": \"Omnigent analyst\",\n    \"update_index\": 1,\n    \"observed_result_id\": \"res_871bbcf166f64a31\",\n    \"observed_point_id\": \"FF|1.200|125.0\",\n    \"query_index\": 13,\n    \"decision_sequence\": 1,\n    \"observed_abs_relative_error\": 0.3824924506720325,\n    \"observed_clear_counterexample\": true,\n    \"remaining_candidates\": 121,\n    \"rank_before\": [\n      \"FS|1.500|125.0\",\n      \"FS|1.200|-40.0\",\n      \"FF|1.200|-40.0\",\n      \"SS|1.200|-40.0\",\n      \"SS|3.300|125.0\"\n    ],\n    \"rank_after\": [\n      \"FF|1.500|125.0\",\n      \"FF|1.200|85.0\",\n      \"FF|1.800|85.0\",\n      \"FF|1.500|27.0\",\n      \"FF|1.200|0.0\"\n    ],\n    \"selection_changed\": true,\n    \"next_candidates\": [\n      {\n        \"point_id\": \"FF|1.500|125.0\",\n        \"pvt\": {\n          \"corner\": \"FF\",\n          \"vdd\": 1.5,\n          \"temp_c\": 125.0\n        },\n        \"role\": \"exploitation\",\n        \"score\": 0.31840118427530406,\n        \"idw_predicted_abs_error\": 0.3148297557038755,\n        \"min_normalized_distance\": 0.1428571428571429,\n        \"cost_queries\": 1\n      },\n      {\n        \"point_id\": \"FS|1.500|125.0\",\n        \"pvt\": {\n          \"corner\": \"FS\",\n          \"vdd\": 1.5,\n          \"temp_c\": 125.0\n        },\n        \"role\": \"exploration\",\n        \"score\": 0.0665404691488664,\n        \"idw_predicted_abs_error\": 0.047508893851357405,\n        \"min_normalized_distance\": 0.7612630119003597,\n        \"cost_queries\": 1\n      }\n    ],\n    \"next_selected_point_id\": \"FF|1.500|125.0\",\n    \"next_decision\": \"recorded\",\n    \"evidence_result_ids\": [\n      \"res_16f9d0c6086fba43\",\n      \"res_aff3e52fc690ecb6\",\n      \"res_13ee26b7748dae6b\",\n      \"res_365d0c094a54d848\",\n      \"res_954be23199dc4c11\",\n      \"res_c76e1fd71e4cb9f1\",\n      \"res_781eae44e9e14895\",\n      \"res_7a985ec8e3585388\",\n      \"res_bdf20f541154238c\",\n      \"res_be8e7be436f03ff6\",\n      \"res_c60719fe1f130729\",\n      \"res_edf5097a342d3536\",\n      \"res_871bbcf166f64a31\"\n    ]\n  },\n  \"run_id\": \"live-adaptive_idw_plus_distance-1001\",\n  \"data_label\": \"ngspice evidence, demo campaign (not the policy benchmar"
+        },
+        {
+          "name": "falsify__analyze_and_plan",
+          "call_id": "toolu_01QgEUjPMhHTdVKLpqaAtFuQ",
+          "status": "completed",
+          "arguments": "{\"finalize\": true}",
+          "output": "{\n  \"status\": \"closed\",\n  \"closed\": {\n    \"run_id\": \"live-adaptive_idw_plus_distance-1001\",\n    \"status\": \"complete\",\n    \"termination_reason\": \"live_finalized\",\n    \"logical_queries\": 14,\n    \"failures\": 0,\n    \"pending\": 0,\n    \"search_queries\": 2,\n    \"pending_decisions\": 0,\n    \"remaining_budget\": 2\n  },\n  \"update\": {\n    \"run_id\": \"live-adaptive_idw_plus_distance-1001\",\n    \"actor\": \"Omnigent analyst\",\n    \"update_index\": 2,\n    \"observed_result_id\": \"res_3f2c406e2cd86440\",\n    \"observed_point_id\": \"FF|1.500|125.0\",\n    \"query_index\": 14,\n    \"decision_sequence\": 2,\n    \"observed_abs_relative_error\": 0.16901021262707203,\n    \"observed_clear_counterexample\": true,\n    \"remaining_candidates\": 120,\n    \"rank_before\": [\n      \"FF|1.200|85.0\",\n      \"FF|1.800|85.0\",\n      \"FF|1.500|27.0\",\n      \"FF|1.200|0.0\",\n      \"FF|2.200|85.0\"\n    ],\n    \"rank_after\": [\n      \"FF|1.200|85.0\",\n      \"FF|1.800|85.0\",\n      \"FF|2.200|85.0\",\n      \"FF|1.500|27.0\",\n      \"FF|2.500|125.0\"\n    ],\n    \"selection_changed\": false,\n    \"next_candidates\": [\n      {\n        \"point_id\": \"FF|1.200|85.0\",\n        \"pvt\": {\n          \"corner\": \"FF\",\n          \"vdd\": 1.2,\n          \"temp_c\": 85.0\n        },\n        \"role\": \"exploitation\",\n        \"score\": 0.22107169358019568,\n        \"idw_predicted_abs_error\": 0.2150110875195896,\n        \"min_normalized_distance\": 0.24242424242424243,\n        \"cost_queries\": 1\n      },\n      {\n        \"point_id\": \"FS|1.500|125.0\",\n        \"pvt\": {\n          \"corner\": \"FS\",\n          \"vdd\": 1.5,\n          \"temp_c\": 125.0\n        },\n        \"role\": \"exploration\",\n        \"score\": 0.0771209129102813,\n        \"idw_predicted_abs_error\": 0.058089337612772296,\n        \"min_normalized_distance\": 0.7612630119003597,\n        \"cost_queries\": 1\n      }\n    ],\n    \"next_selected_point_id\": \"FF|1.200|85.0\",\n    \"next_decision\": \"not_recorded_finalized\",\n    \"evidence_result_ids\": [\n      \"res_16f9d0c6086fba43\",\n      \"res_aff3e52fc690ecb6\",\n      \"res_13ee26b7748dae6b\",\n      \"res_365d0c094a54d848\",\n      \"res_954be23199dc4c11\",\n      \"res_c76e1fd71e4cb9f1\",\n      \"res_781eae44e9e14895\",\n      \"res_7a985ec8e3585388\",\n      \"res_bdf20f541154238c\",\n      \"res_be8e7be436f03ff6\",\n      \"res_c60719fe1f130729\",\n      \"res_edf5097a342d3536\",\n      \"res_871bbcf166f64a31\",\n      \"res_3f2c406e2cd86440\"\n    ]\n  },\n  \"next_preview_unrecorded\": {\n    \"selected_point_id\": \"FF|1.200|85.0\",\n    \"candidates\": [\n      {\n        \"point_id\": \"FF|1.200|85.0\",\n        \"pvt\": {\n          \"corner\": \"FF\",\n          \"vdd\": 1.2,\n          \"temp_c\": 85.0\n        },\n        \"role\": \"exploitation\",\n        \"score\": 0.22107169358019568,\n        \"idw_predicted_abs_error\": 0.2150110875195896,\n        \"min_normalized_distance\": 0.24242424242424243,\n        \"cost_queries\": 1,\n        \"score_parts\": {\n          \"idw_predicted_abs_error\": 0.2150110875195896,\n          \"distance_bonus\": 0.0060606060606060615,\n          \"rule\": \"score = idw_predicted_abs_error + 0.05 * min_normalized_distance / 2\"\n        }\n      },\n      {\n        \"point_id\": \"FS|1.500|125.0\",\n        \"pvt\": {\n          \"corner\": \"FS\",\n          \"vdd\": 1.5,\n          \"temp_c\": 125.0\n        },\n        \"role\": \"exploration\",\n        \"score\": 0.0771209129102813,\n        \"idw_predicted_abs_error\": 0.058089337612772296,\n        \"min_normalized_distance\": 0.7612630119003597,\n        \"cost_queries\": 1,\n        \"score_parts\": {\n          \"idw_predicted_abs_error\": 0.058089337612772296,\n          \"distance_bonus\": 0.019031575297508995,\n          \"rule\": \"score = idw_predicted_abs_error + 0.05 * min_normalized_distance / 2\"\n        }\n      }\n    ],\n    \"recorded\": false\n  },\n  \"run_id\": \"live-adaptive_idw_plus_distance-1001\",\n  \"data_label\": \"ngspice evidence, demo campaign (not the policy benchmark)\",\n  \"budget\": {\n    \"limit\": 16,\n    \"used\": 14,\n    \"remaining\": 2,\n    \"search_used\": 2,\n    \"search_successful\": 2,\n    \"search_min\": 2,\n    \"search_max\": 4,\n    \"adaptive_updates\": 2,\n    \"cost_per_candidate_test\": 1"
+        }
+      ],
+      "tool_call_counts": {
+        "ToolSearch": 1,
+        "falsify__analyze_and_plan": 4
+      },
+      "assistant_text": ")\")\n\n**decision_sequence:** 1\n**selected_point_id:** `FF|1.200|125.0`, so corner FF, VDD 1.2, temperature 125.0 °C\n\n**Candidates** (scoring rule: `score = idw_predicted_abs_error + 0.05 * min_normalized_distance / 2`)\n\n| point_id | PVT (corner, vdd, temp_c) | role | score | idw_predicted_abs_error | distance_bonus | min_normalized_distance | cost_queries |\n|---|---|---|---|---|---|---|---|\n| `TT\\|2.200\\|-40.0` | TT, 2.2, -40.0 | exploitation | 0.029118765706353987 | 0.025547337134925418 | 0.00357142857142857 | 0.1428571428571428 | 1 |\n| `FF\\|1.200\\|125.0` | FF, 1.2, 125.0 | exploration | 0.03369489809802645 | 0.01224752124324505 | 0.021447376854781403 | 0.8578950741912561 | 1 |\n\n**evidence_result_ids:**\nres_16f9d0c6086fba43, res_aff3e52fc690ecb6, res_13ee26b7748dae6b, res_365d0c094a54d848, res_954be23199dc4c11, res_c76e1fd71e4cb9f1, res_781eae44e9e14895, res_7a985ec8e3585388, res_bdf20f541154238c, res_be8e7be436f03ff6, res_c60719fe1f130729, res_edf5097a342d3536\n\n**Budget:** limit 16, used 12, remaining 4 (remaining_budget_before_query: 4). Other fields: search_used 0, search_successful 0, search_min 2, search_max 4, adaptive_updates 0, cost_per_candidate_test 1.\n\n**Update:** `null`, because no search result has been observed yet.\nThe new result was a clear counterexample, so the plan changed: the next test is now **FF, VDD 1.5, 125.0 °C**. The tool recorded the update and decision 2 (status `decision_recorded`, run `live-adaptive_idw_plus_distance-1001`). Every number below is quoted exactly from the tool output.\n\n## (a) Update for res_871bbcf166f64a31\n- **update_index:** 1\n- **observed_result_id:** res_871bbcf166f64a31\n- **observed_point_id:** FF|1.200|125.0\n- **query_index:** 13\n- **decision_sequence:** 1\n- **observed_abs_relative_error:** 0.3824924506720325\n- **observed_clear_counterexample:** true\n- **remaining_candidates:** 121\n- **rank_before:** FS|1.500|125.0, FS|1.200|-40.0, FF|1.200|-40.0, SS|1.200|-40.0, SS|3.300|125.0\n- **rank_after:** FF|1.500|125.0, FF|1.200|85.0, FF|1.800|85.0, FF|1.500|27.0, FF|1.200|0.0\n- **selection_changed:** true\n- **next_selected_point_id:** FF|1.500|125.0\n- **next_decision:** recorded\n- **next_candidates:** the same two tests shown in the table in (b)\n- **evidence_result_ids:** the same 13 IDs listed in (b)\n\n## (b) New recorded decision\n- **decision_sequence:** 2\n- **selected_point_id:** `FF|1.500|125.0`, so corner FF, VDD 1.5, temperature 125.0 °C\n- **remaining_budget_before_query:** 3\n\n**Candidates** (scoring rule: `score = idw_predicted_abs_error + 0.05 * min_normalized_distance / 2`)\n\n| point_id | PVT (corner, vdd, temp_c) | role | score | idw_predicted_abs_error | distance_bonus | min_normalized_distance | cost_queries |\n|---|---|---|---|---|---|---|---|\n| `FF\\|1.500\\|125.0` | FF, 1.5, 125.0 | exploitation | 0.31840118427530406 | 0.3148297557038755 | 0.0035714285714285726 | 0.1428571428571429 | 1 |\n| `FS\\|1.500\\|125.0` | FS, 1.5, 125.0 | exploration | 0.0665404691488664 | 0.047508893851357405 | 0.019031575297508995 | 0.7612630119003597 | 1 |\n\n**evidence_result_ids:**\nres_16f9d0c6086fba43, res_aff3e52fc690ecb6, res_13ee26b7748dae6b, res_365d0c094a54d848, res_954be23199dc4c11, res_c76e1fd71e4cb9f1, res_781eae44e9e14895, res_7a985ec8e3585388, res_bdf20f541154238c, res_be8e7be436f03ff6, res_c60719fe1f130729, res_edf5097a342d3536, res_871bbcf166f64a31\n\n**Budget:** limit 16, used 13, remaining 3. Other fields: search_used 1, search_successful 1, search_min 2, search_max 4, adaptive_updates 1, cost_per_candidate_test 1.\nThe run is closed, and both adaptive tests were clear counterexamples. The frozen model fails at the FF corner, low VDD and 125.0 °C. Every number below is quoted exactly from the tool output (status `closed`).\n\n## Update for res_3f2c406e2cd86440\n- **update_index:** 2\n- **observed_result_id:** res_3f2c406e2cd86440\n- **observed_point_id:** FF|1.500|125.0\n- **query_index:** 14\n- **decision_sequence:** 2\n- **observed_abs_relative_error:** 0.16901021262707203\n- **observed_clear_counterexample:** true\n- **remaining_candidates:** 120\n- **rank_before:** FF|1.200|85.0, FF|1.800|85.0, FF|1.500|27.0, FF|1.200|0.0, FF|2.200|85.0\n- **rank_after:** FF|1.200|85.0, FF|1.800|85.0, FF|2.200|85.0, FF|1.500|27.0, FF|2.500|125.0\n- **selection_changed:** false\n- **next_selected_point_id:** FF|1.200|85.0\n- **next_decision:** `not_recorded_finalized`. This is a preview only; it was not recorded (`recorded: false`).\n\n**Next candidates (preview, not recorded)** (scoring rule: `score = idw_predicted_abs_error + 0.05 * min_normalized_distance / 2`)\n\n| point_id | PVT (corner, vdd, temp_c) | role | score | idw_predicted_abs_error | distance_bonus | min_normalized_distance | cost_queries |\n|---|---|---|---|---|---|---|---|\n| `FF\\|1.200\\|85.0` | FF, 1.2, 85.0 | exploitation | 0.22107169358019568 | 0.2150110875195896 | 0.0060606060606060615 | 0.24242424242424243 | 1 |\n| `FS\\|1.500\\|125.0` | FS, 1.5, 125.0 | exploration | 0.0771209129102813 | 0.058089337612772296 | 0.019031575297508995 | 0.7612630119003597 | 1 |\n\n## Closed run status\n- **run_id:** live-adaptive_idw_plus_distance-1001\n- **status:** complete\n- **termination_reason:** live_finalized\n- **logical_queries:** 14\n- **failures:** 0\n- **pending:** 0\n- **search_queries:** 2\n- **pending_decisions:** 0\n- **remaining_budget:** 2\n\n## Final budget\nLimit 16, used 14, remaining 2. Other fields: search_used 2, search_successful 2, search_min 2, search_max 4, adaptive_updates 2, cost_per_candidate_test 1.\n\n## Evidence result_ids\n- **Calibration (9):** res_16f9d0c6086fba43, res_aff3e52fc690ecb6, res_13ee26b7748dae6b, res_365d0c094a54d848, res_954be23199dc4c11, res_c76e1fd71e4cb9f1, res_781eae44e9e14895, res_7a985ec8e3585388, res_bdf20f541154238c\n- **Initial search (3):** res_be8e7be436f03ff6, res_c60719fe1f130729, res_edf5097a342d3536\n- **Adaptive search (2):** res_871bbcf166f64a31, res_3f2c406e2cd86440\n\n**Search observations:**\n\n| result_id | point_id | phase | abs_relative_error | clear_counterexample |\n|---|---|---|---|---|\n| res_be8e7be436f03ff6 | SF\\|2.200\\|85.0 | initial | 0.012759230560887541 | false |\n| res_c60719fe1f130729 | FF\\|3.300\\|85.0 | initial | 0.01673734158286803 | false |\n| res_edf5097a342d3536 | SF\\|2.500\\|125.0 | initial | 0.005364770139612456 | false |\n| res_871bbcf166f64a31 | FF\\|1.200\\|125.0 | search (dec 1) | 0.3824924506720325 | true |\n| res_3f2c406e2cd86440 | FF\\|1.500\\|125.0 | search (dec 2) | 0.16901021262707203 | true |\n\n## Interpretation\n- **Where the model fails:** Both adaptive tests failed clearly, and both are at the FF corner, low VDD and 125.0 °C: res_871bbcf166f64a31 at VDD 1.2 and res_3f2c406e2cd86440 at VDD 1.5. The error is larger at 1.2 V (0.3824924506720325) than at 1.5 V (0.16901021262707203), so the failure looks worst at the lowest supply.\n- **Where it holds:** The three initial search points all had small errors and no counterexample. One of them is FF at high VDD (res_c60719fe1f130729, FF|3.300|85.0, error 0.01673734158286803). So the FF corner alone does not cause the failure; low VDD seems to be part of it.\n- **How the search adapted:** After the first counterexample, the top-ranked candidates all moved to FF points (selection_changed true). After the second, the rule's next pick (unrecorded) is FF|1.200|85.0. That is a prediction, not a test result, so it is untested whether the failure carries on at 85.0 °C.\n- **The hypothesis:** The tool output doesn't include the hypothesis text. If it claims the frozen model stays accurate across the whole PVT space, res_871bbcf166f64a31 and res_3f2c406e2cd86440 are two clear counterexamples that falsify it. At most, it can only be defended outside the FF, low-VDD, hot region.\n- **Limits:** This is one seed with only 2 adaptive tests, and the tool labels it a demo campaign, not the policy benchmark. The output gives no error values for the 9 calibration results. The FS|1.500|125.0 exploration test and the other FF points ranked near the top were never run. The run closed with 2 budget units left."
+    }
+  ],
+  "failure_reasons": [],
+  "ledger_live_run": {
+    "prepared": true,
+    "campaign_kind": "demo",
+    "budget": 16,
+    "decisions": [
+      {
+        "sequence": 1,
+        "selected_point_id": "FF|1.200|125.0",
+        "actor": "Omnigent analyst",
+        "candidates": 2
+      },
+      {
+        "sequence": 2,
+        "selected_point_id": "FF|1.500|125.0",
+        "actor": "Omnigent analyst",
+        "candidates": 2
+      }
+    ],
+    "search_results": [
+      {
+        "query_index": 13,
+        "point_id": "FF|1.200|125.0",
+        "status": "success",
+        "result_id": "res_871bbcf166f64a31"
+      },
+      {
+        "query_index": 14,
+        "point_id": "FF|1.500|125.0",
+        "status": "success",
+        "result_id": "res_3f2c406e2cd86440"
+      }
+    ],
+    "updates": [
+      {
+        "update_index": 1,
+        "observed_result_id": "res_871bbcf166f64a31",
+        "selection_changed": true,
+        "actor": "Omnigent analyst"
+      },
+      {
+        "update_index": 2,
+        "observed_result_id": "res_3f2c406e2cd86440",
+        "selection_changed": false,
+        "actor": "Omnigent analyst"
+      }
+    ],
+    "tool_calls": [
+      {
+        "tool": "analyze_and_plan",
+        "actor": "Omnigent analyst",
+        "status": "decision_recorded",
+        "result_ids": []
+      },
+      {
+        "tool": "simulate_pvt_point",
+        "actor": "Omnigent experimenter",
+        "status": "success",
+        "result_ids": [
+          "res_871bbcf166f64a31"
+        ]
+      },
+      {
+        "tool": "analyze_and_plan",
+        "actor": "Omnigent analyst",
+        "status": "decision_recorded",
+        "result_ids": [
+          "res_871bbcf166f64a31"
+        ]
+      },
+      {
+        "tool": "simulate_pvt_point",
+        "actor": "Omnigent experimenter",
+        "status": "success",
+        "result_ids": [
+          "res_3f2c406e2cd86440"
+        ]
+      },
+      {
+        "tool": "analyze_and_plan",
+        "actor": "Omnigent analyst",
+        "status": "complete",
+        "result_ids": [
+          "res_3f2c406e2cd86440"
+        ]
+      }
+    ],
+    "closed": {
+      "failures": 0,
+      "logical_queries": 14,
+      "pending": 0,
+      "pending_decisions": 0,
+      "remaining_budget": 2,
+      "run_id": "live-adaptive_idw_plus_distance-1001",
+      "search_queries": 2,
+      "status": "complete",
+      "termination_reason": "live_finalized"
+    },
+    "logical_queries": 14,
+    "ledger_events": 136
+  },
+  "raw_events_local_only": true,
+  "data_label": "real Omnigent SDK session; ngspice demo campaign"
+}

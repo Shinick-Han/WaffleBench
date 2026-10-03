@@ -1,0 +1,155 @@
+{
+  "schema": "falsify-reproduction-validation-v1",
+  "milestone": "M6 isolated short reproduction (implementation proof only; release verification belongs to the coordinator)",
+  "scope": "Deterministic `reproduce` command only: nine-point calibration plus adaptive and random seed 1001 (24 logical queries each). No LLM, no Omnigent session, no primary benchmark, no posthoc/held-out evaluation, no statistics.",
+  "base_commit": "14489c7238ac84988b308b7c220d02bc1dada1af",
+  "executed_at_utc": "2026-10-03T23:23:07Z",
+  "environment": {
+    "os": "Windows 11 Home 10.0.26200 (native, x86_64)",
+    "worktree": "fresh Git worktree at the base commit, no pre-existing .venv",
+    "uv": "0.12.20",
+    "python": "CPython 3.12.10",
+    "dependency_lock": {
+      "uv.lock_sha256": "0b8c055d018893722c7127002d8bc2a92c0f17ae0ea4bffbbb9f76812a915852",
+      "pyproject.toml_sha256": "88b4f52d2e5e35dc9a1152ef1063081fc117a42f30c0aa7cd46d7cb576557ca8",
+      "direct": {"mcp": "1.30.0", "numpy": "2.3.3"},
+      "installed_packages": 31,
+      "sync_result": "Resolved 32 packages, installed 31 (locked, no resolution changes)"
+    },
+    "ngspice": {
+      "version": "ngspice-47 (Win64 console, ngspice_con.exe)",
+      "binary_sha256": "22d5cae2bd32b2e39157a8d27bf457122f68285b72a9ebefdf41551b628233ab",
+      "archive": "https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/47/ngspice-47_64.7z",
+      "archive_bytes": 13814879,
+      "archive_sha256": "59225971bd68cdd1199443649aa4615a9e6d684933f205ab49006a3942518f5a",
+      "archive_hash_rechecked_at_validation": true,
+      "location": "outside the repository, passed through FALSIFY_NGSPICE; not copied or committed"
+    },
+    "omnigent": "not used by this check",
+    "api_keys": "none; ANTHROPIC_API_KEY removed from the process environment"
+  },
+  "frozen_inputs": {
+    "RESEARCH_PROTOCOL.md_sha256": "45e04ba3feea0d0fea1ccf236530ee7168f061753d82c1bc8f9d0fc3dd473ff9",
+    "research-manifest.json_sha256": "8a9c760c6da7db8dcd769992cf73a255df9b1cad9f8e7d60b8fd7336f772b16c",
+    "research-manifest.json_canonical_sha256": "747455a0bd9c3315dc4ba0441795ba744aebe786c9cb382456f4be59859a757f",
+    "byte_hashes_match_ledger_and_model": true
+  },
+  "commands": [
+    "uv sync --locked --python 3.12",
+    "$env:FALSIFY_NGSPICE = '<NGSPICE_DIR>/Spice64/bin/ngspice_con.exe'",
+    ".venv/Scripts/python.exe -m falsify_lab.cli reproduce --root runs/reproduction/<unique-name>",
+    ".venv/Scripts/python.exe <independent-read-only-checker> <repo> runs/reproduction/<unique-name> <live-demo-root>/model.json"
+  ],
+  "command_result": {
+    "exit_code": 0,
+    "ok": true,
+    "campaign_kind": "reproduce",
+    "label": "reproduction check",
+    "ledger_events": 217,
+    "ledger_hash_chain_verified": true,
+    "process_elapsed_seconds": 4.73
+  },
+  "frozen_model": {
+    "model_hash": "model_4ab7526d0104d745dd5a7e1f657b509dd7c0697ce0ed94b9131c523f4f4b4f56",
+    "model_json_sha256": "3f3382f81b952fdfdc427203324c4742b1ee28502d160210c1beb2f936d00369",
+    "form": "log(tpd/1ps) = b0 + bv*g(VDD) + bt*((T-27)/100) + bn*n + bp*p",
+    "design_rank": 5,
+    "coefficients": {
+      "b0": 3.918860912249162,
+      "bv": 1.9660157718870312,
+      "bt": 0.2551705986892426,
+      "bn": 0.0582409454198175,
+      "bp": 0.0628144435845478
+    },
+    "coefficients_hex": [
+      "0x1.f59d3bffd7688p+1",
+      "0x1.f74ccf43accc8p+0",
+      "0x1.054b7101158adp-2",
+      "0x1.dd1c1d7bb8370p-5",
+      "0x1.0149b7ce97d68p-4"
+    ],
+    "calibration_max_abs_relative_error": 0.0322830725221213,
+    "comparison_with_live_demo_root": {
+      "reference": "live demo root model.json (M3 root live-20261004-0817, read only)",
+      "model_hash_match": true,
+      "model_json_byte_sha256_match": true,
+      "coefficients_hex_match": true,
+      "calibration_tpd_match": true
+    }
+  },
+  "runs": [
+    {
+      "run_id": "reproduce-adaptive_idw_plus_distance-1001",
+      "status": "complete",
+      "termination_reason": "budget_spent",
+      "logical_queries": 24,
+      "phase_counts": {"calibration": 9, "initial": 3, "search": 12},
+      "decisions": 12,
+      "failures": 0,
+      "pending": 0,
+      "repeats": 0,
+      "initial_point_ids": ["SF|2.200|85.0", "FF|3.300|85.0", "SF|2.500|125.0"],
+      "initial_match_manifest": true,
+      "selection_point_ids": [
+        "FF|1.200|125.0", "FF|1.500|125.0", "FF|1.200|85.0", "FF|1.800|85.0",
+        "FF|1.500|27.0", "FF|2.500|125.0", "FS|1.500|125.0", "FS|1.500|85.0",
+        "FF|1.200|-40.0", "FF|2.200|85.0", "SF|1.200|125.0", "SF|1.500|125.0"
+      ],
+      "distinct_clear_counterexamples_gt_0_11": 4,
+      "distinct_secondary_counterexamples_gt_0_10": 5
+    },
+    {
+      "run_id": "reproduce-random-1001",
+      "status": "complete",
+      "termination_reason": "budget_spent",
+      "logical_queries": 24,
+      "phase_counts": {"calibration": 9, "initial": 3, "search": 12},
+      "decisions": 12,
+      "failures": 0,
+      "pending": 0,
+      "repeats": 0,
+      "initial_point_ids": ["SF|2.200|85.0", "FF|3.300|85.0", "SF|2.500|125.0"],
+      "initial_match_manifest": true,
+      "selection_point_ids": [
+        "FF|2.900|0.0", "TT|1.800|27.0", "SF|2.900|27.0", "SF|2.500|0.0",
+        "SF|2.900|125.0", "FS|2.200|85.0", "FS|2.900|0.0", "TT|1.500|0.0",
+        "TT|1.200|-40.0", "FS|2.200|125.0", "SF|3.300|27.0", "FF|1.200|125.0"
+      ],
+      "selection_follows_manifest_random_order": true,
+      "distinct_clear_counterexamples_gt_0_11": 2,
+      "distinct_secondary_counterexamples_gt_0_10": 2
+    }
+  ],
+  "outcome_count_check": {
+    "method": "Counts over the 15 search-phase queries (3 shared initial + 12 selected). Each tpd was recomputed from the stored raw ngspice .meas lines ((tphl+tplh)/2), the prediction recomputed from the frozen coefficients, and |e| compared with the ledger evaluation.",
+    "recompute_mismatches": 0,
+    "ledger_and_recomputed_counts_agree": true,
+    "interpretation": "One seed pair of a short reproduction check. Not the primary comparison and not evidence for or against H1."
+  },
+  "usage": {
+    "logical_queries": 57,
+    "logical_queries_breakdown": "9 campaign calibration + 24 adaptive + 24 random",
+    "physical_attempts": 35,
+    "attempts_by_purpose": {"calibration": 9, "reproduce": 26},
+    "successes": 35,
+    "failures": 0,
+    "unfinished_attempts": 0,
+    "cache_hits": 22,
+    "cache_hit_note": "Same-campaign, identical-fingerprint reuse: each run's 9 calibration queries, the random run's 3 shared initial queries, and one point both policies selected. Each still costs one logical query in its run.",
+    "simulation_seconds": 1.642662,
+    "policy_seconds": 0.311066,
+    "ledger_wall_seconds": 4.191398,
+    "caps": {"attempts_max": 1200, "wall_seconds_max": 3600.0}
+  },
+  "evidence_paths": {
+    "note": "Private local run root, not committed (runs/ is git-ignored). Only the numbers and hashes above are copied here.",
+    "root": "runs/reproduction/<unique-name>",
+    "files": ["ledger/events.jsonl", "model.json", "snapshot.json", "evidence/sims/<sim_id>.json", "attempts/<attempt_id>/netlist.cir"]
+  },
+  "not_checked": [
+    "Omnigent live loop and the scripts/run_live.py session proof (under separate repair)",
+    "primary benchmark, posthoc held-out reference, postflight, bootstrap statistics (M5 not started)",
+    "full test suite (not run; only the reproduce command and the independent read-only check above)",
+    "public repository and GitHub Pages demo (publication pending coordinator)"
+  ]
+}

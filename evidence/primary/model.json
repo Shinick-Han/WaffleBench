@@ -1,0 +1,94 @@
+{
+  "calibration": [
+    {
+      "point_id": "TT|1.200|27.0",
+      "result_id": "res_d834e26aaff3b6dd",
+      "sim_id": "sim_3d70f074382b7cde5f19",
+      "tpd_s": 1.96881e-10
+    },
+    {
+      "point_id": "TT|2.500|27.0",
+      "result_id": "res_49b38db05596ecb5",
+      "sim_id": "sim_0414b9a9c29f629a861c",
+      "tpd_s": 5.0553199999999995e-11
+    },
+    {
+      "point_id": "TT|3.300|27.0",
+      "result_id": "res_6c6fbeb94abf41c5",
+      "sim_id": "sim_9184ed255f8a5ec0181e",
+      "tpd_s": 3.592625e-11
+    },
+    {
+      "point_id": "TT|2.500|-40.0",
+      "result_id": "res_2a37fefb0c21fc17",
+      "sim_id": "sim_17b9615b89cf97ce1234",
+      "tpd_s": 4.1104749999999994e-11
+    },
+    {
+      "point_id": "TT|2.500|125.0",
+      "result_id": "res_85e434d896ba568a",
+      "sim_id": "sim_f1516b3aafabc432c011",
+      "tpd_s": 6.3257e-11
+    },
+    {
+      "point_id": "FF|2.500|27.0",
+      "result_id": "res_c87865863277dedf",
+      "sim_id": "sim_226809f6cf9c31e5e0ad",
+      "tpd_s": 4.5088200000000004e-11
+    },
+    {
+      "point_id": "SS|2.500|27.0",
+      "result_id": "res_1a2d6120d122e225",
+      "sim_id": "sim_99054a12e49e19c37b39",
+      "tpd_s": 5.7439449999999997e-11
+    },
+    {
+      "point_id": "FS|2.500|27.0",
+      "result_id": "res_9192fcd21b19866b",
+      "sim_id": "sim_6d0d06794abc1a7ada9f",
+      "tpd_s": 5.142615e-11
+    },
+    {
+      "point_id": "SF|2.500|27.0",
+      "result_id": "res_3e90e7b17ec3969a",
+      "sim_id": "sim_65d3600891546fa9918e",
+      "tpd_s": 5.09579e-11
+    }
+  ],
+  "coefficient_names": [
+    "b0",
+    "bv",
+    "bt",
+    "bn",
+    "bp"
+  ],
+  "coefficients": [
+    3.918860912249162,
+    1.9660157718870312,
+    0.2551705986892426,
+    0.0582409454198175,
+    0.0628144435845478
+  ],
+  "coefficients_hex": [
+    "0x1.f59d3bffd7688p+1",
+    "0x1.f74ccf43accc8p+0",
+    "0x1.054b7101158adp-2",
+    "0x1.dd1c1d7bb8370p-5",
+    "0x1.0149b7ce97d68p-4"
+  ],
+  "design_rank": 5,
+  "features": [
+    "intercept",
+    "log((V/(V-0.55)^1.3)/(2.5/(2.5-0.55)^1.3))",
+    "(T-27)/100",
+    "NMOS_dVt/0.05",
+    "PMOS_dVt/0.05"
+  ],
+  "fit": "unregularized ordinary least squares in log space, nine calibration points, never refit",
+  "form": "log(tpd/1ps) = b0 + bv*g(VDD) + bt*((T-27)/100) + bn*n + bp*p",
+  "g": "g(V) = log[(V/(V-0.55)^1.3) / (2.5/(2.5-0.55)^1.3)]",
+  "manifest_sha256": "8a9c760c6da7db8dcd769992cf73a255df9b1cad9f8e7d60b8fd7336f772b16c",
+  "model_hash": "model_4ab7526d0104d745dd5a7e1f657b509dd7c0697ce0ed94b9131c523f4f4b4f56",
+  "protocol_sha256": "45e04ba3feea0d0fea1ccf236530ee7168f061753d82c1bc8f9d0fc3dd473ff9",
+  "schema": "falsify-model-v1"
+}

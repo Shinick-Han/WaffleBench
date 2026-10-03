@@ -1,0 +1,23 @@
+# secrets
+.env
+.env.*
+*.key
+*.pem
+**/credentials*.json
+
+# runtime / logs
+.omnigent-runtime/
+.omnigent/
+runs/
+*.log
+!evidence/live/attempts/**/*.log
+!evidence/primary/attempts/**/*.log
+__pycache__/
+.venv/
+
+# downloaded binaries (re-fetch per README; verify MD5)
+tools/downloads/
+tools/ngspice-47/
+
+# generated (absolute paths), re-rendered by launch.ps1 -Setup
+agent/agents/*/tools/mcp/falsify.yaml

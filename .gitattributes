@@ -1,0 +1,12 @@
+* text=auto eol=lf
+research-manifest.json -text
+mockup/index.html -text
+evidence/**/*.json -text
+evidence/**/*.jsonl -text
+evidence/**/*.cir -text
+evidence/**/*.log -text
+*.png binary
+*.jpg binary
+*.webp binary
+*.mp4 binary
+*.mov binary

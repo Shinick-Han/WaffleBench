@@ -1,0 +1,1062 @@
+{
+ "schema_version": 1,
+ "data_mode": "fixture",
+ "generated_at": "2026-10-04T01:05:00Z",
+ "project": "Falsify Lab UI FIXTURE",
+ "protocol_hash": "fixture",
+ "limitations": [
+  "SYNTHETIC UI FIXTURE. Not research output. Never cite.",
+  "FIXTURE: trace uses global ledger numbering (40..170) unrelated to run-local decision numbering (1, 2).",
+  "FIXTURE: incomplete benchmark runs carry artificially high counts to prove they are excluded from exported means."
+ ],
+ "run": {
+  "run_id": "FIXTURE-RUN",
+  "kind": "fixture",
+  "policy": "adaptive_idw_plus_distance",
+  "seed": 1001,
+  "status": "fixture",
+  "model_hash": "fixture-model",
+  "budget": {
+   "limit": 24,
+   "used": 14,
+   "remaining": 10
+  },
+  "termination_reason": null
+ },
+ "model": {
+  "model_hash": "fixture-model",
+  "coefficients": null,
+  "calibration_result_ids": [
+   "FIXTURE-R01",
+   "FIXTURE-R02"
+  ],
+  "form": "FIXTURE"
+ },
+ "observations": [
+  {
+   "result_id": "FIXTURE-R01",
+   "point_id": "TT|2.500|27.0",
+   "pvt": {
+    "corner": "TT",
+    "vdd": 2.5,
+    "temp_c": 27.0
+   },
+   "phase": "calibration",
+   "tphl_s": 9.5475e-11,
+   "tplh_s": 1.05525e-10,
+   "tpd_s": 1.005e-10,
+   "cache_hit": false,
+   "wall_time_s": 0.5,
+   "provenance": {
+    "netlist_sha256": "fixture-not-a-real-hash",
+    "simulator": "FIXTURE (no simulator)",
+    "raw_meas_lines": [
+     "tphl = FIXTURE",
+     "tplh = FIXTURE"
+    ]
+   }
+  },
+  {
+   "result_id": "FIXTURE-R02",
+   "point_id": "SS|2.500|27.0",
+   "pvt": {
+    "corner": "SS",
+    "vdd": 2.5,
+    "temp_c": 27.0
+   },
+   "phase": "calibration",
+   "tphl_s": 1.311e-10,
+   "tplh_s": 1.4489999999999999e-10,
+   "tpd_s": 1.38e-10,
+   "cache_hit": false,
+   "wall_time_s": 0.5,
+   "provenance": {
+    "netlist_sha256": "fixture-not-a-real-hash",
+    "simulator": "FIXTURE (no simulator)",
+    "raw_meas_lines": [
+     "tphl = FIXTURE",
+     "tplh = FIXTURE"
+    ]
+   }
+  },
+  {
+   "result_id": "FIXTURE-R03",
+   "point_id": "SF|2.200|85.0",
+   "pvt": {
+    "corner": "SF",
+    "vdd": 2.2,
+    "temp_c": 85.0
+   },
+   "phase": "initial",
+   "tphl_s": 1.2445e-10,
+   "tplh_s": 1.3755000000000003e-10,
+   "tpd_s": 1.31e-10,
+   "cache_hit": false,
+   "wall_time_s": 0.5,
+   "provenance": {
+    "netlist_sha256": "fixture-not-a-real-hash",
+    "simulator": "FIXTURE (no simulator)",
+    "raw_meas_lines": [
+     "tphl = FIXTURE",
+     "tplh = FIXTURE"
+    ]
+   }
+  },
+  {
+   "result_id": "FIXTURE-R04",
+   "point_id": "SS|1.500|85.0",
+   "pvt": {
+    "corner": "SS",
+    "vdd": 1.5,
+    "temp_c": 85.0
+   },
+   "phase": "search",
+   "tphl_s": 2.28e-10,
+   "tplh_s": 2.52e-10,
+   "tpd_s": 2.4e-10,
+   "cache_hit": false,
+   "wall_time_s": 0.5,
+   "provenance": {
+    "netlist_sha256": "fixture-not-a-real-hash",
+    "simulator": "FIXTURE (no simulator)",
+    "raw_meas_lines": [
+     "tphl = FIXTURE",
+     "tplh = FIXTURE"
+    ]
+   }
+  },
+  {
+   "result_id": "FIXTURE-R05",
+   "point_id": "SS|1.200|85.0",
+   "pvt": {
+    "corner": "SS",
+    "vdd": 1.2,
+    "temp_c": 85.0
+   },
+   "phase": "search",
+   "tphl_s": 3.135e-10,
+   "tplh_s": 3.465e-10,
+   "tpd_s": 3.3e-10,
+   "cache_hit": false,
+   "wall_time_s": 0.5,
+   "provenance": {
+    "netlist_sha256": "fixture-not-a-real-hash",
+    "simulator": "FIXTURE (no simulator)",
+    "raw_meas_lines": [
+     "tphl = FIXTURE",
+     "tplh = FIXTURE"
+    ]
+   }
+  },
+  {
+   "result_id": "FIXTURE-R06",
+   "point_id": "SS|1.500|125.0",
+   "pvt": {
+    "corner": "SS",
+    "vdd": 1.5,
+    "temp_c": 125.0
+   },
+   "phase": "held_out",
+   "tphl_s": 2.375e-10,
+   "tplh_s": 2.625e-10,
+   "tpd_s": 2.5e-10,
+   "cache_hit": false,
+   "wall_time_s": 0.5,
+   "provenance": {
+    "netlist_sha256": "fixture-not-a-real-hash",
+    "simulator": "FIXTURE (no simulator)",
+    "raw_meas_lines": [
+     "tphl = FIXTURE",
+     "tplh = FIXTURE"
+    ]
+   }
+  }
+ ],
+ "evaluations": [
+  {
+   "result_id": "FIXTURE-R01",
+   "point_id": "TT|2.500|27.0",
+   "pvt": {
+    "corner": "TT",
+    "vdd": 2.5,
+    "temp_c": 27.0
+   },
+   "model_hash": "fixture-model",
+   "predicted_tpd_s": 1e-10,
+   "simulated_tpd_s": 1.005e-10,
+   "relative_error": -0.004975124378109435,
+   "abs_relative_error": 0.004975124378109435,
+   "clear_counterexample": false,
+   "secondary_counterexample": false
+  },
+  {
+   "result_id": "FIXTURE-R02",
+   "point_id": "SS|2.500|27.0",
+   "pvt": {
+    "corner": "SS",
+    "vdd": 2.5,
+    "temp_c": 27.0
+   },
+   "model_hash": "fixture-model",
+   "predicted_tpd_s": 1.4e-10,
+   "simulated_tpd_s": 1.38e-10,
+   "relative_error": 0.014492753623188545,
+   "abs_relative_error": 0.014492753623188545,
+   "clear_counterexample": false,
+   "secondary_counterexample": false
+  },
+  {
+   "result_id": "FIXTURE-R03",
+   "point_id": "SF|2.200|85.0",
+   "pvt": {
+    "corner": "SF",
+    "vdd": 2.2,
+    "temp_c": 85.0
+   },
+   "model_hash": "fixture-model",
+   "predicted_tpd_s": 1.2e-10,
+   "simulated_tpd_s": 1.31e-10,
+   "relative_error": -0.08396946564885506,
+   "abs_relative_error": 0.08396946564885506,
+   "clear_counterexample": false,
+   "secondary_counterexample": false
+  },
+  {
+   "result_id": "FIXTURE-R04",
+   "point_id": "SS|1.500|85.0",
+   "pvt": {
+    "corner": "SS",
+    "vdd": 1.5,
+    "temp_c": 85.0
+   },
+   "model_hash": "fixture-model",
+   "predicted_tpd_s": 2e-10,
+   "simulated_tpd_s": 2.4e-10,
+   "relative_error": -0.16666666666666663,
+   "abs_relative_error": 0.16666666666666663,
+   "clear_counterexample": true,
+   "secondary_counterexample": true
+  },
+  {
+   "result_id": "FIXTURE-R05",
+   "point_id": "SS|1.200|85.0",
+   "pvt": {
+    "corner": "SS",
+    "vdd": 1.2,
+    "temp_c": 85.0
+   },
+   "model_hash": "fixture-model",
+   "predicted_tpd_s": 2.6e-10,
+   "simulated_tpd_s": 3.3e-10,
+   "relative_error": -0.21212121212121218,
+   "abs_relative_error": 0.21212121212121218,
+   "clear_counterexample": true,
+   "secondary_counterexample": true
+  },
+  {
+   "result_id": "FIXTURE-R06",
+   "point_id": "SS|1.500|125.0",
+   "pvt": {
+    "corner": "SS",
+    "vdd": 1.5,
+    "temp_c": 125.0
+   },
+   "model_hash": "fixture-model",
+   "predicted_tpd_s": 2.2e-10,
+   "simulated_tpd_s": 2.5e-10,
+   "relative_error": -0.12000000000000009,
+   "abs_relative_error": 0.12000000000000009,
+   "clear_counterexample": true,
+   "secondary_counterexample": true
+  }
+ ],
+ "decisions": [
+  {
+   "sequence": 1,
+   "evidence_result_ids": [
+    "FIXTURE-R01",
+    "FIXTURE-R02",
+    "FIXTURE-R03"
+   ],
+   "candidates": [
+    {
+     "point_id": "SS|1.500|85.0",
+     "pvt": {
+      "corner": "SS",
+      "vdd": 1.5,
+      "temp_c": 85.0
+     },
+     "role": "exploitation",
+     "score": 0.2,
+     "idw_predicted_abs_error": 0.15,
+     "min_normalized_distance": 0.3,
+     "cost_queries": 1
+    },
+    {
+     "point_id": "FF|2.900|-40.0",
+     "pvt": {
+      "corner": "FF",
+      "vdd": 2.9,
+      "temp_c": -40.0
+     },
+     "role": "exploration",
+     "score": 0.15,
+     "idw_predicted_abs_error": 0.05,
+     "min_normalized_distance": 0.9,
+     "cost_queries": 1
+    }
+   ],
+   "selected_point_id": "SS|1.500|85.0",
+   "remaining_budget": 12,
+   "rank_before": null,
+   "rank_after": [
+    "SS|1.500|85.0"
+   ],
+   "selection_changed": null,
+   "observed_result_id": "FIXTURE-R04",
+   "actor": "deterministic runner",
+   "post_result_update": {
+    "observed_result_id": "FIXTURE-R04",
+    "rank_before": [
+     "FF|2.900|-40.0"
+    ],
+    "rank_after": [
+     "SS|1.200|85.0"
+    ],
+    "selection_changed": true,
+    "next_candidates": [
+     {
+      "point_id": "SS|1.200|85.0",
+      "pvt": {
+       "corner": "SS",
+       "vdd": 1.2,
+       "temp_c": 85.0
+      },
+      "role": "exploitation",
+      "score": 0.3,
+      "idw_predicted_abs_error": 0.2,
+      "min_normalized_distance": 0.2,
+      "cost_queries": 1
+     },
+     {
+      "point_id": "TT|3.300|-40.0",
+      "pvt": {
+       "corner": "TT",
+       "vdd": 3.3,
+       "temp_c": -40.0
+      },
+      "role": "exploration",
+      "score": 0.12,
+      "idw_predicted_abs_error": 0.03,
+      "min_normalized_distance": 1.0,
+      "cost_queries": 1
+     }
+    ]
+   }
+  },
+  {
+   "sequence": 2,
+   "evidence_result_ids": [
+    "FIXTURE-R01",
+    "FIXTURE-R02",
+    "FIXTURE-R03",
+    "FIXTURE-R04"
+   ],
+   "candidates": [
+    {
+     "point_id": "SS|1.200|85.0",
+     "pvt": {
+      "corner": "SS",
+      "vdd": 1.2,
+      "temp_c": 85.0
+     },
+     "role": "exploitation",
+     "score": 0.3,
+     "idw_predicted_abs_error": 0.2,
+     "min_normalized_distance": 0.2,
+     "cost_queries": 1
+    },
+    {
+     "point_id": "TT|3.300|-40.0",
+     "pvt": {
+      "corner": "TT",
+      "vdd": 3.3,
+      "temp_c": -40.0
+     },
+     "role": "exploration",
+     "score": 0.12,
+     "idw_predicted_abs_error": 0.03,
+     "min_normalized_distance": 1.0,
+     "cost_queries": 1
+    }
+   ],
+   "selected_point_id": "SS|1.200|85.0",
+   "remaining_budget": 11,
+   "rank_before": [
+    "FF|2.900|-40.0"
+   ],
+   "rank_after": [
+    "SS|1.200|85.0"
+   ],
+   "selection_changed": true,
+   "observed_result_id": "FIXTURE-R05",
+   "actor": "deterministic runner"
+  }
+ ],
+ "trace": [
+  {
+   "sequence": 40,
+   "actor": "deterministic runner",
+   "action": "campaign_created",
+   "result_ids": [],
+   "detail": "FIXTURE <b>escaped</b>",
+   "timestamp": "2026-10-04T01:00:00Z"
+  },
+  {
+   "sequence": 45,
+   "actor": "deterministic runner",
+   "action": "model_frozen",
+   "result_ids": [
+    "FIXTURE-R01",
+    "FIXTURE-R02"
+   ],
+   "detail": {},
+   "timestamp": "2026-10-04T01:00:00Z"
+  },
+  {
+   "sequence": 48,
+   "actor": "deterministic runner",
+   "action": "query_result",
+   "result_ids": [
+    "FIXTURE-R03"
+   ],
+   "detail": {
+    "phase": "initial",
+    "point_id": "SF|2.200|85.0",
+    "status": "success"
+   },
+   "timestamp": "2026-10-04T01:00:00Z"
+  },
+  {
+   "sequence": 50,
+   "actor": "deterministic runner",
+   "action": "decision",
+   "result_ids": [],
+   "detail": {
+    "selected_point_id": "SS|1.500|85.0"
+   },
+   "timestamp": "2026-10-04T01:01:00Z"
+  },
+  {
+   "sequence": 55,
+   "actor": "Omnigent supervisor (FIXTURE)",
+   "action": "handoff",
+   "result_ids": [],
+   "detail": {
+    "decision_sequence": 1,
+    "note": "FIXTURE request observation"
+   },
+   "timestamp": "2026-10-04T01:01:00Z"
+  },
+  {
+   "sequence": 70,
+   "actor": "deterministic runner",
+   "action": "query_result",
+   "result_ids": [
+    "FIXTURE-R04"
+   ],
+   "detail": {
+    "phase": "search",
+    "point_id": "SS|1.500|85.0",
+    "status": "success"
+   },
+   "timestamp": "2026-10-04T01:02:00Z"
+  },
+  {
+   "sequence": 75,
+   "actor": "Omnigent analyst (FIXTURE)",
+   "action": "post_result_update",
+   "result_ids": [
+    "FIXTURE-R04"
+   ],
+   "detail": {
+    "decision_sequence": 1
+   },
+   "timestamp": "2026-10-04T01:02:00Z"
+  },
+  {
+   "sequence": 98,
+   "actor": "Omnigent supervisor (FIXTURE)",
+   "action": "handoff",
+   "result_ids": [],
+   "detail": {
+    "decision_sequence": 2,
+    "note": "FIXTURE request observation"
+   },
+   "timestamp": "2026-10-04T01:03:00Z"
+  },
+  {
+   "sequence": 100,
+   "actor": "deterministic runner",
+   "action": "decision",
+   "result_ids": [],
+   "detail": {
+    "selected_point_id": "SS|1.200|85.0"
+   },
+   "timestamp": "2026-10-04T01:03:00Z"
+  },
+  {
+   "sequence": 150,
+   "actor": "deterministic runner",
+   "action": "query_result",
+   "result_ids": [
+    "FIXTURE-R05"
+   ],
+   "detail": {
+    "phase": "search",
+    "point_id": "SS|1.200|85.0",
+    "status": "success"
+   },
+   "timestamp": "2026-10-04T01:04:00Z"
+  },
+  {
+   "sequence": 160,
+   "actor": "deterministic runner",
+   "action": "run_closed",
+   "result_ids": [],
+   "detail": {
+    "status": "fixture",
+    "termination_reason": "FIXTURE"
+   },
+   "timestamp": "2026-10-04T01:04:00Z"
+  },
+  {
+   "sequence": 170,
+   "actor": "deterministic runner",
+   "action": "posthoc_completed",
+   "result_ids": [
+    "FIXTURE-R06"
+   ],
+   "detail": {},
+   "timestamp": "2026-10-04T01:05:00Z"
+  }
+ ],
+ "coverage": [
+  {
+   "point_id": "TT|2.500|27.0",
+   "pvt": {
+    "corner": "TT",
+    "vdd": 2.5,
+    "temp_c": 27.0
+   },
+   "state": "calibration",
+   "predicted_tpd_s": 1e-10,
+   "observed_tpd_s": 1.005e-10,
+   "abs_relative_error": 0.004975124378109435,
+   "result_id": "FIXTURE-R01"
+  },
+  {
+   "point_id": "SS|2.500|27.0",
+   "pvt": {
+    "corner": "SS",
+    "vdd": 2.5,
+    "temp_c": 27.0
+   },
+   "state": "calibration",
+   "predicted_tpd_s": 1.4e-10,
+   "observed_tpd_s": 1.38e-10,
+   "abs_relative_error": 0.014492753623188545,
+   "result_id": "FIXTURE-R02"
+  },
+  {
+   "point_id": "SF|2.200|85.0",
+   "pvt": {
+    "corner": "SF",
+    "vdd": 2.2,
+    "temp_c": 85.0
+   },
+   "state": "observed",
+   "predicted_tpd_s": 1.2e-10,
+   "observed_tpd_s": 1.31e-10,
+   "abs_relative_error": 0.08396946564885506,
+   "result_id": "FIXTURE-R03"
+  },
+  {
+   "point_id": "SS|1.500|85.0",
+   "pvt": {
+    "corner": "SS",
+    "vdd": 1.5,
+    "temp_c": 85.0
+   },
+   "state": "observed",
+   "predicted_tpd_s": 2e-10,
+   "observed_tpd_s": 2.4e-10,
+   "abs_relative_error": 0.16666666666666663,
+   "result_id": "FIXTURE-R04"
+  },
+  {
+   "point_id": "SS|1.200|85.0",
+   "pvt": {
+    "corner": "SS",
+    "vdd": 1.2,
+    "temp_c": 85.0
+   },
+   "state": "observed",
+   "predicted_tpd_s": 2.6e-10,
+   "observed_tpd_s": 3.3e-10,
+   "abs_relative_error": 0.21212121212121218,
+   "result_id": "FIXTURE-R05"
+  },
+  {
+   "point_id": "SS|1.500|125.0",
+   "pvt": {
+    "corner": "SS",
+    "vdd": 1.5,
+    "temp_c": 125.0
+   },
+   "state": "held_out",
+   "predicted_tpd_s": 2.2e-10,
+   "observed_tpd_s": 2.5e-10,
+   "abs_relative_error": 0.12000000000000009,
+   "result_id": "FIXTURE-R06"
+  }
+ ],
+ "benchmark": {
+  "status": "fixture",
+  "policies": [
+   {
+    "id": "adaptive_idw_plus_distance",
+    "label": "FIXTURE adaptive",
+    "runs": [
+     {
+      "seed": 1001,
+      "status": "complete",
+      "clear_count": 7,
+      "secondary_count": 7,
+      "cumulative_clear": [
+       0,
+       1,
+       1,
+       2,
+       2,
+       3,
+       3,
+       4,
+       4,
+       5,
+       5,
+       6,
+       6,
+       7,
+       7
+      ],
+      "first_clear_query": null,
+      "fifth_clear_query": null,
+      "selection_point_ids": [],
+      "cost": null
+     },
+     {
+      "seed": 1002,
+      "status": "complete",
+      "clear_count": 5,
+      "secondary_count": 5,
+      "cumulative_clear": [
+       0,
+       0,
+       1,
+       1,
+       1,
+       2,
+       2,
+       2,
+       3,
+       3,
+       3,
+       4,
+       4,
+       4,
+       5
+      ],
+      "first_clear_query": null,
+      "fifth_clear_query": null,
+      "selection_point_ids": [],
+      "cost": null
+     },
+     {
+      "seed": 1003,
+      "status": "incomplete",
+      "clear_count": 15,
+      "secondary_count": 15,
+      "cumulative_clear": [
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9,
+       10,
+       11,
+       12,
+       13,
+       14,
+       15
+      ],
+      "first_clear_query": null,
+      "fifth_clear_query": null,
+      "selection_point_ids": [],
+      "cost": null
+     }
+    ],
+    "mean_cumulative_clear": [
+     0.0,
+     0.5,
+     1.0,
+     1.5,
+     1.5,
+     2.5,
+     2.5,
+     3.0,
+     3.5,
+     4.0,
+     4.0,
+     5.0,
+     5.0,
+     5.5,
+     6.0
+    ],
+    "complete_runs": 2
+   },
+   {
+    "id": "random",
+    "label": "FIXTURE random",
+    "runs": [
+     {
+      "seed": 1001,
+      "status": "complete",
+      "clear_count": 5,
+      "secondary_count": 5,
+      "cumulative_clear": [
+       0,
+       0,
+       1,
+       1,
+       1,
+       2,
+       2,
+       2,
+       3,
+       3,
+       3,
+       4,
+       4,
+       4,
+       5
+      ],
+      "first_clear_query": null,
+      "fifth_clear_query": null,
+      "selection_point_ids": [],
+      "cost": null
+     },
+     {
+      "seed": 1002,
+      "status": "complete",
+      "clear_count": 3,
+      "secondary_count": 3,
+      "cumulative_clear": [
+       0,
+       0,
+       0,
+       1,
+       1,
+       1,
+       1,
+       2,
+       2,
+       2,
+       2,
+       3,
+       3,
+       3,
+       3
+      ],
+      "first_clear_query": null,
+      "fifth_clear_query": null,
+      "selection_point_ids": [],
+      "cost": null
+     },
+     {
+      "seed": 1003,
+      "status": "incomplete",
+      "clear_count": 3,
+      "secondary_count": 3,
+      "cumulative_clear": [
+       0,
+       0,
+       0,
+       0,
+       1,
+       1,
+       1,
+       1,
+       1,
+       2,
+       2,
+       2,
+       2,
+       2,
+       3
+      ],
+      "first_clear_query": null,
+      "fifth_clear_query": null,
+      "selection_point_ids": [],
+      "cost": null
+     }
+    ],
+    "mean_cumulative_clear": [
+     0.0,
+     0.0,
+     0.5,
+     1.0,
+     1.0,
+     1.5,
+     1.5,
+     2.0,
+     2.5,
+     2.5,
+     2.5,
+     3.5,
+     3.5,
+     3.5,
+     4.0
+    ],
+    "complete_runs": 2
+   },
+   {
+    "id": "space_filling",
+    "label": "FIXTURE space filling",
+    "runs": [
+     {
+      "seed": 1001,
+      "status": "incomplete",
+      "clear_count": 15,
+      "secondary_count": 15,
+      "cumulative_clear": [
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       7,
+       8,
+       9,
+       10,
+       11,
+       12,
+       13,
+       14,
+       15
+      ],
+      "first_clear_query": null,
+      "fifth_clear_query": null,
+      "selection_point_ids": [],
+      "cost": null
+     },
+     {
+      "seed": 1002,
+      "status": "incomplete",
+      "clear_count": 3,
+      "secondary_count": 3,
+      "cumulative_clear": [
+       0,
+       0,
+       0,
+       0,
+       1,
+       1,
+       1,
+       1,
+       1,
+       2,
+       2,
+       2,
+       2,
+       2,
+       3
+      ],
+      "first_clear_query": null,
+      "fifth_clear_query": null,
+      "selection_point_ids": [],
+      "cost": null
+     },
+     {
+      "seed": 1003,
+      "status": "incomplete",
+      "clear_count": 2,
+      "secondary_count": 2,
+      "cumulative_clear": [
+       0,
+       0,
+       0,
+       0,
+       0,
+       1,
+       1,
+       1,
+       1,
+       1,
+       1,
+       2,
+       2,
+       2,
+       2
+      ],
+      "first_clear_query": null,
+      "fifth_clear_query": null,
+      "selection_point_ids": [],
+      "cost": null
+     }
+    ],
+    "mean_cumulative_clear": null,
+    "complete_runs": 0
+   },
+   {
+    "id": "idw_without_distance",
+    "label": "FIXTURE no distance",
+    "runs": [
+     {
+      "seed": 1001,
+      "status": "complete",
+      "clear_count": 5,
+      "secondary_count": 5,
+      "cumulative_clear": [
+       0,
+       0,
+       1,
+       1,
+       1,
+       2,
+       2,
+       2,
+       3,
+       3,
+       3,
+       4,
+       4,
+       4,
+       5
+      ],
+      "first_clear_query": null,
+      "fifth_clear_query": null,
+      "selection_point_ids": [],
+      "cost": null
+     },
+     {
+      "seed": 1002,
+      "status": "complete",
+      "clear_count": 3,
+      "secondary_count": 3,
+      "cumulative_clear": [
+       0,
+       0,
+       0,
+       1,
+       1,
+       1,
+       1,
+       2,
+       2,
+       2,
+       2,
+       3,
+       3,
+       3,
+       3
+      ],
+      "first_clear_query": null,
+      "fifth_clear_query": null,
+      "selection_point_ids": [],
+      "cost": null
+     },
+     {
+      "seed": 1003,
+      "status": "incomplete",
+      "clear_count": 3,
+      "secondary_count": 3,
+      "cumulative_clear": [
+       0,
+       0,
+       0,
+       0,
+       1,
+       1,
+       1,
+       1,
+       1,
+       2,
+       2,
+       2,
+       2,
+       2,
+       3
+      ],
+      "first_clear_query": null,
+      "fifth_clear_query": null,
+      "selection_point_ids": [],
+      "cost": null
+     }
+    ],
+    "mean_cumulative_clear": [
+     0.0,
+     0.0,
+     0.5,
+     1.0,
+     1.0,
+     1.5,
+     1.5,
+     2.0,
+     2.5,
+     2.5,
+     2.5,
+     3.5,
+     3.5,
+     3.5,
+     4.0
+    ],
+    "complete_runs": 2
+   }
+  ],
+  "primary": {
+   "complete_pairs": 2,
+   "paired_differences": [
+    {
+     "seed": 1001,
+     "a": 7,
+     "b": 5,
+     "difference": 2
+    },
+    {
+     "seed": 1002,
+     "a": 5,
+     "b": 3,
+     "difference": 2
+    }
+   ],
+   "mean_difference": null,
+   "ci95": null,
+   "success": null,
+   "reason": "FIXTURE: fewer than 10 complete pairs; no success judgement."
+  },
+  "secondary_comparisons": null,
+  "held_out": null,
+  "reference": null,
+  "cost": null,
+  "limitations": [
+   "FIXTURE data for UI tests only."
+  ]
+ },
+ "cost": null
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "data_mode": "real",
+  "generated_at": null,
+  "project": "Falsify Lab Adaptive Circuit Experiments",
+  "protocol_hash": "45e04ba3feea0d0fea1ccf236530ee7168f061753d82c1bc8f9d0fc3dd473ff9",
+  "limitations": [
+    "No stored evidence has been exported yet. This placeholder contains no observations, evaluations, decisions, trace records or benchmark results."
+  ],
+  "empty_reason": "no_export_yet",
+  "run": null,
+  "model": null,
+  "observations": [],
+  "evaluations": [],
+  "decisions": [],
+  "trace": [],
+  "coverage": [],
+  "benchmark": null,
+  "cost": null
+}
