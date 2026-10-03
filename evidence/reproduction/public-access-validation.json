@@ -1,0 +1,15 @@
+{
+  "verified_at": "2026-10-03T23:47:57.460Z",
+  "anonymous_browser_context": true,
+  "initial_cookies": [],
+  "demo_http_status": 200,
+  "repository_http_status": 200,
+  "repository_public": true,
+  "license": "MIT",
+  "snapshot_sha256": "f6d56930a1b7a483d8ff751c4620eae262c584307f1eb65207f9fe86a09e2c90",
+  "snapshot_matches_release": true,
+  "exported_json_byte_matches": true,
+  "download_filename": "falsify-lab-snapshot-20261003T2341380000.json",
+  "public_api_probes": [],
+  "browser_checks": "checks.json: three views at 390 and 1440px, keyboard, dialog, filters and all actual replay stages passed"
+}

@@ -712,7 +712,7 @@
     "RESEARCH_PROTOCOL.md": "45e04ba3feea0d0fea1ccf236530ee7168f061753d82c1bc8f9d0fc3dd473ff9",
     "RESULTS.md": "f0c8222a8d8ca9e7a778e70cedad68b618749dedd1c5441948b9a2d05afb39bd",
     "scripts/offline_smoke.py": "af8b32a845a4e4d7acbb1198b11747895e5b9a243b368db68b8d07a401f70a79",
-    "scripts/package_release.py": "b077c4d015200273a2ac524fabce8afb54baf11d651c15c484699c791d28ced6",
+    "scripts/package_release.py": "d6b67aa2ba61879151cf7c8e3051ba12d8aac8b82a0b8a24eaed1c6b27e73074",
     "scripts/run_live.py": "ba48af13c484c27f5db064b67fadcc92e3f8d316f612c744a19290c0749da595",
     "scripts/serve_app.py": "41ac5ccb8c6b847e8646327b7ced0b40341d984e0d90c1a0a7562cfbf8a3d8a9",
     "scripts/validate_agent.py": "ffc8273eb18ab7712a02a131d1e353b19b4d4a26134fda45e2ee084da457086f",
@@ -734,6 +734,8 @@
     "web/data/snapshot.json": "644d7eaa5238e5a7bbd04ac2eec60f220dca54ac922f3cd7c8a8b4319c00a5dd",
     "web/index.html": "a585d768d406c7c300e0354e5466b370ade39abc61ae264fe4b6e51d23cb792a",
     "web/tests/fixtures/snapshot.fixture.json": "bc48b0f7d6d2d15c31dc228a0e95a9e5b42bb68dde512bcc121b6582b527c960",
-    "web/tests/ui_check.mjs": "e35e39793eba904170dd92223d2150690f2aa8eadf2fb612de10d0baf51941c0"
+    "web/tests/ui_check.mjs": "e35e39793eba904170dd92223d2150690f2aa8eadf2fb612de10d0baf51941c0",
+    "evidence/reproduction/public-clone-validation.json": "b193d9174efa2b25ace6fddb63bb12fbc1d8666e7446e7abb3b2c45bd1345b9b",
+    "evidence/reproduction/public-access-validation.json": "48a4de4278318f503e7d22a8399674f31de907c1f164752ddcf8179df67da2bb"
   }
 }

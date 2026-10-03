@@ -93,6 +93,11 @@ def main() -> None:
             raise RuntimeError(f"Campaign {key} mismatch")
     if ls["model"]["model_hash"] != ps["model"]["model_hash"]:
         raise RuntimeError("Live and primary frozen models differ")
+    combined_attempts = ls["cost"]["attempts"] + ps["cost"]["attempts"]
+    le, pe = live.events(), primary.events()
+    combined_wall = max(le[-1]["unix"], pe[-1]["unix"]) - min(le[0]["unix"], pe[0]["unix"])
+    if combined_attempts > min(ls["cost"]["caps"]["attempts_max"], ps["cost"]["caps"]["attempts_max"]) or combined_wall > min(ls["cost"]["caps"]["wall_seconds_max"], ps["cost"]["caps"]["wall_seconds_max"]):
+        raise RuntimeError("Combined research execution exceeds the frozen cap")
     destination = args.destination.resolve()
     if destination.exists():
         raise RuntimeError("Use a fresh staging directory; existing releases are never overwritten")
@@ -116,7 +121,10 @@ def main() -> None:
             copy_source(path, target)
     copy_campaign(args.live_root.resolve(), destination / "evidence" / "live")
     copy_campaign(args.primary_root.resolve(), destination / "evidence" / "primary")
-    shutil.copyfile(PROJECT / "evidence" / "milestones" / "M5-independent-audit.json", destination / "evidence" / "primary" / "independent-audit.json")
+    audit = PROJECT / "evidence" / "milestones" / "M5-independent-audit.json"
+    if not audit.is_file():
+        audit = args.primary_root.resolve() / "independent-audit.json"
+    shutil.copyfile(audit, destination / "evidence" / "primary" / "independent-audit.json")
     reproduction = PROJECT / "evidence" / "reproduction" / "validation.json"
     if reproduction.is_file():
         target = destination / "evidence" / "reproduction" / "validation.json"
@@ -133,6 +141,7 @@ def main() -> None:
         "primary_cost": ps["cost"],
         "live_campaign": ls["campaign"],
         "live_cost": ls["cost"],
+        "aggregate_research_usage": {"physical_attempts": combined_attempts, "first_to_last_event_seconds": round(combined_wall, 6)},
         "published_at": datetime.now(timezone.utc).isoformat(),
     }
     combined["limitations"].insert(0, "Recorded live workbench and separate primary benchmark. snapshot.cost is live-only; benchmark.cost includes the primary campaign and its posthoc reference. No remote execution is provided.")
