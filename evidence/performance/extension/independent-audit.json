@@ -7,6 +7,12 @@
   "verified_raw_measurements": 452,
   "logical_queries_including_model_fit": 4347,
   "cache_hits": 3958,
+  "heldout_numerical_preflight_only": {
+    "point_id": "FS|1.800|85.0",
+    "physical_attempts": 9,
+    "search_queries": 0,
+    "selection_evidence_rows": 0
+  },
   "worlds": [
     {
       "load_ff": 20,

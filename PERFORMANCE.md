@@ -60,7 +60,10 @@ plan before running new simulations. It fixes loads of 20, 8 and 35 fF, twenty
 new seeds (2001–2020), three policies, and 24 logical queries per run. The initial
 three search points are shared across policies within each seed. Each load
 recalibrates the same five-coefficient delay-model form on the same nine points
-once, then freezes it throughout search. Held-out truth is never queried.
+once, then freezes it throughout search. Search never queries held-out points.
+The frozen numerical preflight separately measures one held-out point,
+FS / 1.8 V / 85 °C, in three settings per load. Those nine physical attempts
+are stored as restricted numerical evidence and never enter selection evidence.
 
 The proposal uses an RBF error interpolator with fixed normalized-coordinate
 length scales (0.6, 0.6, 0.25, 0.5), ridge 0.0001, and a dispersion bonus of 0.05.
@@ -93,6 +96,10 @@ from the immutable ledger, including the extension's query and decision events.
 No observations or decisions were changed. The [plan](evidence/performance/extension/plan.json)
 binds the exact [executed source](evidence/performance/extension/executed_source),
 including the earlier exporter; today's runner fixes its cost accounting.
+The original plan/export also said "no held-out truth queried" too broadly:
+that holds for search, while restricted numerical preflight measures the one
+point described above. The corrected report clarifies this scope without
+rewriting the original plan or ledger.
 [Independent audit](evidence/performance/extension/independent-audit.json).
 
 All three loads belong to the same generic Level-1 inverter family. Twenty seeds

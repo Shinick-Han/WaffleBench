@@ -76,6 +76,11 @@ def audit(root: Path) -> dict:
                    proto.manifest_sha256).to_dict() == model.to_dict()
         assert c.events("model_frozen")[0]["seq"] < c.events("extension_run_opened")[0]["seq"]
         admitted = {e["payload"]["attempt_id"]: e["payload"] for e in c.events("attempt_admitted")}
+        held_numerical = [a for a in admitted.values() if Point.parse(a["point_id"]) in proto.held_out]
+        assert len(held_numerical) == 3
+        assert {a["point_id"] for a in held_numerical} == {"FS|1.800|85.0"}
+        assert {a["setting"] for a in held_numerical} == {"basic", "half", "tight"}
+        assert all(a["purpose"] == "preflight" for a in held_numerical)
         sims = {}
         for e in c.events("attempt_finished"):
             p = e["payload"]
@@ -181,7 +186,10 @@ def audit(root: Path) -> dict:
     return {"ok": True, "scope": "Exploratory; primary result unchanged", "plan_hash": plan_hash,
             "complete_runs": 180, "recomputed_decisions": 2160, "verified_raw_measurements": total,
             "logical_queries_including_model_fit": sum(w["cost"]["logical_queries"] for w in worlds),
-            "cache_hits": sum(w["cost"]["cache_hits"] for w in worlds), "worlds": worlds}
+            "cache_hits": sum(w["cost"]["cache_hits"] for w in worlds),
+            "heldout_numerical_preflight_only": {"point_id": "FS|1.800|85.0", "physical_attempts": 9,
+                                                 "search_queries": 0, "selection_evidence_rows": 0},
+            "worlds": worlds}
 
 
 if __name__ == "__main__":

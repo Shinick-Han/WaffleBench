@@ -2937,7 +2937,7 @@
   "limits": [
     "Posthoc method development after observing original 20f results; exploratory, not a new confirmatory primary study.",
     "8f and 35f load worlds are sensitivity checks in the same generic circuit family, not independent PDKs or silicon.",
-    "No held-out point is queried, no thresholds/parameters retuned, no LLM or human speedup measured."
+    "Search never queries held-out points; restricted numerical preflight measures one held-out point, never selection evidence. No thresholds/parameters retuned; no LLM or human speedup measured."
   ],
   "logical_queries_including_separate_model_fit": 4347,
   "cache_hits": 3958,
@@ -2946,5 +2946,6 @@
     "reason": "Original exporter counted standard query events only; extension events are now included. No observations, choices or ledger bytes changed.",
     "original_export_sha256": "b21e036702bbd4682c55aa6beb58d9603239d3f456e7ee22282b7bfa4ab516c9",
     "script": "scripts/verify_performance_extension.py"
-  }
+  },
+  "scope_clarification": "Original plan/export no-held-out-queries wording applies to search. Frozen numerical preflight measured FS|1.800|85.0 at basic/half/tight for each load (9 physical attempts total), in restricted storage, never supplied to any policy. Original plan and ledger remain unchanged."
 }

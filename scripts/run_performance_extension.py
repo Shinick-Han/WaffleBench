@@ -69,7 +69,7 @@ def run(root: Path) -> dict:
             "clear_threshold_strict": proto.clear_threshold,
             "grid_and_split_manifest_sha256": proto.manifest_sha256,
             "protocol_sha256": proto.protocol_sha256,
-            "loads_override_only": "Each world recalibrates the same five-coefficient form at the same nine points once; model then frozen; no held-out truth queried",
+            "loads_override_only": "Each world recalibrates the same five-coefficient form at the same nine points once; model then frozen; no held-out truth exposed to selection. Frozen numerical preflight separately measures FS|1.800|85.0, a held-out point, in restricted storage.",
             "postflight": "After all searches in each load, top three kernel seed-2001 search errors rechecked at half-step and tight settings; 0.5% bound",
             "global_physical_attempt_cap": ATTEMPT_CAP, "global_wall_cap_seconds": WALL_CAP,
             "source_sha256": {f: hashlib.sha256((ROOT/f).read_bytes()).hexdigest()
@@ -189,7 +189,7 @@ def run(root: Path) -> dict:
         report["wall_seconds"] = time.monotonic()-started
         report["limits"] = ["Posthoc method development after observing original 20f results; exploratory, not a new confirmatory primary study.",
                             "8f and 35f load worlds are sensitivity checks in the same generic circuit family, not independent PDKs or silicon.",
-                            "No held-out point is queried, no thresholds/parameters retuned, no LLM or human speedup measured."]
+                            "Search never queries held-out points; restricted numerical preflight measures one held-out point, which is never selection evidence. No thresholds/parameters retuned; no LLM or human speedup measured."]
         write(root / "report.json", report)
     return report
 
