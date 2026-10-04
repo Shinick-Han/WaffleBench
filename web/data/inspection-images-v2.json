@@ -3092,7 +3092,7 @@
     "study": "inspection-image-pilot-v1"
   },
   "attribution": {
-    "dataset": "VisA (Zou et al.,2022), PCB1/PCB2",
+    "dataset": "VisA (Zou et al., 2022), PCB1/PCB2/PCB3",
     "license": "CC BY 4.0",
     "url": "https://github.com/amazon-science/spot-diff",
     "method": "PatchCore-inspired adaptation, not official reproduction",
