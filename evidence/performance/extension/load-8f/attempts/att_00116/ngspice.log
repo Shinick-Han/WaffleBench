@@ -1,0 +1,28 @@
+
+Note: No compatibility mode selected!
+
+
+Circuit: * falsify-lab cmos inverter delay (generic level-1 models, not a pdk)
+
+Doing analysis at TEMP = 125.000000 and TNOM = 27.000000
+
+Using SPARSE 1.3 as Direct Linear Solver
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+vdd                                        2.2
+in                                           0
+out                                        2.2
+vin#branch                                   0
+vsup#branch                       -9.46851e-10
+
+
+No. of Data Rows : 6026
+tphl                =  5.55352e-11 targ=  1.08054e-09 trig=  1.02500e-09
+tplh                =  5.61722e-11 targ=  3.13117e-09 trig=  3.07500e-09
+FALSIFY_DONE
+ngspice-47 done
+

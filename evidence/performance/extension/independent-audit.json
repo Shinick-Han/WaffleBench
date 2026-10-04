@@ -1,0 +1,114 @@
+{
+  "ok": true,
+  "scope": "Exploratory; primary result unchanged",
+  "plan_hash": "72884b6a2605037928ee1980a03b4ccf974f9dc13ef408dbd1536b9082d1491f",
+  "complete_runs": 180,
+  "recomputed_decisions": 2160,
+  "verified_raw_measurements": 452,
+  "logical_queries_including_model_fit": 4347,
+  "cache_hits": 3958,
+  "worlds": [
+    {
+      "load_ff": 20,
+      "ledger_events": 4065,
+      "ledger_head": "6aafc0738567bf359ad5bfe894e7c0889db79dfe20c1bdf2dc0df3ab236ae3b9",
+      "complete_runs": 60,
+      "mean_clear": {
+        "adaptive_idw_plus_distance": 5.05,
+        "random": 1.4,
+        "kernel_ucb_exploratory": 4.35
+      },
+      "cost": {
+        "logical_queries": 1449,
+        "attempts": 150,
+        "successes": 150,
+        "failures": 0,
+        "unfinished_attempts": 0,
+        "cache_hits": 1320,
+        "restricted_cache_hits": 0,
+        "simulation_seconds": 10.856672,
+        "policy_seconds": 1.744689,
+        "wall_seconds": 58.600947,
+        "attempts_by_purpose": {
+          "preflight": 15,
+          "calibration": 9,
+          "extension": 120,
+          "extension_numerical": 6
+        },
+        "caps": {
+          "attempts_max": 1000,
+          "wall_seconds_max": 1500.0
+        },
+        "campaign_kind": "development"
+      }
+    },
+    {
+      "load_ff": 8,
+      "ledger_events": 4067,
+      "ledger_head": "66950ae07936a323e5ea4a4c1fea864151e8d1b5e147bba2ce4d36990fd0de40",
+      "complete_runs": 60,
+      "mean_clear": {
+        "adaptive_idw_plus_distance": 4.15,
+        "random": 1.1,
+        "kernel_ucb_exploratory": 4.4
+      },
+      "cost": {
+        "logical_queries": 1449,
+        "attempts": 151,
+        "successes": 151,
+        "failures": 0,
+        "unfinished_attempts": 0,
+        "cache_hits": 1319,
+        "restricted_cache_hits": 0,
+        "simulation_seconds": 11.192922,
+        "policy_seconds": 1.757054,
+        "wall_seconds": 69.470159,
+        "attempts_by_purpose": {
+          "preflight": 15,
+          "calibration": 9,
+          "extension": 121,
+          "extension_numerical": 6
+        },
+        "caps": {
+          "attempts_max": 850,
+          "wall_seconds_max": 1441.204000000027
+        },
+        "campaign_kind": "development"
+      }
+    },
+    {
+      "load_ff": 35,
+      "ledger_events": 4067,
+      "ledger_head": "ae080ddd6fba84d4790ef017ff11e31951d6135fd794dabf75e7b38d9e8d7521",
+      "complete_runs": 60,
+      "mean_clear": {
+        "adaptive_idw_plus_distance": 5.5,
+        "random": 1.6,
+        "kernel_ucb_exploratory": 4.8
+      },
+      "cost": {
+        "logical_queries": 1449,
+        "attempts": 151,
+        "successes": 151,
+        "failures": 0,
+        "unfinished_attempts": 0,
+        "cache_hits": 1319,
+        "restricted_cache_hits": 0,
+        "simulation_seconds": 10.154288,
+        "policy_seconds": 1.722832,
+        "wall_seconds": 58.154161,
+        "attempts_by_purpose": {
+          "preflight": 15,
+          "calibration": 9,
+          "extension": 121,
+          "extension_numerical": 6
+        },
+        "caps": {
+          "attempts_max": 699,
+          "wall_seconds_max": 1371.594000000041
+        },
+        "campaign_kind": "development"
+      }
+    }
+  ]
+}

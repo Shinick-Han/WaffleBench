@@ -21,6 +21,7 @@ gain or calibrated uncertainty.
 
 from __future__ import annotations
 
+import math
 from dataclasses import dataclass
 from typing import Any
 
@@ -68,14 +69,59 @@ def rank(
     random_order: tuple[str, ...] = (),
 ) -> list[Scored]:
     """Return candidates best-first under ``policy``. Pure function of its inputs."""
+    return _rank(policy, protocol, sorted(set(candidates)), evidence, queried, random_order)[0]
+
+
+def _rank(
+    policy: str,
+    protocol: Protocol,
+    cands: list[Point],
+    evidence: list[tuple[Point, float]],
+    queried: list[Point],
+    random_order: tuple[str, ...] = (),
+    preds: list[float | None] | None = None,
+    dmins: list[float] | None = None,
+) -> tuple[list[Scored], list[float | None], list[float]]:
+    """``rank`` over already sorted, de-duplicated ``cands``; also returns per-candidate (pred, dmin).
+
+    Same arithmetic as ``idw_predict``/``min_distance`` (math.dist on ``Point.coords``,
+    identical accumulation order), but each point's coordinates are computed once per
+    call instead of once per pair. ``preds``/``dmins`` from an earlier call over the same
+    ``cands`` and the same evidence/queried lists are reused verbatim. Nothing outlives
+    the call, so no state leaks between decisions or runs.
+    """
     pp = protocol.policy_parameters
     weight, divisor = float(pp["exploration_weight"]), float(pp["distance_divisor"])
     power, eps = int(pp["idw_power"]), float(pp["idw_epsilon"])
     position = {pid: i for i, pid in enumerate(random_order)}
+    ev_coords: list[tuple[tuple[float, ...], float]] | None = None
+    q_coords: list[tuple[float, ...]] | None = None
+    out_preds: list[float | None] = []
+    out_dmins: list[float] = []
     scored = []
-    for c in sorted(set(candidates)):
-        pred = idw_predict(c, evidence, power, eps)
-        dmin = min_distance(c, queried)
+    for i, c in enumerate(cands):
+        if preds is None or dmins is None:
+            xc = c.coords
+        if preds is not None:
+            pred = preds[i]
+        elif not evidence:
+            pred = None
+        else:
+            if ev_coords is None:
+                ev_coords = [(p.coords, err) for p, err in evidence]
+            num = 0.0
+            den = 0.0
+            for pc, err in ev_coords:
+                w = 1.0 / (math.dist(xc, pc) ** power + eps)
+                num += w * err
+                den += w
+            pred = num / den
+        if dmins is not None:
+            dmin = dmins[i]
+        else:
+            if q_coords is None:
+                q_coords = [q.coords for q in queried]
+            dmin = min(math.dist(xc, qc) for qc in q_coords)
         if policy == "adaptive_idw_plus_distance":
             score = pred + weight * dmin / divisor
         elif policy == "idw_without_distance":
@@ -88,10 +134,12 @@ def rank(
             score = -float(position[c.id])
         else:
             raise ValueError(f"unknown policy {policy!r}")
+        out_preds.append(pred)
+        out_dmins.append(dmin)
         scored.append(Scored(c, score, pred, dmin))
     # Stable sort over lexically pre-sorted points: exact ties keep corner/VDD/temperature order.
     scored.sort(key=lambda s: -s.score)
-    return scored
+    return scored, out_preds, out_dmins
 
 
 def candidate_view(s: Scored, role: str) -> dict[str, Any]:
@@ -122,11 +170,14 @@ def build_decision(
     queried locations), so ``rank_before`` vs ``rank_after`` shows mechanically
     whether that outcome changed the ranking and the choice.
     """
-    after = rank(policy, protocol, candidates, evidence, queried, random_order)
-    before = rank(policy, protocol, candidates, previous_evidence, queried, random_order)
+    # The four rankings share one candidate order, one set of min distances and the
+    # IDW predictions under ``evidence``; only ``rank_before`` needs its own IDW pass.
+    cands = sorted(set(candidates))
+    after, preds, dmins = _rank(policy, protocol, cands, evidence, queried, random_order)
+    before = _rank(policy, protocol, cands, previous_evidence, queried, random_order, dmins=dmins)[0]
     selected = after[0]
-    exploit = rank("idw_without_distance", protocol, candidates, evidence, queried)[0]
-    maximin = rank("space_filling", protocol, candidates, evidence, queried)
+    exploit = _rank("idw_without_distance", protocol, cands, evidence, queried, preds=preds, dmins=dmins)[0][0]
+    maximin = _rank("space_filling", protocol, cands, evidence, queried, preds=preds, dmins=dmins)[0]
     # Two distinct tests whenever more than one candidate remains: if the maximin
     # optimum coincides with the exploitation optimum, take the next maximin point.
     explore = next((s for s in maximin if s.point.id != exploit.point.id), None)

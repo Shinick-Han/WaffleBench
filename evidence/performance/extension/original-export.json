@@ -1,0 +1,2870 @@
+{
+  "plan_hash": "72884b6a2605037928ee1980a03b4ccf974f9dc13ef408dbd1536b9082d1491f",
+  "status": "complete",
+  "primary_result_replaced": false,
+  "worlds": [
+    {
+      "load_ff": 20,
+      "model_hash": "model_5b3ca593c0250d3e3ba58a9ad3eb6ab0dfa36e6f58157a2ce570021b54bcb7f9",
+      "runs": [
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2001",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2001,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 5,
+          "initial": [
+            "TT|1.800|-40.0",
+            "TT|1.200|0.0",
+            "FS|2.200|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2001",
+          "policy": "random",
+          "seed": 2001,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 1,
+          "initial": [
+            "TT|1.800|-40.0",
+            "TT|1.200|0.0",
+            "FS|2.200|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2001",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2001,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 7,
+          "initial": [
+            "TT|1.800|-40.0",
+            "TT|1.200|0.0",
+            "FS|2.200|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2002",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2002,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 5,
+          "initial": [
+            "FF|1.500|27.0",
+            "FS|2.200|27.0",
+            "FF|2.500|125.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2002",
+          "policy": "random",
+          "seed": 2002,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 0,
+          "initial": [
+            "FF|1.500|27.0",
+            "FS|2.200|27.0",
+            "FF|2.500|125.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2002",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2002,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 6,
+          "initial": [
+            "FF|1.500|27.0",
+            "FS|2.200|27.0",
+            "FF|2.500|125.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2003",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2003,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 5,
+          "initial": [
+            "TT|2.900|0.0",
+            "SF|2.900|0.0",
+            "SS|2.900|85.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2003",
+          "policy": "random",
+          "seed": 2003,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 1,
+          "initial": [
+            "TT|2.900|0.0",
+            "SF|2.900|0.0",
+            "SS|2.900|85.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2003",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2003,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 0,
+          "initial": [
+            "TT|2.900|0.0",
+            "SF|2.900|0.0",
+            "SS|2.900|85.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2004",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2004,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 6,
+          "initial": [
+            "FS|1.500|0.0",
+            "TT|1.200|85.0",
+            "SF|1.500|27.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2004",
+          "policy": "random",
+          "seed": 2004,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 3,
+          "initial": [
+            "FS|1.500|0.0",
+            "TT|1.200|85.0",
+            "SF|1.500|27.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2004",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2004,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 6,
+          "initial": [
+            "FS|1.500|0.0",
+            "TT|1.200|85.0",
+            "SF|1.500|27.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2005",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2005,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 5,
+          "initial": [
+            "SF|2.200|27.0",
+            "FS|2.900|85.0",
+            "FS|2.200|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2005",
+          "policy": "random",
+          "seed": 2005,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 0,
+          "initial": [
+            "SF|2.200|27.0",
+            "FS|2.900|85.0",
+            "FS|2.200|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2005",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2005,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 0,
+          "initial": [
+            "SF|2.200|27.0",
+            "FS|2.900|85.0",
+            "FS|2.200|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2006",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2006,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 5,
+          "initial": [
+            "SF|2.900|125.0",
+            "FS|1.500|85.0",
+            "SS|3.300|0.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2006",
+          "policy": "random",
+          "seed": 2006,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 0,
+          "initial": [
+            "SF|2.900|125.0",
+            "FS|1.500|85.0",
+            "SS|3.300|0.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2006",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2006,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 3,
+          "initial": [
+            "SF|2.900|125.0",
+            "FS|1.500|85.0",
+            "SS|3.300|0.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2007",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2007,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 5,
+          "initial": [
+            "FF|2.900|27.0",
+            "FS|2.200|27.0",
+            "TT|2.200|85.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2007",
+          "policy": "random",
+          "seed": 2007,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 3,
+          "initial": [
+            "FF|2.900|27.0",
+            "FS|2.200|27.0",
+            "TT|2.200|85.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2007",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2007,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 7,
+          "initial": [
+            "FF|2.900|27.0",
+            "FS|2.200|27.0",
+            "TT|2.200|85.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2008",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2008,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 5,
+          "initial": [
+            "FF|1.200|85.0",
+            "TT|3.300|125.0",
+            "TT|1.800|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2008",
+          "policy": "random",
+          "seed": 2008,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 3,
+          "initial": [
+            "FF|1.200|85.0",
+            "TT|3.300|125.0",
+            "TT|1.800|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2008",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2008,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 6,
+          "initial": [
+            "FF|1.200|85.0",
+            "TT|3.300|125.0",
+            "TT|1.800|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2009",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2009,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 5,
+          "initial": [
+            "FS|3.300|85.0",
+            "SS|3.300|27.0",
+            "FS|2.900|85.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2009",
+          "policy": "random",
+          "seed": 2009,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 0,
+          "initial": [
+            "FS|3.300|85.0",
+            "SS|3.300|27.0",
+            "FS|2.900|85.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2009",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2009,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 0,
+          "initial": [
+            "FS|3.300|85.0",
+            "SS|3.300|27.0",
+            "FS|2.900|85.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2010",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2010,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 5,
+          "initial": [
+            "SS|2.900|27.0",
+            "FF|2.900|85.0",
+            "FS|2.200|85.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2010",
+          "policy": "random",
+          "seed": 2010,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 0,
+          "initial": [
+            "SS|2.900|27.0",
+            "FF|2.900|85.0",
+            "FS|2.200|85.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2010",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2010,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 0,
+          "initial": [
+            "SS|2.900|27.0",
+            "FF|2.900|85.0",
+            "FS|2.200|85.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2011",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2011,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 5,
+          "initial": [
+            "SF|1.200|85.0",
+            "SF|2.200|-40.0",
+            "TT|3.300|125.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2011",
+          "policy": "random",
+          "seed": 2011,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 2,
+          "initial": [
+            "SF|1.200|85.0",
+            "SF|2.200|-40.0",
+            "TT|3.300|125.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2011",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2011,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 6,
+          "initial": [
+            "SF|1.200|85.0",
+            "SF|2.200|-40.0",
+            "TT|3.300|125.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2012",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2012,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 5,
+          "initial": [
+            "TT|1.800|27.0",
+            "FS|2.200|125.0",
+            "FF|2.900|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2012",
+          "policy": "random",
+          "seed": 2012,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 1,
+          "initial": [
+            "TT|1.800|27.0",
+            "FS|2.200|125.0",
+            "FF|2.900|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2012",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2012,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 1,
+          "initial": [
+            "TT|1.800|27.0",
+            "FS|2.200|125.0",
+            "FF|2.900|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2013",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2013,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 5,
+          "initial": [
+            "FS|1.500|0.0",
+            "SF|2.200|85.0",
+            "TT|2.200|0.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2013",
+          "policy": "random",
+          "seed": 2013,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 2,
+          "initial": [
+            "FS|1.500|0.0",
+            "SF|2.200|85.0",
+            "TT|2.200|0.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2013",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2013,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 7,
+          "initial": [
+            "FS|1.500|0.0",
+            "SF|2.200|85.0",
+            "TT|2.200|0.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2014",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2014,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 6,
+          "initial": [
+            "TT|3.300|0.0",
+            "TT|1.500|85.0",
+            "FS|1.800|27.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2014",
+          "policy": "random",
+          "seed": 2014,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 1,
+          "initial": [
+            "TT|3.300|0.0",
+            "TT|1.500|85.0",
+            "FS|1.800|27.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2014",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2014,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 6,
+          "initial": [
+            "TT|3.300|0.0",
+            "TT|1.500|85.0",
+            "FS|1.800|27.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2015",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2015,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 5,
+          "initial": [
+            "FF|1.200|85.0",
+            "FS|2.900|85.0",
+            "SF|1.200|27.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2015",
+          "policy": "random",
+          "seed": 2015,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 3,
+          "initial": [
+            "FF|1.200|85.0",
+            "FS|2.900|85.0",
+            "SF|1.200|27.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2015",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2015,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 6,
+          "initial": [
+            "FF|1.200|85.0",
+            "FS|2.900|85.0",
+            "SF|1.200|27.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2016",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2016,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 6,
+          "initial": [
+            "FF|3.300|27.0",
+            "SS|1.200|0.0",
+            "FF|2.900|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2016",
+          "policy": "random",
+          "seed": 2016,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 1,
+          "initial": [
+            "FF|3.300|27.0",
+            "SS|1.200|0.0",
+            "FF|2.900|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2016",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2016,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 7,
+          "initial": [
+            "FF|3.300|27.0",
+            "SS|1.200|0.0",
+            "FF|2.900|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2017",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2017,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 5,
+          "initial": [
+            "FS|3.300|27.0",
+            "SF|1.500|27.0",
+            "TT|2.900|27.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2017",
+          "policy": "random",
+          "seed": 2017,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 2,
+          "initial": [
+            "FS|3.300|27.0",
+            "SF|1.500|27.0",
+            "TT|2.900|27.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2017",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2017,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 1,
+          "initial": [
+            "FS|3.300|27.0",
+            "SF|1.500|27.0",
+            "TT|2.900|27.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2018",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2018,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 3,
+          "initial": [
+            "SS|2.200|27.0",
+            "SS|3.300|-40.0",
+            "FF|1.200|0.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2018",
+          "policy": "random",
+          "seed": 2018,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 1,
+          "initial": [
+            "SS|2.200|27.0",
+            "SS|3.300|-40.0",
+            "FF|1.200|0.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2018",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2018,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 6,
+          "initial": [
+            "SS|2.200|27.0",
+            "SS|3.300|-40.0",
+            "FF|1.200|0.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2019",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2019,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 5,
+          "initial": [
+            "FS|1.800|-40.0",
+            "FS|1.800|0.0",
+            "SF|1.200|125.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2019",
+          "policy": "random",
+          "seed": 2019,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 3,
+          "initial": [
+            "FS|1.800|-40.0",
+            "FS|1.800|0.0",
+            "SF|1.200|125.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2019",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2019,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 6,
+          "initial": [
+            "FS|1.800|-40.0",
+            "FS|1.800|0.0",
+            "SF|1.200|125.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2020",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2020,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 5,
+          "initial": [
+            "FF|1.200|0.0",
+            "SS|3.300|-40.0",
+            "FF|3.300|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2020",
+          "policy": "random",
+          "seed": 2020,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 1,
+          "initial": [
+            "FF|1.200|0.0",
+            "SS|3.300|-40.0",
+            "FF|3.300|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2020",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2020,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 6,
+          "initial": [
+            "FF|1.200|0.0",
+            "SS|3.300|-40.0",
+            "FF|3.300|-40.0"
+          ]
+        }
+      ],
+      "summary": {
+        "adaptive_idw_plus_distance": {
+          "complete_runs": 20,
+          "mean_clear": 5.05
+        },
+        "random": {
+          "complete_runs": 20,
+          "mean_clear": 1.4
+        },
+        "kernel_ucb_exploratory": {
+          "complete_runs": 20,
+          "mean_clear": 4.35
+        }
+      },
+      "paired_kernel_minus_adaptive": [
+        2,
+        1,
+        -5,
+        0,
+        -5,
+        -2,
+        2,
+        1,
+        -5,
+        -5,
+        1,
+        -4,
+        2,
+        0,
+        1,
+        1,
+        -4,
+        3,
+        1,
+        1
+      ],
+      "mean_gain_vs_adaptive": -0.7,
+      "postflight": [
+        {
+          "point_id": "SS|1.200|-40.0",
+          "setting": "half",
+          "source_result_id": "expres_ccabf340c470dd4c1da6",
+          "relative_difference": 5.242717663525657e-05,
+          "passed": true
+        },
+        {
+          "point_id": "SS|1.200|-40.0",
+          "setting": "tight",
+          "source_result_id": "expres_ccabf340c470dd4c1da6",
+          "relative_difference": 2.2180728576631122e-05,
+          "passed": true
+        },
+        {
+          "point_id": "FS|1.200|-40.0",
+          "setting": "half",
+          "source_result_id": "expres_ef0fe7c3e63b19e69e87",
+          "relative_difference": 1.880684663243483e-05,
+          "passed": true
+        },
+        {
+          "point_id": "FS|1.200|-40.0",
+          "setting": "tight",
+          "source_result_id": "expres_ef0fe7c3e63b19e69e87",
+          "relative_difference": 1.880684663243483e-05,
+          "passed": true
+        },
+        {
+          "point_id": "SS|1.200|0.0",
+          "setting": "half",
+          "source_result_id": "expres_b6a269ece724cc067955",
+          "relative_difference": 5.948214841599151e-05,
+          "passed": true
+        },
+        {
+          "point_id": "SS|1.200|0.0",
+          "setting": "tight",
+          "source_result_id": "expres_b6a269ece724cc067955",
+          "relative_difference": 2.379285936656061e-05,
+          "passed": true
+        }
+      ],
+      "cost": {
+        "logical_queries": 9,
+        "attempts": 150,
+        "successes": 150,
+        "failures": 0,
+        "unfinished_attempts": 0,
+        "cache_hits": 0,
+        "restricted_cache_hits": 0,
+        "simulation_seconds": 10.856672,
+        "policy_seconds": 0,
+        "wall_seconds": 58.600947,
+        "attempts_by_purpose": {
+          "preflight": 15,
+          "calibration": 9,
+          "extension": 120,
+          "extension_numerical": 6
+        },
+        "caps": {
+          "attempts_max": 1000,
+          "wall_seconds_max": 1500.0
+        },
+        "campaign_kind": "development"
+      },
+      "logical_queries_including_separate_model_fit": 1449,
+      "ledger_events": 4065
+    },
+    {
+      "load_ff": 8,
+      "model_hash": "model_830572e6ac9f91a8b1ea5abf9f7e19fac1a9d28786f2442011fee9542ef2507a",
+      "runs": [
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2001",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2001,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 4,
+          "initial": [
+            "TT|1.800|-40.0",
+            "TT|1.200|0.0",
+            "FS|2.200|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2001",
+          "policy": "random",
+          "seed": 2001,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 1,
+          "initial": [
+            "TT|1.800|-40.0",
+            "TT|1.200|0.0",
+            "FS|2.200|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2001",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2001,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 5,
+          "initial": [
+            "TT|1.800|-40.0",
+            "TT|1.200|0.0",
+            "FS|2.200|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2002",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2002,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 4,
+          "initial": [
+            "FF|1.500|27.0",
+            "FS|2.200|27.0",
+            "FF|2.500|125.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2002",
+          "policy": "random",
+          "seed": 2002,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 0,
+          "initial": [
+            "FF|1.500|27.0",
+            "FS|2.200|27.0",
+            "FF|2.500|125.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2002",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2002,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 5,
+          "initial": [
+            "FF|1.500|27.0",
+            "FS|2.200|27.0",
+            "FF|2.500|125.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2003",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2003,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 4,
+          "initial": [
+            "TT|2.900|0.0",
+            "SF|2.900|0.0",
+            "SS|2.900|85.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2003",
+          "policy": "random",
+          "seed": 2003,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 0,
+          "initial": [
+            "TT|2.900|0.0",
+            "SF|2.900|0.0",
+            "SS|2.900|85.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2003",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2003,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 4,
+          "initial": [
+            "TT|2.900|0.0",
+            "SF|2.900|0.0",
+            "SS|2.900|85.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2004",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2004,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 6,
+          "initial": [
+            "FS|1.500|0.0",
+            "TT|1.200|85.0",
+            "SF|1.500|27.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2004",
+          "policy": "random",
+          "seed": 2004,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 3,
+          "initial": [
+            "FS|1.500|0.0",
+            "TT|1.200|85.0",
+            "SF|1.500|27.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2004",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2004,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 5,
+          "initial": [
+            "FS|1.500|0.0",
+            "TT|1.200|85.0",
+            "SF|1.500|27.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2005",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2005,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 4,
+          "initial": [
+            "SF|2.200|27.0",
+            "FS|2.900|85.0",
+            "FS|2.200|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2005",
+          "policy": "random",
+          "seed": 2005,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 0,
+          "initial": [
+            "SF|2.200|27.0",
+            "FS|2.900|85.0",
+            "FS|2.200|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2005",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2005,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 5,
+          "initial": [
+            "SF|2.200|27.0",
+            "FS|2.900|85.0",
+            "FS|2.200|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2006",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2006,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 4,
+          "initial": [
+            "SF|2.900|125.0",
+            "FS|1.500|85.0",
+            "SS|3.300|0.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2006",
+          "policy": "random",
+          "seed": 2006,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 0,
+          "initial": [
+            "SF|2.900|125.0",
+            "FS|1.500|85.0",
+            "SS|3.300|0.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2006",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2006,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 4,
+          "initial": [
+            "SF|2.900|125.0",
+            "FS|1.500|85.0",
+            "SS|3.300|0.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2007",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2007,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 4,
+          "initial": [
+            "FF|2.900|27.0",
+            "FS|2.200|27.0",
+            "TT|2.200|85.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2007",
+          "policy": "random",
+          "seed": 2007,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 2,
+          "initial": [
+            "FF|2.900|27.0",
+            "FS|2.200|27.0",
+            "TT|2.200|85.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2007",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2007,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 0,
+          "initial": [
+            "FF|2.900|27.0",
+            "FS|2.200|27.0",
+            "TT|2.200|85.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2008",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2008,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 4,
+          "initial": [
+            "FF|1.200|85.0",
+            "TT|3.300|125.0",
+            "TT|1.800|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2008",
+          "policy": "random",
+          "seed": 2008,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 2,
+          "initial": [
+            "FF|1.200|85.0",
+            "TT|3.300|125.0",
+            "TT|1.800|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2008",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2008,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 5,
+          "initial": [
+            "FF|1.200|85.0",
+            "TT|3.300|125.0",
+            "TT|1.800|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2009",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2009,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 4,
+          "initial": [
+            "FS|3.300|85.0",
+            "SS|3.300|27.0",
+            "FS|2.900|85.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2009",
+          "policy": "random",
+          "seed": 2009,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 0,
+          "initial": [
+            "FS|3.300|85.0",
+            "SS|3.300|27.0",
+            "FS|2.900|85.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2009",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2009,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 4,
+          "initial": [
+            "FS|3.300|85.0",
+            "SS|3.300|27.0",
+            "FS|2.900|85.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2010",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2010,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 4,
+          "initial": [
+            "SS|2.900|27.0",
+            "FF|2.900|85.0",
+            "FS|2.200|85.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2010",
+          "policy": "random",
+          "seed": 2010,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 0,
+          "initial": [
+            "SS|2.900|27.0",
+            "FF|2.900|85.0",
+            "FS|2.200|85.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2010",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2010,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 3,
+          "initial": [
+            "SS|2.900|27.0",
+            "FF|2.900|85.0",
+            "FS|2.200|85.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2011",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2011,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 4,
+          "initial": [
+            "SF|1.200|85.0",
+            "SF|2.200|-40.0",
+            "TT|3.300|125.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2011",
+          "policy": "random",
+          "seed": 2011,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 1,
+          "initial": [
+            "SF|1.200|85.0",
+            "SF|2.200|-40.0",
+            "TT|3.300|125.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2011",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2011,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 5,
+          "initial": [
+            "SF|1.200|85.0",
+            "SF|2.200|-40.0",
+            "TT|3.300|125.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2012",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2012,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 4,
+          "initial": [
+            "TT|1.800|27.0",
+            "FS|2.200|125.0",
+            "FF|2.900|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2012",
+          "policy": "random",
+          "seed": 2012,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 1,
+          "initial": [
+            "TT|1.800|27.0",
+            "FS|2.200|125.0",
+            "FF|2.900|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2012",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2012,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 4,
+          "initial": [
+            "TT|1.800|27.0",
+            "FS|2.200|125.0",
+            "FF|2.900|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2013",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2013,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 4,
+          "initial": [
+            "FS|1.500|0.0",
+            "SF|2.200|85.0",
+            "TT|2.200|0.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2013",
+          "policy": "random",
+          "seed": 2013,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 2,
+          "initial": [
+            "FS|1.500|0.0",
+            "SF|2.200|85.0",
+            "TT|2.200|0.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2013",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2013,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 5,
+          "initial": [
+            "FS|1.500|0.0",
+            "SF|2.200|85.0",
+            "TT|2.200|0.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2014",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2014,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 4,
+          "initial": [
+            "TT|3.300|0.0",
+            "TT|1.500|85.0",
+            "FS|1.800|27.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2014",
+          "policy": "random",
+          "seed": 2014,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 1,
+          "initial": [
+            "TT|3.300|0.0",
+            "TT|1.500|85.0",
+            "FS|1.800|27.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2014",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2014,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 5,
+          "initial": [
+            "TT|3.300|0.0",
+            "TT|1.500|85.0",
+            "FS|1.800|27.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2015",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2015,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 4,
+          "initial": [
+            "FF|1.200|85.0",
+            "FS|2.900|85.0",
+            "SF|1.200|27.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2015",
+          "policy": "random",
+          "seed": 2015,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 2,
+          "initial": [
+            "FF|1.200|85.0",
+            "FS|2.900|85.0",
+            "SF|1.200|27.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2015",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2015,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 5,
+          "initial": [
+            "FF|1.200|85.0",
+            "FS|2.900|85.0",
+            "SF|1.200|27.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2016",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2016,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 5,
+          "initial": [
+            "FF|3.300|27.0",
+            "SS|1.200|0.0",
+            "FF|2.900|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2016",
+          "policy": "random",
+          "seed": 2016,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 1,
+          "initial": [
+            "FF|3.300|27.0",
+            "SS|1.200|0.0",
+            "FF|2.900|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2016",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2016,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 5,
+          "initial": [
+            "FF|3.300|27.0",
+            "SS|1.200|0.0",
+            "FF|2.900|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2017",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2017,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 4,
+          "initial": [
+            "FS|3.300|27.0",
+            "SF|1.500|27.0",
+            "TT|2.900|27.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2017",
+          "policy": "random",
+          "seed": 2017,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 1,
+          "initial": [
+            "FS|3.300|27.0",
+            "SF|1.500|27.0",
+            "TT|2.900|27.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2017",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2017,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 4,
+          "initial": [
+            "FS|3.300|27.0",
+            "SF|1.500|27.0",
+            "TT|2.900|27.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2018",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2018,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 4,
+          "initial": [
+            "SS|2.200|27.0",
+            "SS|3.300|-40.0",
+            "FF|1.200|0.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2018",
+          "policy": "random",
+          "seed": 2018,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 1,
+          "initial": [
+            "SS|2.200|27.0",
+            "SS|3.300|-40.0",
+            "FF|1.200|0.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2018",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2018,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 5,
+          "initial": [
+            "SS|2.200|27.0",
+            "SS|3.300|-40.0",
+            "FF|1.200|0.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2019",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2019,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 4,
+          "initial": [
+            "FS|1.800|-40.0",
+            "FS|1.800|0.0",
+            "SF|1.200|125.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2019",
+          "policy": "random",
+          "seed": 2019,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 3,
+          "initial": [
+            "FS|1.800|-40.0",
+            "FS|1.800|0.0",
+            "SF|1.200|125.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2019",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2019,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 5,
+          "initial": [
+            "FS|1.800|-40.0",
+            "FS|1.800|0.0",
+            "SF|1.200|125.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2020",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2020,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 4,
+          "initial": [
+            "FF|1.200|0.0",
+            "SS|3.300|-40.0",
+            "FF|3.300|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2020",
+          "policy": "random",
+          "seed": 2020,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 1,
+          "initial": [
+            "FF|1.200|0.0",
+            "SS|3.300|-40.0",
+            "FF|3.300|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2020",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2020,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 5,
+          "initial": [
+            "FF|1.200|0.0",
+            "SS|3.300|-40.0",
+            "FF|3.300|-40.0"
+          ]
+        }
+      ],
+      "summary": {
+        "adaptive_idw_plus_distance": {
+          "complete_runs": 20,
+          "mean_clear": 4.15
+        },
+        "random": {
+          "complete_runs": 20,
+          "mean_clear": 1.1
+        },
+        "kernel_ucb_exploratory": {
+          "complete_runs": 20,
+          "mean_clear": 4.4
+        }
+      },
+      "paired_kernel_minus_adaptive": [
+        1,
+        1,
+        0,
+        -1,
+        1,
+        0,
+        -4,
+        1,
+        0,
+        -1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "mean_gain_vs_adaptive": 0.25,
+      "postflight": [
+        {
+          "point_id": "SS|1.200|-40.0",
+          "setting": "half",
+          "source_result_id": "expres_aa9698be831f0e88013e",
+          "relative_difference": 2.5998082641292204e-05,
+          "passed": true
+        },
+        {
+          "point_id": "SS|1.200|-40.0",
+          "setting": "tight",
+          "source_result_id": "expres_aa9698be831f0e88013e",
+          "relative_difference": 2.924784297149573e-05,
+          "passed": true
+        },
+        {
+          "point_id": "FS|1.200|-40.0",
+          "setting": "half",
+          "source_result_id": "expres_36d704707995a0cac68d",
+          "relative_difference": 3.488926828855952e-05,
+          "passed": true
+        },
+        {
+          "point_id": "FS|1.200|-40.0",
+          "setting": "tight",
+          "source_result_id": "expres_36d704707995a0cac68d",
+          "relative_difference": 4.13361982983104e-05,
+          "passed": true
+        },
+        {
+          "point_id": "SS|1.200|0.0",
+          "setting": "half",
+          "source_result_id": "expres_8569dc0a6004a3897f8b",
+          "relative_difference": 1.5924175446332005e-05,
+          "passed": true
+        },
+        {
+          "point_id": "SS|1.200|0.0",
+          "setting": "tight",
+          "source_result_id": "expres_8569dc0a6004a3897f8b",
+          "relative_difference": 1.9109010535598404e-05,
+          "passed": true
+        }
+      ],
+      "cost": {
+        "logical_queries": 9,
+        "attempts": 151,
+        "successes": 151,
+        "failures": 0,
+        "unfinished_attempts": 0,
+        "cache_hits": 0,
+        "restricted_cache_hits": 0,
+        "simulation_seconds": 11.192922,
+        "policy_seconds": 0,
+        "wall_seconds": 69.470159,
+        "attempts_by_purpose": {
+          "preflight": 15,
+          "calibration": 9,
+          "extension": 121,
+          "extension_numerical": 6
+        },
+        "caps": {
+          "attempts_max": 850,
+          "wall_seconds_max": 1441.204000000027
+        },
+        "campaign_kind": "development"
+      },
+      "logical_queries_including_separate_model_fit": 1449,
+      "ledger_events": 4067
+    },
+    {
+      "load_ff": 35,
+      "model_hash": "model_eea85711ccce5fcfe71ad70a640b8639676123b4565a37efaeb3aab8ca00462e",
+      "runs": [
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2001",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2001,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 6,
+          "initial": [
+            "TT|1.800|-40.0",
+            "TT|1.200|0.0",
+            "FS|2.200|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2001",
+          "policy": "random",
+          "seed": 2001,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 2,
+          "initial": [
+            "TT|1.800|-40.0",
+            "TT|1.200|0.0",
+            "FS|2.200|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2001",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2001,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 7,
+          "initial": [
+            "TT|1.800|-40.0",
+            "TT|1.200|0.0",
+            "FS|2.200|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2002",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2002,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 6,
+          "initial": [
+            "FF|1.500|27.0",
+            "FS|2.200|27.0",
+            "FF|2.500|125.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2002",
+          "policy": "random",
+          "seed": 2002,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 0,
+          "initial": [
+            "FF|1.500|27.0",
+            "FS|2.200|27.0",
+            "FF|2.500|125.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2002",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2002,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 7,
+          "initial": [
+            "FF|1.500|27.0",
+            "FS|2.200|27.0",
+            "FF|2.500|125.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2003",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2003,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 6,
+          "initial": [
+            "TT|2.900|0.0",
+            "SF|2.900|0.0",
+            "SS|2.900|85.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2003",
+          "policy": "random",
+          "seed": 2003,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 1,
+          "initial": [
+            "TT|2.900|0.0",
+            "SF|2.900|0.0",
+            "SS|2.900|85.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2003",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2003,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 0,
+          "initial": [
+            "TT|2.900|0.0",
+            "SF|2.900|0.0",
+            "SS|2.900|85.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2004",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2004,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 6,
+          "initial": [
+            "FS|1.500|0.0",
+            "TT|1.200|85.0",
+            "SF|1.500|27.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2004",
+          "policy": "random",
+          "seed": 2004,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 3,
+          "initial": [
+            "FS|1.500|0.0",
+            "TT|1.200|85.0",
+            "SF|1.500|27.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2004",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2004,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 9,
+          "initial": [
+            "FS|1.500|0.0",
+            "TT|1.200|85.0",
+            "SF|1.500|27.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2005",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2005,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 6,
+          "initial": [
+            "SF|2.200|27.0",
+            "FS|2.900|85.0",
+            "FS|2.200|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2005",
+          "policy": "random",
+          "seed": 2005,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 0,
+          "initial": [
+            "SF|2.200|27.0",
+            "FS|2.900|85.0",
+            "FS|2.200|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2005",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2005,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 0,
+          "initial": [
+            "SF|2.200|27.0",
+            "FS|2.900|85.0",
+            "FS|2.200|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2006",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2006,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 3,
+          "initial": [
+            "SF|2.900|125.0",
+            "FS|1.500|85.0",
+            "SS|3.300|0.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2006",
+          "policy": "random",
+          "seed": 2006,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 0,
+          "initial": [
+            "SF|2.900|125.0",
+            "FS|1.500|85.0",
+            "SS|3.300|0.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2006",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2006,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 3,
+          "initial": [
+            "SF|2.900|125.0",
+            "FS|1.500|85.0",
+            "SS|3.300|0.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2007",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2007,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 6,
+          "initial": [
+            "FF|2.900|27.0",
+            "FS|2.200|27.0",
+            "TT|2.200|85.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2007",
+          "policy": "random",
+          "seed": 2007,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 3,
+          "initial": [
+            "FF|2.900|27.0",
+            "FS|2.200|27.0",
+            "TT|2.200|85.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2007",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2007,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 7,
+          "initial": [
+            "FF|2.900|27.0",
+            "FS|2.200|27.0",
+            "TT|2.200|85.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2008",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2008,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 6,
+          "initial": [
+            "FF|1.200|85.0",
+            "TT|3.300|125.0",
+            "TT|1.800|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2008",
+          "policy": "random",
+          "seed": 2008,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 3,
+          "initial": [
+            "FF|1.200|85.0",
+            "TT|3.300|125.0",
+            "TT|1.800|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2008",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2008,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 7,
+          "initial": [
+            "FF|1.200|85.0",
+            "TT|3.300|125.0",
+            "TT|1.800|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2009",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2009,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 6,
+          "initial": [
+            "FS|3.300|85.0",
+            "SS|3.300|27.0",
+            "FS|2.900|85.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2009",
+          "policy": "random",
+          "seed": 2009,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 0,
+          "initial": [
+            "FS|3.300|85.0",
+            "SS|3.300|27.0",
+            "FS|2.900|85.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2009",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2009,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 0,
+          "initial": [
+            "FS|3.300|85.0",
+            "SS|3.300|27.0",
+            "FS|2.900|85.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2010",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2010,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 6,
+          "initial": [
+            "SS|2.900|27.0",
+            "FF|2.900|85.0",
+            "FS|2.200|85.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2010",
+          "policy": "random",
+          "seed": 2010,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 1,
+          "initial": [
+            "SS|2.900|27.0",
+            "FF|2.900|85.0",
+            "FS|2.200|85.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2010",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2010,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 0,
+          "initial": [
+            "SS|2.900|27.0",
+            "FF|2.900|85.0",
+            "FS|2.200|85.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2011",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2011,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 6,
+          "initial": [
+            "SF|1.200|85.0",
+            "SF|2.200|-40.0",
+            "TT|3.300|125.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2011",
+          "policy": "random",
+          "seed": 2011,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 2,
+          "initial": [
+            "SF|1.200|85.0",
+            "SF|2.200|-40.0",
+            "TT|3.300|125.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2011",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2011,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 7,
+          "initial": [
+            "SF|1.200|85.0",
+            "SF|2.200|-40.0",
+            "TT|3.300|125.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2012",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2012,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 6,
+          "initial": [
+            "TT|1.800|27.0",
+            "FS|2.200|125.0",
+            "FF|2.900|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2012",
+          "policy": "random",
+          "seed": 2012,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 1,
+          "initial": [
+            "TT|1.800|27.0",
+            "FS|2.200|125.0",
+            "FF|2.900|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2012",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2012,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 0,
+          "initial": [
+            "TT|1.800|27.0",
+            "FS|2.200|125.0",
+            "FF|2.900|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2013",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2013,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 4,
+          "initial": [
+            "FS|1.500|0.0",
+            "SF|2.200|85.0",
+            "TT|2.200|0.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2013",
+          "policy": "random",
+          "seed": 2013,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 3,
+          "initial": [
+            "FS|1.500|0.0",
+            "SF|2.200|85.0",
+            "TT|2.200|0.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2013",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2013,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 7,
+          "initial": [
+            "FS|1.500|0.0",
+            "SF|2.200|85.0",
+            "TT|2.200|0.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2014",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2014,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 7,
+          "initial": [
+            "TT|3.300|0.0",
+            "TT|1.500|85.0",
+            "FS|1.800|27.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2014",
+          "policy": "random",
+          "seed": 2014,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 1,
+          "initial": [
+            "TT|3.300|0.0",
+            "TT|1.500|85.0",
+            "FS|1.800|27.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2014",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2014,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 7,
+          "initial": [
+            "TT|3.300|0.0",
+            "TT|1.500|85.0",
+            "FS|1.800|27.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2015",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2015,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 6,
+          "initial": [
+            "FF|1.200|85.0",
+            "FS|2.900|85.0",
+            "SF|1.200|27.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2015",
+          "policy": "random",
+          "seed": 2015,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 3,
+          "initial": [
+            "FF|1.200|85.0",
+            "FS|2.900|85.0",
+            "SF|1.200|27.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2015",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2015,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 7,
+          "initial": [
+            "FF|1.200|85.0",
+            "FS|2.900|85.0",
+            "SF|1.200|27.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2016",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2016,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 6,
+          "initial": [
+            "FF|3.300|27.0",
+            "SS|1.200|0.0",
+            "FF|2.900|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2016",
+          "policy": "random",
+          "seed": 2016,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 1,
+          "initial": [
+            "FF|3.300|27.0",
+            "SS|1.200|0.0",
+            "FF|2.900|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2016",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2016,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 7,
+          "initial": [
+            "FF|3.300|27.0",
+            "SS|1.200|0.0",
+            "FF|2.900|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2017",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2017,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 6,
+          "initial": [
+            "FS|3.300|27.0",
+            "SF|1.500|27.0",
+            "TT|2.900|27.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2017",
+          "policy": "random",
+          "seed": 2017,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 2,
+          "initial": [
+            "FS|3.300|27.0",
+            "SF|1.500|27.0",
+            "TT|2.900|27.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2017",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2017,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 0,
+          "initial": [
+            "FS|3.300|27.0",
+            "SF|1.500|27.0",
+            "TT|2.900|27.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2018",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2018,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 3,
+          "initial": [
+            "SS|2.200|27.0",
+            "SS|3.300|-40.0",
+            "FF|1.200|0.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2018",
+          "policy": "random",
+          "seed": 2018,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 1,
+          "initial": [
+            "SS|2.200|27.0",
+            "SS|3.300|-40.0",
+            "FF|1.200|0.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2018",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2018,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 7,
+          "initial": [
+            "SS|2.200|27.0",
+            "SS|3.300|-40.0",
+            "FF|1.200|0.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2019",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2019,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 6,
+          "initial": [
+            "FS|1.800|-40.0",
+            "FS|1.800|0.0",
+            "SF|1.200|125.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2019",
+          "policy": "random",
+          "seed": 2019,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 4,
+          "initial": [
+            "FS|1.800|-40.0",
+            "FS|1.800|0.0",
+            "SF|1.200|125.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2019",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2019,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 7,
+          "initial": [
+            "FS|1.800|-40.0",
+            "FS|1.800|0.0",
+            "SF|1.200|125.0"
+          ]
+        },
+        {
+          "run_id": "extension-adaptive_idw_plus_distance-2020",
+          "policy": "adaptive_idw_plus_distance",
+          "seed": 2020,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 3,
+          "initial": [
+            "FF|1.200|0.0",
+            "SS|3.300|-40.0",
+            "FF|3.300|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-random-2020",
+          "policy": "random",
+          "seed": 2020,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 1,
+          "initial": [
+            "FF|1.200|0.0",
+            "SS|3.300|-40.0",
+            "FF|3.300|-40.0"
+          ]
+        },
+        {
+          "run_id": "extension-kernel_ucb_exploratory-2020",
+          "policy": "kernel_ucb_exploratory",
+          "seed": 2020,
+          "status": "complete",
+          "logical_queries": 24,
+          "search_points": 15,
+          "clear_counterexamples": 7,
+          "initial": [
+            "FF|1.200|0.0",
+            "SS|3.300|-40.0",
+            "FF|3.300|-40.0"
+          ]
+        }
+      ],
+      "summary": {
+        "adaptive_idw_plus_distance": {
+          "complete_runs": 20,
+          "mean_clear": 5.5
+        },
+        "random": {
+          "complete_runs": 20,
+          "mean_clear": 1.6
+        },
+        "kernel_ucb_exploratory": {
+          "complete_runs": 20,
+          "mean_clear": 4.8
+        }
+      },
+      "paired_kernel_minus_adaptive": [
+        1,
+        1,
+        -6,
+        3,
+        -6,
+        0,
+        1,
+        1,
+        -6,
+        -6,
+        1,
+        -6,
+        3,
+        0,
+        1,
+        1,
+        -6,
+        4,
+        1,
+        4
+      ],
+      "mean_gain_vs_adaptive": -0.7,
+      "postflight": [
+        {
+          "point_id": "SS|1.200|-40.0",
+          "setting": "half",
+          "source_result_id": "expres_bd0e352868a3fdd2c3f8",
+          "relative_difference": 2.3258741182117366e-05,
+          "passed": true
+        },
+        {
+          "point_id": "SS|1.200|-40.0",
+          "setting": "tight",
+          "source_result_id": "expres_bd0e352868a3fdd2c3f8",
+          "relative_difference": 9.577128722164827e-06,
+          "passed": true
+        },
+        {
+          "point_id": "FS|1.200|-40.0",
+          "setting": "half",
+          "source_result_id": "expres_41f8a16ebc37ab273f3a",
+          "relative_difference": 2.7133100626996542e-05,
+          "passed": true
+        },
+        {
+          "point_id": "FS|1.200|-40.0",
+          "setting": "tight",
+          "source_result_id": "expres_41f8a16ebc37ab273f3a",
+          "relative_difference": 1.7556712170458066e-05,
+          "passed": true
+        },
+        {
+          "point_id": "SS|1.200|0.0",
+          "setting": "half",
+          "source_result_id": "expres_0c27b49b820d53ccd288",
+          "relative_difference": 1.7518704586138288e-05,
+          "passed": true
+        },
+        {
+          "point_id": "SS|1.200|0.0",
+          "setting": "tight",
+          "source_result_id": "expres_0c27b49b820d53ccd288",
+          "relative_difference": 1.3475926603435564e-06,
+          "passed": true
+        }
+      ],
+      "cost": {
+        "logical_queries": 9,
+        "attempts": 151,
+        "successes": 151,
+        "failures": 0,
+        "unfinished_attempts": 0,
+        "cache_hits": 0,
+        "restricted_cache_hits": 0,
+        "simulation_seconds": 10.154288,
+        "policy_seconds": 0,
+        "wall_seconds": 58.154161,
+        "attempts_by_purpose": {
+          "preflight": 15,
+          "calibration": 9,
+          "extension": 121,
+          "extension_numerical": 6
+        },
+        "caps": {
+          "attempts_max": 699,
+          "wall_seconds_max": 1371.594000000041
+        },
+        "campaign_kind": "development"
+      },
+      "logical_queries_including_separate_model_fit": 1449,
+      "ledger_events": 4067
+    }
+  ],
+  "physical_attempts": 452,
+  "wall_seconds": 186.670999999973,
+  "limits": [
+    "Posthoc method development after observing original 20f results; exploratory, not a new confirmatory primary study.",
+    "8f and 35f load worlds are sensitivity checks in the same generic circuit family, not independent PDKs or silicon.",
+    "No held-out point is queried, no thresholds/parameters retuned, no LLM or human speedup measured."
+  ]
+}

@@ -12,6 +12,7 @@ runs/
 *.log
 !evidence/live/attempts/**/*.log
 !evidence/primary/attempts/**/*.log
+!evidence/performance/extension/**/attempts/**/*.log
 __pycache__/
 .venv/
 

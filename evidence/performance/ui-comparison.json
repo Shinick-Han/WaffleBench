@@ -1,0 +1,18 @@
+{
+  "ok": true,
+  "repetitions_per_version": 3,
+  "same_view_content": true,
+  "same_hidden_policy_charts": true,
+  "baseline_optimization_assertions_expected_to_fail": [
+    "initial load rebuilt hidden views: {\"lab-controls\":7,\"chrome\":8,\"lab\":19,\"benchmark\":10,\"chart\":2,\"chartLegendChildren\":1,\"benchmarkConclusion\":1,\"benchmarkTable\":1,\"benchmarkDetails\":1,\"records\":4}",
+    "legend toggle rebuilt invariant benchmark parts: {\"benchmark\":240,\"chart\":48,\"chartLegendChildren\":24,\"benchmarkConclusion\":24,\"benchmarkTable\":24,\"benchmarkDetails\":24}",
+    "data replacement rebuilt hidden views: {\"lab-controls\":5,\"chrome\":6,\"lab\":17,\"benchmark\":10,\"chart\":2,\"chartLegendChildren\":1,\"benchmarkConclusion\":1,\"benchmarkTable\":1,\"benchmarkDetails\":1,\"records\":4}"
+  ],
+  "candidate_failures": [],
+  "legend_click_ms": {
+    "baseline": 2.65,
+    "candidate": 0.5
+  },
+  "scope": "Single local Chrome, median script-measured click handler times; no first-load/replay speedup claim",
+  "primary_snapshot_sha256": "f6d56930a1b7a483d8ff751c4620eae262c584307f1eb65207f9fe86a09e2c90"
+}

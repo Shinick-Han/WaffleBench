@@ -1,0 +1,39 @@
+{
+  "ok": true,
+  "scope": "Reviewed public package; fresh actual ngspice short reproduction",
+  "model_byte_identical": true,
+  "model_sha256": "3f3382f81b952fdfdc427203324c4742b1ee28502d160210c1beb2f936d00369",
+  "policies": {
+    "adaptive_idw_plus_distance": {
+      "queries": 24,
+      "selection_and_evaluation_exact": true,
+      "clear_counterexamples": 4
+    },
+    "random": {
+      "queries": 24,
+      "selection_and_evaluation_exact": true,
+      "clear_counterexamples": 2
+    }
+  },
+  "cost": {
+    "logical_queries": 57,
+    "attempts": 35,
+    "successes": 35,
+    "failures": 0,
+    "unfinished_attempts": 0,
+    "cache_hits": 22,
+    "restricted_cache_hits": 0,
+    "simulation_seconds": 2.134168,
+    "policy_seconds": 0.048106,
+    "wall_seconds": 4.080738,
+    "attempts_by_purpose": {
+      "calibration": 9,
+      "reproduce": 26
+    },
+    "caps": {
+      "attempts_max": 1200,
+      "wall_seconds_max": 3600.0
+    },
+    "campaign_kind": "reproduce"
+  }
+}

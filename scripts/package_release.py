@@ -64,6 +64,8 @@ def main() -> None:
     p.add_argument("--live-root", required=True, type=Path)
     p.add_argument("--primary-root", required=True, type=Path)
     p.add_argument("--destination", required=True, type=Path, help="Fresh staging directory")
+    p.add_argument("--performance-root", type=Path, help="Audited supplementary campaign, separate from primary")
+    p.add_argument("--preserve-snapshot", type=Path, help="Previously released combined snapshot to keep byte-for-byte")
     args = p.parse_args()
     live = Campaign(args.live_root.resolve(), None)
     primary = Campaign(args.primary_root.resolve(), None)
@@ -110,6 +112,8 @@ def main() -> None:
     )
     for name in source_files:
         copy_source(PROJECT / name, destination / name)
+    if (PROJECT / "PERFORMANCE.md").is_file():
+        copy_source(PROJECT / "PERFORMANCE.md", destination / "PERFORMANCE.md")
     for folder in ("falsify_lab", "scripts", "tests", "web", "agent", "mockup"):
         for path in sorted((PROJECT / folder).rglob("*")):
             if not path.is_file() or path.is_symlink() or "__pycache__" in path.parts:
@@ -130,6 +134,21 @@ def main() -> None:
         target = destination / "evidence" / "reproduction" / "validation.json"
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(reproduction, target)
+    if args.performance_root:
+        from verify_performance_extension import audit as audit_extension
+        extension = args.performance_root.resolve()
+        audit_result = audit_extension(extension)
+        target_root = destination / "evidence" / "performance" / "extension"
+        for load in (20, 8, 35):
+            copy_campaign(extension / f"load-{load}f", target_root / f"load-{load}f")
+        for name in ("plan.json", "report.json", "original-export.json"):
+            shutil.copyfile(extension / name, target_root / name)
+        shutil.copytree(extension / "executed_source", target_root / "executed_source")
+        write_json(target_root / "independent-audit.json", audit_result)
+        for name in ("core-timing.json", "ui-baseline.json", "ui-candidate.json", "ui-comparison.json"):
+            source = PROJECT / "evidence" / "performance" / name
+            target = destination / "evidence" / "performance" / name
+            shutil.copyfile(source, target)
     combined = copy.deepcopy(ls)
     combined["benchmark"] = bench
     combined["release"] = {
@@ -153,6 +172,12 @@ def main() -> None:
     index.write_text(index.read_text(encoding="utf-8").replace("<head>", '<head>\n<meta name="falsify-mode" content="static">', 1), encoding="utf-8", newline="\n")
     (docs / ".nojekyll").write_text("", encoding="utf-8")
     write_json(docs / "data" / "snapshot.json", combined)
+    if args.preserve_snapshot:
+        previous = json.loads(args.preserve_snapshot.read_text(encoding="utf-8"))
+        for key in ("protocol_hash", "manifest_hash", "model", "run", "benchmark"):
+            if previous[key] != combined[key]:
+                raise RuntimeError(f"Preserved snapshot has different scientific content: {key}")
+        shutil.copyfile(args.preserve_snapshot, docs / "data" / "snapshot.json")
     write_json(destination / "evidence" / "primary" / "benchmark_report.json", bench)
     files = {}
     for path in sorted(destination.rglob("*")):

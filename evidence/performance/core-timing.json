@@ -1,0 +1,67 @@
+{
+  "roots": [
+    "evidence/primary",
+    "evidence/live"
+  ],
+  "python": "3.12.10",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "equality_gate": {
+    "passed": true,
+    "decisions": 482,
+    "mismatches": [],
+    "candidate_sha256": "b6b8c749c1563066e68b3b7e397bb6c7ae423e99967e3c81ee62e60670528eed"
+  },
+  "scope": "policy build_decision only; no ngspice, LLM or end-to-end campaign time",
+  "timing": {
+    "repeats": 3,
+    "decisions_per_pass": 482,
+    "cold_fresh_process": {
+      "baseline": {
+        "median_s": 4.856449299957603,
+        "min_s": 4.811175200040452,
+        "max_s": 4.884590000030585,
+        "runs_s": [
+          4.856449299957603,
+          4.884590000030585,
+          4.811175200040452
+        ]
+      },
+      "candidate": {
+        "median_s": 0.46679279999807477,
+        "min_s": 0.46637320006266236,
+        "max_s": 0.4751013999339193,
+        "runs_s": [
+          0.4751013999339193,
+          0.46637320006266236,
+          0.46679279999807477
+        ]
+      }
+    },
+    "warm_in_process": {
+      "baseline": {
+        "median_s": 6.07893099996727,
+        "min_s": 5.898462400073186,
+        "max_s": 6.268741699983366,
+        "runs_s": [
+          5.898462400073186,
+          6.268741699983366,
+          6.07893099996727
+        ]
+      },
+      "candidate": {
+        "median_s": 0.6456187999574468,
+        "min_s": 0.629818300018087,
+        "max_s": 0.6907664000755176,
+        "runs_s": [
+          0.629818300018087,
+          0.6456187999574468,
+          0.6907664000755176
+        ]
+      }
+    },
+    "speedup_median": {
+      "cold": 10.403865055282843,
+      "warm": 9.415666025165216
+    }
+  }
+}

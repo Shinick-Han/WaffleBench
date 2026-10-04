@@ -136,7 +136,12 @@ function renderChrome(){
   $('exportButton').disabled=!state.raw;
   $('footerMeta').textContent=`Falsify Lab · 연구 설계 v1.0${s&&s.protocol_hash?' · protocol '+String(s.protocol_hash).slice(0,12):''}${state.sha?' · snapshot sha256 '+state.sha.slice(0,12):''}`;
 }
-function setView(v){stopPlaying();state.view=v;document.querySelectorAll('[data-view]').forEach(b=>{b.classList.toggle('active',b.dataset.view===v);if(b.dataset.view===v)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current');});['lab','benchmark','records'].forEach(x=>$('view-'+x).hidden=x!==v);const titles={lab:['연구 작업대','실험 결과가 다음 질문을 바꿉니다.','회로 지연 모델의 실패 조건을 찾는, 근거로 연결된 AI 연구실.'],benchmark:['정책 비교','좋은 선택이었는지, 비교해서 확인합니다.','가설에 유리한 결과와 차이가 없는 결과를 같은 기준으로 읽습니다.'],records:['실험 기록','모든 판단에는 돌아갈 수 있는 근거가 있습니다.','조건과 결과 ID를 따라, 예측에서 관측과 다음 결정까지 확인합니다.']};$('crumbTitle').textContent=titles[v][0];$('pageTitle').textContent=titles[v][1];$('pageSubtitle').textContent=titles[v][2];if(v==='benchmark')renderBenchmark();if(v==='records')renderRecords();}
+function setView(v){stopPlaying();state.view=v;document.querySelectorAll('[data-view]').forEach(b=>{b.classList.toggle('active',b.dataset.view===v);if(b.dataset.view===v)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current');});['lab','benchmark','records'].forEach(x=>$('view-'+x).hidden=x!==v);const titles={lab:['연구 작업대','실험 결과가 다음 질문을 바꿉니다.','회로 지연 모델의 실패 조건을 찾는, 근거로 연결된 AI 연구실.'],benchmark:['정책 비교','좋은 선택이었는지, 비교해서 확인합니다.','가설에 유리한 결과와 차이가 없는 결과를 같은 기준으로 읽습니다.'],records:['실험 기록','모든 판단에는 돌아갈 수 있는 근거가 있습니다.','조건과 결과 ID를 따라, 예측에서 관측과 다음 결정까지 확인합니다.']};$('crumbTitle').textContent=titles[v][0];$('pageTitle').textContent=titles[v][1];$('pageSubtitle').textContent=titles[v][2];if(dirty[v])renderView(v);}
+/* Lazy view rendering. Only the shown view is rebuilt. A new snapshot or replay
+   step marks hidden views dirty, and a dirty view is rebuilt from the current
+   state before it is shown, so no view ever displays an older snapshot. */
+const dirty={lab:true,benchmark:true,records:true};
+function renderView(v){dirty[v]=false;if(v==='lab')renderLab();else if(v==='benchmark')renderBenchmark();else renderRecords();}
 
 /* ---------- workbench ---------- */
 function renderMap(){
@@ -231,7 +236,8 @@ function renderLab(){
 function advance(){stopPlaying();const n=D();if(!n){state.mode==='local'?openJobs():setView('benchmark');return;}if(state.stage>=n)setView('benchmark');else setStage(state.stage+1);}
 function setStage(i){state.stage=Math.max(0,Math.min(i,D()));const m=state.m,d=m&&m.decisions[state.stage],prev=m&&m.decisions[state.stage-1];
   let k=null;if(d&&Array.isArray(d.candidates)){const c=d.candidates.find(x=>x.point_id===d.selected_point_id)||d.candidates[0];k=keyOf(c);}else if(prev){const o=m.obsById.get(String(prev.observed_result_id));k=keyOf(o);}
-  if(k){state.point=k;state.corner=k.split('|')[0];}renderLab();}
+  if(k){state.point=k;state.corner=k.split('|')[0];}refreshLab();}
+function refreshLab(){if(state.view==='lab')renderView('lab');else dirty.lab=true;}
 let playTimer;function stopPlaying(){clearInterval(playTimer);state.playing=false;$('playButton').innerHTML=`${icon('play')}<span>기록 재생</span>`;}
 function play(){if(state.playing){stopPlaying();return;}if(!D())return;setStage(0);state.playing=true;$('playButton').innerHTML=`${icon('close')}<span>재생 멈춤</span>`;playTimer=setInterval(()=>{if(state.stage>=D()){stopPlaying();return;}setStage(state.stage+1);if(state.stage>=D())stopPlaying();},2100);}
 
@@ -248,13 +254,11 @@ function policyCurve(p){const runs=Array.isArray(p.runs)?p.runs.filter(r=>r&&typ
   const completeRuns=num(p.complete_runs)!=null?p.complete_runs:runs.filter(runComplete).length;
   const len=Math.max(0,...lines.map(l=>l.arr.length),mean?mean.length:0);
   return {runs,lines,mean,meanFinal,completeRuns,incomplete:runs.filter(r=>!runComplete(r)),len};}
-function renderBenchmark(){
-  const b=state.m&&state.m.benchmark;const pol=b&&Array.isArray(b.policies)?b.policies.filter(p=>p&&typeof p==='object'):[];
-  if(!b){$('chartSubtitle').textContent='정책 비교 결과 없음';$('benchmarkChart').innerHTML='';$('benchmarkChart').setAttribute('aria-label','정책 비교 데이터 없음');$('chartLegend').innerHTML='';$('chartDescription').textContent='benchmark = null · 본 연구 캠페인(4개 방식 × 10개 시작점)의 결과가 스냅샷에 없습니다.';
-    $('benchmarkConclusion').innerHTML='<span class="tag gray">결과 없음</span><h2>정책 비교 결과가<br>아직 없습니다.</h2><p>본 연구 실행 전에는 비교 결과를 표시하지 않습니다. 예시 곡선이나 구간을 대신 그리지 않습니다.</p><div class="conclusion-note">주 성공 기준: 무작위 대비 평균 +2개 이상, paired bootstrap 95% 구간 하한 &gt; 0, 완전한 seed 쌍 10개.</div>';
-    $('benchmarkTable').innerHTML='<tr><td colspan="5" class="muted">기록된 정책 결과가 없습니다.</td></tr>';$('benchmarkTableNote').textContent='정량 비교는 선택 정책의 효과를, 실시간 시연은 Omnigent 협업을 보여줍니다. 둘을 구분해 보고합니다.';$('benchmarkStatusTag').textContent='결과 없음';
-    renderBenchDetails(null);return;}
-  $('benchmarkStatusTag').textContent='상태 '+String(b.status??'null');
+/* Chart geometry and per-policy SVG depend only on the snapshot, so they are built
+   once per normalized snapshot (a new snapshot gets a new state.m). A legend toggle
+   only re-joins the fragments of the visible policies. */
+function benchModel(){const m=state.m;if(m.benchView)return m.benchView;
+  const b=m.benchmark;const pol=Array.isArray(b.policies)?b.policies.filter(p=>p&&typeof p==='object'):[];
   const curves=pol.map(p=>policyCurve(p));const len=Math.max(1,...curves.map(c=>c.len));
   const ymaxData=Math.max(0,...curves.flatMap(c=>[...c.lines.flatMap(l=>l.arr),...(c.mean||[])].map(num).filter(x=>x!=null)));const ymax=niceMax(ymaxData);
   const x=n=>48+(n/len)*560,y=v=>275-v/ymax*235;const ystep=ymax/ (ymax%3===0?3:5);const xstep=Math.max(1,Math.ceil(len/5));
@@ -262,11 +266,22 @@ function renderBenchmark(){
   svg+=`<line class="axis-line" x1="48" x2="608" y1="275" y2="275"/>`;
   for(let n=0;n<=len;n+=xstep)svg+=`<text x="${x(n)}" y="296" text-anchor="middle">${n}</text>`;
   svg+='<text x="48" y="18">평균 누적 명확 반례</text><text x="608" y="338" text-anchor="end">탐색 시뮬레이션 수</text>';
-  pol.forEach((p,i)=>{const id=String(p.id);if(!state.visiblePolicies.has(id))return;const col=POLICY_COLORS[i%POLICY_COLORS.length],c=curves[i];
-    c.lines.forEach(l=>{const pts=l.arr.map((v,j)=>num(v)==null?null:[x(j+1),y(v)]).filter(Boolean);if(pts.length>1)svg+=`<path class="run-line${l.complete?'':' incomplete'}" stroke="${col}" ${l.complete?'':'stroke-dasharray="2 3"'} d="${pts.map(([px,py],j)=>`${j?'L':'M'}${px.toFixed(1)},${py.toFixed(1)}`).join(' ')}"/>`;});
+  const frags=pol.map((p,i)=>{let f='';const col=POLICY_COLORS[i%POLICY_COLORS.length],c=curves[i];
+    c.lines.forEach(l=>{const pts=l.arr.map((v,j)=>num(v)==null?null:[x(j+1),y(v)]).filter(Boolean);if(pts.length>1)f+=`<path class="run-line${l.complete?'':' incomplete'}" stroke="${col}" ${l.complete?'':'stroke-dasharray="2 3"'} d="${pts.map(([px,py],j)=>`${j?'L':'M'}${px.toFixed(1)},${py.toFixed(1)}`).join(' ')}"/>`;});
     const pts=(c.mean||[]).map((v,j)=>v==null?null:[x(j+1),y(v)]).filter(Boolean);
-    if(pts.length){svg+=`<path class="curve" stroke="${col}" ${i===3?'stroke-dasharray="5 4"':''} d="${pts.map(([px,py],j)=>`${j?'L':'M'}${px.toFixed(1)},${py.toFixed(1)}`).join(' ')}"/>`;const [lx,ly]=pts[pts.length-1];svg+=`<circle cx="${lx}" cy="${ly}" r="3.5" fill="${col}"/>`;}});
-  $('benchmarkChart').innerHTML=svg;$('benchmarkChart').setAttribute('aria-label','코어가 내보낸 완료 실행 평균(mean_cumulative_clear)과 개별 실행의 cumulative_clear 곡선');
+    if(pts.length){f+=`<path class="curve" stroke="${col}" ${i===3?'stroke-dasharray="5 4"':''} d="${pts.map(([px,py],j)=>`${j?'L':'M'}${px.toFixed(1)},${py.toFixed(1)}`).join(' ')}"/>`;const [lx,ly]=pts[pts.length-1];f+=`<circle cx="${lx}" cy="${ly}" r="3.5" fill="${col}"/>`;}
+    return f;});
+  return m.benchView={pol,curves,grid:svg,frags};}
+function renderBenchChart(){const {pol,grid,frags}=benchModel();$('benchmarkChart').innerHTML=grid+pol.map((p,i)=>state.visiblePolicies.has(String(p.id))?frags[i]:'').join('');}
+function renderBenchmark(){
+  const b=state.m&&state.m.benchmark;const pol=b&&Array.isArray(b.policies)?b.policies.filter(p=>p&&typeof p==='object'):[];
+  if(!b){$('chartSubtitle').textContent='정책 비교 결과 없음';$('benchmarkChart').innerHTML='';$('benchmarkChart').setAttribute('aria-label','정책 비교 데이터 없음');$('chartLegend').innerHTML='';$('chartDescription').textContent='benchmark = null · 본 연구 캠페인(4개 방식 × 10개 시작점)의 결과가 스냅샷에 없습니다.';
+    $('benchmarkConclusion').innerHTML='<span class="tag gray">결과 없음</span><h2>정책 비교 결과가<br>아직 없습니다.</h2><p>본 연구 실행 전에는 비교 결과를 표시하지 않습니다. 예시 곡선이나 구간을 대신 그리지 않습니다.</p><div class="conclusion-note">주 성공 기준: 무작위 대비 평균 +2개 이상, paired bootstrap 95% 구간 하한 &gt; 0, 완전한 seed 쌍 10개.</div>';
+    $('benchmarkTable').innerHTML='<tr><td colspan="5" class="muted">기록된 정책 결과가 없습니다.</td></tr>';$('benchmarkTableNote').textContent='정량 비교는 선택 정책의 효과를, 실시간 시연은 Omnigent 협업을 보여줍니다. 둘을 구분해 보고합니다.';$('benchmarkStatusTag').textContent='결과 없음';
+    renderBenchDetails(null);return;}
+  $('benchmarkStatusTag').textContent='상태 '+String(b.status??'null');
+  const {curves}=benchModel();
+  renderBenchChart();$('benchmarkChart').setAttribute('aria-label','코어가 내보낸 완료 실행 평균(mean_cumulative_clear)과 개별 실행의 cumulative_clear 곡선');
   $('chartSubtitle').textContent=`굵은 선은 완료 실행만의 평균(mean_cumulative_clear) · 완료 실행 수 ${curves.map(c=>c.completeRuns).join(' / ')} · 명확한 반례는 오차 11% 초과`;
   const noMean=pol.filter((p,i)=>!curves[i].mean).map(p=>p.label??p.id),nInc=curves.reduce((s,c)=>s+c.incomplete.length,0);
   $('chartDescription').textContent=`얇은 실선은 완료 실행, 점선은 미완료 실행(${nInc}개, 평균에서 제외)입니다.${noMean.length?` 평균 없음(null): ${noMean.join(', ')}.`:''} 범례를 눌러 곡선을 비교하세요.`;
@@ -287,7 +302,8 @@ function renderBenchDetails(b){const m=state.m;const parts=[];
   $('benchmarkDetails').innerHTML=parts.join('');}
 
 /* ---------- records ---------- */
-function recordRows(){const m=state.m;if(!m)return [];const rows=m.observations.map(o=>({id:o.result_id,key:keyOf(o),phase:o.phase,obs:o,ev:m.evalById.get(String(o.result_id))||null}));
+function recordRows(){const m=state.m;if(!m)return [];return m.recordRows||(m.recordRows=buildRecordRows(m));}
+function buildRecordRows(m){const rows=m.observations.map(o=>({id:o.result_id,key:keyOf(o),phase:o.phase,obs:o,ev:m.evalById.get(String(o.result_id))||null}));
   m.evaluations.forEach(e=>{if(!m.obsById.has(String(e.result_id)))rows.push({id:e.result_id,key:keyOf(e),phase:isHeld(m.covByKey.get(keyOf(e))&&{phase:m.covByKey.get(keyOf(e)).state==='held_out'?'held_out':''})?'held_out':'evaluation',obs:null,ev:e});});return rows;}
 function verdict(ev){if(!ev)return ['gray','평가 없음'];if(ev.clear_counterexample===true)return ['amber','명확한 반례'];if(ev.secondary_counterexample===true)return ['gray','보조 반례 (>10%)'];if(ev.clear_counterexample===false&&ev.secondary_counterexample===false)return ['green','허용 범위'];return ['gray','판정 null'];}
 function renderRecords(){
@@ -347,14 +363,15 @@ async function pollNow(){if(polling)return;polling=true;clearTimeout(pollTimer);
   finally{polling=false;pollTimer=setTimeout(pollNow,pollDelay);}}
 
 /* ---------- events ---------- */
-function renderAll(){renderChrome();renderLab();renderBenchmark();renderRecords();}
+/* New snapshot: every view is invalidated; only the shown one is rebuilt now. */
+function renderAll(){renderChrome();dirty.lab=dirty.benchmark=dirty.records=true;renderView(state.view);}
 document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>setView(b.dataset.view)));
 document.querySelectorAll('[data-corner]').forEach(b=>b.addEventListener('click',()=>{state.corner=b.dataset.corner;renderMap();}));
 $('heatmap').addEventListener('click',e=>{const b=e.target.closest('[data-key]');if(b){state.point=b.dataset.key;renderMap();}});
 $('steps').addEventListener('click',e=>{const b=e.target.closest('[data-step]');if(b){stopPlaying();setStage(Number(b.dataset.step));}});
 $('candidates').addEventListener('click',e=>{const b=e.target.closest('[data-candidate]');if(b)showCandidate(Number(b.dataset.candidate));});
 document.addEventListener('click',e=>{const ev=e.target.closest('[data-evidence]');if(ev){evidence(ev.dataset.evidence);return;}if(e.target.closest('#traceAll')){showTraceAll();return;}if(e.target.closest('[data-open-jobs]')){openJobs();return;}const sj=e.target.closest('[data-start-job]');if(sj){sj.disabled=true;startJob(sj.dataset.startJob);return;}if(e.target.closest('#cancelJob')){cancelJob();}});
-$('chartLegend').addEventListener('click',e=>{const b=e.target.closest('[data-policy]');if(b){const p=b.dataset.policy;state.visiblePolicies.has(p)?state.visiblePolicies.delete(p):state.visiblePolicies.add(p);renderBenchmark();}});
+$('chartLegend').addEventListener('click',e=>{const b=e.target.closest('[data-policy]');if(b){const p=b.dataset.policy;state.visiblePolicies.has(p)?state.visiblePolicies.delete(p):state.visiblePolicies.add(p);renderBenchChart();$('chartLegend').querySelectorAll('[data-policy]').forEach(x=>x.setAttribute('aria-pressed',state.visiblePolicies.has(x.dataset.policy)));}});
 $('advanceButton').addEventListener('click',advance);$('topAdvanceButton').addEventListener('click',advance);
 $('resetButton').addEventListener('click',()=>{stopPlaying();setStage(0);});$('playButton').addEventListener('click',play);
 $('recordSearch').addEventListener('input',renderRecords);$('recordFilter').addEventListener('change',renderRecords);$('recordCorner').addEventListener('change',renderRecords);

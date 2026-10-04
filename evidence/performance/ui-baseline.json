@@ -1,0 +1,132 @@
+{
+  "result": {
+    "app": "baseline 1eb3606",
+    "primarySha": "f6d56930a1b7a483d8ff751c4620eae262c584307f1eb65207f9fe86a09e2c90",
+    "altSha": "bc48b0f7d6d2d15c31dc228a0e95a9e5b42bb68dde512bcc121b6582b527c960",
+    "initial": {
+      "readyMsMedian": 96,
+      "scriptMsMedian": 3.978,
+      "mutationsFirstRun": {
+        "lab-controls": 7,
+        "chrome": 8,
+        "lab": 19,
+        "benchmark": 10,
+        "chart": 2,
+        "chartLegendChildren": 1,
+        "benchmarkConclusion": 1,
+        "benchmarkTable": 1,
+        "benchmarkDetails": 1,
+        "records": 4
+      }
+    },
+    "referenceHashes": {
+      "primary": {
+        "lab": "cefe81cdc1d70612",
+        "benchmark": "e7d19ddc08ad4914",
+        "records": "99eb72e6dbf288ae"
+      },
+      "alt": {
+        "lab": "e4a3ea03c8ecdfa2",
+        "benchmark": "ccc26f959eeed3c6",
+        "records": "f4f3fb3f14c408cb"
+      }
+    },
+    "replay": {
+      "steps": 3,
+      "clicks": 12,
+      "clickMsMedian": 2.1,
+      "mutations": {
+        "lab-controls": 60,
+        "lab": 204
+      },
+      "cpu": {
+        "scriptMs": 10.78,
+        "layoutMs": 13.82,
+        "styleMs": 4.93
+      }
+    },
+    "replayWhileRecordsOpen": {
+      "mutations": {}
+    },
+    "viewSwitch": {
+      "cycles": 6,
+      "msMedian": {
+        "lab": 2,
+        "benchmark": 3.65,
+        "records": 2.55
+      },
+      "mutations": {
+        "lab-controls": 18,
+        "chrome": 126,
+        "lab": 18,
+        "benchmark": 78,
+        "records": 42,
+        "chart": 12,
+        "chartLegendChildren": 6,
+        "benchmarkConclusion": 6,
+        "benchmarkTable": 6,
+        "benchmarkDetails": 6
+      },
+      "cpu": {
+        "scriptMs": 8.26,
+        "layoutMs": 39.36,
+        "styleMs": 12.79
+      }
+    },
+    "legend": {
+      "toggles": 24,
+      "clickMsMedian": 2.65,
+      "mutations": {
+        "benchmark": 240,
+        "chart": 48,
+        "chartLegendChildren": 24,
+        "benchmarkConclusion": 24,
+        "benchmarkTable": 24,
+        "benchmarkDetails": 24
+      },
+      "cpu": {
+        "scriptMs": 20.3,
+        "layoutMs": 37.01,
+        "styleMs": 8.81
+      },
+      "hiddenChartHashes": [
+        "217fee525de86312",
+        "28bc3cc0b4ab0021",
+        "1d1cfcd45d2b9e36",
+        "378c7eabbe16cfc7"
+      ],
+      "chartHash": "c43df8aa7067fa7e"
+    },
+    "records": {
+      "inputMsMedian": 0.9
+    },
+    "replaceWhileRecordsOpen": {
+      "mutations": {
+        "lab-controls": 5,
+        "chrome": 6,
+        "lab": 17,
+        "benchmark": 10,
+        "chart": 2,
+        "chartLegendChildren": 1,
+        "benchmarkConclusion": 1,
+        "benchmarkTable": 1,
+        "benchmarkDetails": 1,
+        "records": 4
+      },
+      "activeView": "records"
+    },
+    "exportLocal": {
+      "sha256": "f6d56930a1b7a483d8ff751c4620eae262c584307f1eb65207f9fe86a09e2c90",
+      "equal": true
+    },
+    "exportStatic": {
+      "sha256": "f6d56930a1b7a483d8ff751c4620eae262c584307f1eb65207f9fe86a09e2c90",
+      "equal": true
+    }
+  },
+  "failures": [
+    "initial load rebuilt hidden views: {\"lab-controls\":7,\"chrome\":8,\"lab\":19,\"benchmark\":10,\"chart\":2,\"chartLegendChildren\":1,\"benchmarkConclusion\":1,\"benchmarkTable\":1,\"benchmarkDetails\":1,\"records\":4}",
+    "legend toggle rebuilt invariant benchmark parts: {\"benchmark\":240,\"chart\":48,\"chartLegendChildren\":24,\"benchmarkConclusion\":24,\"benchmarkTable\":24,\"benchmarkDetails\":24}",
+    "data replacement rebuilt hidden views: {\"lab-controls\":5,\"chrome\":6,\"lab\":17,\"benchmark\":10,\"chart\":2,\"chartLegendChildren\":1,\"benchmarkConclusion\":1,\"benchmarkTable\":1,\"benchmarkDetails\":1,\"records\":4}"
+  ]
+}

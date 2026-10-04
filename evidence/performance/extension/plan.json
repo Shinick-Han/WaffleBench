@@ -1,0 +1,68 @@
+{
+  "plan_hash": "72884b6a2605037928ee1980a03b4ccf974f9dc13ef408dbd1536b9082d1491f",
+  "scope": "Exploratory post-M5 extension; never replaces the frozen primary result",
+  "known_before_design": "Original 20f M5 outcomes were seen; 8f and 35f loads were not evaluated before this extension plan",
+  "load_ff": [
+    20,
+    8,
+    35
+  ],
+  "seeds": [
+    2001,
+    2002,
+    2003,
+    2004,
+    2005,
+    2006,
+    2007,
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020
+  ],
+  "policies": [
+    "adaptive_idw_plus_distance",
+    "random",
+    "kernel_ucb_exploratory"
+  ],
+  "kernel": {
+    "length_scales": [
+      0.6,
+      0.6,
+      0.25,
+      0.5
+    ],
+    "ridge": 0.0001,
+    "dispersion_weight": 0.05,
+    "calibrated_uncertainty": false
+  },
+  "budget_per_run": {
+    "calibration": 9,
+    "initial": 3,
+    "subsequent": 12,
+    "total": 24
+  },
+  "initial_order": "SHA256 falsify-extension-v1|initial|seed|point_id, first three search points",
+  "random_order": "SHA256 falsify-extension-v1|random|seed|point_id",
+  "clear_threshold_strict": 0.11,
+  "grid_and_split_manifest_sha256": "8a9c760c6da7db8dcd769992cf73a255df9b1cad9f8e7d60b8fd7336f772b16c",
+  "protocol_sha256": "45e04ba3feea0d0fea1ccf236530ee7168f061753d82c1bc8f9d0fc3dd473ff9",
+  "loads_override_only": "Each world recalibrates the same five-coefficient form at the same nine points once; model then frozen; no held-out truth queried",
+  "postflight": "After all searches in each load, top three kernel seed-2001 search errors rechecked at half-step and tight settings; 0.5% bound",
+  "global_physical_attempt_cap": 1000,
+  "global_wall_cap_seconds": 1500,
+  "source_sha256": {
+    "falsify_lab/exploratory.py": "cc579f4ff0c78a61cf31f0c2ceeb208ea8270f74aa9325af47125b1a5558d313",
+    "scripts/run_performance_extension.py": "18b11e49dd4d6473260971e5e1df1f3097568d580acc25a338d148b84419c2e7",
+    "falsify_lab/policies.py": "6afebb0f79cdfa1323b9a75e5c6b44432087a9eaf62476e57153f78c56a103b8"
+  }
+}

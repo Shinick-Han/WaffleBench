@@ -14,6 +14,11 @@ The research design is fixed in [`RESEARCH_PROTOCOL.md`](RESEARCH_PROTOCOL.md) (
 clear counterexamples versus random's 1.4: paired gain **+3.7**, prespecified 95%
 interval **[3.2, 4.1]**. The frozen primary criterion passed. See [`RESULTS.md`](RESULTS.md)
 for the independent audit, secondary comparisons, held-out checks, cost and limits.
+**Performance update.** Exact policy decisions now take about one tenth of the prior
+ranking time. The UI avoids rebuilding hidden views and invariant chart details.
+A separate 180-run load-sensitivity study rejected a proposed kernel policy as the
+default. Measurements, raw evidence and reproduction steps are in
+[`PERFORMANCE.md`](PERFORMANCE.md); the original primary result is unchanged.
 The `mockup/` folder is the original UI mockup. Its numbers are invented placeholders and
 are not results.
 

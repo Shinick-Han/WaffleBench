@@ -1,0 +1,29 @@
+{
+  "attempt_id": "att_00073",
+  "fingerprint": {
+    "device_models": "generic SPICE Level-1 textbook cards (not a foundry PDK)",
+    "measurement_schema": "falsify-meas-v1",
+    "netlist_sha256": "842e14c8e0262fec12541f2100388d96d65e80eabf1965f60af50e25544df5e4",
+    "setting": "basic",
+    "simulator": "ngspice-47 : Circuit level simulation program [sha256 22d5cae2bd32b2e39157a8d27bf457122f68285b72a9ebefdf41551b628233ab]",
+    "supplementary_load_ff": 35
+  },
+  "kind": "simulation",
+  "netlist_file": "attempts/att_00073/netlist.cir",
+  "point_id": "SS|2.200|-40.0",
+  "pvt": {
+    "corner": "SS",
+    "temp_c": -40.0,
+    "vdd": 2.2
+  },
+  "raw_meas_lines": [
+    "tphl                =  7.27182e-11",
+    "tplh                =  8.59163e-11"
+  ],
+  "setting": "basic",
+  "sim_id": "sim_276136667ae43fe6c5a4",
+  "tpd_s": 7.931724999999999e-11,
+  "tphl_s": 7.27182e-11,
+  "tplh_s": 8.59163e-11,
+  "wall_time_s": 0.029892
+}

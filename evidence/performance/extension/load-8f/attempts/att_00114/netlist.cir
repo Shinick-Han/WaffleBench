@@ -1,0 +1,23 @@
+* falsify-lab CMOS inverter delay (generic Level-1 models, not a PDK)
+.param vdd=1.500
+.param dvtn=0.0 kpn_s=1.0 dvtp=0.0 kpp_s=1.0
+.temp -40.0
+.options tnom=27
+.model nch nmos level=1 vto={0.50+dvtn} kp={170u*kpn_s} gamma=0.4 phi=0.7 lambda=0.05
++ tox=7.6n cgso=0.3n cgdo=0.3n cj=0.9m cjsw=0.25n
+.model pch pmos level=1 vto={-0.60-dvtp} kp={60u*kpp_s} gamma=0.5 phi=0.7 lambda=0.08
++ tox=7.6n cgso=0.3n cgdo=0.3n cj=1.0m cjsw=0.3n
+vsup vdd 0 {vdd}
+vin in 0 pulse(0 {vdd} 1n 50p 50p 2n 4n)
+mn out in 0 0 nch w=1u l=0.35u ad=1p as=1p pd=4u ps=4u
+mp out in vdd vdd pch w=2.5u l=0.35u ad=2.5p as=2.5p pd=7u ps=7u
+cl out 0 8f
+.tran 1p 6n
+.control
+run
+meas tran tphl trig v(in) val=0.7500 rise=1 targ v(out) val=0.7500 fall=1
+meas tran tplh trig v(in) val=0.7500 fall=1 targ v(out) val=0.7500 rise=1
+echo FALSIFY_DONE
+quit
+.endc
+.end

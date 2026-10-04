@@ -1,0 +1,110 @@
+{
+  "result": {
+    "app": "candidate 376eb92",
+    "primarySha": "f6d56930a1b7a483d8ff751c4620eae262c584307f1eb65207f9fe86a09e2c90",
+    "altSha": "bc48b0f7d6d2d15c31dc228a0e95a9e5b42bb68dde512bcc121b6582b527c960",
+    "initial": {
+      "readyMsMedian": 99,
+      "scriptMsMedian": 3.954,
+      "mutationsFirstRun": {
+        "lab-controls": 7,
+        "chrome": 8,
+        "lab": 19
+      }
+    },
+    "referenceHashes": {
+      "primary": {
+        "lab": "cefe81cdc1d70612",
+        "benchmark": "e7d19ddc08ad4914",
+        "records": "99eb72e6dbf288ae"
+      },
+      "alt": {
+        "lab": "e4a3ea03c8ecdfa2",
+        "benchmark": "ccc26f959eeed3c6",
+        "records": "f4f3fb3f14c408cb"
+      }
+    },
+    "replay": {
+      "steps": 3,
+      "clicks": 12,
+      "clickMsMedian": 2.4,
+      "mutations": {
+        "lab-controls": 60,
+        "lab": 204
+      },
+      "cpu": {
+        "scriptMs": 12.31,
+        "layoutMs": 15.05,
+        "styleMs": 5.61
+      }
+    },
+    "replayWhileRecordsOpen": {
+      "mutations": {}
+    },
+    "viewSwitch": {
+      "cycles": 6,
+      "msMedian": {
+        "lab": 2.15,
+        "benchmark": 3.3,
+        "records": 1.7
+      },
+      "mutations": {
+        "lab-controls": 18,
+        "chrome": 126,
+        "lab": 18,
+        "benchmark": 28,
+        "records": 18,
+        "chart": 2,
+        "chartLegendChildren": 1,
+        "benchmarkConclusion": 1,
+        "benchmarkTable": 1,
+        "benchmarkDetails": 1
+      },
+      "cpu": {
+        "scriptMs": 4.81,
+        "layoutMs": 41.93,
+        "styleMs": 13.41
+      }
+    },
+    "legend": {
+      "toggles": 24,
+      "clickMsMedian": 0.5,
+      "mutations": {
+        "benchmark": 120,
+        "chart": 24
+      },
+      "cpu": {
+        "scriptMs": 5.2,
+        "layoutMs": 5.37,
+        "styleMs": 3.03
+      },
+      "hiddenChartHashes": [
+        "217fee525de86312",
+        "28bc3cc0b4ab0021",
+        "1d1cfcd45d2b9e36",
+        "378c7eabbe16cfc7"
+      ],
+      "chartHash": "c43df8aa7067fa7e"
+    },
+    "records": {
+      "inputMsMedian": 1.15
+    },
+    "replaceWhileRecordsOpen": {
+      "mutations": {
+        "lab-controls": 1,
+        "chrome": 6,
+        "records": 4
+      },
+      "activeView": "records"
+    },
+    "exportLocal": {
+      "sha256": "f6d56930a1b7a483d8ff751c4620eae262c584307f1eb65207f9fe86a09e2c90",
+      "equal": true
+    },
+    "exportStatic": {
+      "sha256": "f6d56930a1b7a483d8ff751c4620eae262c584307f1eb65207f9fe86a09e2c90",
+      "equal": true
+    }
+  },
+  "failures": []
+}
