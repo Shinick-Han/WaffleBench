@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>실제 PCB 사진 검사 근거 | Falsify Lab — Research Workbench</title>
+<meta name="description" content="VisA PCB2 실제 사진 200장(정상 100 · 결함 100)에 대한 고정 임계값 결함 재현율과 오경보율을 저장된 근거로 보여 줍니다. 웨이퍼 SEM 자료가 아닙니다.">
+<meta property="og:title" content="실제 PCB 사진 검사 근거 | Falsify Lab">
+<meta property="og:description" content="VisA PCB2 실제 사진 검사 연구의 저장된 근거입니다. 웨이퍼·SEM·팹 정확도 주장이 아닙니다.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="./inspection-images.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<header class="masthead"><div class="mast-inner"><div class="identity"><span class="brand">Falsify Lab</span><span class="divider" aria-hidden="true"></span><span>Research Workbench</span></div><nav class="mast-links" aria-label="관련 화면"><a href="./inspection-evidence.html">검사 v3 근거</a><a href="./inspection-quality.html">미탐과 검사 예산</a><a href="./index.html">연구 작업대</a><a href="./inspection-live.html">실제 에이전트 실행</a></nav></div></header>
+<main id="main" class="layout">
+ <div class="heading">
+  <div><h1>실제 PCB 사진에서 결함을 얼마나 잡는가</h1><p class="lead">공개 PCB 사진 200장(정상 100 · 결함 100)을, 테스트 전에 고정한 임계값으로 판정했을 때 놓친 결함과 잘못 거른 정상품을 그대로 셉니다.</p></div>
+  <div class="downloads"><button id="download" type="button" class="control" disabled>원본 JSON 내려받기</button></div>
+ </div>
+ <p class="notice"><strong>실제 PCB 사진 연구</strong> · VisA PCB2 공개 데이터셋의 카메라 사진입니다. 웨이퍼 SEM 영상, 팹 장비 정확도, 수율·처리량 효과를 입증하지 않습니다.</p>
+
+ <div id="loadState" class="load-state" role="status" aria-live="polite">
+  <div class="skeleton" aria-hidden="true"><span></span><span></span><span></span></div>
+  <p>저장된 PCB 사진 검사 근거를 불러오는 중…</p>
+ </div>
+
+ <div id="app" hidden>
+  <dl id="studyMeta" class="study-meta"></dl>
+
+  <section id="primary" class="band" aria-labelledby="primaryTitle">
+   <div class="section-head"><div><h2 id="primaryTitle">주 결과</h2><p>사전 지정한 주 방법과 기준선의 결함 재현율 차이 · 각 방법 고유의 고정 임계값 · 이미지 단위 paired bootstrap 95% CI</p></div><span id="primaryVerdict"></span></div>
+   <div id="primaryBody"></div>
+  </section>
+
+  <section id="compare" class="band" aria-labelledby="compareTitle">
+   <div class="section-head"><div><h2 id="compareTitle">세 방법 비교</h2><p>판정 수는 결함 100장·정상 100장 기준 실제 장수입니다. AUROC·AP는 순위 지표이며 정확도가 아닙니다.</p></div></div>
+   <div id="compareBody"></div>
+  </section>
+
+  <section id="scores" class="band" aria-labelledby="scoresTitle">
+   <div class="section-head"><div><h2 id="scoresTitle">이미지별 점수 분포</h2><p>점선 0은 선택한 방법의 고정 임계값입니다. 점수 단위가 방법마다 달라 방법 사이의 절댓값은 비교하지 않습니다.</p></div></div>
+   <fieldset class="method-switch" id="methodSwitch"><legend>방법</legend></fieldset>
+   <p id="scoreLive" class="sr" role="status" aria-live="polite"></p>
+   <div id="scoresBody"></div>
+  </section>
+
+  <section id="errors" class="band" aria-labelledby="errorsTitle">
+   <div class="section-head"><div><h2 id="errorsTitle">주 방법이 틀린 사진</h2><p>사후 오류 검토 · 놓친 결함(FN)과 오경보(FP)를 분리합니다. 다른 방법의 판정은 같은 사진에 대한 참고 표시입니다.</p></div></div>
+   <div id="errorsBody"></div>
+  </section>
+
+  <section id="predecessor" class="band" aria-labelledby="predTitle">
+   <div class="section-head"><div><h2 id="predTitle">선행 PCB1 시험 <span class="tag">별도 결과 · 합산 금지</span></h2><p>먼저 수행한 PCB1 시험의 부정적 결과는 그대로 유지됩니다. PCB2 결과와 합치거나 평균하지 않습니다.</p></div></div>
+   <div id="predBody"></div>
+  </section>
+
+  <section id="replication" class="band" aria-labelledby="replicationTitle">
+   <div class="section-head"><div><h2 id="replicationTitle">다른 PCB 범주에서도 유지되는가 <span class="tag">별도 PCB3 검증</span></h2><p>PCB2에서 고른 복합 설계를 고정하고, 아직 쓰지 않은 PCB3 공식 테스트에 한 번 적용했습니다. 두 시험의 정확도를 합치거나 평균하지 않습니다.</p></div></div>
+   <div id="replicationBody"></div>
+  </section>
+
+  <section id="provenance" class="band" aria-labelledby="provTitle">
+   <div class="section-head"><div><h2 id="provTitle">출처와 감사</h2><p>고정(freeze) 다이제스트, 독립 감사, 부트스트랩 설정, 내려받은 파일의 정확한 바이트</p></div></div>
+   <div id="provBody"></div>
+  </section>
+
+  <section id="sources" class="band" aria-labelledby="sourcesTitle">
+   <div class="section-head"><div><h2 id="sourcesTitle">데이터와 방법 출처</h2></div></div>
+   <div id="sourcesBody"></div>
+  </section>
+
+  <section class="limitations" aria-labelledby="limitationsTitle"><details open><summary id="limitationsTitle">해석 범위와 한계</summary><ul id="limitationsList"></ul></details></section>
+ </div>
+</main>
+<script src="./inspection-images.js" defer></script>
+</body>
+</html>

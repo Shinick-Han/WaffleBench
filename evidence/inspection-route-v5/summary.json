@@ -1,0 +1,139 @@
+{
+  "development_not_evidence": {
+    "original_file_sha256": "28531c40a04537f0cdcb4bc4b4b509f5e7a3efd5c526b482c9ab7fbaeb9611a3",
+    "runs": 80,
+    "selection": "none: fixed beam3 settings preregistered; no hyperparameter scan",
+    "summary": {
+      "condition_means": [
+        {
+          "lots": 40,
+          "mean_attempted_sites": 34.725,
+          "mean_by_scenario": {
+            "low_contrast": 23.625,
+            "novel_cluster": 31.875,
+            "nuisance_heavy": 31.0,
+            "process_shift": 28.375,
+            "stationary": 30.625
+          },
+          "mean_loading_cost": 11.8,
+          "mean_spent": 352.4053354652245,
+          "mean_stage_cost": 54.40533546522447,
+          "mean_true_doi_confirmed": 29.1,
+          "secondary_mean_policy_cpu_s": 0.0265625,
+          "secondary_mean_policy_wall_s": 0.026341675067669712,
+          "variant": "cb400_route_full"
+        },
+        {
+          "lots": 40,
+          "mean_attempted_sites": 34.7,
+          "mean_by_scenario": {
+            "low_contrast": 24.75,
+            "novel_cluster": 31.375,
+            "nuisance_heavy": 31.125,
+            "process_shift": 29.625,
+            "stationary": 31.25
+          },
+          "mean_loading_cost": 12.2,
+          "mean_spent": 352.64655799893137,
+          "mean_stage_cost": 54.24655799893138,
+          "mean_true_doi_confirmed": 29.625,
+          "secondary_mean_policy_cpu_s": 1.421484375,
+          "secondary_mean_policy_wall_s": 1.4250677749776515,
+          "variant": "cb400_route_beam3"
+        }
+      ],
+      "primary": {
+        "budget": 360,
+        "ci95_difference": [
+          0.05,
+          0.975
+        ],
+        "comparator": "cb400_route_full",
+        "complete_pairs": 40,
+        "mean_comparator": 29.1,
+        "mean_difference": 0.525,
+        "mean_policy": 29.625,
+        "metric": "true_doi_confirmed",
+        "mode": "candidate_only",
+        "policy": "cb400_route_beam3",
+        "reason": "target not met",
+        "relative_gain": 0.018041237113401998,
+        "role": "primary",
+        "success": false
+      },
+      "timing_note": "software policy timing only; secondary, not equipment CU"
+    }
+  },
+  "held_out": {
+    "freeze_sha256": "7fa2e9dd91ab399efd814237eb707ca09baf44cfa282903dd126132d62eac1c1",
+    "generated_at": "2026-10-04T09:02:30.578574+00:00",
+    "limitations": [
+      "Authored synthetic numeric evidence, not SEM-image or factory performance.",
+      "Equipment CU and measured CPU time are separate; timing is secondary."
+    ],
+    "original_file_sha256": "8cbf68e4d4be8009fab9df23078215f8a821584e92384f4b0441b6ae5922503e",
+    "runs": 200,
+    "summary": {
+      "condition_means": [
+        {
+          "lots": 100,
+          "mean_attempted_sites": 34.72,
+          "mean_by_scenario": {
+            "low_contrast": 24.05,
+            "novel_cluster": 31.7,
+            "nuisance_heavy": 30.7,
+            "process_shift": 28.75,
+            "stationary": 31.65
+          },
+          "mean_loading_cost": 12.0,
+          "mean_spent": 352.22388466303414,
+          "mean_stage_cost": 54.46388466303399,
+          "mean_true_doi_confirmed": 29.37,
+          "secondary_mean_policy_cpu_s": 0.028125,
+          "secondary_mean_policy_wall_s": 0.02729853101191111,
+          "variant": "cb400_route_full"
+        },
+        {
+          "lots": 100,
+          "mean_attempted_sites": 34.6,
+          "mean_by_scenario": {
+            "low_contrast": 23.9,
+            "novel_cluster": 31.85,
+            "nuisance_heavy": 30.85,
+            "process_shift": 29.3,
+            "stationary": 32.1
+          },
+          "mean_loading_cost": 12.8,
+          "mean_spent": 352.11854995433345,
+          "mean_stage_cost": 54.03854995433338,
+          "mean_true_doi_confirmed": 29.6,
+          "secondary_mean_policy_cpu_s": 1.40859375,
+          "secondary_mean_policy_wall_s": 1.4141286469902843,
+          "variant": "cb400_route_beam3"
+        }
+      ],
+      "primary": {
+        "budget": 360,
+        "ci95_difference": [
+          -0.050249999999999774,
+          0.53
+        ],
+        "comparator": "cb400_route_full",
+        "complete_pairs": 100,
+        "mean_comparator": 29.37,
+        "mean_difference": 0.23,
+        "mean_policy": 29.6,
+        "metric": "true_doi_confirmed",
+        "mode": "candidate_only",
+        "policy": "cb400_route_beam3",
+        "reason": "target not met",
+        "relative_gain": 0.00783112019067067,
+        "role": "primary",
+        "success": false
+      },
+      "timing_note": "software policy timing only; secondary, not equipment CU"
+    }
+  },
+  "kind": "aggregate_only_route_v5",
+  "omitted": "per-run ledgers, lot files (oracle.npz), run records with local paths and the frozen model are not committed"
+}

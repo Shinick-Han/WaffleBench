@@ -1,0 +1,3270 @@
+{
+  "schema_version": 1,
+  "kind": "inspection_images_v2_evidence",
+  "scope": "real_pcb_photography_not_wafer_sem",
+  "evaluation": {
+    "counts": {
+      "anomaly": 100,
+      "normal": 100,
+      "test_images": 200
+    },
+    "data_mode": "real",
+    "evaluated_at": "2026-10-04T08:31:26.976295+00:00",
+    "freeze_digest": "a15a37ae78b7234aefedd4f69b89c9fec2148a7a86e1c1d1d2000b94094a6fed",
+    "images": [
+      {
+        "baseline224_score": 17.766118841559052,
+        "highres448max_score": 28.316615193310568,
+        "image": "pcb2/Data/Images/Anomaly/000.JPG",
+        "label": 1,
+        "primary448_score": 27.087764197796044
+      },
+      {
+        "baseline224_score": 23.886153635972494,
+        "highres448max_score": 33.510575833345136,
+        "image": "pcb2/Data/Images/Anomaly/001.JPG",
+        "label": 1,
+        "primary448_score": 32.011441603827265
+      },
+      {
+        "baseline224_score": 25.210395541284683,
+        "highres448max_score": 37.30670933866851,
+        "image": "pcb2/Data/Images/Anomaly/002.JPG",
+        "label": 1,
+        "primary448_score": 34.256741301705524
+      },
+      {
+        "baseline224_score": 15.974339325169748,
+        "highres448max_score": 23.49222158776955,
+        "image": "pcb2/Data/Images/Anomaly/003.JPG",
+        "label": 1,
+        "primary448_score": 22.243123716769883
+      },
+      {
+        "baseline224_score": 25.687438591067757,
+        "highres448max_score": 36.6417385693931,
+        "image": "pcb2/Data/Images/Anomaly/004.JPG",
+        "label": 1,
+        "primary448_score": 34.37163041463746
+      },
+      {
+        "baseline224_score": 20.20151432169895,
+        "highres448max_score": 25.918825658663394,
+        "image": "pcb2/Data/Images/Anomaly/005.JPG",
+        "label": 1,
+        "primary448_score": 24.69013619712867
+      },
+      {
+        "baseline224_score": 24.360129132828618,
+        "highres448max_score": 33.43596840529148,
+        "image": "pcb2/Data/Images/Anomaly/006.JPG",
+        "label": 1,
+        "primary448_score": 30.40969215263515
+      },
+      {
+        "baseline224_score": 26.31320342962105,
+        "highres448max_score": 42.089006354238016,
+        "image": "pcb2/Data/Images/Anomaly/007.JPG",
+        "label": 1,
+        "primary448_score": 39.08053224547205
+      },
+      {
+        "baseline224_score": 25.916437488046505,
+        "highres448max_score": 46.66550568490107,
+        "image": "pcb2/Data/Images/Anomaly/008.JPG",
+        "label": 1,
+        "primary448_score": 44.60964333676062
+      },
+      {
+        "baseline224_score": 16.919497885119966,
+        "highres448max_score": 21.81753707409225,
+        "image": "pcb2/Data/Images/Anomaly/009.JPG",
+        "label": 1,
+        "primary448_score": 21.619520732725363
+      },
+      {
+        "baseline224_score": 15.871842970350746,
+        "highres448max_score": 21.82695750164184,
+        "image": "pcb2/Data/Images/Anomaly/010.JPG",
+        "label": 1,
+        "primary448_score": 20.754124237105657
+      },
+      {
+        "baseline224_score": 23.34219548258851,
+        "highres448max_score": 30.903461950798334,
+        "image": "pcb2/Data/Images/Anomaly/011.JPG",
+        "label": 1,
+        "primary448_score": 30.279725414415804
+      },
+      {
+        "baseline224_score": 17.08240435302021,
+        "highres448max_score": 19.813125796847714,
+        "image": "pcb2/Data/Images/Anomaly/012.JPG",
+        "label": 1,
+        "primary448_score": 19.763303356114235
+      },
+      {
+        "baseline224_score": 29.703337765631318,
+        "highres448max_score": 40.53277206143565,
+        "image": "pcb2/Data/Images/Anomaly/013.JPG",
+        "label": 1,
+        "primary448_score": 39.02015927405095
+      },
+      {
+        "baseline224_score": 18.37394882965737,
+        "highres448max_score": 22.18446794941721,
+        "image": "pcb2/Data/Images/Anomaly/014.JPG",
+        "label": 1,
+        "primary448_score": 21.96373902001973
+      },
+      {
+        "baseline224_score": 16.0288008830907,
+        "highres448max_score": 25.492744030289657,
+        "image": "pcb2/Data/Images/Anomaly/015.JPG",
+        "label": 1,
+        "primary448_score": 23.438445953494618
+      },
+      {
+        "baseline224_score": 23.379891067542943,
+        "highres448max_score": 30.99697819363346,
+        "image": "pcb2/Data/Images/Anomaly/016.JPG",
+        "label": 1,
+        "primary448_score": 30.28725945255248
+      },
+      {
+        "baseline224_score": 16.628716868457516,
+        "highres448max_score": 24.48359891084114,
+        "image": "pcb2/Data/Images/Anomaly/017.JPG",
+        "label": 1,
+        "primary448_score": 23.717176991202553
+      },
+      {
+        "baseline224_score": 26.952305958380627,
+        "highres448max_score": 27.098340932005826,
+        "image": "pcb2/Data/Images/Anomaly/018.JPG",
+        "label": 1,
+        "primary448_score": 26.99584153528428
+      },
+      {
+        "baseline224_score": 17.213422178650163,
+        "highres448max_score": 27.01838681728073,
+        "image": "pcb2/Data/Images/Anomaly/019.JPG",
+        "label": 1,
+        "primary448_score": 25.87486311263396
+      },
+      {
+        "baseline224_score": 18.279135778074235,
+        "highres448max_score": 27.4577933998555,
+        "image": "pcb2/Data/Images/Anomaly/020.JPG",
+        "label": 1,
+        "primary448_score": 26.425476881087874
+      },
+      {
+        "baseline224_score": 21.29277903653018,
+        "highres448max_score": 42.85424884738799,
+        "image": "pcb2/Data/Images/Anomaly/021.JPG",
+        "label": 1,
+        "primary448_score": 41.38350118511218
+      },
+      {
+        "baseline224_score": 15.53799458623276,
+        "highres448max_score": 24.002110157319446,
+        "image": "pcb2/Data/Images/Anomaly/022.JPG",
+        "label": 1,
+        "primary448_score": 22.45649865909745
+      },
+      {
+        "baseline224_score": 16.836161321392172,
+        "highres448max_score": 24.554296049324698,
+        "image": "pcb2/Data/Images/Anomaly/023.JPG",
+        "label": 1,
+        "primary448_score": 23.629367291076505
+      },
+      {
+        "baseline224_score": 15.9097751132167,
+        "highres448max_score": 25.053767824675667,
+        "image": "pcb2/Data/Images/Anomaly/024.JPG",
+        "label": 1,
+        "primary448_score": 23.921385187655876
+      },
+      {
+        "baseline224_score": 16.253409518071823,
+        "highres448max_score": 28.397824096872043,
+        "image": "pcb2/Data/Images/Anomaly/025.JPG",
+        "label": 1,
+        "primary448_score": 27.746198983986137
+      },
+      {
+        "baseline224_score": 23.386371151691083,
+        "highres448max_score": 40.410336267196705,
+        "image": "pcb2/Data/Images/Anomaly/026.JPG",
+        "label": 1,
+        "primary448_score": 37.93334707373552
+      },
+      {
+        "baseline224_score": 16.645830262733337,
+        "highres448max_score": 31.15403515780827,
+        "image": "pcb2/Data/Images/Anomaly/027.JPG",
+        "label": 1,
+        "primary448_score": 28.900584740970018
+      },
+      {
+        "baseline224_score": 18.87111186121262,
+        "highres448max_score": 35.10801505581131,
+        "image": "pcb2/Data/Images/Anomaly/028.JPG",
+        "label": 1,
+        "primary448_score": 33.54113777886271
+      },
+      {
+        "baseline224_score": 20.23419998162411,
+        "highres448max_score": 24.749482362575105,
+        "image": "pcb2/Data/Images/Anomaly/029.JPG",
+        "label": 1,
+        "primary448_score": 24.04714737674733
+      },
+      {
+        "baseline224_score": 19.49045962374811,
+        "highres448max_score": 31.47565924621673,
+        "image": "pcb2/Data/Images/Anomaly/030.JPG",
+        "label": 1,
+        "primary448_score": 30.01940110851811
+      },
+      {
+        "baseline224_score": 16.399426736023262,
+        "highres448max_score": 21.003505736579314,
+        "image": "pcb2/Data/Images/Anomaly/031.JPG",
+        "label": 1,
+        "primary448_score": 19.816300411800835
+      },
+      {
+        "baseline224_score": 16.810426793867563,
+        "highres448max_score": 31.479506919182167,
+        "image": "pcb2/Data/Images/Anomaly/032.JPG",
+        "label": 1,
+        "primary448_score": 29.999403209697405
+      },
+      {
+        "baseline224_score": 16.109390556495743,
+        "highres448max_score": 20.775475974720404,
+        "image": "pcb2/Data/Images/Anomaly/033.JPG",
+        "label": 1,
+        "primary448_score": 19.998875420082168
+      },
+      {
+        "baseline224_score": 22.245241363635444,
+        "highres448max_score": 38.15761377148601,
+        "image": "pcb2/Data/Images/Anomaly/034.JPG",
+        "label": 1,
+        "primary448_score": 36.49135007171273
+      },
+      {
+        "baseline224_score": 15.937532852214348,
+        "highres448max_score": 21.661204550893064,
+        "image": "pcb2/Data/Images/Anomaly/035.JPG",
+        "label": 1,
+        "primary448_score": 20.826367577950943
+      },
+      {
+        "baseline224_score": 15.841595538896515,
+        "highres448max_score": 20.36210828606202,
+        "image": "pcb2/Data/Images/Anomaly/036.JPG",
+        "label": 1,
+        "primary448_score": 19.66937456448515
+      },
+      {
+        "baseline224_score": 19.11399501386383,
+        "highres448max_score": 25.380016787880184,
+        "image": "pcb2/Data/Images/Anomaly/037.JPG",
+        "label": 1,
+        "primary448_score": 23.271775738695837
+      },
+      {
+        "baseline224_score": 17.531999516238493,
+        "highres448max_score": 19.147990077696456,
+        "image": "pcb2/Data/Images/Anomaly/038.JPG",
+        "label": 1,
+        "primary448_score": 18.533043290674552
+      },
+      {
+        "baseline224_score": 19.613524268555963,
+        "highres448max_score": 27.26153364684816,
+        "image": "pcb2/Data/Images/Anomaly/039.JPG",
+        "label": 1,
+        "primary448_score": 25.476535669627385
+      },
+      {
+        "baseline224_score": 25.64831936829719,
+        "highres448max_score": 28.448108931879528,
+        "image": "pcb2/Data/Images/Anomaly/040.JPG",
+        "label": 1,
+        "primary448_score": 27.975546893637553
+      },
+      {
+        "baseline224_score": 25.87679880585632,
+        "highres448max_score": 31.28367257358185,
+        "image": "pcb2/Data/Images/Anomaly/041.JPG",
+        "label": 1,
+        "primary448_score": 30.444610182473536
+      },
+      {
+        "baseline224_score": 19.799384804519253,
+        "highres448max_score": 27.37692210225157,
+        "image": "pcb2/Data/Images/Anomaly/042.JPG",
+        "label": 1,
+        "primary448_score": 27.123508558639855
+      },
+      {
+        "baseline224_score": 16.344459537989582,
+        "highres448max_score": 26.374536569144183,
+        "image": "pcb2/Data/Images/Anomaly/043.JPG",
+        "label": 1,
+        "primary448_score": 25.028027620181273
+      },
+      {
+        "baseline224_score": 20.594902286560934,
+        "highres448max_score": 28.551514884183124,
+        "image": "pcb2/Data/Images/Anomaly/044.JPG",
+        "label": 1,
+        "primary448_score": 28.14438008996403
+      },
+      {
+        "baseline224_score": 15.691282369964869,
+        "highres448max_score": 19.5704418184426,
+        "image": "pcb2/Data/Images/Anomaly/045.JPG",
+        "label": 1,
+        "primary448_score": 19.466090494614548
+      },
+      {
+        "baseline224_score": 27.901282709068234,
+        "highres448max_score": 29.59381912307795,
+        "image": "pcb2/Data/Images/Anomaly/046.JPG",
+        "label": 1,
+        "primary448_score": 29.338857160055696
+      },
+      {
+        "baseline224_score": 26.249521941501214,
+        "highres448max_score": 31.844286779625833,
+        "image": "pcb2/Data/Images/Anomaly/047.JPG",
+        "label": 1,
+        "primary448_score": 30.900303642917745
+      },
+      {
+        "baseline224_score": 17.988186839253494,
+        "highres448max_score": 23.446420752300337,
+        "image": "pcb2/Data/Images/Anomaly/048.JPG",
+        "label": 1,
+        "primary448_score": 23.416508619244382
+      },
+      {
+        "baseline224_score": 19.739370266471553,
+        "highres448max_score": 21.239193391660166,
+        "image": "pcb2/Data/Images/Anomaly/049.JPG",
+        "label": 1,
+        "primary448_score": 20.923759331162355
+      },
+      {
+        "baseline224_score": 16.31725675885248,
+        "highres448max_score": 20.44007826917412,
+        "image": "pcb2/Data/Images/Anomaly/050.JPG",
+        "label": 1,
+        "primary448_score": 19.957985695601774
+      },
+      {
+        "baseline224_score": 17.53153459713867,
+        "highres448max_score": 20.375608761607538,
+        "image": "pcb2/Data/Images/Anomaly/051.JPG",
+        "label": 1,
+        "primary448_score": 19.129083581574672
+      },
+      {
+        "baseline224_score": 19.080408530792635,
+        "highres448max_score": 24.872645038768276,
+        "image": "pcb2/Data/Images/Anomaly/052.JPG",
+        "label": 1,
+        "primary448_score": 24.43165376395301
+      },
+      {
+        "baseline224_score": 15.362062210673109,
+        "highres448max_score": 20.03514797305658,
+        "image": "pcb2/Data/Images/Anomaly/053.JPG",
+        "label": 1,
+        "primary448_score": 19.89004520121051
+      },
+      {
+        "baseline224_score": 19.1419811798933,
+        "highres448max_score": 23.9805950680815,
+        "image": "pcb2/Data/Images/Anomaly/054.JPG",
+        "label": 1,
+        "primary448_score": 23.470769264442012
+      },
+      {
+        "baseline224_score": 15.947226620366504,
+        "highres448max_score": 19.196818758987444,
+        "image": "pcb2/Data/Images/Anomaly/055.JPG",
+        "label": 1,
+        "primary448_score": 19.043652261826708
+      },
+      {
+        "baseline224_score": 16.836981541776915,
+        "highres448max_score": 21.084406743194783,
+        "image": "pcb2/Data/Images/Anomaly/056.JPG",
+        "label": 1,
+        "primary448_score": 20.659239708454034
+      },
+      {
+        "baseline224_score": 17.17618979277061,
+        "highres448max_score": 20.868792403679322,
+        "image": "pcb2/Data/Images/Anomaly/057.JPG",
+        "label": 1,
+        "primary448_score": 20.23153591371018
+      },
+      {
+        "baseline224_score": 18.744424540098127,
+        "highres448max_score": 22.677249639975773,
+        "image": "pcb2/Data/Images/Anomaly/058.JPG",
+        "label": 1,
+        "primary448_score": 22.506218665120908
+      },
+      {
+        "baseline224_score": 17.85510901926979,
+        "highres448max_score": 20.079269696119034,
+        "image": "pcb2/Data/Images/Anomaly/059.JPG",
+        "label": 1,
+        "primary448_score": 19.610707640481188
+      },
+      {
+        "baseline224_score": 16.270261336606136,
+        "highres448max_score": 23.219753410953036,
+        "image": "pcb2/Data/Images/Anomaly/060.JPG",
+        "label": 1,
+        "primary448_score": 20.266141196809752
+      },
+      {
+        "baseline224_score": 23.495308013556006,
+        "highres448max_score": 37.48363245098639,
+        "image": "pcb2/Data/Images/Anomaly/061.JPG",
+        "label": 1,
+        "primary448_score": 34.757238409497056
+      },
+      {
+        "baseline224_score": 15.572013985116168,
+        "highres448max_score": 25.45348823306726,
+        "image": "pcb2/Data/Images/Anomaly/062.JPG",
+        "label": 1,
+        "primary448_score": 24.1508839952518
+      },
+      {
+        "baseline224_score": 15.923748911696235,
+        "highres448max_score": 24.067894947077786,
+        "image": "pcb2/Data/Images/Anomaly/063.JPG",
+        "label": 1,
+        "primary448_score": 23.78017478805965
+      },
+      {
+        "baseline224_score": 19.08696139214831,
+        "highres448max_score": 27.95884115211292,
+        "image": "pcb2/Data/Images/Anomaly/064.JPG",
+        "label": 1,
+        "primary448_score": 25.36194927036902
+      },
+      {
+        "baseline224_score": 16.7198490529274,
+        "highres448max_score": 28.509079579292198,
+        "image": "pcb2/Data/Images/Anomaly/065.JPG",
+        "label": 1,
+        "primary448_score": 28.265402030993766
+      },
+      {
+        "baseline224_score": 17.220014358430653,
+        "highres448max_score": 22.18987291783652,
+        "image": "pcb2/Data/Images/Anomaly/066.JPG",
+        "label": 1,
+        "primary448_score": 21.559557660757388
+      },
+      {
+        "baseline224_score": 16.750078071879116,
+        "highres448max_score": 22.239846233750267,
+        "image": "pcb2/Data/Images/Anomaly/067.JPG",
+        "label": 1,
+        "primary448_score": 21.932041623250694
+      },
+      {
+        "baseline224_score": 18.890641670928808,
+        "highres448max_score": 27.543591045693784,
+        "image": "pcb2/Data/Images/Anomaly/068.JPG",
+        "label": 1,
+        "primary448_score": 25.49640419557168
+      },
+      {
+        "baseline224_score": 15.20683882022661,
+        "highres448max_score": 22.240609362760587,
+        "image": "pcb2/Data/Images/Anomaly/069.JPG",
+        "label": 1,
+        "primary448_score": 21.461723163737975
+      },
+      {
+        "baseline224_score": 16.56648141647998,
+        "highres448max_score": 25.187845689195846,
+        "image": "pcb2/Data/Images/Anomaly/070.JPG",
+        "label": 1,
+        "primary448_score": 24.189772650512953
+      },
+      {
+        "baseline224_score": 18.299659429384054,
+        "highres448max_score": 24.951308493297326,
+        "image": "pcb2/Data/Images/Anomaly/071.JPG",
+        "label": 1,
+        "primary448_score": 24.229462791419024
+      },
+      {
+        "baseline224_score": 15.670587897803205,
+        "highres448max_score": 20.289086599343324,
+        "image": "pcb2/Data/Images/Anomaly/072.JPG",
+        "label": 1,
+        "primary448_score": 20.013404670827786
+      },
+      {
+        "baseline224_score": 17.319383689207267,
+        "highres448max_score": 24.136757598680582,
+        "image": "pcb2/Data/Images/Anomaly/073.JPG",
+        "label": 1,
+        "primary448_score": 23.882132146355392
+      },
+      {
+        "baseline224_score": 17.478602539980226,
+        "highres448max_score": 27.813044242383025,
+        "image": "pcb2/Data/Images/Anomaly/074.JPG",
+        "label": 1,
+        "primary448_score": 26.677639146161074
+      },
+      {
+        "baseline224_score": 18.164488972522857,
+        "highres448max_score": 27.498544306389842,
+        "image": "pcb2/Data/Images/Anomaly/075.JPG",
+        "label": 1,
+        "primary448_score": 23.985277672237256
+      },
+      {
+        "baseline224_score": 17.332755974423005,
+        "highres448max_score": 19.987617677258502,
+        "image": "pcb2/Data/Images/Anomaly/076.JPG",
+        "label": 1,
+        "primary448_score": 19.821339389792104
+      },
+      {
+        "baseline224_score": 15.181096606185926,
+        "highres448max_score": 19.77371757644231,
+        "image": "pcb2/Data/Images/Anomaly/077.JPG",
+        "label": 1,
+        "primary448_score": 19.189532234246887
+      },
+      {
+        "baseline224_score": 18.30649825983848,
+        "highres448max_score": 25.84208973854776,
+        "image": "pcb2/Data/Images/Anomaly/078.JPG",
+        "label": 1,
+        "primary448_score": 23.198870837499854
+      },
+      {
+        "baseline224_score": 17.74086392443649,
+        "highres448max_score": 28.015995074785838,
+        "image": "pcb2/Data/Images/Anomaly/079.JPG",
+        "label": 1,
+        "primary448_score": 27.50272516449678
+      },
+      {
+        "baseline224_score": 16.053691641778567,
+        "highres448max_score": 22.06610292009755,
+        "image": "pcb2/Data/Images/Anomaly/080.JPG",
+        "label": 1,
+        "primary448_score": 21.092741041456254
+      },
+      {
+        "baseline224_score": 18.093229383710675,
+        "highres448max_score": 23.854907480102842,
+        "image": "pcb2/Data/Images/Anomaly/081.JPG",
+        "label": 1,
+        "primary448_score": 23.422818156879377
+      },
+      {
+        "baseline224_score": 17.731495723911223,
+        "highres448max_score": 31.65568528972346,
+        "image": "pcb2/Data/Images/Anomaly/082.JPG",
+        "label": 1,
+        "primary448_score": 29.864714510995665
+      },
+      {
+        "baseline224_score": 19.159622778644888,
+        "highres448max_score": 20.00990718360064,
+        "image": "pcb2/Data/Images/Anomaly/083.JPG",
+        "label": 1,
+        "primary448_score": 19.66917691260239
+      },
+      {
+        "baseline224_score": 19.51758038687576,
+        "highres448max_score": 22.866747371549103,
+        "image": "pcb2/Data/Images/Anomaly/084.JPG",
+        "label": 1,
+        "primary448_score": 22.50484526420929
+      },
+      {
+        "baseline224_score": 17.97904714137823,
+        "highres448max_score": 26.755517982125035,
+        "image": "pcb2/Data/Images/Anomaly/085.JPG",
+        "label": 1,
+        "primary448_score": 24.74421639916835
+      },
+      {
+        "baseline224_score": 19.519197728461197,
+        "highres448max_score": 28.572481056814315,
+        "image": "pcb2/Data/Images/Anomaly/086.JPG",
+        "label": 1,
+        "primary448_score": 27.694548043503207
+      },
+      {
+        "baseline224_score": 21.629535101362535,
+        "highres448max_score": 36.53130163235315,
+        "image": "pcb2/Data/Images/Anomaly/087.JPG",
+        "label": 1,
+        "primary448_score": 34.71182136748076
+      },
+      {
+        "baseline224_score": 18.641952953370758,
+        "highres448max_score": 28.010588482117576,
+        "image": "pcb2/Data/Images/Anomaly/088.JPG",
+        "label": 1,
+        "primary448_score": 26.767993939448303
+      },
+      {
+        "baseline224_score": 24.716260505662678,
+        "highres448max_score": 31.210411681761133,
+        "image": "pcb2/Data/Images/Anomaly/089.JPG",
+        "label": 1,
+        "primary448_score": 29.837286710809426
+      },
+      {
+        "baseline224_score": 16.835964140333687,
+        "highres448max_score": 27.86569400963232,
+        "image": "pcb2/Data/Images/Anomaly/090.JPG",
+        "label": 1,
+        "primary448_score": 26.1689229229664
+      },
+      {
+        "baseline224_score": 18.99774609059371,
+        "highres448max_score": 30.03186373097974,
+        "image": "pcb2/Data/Images/Anomaly/091.JPG",
+        "label": 1,
+        "primary448_score": 28.279085634482538
+      },
+      {
+        "baseline224_score": 18.97564867307205,
+        "highres448max_score": 23.960728589544097,
+        "image": "pcb2/Data/Images/Anomaly/092.JPG",
+        "label": 1,
+        "primary448_score": 23.326128553484143
+      },
+      {
+        "baseline224_score": 16.677717508425943,
+        "highres448max_score": 25.069409298637765,
+        "image": "pcb2/Data/Images/Anomaly/093.JPG",
+        "label": 1,
+        "primary448_score": 24.172901170188965
+      },
+      {
+        "baseline224_score": 22.676897724644625,
+        "highres448max_score": 29.985541637518686,
+        "image": "pcb2/Data/Images/Anomaly/094.JPG",
+        "label": 1,
+        "primary448_score": 27.34306450873558
+      },
+      {
+        "baseline224_score": 18.92682707250568,
+        "highres448max_score": 24.05222321372766,
+        "image": "pcb2/Data/Images/Anomaly/095.JPG",
+        "label": 1,
+        "primary448_score": 23.350919024285428
+      },
+      {
+        "baseline224_score": 16.48503521875591,
+        "highres448max_score": 25.115544086605414,
+        "image": "pcb2/Data/Images/Anomaly/096.JPG",
+        "label": 1,
+        "primary448_score": 25.01297154524801
+      },
+      {
+        "baseline224_score": 15.373044636646588,
+        "highres448max_score": 21.524609034949993,
+        "image": "pcb2/Data/Images/Anomaly/097.JPG",
+        "label": 1,
+        "primary448_score": 20.96941098575348
+      },
+      {
+        "baseline224_score": 16.11125231899861,
+        "highres448max_score": 28.152322167429435,
+        "image": "pcb2/Data/Images/Anomaly/098.JPG",
+        "label": 1,
+        "primary448_score": 24.432470212225013
+      },
+      {
+        "baseline224_score": 20.427990772978337,
+        "highres448max_score": 31.299815276702073,
+        "image": "pcb2/Data/Images/Anomaly/099.JPG",
+        "label": 1,
+        "primary448_score": 29.606387842796394
+      },
+      {
+        "baseline224_score": 26.172245857503334,
+        "highres448max_score": 27.136203160765643,
+        "image": "pcb2/Data/Images/Normal/0011.JPG",
+        "label": 0,
+        "primary448_score": 26.74317332894672
+      },
+      {
+        "baseline224_score": 15.13130623457583,
+        "highres448max_score": 22.334036941272096,
+        "image": "pcb2/Data/Images/Normal/0013.JPG",
+        "label": 0,
+        "primary448_score": 21.314619389737256
+      },
+      {
+        "baseline224_score": 18.800354888790224,
+        "highres448max_score": 20.12812173487962,
+        "image": "pcb2/Data/Images/Normal/0016.JPG",
+        "label": 0,
+        "primary448_score": 19.600627537907776
+      },
+      {
+        "baseline224_score": 23.53828782124466,
+        "highres448max_score": 28.1627876110622,
+        "image": "pcb2/Data/Images/Normal/0024.JPG",
+        "label": 0,
+        "primary448_score": 26.595335334192754
+      },
+      {
+        "baseline224_score": 15.64486175403419,
+        "highres448max_score": 19.199942974966273,
+        "image": "pcb2/Data/Images/Normal/0026.JPG",
+        "label": 0,
+        "primary448_score": 19.198242986386262
+      },
+      {
+        "baseline224_score": 15.237741942241003,
+        "highres448max_score": 20.621661214783735,
+        "image": "pcb2/Data/Images/Normal/0027.JPG",
+        "label": 0,
+        "primary448_score": 20.14360189640542
+      },
+      {
+        "baseline224_score": 15.574031154773017,
+        "highres448max_score": 19.863808222757,
+        "image": "pcb2/Data/Images/Normal/0046.JPG",
+        "label": 0,
+        "primary448_score": 19.622456702768915
+      },
+      {
+        "baseline224_score": 15.945586804502362,
+        "highres448max_score": 19.853856520924385,
+        "image": "pcb2/Data/Images/Normal/0100.JPG",
+        "label": 0,
+        "primary448_score": 19.652476642990678
+      },
+      {
+        "baseline224_score": 16.414418290722733,
+        "highres448max_score": 19.60931689883612,
+        "image": "pcb2/Data/Images/Normal/0107.JPG",
+        "label": 0,
+        "primary448_score": 19.302637213921226
+      },
+      {
+        "baseline224_score": 16.00142509115037,
+        "highres448max_score": 19.462238660144298,
+        "image": "pcb2/Data/Images/Normal/0159.JPG",
+        "label": 0,
+        "primary448_score": 19.151288714863146
+      },
+      {
+        "baseline224_score": 14.976801054608124,
+        "highres448max_score": 20.798195833967842,
+        "image": "pcb2/Data/Images/Normal/0168.JPG",
+        "label": 0,
+        "primary448_score": 19.619537409127815
+      },
+      {
+        "baseline224_score": 16.125709160956482,
+        "highres448max_score": 22.931751082892298,
+        "image": "pcb2/Data/Images/Normal/0170.JPG",
+        "label": 0,
+        "primary448_score": 21.17390792666735
+      },
+      {
+        "baseline224_score": 18.056089245864577,
+        "highres448max_score": 22.124649825491634,
+        "image": "pcb2/Data/Images/Normal/0172.JPG",
+        "label": 0,
+        "primary448_score": 20.147973363853023
+      },
+      {
+        "baseline224_score": 16.006310773987572,
+        "highres448max_score": 20.986262478249557,
+        "image": "pcb2/Data/Images/Normal/0174.JPG",
+        "label": 0,
+        "primary448_score": 19.868361904340365
+      },
+      {
+        "baseline224_score": 17.840007487035173,
+        "highres448max_score": 20.8374904926391,
+        "image": "pcb2/Data/Images/Normal/0178.JPG",
+        "label": 0,
+        "primary448_score": 19.49768189208167
+      },
+      {
+        "baseline224_score": 18.578889506615138,
+        "highres448max_score": 22.008055508693495,
+        "image": "pcb2/Data/Images/Normal/0187.JPG",
+        "label": 0,
+        "primary448_score": 21.646400981750407
+      },
+      {
+        "baseline224_score": 15.615854189977425,
+        "highres448max_score": 18.80291883749502,
+        "image": "pcb2/Data/Images/Normal/0196.JPG",
+        "label": 0,
+        "primary448_score": 18.570755516939297
+      },
+      {
+        "baseline224_score": 15.149006903369266,
+        "highres448max_score": 19.003949166717312,
+        "image": "pcb2/Data/Images/Normal/0208.JPG",
+        "label": 0,
+        "primary448_score": 18.733622778739374
+      },
+      {
+        "baseline224_score": 15.872851666964854,
+        "highres448max_score": 20.936388047773164,
+        "image": "pcb2/Data/Images/Normal/0214.JPG",
+        "label": 0,
+        "primary448_score": 19.493367051716373
+      },
+      {
+        "baseline224_score": 17.390701372517988,
+        "highres448max_score": 19.832549235467123,
+        "image": "pcb2/Data/Images/Normal/0215.JPG",
+        "label": 0,
+        "primary448_score": 19.557410031996042
+      },
+      {
+        "baseline224_score": 18.677405841590144,
+        "highres448max_score": 21.10252536749468,
+        "image": "pcb2/Data/Images/Normal/0237.JPG",
+        "label": 0,
+        "primary448_score": 20.53108849427348
+      },
+      {
+        "baseline224_score": 16.997972539058548,
+        "highres448max_score": 20.451684395752388,
+        "image": "pcb2/Data/Images/Normal/0261.JPG",
+        "label": 0,
+        "primary448_score": 19.637672013944492
+      },
+      {
+        "baseline224_score": 18.832719513875002,
+        "highres448max_score": 21.885676987699444,
+        "image": "pcb2/Data/Images/Normal/0286.JPG",
+        "label": 0,
+        "primary448_score": 21.03132196308418
+      },
+      {
+        "baseline224_score": 15.038850661136324,
+        "highres448max_score": 19.24953733320427,
+        "image": "pcb2/Data/Images/Normal/0294.JPG",
+        "label": 0,
+        "primary448_score": 19.05891580389816
+      },
+      {
+        "baseline224_score": 15.441427834276919,
+        "highres448max_score": 20.326593205364418,
+        "image": "pcb2/Data/Images/Normal/0297.JPG",
+        "label": 0,
+        "primary448_score": 19.99196986452663
+      },
+      {
+        "baseline224_score": 15.116366927304911,
+        "highres448max_score": 18.534258437511728,
+        "image": "pcb2/Data/Images/Normal/0303.JPG",
+        "label": 0,
+        "primary448_score": 18.31852444776131
+      },
+      {
+        "baseline224_score": 16.459125017799945,
+        "highres448max_score": 19.725399850892764,
+        "image": "pcb2/Data/Images/Normal/0306.JPG",
+        "label": 0,
+        "primary448_score": 18.821992816591916
+      },
+      {
+        "baseline224_score": 16.932570331219985,
+        "highres448max_score": 20.651410852756225,
+        "image": "pcb2/Data/Images/Normal/0320.JPG",
+        "label": 0,
+        "primary448_score": 20.036885792814996
+      },
+      {
+        "baseline224_score": 16.925827867844372,
+        "highres448max_score": 25.49052417432557,
+        "image": "pcb2/Data/Images/Normal/0333.JPG",
+        "label": 0,
+        "primary448_score": 22.934403000443865
+      },
+      {
+        "baseline224_score": 15.647352863503164,
+        "highres448max_score": 18.004107295243227,
+        "image": "pcb2/Data/Images/Normal/0363.JPG",
+        "label": 0,
+        "primary448_score": 17.843959032366268
+      },
+      {
+        "baseline224_score": 15.732904051635108,
+        "highres448max_score": 20.74193242695834,
+        "image": "pcb2/Data/Images/Normal/0377.JPG",
+        "label": 0,
+        "primary448_score": 20.116987392438684
+      },
+      {
+        "baseline224_score": 20.42274669680892,
+        "highres448max_score": 26.138861764567476,
+        "image": "pcb2/Data/Images/Normal/0394.JPG",
+        "label": 0,
+        "primary448_score": 24.670047359524514
+      },
+      {
+        "baseline224_score": 15.525560558270909,
+        "highres448max_score": 19.264065981041682,
+        "image": "pcb2/Data/Images/Normal/0400.JPG",
+        "label": 0,
+        "primary448_score": 18.913232305161916
+      },
+      {
+        "baseline224_score": 15.744104959128792,
+        "highres448max_score": 19.595851403776784,
+        "image": "pcb2/Data/Images/Normal/0402.JPG",
+        "label": 0,
+        "primary448_score": 19.11172127089064
+      },
+      {
+        "baseline224_score": 15.219485570033946,
+        "highres448max_score": 19.879840145257447,
+        "image": "pcb2/Data/Images/Normal/0417.JPG",
+        "label": 0,
+        "primary448_score": 18.98741597888844
+      },
+      {
+        "baseline224_score": 15.50348614940077,
+        "highres448max_score": 20.954509271223124,
+        "image": "pcb2/Data/Images/Normal/0423.JPG",
+        "label": 0,
+        "primary448_score": 19.549659272157704
+      },
+      {
+        "baseline224_score": 15.924458840246153,
+        "highres448max_score": 20.16905136325275,
+        "image": "pcb2/Data/Images/Normal/0427.JPG",
+        "label": 0,
+        "primary448_score": 20.095439180258055
+      },
+      {
+        "baseline224_score": 17.15000039579569,
+        "highres448max_score": 19.44588890985122,
+        "image": "pcb2/Data/Images/Normal/0457.JPG",
+        "label": 0,
+        "primary448_score": 18.79995523960603
+      },
+      {
+        "baseline224_score": 16.670110665290714,
+        "highres448max_score": 23.982171350670182,
+        "image": "pcb2/Data/Images/Normal/0469.JPG",
+        "label": 0,
+        "primary448_score": 21.200959069682323
+      },
+      {
+        "baseline224_score": 15.25214045471711,
+        "highres448max_score": 20.52866137439237,
+        "image": "pcb2/Data/Images/Normal/0479.JPG",
+        "label": 0,
+        "primary448_score": 19.864137411609875
+      },
+      {
+        "baseline224_score": 16.289751883766893,
+        "highres448max_score": 19.1496442475125,
+        "image": "pcb2/Data/Images/Normal/0483.JPG",
+        "label": 0,
+        "primary448_score": 18.937922824555972
+      },
+      {
+        "baseline224_score": 15.492569017945836,
+        "highres448max_score": 19.222959985199033,
+        "image": "pcb2/Data/Images/Normal/0484.JPG",
+        "label": 0,
+        "primary448_score": 18.97964674106396
+      },
+      {
+        "baseline224_score": 16.538020496159632,
+        "highres448max_score": 19.242932036153153,
+        "image": "pcb2/Data/Images/Normal/0488.JPG",
+        "label": 0,
+        "primary448_score": 18.709828832199907
+      },
+      {
+        "baseline224_score": 14.85636025882674,
+        "highres448max_score": 19.237539952353455,
+        "image": "pcb2/Data/Images/Normal/0490.JPG",
+        "label": 0,
+        "primary448_score": 18.813581745593435
+      },
+      {
+        "baseline224_score": 16.18686486252435,
+        "highres448max_score": 21.097376381013234,
+        "image": "pcb2/Data/Images/Normal/0514.JPG",
+        "label": 0,
+        "primary448_score": 20.51628151652996
+      },
+      {
+        "baseline224_score": 17.189358598929395,
+        "highres448max_score": 19.6490227932912,
+        "image": "pcb2/Data/Images/Normal/0518.JPG",
+        "label": 0,
+        "primary448_score": 19.354386950861763
+      },
+      {
+        "baseline224_score": 15.881270459710477,
+        "highres448max_score": 19.78385975641542,
+        "image": "pcb2/Data/Images/Normal/0520.JPG",
+        "label": 0,
+        "primary448_score": 19.641126982766497
+      },
+      {
+        "baseline224_score": 15.45212630457238,
+        "highres448max_score": 19.120827582379448,
+        "image": "pcb2/Data/Images/Normal/0525.JPG",
+        "label": 0,
+        "primary448_score": 18.967997539407147
+      },
+      {
+        "baseline224_score": 15.446751652378497,
+        "highres448max_score": 20.1053427591869,
+        "image": "pcb2/Data/Images/Normal/0545.JPG",
+        "label": 0,
+        "primary448_score": 19.292261958969757
+      },
+      {
+        "baseline224_score": 15.593546728878733,
+        "highres448max_score": 19.954250910399928,
+        "image": "pcb2/Data/Images/Normal/0552.JPG",
+        "label": 0,
+        "primary448_score": 19.886167981127425
+      },
+      {
+        "baseline224_score": 15.400386756979945,
+        "highres448max_score": 21.47645292859214,
+        "image": "pcb2/Data/Images/Normal/0569.JPG",
+        "label": 0,
+        "primary448_score": 20.25720121166961
+      },
+      {
+        "baseline224_score": 15.233570501002973,
+        "highres448max_score": 19.074583410072655,
+        "image": "pcb2/Data/Images/Normal/0615.JPG",
+        "label": 0,
+        "primary448_score": 18.781549185253308
+      },
+      {
+        "baseline224_score": 16.443707960903843,
+        "highres448max_score": 19.294818757473283,
+        "image": "pcb2/Data/Images/Normal/0617.JPG",
+        "label": 0,
+        "primary448_score": 18.58203812707399
+      },
+      {
+        "baseline224_score": 20.586807905359855,
+        "highres448max_score": 19.530452442898696,
+        "image": "pcb2/Data/Images/Normal/0619.JPG",
+        "label": 0,
+        "primary448_score": 19.37778830512434
+      },
+      {
+        "baseline224_score": 19.263201565833597,
+        "highres448max_score": 20.165149619195994,
+        "image": "pcb2/Data/Images/Normal/0621.JPG",
+        "label": 0,
+        "primary448_score": 19.99533956235572
+      },
+      {
+        "baseline224_score": 16.532176684343113,
+        "highres448max_score": 20.073348677500825,
+        "image": "pcb2/Data/Images/Normal/0629.JPG",
+        "label": 0,
+        "primary448_score": 19.28930711772465
+      },
+      {
+        "baseline224_score": 17.506431982148104,
+        "highres448max_score": 21.586693987077506,
+        "image": "pcb2/Data/Images/Normal/0631.JPG",
+        "label": 0,
+        "primary448_score": 20.107872101679757
+      },
+      {
+        "baseline224_score": 15.387326214992255,
+        "highres448max_score": 19.726317971506198,
+        "image": "pcb2/Data/Images/Normal/0648.JPG",
+        "label": 0,
+        "primary448_score": 19.40278846864725
+      },
+      {
+        "baseline224_score": 15.721226385764286,
+        "highres448max_score": 18.8675251127208,
+        "image": "pcb2/Data/Images/Normal/0654.JPG",
+        "label": 0,
+        "primary448_score": 18.498538520009024
+      },
+      {
+        "baseline224_score": 15.530431019946207,
+        "highres448max_score": 19.739544816813893,
+        "image": "pcb2/Data/Images/Normal/0657.JPG",
+        "label": 0,
+        "primary448_score": 19.07829091678573
+      },
+      {
+        "baseline224_score": 15.749886144972237,
+        "highres448max_score": 19.768007944218322,
+        "image": "pcb2/Data/Images/Normal/0659.JPG",
+        "label": 0,
+        "primary448_score": 19.34781303076453
+      },
+      {
+        "baseline224_score": 15.055782319247227,
+        "highres448max_score": 21.431629492992908,
+        "image": "pcb2/Data/Images/Normal/0674.JPG",
+        "label": 0,
+        "primary448_score": 21.235097312782983
+      },
+      {
+        "baseline224_score": 15.276055474618255,
+        "highres448max_score": 18.965909068892678,
+        "image": "pcb2/Data/Images/Normal/0684.JPG",
+        "label": 0,
+        "primary448_score": 18.66419089649619
+      },
+      {
+        "baseline224_score": 16.105471062085755,
+        "highres448max_score": 19.472910971181438,
+        "image": "pcb2/Data/Images/Normal/0685.JPG",
+        "label": 0,
+        "primary448_score": 19.144073910168867
+      },
+      {
+        "baseline224_score": 16.091986008654136,
+        "highres448max_score": 19.957238563735892,
+        "image": "pcb2/Data/Images/Normal/0688.JPG",
+        "label": 0,
+        "primary448_score": 19.49324689438314
+      },
+      {
+        "baseline224_score": 16.454035981803834,
+        "highres448max_score": 21.216760246323116,
+        "image": "pcb2/Data/Images/Normal/0690.JPG",
+        "label": 0,
+        "primary448_score": 20.38745961634082
+      },
+      {
+        "baseline224_score": 15.70008567295987,
+        "highres448max_score": 18.611041681012814,
+        "image": "pcb2/Data/Images/Normal/0694.JPG",
+        "label": 0,
+        "primary448_score": 18.470741673083428
+      },
+      {
+        "baseline224_score": 15.982296058597104,
+        "highres448max_score": 22.028137301678495,
+        "image": "pcb2/Data/Images/Normal/0705.JPG",
+        "label": 0,
+        "primary448_score": 20.521873775671008
+      },
+      {
+        "baseline224_score": 15.216591890220426,
+        "highres448max_score": 20.53530139428658,
+        "image": "pcb2/Data/Images/Normal/0725.JPG",
+        "label": 0,
+        "primary448_score": 20.168715151731273
+      },
+      {
+        "baseline224_score": 15.066129289237777,
+        "highres448max_score": 19.863213084392235,
+        "image": "pcb2/Data/Images/Normal/0730.JPG",
+        "label": 0,
+        "primary448_score": 19.613568225762688
+      },
+      {
+        "baseline224_score": 16.25700874027797,
+        "highres448max_score": 20.607200368629865,
+        "image": "pcb2/Data/Images/Normal/0735.JPG",
+        "label": 0,
+        "primary448_score": 19.847772301197693
+      },
+      {
+        "baseline224_score": 16.180613763356394,
+        "highres448max_score": 20.359042387339656,
+        "image": "pcb2/Data/Images/Normal/0739.JPG",
+        "label": 0,
+        "primary448_score": 19.499033586098026
+      },
+      {
+        "baseline224_score": 15.391795903290472,
+        "highres448max_score": 19.298455594016865,
+        "image": "pcb2/Data/Images/Normal/0751.JPG",
+        "label": 0,
+        "primary448_score": 18.998416866947913
+      },
+      {
+        "baseline224_score": 16.653230608937065,
+        "highres448max_score": 19.43572997164496,
+        "image": "pcb2/Data/Images/Normal/0755.JPG",
+        "label": 0,
+        "primary448_score": 18.967767836006413
+      },
+      {
+        "baseline224_score": 14.485660631115456,
+        "highres448max_score": 22.512094912203192,
+        "image": "pcb2/Data/Images/Normal/0764.JPG",
+        "label": 0,
+        "primary448_score": 21.74526116975116
+      },
+      {
+        "baseline224_score": 17.32331754714892,
+        "highres448max_score": 23.57715399902312,
+        "image": "pcb2/Data/Images/Normal/0768.JPG",
+        "label": 0,
+        "primary448_score": 20.957095437656207
+      },
+      {
+        "baseline224_score": 16.26201644649452,
+        "highres448max_score": 21.717183724227812,
+        "image": "pcb2/Data/Images/Normal/0779.JPG",
+        "label": 0,
+        "primary448_score": 20.61963484416337
+      },
+      {
+        "baseline224_score": 15.863084634470514,
+        "highres448max_score": 21.692346542580328,
+        "image": "pcb2/Data/Images/Normal/0784.JPG",
+        "label": 0,
+        "primary448_score": 20.183380477213067
+      },
+      {
+        "baseline224_score": 17.05064994514594,
+        "highres448max_score": 19.24440857954033,
+        "image": "pcb2/Data/Images/Normal/0796.JPG",
+        "label": 0,
+        "primary448_score": 18.84957326648652
+      },
+      {
+        "baseline224_score": 16.047724406246036,
+        "highres448max_score": 19.36484041806013,
+        "image": "pcb2/Data/Images/Normal/0797.JPG",
+        "label": 0,
+        "primary448_score": 19.188550412681536
+      },
+      {
+        "baseline224_score": 15.414630822999529,
+        "highres448max_score": 18.628824894966304,
+        "image": "pcb2/Data/Images/Normal/0800.JPG",
+        "label": 0,
+        "primary448_score": 18.45062050242088
+      },
+      {
+        "baseline224_score": 27.51908938638862,
+        "highres448max_score": 23.097414013722393,
+        "image": "pcb2/Data/Images/Normal/0804.JPG",
+        "label": 0,
+        "primary448_score": 22.36653821855421
+      },
+      {
+        "baseline224_score": 17.578856433277604,
+        "highres448max_score": 18.478909916115036,
+        "image": "pcb2/Data/Images/Normal/0811.JPG",
+        "label": 0,
+        "primary448_score": 18.23696505612789
+      },
+      {
+        "baseline224_score": 16.11959972699416,
+        "highres448max_score": 21.06672944190162,
+        "image": "pcb2/Data/Images/Normal/0844.JPG",
+        "label": 0,
+        "primary448_score": 19.312970284680627
+      },
+      {
+        "baseline224_score": 15.740445320932094,
+        "highres448max_score": 18.73488227667155,
+        "image": "pcb2/Data/Images/Normal/0869.JPG",
+        "label": 0,
+        "primary448_score": 18.313262447196838
+      },
+      {
+        "baseline224_score": 16.37063996036264,
+        "highres448max_score": 18.26185449198753,
+        "image": "pcb2/Data/Images/Normal/0871.JPG",
+        "label": 0,
+        "primary448_score": 17.983214580803075
+      },
+      {
+        "baseline224_score": 15.685645779043142,
+        "highres448max_score": 19.6052086429598,
+        "image": "pcb2/Data/Images/Normal/0892.JPG",
+        "label": 0,
+        "primary448_score": 19.132950787444695
+      },
+      {
+        "baseline224_score": 15.106812229044266,
+        "highres448max_score": 18.397807389352963,
+        "image": "pcb2/Data/Images/Normal/0900.JPG",
+        "label": 0,
+        "primary448_score": 18.17494021467888
+      },
+      {
+        "baseline224_score": 16.00950502966497,
+        "highres448max_score": 21.626779678091673,
+        "image": "pcb2/Data/Images/Normal/0920.JPG",
+        "label": 0,
+        "primary448_score": 21.18160360654129
+      },
+      {
+        "baseline224_score": 15.371883058990447,
+        "highres448max_score": 19.857946324780105,
+        "image": "pcb2/Data/Images/Normal/0923.JPG",
+        "label": 0,
+        "primary448_score": 19.128723648587798
+      },
+      {
+        "baseline224_score": 15.463966970315141,
+        "highres448max_score": 19.903018721394524,
+        "image": "pcb2/Data/Images/Normal/0935.JPG",
+        "label": 0,
+        "primary448_score": 19.233271318621465
+      },
+      {
+        "baseline224_score": 15.666394569620767,
+        "highres448max_score": 19.160813530895233,
+        "image": "pcb2/Data/Images/Normal/0940.JPG",
+        "label": 0,
+        "primary448_score": 18.95203711006686
+      },
+      {
+        "baseline224_score": 16.04389523788186,
+        "highres448max_score": 21.49030324625622,
+        "image": "pcb2/Data/Images/Normal/0952.JPG",
+        "label": 0,
+        "primary448_score": 21.000139978803933
+      },
+      {
+        "baseline224_score": 15.067294036629418,
+        "highres448max_score": 18.42158843148335,
+        "image": "pcb2/Data/Images/Normal/0954.JPG",
+        "label": 0,
+        "primary448_score": 17.88452097516345
+      },
+      {
+        "baseline224_score": 16.810754279733867,
+        "highres448max_score": 21.33454845253554,
+        "image": "pcb2/Data/Images/Normal/0964.JPG",
+        "label": 0,
+        "primary448_score": 20.13051315323423
+      },
+      {
+        "baseline224_score": 15.910981964747902,
+        "highres448max_score": 19.521489443635886,
+        "image": "pcb2/Data/Images/Normal/0968.JPG",
+        "label": 0,
+        "primary448_score": 19.17515404454572
+      },
+      {
+        "baseline224_score": 16.325996437838185,
+        "highres448max_score": 19.06141223794392,
+        "image": "pcb2/Data/Images/Normal/0974.JPG",
+        "label": 0,
+        "primary448_score": 18.725347961612943
+      },
+      {
+        "baseline224_score": 15.08223664687505,
+        "highres448max_score": 19.618947343561505,
+        "image": "pcb2/Data/Images/Normal/0986.JPG",
+        "label": 0,
+        "primary448_score": 19.410348848797167
+      },
+      {
+        "baseline224_score": 15.79102575024307,
+        "highres448max_score": 19.221196559690547,
+        "image": "pcb2/Data/Images/Normal/0994.JPG",
+        "label": 0,
+        "primary448_score": 18.412723482611764
+      },
+      {
+        "baseline224_score": 14.973977344809786,
+        "highres448max_score": 19.819582377551537,
+        "image": "pcb2/Data/Images/Normal/0997.JPG",
+        "label": 0,
+        "primary448_score": 19.392170402871898
+      }
+    ],
+    "limitations": [
+      "Separate VisA PCB2 image feasibility study; not wafer/SEM/factory accuracy and not tabular policy evidence.",
+      "PCB1 v1 test set is consumed; its negative threshold outcome stands and nothing here was tuned on it.",
+      "primary448 changes resolution, grid, coreset size and score aggregation together; any difference is a composite pipeline effect, not a resolution effect.",
+      "Images are resized whole with aspect-ratio distortion and no crop.",
+      "Thresholds are each method's 95th percentile of held-out official normal-train calibration scores; no test data tunes them.",
+      "Image AUROC/AP are secondary ranking statistics, never accuracy; highres448max is descriptive only.",
+      "Single category, single seed, 100 normal + 100 anomaly official test images."
+    ],
+    "methods": {
+      "baseline224": {
+        "frozen_threshold": {
+          "defect_recall": 0.51,
+          "false_negative": 49,
+          "false_positive": 11,
+          "normal_false_alarm_rate": 0.11,
+          "rule": "score > threshold => predicted defect",
+          "threshold": 17.88088945105467,
+          "true_negative": 89,
+          "true_positive": 51
+        },
+        "image_auroc_secondary": 0.8005,
+        "image_average_precision_secondary": 0.7772496194147608,
+        "label": "v1-inspired patch baseline: 224x224, 14x14, coreset 1024, max patch distance",
+        "role": "baseline"
+      },
+      "highres448max": {
+        "frozen_threshold": {
+          "defect_recall": 0.69,
+          "false_negative": 31,
+          "false_positive": 6,
+          "normal_false_alarm_rate": 0.06,
+          "rule": "score > threshold => predicted defect",
+          "threshold": 23.47273251185427,
+          "true_negative": 94,
+          "true_positive": 69
+        },
+        "image_auroc_secondary": 0.8942,
+        "image_average_precision_secondary": 0.9079763574919298,
+        "label": "descriptive only: r448 memory, max patch distance",
+        "role": "secondary_descriptive"
+      },
+      "primary448": {
+        "frozen_threshold": {
+          "defect_recall": 0.72,
+          "false_negative": 28,
+          "false_positive": 5,
+          "normal_false_alarm_rate": 0.05,
+          "rule": "score > threshold => predicted defect",
+          "threshold": 22.22725925667897,
+          "true_negative": 95,
+          "true_positive": 72
+        },
+        "image_auroc_secondary": 0.906,
+        "image_average_precision_secondary": 0.9180482949060313,
+        "label": "composite: 448x448, 28x28, coreset 2048, mean of 3 largest patch distances",
+        "role": "primary"
+      }
+    },
+    "metric_notes": [
+      "Primary endpoint fixed before test scoring; it is never swapped after evaluation.",
+      "AUROC and AP are secondary ranking metrics, not accuracy.",
+      "Rates are counts over 100 images per class; report them as such, not with extra precision."
+    ],
+    "primary_endpoint": {
+      "decision": {
+        "bootstrap_ci_lower_above_zero": true,
+        "primary_far_at_most_10pct": true,
+        "recall_gain_at_least_10pp": true,
+        "success": true
+      },
+      "definition": {
+        "attribution": "primary448 differs from baseline224 in resolution, grid, coreset size and score aggregation at once; a gain cannot be attributed to resolution alone",
+        "bootstrap": {
+          "interval": "percentile 2.5/97.5",
+          "resamples": 10000,
+          "seed_stream": [
+            2026100406,
+            7
+          ],
+          "unit": "test image, paired across methods, resampled with replacement within label stratum"
+        },
+        "comparison": "primary448 minus baseline224",
+        "metric": "defect recall at each method's own frozen calibration threshold (score > threshold)",
+        "secondary_descriptive": [
+          "image AUROC",
+          "image average precision",
+          "highres448max threshold metrics",
+          "FAR difference with bootstrap CI"
+        ],
+        "success_requires_all": [
+          "recall gain point estimate >= 0.10",
+          "paired image bootstrap 95% percentile CI lower bound of recall gain > 0",
+          "primary448 normal false alarm rate <= 0.10"
+        ]
+      },
+      "primary_vs_baseline_bootstrap": {
+        "defect_recall_gain": {
+          "ci95": [
+            0.12,
+            0.3
+          ],
+          "estimate": 0.21,
+          "resamples": 10000
+        },
+        "normal_far_difference": {
+          "ci95": [
+            -0.12,
+            -0.01
+          ],
+          "estimate": -0.06,
+          "resamples": 10000
+        }
+      }
+    },
+    "schema_version": 1,
+    "secondary_descriptive": {
+      "highres448max_vs_baseline224_bootstrap": {
+        "defect_recall_gain": {
+          "ci95": [
+            0.08,
+            0.28
+          ],
+          "estimate": 0.18,
+          "resamples": 10000
+        },
+        "normal_far_difference": {
+          "ci95": [
+            -0.12,
+            0.01
+          ],
+          "estimate": -0.05,
+          "resamples": 10000
+        }
+      }
+    },
+    "study": "inspection-image-pilot-v2-pcb2",
+    "test_scores_sha256": "eac3dee802bffe882252b54df0006017108519d71d19887f23500c6aba0f2de4"
+  },
+  "posthoc_errors": {
+    "anomaly_by_defect_type": {
+      "bent": {
+        "primary448_missed": 3,
+        "test": 12
+      },
+      "bent,melt": {
+        "primary448_missed": 1,
+        "test": 3
+      },
+      "melt": {
+        "primary448_missed": 12,
+        "test": 48
+      },
+      "melt,scratch": {
+        "primary448_missed": 2,
+        "test": 4
+      },
+      "missing": {
+        "primary448_missed": 9,
+        "test": 17
+      },
+      "scratch": {
+        "primary448_missed": 1,
+        "test": 14
+      },
+      "scratch,missing": {
+        "primary448_missed": 0,
+        "test": 2
+      }
+    },
+    "paired_flips_vs_baseline224": {
+      "defect_caught_only_by_baseline": 3,
+      "defect_caught_only_by_primary": 24,
+      "normal_flagged_only_by_baseline": 7,
+      "normal_flagged_only_by_primary": 1
+    },
+    "primary448_false_alarms": [
+      {
+        "baseline224_flagged": true,
+        "defect_type": "normal",
+        "highres448max_flagged": true,
+        "image": "pcb2/Data/Images/Normal/0011.JPG",
+        "primary448_margin": 4.515914072267751
+      },
+      {
+        "baseline224_flagged": true,
+        "defect_type": "normal",
+        "highres448max_flagged": true,
+        "image": "pcb2/Data/Images/Normal/0024.JPG",
+        "primary448_margin": 4.368076077513784
+      },
+      {
+        "baseline224_flagged": true,
+        "defect_type": "normal",
+        "highres448max_flagged": true,
+        "image": "pcb2/Data/Images/Normal/0394.JPG",
+        "primary448_margin": 2.442788102845544
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "normal",
+        "highres448max_flagged": true,
+        "image": "pcb2/Data/Images/Normal/0333.JPG",
+        "primary448_margin": 0.7071437437648953
+      },
+      {
+        "baseline224_flagged": true,
+        "defect_type": "normal",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Normal/0804.JPG",
+        "primary448_margin": 0.1392789618752417
+      }
+    ],
+    "primary448_missed_defects": [
+      {
+        "baseline224_flagged": false,
+        "defect_type": "melt,scratch",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/038.JPG",
+        "primary448_margin": -3.6942159660044176
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "missing",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/055.JPG",
+        "primary448_margin": -3.183606994852262
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "missing",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/051.JPG",
+        "primary448_margin": -3.0981756751042973
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "melt",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/077.JPG",
+        "primary448_margin": -3.037727022432083
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "missing",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/045.JPG",
+        "primary448_margin": -2.761168762064422
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "missing",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/059.JPG",
+        "primary448_margin": -2.616551616197782
+      },
+      {
+        "baseline224_flagged": true,
+        "defect_type": "melt",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/083.JPG",
+        "primary448_margin": -2.558082344076581
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "melt",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/036.JPG",
+        "primary448_margin": -2.55788469219382
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "bent",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/012.JPG",
+        "primary448_margin": -2.4639559005647342
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "melt",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/031.JPG",
+        "primary448_margin": -2.4109588448781345
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "melt",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/076.JPG",
+        "primary448_margin": -2.4059198668868653
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "missing",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/053.JPG",
+        "primary448_margin": -2.3372140554684613
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "missing",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/050.JPG",
+        "primary448_margin": -2.2692735610771955
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "melt,scratch",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/033.JPG",
+        "primary448_margin": -2.2283838365968016
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "melt",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/072.JPG",
+        "primary448_margin": -2.213854585851184
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "missing",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/057.JPG",
+        "primary448_margin": -1.995723342968791
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "melt",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/060.JPG",
+        "primary448_margin": -1.961118059869218
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "missing",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/056.JPG",
+        "primary448_margin": -1.5680195482249353
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "bent,melt",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/010.JPG",
+        "primary448_margin": -1.4731350195733128
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "melt",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/035.JPG",
+        "primary448_margin": -1.4008916787280263
+      },
+      {
+        "baseline224_flagged": true,
+        "defect_type": "missing",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/049.JPG",
+        "primary448_margin": -1.3034999255166149
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "scratch",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/097.JPG",
+        "primary448_margin": -1.2578482709254892
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "melt",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/080.JPG",
+        "primary448_margin": -1.134518215222716
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "melt",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/069.JPG",
+        "primary448_margin": -0.7655360929409945
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "melt",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/066.JPG",
+        "primary448_margin": -0.6677015959215815
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "bent",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/009.JPG",
+        "primary448_margin": -0.6077385239536071
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "melt",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/067.JPG",
+        "primary448_margin": -0.2952176334282761
+      },
+      {
+        "baseline224_flagged": true,
+        "defect_type": "bent",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/014.JPG",
+        "primary448_margin": -0.2635202366592395
+      }
+    ]
+  },
+  "audit": {
+    "status": "pass",
+    "freeze_digest": "a15a37ae78b7234aefedd4f69b89c9fec2148a7a86e1c1d1d2000b94094a6fed",
+    "report_input_sha256": {
+      "evaluation.json": "a2ed03a68e82da855e3339c922a0fcb7c80bcadd2d164fc591d3269017352ed5",
+      "freeze.json": "3ba3ce8f9faec4637de2d39eab6551f8f1c90dda3036fe09e65ce9698816706d",
+      "test-scores.json": "eac3dee802bffe882252b54df0006017108519d71d19887f23500c6aba0f2de4"
+    }
+  },
+  "predecessor": {
+    "counts": {
+      "anomaly": 100,
+      "normal": 100,
+      "test_images": 200
+    },
+    "data_mode": "real",
+    "evaluated_at": "2026-10-04T08:15:18.167133+00:00",
+    "freeze_digest": "9e4b5d94b79090844c2ed8adf70fa4bd8491615ffa67e33c30c11e043014b3ab",
+    "images": [
+      {
+        "global_score": 2.366841477873492,
+        "image": "pcb1/Data/Images/Anomaly/000.JPG",
+        "label": 1,
+        "patch_score": 16.026156263364438
+      },
+      {
+        "global_score": 2.0965395434765703,
+        "image": "pcb1/Data/Images/Anomaly/001.JPG",
+        "label": 1,
+        "patch_score": 17.969284897183176
+      },
+      {
+        "global_score": 2.4734353102465616,
+        "image": "pcb1/Data/Images/Anomaly/002.JPG",
+        "label": 1,
+        "patch_score": 23.608486082620857
+      },
+      {
+        "global_score": 2.334002014661406,
+        "image": "pcb1/Data/Images/Anomaly/003.JPG",
+        "label": 1,
+        "patch_score": 21.61815278870183
+      },
+      {
+        "global_score": 2.420733553413105,
+        "image": "pcb1/Data/Images/Anomaly/004.JPG",
+        "label": 1,
+        "patch_score": 19.739152225327327
+      },
+      {
+        "global_score": 2.502755766234785,
+        "image": "pcb1/Data/Images/Anomaly/005.JPG",
+        "label": 1,
+        "patch_score": 20.77234398258464
+      },
+      {
+        "global_score": 2.4571751185954014,
+        "image": "pcb1/Data/Images/Anomaly/006.JPG",
+        "label": 1,
+        "patch_score": 16.96134347922911
+      },
+      {
+        "global_score": 2.4115178610280372,
+        "image": "pcb1/Data/Images/Anomaly/007.JPG",
+        "label": 1,
+        "patch_score": 17.518283480358107
+      },
+      {
+        "global_score": 2.822955956464802,
+        "image": "pcb1/Data/Images/Anomaly/008.JPG",
+        "label": 1,
+        "patch_score": 23.977755899924112
+      },
+      {
+        "global_score": 2.4222877829024307,
+        "image": "pcb1/Data/Images/Anomaly/009.JPG",
+        "label": 1,
+        "patch_score": 21.18387851775816
+      },
+      {
+        "global_score": 2.220223771980004,
+        "image": "pcb1/Data/Images/Anomaly/010.JPG",
+        "label": 1,
+        "patch_score": 25.724687377327797
+      },
+      {
+        "global_score": 2.2214562748274784,
+        "image": "pcb1/Data/Images/Anomaly/011.JPG",
+        "label": 1,
+        "patch_score": 20.84156296534515
+      },
+      {
+        "global_score": 2.289502230700328,
+        "image": "pcb1/Data/Images/Anomaly/012.JPG",
+        "label": 1,
+        "patch_score": 26.01822554691155
+      },
+      {
+        "global_score": 2.1472497863921345,
+        "image": "pcb1/Data/Images/Anomaly/013.JPG",
+        "label": 1,
+        "patch_score": 19.660733890658754
+      },
+      {
+        "global_score": 2.2982950412151513,
+        "image": "pcb1/Data/Images/Anomaly/014.JPG",
+        "label": 1,
+        "patch_score": 27.548727592775915
+      },
+      {
+        "global_score": 1.8293276891361019,
+        "image": "pcb1/Data/Images/Anomaly/015.JPG",
+        "label": 1,
+        "patch_score": 15.485154380697228
+      },
+      {
+        "global_score": 2.095914307682413,
+        "image": "pcb1/Data/Images/Anomaly/016.JPG",
+        "label": 1,
+        "patch_score": 21.876808812209433
+      },
+      {
+        "global_score": 2.0786768604932457,
+        "image": "pcb1/Data/Images/Anomaly/017.JPG",
+        "label": 1,
+        "patch_score": 16.052380141646374
+      },
+      {
+        "global_score": 2.403614246888793,
+        "image": "pcb1/Data/Images/Anomaly/018.JPG",
+        "label": 1,
+        "patch_score": 18.219250511250483
+      },
+      {
+        "global_score": 2.0728546985094902,
+        "image": "pcb1/Data/Images/Anomaly/019.JPG",
+        "label": 1,
+        "patch_score": 15.841032069916533
+      },
+      {
+        "global_score": 1.9419215424612477,
+        "image": "pcb1/Data/Images/Anomaly/020.JPG",
+        "label": 1,
+        "patch_score": 19.243202843228833
+      },
+      {
+        "global_score": 2.074156207125182,
+        "image": "pcb1/Data/Images/Anomaly/021.JPG",
+        "label": 1,
+        "patch_score": 18.025276023937163
+      },
+      {
+        "global_score": 2.047556336071156,
+        "image": "pcb1/Data/Images/Anomaly/022.JPG",
+        "label": 1,
+        "patch_score": 16.9078732626167
+      },
+      {
+        "global_score": 1.9395519608764162,
+        "image": "pcb1/Data/Images/Anomaly/023.JPG",
+        "label": 1,
+        "patch_score": 17.34981939371859
+      },
+      {
+        "global_score": 2.149474466198162,
+        "image": "pcb1/Data/Images/Anomaly/024.JPG",
+        "label": 1,
+        "patch_score": 16.485075445177703
+      },
+      {
+        "global_score": 1.9804578520723288,
+        "image": "pcb1/Data/Images/Anomaly/025.JPG",
+        "label": 1,
+        "patch_score": 15.333741328409674
+      },
+      {
+        "global_score": 2.2048722792458597,
+        "image": "pcb1/Data/Images/Anomaly/026.JPG",
+        "label": 1,
+        "patch_score": 16.897332778558685
+      },
+      {
+        "global_score": 1.8967016275457247,
+        "image": "pcb1/Data/Images/Anomaly/027.JPG",
+        "label": 1,
+        "patch_score": 16.983194764396806
+      },
+      {
+        "global_score": 2.1234065751791262,
+        "image": "pcb1/Data/Images/Anomaly/028.JPG",
+        "label": 1,
+        "patch_score": 18.81841399476899
+      },
+      {
+        "global_score": 2.1252000499559576,
+        "image": "pcb1/Data/Images/Anomaly/029.JPG",
+        "label": 1,
+        "patch_score": 16.878332627906747
+      },
+      {
+        "global_score": 2.112799800914065,
+        "image": "pcb1/Data/Images/Anomaly/030.JPG",
+        "label": 1,
+        "patch_score": 16.821339356976345
+      },
+      {
+        "global_score": 2.233632209943295,
+        "image": "pcb1/Data/Images/Anomaly/031.JPG",
+        "label": 1,
+        "patch_score": 17.897159382896323
+      },
+      {
+        "global_score": 1.905947239399616,
+        "image": "pcb1/Data/Images/Anomaly/032.JPG",
+        "label": 1,
+        "patch_score": 19.643268383805832
+      },
+      {
+        "global_score": 1.9950522381444427,
+        "image": "pcb1/Data/Images/Anomaly/033.JPG",
+        "label": 1,
+        "patch_score": 16.41253003703583
+      },
+      {
+        "global_score": 2.134635015287983,
+        "image": "pcb1/Data/Images/Anomaly/034.JPG",
+        "label": 1,
+        "patch_score": 18.487201440159506
+      },
+      {
+        "global_score": 1.8941499949061456,
+        "image": "pcb1/Data/Images/Anomaly/035.JPG",
+        "label": 1,
+        "patch_score": 15.312634794765257
+      },
+      {
+        "global_score": 2.041353162994487,
+        "image": "pcb1/Data/Images/Anomaly/036.JPG",
+        "label": 1,
+        "patch_score": 17.36411757239716
+      },
+      {
+        "global_score": 2.0277113847207056,
+        "image": "pcb1/Data/Images/Anomaly/037.JPG",
+        "label": 1,
+        "patch_score": 16.188786336883297
+      },
+      {
+        "global_score": 1.9507400446444643,
+        "image": "pcb1/Data/Images/Anomaly/038.JPG",
+        "label": 1,
+        "patch_score": 16.41850897328032
+      },
+      {
+        "global_score": 2.11793349025331,
+        "image": "pcb1/Data/Images/Anomaly/039.JPG",
+        "label": 1,
+        "patch_score": 16.490512103380016
+      },
+      {
+        "global_score": 2.5924090073565753,
+        "image": "pcb1/Data/Images/Anomaly/040.JPG",
+        "label": 1,
+        "patch_score": 30.000681086305768
+      },
+      {
+        "global_score": 3.9166332718797836,
+        "image": "pcb1/Data/Images/Anomaly/041.JPG",
+        "label": 1,
+        "patch_score": 39.22766706020753
+      },
+      {
+        "global_score": 2.5466238682812317,
+        "image": "pcb1/Data/Images/Anomaly/042.JPG",
+        "label": 1,
+        "patch_score": 19.051726171950754
+      },
+      {
+        "global_score": 5.713225346930348,
+        "image": "pcb1/Data/Images/Anomaly/043.JPG",
+        "label": 1,
+        "patch_score": 39.46081283920402
+      },
+      {
+        "global_score": 3.611733499298035,
+        "image": "pcb1/Data/Images/Anomaly/044.JPG",
+        "label": 1,
+        "patch_score": 33.24538655418981
+      },
+      {
+        "global_score": 4.046933125801796,
+        "image": "pcb1/Data/Images/Anomaly/045.JPG",
+        "label": 1,
+        "patch_score": 33.42077567013403
+      },
+      {
+        "global_score": 3.5650038873098686,
+        "image": "pcb1/Data/Images/Anomaly/046.JPG",
+        "label": 1,
+        "patch_score": 42.725793780166875
+      },
+      {
+        "global_score": 2.0416421532073072,
+        "image": "pcb1/Data/Images/Anomaly/047.JPG",
+        "label": 1,
+        "patch_score": 15.919947156738655
+      },
+      {
+        "global_score": 1.986292889421651,
+        "image": "pcb1/Data/Images/Anomaly/048.JPG",
+        "label": 1,
+        "patch_score": 16.142553984523218
+      },
+      {
+        "global_score": 3.0501312740755755,
+        "image": "pcb1/Data/Images/Anomaly/049.JPG",
+        "label": 1,
+        "patch_score": 19.14928328332961
+      },
+      {
+        "global_score": 3.380297644250052,
+        "image": "pcb1/Data/Images/Anomaly/050.JPG",
+        "label": 1,
+        "patch_score": 37.62118487365195
+      },
+      {
+        "global_score": 2.5210322733792623,
+        "image": "pcb1/Data/Images/Anomaly/051.JPG",
+        "label": 1,
+        "patch_score": 18.572936614665593
+      },
+      {
+        "global_score": 2.3103778023353074,
+        "image": "pcb1/Data/Images/Anomaly/052.JPG",
+        "label": 1,
+        "patch_score": 16.722107361422257
+      },
+      {
+        "global_score": 2.3396577550772095,
+        "image": "pcb1/Data/Images/Anomaly/053.JPG",
+        "label": 1,
+        "patch_score": 26.368347546092537
+      },
+      {
+        "global_score": 2.8238985077382974,
+        "image": "pcb1/Data/Images/Anomaly/054.JPG",
+        "label": 1,
+        "patch_score": 31.37854766502695
+      },
+      {
+        "global_score": 2.413332553472465,
+        "image": "pcb1/Data/Images/Anomaly/055.JPG",
+        "label": 1,
+        "patch_score": 26.514630424741096
+      },
+      {
+        "global_score": 2.303055586811272,
+        "image": "pcb1/Data/Images/Anomaly/056.JPG",
+        "label": 1,
+        "patch_score": 22.38912955843138
+      },
+      {
+        "global_score": 2.169713226331169,
+        "image": "pcb1/Data/Images/Anomaly/057.JPG",
+        "label": 1,
+        "patch_score": 17.33187192726198
+      },
+      {
+        "global_score": 1.9971998424726451,
+        "image": "pcb1/Data/Images/Anomaly/058.JPG",
+        "label": 1,
+        "patch_score": 15.756008935961566
+      },
+      {
+        "global_score": 2.5911407122626886,
+        "image": "pcb1/Data/Images/Anomaly/059.JPG",
+        "label": 1,
+        "patch_score": 27.31723623727717
+      },
+      {
+        "global_score": 1.891900672117056,
+        "image": "pcb1/Data/Images/Anomaly/060.JPG",
+        "label": 1,
+        "patch_score": 15.571924699186365
+      },
+      {
+        "global_score": 2.2843270667835696,
+        "image": "pcb1/Data/Images/Anomaly/061.JPG",
+        "label": 1,
+        "patch_score": 17.170116048485283
+      },
+      {
+        "global_score": 2.0245665492948386,
+        "image": "pcb1/Data/Images/Anomaly/062.JPG",
+        "label": 1,
+        "patch_score": 15.9459219855378
+      },
+      {
+        "global_score": 1.9827332758724237,
+        "image": "pcb1/Data/Images/Anomaly/063.JPG",
+        "label": 1,
+        "patch_score": 15.852522341860558
+      },
+      {
+        "global_score": 1.9513982777764611,
+        "image": "pcb1/Data/Images/Anomaly/064.JPG",
+        "label": 1,
+        "patch_score": 15.366837613592486
+      },
+      {
+        "global_score": 2.101447041813905,
+        "image": "pcb1/Data/Images/Anomaly/065.JPG",
+        "label": 1,
+        "patch_score": 21.99011841356706
+      },
+      {
+        "global_score": 2.226209075951943,
+        "image": "pcb1/Data/Images/Anomaly/066.JPG",
+        "label": 1,
+        "patch_score": 17.393537665878096
+      },
+      {
+        "global_score": 2.0601794732635845,
+        "image": "pcb1/Data/Images/Anomaly/067.JPG",
+        "label": 1,
+        "patch_score": 15.818396121795475
+      },
+      {
+        "global_score": 2.2311106693146754,
+        "image": "pcb1/Data/Images/Anomaly/068.JPG",
+        "label": 1,
+        "patch_score": 19.942255975534675
+      },
+      {
+        "global_score": 2.0472321162959513,
+        "image": "pcb1/Data/Images/Anomaly/069.JPG",
+        "label": 1,
+        "patch_score": 18.509940913990487
+      },
+      {
+        "global_score": 2.2066969592946766,
+        "image": "pcb1/Data/Images/Anomaly/070.JPG",
+        "label": 1,
+        "patch_score": 18.848691367230554
+      },
+      {
+        "global_score": 2.0591702645250076,
+        "image": "pcb1/Data/Images/Anomaly/071.JPG",
+        "label": 1,
+        "patch_score": 20.638381120281462
+      },
+      {
+        "global_score": 2.124472906046917,
+        "image": "pcb1/Data/Images/Anomaly/072.JPG",
+        "label": 1,
+        "patch_score": 16.718385563774167
+      },
+      {
+        "global_score": 2.213525792945729,
+        "image": "pcb1/Data/Images/Anomaly/073.JPG",
+        "label": 1,
+        "patch_score": 18.743418346600446
+      },
+      {
+        "global_score": 1.975031090358724,
+        "image": "pcb1/Data/Images/Anomaly/074.JPG",
+        "label": 1,
+        "patch_score": 16.337289504250705
+      },
+      {
+        "global_score": 2.0960193526054742,
+        "image": "pcb1/Data/Images/Anomaly/075.JPG",
+        "label": 1,
+        "patch_score": 17.406113599349634
+      },
+      {
+        "global_score": 2.0189973088376827,
+        "image": "pcb1/Data/Images/Anomaly/076.JPG",
+        "label": 1,
+        "patch_score": 16.490841628226224
+      },
+      {
+        "global_score": 2.1772433389640664,
+        "image": "pcb1/Data/Images/Anomaly/077.JPG",
+        "label": 1,
+        "patch_score": 17.913433990624586
+      },
+      {
+        "global_score": 2.1562738816725875,
+        "image": "pcb1/Data/Images/Anomaly/078.JPG",
+        "label": 1,
+        "patch_score": 18.00281500726746
+      },
+      {
+        "global_score": 2.1230386976045357,
+        "image": "pcb1/Data/Images/Anomaly/079.JPG",
+        "label": 1,
+        "patch_score": 17.69307705666333
+      },
+      {
+        "global_score": 2.0426156172785417,
+        "image": "pcb1/Data/Images/Anomaly/080.JPG",
+        "label": 1,
+        "patch_score": 20.25854676674964
+      },
+      {
+        "global_score": 1.9491716203186138,
+        "image": "pcb1/Data/Images/Anomaly/081.JPG",
+        "label": 1,
+        "patch_score": 15.623210958719596
+      },
+      {
+        "global_score": 2.5628166939883203,
+        "image": "pcb1/Data/Images/Anomaly/082.JPG",
+        "label": 1,
+        "patch_score": 17.647952373268357
+      },
+      {
+        "global_score": 2.3178961093479207,
+        "image": "pcb1/Data/Images/Anomaly/083.JPG",
+        "label": 1,
+        "patch_score": 17.223678889394378
+      },
+      {
+        "global_score": 2.750334526048565,
+        "image": "pcb1/Data/Images/Anomaly/084.JPG",
+        "label": 1,
+        "patch_score": 18.025505275138542
+      },
+      {
+        "global_score": 2.5530318006341153,
+        "image": "pcb1/Data/Images/Anomaly/085.JPG",
+        "label": 1,
+        "patch_score": 16.79288327303162
+      },
+      {
+        "global_score": 2.7905287535913312,
+        "image": "pcb1/Data/Images/Anomaly/086.JPG",
+        "label": 1,
+        "patch_score": 17.760648677638486
+      },
+      {
+        "global_score": 2.1670900440587477,
+        "image": "pcb1/Data/Images/Anomaly/087.JPG",
+        "label": 1,
+        "patch_score": 17.02936080988887
+      },
+      {
+        "global_score": 2.470131523986967,
+        "image": "pcb1/Data/Images/Anomaly/088.JPG",
+        "label": 1,
+        "patch_score": 18.27384288492728
+      },
+      {
+        "global_score": 2.2838661096963766,
+        "image": "pcb1/Data/Images/Anomaly/089.JPG",
+        "label": 1,
+        "patch_score": 16.160285043977282
+      },
+      {
+        "global_score": 2.6190071101109935,
+        "image": "pcb1/Data/Images/Anomaly/090.JPG",
+        "label": 1,
+        "patch_score": 17.629615488380196
+      },
+      {
+        "global_score": 2.2172454751360373,
+        "image": "pcb1/Data/Images/Anomaly/091.JPG",
+        "label": 1,
+        "patch_score": 15.558130861015732
+      },
+      {
+        "global_score": 2.4154050255379578,
+        "image": "pcb1/Data/Images/Anomaly/092.JPG",
+        "label": 1,
+        "patch_score": 17.35047539127876
+      },
+      {
+        "global_score": 2.250791571519019,
+        "image": "pcb1/Data/Images/Anomaly/093.JPG",
+        "label": 1,
+        "patch_score": 21.389839405342475
+      },
+      {
+        "global_score": 2.2942779183465505,
+        "image": "pcb1/Data/Images/Anomaly/094.JPG",
+        "label": 1,
+        "patch_score": 15.751883078654462
+      },
+      {
+        "global_score": 1.962583221707885,
+        "image": "pcb1/Data/Images/Anomaly/095.JPG",
+        "label": 1,
+        "patch_score": 16.32693283377769
+      },
+      {
+        "global_score": 2.073218991843006,
+        "image": "pcb1/Data/Images/Anomaly/096.JPG",
+        "label": 1,
+        "patch_score": 15.861853402517236
+      },
+      {
+        "global_score": 1.8878343376444553,
+        "image": "pcb1/Data/Images/Anomaly/097.JPG",
+        "label": 1,
+        "patch_score": 16.657054073360648
+      },
+      {
+        "global_score": 1.965514549474604,
+        "image": "pcb1/Data/Images/Anomaly/098.JPG",
+        "label": 1,
+        "patch_score": 15.852218390321172
+      },
+      {
+        "global_score": 1.8959211569870544,
+        "image": "pcb1/Data/Images/Anomaly/099.JPG",
+        "label": 1,
+        "patch_score": 18.3742095104397
+      },
+      {
+        "global_score": 2.0814852637385717,
+        "image": "pcb1/Data/Images/Normal/0011.JPG",
+        "label": 0,
+        "patch_score": 15.176829119068879
+      },
+      {
+        "global_score": 2.2089178991139877,
+        "image": "pcb1/Data/Images/Normal/0013.JPG",
+        "label": 0,
+        "patch_score": 16.340365420222405
+      },
+      {
+        "global_score": 2.07688482876163,
+        "image": "pcb1/Data/Images/Normal/0016.JPG",
+        "label": 0,
+        "patch_score": 17.890116428814757
+      },
+      {
+        "global_score": 1.8339968871900292,
+        "image": "pcb1/Data/Images/Normal/0024.JPG",
+        "label": 0,
+        "patch_score": 15.321817906154394
+      },
+      {
+        "global_score": 2.038383093856679,
+        "image": "pcb1/Data/Images/Normal/0026.JPG",
+        "label": 0,
+        "patch_score": 16.274808040497035
+      },
+      {
+        "global_score": 1.9271445039812336,
+        "image": "pcb1/Data/Images/Normal/0027.JPG",
+        "label": 0,
+        "patch_score": 14.865106621487355
+      },
+      {
+        "global_score": 2.242533469065811,
+        "image": "pcb1/Data/Images/Normal/0046.JPG",
+        "label": 0,
+        "patch_score": 15.969164397672893
+      },
+      {
+        "global_score": 2.151363763100401,
+        "image": "pcb1/Data/Images/Normal/0100.JPG",
+        "label": 0,
+        "patch_score": 16.030078111967615
+      },
+      {
+        "global_score": 2.179364709861125,
+        "image": "pcb1/Data/Images/Normal/0107.JPG",
+        "label": 0,
+        "patch_score": 15.626391127611383
+      },
+      {
+        "global_score": 1.8934380175566634,
+        "image": "pcb1/Data/Images/Normal/0159.JPG",
+        "label": 0,
+        "patch_score": 14.78897498652812
+      },
+      {
+        "global_score": 2.095105532126456,
+        "image": "pcb1/Data/Images/Normal/0168.JPG",
+        "label": 0,
+        "patch_score": 16.801048166182856
+      },
+      {
+        "global_score": 1.9347045931496636,
+        "image": "pcb1/Data/Images/Normal/0170.JPG",
+        "label": 0,
+        "patch_score": 15.433191691658198
+      },
+      {
+        "global_score": 2.0790412708490846,
+        "image": "pcb1/Data/Images/Normal/0172.JPG",
+        "label": 0,
+        "patch_score": 15.27803748598443
+      },
+      {
+        "global_score": 2.2181893561564,
+        "image": "pcb1/Data/Images/Normal/0174.JPG",
+        "label": 0,
+        "patch_score": 25.694053814879418
+      },
+      {
+        "global_score": 1.967693793558412,
+        "image": "pcb1/Data/Images/Normal/0178.JPG",
+        "label": 0,
+        "patch_score": 14.804579862867365
+      },
+      {
+        "global_score": 0.8206607459357969,
+        "image": "pcb1/Data/Images/Normal/0187.JPG",
+        "label": 0,
+        "patch_score": 16.421111653459356
+      },
+      {
+        "global_score": 2.115573899527113,
+        "image": "pcb1/Data/Images/Normal/0196.JPG",
+        "label": 0,
+        "patch_score": 15.833525978984682
+      },
+      {
+        "global_score": 2.0402635909332596,
+        "image": "pcb1/Data/Images/Normal/0208.JPG",
+        "label": 0,
+        "patch_score": 17.35783985209883
+      },
+      {
+        "global_score": 1.9638099554262878,
+        "image": "pcb1/Data/Images/Normal/0214.JPG",
+        "label": 0,
+        "patch_score": 20.893865163960932
+      },
+      {
+        "global_score": 2.1420527448143294,
+        "image": "pcb1/Data/Images/Normal/0215.JPG",
+        "label": 0,
+        "patch_score": 17.025397672654897
+      },
+      {
+        "global_score": 1.9848542608269486,
+        "image": "pcb1/Data/Images/Normal/0237.JPG",
+        "label": 0,
+        "patch_score": 15.450516245774658
+      },
+      {
+        "global_score": 2.1068548224518544,
+        "image": "pcb1/Data/Images/Normal/0261.JPG",
+        "label": 0,
+        "patch_score": 14.534364139283644
+      },
+      {
+        "global_score": 1.9540700022080635,
+        "image": "pcb1/Data/Images/Normal/0286.JPG",
+        "label": 0,
+        "patch_score": 15.811616009162451
+      },
+      {
+        "global_score": 1.9046796551351546,
+        "image": "pcb1/Data/Images/Normal/0294.JPG",
+        "label": 0,
+        "patch_score": 14.621655483473047
+      },
+      {
+        "global_score": 2.0278958377773,
+        "image": "pcb1/Data/Images/Normal/0297.JPG",
+        "label": 0,
+        "patch_score": 15.214713254427936
+      },
+      {
+        "global_score": 2.1736968800666348,
+        "image": "pcb1/Data/Images/Normal/0303.JPG",
+        "label": 0,
+        "patch_score": 18.321166090821382
+      },
+      {
+        "global_score": 2.026528655442405,
+        "image": "pcb1/Data/Images/Normal/0306.JPG",
+        "label": 0,
+        "patch_score": 22.260289533623205
+      },
+      {
+        "global_score": 2.1779783124979075,
+        "image": "pcb1/Data/Images/Normal/0320.JPG",
+        "label": 0,
+        "patch_score": 16.383391751376937
+      },
+      {
+        "global_score": 2.2523435415343207,
+        "image": "pcb1/Data/Images/Normal/0333.JPG",
+        "label": 0,
+        "patch_score": 16.071866400157795
+      },
+      {
+        "global_score": 1.87065741957672,
+        "image": "pcb1/Data/Images/Normal/0363.JPG",
+        "label": 0,
+        "patch_score": 14.891614514479132
+      },
+      {
+        "global_score": 2.0264169281987945,
+        "image": "pcb1/Data/Images/Normal/0377.JPG",
+        "label": 0,
+        "patch_score": 15.205000640103233
+      },
+      {
+        "global_score": 2.076305196109778,
+        "image": "pcb1/Data/Images/Normal/0394.JPG",
+        "label": 0,
+        "patch_score": 16.175001470442517
+      },
+      {
+        "global_score": 2.189290757197723,
+        "image": "pcb1/Data/Images/Normal/0400.JPG",
+        "label": 0,
+        "patch_score": 15.993328762210131
+      },
+      {
+        "global_score": 1.9552441888434662,
+        "image": "pcb1/Data/Images/Normal/0402.JPG",
+        "label": 0,
+        "patch_score": 15.548937889914896
+      },
+      {
+        "global_score": 2.0051052622072456,
+        "image": "pcb1/Data/Images/Normal/0417.JPG",
+        "label": 0,
+        "patch_score": 16.26099973955547
+      },
+      {
+        "global_score": 2.0318132867323353,
+        "image": "pcb1/Data/Images/Normal/0423.JPG",
+        "label": 0,
+        "patch_score": 17.21418234000667
+      },
+      {
+        "global_score": 2.0991200107680172,
+        "image": "pcb1/Data/Images/Normal/0427.JPG",
+        "label": 0,
+        "patch_score": 16.51696518719573
+      },
+      {
+        "global_score": 1.9567377393458616,
+        "image": "pcb1/Data/Images/Normal/0457.JPG",
+        "label": 0,
+        "patch_score": 15.713925042549784
+      },
+      {
+        "global_score": 2.160533835621811,
+        "image": "pcb1/Data/Images/Normal/0469.JPG",
+        "label": 0,
+        "patch_score": 17.520122668281225
+      },
+      {
+        "global_score": 1.9682635753157904,
+        "image": "pcb1/Data/Images/Normal/0479.JPG",
+        "label": 0,
+        "patch_score": 15.821791504962913
+      },
+      {
+        "global_score": 1.989816457335137,
+        "image": "pcb1/Data/Images/Normal/0483.JPG",
+        "label": 0,
+        "patch_score": 15.56051634525379
+      },
+      {
+        "global_score": 1.9163974382480276,
+        "image": "pcb1/Data/Images/Normal/0484.JPG",
+        "label": 0,
+        "patch_score": 16.33585396107175
+      },
+      {
+        "global_score": 1.968317482895689,
+        "image": "pcb1/Data/Images/Normal/0488.JPG",
+        "label": 0,
+        "patch_score": 14.743237628050716
+      },
+      {
+        "global_score": 2.2593391278807196,
+        "image": "pcb1/Data/Images/Normal/0490.JPG",
+        "label": 0,
+        "patch_score": 17.72617858414364
+      },
+      {
+        "global_score": 2.104304621981177,
+        "image": "pcb1/Data/Images/Normal/0514.JPG",
+        "label": 0,
+        "patch_score": 15.559453361300147
+      },
+      {
+        "global_score": 2.001278607528282,
+        "image": "pcb1/Data/Images/Normal/0518.JPG",
+        "label": 0,
+        "patch_score": 15.35792341140541
+      },
+      {
+        "global_score": 1.982427800335934,
+        "image": "pcb1/Data/Images/Normal/0520.JPG",
+        "label": 0,
+        "patch_score": 15.326597858546876
+      },
+      {
+        "global_score": 1.9018425950654296,
+        "image": "pcb1/Data/Images/Normal/0525.JPG",
+        "label": 0,
+        "patch_score": 15.28894022102151
+      },
+      {
+        "global_score": 2.0195223903650517,
+        "image": "pcb1/Data/Images/Normal/0545.JPG",
+        "label": 0,
+        "patch_score": 14.958893360267217
+      },
+      {
+        "global_score": 2.133952266290108,
+        "image": "pcb1/Data/Images/Normal/0552.JPG",
+        "label": 0,
+        "patch_score": 16.87616160457791
+      },
+      {
+        "global_score": 2.0200930790934484,
+        "image": "pcb1/Data/Images/Normal/0569.JPG",
+        "label": 0,
+        "patch_score": 15.314893346484562
+      },
+      {
+        "global_score": 1.8815080888025768,
+        "image": "pcb1/Data/Images/Normal/0615.JPG",
+        "label": 0,
+        "patch_score": 18.689171808540966
+      },
+      {
+        "global_score": 2.0059624281417974,
+        "image": "pcb1/Data/Images/Normal/0617.JPG",
+        "label": 0,
+        "patch_score": 15.376503913249918
+      },
+      {
+        "global_score": 2.115580955653577,
+        "image": "pcb1/Data/Images/Normal/0619.JPG",
+        "label": 0,
+        "patch_score": 15.935903624233282
+      },
+      {
+        "global_score": 2.0076591683869687,
+        "image": "pcb1/Data/Images/Normal/0621.JPG",
+        "label": 0,
+        "patch_score": 16.082973113483423
+      },
+      {
+        "global_score": 1.8840522895526501,
+        "image": "pcb1/Data/Images/Normal/0629.JPG",
+        "label": 0,
+        "patch_score": 16.57918391105379
+      },
+      {
+        "global_score": 1.8732889559751567,
+        "image": "pcb1/Data/Images/Normal/0631.JPG",
+        "label": 0,
+        "patch_score": 16.27498079167581
+      },
+      {
+        "global_score": 1.901372482972384,
+        "image": "pcb1/Data/Images/Normal/0648.JPG",
+        "label": 0,
+        "patch_score": 15.005533748426389
+      },
+      {
+        "global_score": 1.9363297278761686,
+        "image": "pcb1/Data/Images/Normal/0654.JPG",
+        "label": 0,
+        "patch_score": 15.309665842875862
+      },
+      {
+        "global_score": 1.8654207321163467,
+        "image": "pcb1/Data/Images/Normal/0657.JPG",
+        "label": 0,
+        "patch_score": 15.390015701172382
+      },
+      {
+        "global_score": 1.7876111639588415,
+        "image": "pcb1/Data/Images/Normal/0659.JPG",
+        "label": 0,
+        "patch_score": 15.49056154270573
+      },
+      {
+        "global_score": 1.8001404203332136,
+        "image": "pcb1/Data/Images/Normal/0674.JPG",
+        "label": 0,
+        "patch_score": 15.540702414771165
+      },
+      {
+        "global_score": 1.8970117090212832,
+        "image": "pcb1/Data/Images/Normal/0684.JPG",
+        "label": 0,
+        "patch_score": 15.165183976815827
+      },
+      {
+        "global_score": 1.858024499798939,
+        "image": "pcb1/Data/Images/Normal/0685.JPG",
+        "label": 0,
+        "patch_score": 15.90445588512585
+      },
+      {
+        "global_score": 2.1150994059069714,
+        "image": "pcb1/Data/Images/Normal/0688.JPG",
+        "label": 0,
+        "patch_score": 16.526943905411734
+      },
+      {
+        "global_score": 1.7546453387917729,
+        "image": "pcb1/Data/Images/Normal/0690.JPG",
+        "label": 0,
+        "patch_score": 15.707000601077906
+      },
+      {
+        "global_score": 2.113740351910041,
+        "image": "pcb1/Data/Images/Normal/0694.JPG",
+        "label": 0,
+        "patch_score": 20.47384453435653
+      },
+      {
+        "global_score": 2.272333626860306,
+        "image": "pcb1/Data/Images/Normal/0705.JPG",
+        "label": 0,
+        "patch_score": 17.389326400887004
+      },
+      {
+        "global_score": 1.9126873396359725,
+        "image": "pcb1/Data/Images/Normal/0725.JPG",
+        "label": 0,
+        "patch_score": 15.966140952224448
+      },
+      {
+        "global_score": 1.9818021333877718,
+        "image": "pcb1/Data/Images/Normal/0730.JPG",
+        "label": 0,
+        "patch_score": 18.014033537621827
+      },
+      {
+        "global_score": 1.9881236270943277,
+        "image": "pcb1/Data/Images/Normal/0735.JPG",
+        "label": 0,
+        "patch_score": 15.315016155893879
+      },
+      {
+        "global_score": 1.834729163294424,
+        "image": "pcb1/Data/Images/Normal/0739.JPG",
+        "label": 0,
+        "patch_score": 16.619808886939897
+      },
+      {
+        "global_score": 1.9118360663510103,
+        "image": "pcb1/Data/Images/Normal/0751.JPG",
+        "label": 0,
+        "patch_score": 17.317353982059025
+      },
+      {
+        "global_score": 1.8646774365361618,
+        "image": "pcb1/Data/Images/Normal/0755.JPG",
+        "label": 0,
+        "patch_score": 15.593320375066241
+      },
+      {
+        "global_score": 1.7956017601372356,
+        "image": "pcb1/Data/Images/Normal/0764.JPG",
+        "label": 0,
+        "patch_score": 15.561406016001245
+      },
+      {
+        "global_score": 2.060397971999316,
+        "image": "pcb1/Data/Images/Normal/0768.JPG",
+        "label": 0,
+        "patch_score": 17.66466088745636
+      },
+      {
+        "global_score": 2.0351297407672493,
+        "image": "pcb1/Data/Images/Normal/0779.JPG",
+        "label": 0,
+        "patch_score": 15.702772672449912
+      },
+      {
+        "global_score": 1.8585987035358242,
+        "image": "pcb1/Data/Images/Normal/0784.JPG",
+        "label": 0,
+        "patch_score": 16.042007342133772
+      },
+      {
+        "global_score": 2.014980684301259,
+        "image": "pcb1/Data/Images/Normal/0796.JPG",
+        "label": 0,
+        "patch_score": 15.915830310043258
+      },
+      {
+        "global_score": 2.0961832585813482,
+        "image": "pcb1/Data/Images/Normal/0797.JPG",
+        "label": 0,
+        "patch_score": 15.763909249954274
+      },
+      {
+        "global_score": 1.887927464371304,
+        "image": "pcb1/Data/Images/Normal/0800.JPG",
+        "label": 0,
+        "patch_score": 16.421348519945145
+      },
+      {
+        "global_score": 1.9158040569506207,
+        "image": "pcb1/Data/Images/Normal/0804.JPG",
+        "label": 0,
+        "patch_score": 15.486598177820863
+      },
+      {
+        "global_score": 1.9911983529194976,
+        "image": "pcb1/Data/Images/Normal/0811.JPG",
+        "label": 0,
+        "patch_score": 15.381927819215425
+      },
+      {
+        "global_score": 1.9675031984097877,
+        "image": "pcb1/Data/Images/Normal/0844.JPG",
+        "label": 0,
+        "patch_score": 15.201930530774694
+      },
+      {
+        "global_score": 2.032516314081189,
+        "image": "pcb1/Data/Images/Normal/0869.JPG",
+        "label": 0,
+        "patch_score": 16.812493804719917
+      },
+      {
+        "global_score": 2.1578425258456475,
+        "image": "pcb1/Data/Images/Normal/0871.JPG",
+        "label": 0,
+        "patch_score": 14.884313056371939
+      },
+      {
+        "global_score": 1.9315017715805745,
+        "image": "pcb1/Data/Images/Normal/0892.JPG",
+        "label": 0,
+        "patch_score": 15.703031962444916
+      },
+      {
+        "global_score": 2.031316625611295,
+        "image": "pcb1/Data/Images/Normal/0900.JPG",
+        "label": 0,
+        "patch_score": 15.845419058420385
+      },
+      {
+        "global_score": 1.8296825382256665,
+        "image": "pcb1/Data/Images/Normal/0920.JPG",
+        "label": 0,
+        "patch_score": 20.281947580946674
+      },
+      {
+        "global_score": 1.9935067648998888,
+        "image": "pcb1/Data/Images/Normal/0923.JPG",
+        "label": 0,
+        "patch_score": 23.38611227807817
+      },
+      {
+        "global_score": 1.8025315888232567,
+        "image": "pcb1/Data/Images/Normal/0935.JPG",
+        "label": 0,
+        "patch_score": 15.33400704864943
+      },
+      {
+        "global_score": 2.0827406220455775,
+        "image": "pcb1/Data/Images/Normal/0940.JPG",
+        "label": 0,
+        "patch_score": 16.130608257193696
+      },
+      {
+        "global_score": 1.9837085922148592,
+        "image": "pcb1/Data/Images/Normal/0952.JPG",
+        "label": 0,
+        "patch_score": 15.425479547355998
+      },
+      {
+        "global_score": 1.9298086540367494,
+        "image": "pcb1/Data/Images/Normal/0957.JPG",
+        "label": 0,
+        "patch_score": 15.764518116084092
+      },
+      {
+        "global_score": 2.141287289871006,
+        "image": "pcb1/Data/Images/Normal/0964.JPG",
+        "label": 0,
+        "patch_score": 15.994567813468581
+      },
+      {
+        "global_score": 1.9331594281581321,
+        "image": "pcb1/Data/Images/Normal/0971.JPG",
+        "label": 0,
+        "patch_score": 16.372663116643018
+      },
+      {
+        "global_score": 1.8173951017652603,
+        "image": "pcb1/Data/Images/Normal/0974.JPG",
+        "label": 0,
+        "patch_score": 16.635018872534605
+      },
+      {
+        "global_score": 1.874090160174126,
+        "image": "pcb1/Data/Images/Normal/0989.JPG",
+        "label": 0,
+        "patch_score": 15.254950131688263
+      },
+      {
+        "global_score": 2.0250859324528996,
+        "image": "pcb1/Data/Images/Normal/0994.JPG",
+        "label": 0,
+        "patch_score": 14.615726310978074
+      },
+      {
+        "global_score": 2.0575170652034855,
+        "image": "pcb1/Data/Images/Normal/1000.JPG",
+        "label": 0,
+        "patch_score": 16.172862378449118
+      }
+    ],
+    "limitations": [
+      "Separate VisA PCB1 image feasibility pilot; not wafer/SEM accuracy and not tabular policy evidence.",
+      "Image AUROC/AP are ranking statistics, not accuracy.",
+      "Threshold is the 95th percentile of held-out official normal-train calibration scores; no test data tunes it.",
+      "PatchCore-inspired adaptation (ResNet18, 14x14 grid, 1024 coreset, 16-d projection); not the published PatchCore configuration.",
+      "Single category, single seed, 100 normal + 100 anomaly official test images; no confidence intervals."
+    ],
+    "methods": {
+      "global": {
+        "frozen_threshold": {
+          "defect_recall": 0.42,
+          "false_negative": 58,
+          "false_positive": 4,
+          "normal_false_alarm_rate": 0.04,
+          "rule": "score > threshold => predicted defect",
+          "threshold": 2.229483988334219,
+          "true_negative": 96,
+          "true_positive": 42
+        },
+        "image_auroc": 0.7881,
+        "image_average_precision": 0.8269617002569525,
+        "label": "global pooled nearest-normal baseline"
+      },
+      "patch": {
+        "frozen_threshold": {
+          "defect_recall": 0.33,
+          "false_negative": 67,
+          "false_positive": 6,
+          "normal_false_alarm_rate": 0.06,
+          "rule": "score > threshold => predicted defect",
+          "threshold": 19.022955128458882,
+          "true_negative": 94,
+          "true_positive": 33
+        },
+        "image_auroc": 0.8098,
+        "image_average_precision": 0.803809886806591,
+        "label": "patch nearest-memory max score (PatchCore-inspired)"
+      }
+    },
+    "metric_notes": [
+      "AUROC and AP are ranking metrics, not accuracy.",
+      "Threshold metrics use the frozen train-normal calibration threshold."
+    ],
+    "schema_version": 1,
+    "study": "inspection-image-pilot-v1"
+  },
+  "attribution": {
+    "dataset": "VisA (Zou et al.,2022), PCB1/PCB2",
+    "license": "CC BY 4.0",
+    "url": "https://github.com/amazon-science/spot-diff",
+    "method": "PatchCore-inspired adaptation, not official reproduction",
+    "method_url": "https://github.com/amazon-science/patchcore-inspection"
+  },
+  "limitations": [
+    "One category and 100 normal plus 100 defect images; image bootstrap does not measure category/camera variability.",
+    "Composite change: resolution, patch grid, coreset size, aggregation; cannot attribute benefit to resolution alone.",
+    "PCB2 success does not overturn PCB1 failure; do not pool them.",
+    "No wafer/SEM/factory throughput, yield or equipment accuracy claim."
+  ],
+  "replication": {
+    "scope": "separate_real_pcb3_replication",
+    "evaluation": {
+      "counts": {
+        "anomaly": 100,
+        "normal": 101,
+        "test_images": 201
+      },
+      "data_mode": "real",
+      "evaluated_at": "2026-10-04T09:20:56.027501+00:00",
+      "freeze_digest": "6bda4bd8bdae26f27366d0edc17612b683133f9d44b55b15527f6444af9334a1",
+      "limitations": [
+        "Separate VisA PCB3 external-category replication; not wafer/SEM/factory accuracy and not tabular policy evidence.",
+        "Not hyperparameter optimization: methods, feature sets and calibration quantile are the v2 PCB2 pipeline, selected for replication because of the prior PCB2 result.",
+        "PCB1 v1 and PCB2 v2 test sets are consumed; their outcomes stand and nothing here was tuned on them or on PCB3 test data.",
+        "primary448 changes resolution, grid, coreset size and score aggregation together; any difference is a composite pipeline effect, not a resolution effect.",
+        "Images are resized whole with aspect-ratio distortion and no crop.",
+        "Thresholds are each method's 95th percentile of held-out official normal-train calibration scores; no test data tunes them.",
+        "Image AUROC/AP are secondary ranking statistics, never accuracy; highres448max is descriptive only.",
+        "Single category, single seed, official PCB3 1cls test images (class counts read only after scoring)."
+      ],
+      "methods": {
+        "baseline224": {
+          "frozen_threshold": {
+            "defect_recall": 0.44,
+            "false_negative": 56,
+            "false_positive": 8,
+            "normal_false_alarm_rate": 0.07920792079207921,
+            "rule": "score > threshold => predicted defect",
+            "threshold": 18.753552084175173,
+            "true_negative": 93,
+            "true_positive": 44
+          },
+          "image_auroc_secondary": 0.7615841584158416,
+          "image_average_precision_secondary": 0.8002095457355444,
+          "label": "v1-inspired patch baseline: 224x224, 14x14, coreset 1024, max patch distance",
+          "role": "baseline"
+        },
+        "highres448max": {
+          "frozen_threshold": {
+            "defect_recall": 0.57,
+            "false_negative": 43,
+            "false_positive": 4,
+            "normal_false_alarm_rate": 0.039603960396039604,
+            "rule": "score > threshold => predicted defect",
+            "threshold": 24.12816173921733,
+            "true_negative": 97,
+            "true_positive": 57
+          },
+          "image_auroc_secondary": 0.9078217821782179,
+          "image_average_precision_secondary": 0.9154075875843013,
+          "label": "descriptive only: r448 memory, max patch distance",
+          "role": "secondary_descriptive"
+        },
+        "primary448": {
+          "frozen_threshold": {
+            "defect_recall": 0.55,
+            "false_negative": 45,
+            "false_positive": 3,
+            "normal_false_alarm_rate": 0.0297029702970297,
+            "rule": "score > threshold => predicted defect",
+            "threshold": 22.827363672026653,
+            "true_negative": 98,
+            "true_positive": 55
+          },
+          "image_auroc_secondary": 0.92,
+          "image_average_precision_secondary": 0.9244194452963572,
+          "label": "composite: 448x448, 28x28, coreset 2048, mean of 3 largest patch distances",
+          "role": "primary"
+        }
+      },
+      "metric_notes": [
+        "Primary endpoint fixed before test scoring; it is never swapped after evaluation.",
+        "AUROC and AP are secondary ranking metrics, not accuracy.",
+        "Rates are counts over the official per-class test images; report them as such, not with extra precision."
+      ],
+      "primary_endpoint": {
+        "decision": {
+          "bootstrap_ci_lower_above_zero": true,
+          "primary_far_at_most_10pct": true,
+          "recall_gain_at_least_10pp": true,
+          "success": true
+        },
+        "definition": {
+          "attribution": "primary448 differs from baseline224 in resolution, grid, coreset size and score aggregation at once; a gain cannot be attributed to resolution alone",
+          "bootstrap": {
+            "interval": "percentile 2.5/97.5",
+            "resamples": 10000,
+            "seed_stream": [
+              2026100408,
+              7
+            ],
+            "unit": "test image, paired across methods, resampled with replacement within label stratum"
+          },
+          "comparison": "primary448 minus baseline224",
+          "metric": "defect recall at each method's own frozen calibration threshold (score > threshold)",
+          "population": "official PCB3 1cls test images; class counts taken from labels only after scoring",
+          "secondary_descriptive": [
+            "image AUROC",
+            "image average precision",
+            "highres448max threshold metrics",
+            "FAR difference with bootstrap CI"
+          ],
+          "success_requires_all": [
+            "recall gain point estimate >= 0.10",
+            "paired image bootstrap 95% percentile CI lower bound of recall gain > 0",
+            "primary448 normal false alarm rate <= 0.10"
+          ]
+        },
+        "primary_vs_baseline_bootstrap": {
+          "defect_recall_gain": {
+            "ci95": [
+              0.01,
+              0.21
+            ],
+            "estimate": 0.11,
+            "resamples": 10000
+          },
+          "normal_far_difference": {
+            "ci95": [
+              -0.09900990099009901,
+              0.0
+            ],
+            "estimate": -0.04950495049504951,
+            "resamples": 10000
+          }
+        }
+      },
+      "schema_version": 1,
+      "secondary_descriptive": {
+        "highres448max_vs_baseline224_bootstrap": {
+          "defect_recall_gain": {
+            "ci95": [
+              0.02,
+              0.24
+            ],
+            "estimate": 0.13,
+            "resamples": 10000
+          },
+          "normal_far_difference": {
+            "ci95": [
+              -0.09900990099009901,
+              0.009900990099009901
+            ],
+            "estimate": -0.039603960396039604,
+            "resamples": 10000
+          }
+        }
+      },
+      "study": "inspection-image-replication-v3-pcb3",
+      "test_scores_sha256": "e0715009ed994b00dec0c9fd5d81900f5bb85776a22d30d399d26576422566f7"
+    },
+    "audit": {
+      "status": "pass",
+      "freeze_digest": "6bda4bd8bdae26f27366d0edc17612b683133f9d44b55b15527f6444af9334a1",
+      "report_input_sha256": {
+        "evaluation.json": "0aa206238cab868b71b7f0543bce5f4ddec59fcfedcd3e070b051d423e259022",
+        "freeze.json": "1f866a03d20ead68ef12a6307c5ba0d6b0609deef875bc8e9f9ed397f2c45ac3",
+        "test-scores.json": "e0715009ed994b00dec0c9fd5d81900f5bb85776a22d30d399d26576422566f7"
+      }
+    },
+    "selection_disclosure": "PCB2 결과를 보고 선택한 복합 설계를 PCB3에서 고정한 별도 검증. PCB3 테스트로 설계·임계값을 고르거나 다시 튜닝하지 않았다."
+  }
+}

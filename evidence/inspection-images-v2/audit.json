@@ -1,0 +1,413 @@
+{
+  "annotations": {
+    "sha256": "b165a50f04595b0f30285b49ab422d994bae42bc22c754a2e38fb846d4e25560",
+    "use": "posthoc descriptive defect-type breakdown only"
+  },
+  "audited_at": "2026-10-04T08:47:01.022009+00:00",
+  "bootstrap": {
+    "highres448max_minus_baseline224": {
+      "defect_recall_gain": {
+        "ci95": [
+          0.08,
+          0.28
+        ],
+        "estimate": 0.18,
+        "resamples": 10000
+      },
+      "normal_far_difference": {
+        "ci95": [
+          -0.12,
+          0.01
+        ],
+        "estimate": -0.05,
+        "resamples": 10000
+      }
+    },
+    "primary448_minus_baseline224": {
+      "defect_recall_gain": {
+        "ci95": [
+          0.12,
+          0.3
+        ],
+        "estimate": 0.21,
+        "resamples": 10000
+      },
+      "normal_far_difference": {
+        "ci95": [
+          -0.12,
+          -0.01
+        ],
+        "estimate": -0.06,
+        "resamples": 10000
+      }
+    }
+  },
+  "counts": {
+    "anomaly": 100,
+    "normal": 100,
+    "test_images": 200
+  },
+  "decision": {
+    "bootstrap_ci_lower_above_zero": true,
+    "primary_far_at_most_10pct": true,
+    "recall_gain_at_least_10pp": true,
+    "success": true
+  },
+  "errors": {
+    "anomaly_by_defect_type": {
+      "bent": {
+        "primary448_missed": 3,
+        "test": 12
+      },
+      "bent,melt": {
+        "primary448_missed": 1,
+        "test": 3
+      },
+      "melt": {
+        "primary448_missed": 12,
+        "test": 48
+      },
+      "melt,scratch": {
+        "primary448_missed": 2,
+        "test": 4
+      },
+      "missing": {
+        "primary448_missed": 9,
+        "test": 17
+      },
+      "scratch": {
+        "primary448_missed": 1,
+        "test": 14
+      },
+      "scratch,missing": {
+        "primary448_missed": 0,
+        "test": 2
+      }
+    },
+    "paired_flips_vs_baseline224": {
+      "defect_caught_only_by_baseline": 3,
+      "defect_caught_only_by_primary": 24,
+      "normal_flagged_only_by_baseline": 7,
+      "normal_flagged_only_by_primary": 1
+    },
+    "primary448_false_alarms": [
+      {
+        "baseline224_flagged": true,
+        "defect_type": "normal",
+        "highres448max_flagged": true,
+        "image": "pcb2/Data/Images/Normal/0011.JPG",
+        "primary448_margin": 4.515914072267751
+      },
+      {
+        "baseline224_flagged": true,
+        "defect_type": "normal",
+        "highres448max_flagged": true,
+        "image": "pcb2/Data/Images/Normal/0024.JPG",
+        "primary448_margin": 4.368076077513784
+      },
+      {
+        "baseline224_flagged": true,
+        "defect_type": "normal",
+        "highres448max_flagged": true,
+        "image": "pcb2/Data/Images/Normal/0394.JPG",
+        "primary448_margin": 2.442788102845544
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "normal",
+        "highres448max_flagged": true,
+        "image": "pcb2/Data/Images/Normal/0333.JPG",
+        "primary448_margin": 0.7071437437648953
+      },
+      {
+        "baseline224_flagged": true,
+        "defect_type": "normal",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Normal/0804.JPG",
+        "primary448_margin": 0.1392789618752417
+      }
+    ],
+    "primary448_missed_defects": [
+      {
+        "baseline224_flagged": false,
+        "defect_type": "melt,scratch",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/038.JPG",
+        "primary448_margin": -3.6942159660044176
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "missing",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/055.JPG",
+        "primary448_margin": -3.183606994852262
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "missing",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/051.JPG",
+        "primary448_margin": -3.0981756751042973
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "melt",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/077.JPG",
+        "primary448_margin": -3.037727022432083
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "missing",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/045.JPG",
+        "primary448_margin": -2.761168762064422
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "missing",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/059.JPG",
+        "primary448_margin": -2.616551616197782
+      },
+      {
+        "baseline224_flagged": true,
+        "defect_type": "melt",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/083.JPG",
+        "primary448_margin": -2.558082344076581
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "melt",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/036.JPG",
+        "primary448_margin": -2.55788469219382
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "bent",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/012.JPG",
+        "primary448_margin": -2.4639559005647342
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "melt",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/031.JPG",
+        "primary448_margin": -2.4109588448781345
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "melt",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/076.JPG",
+        "primary448_margin": -2.4059198668868653
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "missing",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/053.JPG",
+        "primary448_margin": -2.3372140554684613
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "missing",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/050.JPG",
+        "primary448_margin": -2.2692735610771955
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "melt,scratch",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/033.JPG",
+        "primary448_margin": -2.2283838365968016
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "melt",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/072.JPG",
+        "primary448_margin": -2.213854585851184
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "missing",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/057.JPG",
+        "primary448_margin": -1.995723342968791
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "melt",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/060.JPG",
+        "primary448_margin": -1.961118059869218
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "missing",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/056.JPG",
+        "primary448_margin": -1.5680195482249353
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "bent,melt",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/010.JPG",
+        "primary448_margin": -1.4731350195733128
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "melt",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/035.JPG",
+        "primary448_margin": -1.4008916787280263
+      },
+      {
+        "baseline224_flagged": true,
+        "defect_type": "missing",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/049.JPG",
+        "primary448_margin": -1.3034999255166149
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "scratch",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/097.JPG",
+        "primary448_margin": -1.2578482709254892
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "melt",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/080.JPG",
+        "primary448_margin": -1.134518215222716
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "melt",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/069.JPG",
+        "primary448_margin": -0.7655360929409945
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "melt",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/066.JPG",
+        "primary448_margin": -0.6677015959215815
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "bent",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/009.JPG",
+        "primary448_margin": -0.6077385239536071
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "melt",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/067.JPG",
+        "primary448_margin": -0.2952176334282761
+      },
+      {
+        "baseline224_flagged": true,
+        "defect_type": "bent",
+        "highres448max_flagged": false,
+        "image": "pcb2/Data/Images/Anomaly/014.JPG",
+        "primary448_margin": -0.2635202366592395
+      }
+    ]
+  },
+  "freeze_digest": "a15a37ae78b7234aefedd4f69b89c9fec2148a7a86e1c1d1d2000b94094a6fed",
+  "images": {
+    "mismatches": 0,
+    "test_images_rehashed": 200,
+    "train_images_rehashed": 901
+  },
+  "independence": "inspection_images and inspection_images_v2 not imported; metrics, thresholds, digest, source hashes and bootstrap reimplemented; numpy only replays default_rng",
+  "methods": {
+    "baseline224": {
+      "defect_recall": 0.51,
+      "fn": 49,
+      "fp": 11,
+      "image_auroc": 0.8005,
+      "image_average_precision": 0.7772496194147605,
+      "normal_false_alarm_rate": 0.11,
+      "role": "baseline",
+      "threshold": 17.88088945105467,
+      "tied_scores": 0,
+      "tn": 89,
+      "tp": 51
+    },
+    "highres448max": {
+      "defect_recall": 0.69,
+      "fn": 31,
+      "fp": 6,
+      "image_auroc": 0.8942,
+      "image_average_precision": 0.9079763574919295,
+      "normal_false_alarm_rate": 0.06,
+      "role": "secondary_descriptive",
+      "threshold": 23.47273251185427,
+      "tied_scores": 0,
+      "tn": 94,
+      "tp": 69
+    },
+    "primary448": {
+      "defect_recall": 0.72,
+      "fn": 28,
+      "fp": 5,
+      "image_auroc": 0.906,
+      "image_average_precision": 0.9180482949060311,
+      "normal_false_alarm_rate": 0.05,
+      "role": "primary",
+      "threshold": 22.22725925667897,
+      "tied_scores": 0,
+      "tn": 95,
+      "tp": 72
+    }
+  },
+  "report_input_sha256": {
+    "evaluation.json": "a2ed03a68e82da855e3339c922a0fcb7c80bcadd2d164fc591d3269017352ed5",
+    "freeze.json": "3ba3ce8f9faec4637de2d39eab6551f8f1c90dda3036fe09e65ce9698816706d",
+    "test-scores.json": "eac3dee802bffe882252b54df0006017108519d71d19887f23500c6aba0f2de4"
+  },
+  "run_root": {
+    "byte_identical": {
+      "evaluation.json": true,
+      "freeze.json": true,
+      "test-scores.json": true
+    },
+    "memory_artifacts_verified": [
+      "r224",
+      "r448"
+    ]
+  },
+  "schema_version": 1,
+  "source_hashes_rehashed": {
+    "IMAGE_PILOT_V2_PROTOCOL.md": "617a6ab0d39f8c34e1b66d0b16c01a0cfd23eb38c1ffaf83c0e513e9c8180025",
+    "inspection_images/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inspection_images/core.py": "2d1ad1ec0c2c7c968630863174a0a9b962dfb1748856e6137a1eed5150683a99",
+    "inspection_images/data.py": "82572acd8dbeac99ea2acba445ed1b40b2a4c55491176da311d60a480cb4368b",
+    "inspection_images/features.py": "ec222bbcb9722e3fd1082770acda26691440bf9f5c668c4cc9a965139930592e",
+    "inspection_images/requirements-cpu.txt": "23ba7bea154ad386b695fae296f52a2ecc329116cf813e86b9d17f03a7d140f1",
+    "inspection_images_v2/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inspection_images_v2/cli.py": "4e399572af214b1ea23d38f1e74c47231226eed44ca181a7e3fe1b81f3fac882",
+    "inspection_images_v2/pipeline.py": "ba8a57b897d42b0f218c248d148aa662e040bc4dae3c9b00f72560544acd71ee",
+    "inspection_images_v2/protocol.json": "dc97a0e0d81ce6e1642856b84e254bc14357d80db335224cdb9ad3fd5645689f",
+    "inspection_images_v2/scoring.py": "1ab996e598e034652c93d31e87cf95f9bba605a5d7b269c56fa52b85913243dc"
+  },
+  "split_csv": {
+    "pcb2_rows": 1101,
+    "sha256": "a48557e6033318cb90556f706196bc9d247a776a23ea51aecee5a80dd0332995"
+  },
+  "status": "pass",
+  "study": "inspection-image-pilot-v2-pcb2"
+}

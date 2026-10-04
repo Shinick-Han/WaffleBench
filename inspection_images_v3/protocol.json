@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "study": "inspection-image-replication-v3-pcb3",
+  "scope": "Separate real PCB image external-category replication on untouched VisA PCB3 of the fixed v2 composite primary448 versus baseline224 pipeline. Not hyperparameter optimization; not wafer/SEM/factory accuracy and not tabular policy evidence.",
+  "predecessor": {
+    "studies": [
+      {
+        "study": "inspection-image-pilot-v1",
+        "category": "pcb1",
+        "test_status": "consumed; preserved, never rerun or tuned on"
+      },
+      {
+        "study": "inspection-image-pilot-v2-pcb2",
+        "category": "pcb2",
+        "test_status": "consumed; preserved, never rerun or tuned on",
+        "role": "the only source of the fixed architecture/methods/calibration quantile; selected because of the prior PCB2 result"
+      }
+    ],
+    "selection_disclosure": "primary448/baseline224/highres448max, feature sets, coreset sizes, aggregation, calibration fraction and 95th percentile are copied unchanged from v2 PCB2 and were chosen for this replication on the basis of the prior PCB2 outcome; PCB3 data chose nothing."
+  },
+  "dataset": {
+    "name": "VisA",
+    "category": "pcb3",
+    "archive_url": "https://amazon-visual-anomaly.s3.us-west-2.amazonaws.com/VisA_20220922.tar",
+    "archive_bytes": 1929840640,
+    "archive_sha256_observed": "2eb8690c803ab37de0324772964100169ec8ba1fa3f7e94291c9ca673f40f362",
+    "archive_etag_observed": "\"05c830591a1172938cb714895c9e0cfb-113\"",
+    "archive_extract_prefixes": [
+      "pcb3/",
+      "split_csv/1cls.csv",
+      "LICENSE-DATASET"
+    ],
+    "license": "CC-BY-4.0",
+    "license_source": "https://github.com/awslabs/open-data-registry/blob/db4a77281596a5951a812c4cbc19a8723db2103b/datasets/visa.yaml",
+    "split_csv_url": "https://raw.githubusercontent.com/amazon-science/spot-diff/2a692ab575001cbde74d402d897a7286086c6199/split_csv/1cls.csv",
+    "split_csv_sha256": "a48557e6033318cb90556f706196bc9d247a776a23ea51aecee5a80dd0332995",
+    "split_csv_git_blob": "b92269792db47fe3f7de6a67e29c7bb04acee0f2",
+    "split_source_commit": "2a692ab575001cbde74d402d897a7286086c6199",
+    "expected_counts": {
+      "train_normal": 905,
+      "test_total_unlabeled": 201,
+      "source": "identity counts from the pinned split via split_identities only; test class counts are not read before evaluation"
+    }
+  },
+  "method_reference": {
+    "name": "PatchCore (Roth et al. 2021, arXiv:2106.08265)",
+    "repository": "https://github.com/amazon-science/patchcore-inspection",
+    "commit": "fcaa92f124fb1ad74a7acf56726decd4b27cbcad",
+    "license": "Apache-2.0",
+    "code_reused": false
+  },
+  "seed": 2026100408,
+  "calibration_fraction": 0.1,
+  "threshold_percentile": 95.0,
+  "normalization": "per-method per-dimension mean/std over that method's memory-train descriptors only",
+  "image_common": {
+    "crop": "none",
+    "aspect": "full-image resize, aspect ratio distorted (not preserved)",
+    "interpolation": "PIL bilinear",
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  },
+  "backbone": {
+    "family": "torchvision.resnet18",
+    "weights": "ResNet18_Weights.IMAGENET1K_V1",
+    "weights_file": "resnet18-f37072fd.pth",
+    "layers": [
+      "layer2",
+      "layer3"
+    ],
+    "local_aggregation": "avg_pool 3x3 stride 1 pad 1 per layer (count_include_pad=False)",
+    "layer2_to_grid": "avg_pool 2x2 stride 2 onto the layer3 grid",
+    "descriptor_dim": 384,
+    "threads": 4,
+    "batch": 16
+  },
+  "projection_dim": 16,
+  "reservoir_max": 50000,
+  "distance_chunk": 4096,
+  "feature_sets": {
+    "r224": {
+      "resize": [
+        224,
+        224
+      ],
+      "grid": [
+        14,
+        14
+      ],
+      "coreset_size": 1024
+    },
+    "r448": {
+      "resize": [
+        448,
+        448
+      ],
+      "grid": [
+        28,
+        28
+      ],
+      "coreset_size": 2048
+    }
+  },
+  "methods": {
+    "baseline224": {
+      "role": "baseline",
+      "feature_set": "r224",
+      "aggregation": "max",
+      "top_k": 1,
+      "label": "v1-inspired patch baseline: 224x224, 14x14, coreset 1024, max patch distance"
+    },
+    "primary448": {
+      "role": "primary",
+      "feature_set": "r448",
+      "aggregation": "mean_topk",
+      "top_k": 3,
+      "label": "composite: 448x448, 28x28, coreset 2048, mean of 3 largest patch distances"
+    },
+    "highres448max": {
+      "role": "secondary_descriptive",
+      "feature_set": "r448",
+      "aggregation": "max",
+      "top_k": 1,
+      "label": "descriptive only: r448 memory, max patch distance"
+    }
+  },
+  "primary_endpoint": {
+    "comparison": "primary448 minus baseline224",
+    "metric": "defect recall at each method's own frozen calibration threshold (score > threshold)",
+    "success_requires_all": [
+      "recall gain point estimate >= 0.10",
+      "paired image bootstrap 95% percentile CI lower bound of recall gain > 0",
+      "primary448 normal false alarm rate <= 0.10"
+    ],
+    "bootstrap": {
+      "resamples": 10000,
+      "unit": "test image, paired across methods, resampled with replacement within label stratum",
+      "seed_stream": [
+        2026100408,
+        7
+      ],
+      "interval": "percentile 2.5/97.5"
+    },
+    "secondary_descriptive": [
+      "image AUROC",
+      "image average precision",
+      "highres448max threshold metrics",
+      "FAR difference with bootstrap CI"
+    ],
+    "attribution": "primary448 differs from baseline224 in resolution, grid, coreset size and score aggregation at once; a gain cannot be attributed to resolution alone",
+    "population": "official PCB3 1cls test images; class counts taken from labels only after scoring"
+  },
+  "environment_pins": {
+    "python": "3.12.10",
+    "numpy": "2.5.2",
+    "torch": "2.14.1+cpu"
+  },
+  "frozen_dependency_sha256": {
+    "inspection_images/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inspection_images/core.py": "2d1ad1ec0c2c7c968630863174a0a9b962dfb1748856e6137a1eed5150683a99",
+    "inspection_images/data.py": "82572acd8dbeac99ea2acba445ed1b40b2a4c55491176da311d60a480cb4368b",
+    "inspection_images/features.py": "ec222bbcb9722e3fd1082770acda26691440bf9f5c668c4cc9a965139930592e",
+    "inspection_images/requirements-cpu.txt": "23ba7bea154ad386b695fae296f52a2ecc329116cf813e86b9d17f03a7d140f1",
+    "inspection_images_v2/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inspection_images_v2/scoring.py": "1ab996e598e034652c93d31e87cf95f9bba605a5d7b269c56fa52b85913243dc",
+    "inspection_images_v2/pipeline.py": "ba8a57b897d42b0f218c248d148aa662e040bc4dae3c9b00f72560544acd71ee",
+    "inspection_images_v2/cli.py": "4e399572af214b1ea23d38f1e74c47231226eed44ca181a7e3fe1b81f3fac882",
+    "inspection_images_v2/protocol.json": "dc97a0e0d81ce6e1642856b84e254bc14357d80db335224cdb9ad3fd5645689f",
+    "IMAGE_PILOT_V2_PROTOCOL.md": "617a6ab0d39f8c34e1b66d0b16c01a0cfd23eb38c1ffaf83c0e513e9c8180025"
+  }
+}

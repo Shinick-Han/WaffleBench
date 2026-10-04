@@ -1,0 +1,73 @@
+{
+  "label": "model classification validation (development lots)",
+  "metrics": {
+    "aggregate": {
+      "balanced_accuracy": 0.871505687295161,
+      "brier": 0.08602024246329155,
+      "fn": 187,
+      "fp": 128,
+      "n_candidates": 2825,
+      "precision": 0.8641188959660298,
+      "recall": 0.8131868131868132,
+      "tn": 1696,
+      "tp": 814
+    },
+    "model_hash": "16b5f22be008c423b8d02fa7b4f501604cdb0f803a03c02dd8747c9b422b1134",
+    "per_lot": [
+      {
+        "balanced_accuracy": 0.8567902085055571,
+        "brier": 0.08746663076034063,
+        "fn": 47,
+        "fp": 46,
+        "lot_id": "lot-d65f9f3e834854ad",
+        "n_candidates": 801,
+        "precision": 0.7973568281938326,
+        "recall": 0.793859649122807,
+        "tn": 527,
+        "tp": 181
+      },
+      {
+        "balanced_accuracy": 0.8780404378230465,
+        "brier": 0.09225094778767937,
+        "fn": 48,
+        "fp": 28,
+        "lot_id": "lot-cd39e77ce512b40e",
+        "n_candidates": 654,
+        "precision": 0.8947368421052632,
+        "recall": 0.8321678321678322,
+        "tn": 340,
+        "tp": 238
+      },
+      {
+        "balanced_accuracy": 0.8758245300798493,
+        "brier": 0.0848140571576853,
+        "fn": 49,
+        "fp": 32,
+        "lot_id": "lot-c4d9a1dc7854c9c3",
+        "n_candidates": 711,
+        "precision": 0.879245283018868,
+        "recall": 0.8262411347517731,
+        "tn": 397,
+        "tp": 233
+      },
+      {
+        "balanced_accuracy": 0.8708928763296444,
+        "brier": 0.07938012022383804,
+        "fn": 43,
+        "fp": 22,
+        "lot_id": "lot-e091200fcfcd87f3",
+        "n_candidates": 659,
+        "precision": 0.8804347826086957,
+        "recall": 0.7902439024390244,
+        "tn": 432,
+        "tp": 162
+      }
+    ],
+    "scope": "candidates_only",
+    "threshold": 0.5
+  },
+  "timing": {
+    "cpu_s": 0.0,
+    "wall_s": 0.0005547000328078866
+  }
+}

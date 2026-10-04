@@ -269,3 +269,14 @@ mockup/                   original mockup (invented numbers, not results)
 
 The project's own code is MIT ([`LICENSE`](LICENSE)). Third-party components are listed in
 [`THIRD_PARTY.md`](THIRD_PARTY.md). No third-party code or binaries are vendored here.
+
+
+## Separately validated inspection studies
+
+[Inspection evidence](https://shinick-han.github.io/falsify-lab-hacknation7/inspection-evidence.html) shows a numerical synthetic three-wafer inspection campaign: +7.12% confirmed DOI at the same 360 CU budget versus a logistic comparator. The supplementary 30% cost-saving target failed. [Coverage and budget diagnosis](https://shinick-han.github.io/falsify-lab-hacknation7/inspection-quality.html) explains missed optical candidates and unmeasured sites.
+
+[Real PCB photographs](https://shinick-han.github.io/falsify-lab-hacknation7/inspection-images.html) separately shows PCB2 recall 51%→72% and the fixed pipeline's PCB3 replication 44%→55%; 28/100 and 45/100 defects remain missed. These are not SEM, wafer or factory accuracy. Sources, fixed thresholds, paired intervals and independent audit receipts are preserved in IMAGE_PILOT_V2_RESULTS.md and IMAGE_PILOT_V3_RESULTS.md.
+
+[Actual Omnigent recorded execution](https://shinick-han.github.io/falsify-lab-hacknation7/inspection-live.html) shows five SDK delegations, two paid synthetic reviews and two result updates. The LLM coordinates; the frozen numerical planner selects sites. The browser replays an already completed run and never starts a remote experiment.
+
+The mixture v4 and deeper beam v5 hypotheses failed and were not promoted. INSPECTION_V3_RESULTS.md, INSPECTION_V4_RESULTS.md and INSPECTION_ROUTE_V5_RESULTS.md keep those separate comparisons. Numeric dependencies: `uv sync --extra inspection`; the image studies use the separate CPU environment pinned in inspection_images/requirements-cpu.txt. Large images, model binaries, local campaign outputs, API keys and runtime/provider logs are excluded.

@@ -1,0 +1,691 @@
+{
+  "freeze": {
+    "created_at": "2026-10-04T08:59:53.468518+00:00",
+    "development_lot_bytes": {
+      "lot-07b019eaaabd0df9": {
+        "metadata.json": "eac988334e53ec5ad0d344f666cce6b37bd94517b29593b5a0a68f1771fc0b64",
+        "oracle.npz": "d98bb48086862b9ee98cef8475fdc84432d4dc512d334be9cbdff8548a98231c",
+        "public.npz": "473fe0e0372d506d8d98485e19597025648ef50a5a21a39cdc01de90eeba2558"
+      },
+      "lot-0a2b036a207918b0": {
+        "metadata.json": "762bcdf89d0c434dbefe48836f63f905f05c663a2b143ca785475103e330cbda",
+        "oracle.npz": "3b55e4b7d4230fcbc1549914be2437d5c60dae20f17b056dde776fe585a1be34",
+        "public.npz": "2ecad9e01d3be742cafc919dbcc29e86a939e1defeddc2ea147546d8e2cd447b"
+      },
+      "lot-17c1d1f5d5c62bb3": {
+        "metadata.json": "2d32a099340fed58190b06962660b1694b7386c77d7cf9e900cd348a20729b89",
+        "oracle.npz": "a5c6108c8c086b0fb2ecef70e9a9d30c783fa2cef6968191b50b6861939d73bd",
+        "public.npz": "9ea0954ffd3642f7e8e8c9a5d7c58bfb61a78d65bc4674a2b9af277e99266261"
+      },
+      "lot-17c33d079afd28e3": {
+        "metadata.json": "ee936d06b6373573dd329dcbc5b0a85a4d525bb8966829e7a4a372a3876fd5b6",
+        "oracle.npz": "4575c65dba13e48e2ca7a9b11ca501963f5be8c200d08e53aa23c3f58461aad1",
+        "public.npz": "2b2671a0c773b35d8c317a55db1d9f9599c41b4444f60ef3988721fce5c47c5a"
+      },
+      "lot-219f6360bbe1040b": {
+        "metadata.json": "4d88258fd34d8f5f61ac726f5d4d649a117caee18cbc8a6e527d10fbf1fad2c7",
+        "oracle.npz": "f95d0c8c11bd41e3bffabad0e14f2d4f2434e7dff489ceee4dc60e0116c9b061",
+        "public.npz": "bc32907e80fee2af905d38c4aa3a9b8da391923d36cbbe2b4857feadfd49fb72"
+      },
+      "lot-2a4031668d70f5c5": {
+        "metadata.json": "a672cbee95cff71828aad2518ff6129b3a316b8d628d6488df5f937d0b8fb924",
+        "oracle.npz": "56fd528764d03fa3bd54f73c6b8cbf73f6c699d144594fd37482c555bfe0a9aa",
+        "public.npz": "65d41e5a34ac3c5e42b53f2258c414c9bc695af053d6bcffcec2b300918e6d3e"
+      },
+      "lot-2ee74b6a0eb3cc19": {
+        "metadata.json": "5bdbe1641315bb939f8cc48b5637f895aef1edb84c70f50c84fb4343217c601a",
+        "oracle.npz": "047c1d79dfe3e64f825472c0b134688662ad9743cbecf4176c9abe3b4ced24f2",
+        "public.npz": "8df8ceb8859704b81c95a8f5d6c405cbf8641dd20fe37649c9b0dc94c54844f3"
+      },
+      "lot-32b6a899725eb807": {
+        "metadata.json": "e479c13c2a9cf7c6b0ec3b0642d7381887b7f8c5d76b3035cd00527ac01f9c1f",
+        "oracle.npz": "26800bddcd6a1ca2d07f733850b39f95b7c04cf37665d430146f8927af9fef21",
+        "public.npz": "2479dd53dda77cba88589d87e0fa8ce53ac2663fb0ad091dc813b57eb715d22d"
+      },
+      "lot-3a5e9da4d434752b": {
+        "metadata.json": "bd6d8eaeb6a0bd4bd4c106425043fddb3669d0ea774515b1e3f97d973b3fb8d6",
+        "oracle.npz": "8a7a0d05c7ae5a55d2bcc7cfd377d6abc43fd84c74fab0205df72ff8f6b59b60",
+        "public.npz": "a5ed0b821630a299310a09261e92926991d093cd3c855d4e2f9c4bddb1dd06ce"
+      },
+      "lot-3ea7905011ebd819": {
+        "metadata.json": "3954bd793105d3c5d562515dcce3b9333fa999c03b79ae4a75e7b71ed0d6f176",
+        "oracle.npz": "5dd4abad849371e62dcb7267494d6666f687946505aadc9e10036d269173dedf",
+        "public.npz": "9a5cb5b22399deac3cd4e2894e2f9206a48c8b09a2999e34c6fbc9bf9628b7b6"
+      },
+      "lot-3efa7549d1295902": {
+        "metadata.json": "82b212e73f6eb79d0a667284f1c9d411d96d19affacee9df70bfec3b28d877c8",
+        "oracle.npz": "d78e0e4ec44eecd3603ea74010279bdb1add64925d6c7a40d329cee9ad3b4403",
+        "public.npz": "c65eaa9888f52633066368bdaa269d57f11d6888de81918f3c54469037931444"
+      },
+      "lot-435e3cebb1cbe056": {
+        "metadata.json": "f949bbb5a21af43a1a5fc49cb2c0f7b0ff2b771e2f807de59408507b695b8a37",
+        "oracle.npz": "211909ff367dd15a5bde00cab754cf08cf1160e701a63a7fa7ba770303e567e2",
+        "public.npz": "741ca2330f929f7e93cb9421567dd47ef6949aa1dd46cf67173d1623160043d2"
+      },
+      "lot-4863c4f6b8c1ef5c": {
+        "metadata.json": "9e767ec8c0fb38d555d4f406e889e330448e537c71b2677fa0096eb50e112b0c",
+        "oracle.npz": "c7c906fcfc66610d94c8e1608e58458c6c6011d170f147965e9c59f8be69011d",
+        "public.npz": "8c5a0b00e35d724f1c6d3305df0a48a1cded82fb3bb9c3e11c64dbe664290a00"
+      },
+      "lot-48b7cbd0fd3e1781": {
+        "metadata.json": "f71163f5314ec9baca290d539ea307171e4c45406df2bff473c90ac833d867eb",
+        "oracle.npz": "1db2a271e9c3289746651df3bfdb0bc9950f5061703c6e7ab1a56b110ac4a262",
+        "public.npz": "82e673aead048613ac61c9a602b7f9492a76b4455d78a44c93e7358532ea67f0"
+      },
+      "lot-4f2951c27d1f6d26": {
+        "metadata.json": "0b8d00c61dd37af67ab764930ef6ce56a515ece8847b8da89b8673bb108be756",
+        "oracle.npz": "867b0d2f905fbdcdebeb12b3ffe8cdb7386e53cfb1f7010f95fc5b4fc37f378e",
+        "public.npz": "71a5614a0c6ef91f7c3adc51c166b53ad8c38b617cd9b70b7d08e127e2f34376"
+      },
+      "lot-4f66d4d504719dad": {
+        "metadata.json": "7d296766a150cb72688dfb64f73efe89daa2ccec94c5c4610505847cb154f50d",
+        "oracle.npz": "358b916273b9563b87e4300c1af41b7b4218a12c1491c67842151115b5a26b74",
+        "public.npz": "2db60fb8b75d07ae27db9cd8c3605400513f86e08f12a2af50953253d8f320f8"
+      },
+      "lot-525917af53779e91": {
+        "metadata.json": "4dcd141fc0ab3ff8e611a40f7005c193cbf4e73b621dafa39892495304b9aedb",
+        "oracle.npz": "72cb1810ce6594828e7a09978f144efc4750319cb252f364d52a9b7c7d703a01",
+        "public.npz": "fbbce1758fcdfc62220b4fa0c34ffffd6883f5c437c1e39280bef3af9f7114fc"
+      },
+      "lot-59196720e5560d54": {
+        "metadata.json": "12019536f14ad70060f18c6bef00eec9fd9f7de6415d6ee86c2792b76c205eae",
+        "oracle.npz": "087aca5c8ef9e98573f91bbf7895284ca08050e0a2f58ef3bce49e3520707008",
+        "public.npz": "63ed6e78ecdc5972176a124968d892ad54da7b6ecb1ae5a3439f676f8fa76269"
+      },
+      "lot-6719865c8fc9795f": {
+        "metadata.json": "a1c5088430d7e136b77b45fac8b108ab40285265033409f8febcdd8d0e0c39a4",
+        "oracle.npz": "1ce2e1536e3f8d3bf30b9c8b6396cc4e409080f0b27d1fa2023eb4fae6b26627",
+        "public.npz": "106717537d8d785e3d6758e0a753b1896f0bac12c567aa8f6bfb09572e74d347"
+      },
+      "lot-69ccfb99782b6e4b": {
+        "metadata.json": "49b8f17462092248a785e62930351effb39051a27fdd64f7340b7fe4fbe95f24",
+        "oracle.npz": "a14962ac9255751f08074f17a4fa012de946a0447fd39dc51fc45f1d3f2ca000",
+        "public.npz": "916735868fe4d729e664e40aad780f1f4469b56ec1d7133fe9004b6934c1bf39"
+      },
+      "lot-6d7bf6a099d1c58b": {
+        "metadata.json": "5629ac47715d5ef47cb52a46069a7507c923151592b48f726b6808dcbab15d9a",
+        "oracle.npz": "eff55a8dee04674e1d71c4098d3883526d5d789f3d742b174b529a5745330626",
+        "public.npz": "874c8c3ca3a27e83f8ad04767e78aca5db79cdddbbc46a59a0a3f130920b0de0"
+      },
+      "lot-701fec7afffccc13": {
+        "metadata.json": "1f18ec6b784ae42818a20ba3e0132b1ec03d25549ba25c966c274e8276903732",
+        "oracle.npz": "2c10b3360e802dccfd71ed3f0ce0e888172808a721608c23be42d36c6a565e23",
+        "public.npz": "ecad93961c70fba3f39cbadccc4f7c704f61e462f00477d0ddccbe6b8d1aea75"
+      },
+      "lot-721ba94e9d5cb7c5": {
+        "metadata.json": "af114bc236009911ddfa224fd4bc52d55abf4d790bd2f14ebfe09651eca028fc",
+        "oracle.npz": "8107e14f684836e60760736b5cb7b1b57d9e73dcc5e32df0d11eb679bfcaa3fa",
+        "public.npz": "d8e6efaf44998142237181184745a633968cb99cbe656ed6b8c6d292ba388612"
+      },
+      "lot-7cbe2e7c20235659": {
+        "metadata.json": "9661b4b1456d6630398348413a668c44856d046cf2c584da576cf7738ddeece8",
+        "oracle.npz": "47e1577f80e4cc725232308981845b0e87c8c1f44c26ec993403fe3fe78ea61c",
+        "public.npz": "7ccd171ef36da0e34a0c44f594ae856b41be817bbba7ec4fa73bc026fcc1ed88"
+      },
+      "lot-80b2fc2500f1dbce": {
+        "metadata.json": "c6bf2fc16912e8da6d5c708b1e3e3dee9ba2a251739320a66f3ef50e902507ff",
+        "oracle.npz": "8217fc506b445cfc17fb8bde994d51d96d5c52c12133ca2f3ec07f240a35cea1",
+        "public.npz": "3ae0fd3c511df1c10900975bcfef7bb58a4034cade976a6a6bcfcae72a45b494"
+      },
+      "lot-89ee0c5f3f131c64": {
+        "metadata.json": "e4f16ed5d8d231281b5390a70ab0e062fa58a9992f500b3f88921ce1e04719a3",
+        "oracle.npz": "aecdc307c899c005736ce4ef661c72b77aeab030be0094c7fdf6d00a4f2f805d",
+        "public.npz": "926145d6ef5339e9c68c593e83774fe45be07e3115bfbe45855390ba8f2d066b"
+      },
+      "lot-8baad66e0c8d781f": {
+        "metadata.json": "832adba3ad508828c79c6af67afd310b7abd8503fae0434f742310db9f1f0aa4",
+        "oracle.npz": "34ed59a6326912f8d13778f3b766f9a14b4a733fefc5d4dac4d7eef1afe3c6e5",
+        "public.npz": "d0fa0b4f9d090c6629358db3e298cc2653d263c80d05c5fcbfb20615ef19d683"
+      },
+      "lot-90827916e33dee0f": {
+        "metadata.json": "9746932d199b74210d54b770fcff30a3531fc736cad363cc41039b8711eb92d2",
+        "oracle.npz": "e4f53a1ee39557e0ec33ed675b4491399469ee875b0c788cb8b1dca5f5742f3d",
+        "public.npz": "ed73d2801f8b27930255e99d4d0bd75a7907ef727a7acd5521ab9350381e2bc1"
+      },
+      "lot-a4102f03f1770218": {
+        "metadata.json": "1c95759a4b161c3365cd39fe64c9ab08f092c46452b1be29255474cf7ce92455",
+        "oracle.npz": "ff309bcacc55f4453182190aa0d0b959b98f8f1a0540bb87919fdd6e587b67d4",
+        "public.npz": "dccad20858c92d660df10aceed4dd516b57729f8af6e0c39f2b848c6eeec27b2"
+      },
+      "lot-b2dc3a88ae199881": {
+        "metadata.json": "cc6ff5422a79d1d977b0cb3e941377069ba3a48c2264d99f62917974d092133a",
+        "oracle.npz": "01ec81f7403ececcddf94c8ab1575e10d8d4cf94c82fb7167e8db55327b68427",
+        "public.npz": "d219f037e56dad88105f964962a67f0af26e54d04ee01f2c7decfa17843fe1d8"
+      },
+      "lot-b3cfbd43fef36d67": {
+        "metadata.json": "914556c60e0b42954e2f2ce0c433d1237a4aa9d7beca77e855468fd52d15f041",
+        "oracle.npz": "eeb31f0bd922eaac29311ea5f194618be82e09bb845259d5c1a92df2d31a053b",
+        "public.npz": "829b5c2a7c08a0ad7faed5c22fc5416f1b0330f750f5e96482538aa8809e5e23"
+      },
+      "lot-c692550e6b7de630": {
+        "metadata.json": "702776e5e7c074d9f6bb4927a29da9054cec1049887b245df641a0d28ee34451",
+        "oracle.npz": "ac68fd29176b9d7c74c1f29a3d3805fb74f3868d59a1e2cc4ad6f78f1df0bbbd",
+        "public.npz": "2cf6dd24d2d614b8af5df356d227043fe33e3ff91e32186ce1a167122a7d4493"
+      },
+      "lot-cd9cf875eae6f6a0": {
+        "metadata.json": "4a29ee41cebe584402de2a1c7f85c3713efa81b3ea61bfa87547d017720cf85d",
+        "oracle.npz": "efd368880729f68c1e2894d5214ae7644c91a340b2f41a6ef7fe21775a78909a",
+        "public.npz": "dc804896fb3c86045dab34403b23a2bfc2ff010810ddb468da672288e2e80899"
+      },
+      "lot-d0076a1a6a6ce681": {
+        "metadata.json": "fd833793ae6378d0903e444144c2ebb5f0ab840706b154211c4514ab190a30c8",
+        "oracle.npz": "8f3df43183c7ee5515cd2b7b2596da098fd0ae37f1a971398b09533e117d67b6",
+        "public.npz": "6b9277f84a2ce23736fd35f1b769578f208e8daccdd8c1dc8b1bdb79acb0cd57"
+      },
+      "lot-d1be098f011ccd9e": {
+        "metadata.json": "093b4514d8f5b17231d2d7231775b2dcda195e1b558083b1fb8ec35b117fd3c5",
+        "oracle.npz": "0f5b69e0c27c92a177442fa5e7a32bf97443f348481f61e5e8b99ee5c3f5a6e2",
+        "public.npz": "e045627073267aafaa1766c1d64954b0d9d7f6d8093f0fc1401a4d367258e037"
+      },
+      "lot-d49d18e4156033a9": {
+        "metadata.json": "b2cca137da02fcb29f3da181f863491b0e46c3cc8381d1de06b02b7f42c10d65",
+        "oracle.npz": "e6863048563ebd3d2d7bb46f291f7a030a2b58df3e91cbcdb9dda801a7597429",
+        "public.npz": "433bbd06c83509ead18159f34c55b5452bf62f841917665eabc597f3f34041ec"
+      },
+      "lot-e7a0346a8215163d": {
+        "metadata.json": "3060d4879fe683e73a89d3f662fcb98d414d0f3995c82ad94b0328da6017f143",
+        "oracle.npz": "a8ced07f80a905ecbe01966b37209d8ec121cc7e26c0d735820f3751ecbf3442",
+        "public.npz": "3b22b8ad3d51b7f241577e257c865310a892a82f1d35094062e95976fe60cd55"
+      },
+      "lot-e802b53dfefddaf2": {
+        "metadata.json": "a74c2d964590b795b53b3aa8f85b05e7eb6097e0bf164019923e524ec414ece5",
+        "oracle.npz": "25d5942517383a0c9f8acd39db83d8e8c6dc444ae8132eed3506b557c4982830",
+        "public.npz": "9686425fcfc4d87cd65947cd6efe2fe0e1ccdee65591845c7c3b2ba0b8b4c8e7"
+      },
+      "lot-ea46d6cb0e183204": {
+        "metadata.json": "ee9ab51a150c46a899070136e1d905d70935d8d8c561b66c354fbdf272acc564",
+        "oracle.npz": "d1e3089444655df4cc4ae02e0212339b7c9ba06d146deb5b695cec107f3f54e3",
+        "public.npz": "758122f49ef837378ffcb1e95ca31896da7c8e61c19bc58a7cabafd739ac2ec8"
+      },
+      "lot-f909b240c585c4ee": {
+        "metadata.json": "786cb11129d521c82b98f29fa494599de3311dd15f4a8ff7e78ff1e2a77a8cf6",
+        "oracle.npz": "80a577529ea5a4c456c2beab940fdbdd62604582251b68d5e7ac285e18481e9a",
+        "public.npz": "40201049ec16bb9ae405ee4ef3f6cb363e89af586bbbaa15e696a738df2f59fe"
+      }
+    },
+    "environment": {
+      "catboost": "1.2.10",
+      "numpy": "2.3.3",
+      "python": "3.12.10"
+    },
+    "m5_authorization": "coordinator only; the actual test stage is run by the root coordinator",
+    "model_hash": "58aef92c229b24da7d5a04c9ad5dc2c30e82fa9618fed304ef63e17ed113064b",
+    "primary": {
+      "bootstrap_replicates": 10000,
+      "bootstrap_seed": 2026100407,
+      "budget": 360,
+      "candidate": "cb400_route_beam3",
+      "ci_unit": "paired_lot_stratified_by_scenario",
+      "comparator": "cb400_route_full",
+      "metric": "true_doi_confirmed",
+      "mode": "candidate_only",
+      "success_rule": "relative mean gain >= 0.05 AND bootstrap 95% CI lower bound of the paired mean difference > 0",
+      "target_relative_gain": 0.05
+    },
+    "receipt_file_hashes": {
+      "freeze.json": "f84427e97a189486bc6d01a02f06eb72050a5ca7e30a045640dbd03ec6e6c0f0",
+      "frozen-config.json": "9e65219d1b434a4f1ba4fe064c0a19adc7246e8f5af08fbb8a4ce1a4f86d3cc2",
+      "models.json": "ba85648c682e6d6b73c3de0e7aaccb68c3edf1669165d5214849d9610d9f1e75"
+    },
+    "receipt_root": "<v3_receipt_root>",
+    "receipt_sha256": "faadbe498c1dec1f83926c733e21b386e2aa49cf24219b8ccd7fdd1327e4f3fb",
+    "receipt_sha256_v5": "7fa2e9dd91ab399efd814237eb707ca09baf44cfa282903dd126132d62eac1c1",
+    "schema_version": 1,
+    "source_commit": "f748064b40ef452fd5cb17a85ff982bdc731108f",
+    "source_hashes": {
+      "INSPECTION_ROUTE_V5_PROTOCOL.md": "84c1fd473634f2fdbf5097752b00c76e9b41aad1192609735e7aefd20376f4f1",
+      "INSPECTION_V2_CONTRACT.md": "18015d48a51b87ce9c239465faf648e349296d1c2e6ae8730fdb936309b62935",
+      "INSPECTION_V3_CONTRACT.md": "9321bfa5982c2ca6d5a8e7b7d1b777b7e137bcfc5c254ca9fd1483c60655c064",
+      "inspection_review/__init__.py": "9ea90b4f6d058268e8b2505a4a710363ea034066e7db545e410110e96033835d",
+      "inspection_review/cli.py": "661757e71af88dcc209255a00b8bb4fdb80277acf0c40816a1dc20cbd08cb710",
+      "inspection_review/data.py": "297c250a786a0bdecdae2111514cc7d89d1d1ac94b6d497202e2ca80ece116cf",
+      "inspection_review/harness.py": "7aa614098893a21ca6499fb19845523f7aa5e786573ce22d4b0e69428db852c2",
+      "inspection_review/model.py": "5a10277d3e4f24bbb5c710c653e2d9f505dfa5554ff989d7d0365110a1d2f791",
+      "inspection_review/policies.py": "4056518147b0ec497b8ca2c543fb8fd77001e2ef8dc6d045ab7c42f14f6babf3",
+      "inspection_review/protocol.json": "0ea8425b69dff5f6005d17a8e9997c0cbb0e98160fa12ced9f2838e990c58c42",
+      "inspection_review/reporting.py": "e6a3c0aa1a1bc1acc69bbd9657b6039e7b555d64c145857be0138256db94e778",
+      "inspection_route_v5/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "inspection_route_v5/campaign.py": "5b9d82fc497000d0a9fc41819c1e3232c0ebdd0c45e084c72d4ca56ed19aff22",
+      "inspection_route_v5/harness.py": "6ab7dad4fb9b37000c374716e5cef97a74e8da3e1ac7a22fc7763791680deff5",
+      "inspection_route_v5/planner.py": "3cf02698934314d45f28ff44718f6b7253212b5da452772f567aa38e29741bbb",
+      "inspection_route_v5/protocol.json": "d1c0c5e3de191e87a04b8a3ac3972364bcf9f033457b66728f28274b0b625394",
+      "inspection_v2/__init__.py": "15d39c2608b0e31e5599b628cb930860479dfcd31448f0d34c44758fa56c5256",
+      "inspection_v2/cli.py": "1e6b89f0ead99b64269346e7987cea3244d8c08f5163eabc0a94153329decb95",
+      "inspection_v2/harness.py": "37a0a5e182adc125e217341a6fe396da25d8c86ece056a5dcf91cb8e0447a2f9",
+      "inspection_v2/jev.py": "74f0e2c3f390c6e7c620132822a51143d2449dc2e0fbfe646b86415a6f277d08",
+      "inspection_v2/model.py": "aa15577e23f83c1310a0622ad71362973bdffe996f74a17defe33b293205f21c",
+      "inspection_v2/policies.py": "f2b9ba2c4e83a1c7345947cb0bccba302820d88853eb16a8fc7d8c28623f82c2",
+      "inspection_v2/protocol.json": "6aaf2713a42f98eeefb149eefda73278a4e2ddfc3a28ebb2b6493438bc32c869",
+      "inspection_v3/__init__.py": "cf55003ff082933142d750bcfe6ad19b20e2dd8cdc957422ed146df6e96e6277",
+      "inspection_v3/cli.py": "a07e1184b5f0a02c63774b85cfdb93ae6faadb80f07adf56e41440b4c7d79b25",
+      "inspection_v3/harness.py": "062d1fe68b280c387ae0d02e861a421ae9436856b6ce32ad9bc92238e7043d4b",
+      "inspection_v3/inference.py": "1f2f92db7e17c508861facdd353df7375bc3cbaaf613e57d6ef6bcf1a1bf3150",
+      "inspection_v3/model.py": "fca95d75792254884786510ced582ccbcc58b917250b577f63d04ca484dc7968",
+      "inspection_v3/policies.py": "d8bf18029fe863e45fbb6a09b748a4c85e22b345bfa6fbcd52192ff15890a244",
+      "inspection_v3/protocol.json": "35c13817f7225883d77e0f45c1fa53d3c1b40daed2390ba088ae00adcd4e30d2",
+      "inspection_v3/sensor_yield.py": "d6eaf5e7bf27aaa2c73fdc0b68b3938b9bfc4b3e8f70fff0ae479a8ac87a3560",
+      "pyproject.toml": "3825693986f48d794c2ed247ccae2907b4d415be4061d63cff04356b0b1ca58a",
+      "scripts/run_inspection_route_v5.py": "53b023698cb414c6f293f3dc26b51abf22dcc111c7d24b574ef5123014bbcf73",
+      "uv.lock": "07dff9aad21af0f42389344fdaed00b26f22b4488f551fa6a4f0c98f942c66a2"
+    },
+    "study": "route_v5",
+    "study_file_hashes": {
+      "config.json": "29a77f9bee757d5b81d8416faf1463a29f81aac6d70947741092a8883b0729bf",
+      "development.json": "28531c40a04537f0cdcb4bc4b4b509f5e7a3efd5c526b482c9ab7fbaeb9611a3",
+      "lot-manifest.json": "fe30a9c3e1023efb60b57b8c573174c48652a0ff6e67a7b49c68b64c1ce0ed2b",
+      "protocol.json": "6f7b19de182e0f96b7dc415161750a2694d22b7bd931e5adc9cff07c6312330e",
+      "receipt-ref.json": "df300be8db97282ab47796ee2d21ff80f80022f7686d8b44625571f0b3765745"
+    },
+    "test_generation_has_started": false,
+    "test_lots": [
+      {
+        "scenario": "stationary",
+        "seed": 12000
+      },
+      {
+        "scenario": "stationary",
+        "seed": 12001
+      },
+      {
+        "scenario": "stationary",
+        "seed": 12002
+      },
+      {
+        "scenario": "stationary",
+        "seed": 12003
+      },
+      {
+        "scenario": "stationary",
+        "seed": 12004
+      },
+      {
+        "scenario": "stationary",
+        "seed": 12005
+      },
+      {
+        "scenario": "stationary",
+        "seed": 12006
+      },
+      {
+        "scenario": "stationary",
+        "seed": 12007
+      },
+      {
+        "scenario": "stationary",
+        "seed": 12008
+      },
+      {
+        "scenario": "stationary",
+        "seed": 12009
+      },
+      {
+        "scenario": "stationary",
+        "seed": 12010
+      },
+      {
+        "scenario": "stationary",
+        "seed": 12011
+      },
+      {
+        "scenario": "stationary",
+        "seed": 12012
+      },
+      {
+        "scenario": "stationary",
+        "seed": 12013
+      },
+      {
+        "scenario": "stationary",
+        "seed": 12014
+      },
+      {
+        "scenario": "stationary",
+        "seed": 12015
+      },
+      {
+        "scenario": "stationary",
+        "seed": 12016
+      },
+      {
+        "scenario": "stationary",
+        "seed": 12017
+      },
+      {
+        "scenario": "stationary",
+        "seed": 12018
+      },
+      {
+        "scenario": "stationary",
+        "seed": 12019
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 12100
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 12101
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 12102
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 12103
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 12104
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 12105
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 12106
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 12107
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 12108
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 12109
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 12110
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 12111
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 12112
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 12113
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 12114
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 12115
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 12116
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 12117
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 12118
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 12119
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 12200
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 12201
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 12202
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 12203
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 12204
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 12205
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 12206
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 12207
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 12208
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 12209
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 12210
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 12211
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 12212
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 12213
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 12214
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 12215
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 12216
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 12217
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 12218
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 12219
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 12300
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 12301
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 12302
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 12303
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 12304
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 12305
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 12306
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 12307
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 12308
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 12309
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 12310
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 12311
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 12312
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 12313
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 12314
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 12315
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 12316
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 12317
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 12318
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 12319
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 12400
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 12401
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 12402
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 12403
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 12404
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 12405
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 12406
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 12407
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 12408
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 12409
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 12410
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 12411
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 12412
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 12413
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 12414
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 12415
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 12416
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 12417
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 12418
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 12419
+      }
+    ]
+  },
+  "redaction": {
+    "note": "Digest receipt_sha256_v5 is over the unredacted body; verify against the original campaign root.",
+    "original_file_sha256": "92e6cb72f0e77c473d784cebc53dcd16a1943588db92461cd7bed990242a323a",
+    "original_receipt_sha256_v5": "7fa2e9dd91ab399efd814237eb707ca09baf44cfa282903dd126132d62eac1c1",
+    "redacted_fields": {
+      "receipt_root": "local absolute path replaced by <v3_receipt_root>"
+    }
+  }
+}

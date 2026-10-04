@@ -1,0 +1,16 @@
+{
+  "root": "C:/Users/user/hacknation7th/output/inspection-v2-build/development-20261004a",
+  "files": {
+    "models.json": "6cfb2bc1a36597bf6b30783ee2b93901a53221a7eb0b2b0a68177a470e4b1144",
+    "development.json": "1a8696859d0d836be2e82ad02a42e214d546c08b16d9ab8bcbc79f57291a5277",
+    "held-out.json": "afca45a4904337be1f1af97dccda6c13b9b6a278424e3af73ee24ae61123d547",
+    "lot-manifest.json": "8acf7b2fdb58fe0e62b5a8375bce27bdaac91273dd8281f8479da86712869308",
+    "test-manifest.json": "13b93aecde54e53b8a301fdd2d9ec42719e2d7a02f3212464c6051ba501481c2",
+    "freeze.json": "7c20874136a2c4d7e367cf48f8898fe79d6928e736b861e5845f9e59494711c4",
+    "audit.json": "299f2907406203a00ac53706958518f4815225d0b7724661e2b0d248bc83fb14"
+  },
+  "ledger_records": {
+    "development": 960,
+    "held_out": 2880
+  }
+}

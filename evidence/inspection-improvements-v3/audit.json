@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "generated_at": "2026-10-04T07:35:37.742012+00:00",
+  "runs_checked": 7200,
+  "independent_lots": 100,
+  "selected_sites_across_runs": 274728,
+  "sensor_attempts_recomputed": 292314,
+  "audit_decisions": 0,
+  "budget_violations": 0,
+  "hidden_truth_fields_in_components": 0,
+  "frozen_p_mismatches": 0,
+  "selection_reward_mismatches": 0,
+  "hypothetical_pair_budget_violations": 0,
+  "protected_files_preserved": 8,
+  "freeze_sha256": "faadbe498c1dec1f83926c733e21b386e2aa49cf24219b8ccd7fdd1327e4f3fb",
+  "audit_script_sha256": "0932a2db961b0735037458cfcd98c1ab0552a2aab99821d1dae4fe79cc8cecdd",
+  "limitations": [
+    "Posthoc audit of authored synthetic data; does not establish factory performance."
+  ]
+}

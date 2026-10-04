@@ -1,0 +1,65 @@
+/* inspection-live: extends inspection-evidence.css (linked first). Light scheme only. */
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.scope-warn{border:1px solid #dcb8b1;background:#f7ebe8;color:#7a3329;padding:8px 12px;font-size:13px;margin:8px 0 0}
+.toc{position:sticky;top:0;z-index:5;display:flex;gap:2px 4px;overflow-x:auto;margin:14px 0 0;padding:0;background:var(--paper);border-bottom:1px solid var(--line);scrollbar-width:none}
+.toc::-webkit-scrollbar{display:none}
+.toc a{flex:none;min-height:44px;display:inline-flex;align-items:center;padding:0 10px;font-size:13px;font-weight:600;color:var(--muted);text-decoration:none;border-bottom:2px solid transparent}
+.toc a:hover{color:var(--green);border-bottom-color:#a9c7b2}
+.toc a:first-child{padding-left:0}
+
+.final-tag{display:inline-block;padding:1px 7px;border:1px solid #a9c7b2;border-radius:3px;font-size:11px;font-weight:650;color:var(--green);background:var(--surface);margin-left:6px;vertical-align:2px}
+.check-line{font-size:12px;color:var(--muted);margin-top:8px}
+.check-line .ok,.check-line .bad{font-weight:650}
+
+.roles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 28px}
+.roles div{border-top:1px solid var(--line);padding:10px 0}
+.roles dt{font-weight:650;margin-bottom:3px}
+.roles dd{margin:0;color:var(--muted);font-size:13px}
+.rule{margin-top:12px;padding:10px 12px;background:var(--panel);border:1px solid var(--line);font-size:12px;color:var(--muted)}
+.rule code{color:var(--ink);overflow-wrap:anywhere}
+
+.stage-list{list-style:none;margin:12px 0 0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;counter-reset:st}
+.stage-list button{width:100%;min-height:44px;text-align:left;padding:6px 10px;border:1px solid var(--line);border-radius:5px;background:var(--surface);color:var(--ink);font-size:12px;line-height:1.35}
+.stage-list button small{display:block;color:var(--muted);font-size:11px}
+.stage-list button:hover{background:var(--quiet)}
+.stage-list button[aria-current=step]{border-color:var(--green);box-shadow:inset 0 0 0 1px var(--green);background:#eef4ec}
+.stage-list button.is-future{color:var(--muted)}
+
+.swatch.unknown-flat{background:#dfe5dd;border:1px solid #c6d0c6}
+.swatch.cand-ring{background:#dfe5dd;box-shadow:inset 0 0 0 1.5px #7d8f86}
+.swatch.alt{background:transparent;outline:2px dashed var(--ink);outline-offset:-2px}
+.wafer canvas{cursor:default}
+
+.site-table-wrap{margin-top:12px}
+.site-table-wrap .data-table{min-width:560px}
+td.site,.mono-id{font-family:ui-monospace,"Cascadia Mono",Consolas,monospace;font-size:12px;overflow-wrap:anywhere}
+.stage-tables{display:grid;gap:18px;margin-top:18px}
+.stage-tables h3{margin-bottom:8px}
+.cand-table{min-width:980px}
+.cost-table{min-width:620px}
+.deleg-table{min-width:900px}
+.chain-table{min-width:900px}
+tr.is-selected{background:var(--quiet)}
+tr.is-current-del{background:var(--quiet)}
+.pill{display:inline-block;padding:1px 7px;border-radius:3px;font-size:11px;font-weight:650;border:1px solid var(--line);background:var(--surface);white-space:nowrap}
+.pill.sel{border-color:var(--ink);color:var(--ink)}
+.pill.look{border-color:#a9c7b2;color:var(--green)}
+.pill.alt1{color:var(--muted)}
+.pill.gap{border-color:#e2cf9d;color:var(--amber)}
+.pill.link{border-color:#a9c7b2;color:var(--green)}
+.note-list{margin:10px 0 0;padding-left:19px;color:var(--muted);font-size:12px;line-height:1.65;max-width:90ch}
+.stage-time{font-size:12px;color:var(--muted);margin-bottom:8px}
+
+.receipt{display:grid;grid-template-columns:minmax(0,1fr);margin:0;font-size:13px;max-width:980px}
+.receipt div{display:grid;grid-template-columns:minmax(150px,240px) minmax(0,1fr);gap:4px 16px;padding:8px 0;border-top:1px solid var(--line)}
+.receipt dt{color:var(--muted)}
+.receipt dd{margin:0;min-width:0;overflow-wrap:anywhere}
+.receipt-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+
+@media(max-width:1100px){.roles{grid-template-columns:1fr}}
+@media(max-width:760px){.stage-list{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.receipt div{grid-template-columns:1fr}.receipt-actions .control{flex:1 1 100%}.stage-list{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.spend .bar i{transition:none}}
+@media(forced-colors:active){.stage-list button[aria-current=step]{outline:2px solid CanvasText}}
+.stage-tables{grid-template-columns:minmax(0,1fr)}
+.stage-tables>*,.replay-main,.replay-grid>*{min-width:0}

@@ -1,0 +1,1124 @@
+{
+  "budgets": [
+    120,
+    360,
+    720
+  ],
+  "cost": {
+    "dwell": 8.0,
+    "outside_rescan": 12.0,
+    "retry_dwell": 4.0,
+    "retry_limit": 1,
+    "stage_base": 1.0,
+    "stage_per_normalized_distance": 2.0,
+    "unit": "synthetic_equipment_cost_unit",
+    "wafer_load": 8.0
+  },
+  "data_mode": "authored_synthetic_tabular",
+  "features": [
+    "signal",
+    "size",
+    "texture",
+    "design_delta",
+    "process_context",
+    "radius",
+    "layer"
+  ],
+  "generator": {
+    "base_doi_rate": 0.045,
+    "benign_physical_rate": 0.06,
+    "cluster_excess_doi_rate": 0.22,
+    "cluster_radius_normalized": 0.22,
+    "electrical_effect_probability_given_doi": 0.45,
+    "feature_noise_sd": 0.14,
+    "low_contrast_factor": 0.5,
+    "novel_cluster_excess_rate": 0.32,
+    "nuisance_heavy_rate": 0.45,
+    "nuisance_rate": 0.15,
+    "optical_threshold": 0.62,
+    "process_shift_offset": -0.24,
+    "review_failure_rate": 0.025,
+    "review_false_positive_rate": 0.01,
+    "review_missing_rate": 0.04,
+    "review_sensitivity": {
+      "bridge": 0.94,
+      "novel": 0.8,
+      "particle": 0.97,
+      "scratch": 0.96,
+      "void": 0.85
+    }
+  },
+  "geometry": {
+    "care_sites_per_die": 1,
+    "die_height_mm": 6,
+    "die_width_mm": 8,
+    "edge_exclusion_mm": 3,
+    "scribe_mm": 0.08,
+    "wafer_diameter_mm": 300,
+    "wafers_per_lot": 3
+  },
+  "model": {
+    "classification_threshold": 0.5,
+    "confident_negative_threshold": 0.1,
+    "epochs": 250,
+    "family": "numpy_l2_logistic",
+    "l2": 0.01,
+    "learning_rate": 0.1,
+    "online_learning_rate": 0.08
+  },
+  "modes": [
+    "candidate_only",
+    "with_rescan"
+  ],
+  "policies": [
+    "random",
+    "recipe",
+    "learned",
+    "uncertainty_diversity",
+    "falsify",
+    "falsify_no_audit",
+    "falsify_no_spatial",
+    "falsify_no_update"
+  ],
+  "primary_budget": 360,
+  "schema_version": 1,
+  "selection": {
+    "audit_period": 5,
+    "cost_aware": true,
+    "diversity_weight": 0.15,
+    "novelty_weight": 0.35,
+    "rescan_period": 10,
+    "spatial_bandwidth": 0.22,
+    "spatial_prior_strength": 4.0,
+    "spatial_weight": 0.4,
+    "uncertainty_weight": 0.35
+  },
+  "splits": {
+    "test_seeds_by_scenario": {
+      "low_contrast": [
+        7200,
+        7201,
+        7202,
+        7203,
+        7204,
+        7205,
+        7206,
+        7207,
+        7208,
+        7209,
+        7210,
+        7211,
+        7212,
+        7213,
+        7214,
+        7215,
+        7216,
+        7217,
+        7218,
+        7219
+      ],
+      "novel_cluster": [
+        7100,
+        7101,
+        7102,
+        7103,
+        7104,
+        7105,
+        7106,
+        7107,
+        7108,
+        7109,
+        7110,
+        7111,
+        7112,
+        7113,
+        7114,
+        7115,
+        7116,
+        7117,
+        7118,
+        7119
+      ],
+      "nuisance_heavy": [
+        7300,
+        7301,
+        7302,
+        7303,
+        7304,
+        7305,
+        7306,
+        7307,
+        7308,
+        7309,
+        7310,
+        7311,
+        7312,
+        7313,
+        7314,
+        7315,
+        7316,
+        7317,
+        7318,
+        7319
+      ],
+      "process_shift": [
+        7400,
+        7401,
+        7402,
+        7403,
+        7404,
+        7405,
+        7406,
+        7407,
+        7408,
+        7409,
+        7410,
+        7411,
+        7412,
+        7413,
+        7414,
+        7415,
+        7416,
+        7417,
+        7418,
+        7419
+      ],
+      "stationary": [
+        7000,
+        7001,
+        7002,
+        7003,
+        7004,
+        7005,
+        7006,
+        7007,
+        7008,
+        7009,
+        7010,
+        7011,
+        7012,
+        7013,
+        7014,
+        7015,
+        7016,
+        7017,
+        7018,
+        7019
+      ]
+    },
+    "train_seeds": [
+      5000,
+      5001,
+      5002,
+      5003,
+      5004,
+      5005,
+      5006,
+      5007,
+      5008,
+      5009,
+      5010,
+      5011,
+      5012,
+      5013,
+      5014,
+      5015,
+      5016,
+      5017,
+      5018,
+      5019,
+      5020,
+      5021,
+      5022,
+      5023,
+      5024,
+      5025,
+      5026,
+      5027,
+      5028,
+      5029,
+      5030,
+      5031,
+      5032,
+      5033,
+      5034,
+      5035
+    ],
+    "validation_seeds": []
+  },
+  "statistics": {
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 20261004,
+    "ci_unit": "paired_independent_lot",
+    "cost_reduction_target": 0.3,
+    "matched_capture_target": 5,
+    "primary_comparator": "learned",
+    "primary_metric": "true_doi_confirmed",
+    "primary_mode": "candidate_only",
+    "scenario_weighting": "equal_lot",
+    "success_relative_gain_target": 0.2,
+    "success_requires_positive_lower_ci": true
+  },
+  "study_id": "inspection-improvements-v3-20261004",
+  "test_campaign_rule": "Freeze protocol, generator, model and policies before first held-out campaign. No tuning to these test seeds. Engineering defect repairs require disclosure and exact changed commits; invalidated results remain marked superseded.",
+  "v2_model": {
+    "depth": 6,
+    "family": "catboost",
+    "iterations": 250,
+    "l2_leaf_reg": 3.0,
+    "learning_rate": 0.06,
+    "random_seed": 20261004,
+    "thread_count": 2
+  },
+  "v2_primary": {
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 2026100403,
+    "budget": 360,
+    "candidate": "cb400_route_full",
+    "ci_unit": "paired_lot",
+    "comparator": "logistic_learned",
+    "metric": "true_doi_confirmed",
+    "mode": "candidate_only",
+    "same_model_comparator": "cb400_learned",
+    "target_relative_gain": 0.05
+  },
+  "v2_rules": [
+    "Development results are not held-out evidence.",
+    "Freeze exact selected variant/config/model/source before generating any v2 test lot.",
+    "Same sensors, immutable initial probability, failed/missing review charging and attempted-site semantics as v1.",
+    "No genuine image/note data available: Jev integration remains separately tested and unavailable in this tabular campaign.",
+    "Report combined gain and same-model selection effect separately. Keep old v1 study unchanged."
+  ],
+  "v2_selection": {
+    "audit_max": 0.1,
+    "audit_min": 0.025,
+    "audit_prior_strength": 4.0,
+    "audit_sampling": "inverse_cost",
+    "lookahead_weight": 0.5,
+    "rescan_period": 10,
+    "route_per_wafer": 2,
+    "shortlist_size": 24
+  },
+  "v2_splits": {
+    "calibration": [
+      {
+        "scenario": "stationary",
+        "seed": 5100
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5101
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5102
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5103
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5104
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5105
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5106
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5107
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5108
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5109
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5110
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5111
+      }
+    ],
+    "development": [
+      {
+        "scenario": "stationary",
+        "seed": 6000
+      },
+      {
+        "scenario": "stationary",
+        "seed": 6001
+      },
+      {
+        "scenario": "stationary",
+        "seed": 6002
+      },
+      {
+        "scenario": "stationary",
+        "seed": 6003
+      },
+      {
+        "scenario": "stationary",
+        "seed": 6004
+      },
+      {
+        "scenario": "stationary",
+        "seed": 6005
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 6100
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 6101
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 6102
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 6103
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 6104
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 6105
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 6200
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 6201
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 6202
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 6203
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 6204
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 6205
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 6300
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 6301
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 6302
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 6303
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 6304
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 6305
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 6400
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 6401
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 6402
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 6403
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 6404
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 6405
+      }
+    ],
+    "test": [
+      {
+        "scenario": "stationary",
+        "seed": 7000
+      },
+      {
+        "scenario": "stationary",
+        "seed": 7001
+      },
+      {
+        "scenario": "stationary",
+        "seed": 7002
+      },
+      {
+        "scenario": "stationary",
+        "seed": 7003
+      },
+      {
+        "scenario": "stationary",
+        "seed": 7004
+      },
+      {
+        "scenario": "stationary",
+        "seed": 7005
+      },
+      {
+        "scenario": "stationary",
+        "seed": 7006
+      },
+      {
+        "scenario": "stationary",
+        "seed": 7007
+      },
+      {
+        "scenario": "stationary",
+        "seed": 7008
+      },
+      {
+        "scenario": "stationary",
+        "seed": 7009
+      },
+      {
+        "scenario": "stationary",
+        "seed": 7010
+      },
+      {
+        "scenario": "stationary",
+        "seed": 7011
+      },
+      {
+        "scenario": "stationary",
+        "seed": 7012
+      },
+      {
+        "scenario": "stationary",
+        "seed": 7013
+      },
+      {
+        "scenario": "stationary",
+        "seed": 7014
+      },
+      {
+        "scenario": "stationary",
+        "seed": 7015
+      },
+      {
+        "scenario": "stationary",
+        "seed": 7016
+      },
+      {
+        "scenario": "stationary",
+        "seed": 7017
+      },
+      {
+        "scenario": "stationary",
+        "seed": 7018
+      },
+      {
+        "scenario": "stationary",
+        "seed": 7019
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 7100
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 7101
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 7102
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 7103
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 7104
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 7105
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 7106
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 7107
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 7108
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 7109
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 7110
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 7111
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 7112
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 7113
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 7114
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 7115
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 7116
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 7117
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 7118
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 7119
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 7200
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 7201
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 7202
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 7203
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 7204
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 7205
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 7206
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 7207
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 7208
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 7209
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 7210
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 7211
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 7212
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 7213
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 7214
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 7215
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 7216
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 7217
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 7218
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 7219
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 7300
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 7301
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 7302
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 7303
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 7304
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 7305
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 7306
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 7307
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 7308
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 7309
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 7310
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 7311
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 7312
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 7313
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 7314
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 7315
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 7316
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 7317
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 7318
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 7319
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 7400
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 7401
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 7402
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 7403
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 7404
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 7405
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 7406
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 7407
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 7408
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 7409
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 7410
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 7411
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 7412
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 7413
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 7414
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 7415
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 7416
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 7417
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 7418
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 7419
+      }
+    ],
+    "train": [
+      {
+        "scenario": "stationary",
+        "seed": 5000
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5001
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5002
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5003
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5004
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5005
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5006
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5007
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5008
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5009
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5010
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5011
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5012
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5013
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5014
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5015
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5016
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5017
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5018
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5019
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5020
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5021
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5022
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5023
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5024
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5025
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5026
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5027
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5028
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5029
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5030
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5031
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5032
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5033
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5034
+      },
+      {
+        "scenario": "stationary",
+        "seed": 5035
+      }
+    ]
+  },
+  "v2_variants": [
+    {
+      "id": "logistic_learned",
+      "model": "logistic/identity",
+      "policy": "learned"
+    },
+    {
+      "id": "cb250_learned",
+      "model": "cb250/identity",
+      "policy": "learned"
+    },
+    {
+      "id": "cb400_learned",
+      "model": "cb400/identity",
+      "policy": "learned"
+    },
+    {
+      "id": "cb600_learned",
+      "model": "cb600/identity",
+      "policy": "learned"
+    },
+    {
+      "id": "cb400_platt_learned",
+      "model": "cb400/platt",
+      "policy": "learned"
+    },
+    {
+      "id": "cb400_temperature_learned",
+      "model": "cb400/temperature",
+      "policy": "learned"
+    },
+    {
+      "id": "cb400_isotonic_learned",
+      "model": "cb400/isotonic",
+      "policy": "learned"
+    },
+    {
+      "id": "cb400_route_half",
+      "model": "cb400/identity",
+      "policy": "route_vectorized"
+    },
+    {
+      "id": "cb400_route_full",
+      "model": "cb400/identity",
+      "policy": "route_full_gamma"
+    },
+    {
+      "id": "cb400_platt_route",
+      "model": "cb400/platt",
+      "policy": "route_full_gamma"
+    },
+    {
+      "id": "yield_greedy",
+      "model": "cb400/identity",
+      "policy": "yield_greedy",
+      "reward": "review_yield"
+    },
+    {
+      "id": "yield_route",
+      "model": "cb400/identity",
+      "policy": "yield_route",
+      "reward": "review_yield"
+    }
+  ],
+  "v3_evaluation": {
+    "classification_scope": "original_optical_candidates",
+    "classifier_secondary": "cb400/identity vs logistic/identity",
+    "previous_studies_preserved": true,
+    "software_timing_separate_from_equipment_CU": true
+  },
+  "v3_model_grid": {
+    "cb250": {
+      "depth": 4,
+      "iterations": 250,
+      "learning_rate": 0.06
+    },
+    "cb400": {
+      "depth": 6,
+      "iterations": 400,
+      "learning_rate": 0.06
+    },
+    "cb600": {
+      "depth": 8,
+      "iterations": 600,
+      "learning_rate": 0.04
+    }
+  },
+  "v3_selection": {
+    "chunk_elements": 262144,
+    "gamma": 1.0
+  },
+  "v3_yield": {
+    "depth": 6,
+    "family": "catboost",
+    "iterations": 400,
+    "l2_leaf_reg": 3.0,
+    "learning_rate": 0.06,
+    "random_seed": 20261004,
+    "thread_count": 2
+  }
+}

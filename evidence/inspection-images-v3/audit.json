@@ -1,0 +1,555 @@
+{
+  "annotations": {
+    "file": "pcb3/image_anno.csv",
+    "sha256": "b825ff4e85b2baa72b8e2062d5ba45f058731a8818697ed7c8249211e3d778dd",
+    "use": "posthoc descriptive defect-type breakdown only"
+  },
+  "audited_at": "2026-10-04T09:25:02.650480+00:00",
+  "bootstrap": {
+    "highres448max_minus_baseline224": {
+      "defect_recall_gain": {
+        "ci95": [
+          0.02,
+          0.24
+        ],
+        "estimate": 0.13,
+        "resamples": 10000
+      },
+      "normal_far_difference": {
+        "ci95": [
+          -0.09900990099009901,
+          0.009900990099009901
+        ],
+        "estimate": -0.039603960396039604,
+        "resamples": 10000
+      }
+    },
+    "primary448_minus_baseline224": {
+      "defect_recall_gain": {
+        "ci95": [
+          0.01,
+          0.21
+        ],
+        "estimate": 0.11,
+        "resamples": 10000
+      },
+      "normal_far_difference": {
+        "ci95": [
+          -0.09900990099009901,
+          0.0
+        ],
+        "estimate": -0.04950495049504951,
+        "resamples": 10000
+      }
+    }
+  },
+  "counts": {
+    "anomaly": 100,
+    "normal": 101,
+    "test_images": 201
+  },
+  "decision": {
+    "bootstrap_ci_lower_above_zero": true,
+    "primary_far_at_most_10pct": true,
+    "recall_gain_at_least_10pp": true,
+    "success": true
+  },
+  "environment": {
+    "numpy": "2.5.2",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.10",
+    "torch": "2.14.1+cpu"
+  },
+  "errors": {
+    "anomaly_by_defect_type": {
+      "bent": {
+        "primary448_missed": 2,
+        "test": 19
+      },
+      "bent,melt": {
+        "primary448_missed": 0,
+        "test": 1
+      },
+      "melt": {
+        "primary448_missed": 17,
+        "test": 38
+      },
+      "melt,missing": {
+        "primary448_missed": 1,
+        "test": 1
+      },
+      "melt,scratch": {
+        "primary448_missed": 2,
+        "test": 2
+      },
+      "melt,scratch,missing": {
+        "primary448_missed": 1,
+        "test": 1
+      },
+      "missing": {
+        "primary448_missed": 8,
+        "test": 16
+      },
+      "scratch": {
+        "primary448_missed": 13,
+        "test": 20
+      },
+      "scratch,missing": {
+        "primary448_missed": 1,
+        "test": 2
+      }
+    },
+    "paired_flips_vs_baseline224": {
+      "defect_caught_only_by_baseline": 9,
+      "defect_caught_only_by_primary": 20,
+      "normal_flagged_only_by_baseline": 6,
+      "normal_flagged_only_by_primary": 1
+    },
+    "primary448_false_alarms": [
+      {
+        "baseline224_flagged": true,
+        "defect_type": "normal",
+        "highres448max_flagged": true,
+        "image": "pcb3/Data/Images/Normal/0363.JPG",
+        "primary448_margin": 3.1223861494939023
+      },
+      {
+        "baseline224_flagged": true,
+        "defect_type": "normal",
+        "highres448max_flagged": true,
+        "image": "pcb3/Data/Images/Normal/0800.JPG",
+        "primary448_margin": 1.7669283855556728
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "normal",
+        "highres448max_flagged": true,
+        "image": "pcb3/Data/Images/Normal/0804.JPG",
+        "primary448_margin": 1.1356595890151873
+      }
+    ],
+    "primary448_missed_defects": [
+      {
+        "baseline224_flagged": false,
+        "defect_type": "melt",
+        "highres448max_flagged": false,
+        "image": "pcb3/Data/Images/Anomaly/022.JPG",
+        "primary448_margin": -4.514472032071385
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "scratch",
+        "highres448max_flagged": false,
+        "image": "pcb3/Data/Images/Anomaly/090.JPG",
+        "primary448_margin": -3.738831435178703
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "scratch",
+        "highres448max_flagged": false,
+        "image": "pcb3/Data/Images/Anomaly/098.JPG",
+        "primary448_margin": -3.5717977324112695
+      },
+      {
+        "baseline224_flagged": true,
+        "defect_type": "melt",
+        "highres448max_flagged": false,
+        "image": "pcb3/Data/Images/Anomaly/023.JPG",
+        "primary448_margin": -3.2850856298934907
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "melt",
+        "highres448max_flagged": false,
+        "image": "pcb3/Data/Images/Anomaly/068.JPG",
+        "primary448_margin": -3.0139482493096104
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "scratch",
+        "highres448max_flagged": false,
+        "image": "pcb3/Data/Images/Anomaly/092.JPG",
+        "primary448_margin": -2.850034527455879
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "missing",
+        "highres448max_flagged": false,
+        "image": "pcb3/Data/Images/Anomaly/058.JPG",
+        "primary448_margin": -2.7639466892192175
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "melt",
+        "highres448max_flagged": false,
+        "image": "pcb3/Data/Images/Anomaly/061.JPG",
+        "primary448_margin": -2.6177512543976
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "melt,scratch",
+        "highres448max_flagged": false,
+        "image": "pcb3/Data/Images/Anomaly/079.JPG",
+        "primary448_margin": -2.592933570584119
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "melt",
+        "highres448max_flagged": false,
+        "image": "pcb3/Data/Images/Anomaly/021.JPG",
+        "primary448_margin": -2.577380636538539
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "missing",
+        "highres448max_flagged": false,
+        "image": "pcb3/Data/Images/Anomaly/040.JPG",
+        "primary448_margin": -2.386126353243583
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "missing",
+        "highres448max_flagged": false,
+        "image": "pcb3/Data/Images/Anomaly/056.JPG",
+        "primary448_margin": -2.3688601330024284
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "scratch",
+        "highres448max_flagged": false,
+        "image": "pcb3/Data/Images/Anomaly/084.JPG",
+        "primary448_margin": -2.349397920183904
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "melt",
+        "highres448max_flagged": false,
+        "image": "pcb3/Data/Images/Anomaly/038.JPG",
+        "primary448_margin": -2.2521992309290795
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "melt",
+        "highres448max_flagged": false,
+        "image": "pcb3/Data/Images/Anomaly/060.JPG",
+        "primary448_margin": -2.250765543128608
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "scratch",
+        "highres448max_flagged": false,
+        "image": "pcb3/Data/Images/Anomaly/083.JPG",
+        "primary448_margin": -2.249439438952919
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "scratch",
+        "highres448max_flagged": false,
+        "image": "pcb3/Data/Images/Anomaly/091.JPG",
+        "primary448_margin": -2.231853002324698
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "missing",
+        "highres448max_flagged": false,
+        "image": "pcb3/Data/Images/Anomaly/055.JPG",
+        "primary448_margin": -2.192970143882974
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "scratch",
+        "highres448max_flagged": false,
+        "image": "pcb3/Data/Images/Anomaly/085.JPG",
+        "primary448_margin": -2.0524881280590996
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "missing",
+        "highres448max_flagged": false,
+        "image": "pcb3/Data/Images/Anomaly/049.JPG",
+        "primary448_margin": -1.8974907430578227
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "scratch",
+        "highres448max_flagged": false,
+        "image": "pcb3/Data/Images/Anomaly/093.JPG",
+        "primary448_margin": -1.8761730855342087
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "scratch",
+        "highres448max_flagged": false,
+        "image": "pcb3/Data/Images/Anomaly/080.JPG",
+        "primary448_margin": -1.8471951725650655
+      },
+      {
+        "baseline224_flagged": true,
+        "defect_type": "melt",
+        "highres448max_flagged": false,
+        "image": "pcb3/Data/Images/Anomaly/039.JPG",
+        "primary448_margin": -1.7544007754124813
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "missing",
+        "highres448max_flagged": false,
+        "image": "pcb3/Data/Images/Anomaly/041.JPG",
+        "primary448_margin": -1.6704506496214613
+      },
+      {
+        "baseline224_flagged": true,
+        "defect_type": "melt",
+        "highres448max_flagged": false,
+        "image": "pcb3/Data/Images/Anomaly/072.JPG",
+        "primary448_margin": -1.524573670185223
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "melt,scratch",
+        "highres448max_flagged": false,
+        "image": "pcb3/Data/Images/Anomaly/020.JPG",
+        "primary448_margin": -1.4634547569895382
+      },
+      {
+        "baseline224_flagged": true,
+        "defect_type": "bent",
+        "highres448max_flagged": false,
+        "image": "pcb3/Data/Images/Anomaly/014.JPG",
+        "primary448_margin": -1.4456839293665702
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "scratch",
+        "highres448max_flagged": false,
+        "image": "pcb3/Data/Images/Anomaly/086.JPG",
+        "primary448_margin": -1.379663940801251
+      },
+      {
+        "baseline224_flagged": true,
+        "defect_type": "scratch",
+        "highres448max_flagged": false,
+        "image": "pcb3/Data/Images/Anomaly/082.JPG",
+        "primary448_margin": -1.1788407300016885
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "melt",
+        "highres448max_flagged": false,
+        "image": "pcb3/Data/Images/Anomaly/075.JPG",
+        "primary448_margin": -1.1015250971931962
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "melt",
+        "highres448max_flagged": false,
+        "image": "pcb3/Data/Images/Anomaly/065.JPG",
+        "primary448_margin": -1.083848633010831
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "melt",
+        "highres448max_flagged": false,
+        "image": "pcb3/Data/Images/Anomaly/033.JPG",
+        "primary448_margin": -0.995042099999381
+      },
+      {
+        "baseline224_flagged": true,
+        "defect_type": "melt",
+        "highres448max_flagged": false,
+        "image": "pcb3/Data/Images/Anomaly/030.JPG",
+        "primary448_margin": -0.927038667143993
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "melt,scratch,missing",
+        "highres448max_flagged": false,
+        "image": "pcb3/Data/Images/Anomaly/046.JPG",
+        "primary448_margin": -0.8587215429103878
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "melt",
+        "highres448max_flagged": false,
+        "image": "pcb3/Data/Images/Anomaly/035.JPG",
+        "primary448_margin": -0.7600037609050645
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "bent",
+        "highres448max_flagged": false,
+        "image": "pcb3/Data/Images/Anomaly/003.JPG",
+        "primary448_margin": -0.6065792017693781
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "melt",
+        "highres448max_flagged": false,
+        "image": "pcb3/Data/Images/Anomaly/071.JPG",
+        "primary448_margin": -0.43620273786418196
+      },
+      {
+        "baseline224_flagged": true,
+        "defect_type": "scratch,missing",
+        "highres448max_flagged": false,
+        "image": "pcb3/Data/Images/Anomaly/051.JPG",
+        "primary448_margin": -0.3809755257545433
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "scratch",
+        "highres448max_flagged": true,
+        "image": "pcb3/Data/Images/Anomaly/094.JPG",
+        "primary448_margin": -0.33266444321301236
+      },
+      {
+        "baseline224_flagged": true,
+        "defect_type": "melt",
+        "highres448max_flagged": false,
+        "image": "pcb3/Data/Images/Anomaly/027.JPG",
+        "primary448_margin": -0.2905637779723875
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "melt,missing",
+        "highres448max_flagged": false,
+        "image": "pcb3/Data/Images/Anomaly/045.JPG",
+        "primary448_margin": -0.2660197413325598
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "melt",
+        "highres448max_flagged": false,
+        "image": "pcb3/Data/Images/Anomaly/037.JPG",
+        "primary448_margin": -0.18737922938773366
+      },
+      {
+        "baseline224_flagged": true,
+        "defect_type": "missing",
+        "highres448max_flagged": false,
+        "image": "pcb3/Data/Images/Anomaly/057.JPG",
+        "primary448_margin": -0.1184323784373369
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "missing",
+        "highres448max_flagged": true,
+        "image": "pcb3/Data/Images/Anomaly/042.JPG",
+        "primary448_margin": -0.07933135580411488
+      },
+      {
+        "baseline224_flagged": false,
+        "defect_type": "scratch",
+        "highres448max_flagged": true,
+        "image": "pcb3/Data/Images/Anomaly/097.JPG",
+        "primary448_margin": -0.035871811254541086
+      }
+    ]
+  },
+  "freeze_digest": "6bda4bd8bdae26f27366d0edc17612b683133f9d44b55b15527f6444af9334a1",
+  "headline_guard": {
+    "confusion": true,
+    "counts": true,
+    "decision": true,
+    "recall_gain_ci95_2dp": true
+  },
+  "images": {
+    "images_rehashed": 1106,
+    "mismatches": 0,
+    "test": 201,
+    "train": 905
+  },
+  "independence": "inspection_images, inspection_images_v2 and inspection_images_v3 not imported; metrics, thresholds, digest, source hashes and bootstrap reimplemented; numpy only replays default_rng; no image scoring, feature extraction or training",
+  "methods": {
+    "baseline224": {
+      "defect_recall": 0.44,
+      "fn": 56,
+      "fp": 8,
+      "image_auroc": 0.7615841584158416,
+      "image_average_precision": 0.8002095457355441,
+      "normal_false_alarm_rate": 0.07920792079207921,
+      "role": "baseline",
+      "threshold": 18.753552084175173,
+      "tied_scores": 0,
+      "tn": 93,
+      "tp": 44
+    },
+    "highres448max": {
+      "defect_recall": 0.57,
+      "fn": 43,
+      "fp": 4,
+      "image_auroc": 0.9078217821782179,
+      "image_average_precision": 0.9154075875843015,
+      "normal_false_alarm_rate": 0.039603960396039604,
+      "role": "secondary_descriptive",
+      "threshold": 24.12816173921733,
+      "tied_scores": 0,
+      "tn": 97,
+      "tp": 57
+    },
+    "primary448": {
+      "defect_recall": 0.55,
+      "fn": 45,
+      "fp": 3,
+      "image_auroc": 0.92,
+      "image_average_precision": 0.9244194452963572,
+      "normal_false_alarm_rate": 0.0297029702970297,
+      "role": "primary",
+      "threshold": 22.827363672026653,
+      "tied_scores": 0,
+      "tn": 98,
+      "tp": 55
+    }
+  },
+  "report_input_sha256": {
+    "evaluation.json": "0aa206238cab868b71b7f0543bce5f4ddec59fcfedcd3e070b051d423e259022",
+    "freeze.json": "1f866a03d20ead68ef12a6307c5ba0d6b0609deef875bc8e9f9ed397f2c45ac3",
+    "test-scores.json": "e0715009ed994b00dec0c9fd5d81900f5bb85776a22d30d399d26576422566f7"
+  },
+  "run_root": {
+    "byte_identical": {
+      "evaluation.json": true,
+      "freeze.json": true,
+      "test-scores.json": true
+    },
+    "evaluation_started_checked": true,
+    "memory_artifacts_verified": [
+      "r224",
+      "r448"
+    ]
+  },
+  "schema_version": 1,
+  "source_hashes_rehashed": {
+    "IMAGE_PILOT_V2_PROTOCOL.md": "617a6ab0d39f8c34e1b66d0b16c01a0cfd23eb38c1ffaf83c0e513e9c8180025",
+    "IMAGE_PILOT_V3_PROTOCOL.md": "f6d88eb52ab0e6f5f6987cc1c8ef824ef8cc97b52f4ccedd725b2e73e7f63aeb",
+    "inspection_images/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inspection_images/core.py": "2d1ad1ec0c2c7c968630863174a0a9b962dfb1748856e6137a1eed5150683a99",
+    "inspection_images/data.py": "82572acd8dbeac99ea2acba445ed1b40b2a4c55491176da311d60a480cb4368b",
+    "inspection_images/features.py": "ec222bbcb9722e3fd1082770acda26691440bf9f5c668c4cc9a965139930592e",
+    "inspection_images/requirements-cpu.txt": "23ba7bea154ad386b695fae296f52a2ecc329116cf813e86b9d17f03a7d140f1",
+    "inspection_images_v2/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inspection_images_v2/cli.py": "4e399572af214b1ea23d38f1e74c47231226eed44ca181a7e3fe1b81f3fac882",
+    "inspection_images_v2/pipeline.py": "ba8a57b897d42b0f218c248d148aa662e040bc4dae3c9b00f72560544acd71ee",
+    "inspection_images_v2/protocol.json": "dc97a0e0d81ce6e1642856b84e254bc14357d80db335224cdb9ad3fd5645689f",
+    "inspection_images_v2/scoring.py": "1ab996e598e034652c93d31e87cf95f9bba605a5d7b269c56fa52b85913243dc",
+    "inspection_images_v3/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inspection_images_v3/cli.py": "9a3537bc756f8d74c860426cb9ecda55bcdfb6fb5b97b64fa743cb8757187272",
+    "inspection_images_v3/pipeline.py": "1178ab2cc3a397879d6bd43990c56ae88a318a8be30def0b4d38cd985620938e",
+    "inspection_images_v3/protocol.json": "b1106d2566bb77d50600d75af8a92db4eb1f80e14d03750181e7ba58db469496"
+  },
+  "split_csv": {
+    "pcb3_rows": 1106,
+    "sha256": "a48557e6033318cb90556f706196bc9d247a776a23ea51aecee5a80dd0332995"
+  },
+  "splits": {
+    "calibration": 90,
+    "memory": 815,
+    "test": 201
+  },
+  "status": "pass",
+  "study": "inspection-image-replication-v3-pcb3",
+  "weights": {
+    "file": "resnet18-f37072fd.pth",
+    "sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec"
+  }
+}

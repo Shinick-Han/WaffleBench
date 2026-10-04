@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Omnigent 기록 재생 | Falsify Lab — Research Workbench</title>
+<meta name="description" content="실제 Omnigent 실행 한 번을 저장된 이벤트로 다섯 단계에 걸쳐 다시 따라갑니다. 센서 출력과 장비 비용은 작성된 수치 합성 자료입니다.">
+<meta property="og:title" content="Omnigent 기록 재생 | Falsify Lab">
+<meta property="og:description" content="실제 Omnigent 조정 기록의 단계별 재생입니다. 정확도나 팹 처리량을 입증하지 않습니다.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="./inspection-evidence.css">
+<link rel="stylesheet" href="./inspection-live.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<header class="masthead"><div class="mast-inner"><div class="identity"><span class="brand">Falsify Lab</span><span class="divider" aria-hidden="true"></span><span>Research Workbench</span></div><nav class="mast-links" aria-label="관련 화면"><a href="./inspection-evidence.html">검사 v3 근거</a><a href="./inspection-quality.html">품질 진단</a><a href="./inspection-images.html">실제 PCB 사진</a></nav></div></header>
+<main id="main" class="layout">
+ <div class="heading">
+  <div><h1>Omnigent 실행 기록 재생</h1><p class="lead">실제로 한 번 실행된 Omnigent 조정 기록을 저장된 이벤트 그대로 다섯 단계로 나눠 봅니다. 각 단계에서는 그 시점까지 알려진 것만 보여 주고, 뒤에 나올 관측은 미리 드러내지 않습니다.</p></div>
+  <div class="downloads"><button id="download" type="button" class="control" disabled>원본 JSON 내려받기</button></div>
+ </div>
+ <p class="notice"><strong>기록된 실행 · 작성된 수치 합성 자료</strong> · 이 화면은 이미 끝난 실행을 다시 읽을 뿐이며, 여기서 새 실행을 시작할 수 없습니다. 에이전트 조정은 실제 Omnigent 실행이지만 센서 응답과 장비 비용(CU)은 작성된 합성 수치입니다. 검사 v3 주 벤치마크와 별개이며, 정확도나 팹 처리량을 입증하지 않습니다.</p>
+
+ <div id="loadState" class="load-state" role="status" aria-live="polite">
+  <div class="skeleton" aria-hidden="true"><span></span><span></span><span></span></div>
+  <p>저장된 실행 기록을 불러오는 중…</p>
+ </div>
+
+ <div id="app" hidden>
+  <dl id="studyMeta" class="study-meta"></dl>
+  <p id="scopeWarn" class="scope-warn" role="alert" hidden></p>
+
+  <nav class="toc" aria-label="이 화면의 절">
+   <a href="#summary">실행 요약</a><a href="#roles">누가 무엇을 하나</a><a href="#replay">단계별 재생</a><a href="#chain">이벤트와 해시</a><a href="#receipt">근거</a>
+  </nav>
+
+  <section id="summary" class="band" aria-labelledby="summaryTitle">
+   <div class="section-head"><div><h2 id="summaryTitle">이 실행에서 실제로 일어난 일</h2><p>모든 수치는 이벤트 기록에서 다시 세고, 기록된 검증 요약과 맞는지 함께 표시합니다. 마감 요약은 실행이 끝난 뒤의 최종 값입니다.</p></div></div>
+   <div id="summaryBody"></div>
+  </section>
+
+  <section id="roles" class="band" aria-labelledby="rolesTitle">
+   <div class="section-head"><div><h2 id="rolesTitle">누가 무엇을 하나</h2><p>LLM 에이전트는 작업을 조정하고, 사이트 선택은 동결된 계획기가 합니다. 검토 결과가 계획기의 확률을 다시 학습시키지 않습니다.</p></div></div>
+   <div id="rolesBody"></div>
+  </section>
+
+  <section id="replay" class="band" aria-labelledby="replayTitle">
+   <div class="section-head"><div><h2 id="replayTitle">다섯 단계 재생</h2><p>이전·다음 버튼, 슬라이더, 단계 목록으로 이동합니다. 자동 재생은 없으며, 시각은 기록된 이벤트 시각입니다.</p></div></div>
+   <div class="replay-controls">
+    <div class="step-buttons" role="group" aria-label="단계 이동">
+     <button type="button" class="control" id="firstBtn">처음</button>
+     <button type="button" class="control" id="prevBtn">이전</button>
+     <button type="button" class="control" id="nextBtn">다음</button>
+     <button type="button" class="control" id="lastBtn">마지막</button>
+    </div>
+    <label class="scrub" for="stageRange">단계 <output id="stageOut" for="stageRange">—</output>
+     <input type="range" id="stageRange" min="1" max="1" step="1" value="1">
+    </label>
+   </div>
+   <ol id="stageList" class="stage-list" aria-label="단계 목록"></ol>
+   <p id="stageAnnounce" class="visually-hidden" aria-live="polite"></p>
+   <div id="stageBudget" class="spend"></div>
+   <div class="replay-grid">
+    <div class="replay-main">
+     <div class="wafers" id="wafers"></div>
+     <div class="legend" aria-label="지도 범례">
+      <span><i class="swatch unknown-flat"></i>미측정 · 알 수 없음</span>
+      <span><i class="swatch cand-ring"></i>광학 후보 (공개 위치)</span>
+      <span><i class="swatch positive"></i>센서가 DOI라고 보고</span>
+      <span><i class="swatch negative"></i>센서가 DOI 아님이라고 보고</span>
+      <span><i class="swatch failed"></i>검토 실패</span>
+      <span><i class="swatch current"></i>이 단계의 선택</span>
+      <span><i class="swatch alt"></i>이 단계의 대안</span>
+     </div>
+     <p id="geometryNote" class="footnote"></p>
+     <div class="table-scroll site-table-wrap" tabindex="0" role="region" aria-labelledby="siteTableCap">
+      <table class="data-table" id="siteTable"><caption id="siteTableCap">이 단계에서 지도에 표시된 사이트 (표시되지 않은 사이트는 모두 미측정)</caption><thead><tr><th scope="col">사이트</th><th scope="col">웨이퍼</th><th scope="col" class="num">x mm</th><th scope="col" class="num">y mm</th><th scope="col">이 단계의 상태</th></tr></thead><tbody></tbody></table>
+     </div>
+    </div>
+    <aside class="step-detail" id="stageDetail" aria-labelledby="stageDetailTitle"></aside>
+   </div>
+   <div id="stageTables"></div>
+  </section>
+
+  <section id="chain" class="band" aria-labelledby="chainTitle">
+   <div class="section-head"><div><h2 id="chainTitle">이벤트와 해시</h2><p>이 파일에는 원래 이벤트 사슬 가운데 걸러 낸 일부만 들어 있습니다. 아래 해시만으로는 전체 원본 사슬을 증명할 수 없습니다.</p></div></div>
+   <div id="chainBody"></div>
+  </section>
+
+  <section id="receipt" class="band" aria-labelledby="receiptTitle">
+   <div class="section-head"><div><h2 id="receiptTitle">근거</h2><p>이 화면의 모든 수치는 한 파일에서 읽습니다. 내려받기는 서버가 보낸 바이트를 그대로 저장합니다.</p></div></div>
+   <div id="receiptBody"></div>
+  </section>
+
+  <section class="limitations" aria-labelledby="limitationsTitle"><details open><summary id="limitationsTitle">해석 범위와 한계</summary><ul id="limitationsList"></ul></details></section>
+ </div>
+</main>
+<script src="./inspection-live.js" defer></script>
+</body>
+</html>

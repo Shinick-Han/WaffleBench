@@ -1,0 +1,27 @@
+# Inspection live orchestration boundary
+
+Separate live demonstration, never the v3 primary benchmark. It reuses a frozen candidate/model and unchanged sensors/costs on a fresh lot. Only actual observed outputs are evidence. The numerical policy remains a deterministic planner; Omnigent coordinates its calls and carries result IDs rather than being credited for inventing the selection algorithm.
+
+Core owner: new `inspection_live/__init__.py`, `inspection_live/session.py`, `inspection_live/mcp_server.py`, `tests/test_inspection_live.py`. Integration owner: new `inspection_agent/` YAML configs, `scripts/launch_inspection.ps1`, `scripts/run_inspection_live.py`, focused runner tests. Coordinator integrates and runs. Neither modifies inspection_v3 frozen source or old app/agent/launch files.
+
+## Core API
+
+`prepare(root, campaign_root, *, seed=9800, scenario='stationary', mode='candidate_only', budget=120, max_reviews=4)` requires a nonexistent live root and a valid v3 frozen source/config/model receipt. Generate one separate authored synthetic lot with the same physics. Copy immutable inference inputs/receipt; training and primary test data are never modified. Record public/oracle hashes, model hash, source freeze, CU, review cap and fresh-lot split. Keep private sensor outcomes local, inaccessible to MCP views.
+
+`InspectionLive(root)` reconstructs from immutable input hashes and append-only paid events. `analyze_and_plan(finalize=False, actor=...)` records or returns the pending deterministic candidate decision; includes at least two distinct affordable candidates when available, selected_site_id, decision_sequence, score parts, evidence_result_ids, remaining_budget. Re-analysis after a paid review records one analysis_update per result, not duplicates. Finalize requires at least two executed reviews and no pending decision, records the last update and closes the run. A normal loop uses initial plan → review → next plan → review → finalize. A finalization preview is unrecorded.
+
+`review_site(site_id, decision_sequence, actor=...)` admits only the exact pending selection under a cross-process lock. Full maximum CU reservation precedes the sensor call. Retry on failure/missing uses the same authored rule and is billed. Wrong site/sequence, duplicate execution, held-out/future result ID, budget cap or review cap rejects without free observations. Persist admission first; on crash the conservative reservation remains charged and the session blocks rather than silently retrying. `read_result(result_id, actor=...)` returns only an already observed selected-site result. `status()` exposes public decision/observation/updates/cost/closure only; no seed/scenario/oracle arrays.
+
+Returned paid result: result_id, site_id, decision_sequence, reported_doi, reported_kind, quality/status, attempts, charged CU, cumulative spend, frozen DOI probability, selection reward and its explicit meaning. A negative sensor report is not asserted to prove absence of a physical defect. Stored rows use `baseline_p`, `reported_positive`, `selection_reward`, `selection_reward_semantics`, `cost`, `charged`, `reserved_cost`, `attempts`.
+
+## MCP and orchestration
+
+`python -m inspection_live.mcp_server`, newline-delimited stdio JSON-RPC MCP. Required environment `INSPECTION_LIVE_ROOT` and `INSPECTION_MCP_ROLE` analyst or experimenter. Tools have no root/path/shell/seed/scenario parameter. Analyst: analyze_and_plan, read_result. Experimenter: review_site, read_result. Use canonical names/arguments above. Role tool invocations are labeled by the sidecar, but genuine Omnigent attribution requires the runner's actual SDK session/function-call proof; direct unit/CLI invocation is not genuine orchestration evidence.
+
+New Omnigent bundle names `inspection_supervisor`, `inspection_analyst`, `inspection_experimenter`, Claude Opus 5.5 medium, no host shell/connector/skills, bounded tools and exactly five delegations. Use a separate loopback port 6771 and project-local runtime namespace. Do not stop/reconfigure the existing 6767 server or other user sessions. `-Setup` renders local absolute interpreter/root sidecars excluded from commits; `-Server/-Stop` control only PID-tracked owned processes; any Start-Process hidden.
+
+Runner uses omnigent_client to create exactly one bounded supervisor session and prompt once; follows asynchronous subtree until settled or deadline. Save session ID before sending; preserve failures and raw local artifacts. Sanitized proof includes real observed actor/tool/result IDs, response states and updates; no account credentials, absolute paths or runtime host IDs. Completion requires real supervisor + specialist calls, a closed complete core ledger and at least two distinct analysis updates. Never count the first supervisor response as full workflow completion. Recovery does not send or create a second session.
+
+## Acceptance
+
+Core tests: public-only views; reservation precedes outcome; wrong/repeated tool denied; retry billing; update idempotency and finalization; input tamper rejection; crash conservative accounting; cross-process exclusion. Runner tests: asynchronous first response insufficient, one prompt, timeout/incomplete preserved, sanitized proof, no extra session on recovery. Coordinator verifies actual live use before asserting Omnigent evidence. This remains numeric synthetic and is explicitly separate from classifier accuracy and equal-budget benchmarks.

@@ -1,0 +1,44 @@
+{
+  "kind": "posthoc_public_feature_inference_replay",
+  "models": [
+    {
+      "model": "catboost/identity",
+      "model_hash": "8c137f2e9f0610f23be8980a3bf4e32ead12670aa75d50e9ebf1a04d67f9ef77",
+      "sites_per_lot": 3915,
+      "lots": 10,
+      "total_calls": 30,
+      "first_call_ms": 438.9176999684423,
+      "warm_calls": 29,
+      "warm_median_ms": 6.678200094029307,
+      "warm_p95_nearest_rank_ms": 9.22750006429851
+    },
+    {
+      "model": "catboost/isotonic",
+      "model_hash": "95fa9ebc22c4153ee504f1122e604cfdba6289d17243e42174af961dfcbdf7db",
+      "sites_per_lot": 3915,
+      "lots": 10,
+      "total_calls": 30,
+      "first_call_ms": 42.09059989079833,
+      "warm_calls": 29,
+      "warm_median_ms": 6.579499924555421,
+      "warm_p95_nearest_rank_ms": 9.188399999402463
+    },
+    {
+      "model": "logistic/identity",
+      "model_hash": "a36635717ad2f9da71330f3d5be9f8c5f94214b90148639a3b4fdbb2bcf6797d",
+      "sites_per_lot": 3915,
+      "lots": 10,
+      "total_calls": 30,
+      "first_call_ms": 0.170299899764359,
+      "warm_calls": 29,
+      "warm_median_ms": 0.09079999290406704,
+      "warm_p95_nearest_rank_ms": 0.2012000186368823
+    }
+  ],
+  "limitations": [
+    "Measured on ten stationary held-out lots, three correlated repeats each.",
+    "Feature arrays already in memory; includes preprocessing/model-cache lookup, excludes acquisition and file I/O.",
+    "First-call CatBoost deserialization includes package import; raw and calibrated models timed separately.",
+    "No outcomes used for optimization and no model/policy decisions changed."
+  ]
+}

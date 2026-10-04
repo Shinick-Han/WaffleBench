@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "scope": "separate_authored_numeric_synthetic_live_demonstration",
+  "session_proof_sha256": "9ede9adf665457b64f742a91cfac1c9db56bf5fc0e0d8b6fa024927f57c1f254",
+  "runner_source_sha256": "35e303a055c27dc6ec5c8aacb6697b0d14ad3378f4fa0104efea3470247d0604",
+  "delegations": 5,
+  "paid_reviews": 2,
+  "analysis_updates": 2,
+  "charged_cu": 26.066613859085937,
+  "budget_cu": 120.0,
+  "recovery_creates_or_sends": false,
+  "old_failed_proof_preserved": true,
+  "sdk_normalization": "duplicate mirror/stale FIFO documented; reused same-agent conversations mapped by exact dispatched user messages and ordered turns",
+  "primary_benchmark": false,
+  "remaining_cu": 93.93338614091407
+}

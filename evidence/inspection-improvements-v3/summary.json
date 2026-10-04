@@ -1,0 +1,170 @@
+{
+  "combined_vs_logistic": {
+    "budget": 360,
+    "ci95_difference": [
+      1.46,
+      2.43
+    ],
+    "comparator": "logistic_learned",
+    "complete_pairs": 100,
+    "mean_comparator": 27.38,
+    "mean_difference": 1.95,
+    "mean_policy": 29.33,
+    "metric": "true_doi_confirmed",
+    "mode": "candidate_only",
+    "policy": "cb400_route_full",
+    "reason": "relative gain >= target and CI lower bound > 0",
+    "relative_gain": 0.07121986851716589,
+    "role": "primary",
+    "success": true
+  },
+  "matched_cost": {
+    "both_attained": 100,
+    "both_attainment_fraction": 1.0,
+    "budget_ledger": 720,
+    "comparator": "logistic_learned",
+    "comparator_attainment_fraction": 1.0,
+    "lots": 100,
+    "mean_cost_comparator_common": 66.16272192062756,
+    "mean_cost_policy_common": 61.338312622557496,
+    "mean_paired_saving_common": 0.04018142713802181,
+    "meets_saving_target": false,
+    "mode": "candidate_only",
+    "neither_attained": 0,
+    "note": "supplementary; restricted to lots where both reached the target; see attainment fractions",
+    "only_comparator_attained": 0,
+    "only_policy_attained": 0,
+    "policy": "cb400_route_full",
+    "policy_attainment_fraction": 1.0,
+    "saving_of_means_common": 0.07291733408213907,
+    "saving_target": 0.3,
+    "target_true_doi": 5
+  },
+  "primary_condition_means": [
+    {
+      "lots": 100,
+      "mean_doi": 27.38,
+      "mean_loading_cost": 12.32,
+      "mean_policy_wall_s": 0.00033993010059930385,
+      "mean_spent": 352.0812386658977,
+      "mean_stage_cost": 59.44123866589776,
+      "variant": "logistic_learned"
+    },
+    {
+      "lots": 100,
+      "mean_doi": 28.36,
+      "mean_loading_cost": 11.2,
+      "mean_policy_wall_s": 0.0003419310285244137,
+      "mean_spent": 352.3474050920187,
+      "mean_stage_cost": 55.947405092018734,
+      "variant": "cb250_learned"
+    },
+    {
+      "lots": 100,
+      "mean_doi": 28.2,
+      "mean_loading_cost": 11.2,
+      "mean_policy_wall_s": 0.0003585269476752728,
+      "mean_spent": 352.12226994291734,
+      "mean_stage_cost": 55.4822699429174,
+      "variant": "cb400_learned"
+    },
+    {
+      "lots": 100,
+      "mean_doi": 28.39,
+      "mean_loading_cost": 10.88,
+      "mean_policy_wall_s": 0.0003574750025290996,
+      "mean_spent": 351.9136808104189,
+      "mean_stage_cost": 55.0336808104189,
+      "variant": "cb600_learned"
+    },
+    {
+      "lots": 100,
+      "mean_doi": 28.17,
+      "mean_loading_cost": 10.96,
+      "mean_policy_wall_s": 0.0003452860121615231,
+      "mean_spent": 351.99241566049096,
+      "mean_stage_cost": 55.79241566049099,
+      "variant": "cb400_platt_learned"
+    },
+    {
+      "lots": 100,
+      "mean_doi": 28.29,
+      "mean_loading_cost": 11.28,
+      "mean_policy_wall_s": 0.0003522770444396883,
+      "mean_spent": 351.9860568513301,
+      "mean_stage_cost": 56.146056851330066,
+      "variant": "cb400_temperature_learned"
+    },
+    {
+      "lots": 100,
+      "mean_doi": 28.41,
+      "mean_loading_cost": 10.72,
+      "mean_policy_wall_s": 0.0003558569645974785,
+      "mean_spent": 351.81363090096914,
+      "mean_stage_cost": 56.29363090096912,
+      "variant": "cb400_isotonic_learned"
+    },
+    {
+      "lots": 100,
+      "mean_doi": 29.07,
+      "mean_loading_cost": 12.88,
+      "mean_policy_wall_s": 0.02620463600382209,
+      "mean_spent": 352.2824787724614,
+      "mean_stage_cost": 55.92247877246149,
+      "variant": "cb400_route_half"
+    },
+    {
+      "lots": 100,
+      "mean_doi": 29.33,
+      "mean_loading_cost": 12.08,
+      "mean_policy_wall_s": 0.027014969986630603,
+      "mean_spent": 352.1226698274284,
+      "mean_stage_cost": 54.162669827428374,
+      "variant": "cb400_route_full"
+    },
+    {
+      "lots": 100,
+      "mean_doi": 29.29,
+      "mean_loading_cost": 11.92,
+      "mean_policy_wall_s": 0.026896989037049936,
+      "mean_spent": 352.20301204698,
+      "mean_stage_cost": 54.36301204697987,
+      "variant": "cb400_platt_route"
+    },
+    {
+      "lots": 100,
+      "mean_doi": 28.31,
+      "mean_loading_cost": 11.36,
+      "mean_policy_wall_s": 0.006046491954475641,
+      "mean_spent": 351.9109112684967,
+      "mean_stage_cost": 58.95091126849665,
+      "variant": "yield_greedy"
+    },
+    {
+      "lots": 100,
+      "mean_doi": 28.68,
+      "mean_loading_cost": 12.96,
+      "mean_policy_wall_s": 0.027227976979920642,
+      "mean_spent": 351.6923986485397,
+      "mean_stage_cost": 56.93239864853978,
+      "variant": "yield_route"
+    }
+  ],
+  "selection_vs_same_model": {
+    "budget": 360,
+    "ci95_difference": [
+      0.68,
+      1.6102499999999986
+    ],
+    "comparator": "cb400_learned",
+    "complete_pairs": 100,
+    "mean_comparator": 28.2,
+    "mean_difference": 1.13,
+    "mean_policy": 29.33,
+    "metric": "true_doi_confirmed",
+    "mode": "candidate_only",
+    "policy": "cb400_route_full",
+    "relative_gain": 0.04007092198581552,
+    "role": "exploratory"
+  }
+}

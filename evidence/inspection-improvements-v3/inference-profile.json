@@ -1,0 +1,37 @@
+{
+  "scope": "Same frozen cb400/identity model, first protocol test lot, 3915 sites; local sequential CPU microbenchmark, not equipment CU or model-quality gain.",
+  "model_hash": "58aef92c229b24da7d5a04c9ad5dc2c30e82fa9618fed304ef63e17ed113064b",
+  "lot_id": "lot-c25528653c685e93",
+  "n_sites": 3915,
+  "compile_ms": 428.8054999196902,
+  "baseline": {
+    "median_ms": 9.280399943236262,
+    "p95_ms": 11.687115021049975,
+    "q25_ms": 9.072624961845577,
+    "q75_ms": 9.912300010910258,
+    "repeats": 100
+  },
+  "compiled": {
+    "median_ms": 1.0047500836662948,
+    "p95_ms": 1.2355750834103674,
+    "q25_ms": 0.9518249426037073,
+    "q75_ms": 1.0826749785337597,
+    "repeats": 100
+  },
+  "second_baseline": {
+    "median_ms": 9.076999966055155,
+    "p95_ms": 9.813129989197478,
+    "q25_ms": 8.894650003639981,
+    "q75_ms": 9.346275008283556,
+    "repeats": 100
+  },
+  "second_compiled": {
+    "median_ms": 1.012749969959259,
+    "p95_ms": 1.2469899433199316,
+    "q25_ms": 0.9686750127002597,
+    "q75_ms": 1.0807749640662223,
+    "repeats": 100
+  },
+  "max_absolute_probability_difference": 0.0,
+  "warm_speedup": 9.23652567350125
+}

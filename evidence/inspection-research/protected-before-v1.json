@@ -1,0 +1,16 @@
+{
+  "protected_sha256": {
+    "RESEARCH_PROTOCOL.md": "45e04ba3feea0d0fea1ccf236530ee7168f061753d82c1bc8f9d0fc3dd473ff9",
+    "web/data/synthetic-wafers.json": "bcfedbb05fe1969d9b3d58fabea964414a9bd8431ba9abcd29b977e3ef2a3638",
+    "web/data/snapshot.json": "644d7eaa5238e5a7bbd04ac2eec60f220dca54ac922f3cd7c8a8b4319c00a5dd",
+    "synthetic_wafers/manifest.json": "5d9c6bc4df18520db590d43a6f24e95fa8a68c294cd5f50dd8ce3ee0902082b7",
+    "web/app.css": "5b2f2efe96118224d8142b66e7cb9906e709f41d2b9ffdabb9c86de530b8d218",
+    "research-manifest.json": "8a9c760c6da7db8dcd769992cf73a255df9b1cad9f8e7d60b8fd7336f772b16c",
+    "web/app.js": "62a8552760b4a462842bcdc6d70d4b375cb8225b99356513649b95316c7ca216",
+    "web/data/synthetic-wafers.zip": "326b0ae2f60c9f3e8c7daec9283ebc60a9b2f86dc7ba26214d1fae52700a57a6"
+  },
+  "source_commit": "9cd0083a471effc1c18bacb18f25699416c7c937",
+  "captured_utc": "2026-10-04T05:27:40.1498920Z",
+  "stage": "pre_implementation",
+  "study_id": "inspection-review-v1-20261004"
+}

@@ -1,0 +1,1276 @@
+{
+  "audit_sha256": "eb020afc95e53a9a10d75dbd0ec95fa1c3047b6811f5c97ea57f69ba3c6e1241",
+  "audit_status": "passed",
+  "budget_cu": 360,
+  "candidate": "cb400_route_full",
+  "definitions": {
+    "latent_doi": "posthoc oracle truth; evaluation only, never used for actions",
+    "missed_candidate_doi": "candidate DOI that the 360-CU route did not select",
+    "never_optically_admitted_doi": "latent DOI the optical sensor never offered as a candidate",
+    "optical_recall_ceiling": "candidate_doi / latent_doi: the best any candidate-only policy can reach",
+    "policy_wall_s_total_per_lot": "TOTAL selection-call wall time per lot run, not per decision",
+    "ranking_error": "selected non-DOI sites (choice error under the frozen probabilities and route costs)",
+    "sensor_missed_doi": "selected latent DOI that the paid review reported negative (sensor error)",
+    "threshold_classification": "confusion at the frozen 0.5 threshold over all original candidates; not used by the route policy",
+    "unresolved": "every paid attempt failed or was missing; unknown, never called good or a physical negative"
+  },
+  "diagnostic_script_sha256": "25a770534812f221bb71a0099d14bbb6a692649da7988568a1f220e43e9e514d",
+  "freeze_sha256": "faadbe498c1dec1f83926c733e21b386e2aa49cf24219b8ccd7fdd1327e4f3fb",
+  "generated_at": "2026-10-04T08:20:41.881329+00:00",
+  "kind": "inspection_v3_quality_diagnostics",
+  "limitations": [
+    "Authored synthetic tabular evidence; not SEM-image accuracy, factory throughput or wafer yield.",
+    "Total dies per lot do not imply every die receives SEM review; only the selected candidates are paid reviews.",
+    "Historical training labels are assumed available; offline learning CU is excluded from the online budget.",
+    "No Jev or free-text notes were used or invented; no new gain is claimed and the preregistered primary is unchanged.",
+    "Visit bound is loose and optimistic (zero movement, zero failures); not an achievable oracle planner.",
+    "Posthoc diagnostic only; nothing here was tuned, rerun or used to select actions."
+  ],
+  "lots": 100,
+  "mode": "candidate_only",
+  "model": "cb400/identity",
+  "overall": {
+    "counts": {
+      "attempts_failure": 91,
+      "attempts_missing": 142,
+      "attempts_ok": 3449,
+      "attempts_other": 0,
+      "candidate_doi": 19477,
+      "candidates_p_ge_099": 5047,
+      "dies": 391500,
+      "fp_reported_positive": 1,
+      "latent_doi": 27260,
+      "missed_candidate_doi": 16248,
+      "never_optically_admitted_doi": 7783,
+      "optical_candidates": 78323,
+      "reported_negative_non_doi": 235,
+      "reported_positives": 2934,
+      "retried_reviews": 217,
+      "selected": 3465,
+      "selected_candidate_doi": 3229,
+      "selected_latent_doi": 3229,
+      "selected_non_candidate": 0,
+      "selected_non_candidate_doi": 0,
+      "selected_non_doi": 236,
+      "selected_p_ge_099": 1866,
+      "selected_p_ge_099_doi": 1849,
+      "sensor_missed_doi": 280,
+      "tp_reported_positive": 2933,
+      "unresolved": 16,
+      "unresolved_doi": 16,
+      "unresolved_non_doi": 0,
+      "unselected_candidate_doi_p_ge_099": 3168
+    },
+    "dies_reviewed_fraction": 0.008850574712643678,
+    "mean_per_lot": {
+      "attempts_failure": 0.91,
+      "attempts_missing": 1.42,
+      "attempts_ok": 34.49,
+      "attempts_other": 0.0,
+      "candidate_doi": 194.77,
+      "candidates_p_ge_099": 50.47,
+      "dies": 3915.0,
+      "fp_reported_positive": 0.01,
+      "latent_doi": 272.6,
+      "missed_candidate_doi": 162.48,
+      "never_optically_admitted_doi": 77.83,
+      "optical_candidates": 783.23,
+      "reported_negative_non_doi": 2.35,
+      "reported_positives": 29.34,
+      "retried_reviews": 2.17,
+      "selected": 34.65,
+      "selected_candidate_doi": 32.29,
+      "selected_latent_doi": 32.29,
+      "selected_non_candidate": 0.0,
+      "selected_non_candidate_doi": 0.0,
+      "selected_non_doi": 2.36,
+      "selected_p_ge_099": 18.66,
+      "selected_p_ge_099_doi": 18.49,
+      "sensor_missed_doi": 2.8,
+      "tp_reported_positive": 29.33,
+      "unresolved": 0.16,
+      "unresolved_doi": 0.16,
+      "unresolved_non_doi": 0.0,
+      "unselected_candidate_doi_p_ge_099": 31.68
+    },
+    "mean_visits_per_lot": 34.65,
+    "min_cu_to_review_every_candidate_per_lot": 7073.07,
+    "min_cu_to_review_every_die_per_lot": 35259.0,
+    "visits_over_optimistic_bound": 0.9118421052631579
+  },
+  "per_scenario": {
+    "low_contrast": {
+      "calibration_candidates": {
+        "bins": [
+          {
+            "bin": "[0.0,0.2)",
+            "gap_mean_p_minus_rate": -0.00437398723870934,
+            "latent_doi": 350,
+            "latent_doi_rate": 0.042506679621083315,
+            "mean_p": 0.038132692382373976,
+            "n": 8234
+          },
+          {
+            "bin": "[0.2,0.5)",
+            "gap_mean_p_minus_rate": 0.08878932148210875,
+            "latent_doi": 279,
+            "latent_doi_rate": 0.23406040268456377,
+            "mean_p": 0.3228497241666725,
+            "n": 1192
+          },
+          {
+            "bin": "[0.5,0.8)",
+            "gap_mean_p_minus_rate": 0.27265474256823347,
+            "latent_doi": 233,
+            "latent_doi_rate": 0.3652037617554859,
+            "mean_p": 0.6378585043237194,
+            "n": 638
+          },
+          {
+            "bin": "[0.8,0.95)",
+            "gap_mean_p_minus_rate": 0.29459594479155893,
+            "latent_doi": 203,
+            "latent_doi_rate": 0.5833333333333334,
+            "mean_p": 0.8779292781248923,
+            "n": 348
+          },
+          {
+            "bin": "[0.95,1.0]",
+            "gap_mean_p_minus_rate": 0.0649812955491198,
+            "latent_doi": 450,
+            "latent_doi_rate": 0.9202453987730062,
+            "mean_p": 0.985226694322126,
+            "n": 489
+          }
+        ],
+        "latent_doi": 1515,
+        "n": 10901,
+        "p_ge_0.99": {
+          "bin": "[0.99,1]",
+          "gap_mean_p_minus_rate": 0.03212523799003131,
+          "latent_doi": 242,
+          "latent_doi_rate": 0.9641434262948207,
+          "mean_p": 0.9962686642848521,
+          "n": 251
+        }
+      },
+      "calibration_selected": {
+        "bins": [
+          {
+            "bin": "[0.0,0.2)",
+            "gap_mean_p_minus_rate": null,
+            "latent_doi": 0,
+            "latent_doi_rate": null,
+            "mean_p": null,
+            "n": 0
+          },
+          {
+            "bin": "[0.2,0.5)",
+            "gap_mean_p_minus_rate": 0.4245278943829957,
+            "latent_doi": 0,
+            "latent_doi_rate": 0.0,
+            "mean_p": 0.4245278943829957,
+            "n": 1
+          },
+          {
+            "bin": "[0.5,0.8)",
+            "gap_mean_p_minus_rate": 0.21054229378575418,
+            "latent_doi": 28,
+            "latent_doi_rate": 0.49122807017543857,
+            "mean_p": 0.7017703639611927,
+            "n": 57
+          },
+          {
+            "bin": "[0.8,0.95)",
+            "gap_mean_p_minus_rate": 0.2610233376893467,
+            "latent_doi": 120,
+            "latent_doi_rate": 0.6282722513089005,
+            "mean_p": 0.8892955889982472,
+            "n": 191
+          },
+          {
+            "bin": "[0.95,1.0]",
+            "gap_mean_p_minus_rate": 0.06708957754833189,
+            "latent_doi": 372,
+            "latent_doi_rate": 0.9185185185185185,
+            "mean_p": 0.9856080960668504,
+            "n": 405
+          }
+        ],
+        "latent_doi": 520,
+        "n": 654,
+        "p_ge_0.99": {
+          "bin": "[0.99,1]",
+          "gap_mean_p_minus_rate": 0.0344024470426505,
+          "latent_doi": 202,
+          "latent_doi_rate": 0.9619047619047619,
+          "mean_p": 0.9963072089474124,
+          "n": 210
+        }
+      },
+      "counts": {
+        "attempts_failure": 23,
+        "attempts_missing": 29,
+        "attempts_ok": 647,
+        "attempts_other": 0,
+        "candidate_doi": 1515,
+        "candidates_p_ge_099": 251,
+        "dies": 78300,
+        "fp_reported_positive": 1,
+        "latent_doi": 5071,
+        "missed_candidate_doi": 995,
+        "never_optically_admitted_doi": 3556,
+        "optical_candidates": 10901,
+        "reported_negative_non_doi": 133,
+        "reported_positives": 466,
+        "retried_reviews": 45,
+        "selected": 654,
+        "selected_candidate_doi": 520,
+        "selected_latent_doi": 520,
+        "selected_non_candidate": 0,
+        "selected_non_candidate_doi": 0,
+        "selected_non_doi": 134,
+        "selected_p_ge_099": 210,
+        "selected_p_ge_099_doi": 202,
+        "sensor_missed_doi": 48,
+        "tp_reported_positive": 465,
+        "unresolved": 7,
+        "unresolved_doi": 7,
+        "unresolved_non_doi": 0,
+        "unselected_candidate_doi_p_ge_099": 40
+      },
+      "error_separation": {
+        "ranking": {
+          "candidates_p_ge_099": 251,
+          "selected_latent_doi": 520,
+          "selected_non_doi": 134,
+          "selected_p_ge_099": 210,
+          "selected_p_ge_099_doi": 202,
+          "unselected_candidate_doi_p_ge_099": 40
+        },
+        "sensor": {
+          "attempts": {
+            "failure": 23,
+            "missing": 29,
+            "ok": 647,
+            "other": 0
+          },
+          "fp_reported_positive": 1,
+          "retried_reviews": 45,
+          "sensor_missed_doi": 48,
+          "unresolved_doi": 7,
+          "unresolved_non_doi": 0
+        },
+        "threshold_classification_candidates": {
+          "candidate_recall": 0.5848184818481849,
+          "fn": 629,
+          "fp": 589,
+          "precision": 0.6006779661016949,
+          "threshold": 0.5,
+          "tn": 8797,
+          "tp": 886
+        }
+      },
+      "lots": 20,
+      "mean_per_lot": {
+        "attempts_failure": 1.15,
+        "attempts_missing": 1.45,
+        "attempts_ok": 32.35,
+        "attempts_other": 0.0,
+        "candidate_doi": 75.75,
+        "candidates_p_ge_099": 12.55,
+        "dies": 3915.0,
+        "fp_reported_positive": 0.05,
+        "latent_doi": 253.55,
+        "missed_candidate_doi": 49.75,
+        "never_optically_admitted_doi": 177.8,
+        "optical_candidates": 545.05,
+        "reported_negative_non_doi": 6.65,
+        "reported_positives": 23.3,
+        "retried_reviews": 2.25,
+        "selected": 32.7,
+        "selected_candidate_doi": 26.0,
+        "selected_latent_doi": 26.0,
+        "selected_non_candidate": 0.0,
+        "selected_non_candidate_doi": 0.0,
+        "selected_non_doi": 6.7,
+        "selected_p_ge_099": 10.5,
+        "selected_p_ge_099_doi": 10.1,
+        "sensor_missed_doi": 2.4,
+        "tp_reported_positive": 23.25,
+        "unresolved": 0.35,
+        "unresolved_doi": 0.35,
+        "unresolved_non_doi": 0.0,
+        "unselected_candidate_doi_p_ge_099": 2.0
+      },
+      "optical_recall_ceiling": 0.29875764149083023,
+      "policy_timing": {
+        "derived_mean_wall_s_per_decision": 0.0005794120811862979,
+        "note": "TOTAL selection-call time per lot; per-decision value is derived by division",
+        "policy_wall_s_total_per_lot_mean": 0.01894677505479194,
+        "policy_wall_s_total_per_lot_median": 0.01895274978596717
+      },
+      "visits": {
+        "mean_cost_cu": {
+          "dwell": 261.6,
+          "load": 22.8,
+          "outside_rescan": 0.0,
+          "retry": 9.0,
+          "stage": 58.87074136786678
+        },
+        "mean_extra_wafer_loads_cu": 14.8,
+        "mean_per_lot": 32.7,
+        "mean_retry_cu": 9.0,
+        "mean_stage_movement_cu_above_minimum": 26.170741367866775,
+        "mean_unspent_cu": 7.729258632133226,
+        "optimistic_bound": 38,
+        "shortfall_vs_bound": 5.299999999999997,
+        "stop_reasons": {
+          "none_affordable": 20
+        }
+      }
+    },
+    "novel_cluster": {
+      "calibration_candidates": {
+        "bins": [
+          {
+            "bin": "[0.0,0.2)",
+            "gap_mean_p_minus_rate": -0.04106528223525113,
+            "latent_doi": 717,
+            "latent_doi_rate": 0.08296690580884054,
+            "mean_p": 0.04190162357358941,
+            "n": 8642
+          },
+          {
+            "bin": "[0.2,0.5)",
+            "gap_mean_p_minus_rate": -0.07085783410151741,
+            "latent_doi": 693,
+            "latent_doi_rate": 0.4031413612565445,
+            "mean_p": 0.33228352715502707,
+            "n": 1719
+          },
+          {
+            "bin": "[0.5,0.8)",
+            "gap_mean_p_minus_rate": -0.016114355568524474,
+            "latent_doi": 898,
+            "latent_doi_rate": 0.6711509715994021,
+            "mean_p": 0.6550366160308776,
+            "n": 1338
+          },
+          {
+            "bin": "[0.8,0.95)",
+            "gap_mean_p_minus_rate": 0.00757991401772784,
+            "latent_doi": 1048,
+            "latent_doi_rate": 0.8791946308724832,
+            "mean_p": 0.886774544890211,
+            "n": 1192
+          },
+          {
+            "bin": "[0.95,1.0]",
+            "gap_mean_p_minus_rate": 0.0014273783839164889,
+            "latent_doi": 2580,
+            "latent_doi_rate": 0.9862385321100917,
+            "mean_p": 0.9876659104940082,
+            "n": 2616
+          }
+        ],
+        "latent_doi": 5936,
+        "n": 15507,
+        "p_ge_0.99": {
+          "bin": "[0.99,1]",
+          "gap_mean_p_minus_rate": 0.0002770688781414954,
+          "latent_doi": 1548,
+          "latent_doi_rate": 0.9967804249839022,
+          "mean_p": 0.9970574938620437,
+          "n": 1553
+        }
+      },
+      "calibration_selected": {
+        "bins": [
+          {
+            "bin": "[0.0,0.2)",
+            "gap_mean_p_minus_rate": null,
+            "latent_doi": 0,
+            "latent_doi_rate": null,
+            "mean_p": null,
+            "n": 0
+          },
+          {
+            "bin": "[0.2,0.5)",
+            "gap_mean_p_minus_rate": null,
+            "latent_doi": 0,
+            "latent_doi_rate": null,
+            "mean_p": null,
+            "n": 0
+          },
+          {
+            "bin": "[0.5,0.8)",
+            "gap_mean_p_minus_rate": null,
+            "latent_doi": 0,
+            "latent_doi_rate": null,
+            "mean_p": null,
+            "n": 0
+          },
+          {
+            "bin": "[0.8,0.95)",
+            "gap_mean_p_minus_rate": 0.013613930636322102,
+            "latent_doi": 22,
+            "latent_doi_rate": 0.9166666666666666,
+            "mean_p": 0.9302805973029887,
+            "n": 24
+          },
+          {
+            "bin": "[0.95,1.0]",
+            "gap_mean_p_minus_rate": -0.004933816179813033,
+            "latent_doi": 686,
+            "latent_doi_rate": 0.9956458635703919,
+            "mean_p": 0.9907120473905788,
+            "n": 689
+          }
+        ],
+        "latent_doi": 708,
+        "n": 713,
+        "p_ge_0.99": {
+          "bin": "[0.99,1]",
+          "gap_mean_p_minus_rate": -0.0008490626769820375,
+          "latent_doi": 475,
+          "latent_doi_rate": 0.9978991596638656,
+          "mean_p": 0.9970500969868835,
+          "n": 476
+        }
+      },
+      "counts": {
+        "attempts_failure": 21,
+        "attempts_missing": 32,
+        "attempts_ok": 709,
+        "attempts_other": 0,
+        "candidate_doi": 5936,
+        "candidates_p_ge_099": 1553,
+        "dies": 78300,
+        "fp_reported_positive": 0,
+        "latent_doi": 6620,
+        "missed_candidate_doi": 5228,
+        "never_optically_admitted_doi": 684,
+        "optical_candidates": 15507,
+        "reported_negative_non_doi": 5,
+        "reported_positives": 634,
+        "retried_reviews": 49,
+        "selected": 713,
+        "selected_candidate_doi": 708,
+        "selected_latent_doi": 708,
+        "selected_non_candidate": 0,
+        "selected_non_candidate_doi": 0,
+        "selected_non_doi": 5,
+        "selected_p_ge_099": 476,
+        "selected_p_ge_099_doi": 475,
+        "sensor_missed_doi": 70,
+        "tp_reported_positive": 634,
+        "unresolved": 4,
+        "unresolved_doi": 4,
+        "unresolved_non_doi": 0,
+        "unselected_candidate_doi_p_ge_099": 1073
+      },
+      "error_separation": {
+        "ranking": {
+          "candidates_p_ge_099": 1553,
+          "selected_latent_doi": 708,
+          "selected_non_doi": 5,
+          "selected_p_ge_099": 476,
+          "selected_p_ge_099_doi": 475,
+          "unselected_candidate_doi_p_ge_099": 1073
+        },
+        "sensor": {
+          "attempts": {
+            "failure": 21,
+            "missing": 32,
+            "ok": 709,
+            "other": 0
+          },
+          "fp_reported_positive": 0,
+          "retried_reviews": 49,
+          "sensor_missed_doi": 70,
+          "unresolved_doi": 4,
+          "unresolved_non_doi": 0
+        },
+        "threshold_classification_candidates": {
+          "candidate_recall": 0.762466307277628,
+          "fn": 1410,
+          "fp": 620,
+          "precision": 0.8795180722891566,
+          "threshold": 0.5,
+          "tn": 8951,
+          "tp": 4526
+        }
+      },
+      "lots": 20,
+      "mean_per_lot": {
+        "attempts_failure": 1.05,
+        "attempts_missing": 1.6,
+        "attempts_ok": 35.45,
+        "attempts_other": 0.0,
+        "candidate_doi": 296.8,
+        "candidates_p_ge_099": 77.65,
+        "dies": 3915.0,
+        "fp_reported_positive": 0.0,
+        "latent_doi": 331.0,
+        "missed_candidate_doi": 261.4,
+        "never_optically_admitted_doi": 34.2,
+        "optical_candidates": 775.35,
+        "reported_negative_non_doi": 0.25,
+        "reported_positives": 31.7,
+        "retried_reviews": 2.45,
+        "selected": 35.65,
+        "selected_candidate_doi": 35.4,
+        "selected_latent_doi": 35.4,
+        "selected_non_candidate": 0.0,
+        "selected_non_candidate_doi": 0.0,
+        "selected_non_doi": 0.25,
+        "selected_p_ge_099": 23.8,
+        "selected_p_ge_099_doi": 23.75,
+        "sensor_missed_doi": 3.5,
+        "tp_reported_positive": 31.7,
+        "unresolved": 0.2,
+        "unresolved_doi": 0.2,
+        "unresolved_non_doi": 0.0,
+        "unselected_candidate_doi_p_ge_099": 53.65
+      },
+      "optical_recall_ceiling": 0.8966767371601209,
+      "policy_timing": {
+        "derived_mean_wall_s_per_decision": 0.0008038394082909735,
+        "note": "TOTAL selection-call time per lot; per-decision value is derived by division",
+        "policy_wall_s_total_per_lot_mean": 0.028656874905573206,
+        "policy_wall_s_total_per_lot_median": 0.028654049965552986
+      },
+      "visits": {
+        "mean_cost_cu": {
+          "dwell": 285.2,
+          "load": 8.0,
+          "outside_rescan": 0.0,
+          "retry": 9.8,
+          "stage": 49.07226761613771
+        },
+        "mean_extra_wafer_loads_cu": 0.0,
+        "mean_per_lot": 35.65,
+        "mean_retry_cu": 9.8,
+        "mean_stage_movement_cu_above_minimum": 13.422267616137708,
+        "mean_unspent_cu": 7.927732383862289,
+        "optimistic_bound": 38,
+        "shortfall_vs_bound": 2.3500000000000014,
+        "stop_reasons": {
+          "none_affordable": 20
+        }
+      }
+    },
+    "nuisance_heavy": {
+      "calibration_candidates": {
+        "bins": [
+          {
+            "bin": "[0.0,0.2)",
+            "gap_mean_p_minus_rate": 0.015196853259938171,
+            "latent_doi": 327,
+            "latent_doi_rate": 0.017004680187207487,
+            "mean_p": 0.03220153344714566,
+            "n": 19230
+          },
+          {
+            "bin": "[0.2,0.5)",
+            "gap_mean_p_minus_rate": 0.11597517448517372,
+            "latent_doi": 456,
+            "latent_doi_rate": 0.20746132848043677,
+            "mean_p": 0.3234365029656105,
+            "n": 2198
+          },
+          {
+            "bin": "[0.5,0.8)",
+            "gap_mean_p_minus_rate": 0.14977488511643428,
+            "latent_doi": 673,
+            "latent_doi_rate": 0.4992581602373887,
+            "mean_p": 0.649033045353823,
+            "n": 1348
+          },
+          {
+            "bin": "[0.8,0.95)",
+            "gap_mean_p_minus_rate": 0.08470477539035304,
+            "latent_doi": 874,
+            "latent_doi_rate": 0.8025711662075299,
+            "mean_p": 0.8872759415978829,
+            "n": 1089
+          },
+          {
+            "bin": "[0.95,1.0]",
+            "gap_mean_p_minus_rate": 0.00504099322760776,
+            "latent_doi": 2215,
+            "latent_doi_rate": 0.9831335996449179,
+            "mean_p": 0.9881745928725256,
+            "n": 2253
+          }
+        ],
+        "latent_doi": 4545,
+        "n": 26118,
+        "p_ge_0.99": {
+          "bin": "[0.99,1]",
+          "gap_mean_p_minus_rate": -0.0007150441194661017,
+          "latent_doi": 1361,
+          "latent_doi_rate": 0.9978005865102639,
+          "mean_p": 0.9970855423907978,
+          "n": 1364
+        }
+      },
+      "calibration_selected": {
+        "bins": [
+          {
+            "bin": "[0.0,0.2)",
+            "gap_mean_p_minus_rate": null,
+            "latent_doi": 0,
+            "latent_doi_rate": null,
+            "mean_p": null,
+            "n": 0
+          },
+          {
+            "bin": "[0.2,0.5)",
+            "gap_mean_p_minus_rate": null,
+            "latent_doi": 0,
+            "latent_doi_rate": null,
+            "mean_p": null,
+            "n": 0
+          },
+          {
+            "bin": "[0.5,0.8)",
+            "gap_mean_p_minus_rate": 0.015605254586569028,
+            "latent_doi": 3,
+            "latent_doi_rate": 0.75,
+            "mean_p": 0.765605254586569,
+            "n": 4
+          },
+          {
+            "bin": "[0.8,0.95)",
+            "gap_mean_p_minus_rate": 0.04552933432741879,
+            "latent_doi": 56,
+            "latent_doi_rate": 0.8615384615384616,
+            "mean_p": 0.9070677958658804,
+            "n": 65
+          },
+          {
+            "bin": "[0.95,1.0]",
+            "gap_mean_p_minus_rate": 0.0019107323559917067,
+            "latent_doi": 630,
+            "latent_doi_rate": 0.989010989010989,
+            "mean_p": 0.9909217213669808,
+            "n": 637
+          }
+        ],
+        "latent_doi": 689,
+        "n": 706,
+        "p_ge_0.99": {
+          "bin": "[0.99,1]",
+          "gap_mean_p_minus_rate": -0.0026857128182957712,
+          "latent_doi": 446,
+          "latent_doi_rate": 1.0,
+          "mean_p": 0.9973142871817042,
+          "n": 446
+        }
+      },
+      "counts": {
+        "attempts_failure": 20,
+        "attempts_missing": 24,
+        "attempts_ok": 705,
+        "attempts_other": 0,
+        "candidate_doi": 4545,
+        "candidates_p_ge_099": 1364,
+        "dies": 78300,
+        "fp_reported_positive": 0,
+        "latent_doi": 5020,
+        "missed_candidate_doi": 3856,
+        "never_optically_admitted_doi": 475,
+        "optical_candidates": 26118,
+        "reported_negative_non_doi": 17,
+        "reported_positives": 630,
+        "retried_reviews": 43,
+        "selected": 706,
+        "selected_candidate_doi": 689,
+        "selected_latent_doi": 689,
+        "selected_non_candidate": 0,
+        "selected_non_candidate_doi": 0,
+        "selected_non_doi": 17,
+        "selected_p_ge_099": 446,
+        "selected_p_ge_099_doi": 446,
+        "sensor_missed_doi": 58,
+        "tp_reported_positive": 630,
+        "unresolved": 1,
+        "unresolved_doi": 1,
+        "unresolved_non_doi": 0,
+        "unselected_candidate_doi_p_ge_099": 915
+      },
+      "error_separation": {
+        "ranking": {
+          "candidates_p_ge_099": 1364,
+          "selected_latent_doi": 689,
+          "selected_non_doi": 17,
+          "selected_p_ge_099": 446,
+          "selected_p_ge_099_doi": 446,
+          "unselected_candidate_doi_p_ge_099": 915
+        },
+        "sensor": {
+          "attempts": {
+            "failure": 20,
+            "missing": 24,
+            "ok": 705,
+            "other": 0
+          },
+          "fp_reported_positive": 0,
+          "retried_reviews": 43,
+          "sensor_missed_doi": 58,
+          "unresolved_doi": 1,
+          "unresolved_non_doi": 0
+        },
+        "threshold_classification_candidates": {
+          "candidate_recall": 0.8277227722772277,
+          "fn": 783,
+          "fp": 928,
+          "precision": 0.8021321961620469,
+          "threshold": 0.5,
+          "tn": 20645,
+          "tp": 3762
+        }
+      },
+      "lots": 20,
+      "mean_per_lot": {
+        "attempts_failure": 1.0,
+        "attempts_missing": 1.2,
+        "attempts_ok": 35.25,
+        "attempts_other": 0.0,
+        "candidate_doi": 227.25,
+        "candidates_p_ge_099": 68.2,
+        "dies": 3915.0,
+        "fp_reported_positive": 0.0,
+        "latent_doi": 251.0,
+        "missed_candidate_doi": 192.8,
+        "never_optically_admitted_doi": 23.75,
+        "optical_candidates": 1305.9,
+        "reported_negative_non_doi": 0.85,
+        "reported_positives": 31.5,
+        "retried_reviews": 2.15,
+        "selected": 35.3,
+        "selected_candidate_doi": 34.45,
+        "selected_latent_doi": 34.45,
+        "selected_non_candidate": 0.0,
+        "selected_non_candidate_doi": 0.0,
+        "selected_non_doi": 0.85,
+        "selected_p_ge_099": 22.3,
+        "selected_p_ge_099_doi": 22.3,
+        "sensor_missed_doi": 2.9,
+        "tp_reported_positive": 31.5,
+        "unresolved": 0.05,
+        "unresolved_doi": 0.05,
+        "unresolved_non_doi": 0.0,
+        "unselected_candidate_doi_p_ge_099": 45.75
+      },
+      "optical_recall_ceiling": 0.9053784860557769,
+      "policy_timing": {
+        "derived_mean_wall_s_per_decision": 0.0011178426358455702,
+        "note": "TOTAL selection-call time per lot; per-decision value is derived by division",
+        "policy_wall_s_total_per_lot_mean": 0.03945984504534863,
+        "policy_wall_s_total_per_lot_median": 0.040192549873609096
+      },
+      "visits": {
+        "mean_cost_cu": {
+          "dwell": 282.4,
+          "load": 8.4,
+          "outside_rescan": 0.0,
+          "retry": 8.6,
+          "stage": 52.66931580945247
+        },
+        "mean_extra_wafer_loads_cu": 0.40000000000000036,
+        "mean_per_lot": 35.3,
+        "mean_retry_cu": 8.6,
+        "mean_stage_movement_cu_above_minimum": 17.369315809452473,
+        "mean_unspent_cu": 7.930684190547498,
+        "optimistic_bound": 38,
+        "shortfall_vs_bound": 2.700000000000003,
+        "stop_reasons": {
+          "none_affordable": 20
+        }
+      }
+    },
+    "process_shift": {
+      "calibration_candidates": {
+        "bins": [
+          {
+            "bin": "[0.0,0.2)",
+            "gap_mean_p_minus_rate": -0.025221609971635972,
+            "latent_doi": 532,
+            "latent_doi_rate": 0.06308549745049212,
+            "mean_p": 0.03786388747885615,
+            "n": 8433
+          },
+          {
+            "bin": "[0.2,0.5)",
+            "gap_mean_p_minus_rate": 0.0360073571212185,
+            "latent_doi": 432,
+            "latent_doi_rate": 0.29110512129380056,
+            "mean_p": 0.32711247841501906,
+            "n": 1484
+          },
+          {
+            "bin": "[0.5,0.8)",
+            "gap_mean_p_minus_rate": 0.11587036186384059,
+            "latent_doi": 489,
+            "latent_doi_rate": 0.5373626373626373,
+            "mean_p": 0.6532329992264779,
+            "n": 910
+          },
+          {
+            "bin": "[0.8,0.95)",
+            "gap_mean_p_minus_rate": 0.11466211080554578,
+            "latent_doi": 569,
+            "latent_doi_rate": 0.7699594046008119,
+            "mean_p": 0.8846215154063577,
+            "n": 739
+          },
+          {
+            "bin": "[0.95,1.0]",
+            "gap_mean_p_minus_rate": 0.050439578595534496,
+            "latent_doi": 987,
+            "latent_doi_rate": 0.9355450236966825,
+            "mean_p": 0.985984602292217,
+            "n": 1055
+          }
+        ],
+        "latent_doi": 3009,
+        "n": 12621,
+        "p_ge_0.99": {
+          "bin": "[0.99,1]",
+          "gap_mean_p_minus_rate": 0.008804788985678935,
+          "latent_doi": 566,
+          "latent_doi_rate": 0.987783595113438,
+          "mean_p": 0.996588384099117,
+          "n": 573
+        }
+      },
+      "calibration_selected": {
+        "bins": [
+          {
+            "bin": "[0.0,0.2)",
+            "gap_mean_p_minus_rate": null,
+            "latent_doi": 0,
+            "latent_doi_rate": null,
+            "mean_p": null,
+            "n": 0
+          },
+          {
+            "bin": "[0.2,0.5)",
+            "gap_mean_p_minus_rate": null,
+            "latent_doi": 0,
+            "latent_doi_rate": null,
+            "mean_p": null,
+            "n": 0
+          },
+          {
+            "bin": "[0.5,0.8)",
+            "gap_mean_p_minus_rate": 0.20531269656994333,
+            "latent_doi": 8,
+            "latent_doi_rate": 0.5714285714285714,
+            "mean_p": 0.7767412679985147,
+            "n": 14
+          },
+          {
+            "bin": "[0.8,0.95)",
+            "gap_mean_p_minus_rate": 0.073911780017348,
+            "latent_doi": 154,
+            "latent_doi_rate": 0.8235294117647058,
+            "mean_p": 0.8974411917820538,
+            "n": 187
+          },
+          {
+            "bin": "[0.95,1.0]",
+            "gap_mean_p_minus_rate": 0.04319223926087268,
+            "latent_doi": 457,
+            "latent_doi_rate": 0.9442148760330579,
+            "mean_p": 0.9874071152939305,
+            "n": 484
+          }
+        ],
+        "latent_doi": 619,
+        "n": 685,
+        "p_ge_0.99": {
+          "bin": "[0.99,1]",
+          "gap_mean_p_minus_rate": 0.013506198365181188,
+          "latent_doi": 287,
+          "latent_doi_rate": 0.9828767123287672,
+          "mean_p": 0.9963829106939484,
+          "n": 292
+        }
+      },
+      "counts": {
+        "attempts_failure": 10,
+        "attempts_missing": 29,
+        "attempts_ok": 685,
+        "attempts_other": 0,
+        "candidate_doi": 3009,
+        "candidates_p_ge_099": 573,
+        "dies": 78300,
+        "fp_reported_positive": 0,
+        "latent_doi": 5565,
+        "missed_candidate_doi": 2390,
+        "never_optically_admitted_doi": 2556,
+        "optical_candidates": 12621,
+        "reported_negative_non_doi": 66,
+        "reported_positives": 567,
+        "retried_reviews": 39,
+        "selected": 685,
+        "selected_candidate_doi": 619,
+        "selected_latent_doi": 619,
+        "selected_non_candidate": 0,
+        "selected_non_candidate_doi": 0,
+        "selected_non_doi": 66,
+        "selected_p_ge_099": 292,
+        "selected_p_ge_099_doi": 287,
+        "sensor_missed_doi": 52,
+        "tp_reported_positive": 567,
+        "unresolved": 0,
+        "unresolved_doi": 0,
+        "unresolved_non_doi": 0,
+        "unselected_candidate_doi_p_ge_099": 279
+      },
+      "error_separation": {
+        "ranking": {
+          "candidates_p_ge_099": 573,
+          "selected_latent_doi": 619,
+          "selected_non_doi": 66,
+          "selected_p_ge_099": 292,
+          "selected_p_ge_099_doi": 287,
+          "unselected_candidate_doi_p_ge_099": 279
+        },
+        "sensor": {
+          "attempts": {
+            "failure": 10,
+            "missing": 29,
+            "ok": 685,
+            "other": 0
+          },
+          "fp_reported_positive": 0,
+          "retried_reviews": 39,
+          "sensor_missed_doi": 52,
+          "unresolved_doi": 0,
+          "unresolved_non_doi": 0
+        },
+        "threshold_classification_candidates": {
+          "candidate_recall": 0.6796277833167165,
+          "fn": 964,
+          "fp": 659,
+          "precision": 0.7562869822485208,
+          "threshold": 0.5,
+          "tn": 8953,
+          "tp": 2045
+        }
+      },
+      "lots": 20,
+      "mean_per_lot": {
+        "attempts_failure": 0.5,
+        "attempts_missing": 1.45,
+        "attempts_ok": 34.25,
+        "attempts_other": 0.0,
+        "candidate_doi": 150.45,
+        "candidates_p_ge_099": 28.65,
+        "dies": 3915.0,
+        "fp_reported_positive": 0.0,
+        "latent_doi": 278.25,
+        "missed_candidate_doi": 119.5,
+        "never_optically_admitted_doi": 127.8,
+        "optical_candidates": 631.05,
+        "reported_negative_non_doi": 3.3,
+        "reported_positives": 28.35,
+        "retried_reviews": 1.95,
+        "selected": 34.25,
+        "selected_candidate_doi": 30.95,
+        "selected_latent_doi": 30.95,
+        "selected_non_candidate": 0.0,
+        "selected_non_candidate_doi": 0.0,
+        "selected_non_doi": 3.3,
+        "selected_p_ge_099": 14.6,
+        "selected_p_ge_099_doi": 14.35,
+        "sensor_missed_doi": 2.6,
+        "tp_reported_positive": 28.35,
+        "unresolved": 0.0,
+        "unresolved_doi": 0.0,
+        "unresolved_non_doi": 0.0,
+        "unselected_candidate_doi_p_ge_099": 13.95
+      },
+      "optical_recall_ceiling": 0.540700808625337,
+      "policy_timing": {
+        "derived_mean_wall_s_per_decision": 0.0006746163479575928,
+        "note": "TOTAL selection-call time per lot; per-decision value is derived by division",
+        "policy_wall_s_total_per_lot_mean": 0.023105609917547554,
+        "policy_wall_s_total_per_lot_median": 0.02309749968117103
+      },
+      "visits": {
+        "mean_cost_cu": {
+          "dwell": 274.0,
+          "load": 12.4,
+          "outside_rescan": 0.0,
+          "retry": 7.8,
+          "stage": 57.67170897586395
+        },
+        "mean_extra_wafer_loads_cu": 4.4,
+        "mean_per_lot": 34.25,
+        "mean_retry_cu": 7.8,
+        "mean_stage_movement_cu_above_minimum": 23.421708975863954,
+        "mean_unspent_cu": 8.128291024136042,
+        "optimistic_bound": 38,
+        "shortfall_vs_bound": 3.75,
+        "stop_reasons": {
+          "none_affordable": 20
+        }
+      }
+    },
+    "stationary": {
+      "calibration_candidates": {
+        "bins": [
+          {
+            "bin": "[0.0,0.2)",
+            "gap_mean_p_minus_rate": -0.010473804163092362,
+            "latent_doi": 385,
+            "latent_doi_rate": 0.04974802946117069,
+            "mean_p": 0.03927422529807833,
+            "n": 7739
+          },
+          {
+            "bin": "[0.2,0.5)",
+            "gap_mean_p_minus_rate": -0.03831962513171522,
+            "latent_doi": 511,
+            "latent_doi_rate": 0.3721777130371449,
+            "mean_p": 0.3338580879054297,
+            "n": 1373
+          },
+          {
+            "bin": "[0.5,0.8)",
+            "gap_mean_p_minus_rate": -0.005048867507897126,
+            "latent_doi": 672,
+            "latent_doi_rate": 0.6646884272997032,
+            "mean_p": 0.6596395597918061,
+            "n": 1011
+          },
+          {
+            "bin": "[0.8,0.95)",
+            "gap_mean_p_minus_rate": 0.01104252411887685,
+            "latent_doi": 817,
+            "latent_doi_rate": 0.8766094420600858,
+            "mean_p": 0.8876519661789627,
+            "n": 932
+          },
+          {
+            "bin": "[0.95,1.0]",
+            "gap_mean_p_minus_rate": 0.004729102086941883,
+            "latent_doi": 2087,
+            "latent_doi_rate": 0.9839698255539839,
+            "mean_p": 0.9886989276409258,
+            "n": 2121
+          }
+        ],
+        "latent_doi": 4472,
+        "n": 13176,
+        "p_ge_0.99": {
+          "bin": "[0.99,1]",
+          "gap_mean_p_minus_rate": 0.0017460110189589928,
+          "latent_doi": 1300,
+          "latent_doi_rate": 0.9954058192955589,
+          "mean_p": 0.9971518303145179,
+          "n": 1306
+        }
+      },
+      "calibration_selected": {
+        "bins": [
+          {
+            "bin": "[0.0,0.2)",
+            "gap_mean_p_minus_rate": null,
+            "latent_doi": 0,
+            "latent_doi_rate": null,
+            "mean_p": null,
+            "n": 0
+          },
+          {
+            "bin": "[0.2,0.5)",
+            "gap_mean_p_minus_rate": null,
+            "latent_doi": 0,
+            "latent_doi_rate": null,
+            "mean_p": null,
+            "n": 0
+          },
+          {
+            "bin": "[0.5,0.8)",
+            "gap_mean_p_minus_rate": -0.2115643242346109,
+            "latent_doi": 1,
+            "latent_doi_rate": 1.0,
+            "mean_p": 0.7884356757653891,
+            "n": 1
+          },
+          {
+            "bin": "[0.8,0.95)",
+            "gap_mean_p_minus_rate": -0.009010877017947228,
+            "latent_doi": 64,
+            "latent_doi_rate": 0.9142857142857143,
+            "mean_p": 0.905274837267767,
+            "n": 70
+          },
+          {
+            "bin": "[0.95,1.0]",
+            "gap_mean_p_minus_rate": 0.0035648995510429993,
+            "latent_doi": 628,
+            "latent_doi_rate": 0.9874213836477987,
+            "mean_p": 0.9909862831988417,
+            "n": 636
+          }
+        ],
+        "latent_doi": 693,
+        "n": 707,
+        "p_ge_0.99": {
+          "bin": "[0.99,1]",
+          "gap_mean_p_minus_rate": 0.004146814583617653,
+          "latent_doi": 439,
+          "latent_doi_rate": 0.9932126696832579,
+          "mean_p": 0.9973594842668756,
+          "n": 442
+        }
+      },
+      "counts": {
+        "attempts_failure": 17,
+        "attempts_missing": 28,
+        "attempts_ok": 703,
+        "attempts_other": 0,
+        "candidate_doi": 4472,
+        "candidates_p_ge_099": 1306,
+        "dies": 78300,
+        "fp_reported_positive": 0,
+        "latent_doi": 4984,
+        "missed_candidate_doi": 3779,
+        "never_optically_admitted_doi": 512,
+        "optical_candidates": 13176,
+        "reported_negative_non_doi": 14,
+        "reported_positives": 637,
+        "retried_reviews": 41,
+        "selected": 707,
+        "selected_candidate_doi": 693,
+        "selected_latent_doi": 693,
+        "selected_non_candidate": 0,
+        "selected_non_candidate_doi": 0,
+        "selected_non_doi": 14,
+        "selected_p_ge_099": 442,
+        "selected_p_ge_099_doi": 439,
+        "sensor_missed_doi": 52,
+        "tp_reported_positive": 637,
+        "unresolved": 4,
+        "unresolved_doi": 4,
+        "unresolved_non_doi": 0,
+        "unselected_candidate_doi_p_ge_099": 861
+      },
+      "error_separation": {
+        "ranking": {
+          "candidates_p_ge_099": 1306,
+          "selected_latent_doi": 693,
+          "selected_non_doi": 14,
+          "selected_p_ge_099": 442,
+          "selected_p_ge_099_doi": 439,
+          "unselected_candidate_doi_p_ge_099": 861
+        },
+        "sensor": {
+          "attempts": {
+            "failure": 17,
+            "missing": 28,
+            "ok": 703,
+            "other": 0
+          },
+          "fp_reported_positive": 0,
+          "retried_reviews": 41,
+          "sensor_missed_doi": 52,
+          "unresolved_doi": 4,
+          "unresolved_non_doi": 0
+        },
+        "threshold_classification_candidates": {
+          "candidate_recall": 0.7996422182468694,
+          "fn": 896,
+          "fp": 488,
+          "precision": 0.8799212598425197,
+          "threshold": 0.5,
+          "tn": 8216,
+          "tp": 3576
+        }
+      },
+      "lots": 20,
+      "mean_per_lot": {
+        "attempts_failure": 0.85,
+        "attempts_missing": 1.4,
+        "attempts_ok": 35.15,
+        "attempts_other": 0.0,
+        "candidate_doi": 223.6,
+        "candidates_p_ge_099": 65.3,
+        "dies": 3915.0,
+        "fp_reported_positive": 0.0,
+        "latent_doi": 249.2,
+        "missed_candidate_doi": 188.95,
+        "never_optically_admitted_doi": 25.6,
+        "optical_candidates": 658.8,
+        "reported_negative_non_doi": 0.7,
+        "reported_positives": 31.85,
+        "retried_reviews": 2.05,
+        "selected": 35.35,
+        "selected_candidate_doi": 34.65,
+        "selected_latent_doi": 34.65,
+        "selected_non_candidate": 0.0,
+        "selected_non_candidate_doi": 0.0,
+        "selected_non_doi": 0.7,
+        "selected_p_ge_099": 22.1,
+        "selected_p_ge_099_doi": 21.95,
+        "sensor_missed_doi": 2.6,
+        "tp_reported_positive": 31.85,
+        "unresolved": 0.2,
+        "unresolved_doi": 0.2,
+        "unresolved_non_doi": 0.0,
+        "unselected_candidate_doi_p_ge_099": 43.05
+      },
+      "optical_recall_ceiling": 0.8972712680577849,
+      "policy_timing": {
+        "derived_mean_wall_s_per_decision": 0.0007045472421468653,
+        "note": "TOTAL selection-call time per lot; per-decision value is derived by division",
+        "policy_wall_s_total_per_lot_mean": 0.024905745009891688,
+        "policy_wall_s_total_per_lot_median": 0.02497195010073483
+      },
+      "visits": {
+        "mean_cost_cu": {
+          "dwell": 282.8,
+          "load": 8.8,
+          "outside_rescan": 0.0,
+          "retry": 8.2,
+          "stage": 52.52931536782097
+        },
+        "mean_extra_wafer_loads_cu": 0.8000000000000007,
+        "mean_per_lot": 35.35,
+        "mean_retry_cu": 8.2,
+        "mean_stage_movement_cu_above_minimum": 17.17931536782097,
+        "mean_unspent_cu": 7.67068463217903,
+        "optimistic_bound": 38,
+        "shortfall_vs_bound": 2.6499999999999986,
+        "stop_reasons": {
+          "none_affordable": 20
+        }
+      }
+    }
+  },
+  "replaces_primary": false,
+  "schema_version": 1,
+  "scope": "posthoc_diagnostic_authored_synthetic",
+  "visit_bound": {
+    "assumptions": [
+      "minimum unchanged CU fees from the frozen config",
+      "one wafer load only; zero stage movement after the first review",
+      "full retry reserve required at every admission",
+      "zero failures/missing reviews, so no retry is charged",
+      "not an achievable oracle planner and not factory throughput"
+    ],
+    "charged_at_bound": 350.0,
+    "first_review_min_cu": 17.0,
+    "later_review_min_cu": 9.0,
+    "max_visits": 38,
+    "retry_reserve_cu": 4.0,
+    "unspent_at_bound": 10.0
+  }
+}

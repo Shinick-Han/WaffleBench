@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "study_id": "inspection-route-v5-20261004",
+  "data_mode": "authored_synthetic_tabular",
+  "receipt": {
+    "default_root": "C:/Users/user/hacknation7th/output/inspection-v3-build/development-20261004a",
+    "receipt_sha256": "faadbe498c1dec1f83926c733e21b386e2aa49cf24219b8ccd7fdd1327e4f3fb",
+    "frozen_config_sha256": "9e65219d1b434a4f1ba4fe064c0a19adc7246e8f5af08fbb8a4ce1a4f86d3cc2",
+    "models_sha256": "ba85648c682e6d6b73c3de0e7aaccb68c3edf1669165d5214849d9610d9f1e75",
+    "model_key": "cb400/identity",
+    "model_hash": "58aef92c229b24da7d5a04c9ad5dc2c30e82fa9618fed304ef63e17ed113064b",
+    "incumbent_variant": "cb400_route_full"
+  },
+  "variants": [
+    {"id": "cb400_route_full", "policy": "route_full_gamma", "role": "incumbent"},
+    {"id": "cb400_route_beam3", "policy": "route_beam3", "role": "candidate"}
+  ],
+  "mode": "candidate_only",
+  "budget": 360,
+  "scenarios": ["stationary", "novel_cluster", "low_contrast", "nuisance_heavy", "process_shift"],
+  "splits": {
+    "development": {"base_seed": 11000, "lots_per_scenario": 8},
+    "test": {"base_seed": 12000, "lots_per_scenario": 20}
+  },
+  "beam": {"first_size": 16, "next_size": 16, "per_wafer": 2, "depth": 3},
+  "primary": {
+    "candidate": "cb400_route_beam3",
+    "comparator": "cb400_route_full",
+    "mode": "candidate_only",
+    "budget": 360,
+    "metric": "true_doi_confirmed",
+    "target_relative_gain": 0.05,
+    "bootstrap_seed": 2026100407,
+    "bootstrap_replicates": 10000,
+    "ci_unit": "paired_lot_stratified_by_scenario",
+    "success_rule": "relative mean gain >= 0.05 AND bootstrap 95% CI lower bound of the paired mean difference > 0"
+  },
+  "rules": [
+    "Development uses fixed beam settings; no hyperparameter scan and no candidate selection.",
+    "Freeze every new and reused source, the reused v3 receipt/model, environment and development lot bytes before any test lot exists.",
+    "The test stage is one-shot; a started marker refuses any rerun or resume.",
+    "Policy timing is software timing only and is secondary."
+  ]
+}

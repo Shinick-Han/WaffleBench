@@ -1,0 +1,312 @@
+{
+  "config_sha256": "3b8b184804202c24e2dd2e0593a19cf5a609c0654ba6fcdd144b73fef0540e0a",
+  "dataset_manifest_sha256": "58a68b2a8b8fb4e2a275a39e4458acaa7538afa7261d528789831a1ce2f0aad9",
+  "frozen_at": "2026-10-04T05:42:13.948851+00:00",
+  "impute_mean": [
+    0.8094976262501624,
+    0.3653616316179152,
+    0.48883913017086805,
+    0.23230283325494078,
+    0.04986997012422824,
+    0.631596602390144,
+    0.49122807017543857
+  ],
+  "impute_sd": [
+    0.14372243812463378,
+    0.2378146268237509,
+    0.24280191578022847,
+    0.24098034508049107,
+    0.3736481969843426,
+    0.22763954297564395,
+    0.4999230473254012
+  ],
+  "model_file_sha256": "d8e00e2e4d687c9d1777fb0d06457eca61cad6657bc64f5208983a195e7fbe0d",
+  "model_hash": "16b5f22be008c423b8d02fa7b4f501604cdb0f803a03c02dd8747c9b422b1134",
+  "model_training_timing": {
+    "cpu_s": 0.015625,
+    "wall_s": 0.015378099982626736
+  },
+  "model_validation_sha256": "431d7a65217a11a53b80cbc1f5376ff2624a6ae7d6b14b430404a1f98c99d025",
+  "receipt_sha256": "0427e4141f3dee5c8d2ca7ed30d8ce160e2b1a728b9bad6ef5c32eb77e9395a9",
+  "schema_version": 1,
+  "source_commit": "e9751106665b0724b1d287ad1c909b1183e3353d",
+  "source_dirty": "",
+  "source_sha256": {
+    "INSPECTION_PROTOCOL.md": "86eb2486c63b0824c7fbf0af87c9037d112375066412e8bba6943535f4008768",
+    "inspection_review/cli.py": "661757e71af88dcc209255a00b8bb4fdb80277acf0c40816a1dc20cbd08cb710",
+    "inspection_review/data.py": "297c250a786a0bdecdae2111514cc7d89d1d1ac94b6d497202e2ca80ece116cf",
+    "inspection_review/harness.py": "7aa614098893a21ca6499fb19845523f7aa5e786573ce22d4b0e69428db852c2",
+    "inspection_review/model.py": "5a10277d3e4f24bbb5c710c653e2d9f505dfa5554ff989d7d0365110a1d2f791",
+    "inspection_review/policies.py": "4056518147b0ec497b8ca2c543fb8fd77001e2ef8dc6d045ab7c42f14f6babf3",
+    "inspection_review/protocol.json": "0ea8425b69dff5f6005d17a8e9997c0cbb0e98160fa12ced9f2838e990c58c42",
+    "inspection_review/reporting.py": "e6a3c0aa1a1bc1acc69bbd9657b6039e7b555d64c145857be0138256db94e778"
+  },
+  "study_id": "inspection-review-v1-20261004",
+  "test_seeds": [
+    [
+      "stationary",
+      1000
+    ],
+    [
+      "stationary",
+      1001
+    ],
+    [
+      "stationary",
+      1002
+    ],
+    [
+      "stationary",
+      1003
+    ],
+    [
+      "stationary",
+      1004
+    ],
+    [
+      "stationary",
+      1005
+    ],
+    [
+      "stationary",
+      1006
+    ],
+    [
+      "stationary",
+      1007
+    ],
+    [
+      "stationary",
+      1008
+    ],
+    [
+      "stationary",
+      1009
+    ],
+    [
+      "stationary",
+      1010
+    ],
+    [
+      "stationary",
+      1011
+    ],
+    [
+      "novel_cluster",
+      1100
+    ],
+    [
+      "novel_cluster",
+      1101
+    ],
+    [
+      "novel_cluster",
+      1102
+    ],
+    [
+      "novel_cluster",
+      1103
+    ],
+    [
+      "novel_cluster",
+      1104
+    ],
+    [
+      "novel_cluster",
+      1105
+    ],
+    [
+      "novel_cluster",
+      1106
+    ],
+    [
+      "novel_cluster",
+      1107
+    ],
+    [
+      "novel_cluster",
+      1108
+    ],
+    [
+      "novel_cluster",
+      1109
+    ],
+    [
+      "novel_cluster",
+      1110
+    ],
+    [
+      "novel_cluster",
+      1111
+    ],
+    [
+      "low_contrast",
+      1200
+    ],
+    [
+      "low_contrast",
+      1201
+    ],
+    [
+      "low_contrast",
+      1202
+    ],
+    [
+      "low_contrast",
+      1203
+    ],
+    [
+      "low_contrast",
+      1204
+    ],
+    [
+      "low_contrast",
+      1205
+    ],
+    [
+      "low_contrast",
+      1206
+    ],
+    [
+      "low_contrast",
+      1207
+    ],
+    [
+      "low_contrast",
+      1208
+    ],
+    [
+      "low_contrast",
+      1209
+    ],
+    [
+      "low_contrast",
+      1210
+    ],
+    [
+      "low_contrast",
+      1211
+    ],
+    [
+      "nuisance_heavy",
+      1300
+    ],
+    [
+      "nuisance_heavy",
+      1301
+    ],
+    [
+      "nuisance_heavy",
+      1302
+    ],
+    [
+      "nuisance_heavy",
+      1303
+    ],
+    [
+      "nuisance_heavy",
+      1304
+    ],
+    [
+      "nuisance_heavy",
+      1305
+    ],
+    [
+      "nuisance_heavy",
+      1306
+    ],
+    [
+      "nuisance_heavy",
+      1307
+    ],
+    [
+      "nuisance_heavy",
+      1308
+    ],
+    [
+      "nuisance_heavy",
+      1309
+    ],
+    [
+      "nuisance_heavy",
+      1310
+    ],
+    [
+      "nuisance_heavy",
+      1311
+    ],
+    [
+      "process_shift",
+      1400
+    ],
+    [
+      "process_shift",
+      1401
+    ],
+    [
+      "process_shift",
+      1402
+    ],
+    [
+      "process_shift",
+      1403
+    ],
+    [
+      "process_shift",
+      1404
+    ],
+    [
+      "process_shift",
+      1405
+    ],
+    [
+      "process_shift",
+      1406
+    ],
+    [
+      "process_shift",
+      1407
+    ],
+    [
+      "process_shift",
+      1408
+    ],
+    [
+      "process_shift",
+      1409
+    ],
+    [
+      "process_shift",
+      1410
+    ],
+    [
+      "process_shift",
+      1411
+    ]
+  ],
+  "train_scenario": "stationary",
+  "train_seeds": [
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111
+  ],
+  "validation_seeds": [
+    200,
+    201,
+    202,
+    203
+  ],
+  "versions": {
+    "numpy": "2.3.3",
+    "python": "3.12.10"
+  }
+}

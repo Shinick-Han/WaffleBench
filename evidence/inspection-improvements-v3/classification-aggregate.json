@@ -1,0 +1,541 @@
+{
+  "cb250/identity": {
+    "aggregate": {
+      "average_precision": 0.8865157761661401,
+      "brier": 0.07294416729897481,
+      "ece": 0.011540843641144568,
+      "ece_bins": 10,
+      "fn": 4615,
+      "fp": 3158,
+      "log_loss": 0.2415654102822512,
+      "n_candidates": 78323,
+      "n_positive": 19477,
+      "precision": 0.8247502774694784,
+      "prevalence": 0.24867535717477623,
+      "recall_among_candidates": 0.7630538583970837,
+      "risk_coverage": {
+        "aurc": 0.022423618191451652,
+        "points": [
+          {
+            "coverage": 0.1,
+            "n": 7833,
+            "risk": 0.001021320056172603
+          },
+          {
+            "coverage": 0.2,
+            "n": 15665,
+            "risk": 0.0024896265560165973
+          },
+          {
+            "coverage": 0.3,
+            "n": 23497,
+            "risk": 0.004426096948546623
+          },
+          {
+            "coverage": 0.4,
+            "n": 31330,
+            "risk": 0.007149696776252793
+          },
+          {
+            "coverage": 0.5,
+            "n": 39162,
+            "risk": 0.01113324140748685
+          },
+          {
+            "coverage": 0.6,
+            "n": 46994,
+            "risk": 0.017023449802102394
+          },
+          {
+            "coverage": 0.7,
+            "n": 54827,
+            "risk": 0.026902803363306402
+          },
+          {
+            "coverage": 0.8,
+            "n": 62659,
+            "risk": 0.04238816450948786
+          },
+          {
+            "coverage": 0.9,
+            "n": 70491,
+            "risk": 0.0658240059014626
+          },
+          {
+            "coverage": 1.0,
+            "n": 78323,
+            "risk": 0.09924287884784802
+          }
+        ]
+      },
+      "tn": 55688,
+      "tp": 14862
+    },
+    "scope": {
+      "fit_overlap_lot_ids": [],
+      "excludes": "non-candidate sites; not all-site physical recall"
+    }
+  },
+  "cb400/identity": {
+    "aggregate": {
+      "average_precision": 0.8824648197571016,
+      "brier": 0.07479807778850467,
+      "ece": 0.019097172480639035,
+      "ece_bins": 10,
+      "fn": 4682,
+      "fp": 3284,
+      "log_loss": 0.24937299901436202,
+      "n_candidates": 78323,
+      "n_positive": 19477,
+      "precision": 0.8183527849991703,
+      "prevalence": 0.24867535717477623,
+      "recall_among_candidates": 0.7596139035785798,
+      "risk_coverage": {
+        "aurc": 0.02384413155445213,
+        "points": [
+          {
+            "coverage": 0.1,
+            "n": 7833,
+            "risk": 0.0019149751053236309
+          },
+          {
+            "coverage": 0.2,
+            "n": 15665,
+            "risk": 0.003000319182891797
+          },
+          {
+            "coverage": 0.3,
+            "n": 23497,
+            "risk": 0.005277269438651743
+          },
+          {
+            "coverage": 0.4,
+            "n": 31330,
+            "risk": 0.008362591765081391
+          },
+          {
+            "coverage": 0.5,
+            "n": 39162,
+            "risk": 0.01258873397681426
+          },
+          {
+            "coverage": 0.6,
+            "n": 46994,
+            "risk": 0.01898114652934417
+          },
+          {
+            "coverage": 0.7,
+            "n": 54827,
+            "risk": 0.02936509384062597
+          },
+          {
+            "coverage": 0.8,
+            "n": 62659,
+            "risk": 0.0446543992084138
+          },
+          {
+            "coverage": 0.9,
+            "n": 70491,
+            "risk": 0.0672000680937992
+          },
+          {
+            "coverage": 1.0,
+            "n": 78323,
+            "risk": 0.10170703369380642
+          }
+        ]
+      },
+      "tn": 55562,
+      "tp": 14795
+    },
+    "scope": {
+      "fit_overlap_lot_ids": [],
+      "excludes": "non-candidate sites; not all-site physical recall"
+    }
+  },
+  "cb400/isotonic": {
+    "aggregate": {
+      "average_precision": 0.8731382707412524,
+      "brier": 0.07584502858785304,
+      "ece": 0.023578312910979442,
+      "ece_bins": 10,
+      "fn": 4914,
+      "fp": 2963,
+      "log_loss": 0.25672057391806435,
+      "n_candidates": 78323,
+      "n_positive": 19477,
+      "precision": 0.8309368937578455,
+      "prevalence": 0.24867535717477623,
+      "recall_among_candidates": 0.7477024182368948,
+      "risk_coverage": {
+        "aurc": 0.02485129564512603,
+        "points": [
+          {
+            "coverage": 0.1,
+            "n": 7833,
+            "risk": 0.0019149751053236309
+          },
+          {
+            "coverage": 0.2,
+            "n": 15665,
+            "risk": 0.005681455473986594
+          },
+          {
+            "coverage": 0.3,
+            "n": 23497,
+            "risk": 0.005660297059199047
+          },
+          {
+            "coverage": 0.4,
+            "n": 31330,
+            "risk": 0.00944781359719119
+          },
+          {
+            "coverage": 0.5,
+            "n": 39162,
+            "risk": 0.012895153465093713
+          },
+          {
+            "coverage": 0.6,
+            "n": 46994,
+            "risk": 0.01866195684555475
+          },
+          {
+            "coverage": 0.7,
+            "n": 54827,
+            "risk": 0.028580808725627883
+          },
+          {
+            "coverage": 0.8,
+            "n": 62659,
+            "risk": 0.044877830798448745
+          },
+          {
+            "coverage": 0.9,
+            "n": 70491,
+            "risk": 0.0700089373111461
+          },
+          {
+            "coverage": 1.0,
+            "n": 78323,
+            "risk": 0.100570713583494
+          }
+        ]
+      },
+      "tn": 55883,
+      "tp": 14563
+    },
+    "scope": {
+      "fit_overlap_lot_ids": [],
+      "excludes": "non-candidate sites; not all-site physical recall"
+    }
+  },
+  "cb400/platt": {
+    "aggregate": {
+      "average_precision": 0.8824648197571016,
+      "brier": 0.07525450082001471,
+      "ece": 0.020944541383347625,
+      "ece_bins": 10,
+      "fn": 4459,
+      "fp": 3591,
+      "log_loss": 0.24931414448418818,
+      "n_candidates": 78323,
+      "n_positive": 19477,
+      "precision": 0.8070288570046752,
+      "prevalence": 0.24867535717477623,
+      "recall_among_candidates": 0.7710633054371823,
+      "risk_coverage": {
+        "aurc": 0.024208121557939444,
+        "points": [
+          {
+            "coverage": 0.1,
+            "n": 7833,
+            "risk": 0.0019149751053236309
+          },
+          {
+            "coverage": 0.2,
+            "n": 15665,
+            "risk": 0.002808809447813597
+          },
+          {
+            "coverage": 0.3,
+            "n": 23497,
+            "risk": 0.005192152189641231
+          },
+          {
+            "coverage": 0.4,
+            "n": 31330,
+            "risk": 0.008617938078518992
+          },
+          {
+            "coverage": 0.5,
+            "n": 39162,
+            "risk": 0.012690873806240744
+          },
+          {
+            "coverage": 0.6,
+            "n": 46994,
+            "risk": 0.019342894837638847
+          },
+          {
+            "coverage": 0.7,
+            "n": 54827,
+            "risk": 0.029675160048881027
+          },
+          {
+            "coverage": 0.8,
+            "n": 62659,
+            "risk": 0.04556408496784181
+          },
+          {
+            "coverage": 0.9,
+            "n": 70491,
+            "risk": 0.06815054404108326
+          },
+          {
+            "coverage": 1.0,
+            "n": 78323,
+            "risk": 0.10277951559567432
+          }
+        ]
+      },
+      "tn": 55255,
+      "tp": 15018
+    },
+    "scope": {
+      "fit_overlap_lot_ids": [],
+      "excludes": "non-candidate sites; not all-site physical recall"
+    }
+  },
+  "cb400/temperature": {
+    "aggregate": {
+      "average_precision": 0.8824648197571016,
+      "brier": 0.07455900423899026,
+      "ece": 0.014332135284361293,
+      "ece_bins": 10,
+      "fn": 4682,
+      "fp": 3284,
+      "log_loss": 0.24735570600089365,
+      "n_candidates": 78323,
+      "n_positive": 19477,
+      "precision": 0.8183527849991703,
+      "prevalence": 0.24867535717477623,
+      "recall_among_candidates": 0.7596139035785798,
+      "risk_coverage": {
+        "aurc": 0.02384413155445213,
+        "points": [
+          {
+            "coverage": 0.1,
+            "n": 7833,
+            "risk": 0.0019149751053236309
+          },
+          {
+            "coverage": 0.2,
+            "n": 15665,
+            "risk": 0.003000319182891797
+          },
+          {
+            "coverage": 0.3,
+            "n": 23497,
+            "risk": 0.005277269438651743
+          },
+          {
+            "coverage": 0.4,
+            "n": 31330,
+            "risk": 0.008362591765081391
+          },
+          {
+            "coverage": 0.5,
+            "n": 39162,
+            "risk": 0.01258873397681426
+          },
+          {
+            "coverage": 0.6,
+            "n": 46994,
+            "risk": 0.01898114652934417
+          },
+          {
+            "coverage": 0.7,
+            "n": 54827,
+            "risk": 0.02936509384062597
+          },
+          {
+            "coverage": 0.8,
+            "n": 62659,
+            "risk": 0.0446543992084138
+          },
+          {
+            "coverage": 0.9,
+            "n": 70491,
+            "risk": 0.0672000680937992
+          },
+          {
+            "coverage": 1.0,
+            "n": 78323,
+            "risk": 0.10170703369380642
+          }
+        ]
+      },
+      "tn": 55562,
+      "tp": 14795
+    },
+    "scope": {
+      "fit_overlap_lot_ids": [],
+      "excludes": "non-candidate sites; not all-site physical recall"
+    }
+  },
+  "cb600/identity": {
+    "aggregate": {
+      "average_precision": 0.8804599376653839,
+      "brier": 0.0758074547072629,
+      "ece": 0.02233289569926819,
+      "ece_bins": 10,
+      "fn": 4653,
+      "fp": 3371,
+      "log_loss": 0.2533944783671484,
+      "n_candidates": 78323,
+      "n_positive": 19477,
+      "precision": 0.8147293212420995,
+      "prevalence": 0.24867535717477623,
+      "recall_among_candidates": 0.7611028392462905,
+      "risk_coverage": {
+        "aurc": 0.02428369556344378,
+        "points": [
+          {
+            "coverage": 0.1,
+            "n": 7833,
+            "risk": 0.0014043150772373293
+          },
+          {
+            "coverage": 0.2,
+            "n": 15665,
+            "risk": 0.002936482604532397
+          },
+          {
+            "coverage": 0.3,
+            "n": 23497,
+            "risk": 0.005234710814146486
+          },
+          {
+            "coverage": 0.4,
+            "n": 31330,
+            "risk": 0.008394510054261091
+          },
+          {
+            "coverage": 0.5,
+            "n": 39162,
+            "risk": 0.012793013635667228
+          },
+          {
+            "coverage": 0.6,
+            "n": 46994,
+            "risk": 0.019789760394944036
+          },
+          {
+            "coverage": 0.7,
+            "n": 54827,
+            "risk": 0.030131139766903167
+          },
+          {
+            "coverage": 0.8,
+            "n": 62659,
+            "risk": 0.04575559775930034
+          },
+          {
+            "coverage": 0.9,
+            "n": 70491,
+            "risk": 0.06861868891064107
+          },
+          {
+            "coverage": 1.0,
+            "n": 78323,
+            "risk": 0.10244755691176283
+          }
+        ]
+      },
+      "tn": 55475,
+      "tp": 14824
+    },
+    "scope": {
+      "fit_overlap_lot_ids": [],
+      "excludes": "non-candidate sites; not all-site physical recall"
+    }
+  },
+  "logistic/identity": {
+    "aggregate": {
+      "average_precision": 0.8658519148235077,
+      "brier": 0.08152094080567931,
+      "ece": 0.045826788662229966,
+      "ece_bins": 10,
+      "fn": 4868,
+      "fp": 3635,
+      "log_loss": 0.274168453981275,
+      "n_candidates": 78323,
+      "n_positive": 19477,
+      "precision": 0.8007564130673098,
+      "prevalence": 0.24867535717477623,
+      "recall_among_candidates": 0.7500641782615393,
+      "risk_coverage": {
+        "aurc": 0.0266583028945495,
+        "points": [
+          {
+            "coverage": 0.1,
+            "n": 7833,
+            "risk": 0.002680965147453083
+          },
+          {
+            "coverage": 0.2,
+            "n": 15665,
+            "risk": 0.0036386849664857964
+          },
+          {
+            "coverage": 0.3,
+            "n": 23497,
+            "risk": 0.006511469549304166
+          },
+          {
+            "coverage": 0.4,
+            "n": 31330,
+            "risk": 0.00983083306734759
+          },
+          {
+            "coverage": 0.5,
+            "n": 39162,
+            "risk": 0.014427250906490986
+          },
+          {
+            "coverage": 0.6,
+            "n": 46994,
+            "risk": 0.021790015746691066
+          },
+          {
+            "coverage": 0.7,
+            "n": 54827,
+            "risk": 0.03301293158480311
+          },
+          {
+            "coverage": 0.8,
+            "n": 62659,
+            "risk": 0.049649691185623776
+          },
+          {
+            "coverage": 0.9,
+            "n": 70491,
+            "risk": 0.07456271013320849
+          },
+          {
+            "coverage": 1.0,
+            "n": 78323,
+            "risk": 0.10856325728074767
+          }
+        ]
+      },
+      "tn": 55211,
+      "tp": 14609
+    },
+    "scope": {
+      "fit_overlap_lot_ids": [],
+      "excludes": "non-candidate sites; not all-site physical recall"
+    }
+  }
+}

@@ -1,0 +1,224 @@
+{
+  "audit_cpu_s": 250.078125,
+  "audit_script_sha256": "7913417e06926fad7760721894273e988215ba62a108392f33bd132a12e3f99d",
+  "audit_wall_s": 246.7805192999076,
+  "candidate": "cb400_route_beam3",
+  "checks": {
+    "beam_decisions_exact_unique_best": 4735,
+    "beam_decisions_in_protocol_tie_band": 113,
+    "beam_planned_length": {
+      "1": 2525,
+      "2": 1117,
+      "3": 1206
+    },
+    "budget_violations": 0,
+    "development_ledgers_hash_checked": 80,
+    "development_lots_regenerated_and_byte_matched": 40,
+    "development_runs_replayed": 80,
+    "disallowed_sites": 0,
+    "duplicate_visits": 0,
+    "expected_test_runs": 200,
+    "frozen_sources_verified_worktree_and_commit": 34,
+    "hidden_truth_keys": 0,
+    "incumbent_decisions_exact": 4861,
+    "online_updates": 0,
+    "predictor_parity_tolerance": 1e-12,
+    "protected_files_preserved": 8,
+    "reused_sources_equal_v3_receipt": 23,
+    "study_files_verified": 5,
+    "test_lots_regenerated": 100,
+    "test_paid_rows_replayed": 6932,
+    "test_retries_recomputed": 412,
+    "test_runs_replayed": 200,
+    "test_sensor_attempts_recomputed": 7344
+  },
+  "comparator": "cb400_route_full",
+  "condition_means_recomputed": [
+    {
+      "lots": 100,
+      "mean_attempted_sites": 34.72,
+      "mean_by_scenario": {
+        "low_contrast": 24.05,
+        "novel_cluster": 31.7,
+        "nuisance_heavy": 30.7,
+        "process_shift": 28.75,
+        "stationary": 31.65
+      },
+      "mean_loading_cost": 12.0,
+      "mean_spent": 352.22388466303414,
+      "mean_stage_cost": 54.46388466303399,
+      "mean_true_doi_confirmed": 29.37,
+      "secondary_mean_policy_cpu_s": 0.028125,
+      "secondary_mean_policy_wall_s": 0.02729853101191111,
+      "variant": "cb400_route_full"
+    },
+    {
+      "lots": 100,
+      "mean_attempted_sites": 34.6,
+      "mean_by_scenario": {
+        "low_contrast": 23.9,
+        "novel_cluster": 31.85,
+        "nuisance_heavy": 30.85,
+        "process_shift": 29.3,
+        "stationary": 32.1
+      },
+      "mean_loading_cost": 12.8,
+      "mean_spent": 352.11854995433345,
+      "mean_stage_cost": 54.03854995433338,
+      "mean_true_doi_confirmed": 29.6,
+      "secondary_mean_policy_cpu_s": 1.40859375,
+      "secondary_mean_policy_wall_s": 1.4141286469902843,
+      "variant": "cb400_route_beam3"
+    }
+  ],
+  "development_primary_recomputed_not_evidence": {
+    "budget": 360,
+    "by_scenario": {
+      "low_contrast": {
+        "candidate_wins": 4,
+        "comparator_wins": 0,
+        "lots": 8,
+        "mean_difference": 1.125,
+        "ties": 4
+      },
+      "novel_cluster": {
+        "candidate_wins": 4,
+        "comparator_wins": 3,
+        "lots": 8,
+        "mean_difference": -0.5,
+        "ties": 1
+      },
+      "nuisance_heavy": {
+        "candidate_wins": 3,
+        "comparator_wins": 2,
+        "lots": 8,
+        "mean_difference": 0.125,
+        "ties": 3
+      },
+      "process_shift": {
+        "candidate_wins": 6,
+        "comparator_wins": 1,
+        "lots": 8,
+        "mean_difference": 1.25,
+        "ties": 1
+      },
+      "stationary": {
+        "candidate_wins": 3,
+        "comparator_wins": 1,
+        "lots": 8,
+        "mean_difference": 0.625,
+        "ties": 4
+      }
+    },
+    "candidate_wins": 20,
+    "ci95_difference": [
+      0.05,
+      0.975
+    ],
+    "comparator": "cb400_route_full",
+    "comparator_wins": 7,
+    "complete_pairs": 40,
+    "mean_comparator": 29.1,
+    "mean_difference": 0.525,
+    "mean_policy": 29.625,
+    "metric": "true_doi_confirmed",
+    "mode": "candidate_only",
+    "policy": "cb400_route_beam3",
+    "reason": "target not met",
+    "relative_gain": 0.018041237113401998,
+    "relative_gain_ci95_on_comparator_mean": [
+      0.001718213058419244,
+      0.03350515463917526
+    ],
+    "success": false,
+    "target_relative_gain": 0.05,
+    "ties": 13
+  },
+  "freeze_sha256": "7fa2e9dd91ab399efd814237eb707ca09baf44cfa282903dd126132d62eac1c1",
+  "generated_at": "2026-10-04T09:24:14.643974+00:00",
+  "hypothesis_note": "Audit PASS certifies ledgers and recomputed statistics; primary_recomputed.success is the hypothesis outcome.",
+  "limitations": [
+    "Read-only posthoc audit of authored numeric synthetic lots (unchanged v1 generator and sensor table); not SEM-image, factory, yield or physical accuracy evidence.",
+    "Trusted helpers: inspection_review.data (generate_lot, review_observation, lot_id) as the frozen generator/sensor oracle; inspection_v3.inference.compile_predictor and inspection_v3.model.predict for frozen_p (cross-checked against each other and against the ledger frozen_p_sha256; the model is checked by hash, never refitted); inspection_review.cli npz/json readers. A defect shared by the frozen generator/sensor and the campaign would not be detected.",
+    "route_beam3 and route_full_gamma are replayed by an independent reimplementation of the written protocol and the v3 pair contract; values within a 1e-12 relative band are protocol ties and resolved by the protocol tie rule.",
+    "The bootstrap reproduces the preregistered algorithm (PCG64 seed, per-scenario integer draws, percentile 2.5/97.5); independence is in code, not in the resampling scheme.",
+    "Software CPU/wall timing fields are checked only for internal consistency, never re-measured; they are not equipment CU.",
+    "An audit PASS certifies ledger integrity and recomputed statistics; it is not a claim that the hypothesis succeeded."
+  ],
+  "primary_recomputed": {
+    "budget": 360,
+    "by_scenario": {
+      "low_contrast": {
+        "candidate_wins": 5,
+        "comparator_wins": 6,
+        "lots": 20,
+        "mean_difference": -0.15,
+        "ties": 9
+      },
+      "novel_cluster": {
+        "candidate_wins": 7,
+        "comparator_wins": 4,
+        "lots": 20,
+        "mean_difference": 0.15,
+        "ties": 9
+      },
+      "nuisance_heavy": {
+        "candidate_wins": 8,
+        "comparator_wins": 6,
+        "lots": 20,
+        "mean_difference": 0.15,
+        "ties": 6
+      },
+      "process_shift": {
+        "candidate_wins": 7,
+        "comparator_wins": 3,
+        "lots": 20,
+        "mean_difference": 0.55,
+        "ties": 10
+      },
+      "stationary": {
+        "candidate_wins": 8,
+        "comparator_wins": 4,
+        "lots": 20,
+        "mean_difference": 0.45,
+        "ties": 8
+      }
+    },
+    "candidate_wins": 35,
+    "ci95_difference": [
+      -0.050249999999999774,
+      0.53
+    ],
+    "comparator": "cb400_route_full",
+    "comparator_wins": 23,
+    "complete_pairs": 100,
+    "mean_comparator": 29.37,
+    "mean_difference": 0.23,
+    "mean_policy": 29.6,
+    "metric": "true_doi_confirmed",
+    "mode": "candidate_only",
+    "policy": "cb400_route_beam3",
+    "reason": "target not met",
+    "relative_gain": 0.00783112019067067,
+    "relative_gain_ci95_on_comparator_mean": [
+      -0.001710929519918276,
+      0.01804562478719782
+    ],
+    "success": false,
+    "target_relative_gain": 0.05,
+    "ties": 42
+  },
+  "root": "<campaign_root>",
+  "scope": "full_protocol",
+  "secondary_software_timing": {
+    "candidate_mean_policy_wall_s": 1.4141286469902843,
+    "cpu_ratio_candidate_over_incumbent": 50.083333333333336,
+    "incumbent_mean_policy_wall_s": 0.02729853101191111,
+    "note": "software policy seconds per run on one workstation; not factory time and not equipment CU",
+    "wall_ratio_candidate_over_incumbent": 51.80237157718342
+  },
+  "source_commit": "f748064b40ef452fd5cb17a85ff982bdc731108f",
+  "status": "passed",
+  "study": "route_v5",
+  "v3_receipt_root": "<v3_receipt_root>"
+}

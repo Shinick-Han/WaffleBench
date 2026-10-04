@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "study_id": "inspection-review-v1-20261004",
+  "accepted_at": "2026-10-04T05:50:48.144352+00:00",
+  "implementation_status": "accepted_local",
+  "scientific_primary_goal": "not_met",
+  "source_commit": "e9751106665b0724b1d287ad1c909b1183e3353d",
+  "freeze_sha256": "0427e4141f3dee5c8d2ca7ed30d8ce160e2b1a728b9bad6ef5c32eb77e9395a9",
+  "campaign": {
+    "lots": 60,
+    "wafers": 180,
+    "care_sites": 234900,
+    "runs": 2880,
+    "wall_elapsed_s": 74.521446,
+    "equipment_cost_unit": "synthetic_equipment_cost_unit"
+  },
+  "checks": {
+    "focused_tests_passed": 56,
+    "mock_free_prepare_reproduce_report": true,
+    "independent_audit_passed": true,
+    "legacy_protected_files_preserved": 8,
+    "budget_violations": 0,
+    "hidden_truth_in_ledger": 0
+  },
+  "workers": {
+    "data_model": "1268592896bc59692cce7e39ff73ed04a17788df",
+    "harness": "3d2e85ab6f187a1e9c71778beea5d35cc5c1a5df",
+    "prepare_repair": "95a0b0e6883ff6b04107b31267ce639d78fc5ece",
+    "model": "Claude Code Opus 5.5",
+    "effort": "medium",
+    "nested_subagents": false,
+    "created_herdr_panes_closed": true
+  },
+  "preparation_failure": {
+    "root": "../output/inspection-review-v1/campaign-20261004",
+    "error": "KeyError: 'scenario'",
+    "before_heldout_generation": true,
+    "retained": true,
+    "fix_integrated_commit": "e975110"
+  },
+  "parameters_changed_after_test": false,
+  "primary": {
+    "budget": 360,
+    "ci95_difference": [
+      -4.65,
+      -3.55
+    ],
+    "comparator": "learned",
+    "complete_pairs": 60,
+    "conclusion": "not met",
+    "mean_comparator": 27.766666666666666,
+    "mean_difference": -4.1,
+    "mean_policy": 23.666666666666668,
+    "metric": "true_doi_confirmed",
+    "mode": "candidate_only",
+    "policy": "falsify",
+    "reason": "target not met",
+    "relative_gain": -0.14765906362545012,
+    "role": "primary",
+    "success": false
+  },
+  "local_artifact_root": "../output/inspection-review-v1/campaign-20261004b",
+  "artifact_sha256": {
+    "freeze.json": "d9a7ee878adcaad4ded4ec1582e4ec6d4646c0aafc605de1080a212f871582e8",
+    "model.json": "d8e00e2e4d687c9d1777fb0d06457eca61cad6657bc64f5208983a195e7fbe0d",
+    "model-validation.json": "431d7a65217a11a53b80cbc1f5376ff2624a6ae7d6b14b430404a1f98c99d025",
+    "report.json": "b94837477fe3daaa571f2152524249627660d0bd937f832e72f17552f870f4a8",
+    "model-test-classification.json": "579d54541c1e8f7b58a08b6c7e83d5b9f376c64aa0bf5aa2020da7f8e698e649",
+    "independent-audit.json": "bcb656115ad5b4db7e2bed23f6f4f7a560c1e53d79af9041f5d74573710e031e",
+    "research-summary.json": "34d219e069909b67aca4261de3c694c63fea9fa34479c298ec5605d8cad77f76"
+  },
+  "limitations": [
+    "Authored synthetic features/cost/sensor assumptions; no actual SEM images or fab validation.",
+    "One care site per die is not exhaustive whole-wafer structural inspection.",
+    "Raw stored manifests contain original local paths; regenerating from frozen source supports another output root.",
+    "Primary performance goal failed; exploratory novelty timing does not overturn it.",
+    "No public demo replacement or external publishing in this follow-up."
+  ]
+}

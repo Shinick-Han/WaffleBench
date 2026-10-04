@@ -1,0 +1,29 @@
+{
+  "status": "pass",
+  "freeze_sha256": "0427e4141f3dee5c8d2ca7ed30d8ce160e2b1a728b9bad6ef5c32eb77e9395a9",
+  "totals": {
+    "runs": 2880,
+    "sites_reviewed": 100709,
+    "attempts": 107794,
+    "true_doi_confirmed": 66575,
+    "reported_false_positives": 288,
+    "budget_violations": 0,
+    "hidden_truth_in_ledger": 0
+  },
+  "distinct_test_lots": 60,
+  "protected_legacy_files": 8,
+  "checks": [
+    "artifact integrity",
+    "only selected paid observations",
+    "sensor outcome invariance",
+    "past-only decision evidence",
+    "no hidden truth fields",
+    "frozen predictions",
+    "independent stage/load/rescan/retry accounting",
+    "reservation before observation",
+    "unique selected sites",
+    "posthoc true-positive and frozen-candidate-FN reconciliation",
+    "legacy frozen input preservation"
+  ],
+  "note": "Totals across policies/budgets are repeated reviews of the same sites; not independent lot or defect counts."
+}

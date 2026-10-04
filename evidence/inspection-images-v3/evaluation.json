@@ -1,0 +1,1559 @@
+{
+  "counts": {
+    "anomaly": 100,
+    "normal": 101,
+    "test_images": 201
+  },
+  "data_mode": "real",
+  "evaluated_at": "2026-10-04T09:20:56.027501+00:00",
+  "freeze_digest": "6bda4bd8bdae26f27366d0edc17612b683133f9d44b55b15527f6444af9334a1",
+  "images": [
+    {
+      "baseline224_score": 24.254159230569517,
+      "highres448max_score": 34.78460093024077,
+      "image": "pcb3/Data/Images/Anomaly/000.JPG",
+      "label": 1,
+      "primary448_score": 31.739330502408873
+    },
+    {
+      "baseline224_score": 33.45569546744403,
+      "highres448max_score": 38.0337314375369,
+      "image": "pcb3/Data/Images/Anomaly/001.JPG",
+      "label": 1,
+      "primary448_score": 37.53201073812507
+    },
+    {
+      "baseline224_score": 19.47095862682066,
+      "highres448max_score": 30.445481304637106,
+      "image": "pcb3/Data/Images/Anomaly/002.JPG",
+      "label": 1,
+      "primary448_score": 27.83855725757378
+    },
+    {
+      "baseline224_score": 17.903559485090092,
+      "highres448max_score": 23.06242373588153,
+      "image": "pcb3/Data/Images/Anomaly/003.JPG",
+      "label": 1,
+      "primary448_score": 22.220784470257275
+    },
+    {
+      "baseline224_score": 37.05344448790899,
+      "highres448max_score": 39.843452804763295,
+      "image": "pcb3/Data/Images/Anomaly/004.JPG",
+      "label": 1,
+      "primary448_score": 38.14111035974364
+    },
+    {
+      "baseline224_score": 28.60337429954339,
+      "highres448max_score": 33.4212205953429,
+      "image": "pcb3/Data/Images/Anomaly/005.JPG",
+      "label": 1,
+      "primary448_score": 32.46629107567673
+    },
+    {
+      "baseline224_score": 22.957975446914848,
+      "highres448max_score": 36.006352310630895,
+      "image": "pcb3/Data/Images/Anomaly/006.JPG",
+      "label": 1,
+      "primary448_score": 35.52166233992835
+    },
+    {
+      "baseline224_score": 23.640624747539885,
+      "highres448max_score": 46.038441014934484,
+      "image": "pcb3/Data/Images/Anomaly/007.JPG",
+      "label": 1,
+      "primary448_score": 43.88506404078857
+    },
+    {
+      "baseline224_score": 23.42668373232127,
+      "highres448max_score": 34.5435704532303,
+      "image": "pcb3/Data/Images/Anomaly/008.JPG",
+      "label": 1,
+      "primary448_score": 33.118638666298274
+    },
+    {
+      "baseline224_score": 26.181952449289724,
+      "highres448max_score": 33.30801255643711,
+      "image": "pcb3/Data/Images/Anomaly/009.JPG",
+      "label": 1,
+      "primary448_score": 32.90224575774875
+    },
+    {
+      "baseline224_score": 30.016958317829765,
+      "highres448max_score": 51.74431095989639,
+      "image": "pcb3/Data/Images/Anomaly/010.JPG",
+      "label": 1,
+      "primary448_score": 46.70895138156112
+    },
+    {
+      "baseline224_score": 32.245263814688464,
+      "highres448max_score": 35.32156669478168,
+      "image": "pcb3/Data/Images/Anomaly/011.JPG",
+      "label": 1,
+      "primary448_score": 34.80856172752713
+    },
+    {
+      "baseline224_score": 30.873067198334265,
+      "highres448max_score": 34.15502944883884,
+      "image": "pcb3/Data/Images/Anomaly/012.JPG",
+      "label": 1,
+      "primary448_score": 33.440965184061874
+    },
+    {
+      "baseline224_score": 39.2353032117209,
+      "highres448max_score": 36.651819732466514,
+      "image": "pcb3/Data/Images/Anomaly/013.JPG",
+      "label": 1,
+      "primary448_score": 35.3007427747468
+    },
+    {
+      "baseline224_score": 18.771280035985548,
+      "highres448max_score": 22.890524209626438,
+      "image": "pcb3/Data/Images/Anomaly/014.JPG",
+      "label": 1,
+      "primary448_score": 21.381679742660083
+    },
+    {
+      "baseline224_score": 21.402873029708676,
+      "highres448max_score": 28.521441352809475,
+      "image": "pcb3/Data/Images/Anomaly/015.JPG",
+      "label": 1,
+      "primary448_score": 28.059127835645764
+    },
+    {
+      "baseline224_score": 21.095575970116737,
+      "highres448max_score": 34.85966529077726,
+      "image": "pcb3/Data/Images/Anomaly/016.JPG",
+      "label": 1,
+      "primary448_score": 32.19189009770005
+    },
+    {
+      "baseline224_score": 21.354725582081855,
+      "highres448max_score": 33.19395295201121,
+      "image": "pcb3/Data/Images/Anomaly/017.JPG",
+      "label": 1,
+      "primary448_score": 30.53243303746611
+    },
+    {
+      "baseline224_score": 21.73410665449364,
+      "highres448max_score": 30.65923564681594,
+      "image": "pcb3/Data/Images/Anomaly/018.JPG",
+      "label": 1,
+      "primary448_score": 29.331452786212694
+    },
+    {
+      "baseline224_score": 24.03539600058845,
+      "highres448max_score": 33.681246090862736,
+      "image": "pcb3/Data/Images/Anomaly/019.JPG",
+      "label": 1,
+      "primary448_score": 31.760532590750945
+    },
+    {
+      "baseline224_score": 15.941155138901648,
+      "highres448max_score": 22.316272285955176,
+      "image": "pcb3/Data/Images/Anomaly/020.JPG",
+      "label": 1,
+      "primary448_score": 21.363908915037115
+    },
+    {
+      "baseline224_score": 17.686160268013445,
+      "highres448max_score": 20.77916779151347,
+      "image": "pcb3/Data/Images/Anomaly/021.JPG",
+      "label": 1,
+      "primary448_score": 20.249983035488114
+    },
+    {
+      "baseline224_score": 14.827926162357844,
+      "highres448max_score": 18.588241193746512,
+      "image": "pcb3/Data/Images/Anomaly/022.JPG",
+      "label": 1,
+      "primary448_score": 18.312891639955268
+    },
+    {
+      "baseline224_score": 19.33196714853265,
+      "highres448max_score": 19.828936110690893,
+      "image": "pcb3/Data/Images/Anomaly/023.JPG",
+      "label": 1,
+      "primary448_score": 19.542278042133162
+    },
+    {
+      "baseline224_score": 18.027295187982748,
+      "highres448max_score": 29.662877138786587,
+      "image": "pcb3/Data/Images/Anomaly/024.JPG",
+      "label": 1,
+      "primary448_score": 27.744968155298803
+    },
+    {
+      "baseline224_score": 17.73481751189109,
+      "highres448max_score": 26.706993069768437,
+      "image": "pcb3/Data/Images/Anomaly/025.JPG",
+      "label": 1,
+      "primary448_score": 25.41197638404505
+    },
+    {
+      "baseline224_score": 16.14616459324823,
+      "highres448max_score": 26.230883695501785,
+      "image": "pcb3/Data/Images/Anomaly/026.JPG",
+      "label": 1,
+      "primary448_score": 23.537154094943187
+    },
+    {
+      "baseline224_score": 20.65816104413335,
+      "highres448max_score": 22.770828848376162,
+      "image": "pcb3/Data/Images/Anomaly/027.JPG",
+      "label": 1,
+      "primary448_score": 22.536799894054266
+    },
+    {
+      "baseline224_score": 16.881862557677483,
+      "highres448max_score": 26.983830656436638,
+      "image": "pcb3/Data/Images/Anomaly/028.JPG",
+      "label": 1,
+      "primary448_score": 24.705525425970645
+    },
+    {
+      "baseline224_score": 18.722388978287118,
+      "highres448max_score": 27.36827333557047,
+      "image": "pcb3/Data/Images/Anomaly/029.JPG",
+      "label": 1,
+      "primary448_score": 26.537830603209272
+    },
+    {
+      "baseline224_score": 21.460801508739276,
+      "highres448max_score": 23.362310943533373,
+      "image": "pcb3/Data/Images/Anomaly/030.JPG",
+      "label": 1,
+      "primary448_score": 21.90032500488266
+    },
+    {
+      "baseline224_score": 18.416727717265776,
+      "highres448max_score": 25.077578011658975,
+      "image": "pcb3/Data/Images/Anomaly/031.JPG",
+      "label": 1,
+      "primary448_score": 23.79490202265111
+    },
+    {
+      "baseline224_score": 15.582140468549056,
+      "highres448max_score": 28.499374008107843,
+      "image": "pcb3/Data/Images/Anomaly/032.JPG",
+      "label": 1,
+      "primary448_score": 27.504406277716885
+    },
+    {
+      "baseline224_score": 18.06644469290629,
+      "highres448max_score": 22.29561304821856,
+      "image": "pcb3/Data/Images/Anomaly/033.JPG",
+      "label": 1,
+      "primary448_score": 21.832321572027272
+    },
+    {
+      "baseline224_score": 18.474589562087,
+      "highres448max_score": 27.850057442093714,
+      "image": "pcb3/Data/Images/Anomaly/034.JPG",
+      "label": 1,
+      "primary448_score": 25.150066607636223
+    },
+    {
+      "baseline224_score": 16.293128555372775,
+      "highres448max_score": 23.50602967001108,
+      "image": "pcb3/Data/Images/Anomaly/035.JPG",
+      "label": 1,
+      "primary448_score": 22.06735991112159
+    },
+    {
+      "baseline224_score": 16.527790101474544,
+      "highres448max_score": 25.3303532724362,
+      "image": "pcb3/Data/Images/Anomaly/036.JPG",
+      "label": 1,
+      "primary448_score": 24.783630673474676
+    },
+    {
+      "baseline224_score": 16.452740944242123,
+      "highres448max_score": 23.09058124215667,
+      "image": "pcb3/Data/Images/Anomaly/037.JPG",
+      "label": 1,
+      "primary448_score": 22.63998444263892
+    },
+    {
+      "baseline224_score": 15.85467895780571,
+      "highres448max_score": 21.143135881164234,
+      "image": "pcb3/Data/Images/Anomaly/038.JPG",
+      "label": 1,
+      "primary448_score": 20.575164441097574
+    },
+    {
+      "baseline224_score": 19.149688305213928,
+      "highres448max_score": 21.517721633859825,
+      "image": "pcb3/Data/Images/Anomaly/039.JPG",
+      "label": 1,
+      "primary448_score": 21.07296289661417
+    },
+    {
+      "baseline224_score": 18.29488836820771,
+      "highres448max_score": 21.183606049127583,
+      "image": "pcb3/Data/Images/Anomaly/040.JPG",
+      "label": 1,
+      "primary448_score": 20.44123731878307
+    },
+    {
+      "baseline224_score": 17.814894384138064,
+      "highres448max_score": 21.262301019669234,
+      "image": "pcb3/Data/Images/Anomaly/041.JPG",
+      "label": 1,
+      "primary448_score": 21.156913022405192
+    },
+    {
+      "baseline224_score": 15.6065145753585,
+      "highres448max_score": 25.239702743578803,
+      "image": "pcb3/Data/Images/Anomaly/042.JPG",
+      "label": 1,
+      "primary448_score": 22.748032316222538
+    },
+    {
+      "baseline224_score": 26.592287491170094,
+      "highres448max_score": 30.340907028582123,
+      "image": "pcb3/Data/Images/Anomaly/043.JPG",
+      "label": 1,
+      "primary448_score": 29.781389067128412
+    },
+    {
+      "baseline224_score": 24.361919034289315,
+      "highres448max_score": 25.53920218718232,
+      "image": "pcb3/Data/Images/Anomaly/044.JPG",
+      "label": 1,
+      "primary448_score": 25.206968237691125
+    },
+    {
+      "baseline224_score": 15.501384439207381,
+      "highres448max_score": 23.39152947855992,
+      "image": "pcb3/Data/Images/Anomaly/045.JPG",
+      "label": 1,
+      "primary448_score": 22.561343930694093
+    },
+    {
+      "baseline224_score": 18.46098202519282,
+      "highres448max_score": 22.524745505756798,
+      "image": "pcb3/Data/Images/Anomaly/046.JPG",
+      "label": 1,
+      "primary448_score": 21.968642129116265
+    },
+    {
+      "baseline224_score": 23.580281976856078,
+      "highres448max_score": 28.667225043704185,
+      "image": "pcb3/Data/Images/Anomaly/047.JPG",
+      "label": 1,
+      "primary448_score": 28.2321171514012
+    },
+    {
+      "baseline224_score": 27.176631976527613,
+      "highres448max_score": 24.038600700501814,
+      "image": "pcb3/Data/Images/Anomaly/048.JPG",
+      "label": 1,
+      "primary448_score": 23.585985159079936
+    },
+    {
+      "baseline224_score": 16.169297979228496,
+      "highres448max_score": 21.26397029660609,
+      "image": "pcb3/Data/Images/Anomaly/049.JPG",
+      "label": 1,
+      "primary448_score": 20.92987292896883
+    },
+    {
+      "baseline224_score": 23.87811759974849,
+      "highres448max_score": 26.39588840371255,
+      "image": "pcb3/Data/Images/Anomaly/050.JPG",
+      "label": 1,
+      "primary448_score": 25.221794498828668
+    },
+    {
+      "baseline224_score": 19.6328560661606,
+      "highres448max_score": 22.777734255218757,
+      "image": "pcb3/Data/Images/Anomaly/051.JPG",
+      "label": 1,
+      "primary448_score": 22.44638814627211
+    },
+    {
+      "baseline224_score": 22.06996243925441,
+      "highres448max_score": 28.24795849303601,
+      "image": "pcb3/Data/Images/Anomaly/052.JPG",
+      "label": 1,
+      "primary448_score": 26.96881273678335
+    },
+    {
+      "baseline224_score": 29.475682335005345,
+      "highres448max_score": 33.812007884066766,
+      "image": "pcb3/Data/Images/Anomaly/053.JPG",
+      "label": 1,
+      "primary448_score": 32.29260597946754
+    },
+    {
+      "baseline224_score": 30.855600965396974,
+      "highres448max_score": 34.32248951570996,
+      "image": "pcb3/Data/Images/Anomaly/054.JPG",
+      "label": 1,
+      "primary448_score": 33.20493133114102
+    },
+    {
+      "baseline224_score": 16.740110477392953,
+      "highres448max_score": 21.225565846657634,
+      "image": "pcb3/Data/Images/Anomaly/055.JPG",
+      "label": 1,
+      "primary448_score": 20.63439352814368
+    },
+    {
+      "baseline224_score": 18.424219144982434,
+      "highres448max_score": 20.976869027864158,
+      "image": "pcb3/Data/Images/Anomaly/056.JPG",
+      "label": 1,
+      "primary448_score": 20.458503539024225
+    },
+    {
+      "baseline224_score": 19.51074311575159,
+      "highres448max_score": 23.118426201038535,
+      "image": "pcb3/Data/Images/Anomaly/057.JPG",
+      "label": 1,
+      "primary448_score": 22.708931293589316
+    },
+    {
+      "baseline224_score": 17.722072947455196,
+      "highres448max_score": 21.12436155893172,
+      "image": "pcb3/Data/Images/Anomaly/058.JPG",
+      "label": 1,
+      "primary448_score": 20.063416982807436
+    },
+    {
+      "baseline224_score": 19.634075792871844,
+      "highres448max_score": 24.626495748003265,
+      "image": "pcb3/Data/Images/Anomaly/059.JPG",
+      "label": 1,
+      "primary448_score": 24.229418241523557
+    },
+    {
+      "baseline224_score": 16.630954368945147,
+      "highres448max_score": 21.648692412738605,
+      "image": "pcb3/Data/Images/Anomaly/060.JPG",
+      "label": 1,
+      "primary448_score": 20.576598128898045
+    },
+    {
+      "baseline224_score": 17.255073594037395,
+      "highres448max_score": 22.329709299865932,
+      "image": "pcb3/Data/Images/Anomaly/061.JPG",
+      "label": 1,
+      "primary448_score": 20.209612417629053
+    },
+    {
+      "baseline224_score": 15.555618317887722,
+      "highres448max_score": 24.813623650549808,
+      "image": "pcb3/Data/Images/Anomaly/062.JPG",
+      "label": 1,
+      "primary448_score": 23.320798406481526
+    },
+    {
+      "baseline224_score": 18.34250592790791,
+      "highres448max_score": 26.676446830131834,
+      "image": "pcb3/Data/Images/Anomaly/063.JPG",
+      "label": 1,
+      "primary448_score": 25.468253845939817
+    },
+    {
+      "baseline224_score": 16.809490921940654,
+      "highres448max_score": 24.761999360632196,
+      "image": "pcb3/Data/Images/Anomaly/064.JPG",
+      "label": 1,
+      "primary448_score": 24.121557131901397
+    },
+    {
+      "baseline224_score": 17.511998704944084,
+      "highres448max_score": 21.98973110154232,
+      "image": "pcb3/Data/Images/Anomaly/065.JPG",
+      "label": 1,
+      "primary448_score": 21.743515039015822
+    },
+    {
+      "baseline224_score": 16.272437906667722,
+      "highres448max_score": 26.591792544164313,
+      "image": "pcb3/Data/Images/Anomaly/066.JPG",
+      "label": 1,
+      "primary448_score": 24.383319592146478
+    },
+    {
+      "baseline224_score": 20.097949842237632,
+      "highres448max_score": 32.12014490086159,
+      "image": "pcb3/Data/Images/Anomaly/067.JPG",
+      "label": 1,
+      "primary448_score": 31.33051164808005
+    },
+    {
+      "baseline224_score": 16.236489591614244,
+      "highres448max_score": 19.91780822597762,
+      "image": "pcb3/Data/Images/Anomaly/068.JPG",
+      "label": 1,
+      "primary448_score": 19.813415422717043
+    },
+    {
+      "baseline224_score": 16.820532059250894,
+      "highres448max_score": 25.349449446590082,
+      "image": "pcb3/Data/Images/Anomaly/069.JPG",
+      "label": 1,
+      "primary448_score": 23.405408820396783
+    },
+    {
+      "baseline224_score": 16.855180648865222,
+      "highres448max_score": 30.681308000204382,
+      "image": "pcb3/Data/Images/Anomaly/070.JPG",
+      "label": 1,
+      "primary448_score": 29.94120756379161
+    },
+    {
+      "baseline224_score": 16.449291233445955,
+      "highres448max_score": 23.173159144874404,
+      "image": "pcb3/Data/Images/Anomaly/071.JPG",
+      "label": 1,
+      "primary448_score": 22.39116093416247
+    },
+    {
+      "baseline224_score": 20.13419138162343,
+      "highres448max_score": 21.791403880156597,
+      "image": "pcb3/Data/Images/Anomaly/072.JPG",
+      "label": 1,
+      "primary448_score": 21.30279000184143
+    },
+    {
+      "baseline224_score": 20.126264935125985,
+      "highres448max_score": 25.173692446757343,
+      "image": "pcb3/Data/Images/Anomaly/073.JPG",
+      "label": 1,
+      "primary448_score": 23.08284798268348
+    },
+    {
+      "baseline224_score": 19.685638273089577,
+      "highres448max_score": 26.498228664455624,
+      "image": "pcb3/Data/Images/Anomaly/074.JPG",
+      "label": 1,
+      "primary448_score": 24.971042633356973
+    },
+    {
+      "baseline224_score": 15.518408902923323,
+      "highres448max_score": 22.452854128531914,
+      "image": "pcb3/Data/Images/Anomaly/075.JPG",
+      "label": 1,
+      "primary448_score": 21.725838574833457
+    },
+    {
+      "baseline224_score": 15.961299989344486,
+      "highres448max_score": 32.774853808388194,
+      "image": "pcb3/Data/Images/Anomaly/076.JPG",
+      "label": 1,
+      "primary448_score": 31.84981539880951
+    },
+    {
+      "baseline224_score": 22.163195898204965,
+      "highres448max_score": 29.83745622954424,
+      "image": "pcb3/Data/Images/Anomaly/077.JPG",
+      "label": 1,
+      "primary448_score": 27.063679024774007
+    },
+    {
+      "baseline224_score": 16.57096812555534,
+      "highres448max_score": 25.432751944080458,
+      "image": "pcb3/Data/Images/Anomaly/078.JPG",
+      "label": 1,
+      "primary448_score": 23.165004669039888
+    },
+    {
+      "baseline224_score": 17.059780726158937,
+      "highres448max_score": 20.844245213159958,
+      "image": "pcb3/Data/Images/Anomaly/079.JPG",
+      "label": 1,
+      "primary448_score": 20.234430101442534
+    },
+    {
+      "baseline224_score": 17.97539413133108,
+      "highres448max_score": 21.72786415031079,
+      "image": "pcb3/Data/Images/Anomaly/080.JPG",
+      "label": 1,
+      "primary448_score": 20.980168499461588
+    },
+    {
+      "baseline224_score": 19.11975547836719,
+      "highres448max_score": 30.70219960842176,
+      "image": "pcb3/Data/Images/Anomaly/081.JPG",
+      "label": 1,
+      "primary448_score": 28.961315432530395
+    },
+    {
+      "baseline224_score": 19.936413984585222,
+      "highres448max_score": 22.414928749824035,
+      "image": "pcb3/Data/Images/Anomaly/082.JPG",
+      "label": 1,
+      "primary448_score": 21.648522942024965
+    },
+    {
+      "baseline224_score": 16.642738729679206,
+      "highres448max_score": 21.20083138993075,
+      "image": "pcb3/Data/Images/Anomaly/083.JPG",
+      "label": 1,
+      "primary448_score": 20.577924233073734
+    },
+    {
+      "baseline224_score": 16.66986394319307,
+      "highres448max_score": 21.823813809669858,
+      "image": "pcb3/Data/Images/Anomaly/084.JPG",
+      "label": 1,
+      "primary448_score": 20.47796575184275
+    },
+    {
+      "baseline224_score": 18.54068685645082,
+      "highres448max_score": 21.706982632193586,
+      "image": "pcb3/Data/Images/Anomaly/085.JPG",
+      "label": 1,
+      "primary448_score": 20.774875543967553
+    },
+    {
+      "baseline224_score": 16.848293405413656,
+      "highres448max_score": 23.092862319961192,
+      "image": "pcb3/Data/Images/Anomaly/086.JPG",
+      "label": 1,
+      "primary448_score": 21.447699731225402
+    },
+    {
+      "baseline224_score": 18.893429314724806,
+      "highres448max_score": 30.7765203422561,
+      "image": "pcb3/Data/Images/Anomaly/087.JPG",
+      "label": 1,
+      "primary448_score": 28.596913598852563
+    },
+    {
+      "baseline224_score": 17.576131749815445,
+      "highres448max_score": 24.98383926202632,
+      "image": "pcb3/Data/Images/Anomaly/088.JPG",
+      "label": 1,
+      "primary448_score": 23.77049758053319
+    },
+    {
+      "baseline224_score": 16.343540318369506,
+      "highres448max_score": 30.512112537160082,
+      "image": "pcb3/Data/Images/Anomaly/089.JPG",
+      "label": 1,
+      "primary448_score": 28.94520592266272
+    },
+    {
+      "baseline224_score": 15.901980798832847,
+      "highres448max_score": 19.78085159635127,
+      "image": "pcb3/Data/Images/Anomaly/090.JPG",
+      "label": 1,
+      "primary448_score": 19.08853223684795
+    },
+    {
+      "baseline224_score": 15.214982509572913,
+      "highres448max_score": 22.07091093335914,
+      "image": "pcb3/Data/Images/Anomaly/091.JPG",
+      "label": 1,
+      "primary448_score": 20.595510669701955
+    },
+    {
+      "baseline224_score": 18.157875285835463,
+      "highres448max_score": 21.089042436865505,
+      "image": "pcb3/Data/Images/Anomaly/092.JPG",
+      "label": 1,
+      "primary448_score": 19.977329144570774
+    },
+    {
+      "baseline224_score": 16.150641238853733,
+      "highres448max_score": 23.095756330398,
+      "image": "pcb3/Data/Images/Anomaly/093.JPG",
+      "label": 1,
+      "primary448_score": 20.951190586492444
+    },
+    {
+      "baseline224_score": 15.904984443782325,
+      "highres448max_score": 24.143588389884588,
+      "image": "pcb3/Data/Images/Anomaly/094.JPG",
+      "label": 1,
+      "primary448_score": 22.49469922881364
+    },
+    {
+      "baseline224_score": 20.08231391436028,
+      "highres448max_score": 30.66540632151128,
+      "image": "pcb3/Data/Images/Anomaly/095.JPG",
+      "label": 1,
+      "primary448_score": 29.3393712769372
+    },
+    {
+      "baseline224_score": 18.176075990383104,
+      "highres448max_score": 24.78431358776405,
+      "image": "pcb3/Data/Images/Anomaly/096.JPG",
+      "label": 1,
+      "primary448_score": 23.298982550003014
+    },
+    {
+      "baseline224_score": 17.983903336459793,
+      "highres448max_score": 25.56519413200872,
+      "image": "pcb3/Data/Images/Anomaly/097.JPG",
+      "label": 1,
+      "primary448_score": 22.791491860772112
+    },
+    {
+      "baseline224_score": 15.006685315131014,
+      "highres448max_score": 19.38878704341252,
+      "image": "pcb3/Data/Images/Anomaly/098.JPG",
+      "label": 1,
+      "primary448_score": 19.255565939615384
+    },
+    {
+      "baseline224_score": 31.662126060745805,
+      "highres448max_score": 32.45108873159168,
+      "image": "pcb3/Data/Images/Anomaly/099.JPG",
+      "label": 1,
+      "primary448_score": 31.595973727954032
+    },
+    {
+      "baseline224_score": 18.10075571665074,
+      "highres448max_score": 20.262876722354985,
+      "image": "pcb3/Data/Images/Normal/0011.JPG",
+      "label": 0,
+      "primary448_score": 19.20472548381584
+    },
+    {
+      "baseline224_score": 17.00414742112466,
+      "highres448max_score": 22.367811193941552,
+      "image": "pcb3/Data/Images/Normal/0013.JPG",
+      "label": 0,
+      "primary448_score": 20.66064296558635
+    },
+    {
+      "baseline224_score": 16.113888978387763,
+      "highres448max_score": 18.60292705994918,
+      "image": "pcb3/Data/Images/Normal/0016.JPG",
+      "label": 0,
+      "primary448_score": 18.39784212673313
+    },
+    {
+      "baseline224_score": 16.540815211167182,
+      "highres448max_score": 20.050017579447854,
+      "image": "pcb3/Data/Images/Normal/0024.JPG",
+      "label": 0,
+      "primary448_score": 19.634667484471887
+    },
+    {
+      "baseline224_score": 15.313976798731101,
+      "highres448max_score": 19.57656965281429,
+      "image": "pcb3/Data/Images/Normal/0026.JPG",
+      "label": 0,
+      "primary448_score": 19.353825524195003
+    },
+    {
+      "baseline224_score": 19.82161137158198,
+      "highres448max_score": 22.348753617321567,
+      "image": "pcb3/Data/Images/Normal/0027.JPG",
+      "label": 0,
+      "primary448_score": 21.71738729952614
+    },
+    {
+      "baseline224_score": 16.408732621688603,
+      "highres448max_score": 20.37245089224579,
+      "image": "pcb3/Data/Images/Normal/0046.JPG",
+      "label": 0,
+      "primary448_score": 19.945538157833326
+    },
+    {
+      "baseline224_score": 15.311124994528514,
+      "highres448max_score": 19.181916162523756,
+      "image": "pcb3/Data/Images/Normal/0100.JPG",
+      "label": 0,
+      "primary448_score": 18.6487798589753
+    },
+    {
+      "baseline224_score": 17.49346120013323,
+      "highres448max_score": 19.213003714621546,
+      "image": "pcb3/Data/Images/Normal/0107.JPG",
+      "label": 0,
+      "primary448_score": 18.845817375922284
+    },
+    {
+      "baseline224_score": 18.113343875402006,
+      "highres448max_score": 20.392759060587895,
+      "image": "pcb3/Data/Images/Normal/0159.JPG",
+      "label": 0,
+      "primary448_score": 20.039229775525843
+    },
+    {
+      "baseline224_score": 17.50338447899793,
+      "highres448max_score": 19.498756281355043,
+      "image": "pcb3/Data/Images/Normal/0168.JPG",
+      "label": 0,
+      "primary448_score": 19.039711554219195
+    },
+    {
+      "baseline224_score": 16.232413701133662,
+      "highres448max_score": 20.644914580067997,
+      "image": "pcb3/Data/Images/Normal/0170.JPG",
+      "label": 0,
+      "primary448_score": 19.347584199816456
+    },
+    {
+      "baseline224_score": 17.212593170705873,
+      "highres448max_score": 21.81398743093866,
+      "image": "pcb3/Data/Images/Normal/0172.JPG",
+      "label": 0,
+      "primary448_score": 21.413282718430548
+    },
+    {
+      "baseline224_score": 16.151203958508866,
+      "highres448max_score": 18.568478369104366,
+      "image": "pcb3/Data/Images/Normal/0174.JPG",
+      "label": 0,
+      "primary448_score": 18.05213280018457
+    },
+    {
+      "baseline224_score": 14.798347518120268,
+      "highres448max_score": 18.79043028038814,
+      "image": "pcb3/Data/Images/Normal/0178.JPG",
+      "label": 0,
+      "primary448_score": 18.653024400462268
+    },
+    {
+      "baseline224_score": 15.70382051569942,
+      "highres448max_score": 20.036137713641132,
+      "image": "pcb3/Data/Images/Normal/0187.JPG",
+      "label": 0,
+      "primary448_score": 19.87665883519211
+    },
+    {
+      "baseline224_score": 15.476441616131753,
+      "highres448max_score": 19.294775917257432,
+      "image": "pcb3/Data/Images/Normal/0196.JPG",
+      "label": 0,
+      "primary448_score": 18.8339665404261
+    },
+    {
+      "baseline224_score": 19.994144788820407,
+      "highres448max_score": 19.494614025979264,
+      "image": "pcb3/Data/Images/Normal/0208.JPG",
+      "label": 0,
+      "primary448_score": 19.348943007741337
+    },
+    {
+      "baseline224_score": 16.56284538455663,
+      "highres448max_score": 21.808854026154137,
+      "image": "pcb3/Data/Images/Normal/0214.JPG",
+      "label": 0,
+      "primary448_score": 21.321623872877428
+    },
+    {
+      "baseline224_score": 15.923260709566398,
+      "highres448max_score": 21.993944608402952,
+      "image": "pcb3/Data/Images/Normal/0215.JPG",
+      "label": 0,
+      "primary448_score": 21.085944674824052
+    },
+    {
+      "baseline224_score": 19.535513826764202,
+      "highres448max_score": 21.372339888652494,
+      "image": "pcb3/Data/Images/Normal/0237.JPG",
+      "label": 0,
+      "primary448_score": 20.266534361679238
+    },
+    {
+      "baseline224_score": 15.651730784329112,
+      "highres448max_score": 19.553517292443424,
+      "image": "pcb3/Data/Images/Normal/0261.JPG",
+      "label": 0,
+      "primary448_score": 18.553056270065245
+    },
+    {
+      "baseline224_score": 17.179505343470815,
+      "highres448max_score": 21.255496015781016,
+      "image": "pcb3/Data/Images/Normal/0286.JPG",
+      "label": 0,
+      "primary448_score": 20.35236648993533
+    },
+    {
+      "baseline224_score": 16.043046773101185,
+      "highres448max_score": 18.41761835213255,
+      "image": "pcb3/Data/Images/Normal/0294.JPG",
+      "label": 0,
+      "primary448_score": 18.039183002357703
+    },
+    {
+      "baseline224_score": 17.41329773021354,
+      "highres448max_score": 20.922815219006456,
+      "image": "pcb3/Data/Images/Normal/0297.JPG",
+      "label": 0,
+      "primary448_score": 20.675271380851598
+    },
+    {
+      "baseline224_score": 17.13588069145779,
+      "highres448max_score": 20.01462292744854,
+      "image": "pcb3/Data/Images/Normal/0303.JPG",
+      "label": 0,
+      "primary448_score": 19.51414375342772
+    },
+    {
+      "baseline224_score": 18.38117671674307,
+      "highres448max_score": 20.934127778797784,
+      "image": "pcb3/Data/Images/Normal/0306.JPG",
+      "label": 0,
+      "primary448_score": 18.899568739054306
+    },
+    {
+      "baseline224_score": 16.28638155534638,
+      "highres448max_score": 20.65820010529459,
+      "image": "pcb3/Data/Images/Normal/0320.JPG",
+      "label": 0,
+      "primary448_score": 19.82202311238216
+    },
+    {
+      "baseline224_score": 15.062614890998749,
+      "highres448max_score": 18.822787860529207,
+      "image": "pcb3/Data/Images/Normal/0333.JPG",
+      "label": 0,
+      "primary448_score": 18.533957312955256
+    },
+    {
+      "baseline224_score": 19.369398319576373,
+      "highres448max_score": 26.136904012210458,
+      "image": "pcb3/Data/Images/Normal/0363.JPG",
+      "label": 0,
+      "primary448_score": 25.949749821520555
+    },
+    {
+      "baseline224_score": 16.17921971319347,
+      "highres448max_score": 19.027604279912254,
+      "image": "pcb3/Data/Images/Normal/0377.JPG",
+      "label": 0,
+      "primary448_score": 18.66766630822018
+    },
+    {
+      "baseline224_score": 17.3589112962067,
+      "highres448max_score": 20.955021904884635,
+      "image": "pcb3/Data/Images/Normal/0394.JPG",
+      "label": 0,
+      "primary448_score": 19.9181139330662
+    },
+    {
+      "baseline224_score": 17.2481885577875,
+      "highres448max_score": 19.734757945987702,
+      "image": "pcb3/Data/Images/Normal/0400.JPG",
+      "label": 0,
+      "primary448_score": 19.440001500382525
+    },
+    {
+      "baseline224_score": 17.48275954530638,
+      "highres448max_score": 19.5873707592131,
+      "image": "pcb3/Data/Images/Normal/0402.JPG",
+      "label": 0,
+      "primary448_score": 19.222164194510977
+    },
+    {
+      "baseline224_score": 18.346899953866444,
+      "highres448max_score": 21.29812921229221,
+      "image": "pcb3/Data/Images/Normal/0417.JPG",
+      "label": 0,
+      "primary448_score": 20.753149293875694
+    },
+    {
+      "baseline224_score": 15.200091673282245,
+      "highres448max_score": 19.371726616364906,
+      "image": "pcb3/Data/Images/Normal/0423.JPG",
+      "label": 0,
+      "primary448_score": 19.064544920742815
+    },
+    {
+      "baseline224_score": 16.840608840710757,
+      "highres448max_score": 19.080345540246405,
+      "image": "pcb3/Data/Images/Normal/0427.JPG",
+      "label": 0,
+      "primary448_score": 18.716943907826636
+    },
+    {
+      "baseline224_score": 18.142744242051993,
+      "highres448max_score": 18.96081946076191,
+      "image": "pcb3/Data/Images/Normal/0457.JPG",
+      "label": 0,
+      "primary448_score": 18.4410672925741
+    },
+    {
+      "baseline224_score": 16.000867072239103,
+      "highres448max_score": 18.98653786758532,
+      "image": "pcb3/Data/Images/Normal/0469.JPG",
+      "label": 0,
+      "primary448_score": 18.555822185580578
+    },
+    {
+      "baseline224_score": 16.832031875334703,
+      "highres448max_score": 21.805178819610017,
+      "image": "pcb3/Data/Images/Normal/0479.JPG",
+      "label": 0,
+      "primary448_score": 20.788646755485413
+    },
+    {
+      "baseline224_score": 14.820383411551715,
+      "highres448max_score": 24.36837387676281,
+      "image": "pcb3/Data/Images/Normal/0483.JPG",
+      "label": 0,
+      "primary448_score": 21.57519235601124
+    },
+    {
+      "baseline224_score": 21.160024766238674,
+      "highres448max_score": 19.617500242043857,
+      "image": "pcb3/Data/Images/Normal/0484.JPG",
+      "label": 0,
+      "primary448_score": 19.25180209703737
+    },
+    {
+      "baseline224_score": 15.48325758883651,
+      "highres448max_score": 18.56938158197551,
+      "image": "pcb3/Data/Images/Normal/0488.JPG",
+      "label": 0,
+      "primary448_score": 18.140487229202805
+    },
+    {
+      "baseline224_score": 15.947264614555973,
+      "highres448max_score": 19.06185831380987,
+      "image": "pcb3/Data/Images/Normal/0490.JPG",
+      "label": 0,
+      "primary448_score": 18.396335632390183
+    },
+    {
+      "baseline224_score": 17.135237174986358,
+      "highres448max_score": 19.485824156596127,
+      "image": "pcb3/Data/Images/Normal/0514.JPG",
+      "label": 0,
+      "primary448_score": 19.16789916570103
+    },
+    {
+      "baseline224_score": 14.784009455979039,
+      "highres448max_score": 20.078908671334357,
+      "image": "pcb3/Data/Images/Normal/0518.JPG",
+      "label": 0,
+      "primary448_score": 19.13066107814005
+    },
+    {
+      "baseline224_score": 16.090810875436684,
+      "highres448max_score": 18.76426930070681,
+      "image": "pcb3/Data/Images/Normal/0520.JPG",
+      "label": 0,
+      "primary448_score": 18.35844728168563
+    },
+    {
+      "baseline224_score": 15.06769643669957,
+      "highres448max_score": 20.143597062814948,
+      "image": "pcb3/Data/Images/Normal/0525.JPG",
+      "label": 0,
+      "primary448_score": 19.542208066625687
+    },
+    {
+      "baseline224_score": 15.686783840443052,
+      "highres448max_score": 19.444395413569733,
+      "image": "pcb3/Data/Images/Normal/0545.JPG",
+      "label": 0,
+      "primary448_score": 18.817874705075415
+    },
+    {
+      "baseline224_score": 15.842620636892518,
+      "highres448max_score": 19.099813368366313,
+      "image": "pcb3/Data/Images/Normal/0552.JPG",
+      "label": 0,
+      "primary448_score": 18.383210125272722
+    },
+    {
+      "baseline224_score": 16.51575140252646,
+      "highres448max_score": 22.23771319329722,
+      "image": "pcb3/Data/Images/Normal/0569.JPG",
+      "label": 0,
+      "primary448_score": 21.22104874454924
+    },
+    {
+      "baseline224_score": 16.482537701142675,
+      "highres448max_score": 20.205820194103456,
+      "image": "pcb3/Data/Images/Normal/0615.JPG",
+      "label": 0,
+      "primary448_score": 19.782518705280307
+    },
+    {
+      "baseline224_score": 17.889746280516444,
+      "highres448max_score": 22.00408025793864,
+      "image": "pcb3/Data/Images/Normal/0617.JPG",
+      "label": 0,
+      "primary448_score": 21.499826193194433
+    },
+    {
+      "baseline224_score": 15.859899836109275,
+      "highres448max_score": 18.986642434596572,
+      "image": "pcb3/Data/Images/Normal/0619.JPG",
+      "label": 0,
+      "primary448_score": 18.81216687549774
+    },
+    {
+      "baseline224_score": 14.68969286984016,
+      "highres448max_score": 18.941223567201174,
+      "image": "pcb3/Data/Images/Normal/0621.JPG",
+      "label": 0,
+      "primary448_score": 18.595436383188787
+    },
+    {
+      "baseline224_score": 17.2321441900703,
+      "highres448max_score": 19.509998554136327,
+      "image": "pcb3/Data/Images/Normal/0629.JPG",
+      "label": 0,
+      "primary448_score": 19.06082536029925
+    },
+    {
+      "baseline224_score": 16.648331959078135,
+      "highres448max_score": 18.73170341340809,
+      "image": "pcb3/Data/Images/Normal/0631.JPG",
+      "label": 0,
+      "primary448_score": 18.400365325040564
+    },
+    {
+      "baseline224_score": 16.420401638475532,
+      "highres448max_score": 18.623319347878123,
+      "image": "pcb3/Data/Images/Normal/0648.JPG",
+      "label": 0,
+      "primary448_score": 18.291629125000174
+    },
+    {
+      "baseline224_score": 17.09583359983116,
+      "highres448max_score": 20.562696776786698,
+      "image": "pcb3/Data/Images/Normal/0654.JPG",
+      "label": 0,
+      "primary448_score": 20.116719646390578
+    },
+    {
+      "baseline224_score": 16.053352418329023,
+      "highres448max_score": 21.090934469398352,
+      "image": "pcb3/Data/Images/Normal/0657.JPG",
+      "label": 0,
+      "primary448_score": 19.74791715778329
+    },
+    {
+      "baseline224_score": 16.44503331216222,
+      "highres448max_score": 19.333614855553716,
+      "image": "pcb3/Data/Images/Normal/0659.JPG",
+      "label": 0,
+      "primary448_score": 19.260574028838207
+    },
+    {
+      "baseline224_score": 16.262915666225766,
+      "highres448max_score": 19.140264719001014,
+      "image": "pcb3/Data/Images/Normal/0674.JPG",
+      "label": 0,
+      "primary448_score": 18.364672803540945
+    },
+    {
+      "baseline224_score": 18.10653786788443,
+      "highres448max_score": 19.756094403448326,
+      "image": "pcb3/Data/Images/Normal/0684.JPG",
+      "label": 0,
+      "primary448_score": 19.378192340685647
+    },
+    {
+      "baseline224_score": 14.78611537244707,
+      "highres448max_score": 22.151952969589104,
+      "image": "pcb3/Data/Images/Normal/0685.JPG",
+      "label": 0,
+      "primary448_score": 19.97084367707059
+    },
+    {
+      "baseline224_score": 17.354145566780396,
+      "highres448max_score": 22.513111231437517,
+      "image": "pcb3/Data/Images/Normal/0688.JPG",
+      "label": 0,
+      "primary448_score": 21.51730350168854
+    },
+    {
+      "baseline224_score": 15.779390821347668,
+      "highres448max_score": 20.097025370942106,
+      "image": "pcb3/Data/Images/Normal/0690.JPG",
+      "label": 0,
+      "primary448_score": 19.035553298383025
+    },
+    {
+      "baseline224_score": 15.883880898789306,
+      "highres448max_score": 19.056240944146577,
+      "image": "pcb3/Data/Images/Normal/0694.JPG",
+      "label": 0,
+      "primary448_score": 18.46434772250173
+    },
+    {
+      "baseline224_score": 18.29745878994983,
+      "highres448max_score": 23.165566609558866,
+      "image": "pcb3/Data/Images/Normal/0705.JPG",
+      "label": 0,
+      "primary448_score": 21.940692084231014
+    },
+    {
+      "baseline224_score": 16.14352714216262,
+      "highres448max_score": 18.699967600571085,
+      "image": "pcb3/Data/Images/Normal/0725.JPG",
+      "label": 0,
+      "primary448_score": 18.213250270770004
+    },
+    {
+      "baseline224_score": 17.797623702527137,
+      "highres448max_score": 22.019895283719467,
+      "image": "pcb3/Data/Images/Normal/0730.JPG",
+      "label": 0,
+      "primary448_score": 21.104001040506272
+    },
+    {
+      "baseline224_score": 16.115185179717052,
+      "highres448max_score": 22.569150815880896,
+      "image": "pcb3/Data/Images/Normal/0735.JPG",
+      "label": 0,
+      "primary448_score": 21.501176853584393
+    },
+    {
+      "baseline224_score": 16.28908852000585,
+      "highres448max_score": 18.310268537059244,
+      "image": "pcb3/Data/Images/Normal/0739.JPG",
+      "label": 0,
+      "primary448_score": 18.219507662647736
+    },
+    {
+      "baseline224_score": 15.7975960157,
+      "highres448max_score": 19.56188936617363,
+      "image": "pcb3/Data/Images/Normal/0751.JPG",
+      "label": 0,
+      "primary448_score": 18.9508246091769
+    },
+    {
+      "baseline224_score": 15.617237638730673,
+      "highres448max_score": 19.333759264053484,
+      "image": "pcb3/Data/Images/Normal/0755.JPG",
+      "label": 0,
+      "primary448_score": 18.712587093114113
+    },
+    {
+      "baseline224_score": 16.7518015742108,
+      "highres448max_score": 22.0742015039543,
+      "image": "pcb3/Data/Images/Normal/0764.JPG",
+      "label": 0,
+      "primary448_score": 20.489375133453223
+    },
+    {
+      "baseline224_score": 20.175949305966654,
+      "highres448max_score": 19.80442803412914,
+      "image": "pcb3/Data/Images/Normal/0768.JPG",
+      "label": 0,
+      "primary448_score": 19.28790341763607
+    },
+    {
+      "baseline224_score": 16.612306115430567,
+      "highres448max_score": 19.659290137675704,
+      "image": "pcb3/Data/Images/Normal/0779.JPG",
+      "label": 0,
+      "primary448_score": 19.429349794570417
+    },
+    {
+      "baseline224_score": 14.714741618595374,
+      "highres448max_score": 17.586565692465964,
+      "image": "pcb3/Data/Images/Normal/0784.JPG",
+      "label": 0,
+      "primary448_score": 17.400227734175164
+    },
+    {
+      "baseline224_score": 15.308935168614747,
+      "highres448max_score": 17.9347389991789,
+      "image": "pcb3/Data/Images/Normal/0796.JPG",
+      "label": 0,
+      "primary448_score": 17.710868702249623
+    },
+    {
+      "baseline224_score": 14.719030683049981,
+      "highres448max_score": 21.45571625625486,
+      "image": "pcb3/Data/Images/Normal/0797.JPG",
+      "label": 0,
+      "primary448_score": 19.38815057053338
+    },
+    {
+      "baseline224_score": 19.145221280099392,
+      "highres448max_score": 28.063963641146263,
+      "image": "pcb3/Data/Images/Normal/0800.JPG",
+      "label": 0,
+      "primary448_score": 24.594292057582326
+    },
+    {
+      "baseline224_score": 17.191688778370875,
+      "highres448max_score": 24.758109579639903,
+      "image": "pcb3/Data/Images/Normal/0804.JPG",
+      "label": 0,
+      "primary448_score": 23.96302326104184
+    },
+    {
+      "baseline224_score": 15.253177598744148,
+      "highres448max_score": 20.657398320100743,
+      "image": "pcb3/Data/Images/Normal/0811.JPG",
+      "label": 0,
+      "primary448_score": 19.48211495179314
+    },
+    {
+      "baseline224_score": 14.444117713716198,
+      "highres448max_score": 19.698686551007754,
+      "image": "pcb3/Data/Images/Normal/0844.JPG",
+      "label": 0,
+      "primary448_score": 19.09568758055812
+    },
+    {
+      "baseline224_score": 17.2395588901659,
+      "highres448max_score": 21.820146404104204,
+      "image": "pcb3/Data/Images/Normal/0869.JPG",
+      "label": 0,
+      "primary448_score": 20.108752314194906
+    },
+    {
+      "baseline224_score": 17.3687940006664,
+      "highres448max_score": 22.60615439027654,
+      "image": "pcb3/Data/Images/Normal/0871.JPG",
+      "label": 0,
+      "primary448_score": 21.75978627202142
+    },
+    {
+      "baseline224_score": 17.379504183052244,
+      "highres448max_score": 20.094896733864786,
+      "image": "pcb3/Data/Images/Normal/0892.JPG",
+      "label": 0,
+      "primary448_score": 19.39720759157727
+    },
+    {
+      "baseline224_score": 15.917266950979785,
+      "highres448max_score": 19.47057261700279,
+      "image": "pcb3/Data/Images/Normal/0900.JPG",
+      "label": 0,
+      "primary448_score": 18.857974683464334
+    },
+    {
+      "baseline224_score": 17.129881794277683,
+      "highres448max_score": 21.116726294249144,
+      "image": "pcb3/Data/Images/Normal/0920.JPG",
+      "label": 0,
+      "primary448_score": 19.77077433723875
+    },
+    {
+      "baseline224_score": 16.58094448890289,
+      "highres448max_score": 20.492735447902888,
+      "image": "pcb3/Data/Images/Normal/0923.JPG",
+      "label": 0,
+      "primary448_score": 20.074774699292217
+    },
+    {
+      "baseline224_score": 16.773480982788055,
+      "highres448max_score": 19.66622096592893,
+      "image": "pcb3/Data/Images/Normal/0935.JPG",
+      "label": 0,
+      "primary448_score": 19.196137397375306
+    },
+    {
+      "baseline224_score": 16.740067123693713,
+      "highres448max_score": 18.319932397417194,
+      "image": "pcb3/Data/Images/Normal/0940.JPG",
+      "label": 0,
+      "primary448_score": 18.035003739300393
+    },
+    {
+      "baseline224_score": 15.310232149165843,
+      "highres448max_score": 20.72556147792565,
+      "image": "pcb3/Data/Images/Normal/0952.JPG",
+      "label": 0,
+      "primary448_score": 19.812010789142647
+    },
+    {
+      "baseline224_score": 20.252970077322722,
+      "highres448max_score": 20.744758427002967,
+      "image": "pcb3/Data/Images/Normal/0958.JPG",
+      "label": 0,
+      "primary448_score": 20.14340501648515
+    },
+    {
+      "baseline224_score": 16.3291822025745,
+      "highres448max_score": 21.869734594977828,
+      "image": "pcb3/Data/Images/Normal/0964.JPG",
+      "label": 0,
+      "primary448_score": 20.23204466187143
+    },
+    {
+      "baseline224_score": 17.020032614289008,
+      "highres448max_score": 20.547069362747493,
+      "image": "pcb3/Data/Images/Normal/0972.JPG",
+      "label": 0,
+      "primary448_score": 19.85942743229714
+    },
+    {
+      "baseline224_score": 14.603249421774297,
+      "highres448max_score": 18.341722131003134,
+      "image": "pcb3/Data/Images/Normal/0974.JPG",
+      "label": 0,
+      "primary448_score": 18.2476158534264
+    },
+    {
+      "baseline224_score": 14.624397760274963,
+      "highres448max_score": 23.017176598069135,
+      "image": "pcb3/Data/Images/Normal/0977.JPG",
+      "label": 0,
+      "primary448_score": 20.962150972047084
+    },
+    {
+      "baseline224_score": 17.121614455949697,
+      "highres448max_score": 18.068603273436356,
+      "image": "pcb3/Data/Images/Normal/0991.JPG",
+      "label": 0,
+      "primary448_score": 17.865571027414916
+    },
+    {
+      "baseline224_score": 16.413808475085336,
+      "highres448max_score": 19.538002327096514,
+      "image": "pcb3/Data/Images/Normal/0994.JPG",
+      "label": 0,
+      "primary448_score": 19.25788910636624
+    },
+    {
+      "baseline224_score": 15.91944813336879,
+      "highres448max_score": 19.64333313952335,
+      "image": "pcb3/Data/Images/Normal/1002.JPG",
+      "label": 0,
+      "primary448_score": 19.219898847003474
+    }
+  ],
+  "limitations": [
+    "Separate VisA PCB3 external-category replication; not wafer/SEM/factory accuracy and not tabular policy evidence.",
+    "Not hyperparameter optimization: methods, feature sets and calibration quantile are the v2 PCB2 pipeline, selected for replication because of the prior PCB2 result.",
+    "PCB1 v1 and PCB2 v2 test sets are consumed; their outcomes stand and nothing here was tuned on them or on PCB3 test data.",
+    "primary448 changes resolution, grid, coreset size and score aggregation together; any difference is a composite pipeline effect, not a resolution effect.",
+    "Images are resized whole with aspect-ratio distortion and no crop.",
+    "Thresholds are each method's 95th percentile of held-out official normal-train calibration scores; no test data tunes them.",
+    "Image AUROC/AP are secondary ranking statistics, never accuracy; highres448max is descriptive only.",
+    "Single category, single seed, official PCB3 1cls test images (class counts read only after scoring)."
+  ],
+  "methods": {
+    "baseline224": {
+      "frozen_threshold": {
+        "defect_recall": 0.44,
+        "false_negative": 56,
+        "false_positive": 8,
+        "normal_false_alarm_rate": 0.07920792079207921,
+        "rule": "score > threshold => predicted defect",
+        "threshold": 18.753552084175173,
+        "true_negative": 93,
+        "true_positive": 44
+      },
+      "image_auroc_secondary": 0.7615841584158416,
+      "image_average_precision_secondary": 0.8002095457355444,
+      "label": "v1-inspired patch baseline: 224x224, 14x14, coreset 1024, max patch distance",
+      "role": "baseline"
+    },
+    "highres448max": {
+      "frozen_threshold": {
+        "defect_recall": 0.57,
+        "false_negative": 43,
+        "false_positive": 4,
+        "normal_false_alarm_rate": 0.039603960396039604,
+        "rule": "score > threshold => predicted defect",
+        "threshold": 24.12816173921733,
+        "true_negative": 97,
+        "true_positive": 57
+      },
+      "image_auroc_secondary": 0.9078217821782179,
+      "image_average_precision_secondary": 0.9154075875843013,
+      "label": "descriptive only: r448 memory, max patch distance",
+      "role": "secondary_descriptive"
+    },
+    "primary448": {
+      "frozen_threshold": {
+        "defect_recall": 0.55,
+        "false_negative": 45,
+        "false_positive": 3,
+        "normal_false_alarm_rate": 0.0297029702970297,
+        "rule": "score > threshold => predicted defect",
+        "threshold": 22.827363672026653,
+        "true_negative": 98,
+        "true_positive": 55
+      },
+      "image_auroc_secondary": 0.92,
+      "image_average_precision_secondary": 0.9244194452963572,
+      "label": "composite: 448x448, 28x28, coreset 2048, mean of 3 largest patch distances",
+      "role": "primary"
+    }
+  },
+  "metric_notes": [
+    "Primary endpoint fixed before test scoring; it is never swapped after evaluation.",
+    "AUROC and AP are secondary ranking metrics, not accuracy.",
+    "Rates are counts over the official per-class test images; report them as such, not with extra precision."
+  ],
+  "primary_endpoint": {
+    "decision": {
+      "bootstrap_ci_lower_above_zero": true,
+      "primary_far_at_most_10pct": true,
+      "recall_gain_at_least_10pp": true,
+      "success": true
+    },
+    "definition": {
+      "attribution": "primary448 differs from baseline224 in resolution, grid, coreset size and score aggregation at once; a gain cannot be attributed to resolution alone",
+      "bootstrap": {
+        "interval": "percentile 2.5/97.5",
+        "resamples": 10000,
+        "seed_stream": [
+          2026100408,
+          7
+        ],
+        "unit": "test image, paired across methods, resampled with replacement within label stratum"
+      },
+      "comparison": "primary448 minus baseline224",
+      "metric": "defect recall at each method's own frozen calibration threshold (score > threshold)",
+      "population": "official PCB3 1cls test images; class counts taken from labels only after scoring",
+      "secondary_descriptive": [
+        "image AUROC",
+        "image average precision",
+        "highres448max threshold metrics",
+        "FAR difference with bootstrap CI"
+      ],
+      "success_requires_all": [
+        "recall gain point estimate >= 0.10",
+        "paired image bootstrap 95% percentile CI lower bound of recall gain > 0",
+        "primary448 normal false alarm rate <= 0.10"
+      ]
+    },
+    "primary_vs_baseline_bootstrap": {
+      "defect_recall_gain": {
+        "ci95": [
+          0.01,
+          0.21
+        ],
+        "estimate": 0.11,
+        "resamples": 10000
+      },
+      "normal_far_difference": {
+        "ci95": [
+          -0.09900990099009901,
+          0.0
+        ],
+        "estimate": -0.04950495049504951,
+        "resamples": 10000
+      }
+    }
+  },
+  "schema_version": 1,
+  "secondary_descriptive": {
+    "highres448max_vs_baseline224_bootstrap": {
+      "defect_recall_gain": {
+        "ci95": [
+          0.02,
+          0.24
+        ],
+        "estimate": 0.13,
+        "resamples": 10000
+      },
+      "normal_far_difference": {
+        "ci95": [
+          -0.09900990099009901,
+          0.009900990099009901
+        ],
+        "estimate": -0.039603960396039604,
+        "resamples": 10000
+      }
+    }
+  },
+  "study": "inspection-image-replication-v3-pcb3",
+  "test_scores_sha256": "e0715009ed994b00dec0c9fd5d81900f5bb85776a22d30d399d26576422566f7"
+}

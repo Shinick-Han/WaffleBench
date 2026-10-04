@@ -1,0 +1,747 @@
+{
+  "kind": "held_out_authored_synthetic_v2",
+  "source_commit": "7e64e95db102c71fbee57c2726616093b1f6f64f",
+  "freeze_sha256": "ac99238f00af278cd56ce79fdfed66ab0061ff2c4cbe3ba6492bb72f43b4d374",
+  "selected_candidate": "catboost_learned",
+  "development_lots": 20,
+  "held_out_lots": 60,
+  "held_out_wafers": 180,
+  "held_out_sites": 234900,
+  "development_runs": 960,
+  "held_out_runs": 2880,
+  "summary": {
+    "combined_vs_v1_learned": {
+      "budget": 360,
+      "ci95_difference": [
+        -0.5833333333333334,
+        0.55
+      ],
+      "comparator": "v1_logistic_learned",
+      "complete_pairs": 60,
+      "mean_comparator": 28.333333333333332,
+      "mean_difference": -0.03333333333333333,
+      "mean_policy": 28.3,
+      "metric": "true_doi_confirmed",
+      "mode": "candidate_only",
+      "policy": "catboost_learned",
+      "reason": "target not met",
+      "relative_gain": -0.0011764705882352233,
+      "role": "primary",
+      "success": false
+    },
+    "matched_cost": {
+      "both_attained": 60,
+      "both_attainment_fraction": 1.0,
+      "budget_ledger": 720,
+      "comparator": "v1_logistic_learned",
+      "comparator_attainment_fraction": 1.0,
+      "lots": 60,
+      "mean_cost_comparator_common": 62.34971152715338,
+      "mean_cost_policy_common": 63.98693400746741,
+      "mean_paired_saving_common": -0.04429677456036427,
+      "meets_saving_target": false,
+      "mode": "candidate_only",
+      "neither_attained": 0,
+      "note": "supplementary; restricted to lots where both reached the target; see attainment fractions",
+      "only_comparator_attained": 0,
+      "only_policy_attained": 0,
+      "policy": "catboost_learned",
+      "policy_attainment_fraction": 1.0,
+      "saving_of_means_common": -0.026258701768026915,
+      "saving_target": 0.3,
+      "target_true_doi": 5
+    },
+    "primary_condition_means": [
+      {
+        "lots": 60,
+        "mean_confident_fn_found": 0.0,
+        "mean_doi": 28.333333333333332,
+        "mean_loading_cost": 12.0,
+        "mean_policy_wall_s": 0.00033834331552498045,
+        "mean_spent": 351.94471568901594,
+        "mean_stage_cost": 59.81138235568266,
+        "variant": "v1_logistic_learned"
+      },
+      {
+        "lots": 60,
+        "mean_confident_fn_found": 0.15,
+        "mean_doi": 24.266666666666666,
+        "mean_loading_cost": 9.733333333333333,
+        "mean_policy_wall_s": 0.0019112083575843523,
+        "mean_spent": 352.2709835675841,
+        "mean_stage_cost": 59.53765023425076,
+        "variant": "v1_logistic_falsify"
+      },
+      {
+        "lots": 60,
+        "mean_confident_fn_found": 0.0,
+        "mean_doi": 27.916666666666668,
+        "mean_loading_cost": 10.533333333333333,
+        "mean_policy_wall_s": 0.0018362483067903667,
+        "mean_spent": 351.72656863242804,
+        "mean_stage_cost": 59.05990196576139,
+        "variant": "v1_logistic_no_audit"
+      },
+      {
+        "lots": 60,
+        "mean_confident_fn_found": 0.0,
+        "mean_doi": 28.3,
+        "mean_loading_cost": 10.4,
+        "mean_policy_wall_s": 0.0003440865761755655,
+        "mean_spent": 351.81394321525676,
+        "mean_stage_cost": 56.01394321525676,
+        "variant": "catboost_learned"
+      },
+      {
+        "lots": 60,
+        "mean_confident_fn_found": 0.0,
+        "mean_doi": 28.616666666666667,
+        "mean_loading_cost": 10.4,
+        "mean_policy_wall_s": 0.0003419582770826916,
+        "mean_spent": 351.85463988143954,
+        "mean_stage_cost": 55.921306548106145,
+        "variant": "calibrated_learned"
+      },
+      {
+        "lots": 60,
+        "mean_confident_fn_found": 0.0,
+        "mean_doi": 27.2,
+        "mean_loading_cost": 15.733333333333333,
+        "mean_policy_wall_s": 0.007558554989130547,
+        "mean_spent": 352.3555211401432,
+        "mean_stage_cost": 54.755521140143124,
+        "variant": "calibrated_adaptive_audit"
+      },
+      {
+        "lots": 60,
+        "mean_confident_fn_found": 0.0,
+        "mean_doi": 29.066666666666666,
+        "mean_loading_cost": 12.933333333333334,
+        "mean_policy_wall_s": 0.10913884996358926,
+        "mean_spent": 351.97750464130525,
+        "mean_stage_cost": 56.310837974638495,
+        "variant": "calibrated_route"
+      },
+      {
+        "lots": 60,
+        "mean_confident_fn_found": 0.0,
+        "mean_doi": 27.516666666666666,
+        "mean_loading_cost": 16.933333333333334,
+        "mean_policy_wall_s": 0.10723579168552533,
+        "mean_spent": 352.1037041314274,
+        "mean_stage_cost": 55.03703746476064,
+        "variant": "calibrated_adaptive_route"
+      }
+    ],
+    "selection_vs_same_model": {
+      "budget": 360,
+      "ci95_difference": [
+        0.0,
+        0.0
+      ],
+      "comparator": "catboost_learned",
+      "complete_pairs": 60,
+      "mean_comparator": 28.3,
+      "mean_difference": 0.0,
+      "mean_policy": 28.3,
+      "metric": "true_doi_confirmed",
+      "mode": "candidate_only",
+      "policy": "catboost_learned",
+      "relative_gain": 0.0,
+      "role": "exploratory"
+    }
+  },
+  "exploratory_comparisons": {
+    "selected_vs_old_falsify": {
+      "policy": "catboost_learned",
+      "comparator": "v1_logistic_falsify",
+      "mode": "candidate_only",
+      "budget": 360,
+      "metric": "true_doi_confirmed",
+      "complete_pairs": 60,
+      "mean_policy": 28.3,
+      "mean_comparator": 24.266666666666666,
+      "mean_difference": 4.033333333333333,
+      "ci95_difference": [
+        3.4,
+        4.616666666666666
+      ],
+      "relative_gain": 0.16620879120879128,
+      "role": "exploratory"
+    },
+    "route_vs_calibrated_learned": {
+      "policy": "calibrated_route",
+      "comparator": "calibrated_learned",
+      "mode": "candidate_only",
+      "budget": 360,
+      "metric": "true_doi_confirmed",
+      "complete_pairs": 60,
+      "mean_policy": 29.066666666666666,
+      "mean_comparator": 28.616666666666667,
+      "mean_difference": 0.45,
+      "ci95_difference": [
+        -0.13333333333333333,
+        1.0166666666666666
+      ],
+      "relative_gain": 0.015725101921956863,
+      "role": "exploratory"
+    },
+    "route_vs_old_learned": {
+      "policy": "calibrated_route",
+      "comparator": "v1_logistic_learned",
+      "mode": "candidate_only",
+      "budget": 360,
+      "metric": "true_doi_confirmed",
+      "complete_pairs": 60,
+      "mean_policy": 29.066666666666666,
+      "mean_comparator": 28.333333333333332,
+      "mean_difference": 0.7333333333333333,
+      "ci95_difference": [
+        0.1,
+        1.367083333333331
+      ],
+      "relative_gain": 0.025882352941176467,
+      "role": "exploratory"
+    }
+  },
+  "classification": {
+    "catboost/identity": {
+      "aggregate": {
+        "average_precision": 0.8843285058697068,
+        "brier": 0.07461310646413934,
+        "ece": 0.01773647338687806,
+        "ece_bins": 10,
+        "fn": 2744,
+        "fp": 2064,
+        "n_candidates": 47406,
+        "n_positive": 11876,
+        "precision": 0.8156484458735263,
+        "prevalence": 0.2505168122178627,
+        "recall_among_candidates": 0.7689457729875379,
+        "risk_coverage": {
+          "aurc": 0.023547380897636513,
+          "points": [
+            {
+              "coverage": 0.1,
+              "n": 4741,
+              "risk": 0.0014764817549040286
+            },
+            {
+              "coverage": 0.2,
+              "n": 9482,
+              "risk": 0.0034802784222737818
+            },
+            {
+              "coverage": 0.3,
+              "n": 14222,
+              "risk": 0.004640697510898608
+            },
+            {
+              "coverage": 0.4,
+              "n": 18963,
+              "risk": 0.0073300638084691245
+            },
+            {
+              "coverage": 0.5,
+              "n": 23703,
+              "risk": 0.012530059486140995
+            },
+            {
+              "coverage": 0.6,
+              "n": 28444,
+              "risk": 0.018562790043594433
+            },
+            {
+              "coverage": 0.7,
+              "n": 33185,
+              "risk": 0.028295916829893023
+            },
+            {
+              "coverage": 0.8,
+              "n": 37925,
+              "risk": 0.04458800263678313
+            },
+            {
+              "coverage": 0.9,
+              "n": 42666,
+              "risk": 0.06773543336614635
+            },
+            {
+              "coverage": 1.0,
+              "n": 47406,
+              "risk": 0.10142176095852845
+            }
+          ]
+        },
+        "tn": 33466,
+        "tp": 9132
+      },
+      "scope": {
+        "excludes": "non-candidate sites; not all-site physical recall",
+        "fit_overlap_lot_ids": [],
+        "lot_ids": [
+          "lot-c1cb5a26b93db486",
+          "lot-706b5c9a5197677c",
+          "lot-0696e1cd94d15651",
+          "lot-33ede11b7a13d4cb",
+          "lot-55a3204526ff2178",
+          "lot-95fa496d2081bed9",
+          "lot-673808f762b6222e",
+          "lot-937d30719b589f37",
+          "lot-7454834b64e50c5e",
+          "lot-5d931c6335a83d4d",
+          "lot-7e687e41d5114494",
+          "lot-78623825bd098cfe",
+          "lot-6af0ea7bc7ef41a4",
+          "lot-86ebd30d275f707a",
+          "lot-8bbf6ecd6d646790",
+          "lot-4ab8d6f987598d1e",
+          "lot-82dd7bd6d35d4315",
+          "lot-1b9e071b7d26b753",
+          "lot-d0775e7c55e135b6",
+          "lot-baa4831c1a90ca8a",
+          "lot-5ce3203d52c1fe0a",
+          "lot-a051caa3eeaed0f6",
+          "lot-292e08c4116de338",
+          "lot-d052c5c3200eb2f8",
+          "lot-160a08e83b279afe",
+          "lot-36686b0f781487a8",
+          "lot-28fedb2a9911bdf0",
+          "lot-9bc1f66ac2b7cfdd",
+          "lot-9f9323e85cf45e66",
+          "lot-6d3200481ebe7122",
+          "lot-68a60308f177b408",
+          "lot-462d2f1238746910",
+          "lot-ac3aed296eb55ac7",
+          "lot-ccb10473be4ecbb4",
+          "lot-ef86ef01c35b39c2",
+          "lot-e5a1680227d421ce",
+          "lot-90d1bb1bf025be09",
+          "lot-629911e78b336fbe",
+          "lot-8eccdfe1710d59eb",
+          "lot-d8405efcbc42df67",
+          "lot-50ba92c546185739",
+          "lot-a31b8cf072ba1acf",
+          "lot-ab51443f54e2fd86",
+          "lot-fd98f8e290831885",
+          "lot-a4f46736d0e50d70",
+          "lot-9a50855f1a0ba188",
+          "lot-8224b57c047f0d86",
+          "lot-1da79aeebf3ba2af",
+          "lot-51f6a82cf627556b",
+          "lot-d3ebf20cf5851337",
+          "lot-b62dcee610418dac",
+          "lot-82ce02659eef9295",
+          "lot-062e59623d7596d1",
+          "lot-b99085ac3ae94272",
+          "lot-22fd31630eb102a1",
+          "lot-0546583d84448fb3",
+          "lot-bdea6edf91a2246c",
+          "lot-c145b58c6ece92dc",
+          "lot-9db0b86323d42724",
+          "lot-1f1cd67dd4565b75"
+        ],
+        "unit": "optical_candidate_sites"
+      }
+    },
+    "catboost/isotonic": {
+      "aggregate": {
+        "average_precision": 0.873010176440655,
+        "brier": 0.07506854360199729,
+        "ece": 0.017941025001371687,
+        "ece_bins": 10,
+        "fn": 2482,
+        "fp": 2418,
+        "n_candidates": 47406,
+        "n_positive": 11876,
+        "precision": 0.795292922451744,
+        "prevalence": 0.2505168122178627,
+        "recall_among_candidates": 0.791007073088582,
+        "risk_coverage": {
+          "aurc": 0.024864194301981064,
+          "points": [
+            {
+              "coverage": 0.1,
+              "n": 4741,
+              "risk": 0.005484075089643535
+            },
+            {
+              "coverage": 0.2,
+              "n": 9482,
+              "risk": 0.003585741404766927
+            },
+            {
+              "coverage": 0.3,
+              "n": 14222,
+              "risk": 0.007382927858247785
+            },
+            {
+              "coverage": 0.4,
+              "n": 18963,
+              "risk": 0.007804672256499499
+            },
+            {
+              "coverage": 0.5,
+              "n": 23703,
+              "risk": 0.01274100324853394
+            },
+            {
+              "coverage": 0.6,
+              "n": 28444,
+              "risk": 0.018422162846294474
+            },
+            {
+              "coverage": 0.7,
+              "n": 33185,
+              "risk": 0.02926020792526744
+            },
+            {
+              "coverage": 0.8,
+              "n": 37925,
+              "risk": 0.04458800263678313
+            },
+            {
+              "coverage": 0.9,
+              "n": 42666,
+              "risk": 0.06853232081751277
+            },
+            {
+              "coverage": 1.0,
+              "n": 47406,
+              "risk": 0.10336244357254357
+            }
+          ]
+        },
+        "tn": 33112,
+        "tp": 9394
+      },
+      "scope": {
+        "excludes": "non-candidate sites; not all-site physical recall",
+        "fit_overlap_lot_ids": [],
+        "lot_ids": [
+          "lot-c1cb5a26b93db486",
+          "lot-706b5c9a5197677c",
+          "lot-0696e1cd94d15651",
+          "lot-33ede11b7a13d4cb",
+          "lot-55a3204526ff2178",
+          "lot-95fa496d2081bed9",
+          "lot-673808f762b6222e",
+          "lot-937d30719b589f37",
+          "lot-7454834b64e50c5e",
+          "lot-5d931c6335a83d4d",
+          "lot-7e687e41d5114494",
+          "lot-78623825bd098cfe",
+          "lot-6af0ea7bc7ef41a4",
+          "lot-86ebd30d275f707a",
+          "lot-8bbf6ecd6d646790",
+          "lot-4ab8d6f987598d1e",
+          "lot-82dd7bd6d35d4315",
+          "lot-1b9e071b7d26b753",
+          "lot-d0775e7c55e135b6",
+          "lot-baa4831c1a90ca8a",
+          "lot-5ce3203d52c1fe0a",
+          "lot-a051caa3eeaed0f6",
+          "lot-292e08c4116de338",
+          "lot-d052c5c3200eb2f8",
+          "lot-160a08e83b279afe",
+          "lot-36686b0f781487a8",
+          "lot-28fedb2a9911bdf0",
+          "lot-9bc1f66ac2b7cfdd",
+          "lot-9f9323e85cf45e66",
+          "lot-6d3200481ebe7122",
+          "lot-68a60308f177b408",
+          "lot-462d2f1238746910",
+          "lot-ac3aed296eb55ac7",
+          "lot-ccb10473be4ecbb4",
+          "lot-ef86ef01c35b39c2",
+          "lot-e5a1680227d421ce",
+          "lot-90d1bb1bf025be09",
+          "lot-629911e78b336fbe",
+          "lot-8eccdfe1710d59eb",
+          "lot-d8405efcbc42df67",
+          "lot-50ba92c546185739",
+          "lot-a31b8cf072ba1acf",
+          "lot-ab51443f54e2fd86",
+          "lot-fd98f8e290831885",
+          "lot-a4f46736d0e50d70",
+          "lot-9a50855f1a0ba188",
+          "lot-8224b57c047f0d86",
+          "lot-1da79aeebf3ba2af",
+          "lot-51f6a82cf627556b",
+          "lot-d3ebf20cf5851337",
+          "lot-b62dcee610418dac",
+          "lot-82ce02659eef9295",
+          "lot-062e59623d7596d1",
+          "lot-b99085ac3ae94272",
+          "lot-22fd31630eb102a1",
+          "lot-0546583d84448fb3",
+          "lot-bdea6edf91a2246c",
+          "lot-c145b58c6ece92dc",
+          "lot-9db0b86323d42724",
+          "lot-1f1cd67dd4565b75"
+        ],
+        "unit": "optical_candidate_sites"
+      }
+    },
+    "logistic/identity": {
+      "aggregate": {
+        "average_precision": 0.8723392876342848,
+        "brier": 0.07970096668368204,
+        "ece": 0.0457676501640924,
+        "ece_bins": 10,
+        "fn": 2929,
+        "fp": 2030,
+        "n_candidates": 47406,
+        "n_positive": 11876,
+        "precision": 0.8150678691810148,
+        "prevalence": 0.2505168122178627,
+        "recall_among_candidates": 0.7533681374200067,
+        "risk_coverage": {
+          "aurc": 0.02543719832967991,
+          "points": [
+            {
+              "coverage": 0.1,
+              "n": 4741,
+              "risk": 0.0014764817549040286
+            },
+            {
+              "coverage": 0.2,
+              "n": 9482,
+              "risk": 0.0030584264923012023
+            },
+            {
+              "coverage": 0.3,
+              "n": 14222,
+              "risk": 0.005343833497398397
+            },
+            {
+              "coverage": 0.4,
+              "n": 18963,
+              "risk": 0.009017560512577124
+            },
+            {
+              "coverage": 0.5,
+              "n": 23703,
+              "risk": 0.014512930852634687
+            },
+            {
+              "coverage": 0.6,
+              "n": 28444,
+              "risk": 0.021586274785543525
+            },
+            {
+              "coverage": 0.7,
+              "n": 33185,
+              "risk": 0.031158656019285823
+            },
+            {
+              "coverage": 0.8,
+              "n": 37925,
+              "risk": 0.04711931443638761
+            },
+            {
+              "coverage": 0.9,
+              "n": 42666,
+              "risk": 0.07108704823512868
+            },
+            {
+              "coverage": 1.0,
+              "n": 47406,
+              "risk": 0.10460701177066194
+            }
+          ]
+        },
+        "tn": 33500,
+        "tp": 8947
+      },
+      "scope": {
+        "excludes": "non-candidate sites; not all-site physical recall",
+        "fit_overlap_lot_ids": [],
+        "lot_ids": [
+          "lot-c1cb5a26b93db486",
+          "lot-706b5c9a5197677c",
+          "lot-0696e1cd94d15651",
+          "lot-33ede11b7a13d4cb",
+          "lot-55a3204526ff2178",
+          "lot-95fa496d2081bed9",
+          "lot-673808f762b6222e",
+          "lot-937d30719b589f37",
+          "lot-7454834b64e50c5e",
+          "lot-5d931c6335a83d4d",
+          "lot-7e687e41d5114494",
+          "lot-78623825bd098cfe",
+          "lot-6af0ea7bc7ef41a4",
+          "lot-86ebd30d275f707a",
+          "lot-8bbf6ecd6d646790",
+          "lot-4ab8d6f987598d1e",
+          "lot-82dd7bd6d35d4315",
+          "lot-1b9e071b7d26b753",
+          "lot-d0775e7c55e135b6",
+          "lot-baa4831c1a90ca8a",
+          "lot-5ce3203d52c1fe0a",
+          "lot-a051caa3eeaed0f6",
+          "lot-292e08c4116de338",
+          "lot-d052c5c3200eb2f8",
+          "lot-160a08e83b279afe",
+          "lot-36686b0f781487a8",
+          "lot-28fedb2a9911bdf0",
+          "lot-9bc1f66ac2b7cfdd",
+          "lot-9f9323e85cf45e66",
+          "lot-6d3200481ebe7122",
+          "lot-68a60308f177b408",
+          "lot-462d2f1238746910",
+          "lot-ac3aed296eb55ac7",
+          "lot-ccb10473be4ecbb4",
+          "lot-ef86ef01c35b39c2",
+          "lot-e5a1680227d421ce",
+          "lot-90d1bb1bf025be09",
+          "lot-629911e78b336fbe",
+          "lot-8eccdfe1710d59eb",
+          "lot-d8405efcbc42df67",
+          "lot-50ba92c546185739",
+          "lot-a31b8cf072ba1acf",
+          "lot-ab51443f54e2fd86",
+          "lot-fd98f8e290831885",
+          "lot-a4f46736d0e50d70",
+          "lot-9a50855f1a0ba188",
+          "lot-8224b57c047f0d86",
+          "lot-1da79aeebf3ba2af",
+          "lot-51f6a82cf627556b",
+          "lot-d3ebf20cf5851337",
+          "lot-b62dcee610418dac",
+          "lot-82ce02659eef9295",
+          "lot-062e59623d7596d1",
+          "lot-b99085ac3ae94272",
+          "lot-22fd31630eb102a1",
+          "lot-0546583d84448fb3",
+          "lot-bdea6edf91a2246c",
+          "lot-c145b58c6ece92dc",
+          "lot-9db0b86323d42724",
+          "lot-1f1cd67dd4565b75"
+        ],
+        "unit": "optical_candidate_sites"
+      }
+    }
+  },
+  "scenario_results": [
+    {
+      "scenario": "stationary",
+      "selected_vs_old_learned": {
+        "policy": "catboost_learned",
+        "comparator": "v1_logistic_learned",
+        "mode": "candidate_only",
+        "budget": 360,
+        "metric": "true_doi_confirmed",
+        "complete_pairs": 12,
+        "mean_policy": 30.916666666666668,
+        "mean_comparator": 31.333333333333332,
+        "mean_difference": -0.4166666666666667,
+        "ci95_difference": [
+          -1.5,
+          0.8333333333333334
+        ],
+        "relative_gain": -0.013297872340425454,
+        "role": "exploratory"
+      }
+    },
+    {
+      "scenario": "novel_cluster",
+      "selected_vs_old_learned": {
+        "policy": "catboost_learned",
+        "comparator": "v1_logistic_learned",
+        "mode": "candidate_only",
+        "budget": 360,
+        "metric": "true_doi_confirmed",
+        "complete_pairs": 12,
+        "mean_policy": 30.333333333333332,
+        "mean_comparator": 30.583333333333332,
+        "mean_difference": -0.25,
+        "ci95_difference": [
+          -1.75,
+          1.25
+        ],
+        "relative_gain": -0.008174386920980936,
+        "role": "exploratory"
+      }
+    },
+    {
+      "scenario": "low_contrast",
+      "selected_vs_old_learned": {
+        "policy": "catboost_learned",
+        "comparator": "v1_logistic_learned",
+        "mode": "candidate_only",
+        "budget": 360,
+        "metric": "true_doi_confirmed",
+        "complete_pairs": 12,
+        "mean_policy": 22.333333333333332,
+        "mean_comparator": 22.75,
+        "mean_difference": -0.4166666666666667,
+        "ci95_difference": [
+          -1.25,
+          0.6666666666666666
+        ],
+        "relative_gain": -0.01831501831501836,
+        "role": "exploratory"
+      }
+    },
+    {
+      "scenario": "nuisance_heavy",
+      "selected_vs_old_learned": {
+        "policy": "catboost_learned",
+        "comparator": "v1_logistic_learned",
+        "mode": "candidate_only",
+        "budget": 360,
+        "metric": "true_doi_confirmed",
+        "complete_pairs": 12,
+        "mean_policy": 32.0,
+        "mean_comparator": 30.916666666666668,
+        "mean_difference": 1.0833333333333333,
+        "ci95_difference": [
+          -0.3333333333333333,
+          2.75
+        ],
+        "relative_gain": 0.03504043126684642,
+        "role": "exploratory"
+      }
+    },
+    {
+      "scenario": "process_shift",
+      "selected_vs_old_learned": {
+        "policy": "catboost_learned",
+        "comparator": "v1_logistic_learned",
+        "mode": "candidate_only",
+        "budget": 360,
+        "metric": "true_doi_confirmed",
+        "complete_pairs": 12,
+        "mean_policy": 25.916666666666668,
+        "mean_comparator": 26.083333333333332,
+        "mean_difference": -0.16666666666666666,
+        "ci95_difference": [
+          -1.0833333333333333,
+          0.8333333333333334
+        ],
+        "relative_gain": -0.006389776357827337,
+        "role": "exploratory"
+      }
+    }
+  ],
+  "wall_seconds": 234.94908259995282,
+  "tests": {
+    "total": 145,
+    "result": "passed",
+    "v2_model": 28,
+    "v2_policies": 21,
+    "v2_jev": 34,
+    "v2_integration": 6,
+    "legacy_inspection": 56
+  },
+  "jev_status": "implemented_shadow_adapter_unavailable_without_genuine_notes",
+  "limitations": [
+    "Authored synthetic tabular study; not actual SEM or factory equipment performance.",
+    "Combined model/selection effect and same-model selection effect are distinct.",
+    "Equipment costs are authored CU, separately recorded from measured software runtime.",
+    "The best held-out exploratory variant was not retroactively promoted.",
+    "Classifier metrics are pooled optical candidates with threshold .5; not real factory or all-site physical recall.",
+    "Same-model comparison is self-comparison because the selected candidate is a learned policy; no scheduler gain is claimed."
+  ]
+}

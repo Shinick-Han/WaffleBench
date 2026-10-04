@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>검사 품질 진단 | Falsify Lab — Research Workbench</title>
+<meta name="description" content="검사 v3 합성 연구의 사후 진단입니다. lot의 다이 가운데 일부만 유료 검토를 받는 이유와, 잠재 DOI가 어디서 놓치는지를 저장된 감사 근거로 설명합니다.">
+<meta property="og:title" content="검사 품질 진단 | Falsify Lab">
+<meta property="og:description" content="검사 v3 합성 연구의 사후 품질 진단입니다. 실제 팹 측정 자료가 아닙니다.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="./inspection-evidence.css">
+<link rel="stylesheet" href="./inspection-quality.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<header class="masthead"><div class="mast-inner"><div class="identity"><span class="brand">Falsify Lab</span><span class="divider" aria-hidden="true"></span><span>Research Workbench</span></div><nav class="mast-links" aria-label="관련 화면"><a href="./inspection-evidence.html">검사 v3 근거</a><a href="./synthetic-wafers.html">합성 웨이퍼</a><a href="./inspection-images.html">실제 PCB 사진</a><a href="./inspection-live.html">실제 에이전트 실행</a></nav></div></header>
+<main id="main" class="layout">
+ <div class="heading">
+  <div><h1>검사 품질 진단</h1><p class="lead">lot 하나의 수천 개 다이 가운데 왜 수십 곳만 유료 SEM 검토를 받는지, 그리고 놓친 결함(DOI)이 어느 단계에서 왜 빠지는지를 저장된 사후 진단 근거로 따라갑니다.</p></div>
+  <div class="downloads"><a class="control" href="./inspection-evidence.html">검사 v3 근거 보기</a><button id="download" type="button" class="control" disabled>원본 JSON 내려받기</button></div>
+ </div>
+ <p class="notice"><strong>사후 진단 · 합성 표 데이터</strong> · 이미 동결·감사된 검사 v3 기록을 다시 세어 본 결과입니다. 아무것도 다시 학습하거나 조정하지 않았고, 사전 등록한 주 결과를 바꾸지 않습니다. 실제 SEM 이미지 정확도, 팹 처리량, 수율을 입증하지 않습니다.</p>
+
+ <div id="loadState" class="load-state" role="status" aria-live="polite">
+  <div class="skeleton" aria-hidden="true"><span></span><span></span><span></span></div>
+  <p>저장된 사후 진단을 불러오는 중…</p>
+ </div>
+
+ <div id="app" hidden>
+  <dl id="studyMeta" class="study-meta"></dl>
+  <p id="scopeWarn" class="scope-warn" role="alert" hidden></p>
+
+  <nav class="toc" aria-label="이 화면의 절">
+   <a href="#budget">검토 횟수의 한계</a><a href="#balance">잠재 DOI의 행방</a><a href="#scenarios">시나리오별 병목</a><a href="#errors">세 가지 오류</a><a href="#receipt">근거와 감사</a>
+  </nav>
+
+  <section id="budget" class="band" aria-labelledby="budgetTitle">
+   <div class="section-head"><div><h2 id="budgetTitle">왜 일부 다이만 검토받나</h2><p>lot당 예산 안에서 가능한 유료 검토 횟수를 동결된 최소 수수료로 직접 계산합니다.</p></div></div>
+   <div id="budgetBody"></div>
+  </section>
+
+  <section id="balance" class="band" aria-labelledby="balanceTitle">
+   <div class="section-head"><div><h2 id="balanceTitle">lot당 잠재 DOI는 어디로 가나</h2><p>합성 생성기가 알고 있는 잠재 DOI를 단계별로 나눠, 모두 합하면 원래 수가 되는지 확인합니다.</p></div></div>
+   <div id="balanceBody"></div>
+  </section>
+
+  <section id="scenarios" class="band" aria-labelledby="scenTitle">
+   <div class="section-head"><div><h2 id="scenTitle">다섯 시나리오, 서로 다른 병목</h2><p>광학 후보 천장(후보 DOI ÷ 잠재 DOI)은 후보 안에서만 고르는 어떤 정책도 넘을 수 없는 상한입니다.</p></div><label class="field inline">시나리오<select id="scenSelect"><option value="all">전체 비교</option></select></label></div>
+   <div id="scenBody"></div>
+  </section>
+
+  <section id="errors" class="band" aria-labelledby="errTitle">
+   <div class="section-head"><div><h2 id="errTitle">세 가지 오류를 따로 봅니다</h2><p>0.5 임계값 분류 오류, 선택 순위 오류, 센서 응답 오류는 서로 다른 단계에서 생기며 섞어 해석하면 안 됩니다.</p></div><label class="field inline">시나리오<select id="errSelect"><option value="all">5개 시나리오 합산</option></select></label></div>
+   <div id="errBody"></div>
+   <div class="sub-band" aria-labelledby="calTitle">
+    <div class="section-head"><div><h3 id="calTitle">보정: 예측 확률과 실제 잠재 DOI 비율</h3><p>고정 구간마다 평균 예측 p와 실제 비율을 나란히 둡니다. 표본이 없는 구간은 0이 아니라 빈칸입니다.</p></div><label class="field inline">대상<select id="calSelect"><option value="candidates">광학 후보 전체</option><option value="selected">선택된 검토 사이트</option></select></label></div>
+    <div id="calBody"></div>
+   </div>
+  </section>
+
+  <section id="receipt" class="band" aria-labelledby="receiptTitle">
+   <div class="section-head"><div><h2 id="receiptTitle">근거와 감사</h2><p>이 화면의 모든 수치는 아래 한 파일에서 읽고 계산합니다. 내려받기는 서버가 보낸 바이트를 그대로 저장합니다.</p></div></div>
+   <div id="receiptBody"></div>
+  </section>
+
+  <section class="limitations" aria-labelledby="limitationsTitle"><details open><summary id="limitationsTitle">해석 범위와 한계</summary><ul id="limitationsList"></ul></details></section>
+ </div>
+</main>
+<script src="./inspection-quality.js" defer></script>
+</body>
+</html>

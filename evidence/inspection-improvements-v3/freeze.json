@@ -1,0 +1,61 @@
+{
+  "candidate": "cb400_route_full",
+  "created_at": "2026-10-04T07:18:41.157449+00:00",
+  "environment": {
+    "catboost": "1.2.10",
+    "numpy": "2.3.3",
+    "python": "3.12.10"
+  },
+  "file_hashes": {
+    "development.json": "dcec6c869bf2a8ec34f805443c8e4f2a23e75f3595e2c9cc52e1eaf083484ef3",
+    "frozen-config.json": "9e65219d1b434a4f1ba4fe064c0a19adc7246e8f5af08fbb8a4ce1a4f86d3cc2",
+    "lot-manifest.json": "5eff2bbd688c6064d77033ba1993496060ef5f5758312a9212d0d97df4b89bd1",
+    "models.json": "ba85648c682e6d6b73c3de0e7aaccb68c3edf1669165d5214849d9610d9f1e75",
+    "review-yield.json": "47a4b4e473130a925f21a3cb67bd97c71dde04405ef6c00ce79e78fd2da7f824"
+  },
+  "m5_authorization": "coordinator after focused tests, integration and independent boundary checks; autonomous user request",
+  "model_hashes": {
+    "cb250/identity": "74d3195c935a3e53cc6ee073c048a3d11c2eafafab477e0161814743610e91b3",
+    "cb400/identity": "58aef92c229b24da7d5a04c9ad5dc2c30e82fa9618fed304ef63e17ed113064b",
+    "cb400/isotonic": "5b4336cd78ade8faae10ffff7a656e02b91decc64b082f74f84a406c16abe386",
+    "cb400/platt": "eafb882c5481f9473661d1ce91925043e32563935fe69611a48e2e9a96bd193d",
+    "cb400/temperature": "cbca6b01dbccbafa07d8a1fbd6588262404f12b373c64729a9f396cbd371f11c",
+    "cb600/identity": "8a3c7f096bf62f63991e7f55152b0f5aff12a49712875c36e636b20fc390186f",
+    "logistic/identity": "d70243e2e433ff77e9a3a97ffc76fc0a88e931e2543ebdac145ac2912c521a90"
+  },
+  "receipt_sha256": "faadbe498c1dec1f83926c733e21b386e2aa49cf24219b8ccd7fdd1327e4f3fb",
+  "schema_version": 1,
+  "source_commit": "a67f72798729ee0e935167ca0a92ba6435c1f5b0",
+  "source_hashes": {
+    "INSPECTION_V2_CONTRACT.md": "18015d48a51b87ce9c239465faf648e349296d1c2e6ae8730fdb936309b62935",
+    "INSPECTION_V3_CONTRACT.md": "9321bfa5982c2ca6d5a8e7b7d1b777b7e137bcfc5c254ca9fd1483c60655c064",
+    "inspection_review/__init__.py": "9ea90b4f6d058268e8b2505a4a710363ea034066e7db545e410110e96033835d",
+    "inspection_review/cli.py": "661757e71af88dcc209255a00b8bb4fdb80277acf0c40816a1dc20cbd08cb710",
+    "inspection_review/data.py": "297c250a786a0bdecdae2111514cc7d89d1d1ac94b6d497202e2ca80ece116cf",
+    "inspection_review/harness.py": "7aa614098893a21ca6499fb19845523f7aa5e786573ce22d4b0e69428db852c2",
+    "inspection_review/model.py": "5a10277d3e4f24bbb5c710c653e2d9f505dfa5554ff989d7d0365110a1d2f791",
+    "inspection_review/policies.py": "4056518147b0ec497b8ca2c543fb8fd77001e2ef8dc6d045ab7c42f14f6babf3",
+    "inspection_review/protocol.json": "0ea8425b69dff5f6005d17a8e9997c0cbb0e98160fa12ced9f2838e990c58c42",
+    "inspection_review/reporting.py": "e6a3c0aa1a1bc1acc69bbd9657b6039e7b555d64c145857be0138256db94e778",
+    "inspection_v2/__init__.py": "15d39c2608b0e31e5599b628cb930860479dfcd31448f0d34c44758fa56c5256",
+    "inspection_v2/cli.py": "1e6b89f0ead99b64269346e7987cea3244d8c08f5163eabc0a94153329decb95",
+    "inspection_v2/harness.py": "37a0a5e182adc125e217341a6fe396da25d8c86ece056a5dcf91cb8e0447a2f9",
+    "inspection_v2/jev.py": "74f0e2c3f390c6e7c620132822a51143d2449dc2e0fbfe646b86415a6f277d08",
+    "inspection_v2/model.py": "aa15577e23f83c1310a0622ad71362973bdffe996f74a17defe33b293205f21c",
+    "inspection_v2/policies.py": "f2b9ba2c4e83a1c7345947cb0bccba302820d88853eb16a8fc7d8c28623f82c2",
+    "inspection_v2/protocol.json": "6aaf2713a42f98eeefb149eefda73278a4e2ddfc3a28ebb2b6493438bc32c869",
+    "inspection_v3/__init__.py": "cf55003ff082933142d750bcfe6ad19b20e2dd8cdc957422ed146df6e96e6277",
+    "inspection_v3/cli.py": "a07e1184b5f0a02c63774b85cfdb93ae6faadb80f07adf56e41440b4c7d79b25",
+    "inspection_v3/harness.py": "062d1fe68b280c387ae0d02e861a421ae9436856b6ce32ad9bc92238e7043d4b",
+    "inspection_v3/inference.py": "1f2f92db7e17c508861facdd353df7375bc3cbaaf613e57d6ef6bcf1a1bf3150",
+    "inspection_v3/model.py": "fca95d75792254884786510ced582ccbcc58b917250b577f63d04ca484dc7968",
+    "inspection_v3/policies.py": "d8bf18029fe863e45fbb6a09b748a4c85e22b345bfa6fbcd52192ff15890a244",
+    "inspection_v3/protocol.json": "35c13817f7225883d77e0f45c1fa53d3c1b40daed2390ba088ae00adcd4e30d2",
+    "inspection_v3/sensor_yield.py": "d6eaf5e7bf27aaa2c73fdc0b68b3938b9bfc4b3e8f70fff0ae479a8ac87a3560",
+    "pyproject.toml": "3825693986f48d794c2ed247ccae2907b4d415be4061d63cff04356b0b1ca58a",
+    "uv.lock": "07dff9aad21af0f42389344fdaed00b26f22b4488f551fa6a4f0c98f942c66a2"
+  },
+  "study": "v3",
+  "test_generation_has_started": false,
+  "test_lots": 100
+}

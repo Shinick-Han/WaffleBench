@@ -1,0 +1,690 @@
+{
+  "budgets": [
+    120,
+    360,
+    720
+  ],
+  "cost": {
+    "dwell": 8.0,
+    "outside_rescan": 12.0,
+    "retry_dwell": 4.0,
+    "retry_limit": 1,
+    "stage_base": 1.0,
+    "stage_per_normalized_distance": 2.0,
+    "unit": "synthetic_equipment_cost_unit",
+    "wafer_load": 8.0
+  },
+  "data_mode": "authored_synthetic_tabular",
+  "features": [
+    "signal",
+    "size",
+    "texture",
+    "design_delta",
+    "process_context",
+    "radius",
+    "layer"
+  ],
+  "generator": {
+    "base_doi_rate": 0.045,
+    "benign_physical_rate": 0.06,
+    "cluster_excess_doi_rate": 0.22,
+    "cluster_radius_normalized": 0.22,
+    "electrical_effect_probability_given_doi": 0.45,
+    "feature_noise_sd": 0.14,
+    "low_contrast_factor": 0.5,
+    "novel_cluster_excess_rate": 0.32,
+    "nuisance_heavy_rate": 0.45,
+    "nuisance_rate": 0.15,
+    "optical_threshold": 0.62,
+    "process_shift_offset": -0.24,
+    "review_failure_rate": 0.025,
+    "review_false_positive_rate": 0.01,
+    "review_missing_rate": 0.04,
+    "review_sensitivity": {
+      "bridge": 0.94,
+      "novel": 0.8,
+      "particle": 0.97,
+      "scratch": 0.96,
+      "void": 0.85
+    }
+  },
+  "geometry": {
+    "care_sites_per_die": 1,
+    "die_height_mm": 6,
+    "die_width_mm": 8,
+    "edge_exclusion_mm": 3,
+    "scribe_mm": 0.08,
+    "wafer_diameter_mm": 300,
+    "wafers_per_lot": 3
+  },
+  "model": {
+    "classification_threshold": 0.5,
+    "confident_negative_threshold": 0.1,
+    "epochs": 250,
+    "family": "numpy_l2_logistic",
+    "l2": 0.01,
+    "learning_rate": 0.1,
+    "online_learning_rate": 0.08
+  },
+  "modes": [
+    "candidate_only",
+    "with_rescan"
+  ],
+  "policies": [
+    "random",
+    "recipe",
+    "learned",
+    "uncertainty_diversity",
+    "falsify",
+    "falsify_no_audit",
+    "falsify_no_spatial",
+    "falsify_no_update"
+  ],
+  "primary_budget": 360,
+  "schema_version": 1,
+  "selection": {
+    "audit_period": 5,
+    "cost_aware": true,
+    "diversity_weight": 0.15,
+    "novelty_weight": 0.35,
+    "rescan_period": 10,
+    "spatial_bandwidth": 0.22,
+    "spatial_prior_strength": 4.0,
+    "spatial_weight": 0.4,
+    "uncertainty_weight": 0.35
+  },
+  "splits": {
+    "test_seeds_by_scenario": {
+      "low_contrast": [
+        4200,
+        4201,
+        4202,
+        4203,
+        4204,
+        4205,
+        4206,
+        4207,
+        4208,
+        4209,
+        4210,
+        4211
+      ],
+      "novel_cluster": [
+        4100,
+        4101,
+        4102,
+        4103,
+        4104,
+        4105,
+        4106,
+        4107,
+        4108,
+        4109,
+        4110,
+        4111
+      ],
+      "nuisance_heavy": [
+        4300,
+        4301,
+        4302,
+        4303,
+        4304,
+        4305,
+        4306,
+        4307,
+        4308,
+        4309,
+        4310,
+        4311
+      ],
+      "process_shift": [
+        4400,
+        4401,
+        4402,
+        4403,
+        4404,
+        4405,
+        4406,
+        4407,
+        4408,
+        4409,
+        4410,
+        4411
+      ],
+      "stationary": [
+        4000,
+        4001,
+        4002,
+        4003,
+        4004,
+        4005,
+        4006,
+        4007,
+        4008,
+        4009,
+        4010,
+        4011
+      ]
+    },
+    "train_seeds": [
+      3000,
+      3001,
+      3002,
+      3003,
+      3004,
+      3005,
+      3006,
+      3007,
+      3008,
+      3009,
+      3010,
+      3011
+    ],
+    "validation_seeds": []
+  },
+  "statistics": {
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 20261004,
+    "ci_unit": "paired_independent_lot",
+    "cost_reduction_target": 0.3,
+    "matched_capture_target": 5,
+    "primary_comparator": "learned",
+    "primary_metric": "true_doi_confirmed",
+    "primary_mode": "candidate_only",
+    "scenario_weighting": "equal_lot",
+    "success_relative_gain_target": 0.2,
+    "success_requires_positive_lower_ci": true
+  },
+  "study_id": "inspection-improvements-v2-20261004",
+  "test_campaign_rule": "Freeze protocol, generator, model and policies before first held-out campaign. No tuning to these test seeds. Engineering defect repairs require disclosure and exact changed commits; invalidated results remain marked superseded.",
+  "v2_model": {
+    "depth": 6,
+    "family": "catboost",
+    "iterations": 250,
+    "l2_leaf_reg": 3.0,
+    "learning_rate": 0.06,
+    "random_seed": 20261004,
+    "thread_count": 2
+  },
+  "v2_primary": {
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 20261004,
+    "budget": 360,
+    "candidate": "catboost_learned",
+    "ci_unit": "paired_lot",
+    "comparator": "v1_logistic_learned",
+    "metric": "true_doi_confirmed",
+    "mode": "candidate_only",
+    "same_model_comparator": "catboost_learned",
+    "target_relative_gain": 0.2
+  },
+  "v2_rules": [
+    "Development results are not held-out evidence.",
+    "Freeze exact selected variant/config/model/source before generating any v2 test lot.",
+    "Same sensors, immutable initial probability, failed/missing review charging and attempted-site semantics as v1.",
+    "No genuine image/note data available: Jev integration remains separately tested and unavailable in this tabular campaign.",
+    "Report combined gain and same-model selection effect separately. Keep old v1 study unchanged."
+  ],
+  "v2_selection": {
+    "audit_max": 0.1,
+    "audit_min": 0.025,
+    "audit_prior_strength": 4.0,
+    "audit_sampling": "inverse_cost",
+    "lookahead_weight": 0.5,
+    "rescan_period": 10,
+    "route_per_wafer": 2,
+    "shortlist_size": 24
+  },
+  "v2_splits": {
+    "calibration": [
+      {
+        "scenario": "stationary",
+        "seed": 3100
+      },
+      {
+        "scenario": "stationary",
+        "seed": 3101
+      },
+      {
+        "scenario": "stationary",
+        "seed": 3102
+      },
+      {
+        "scenario": "stationary",
+        "seed": 3103
+      },
+      {
+        "scenario": "stationary",
+        "seed": 3104
+      },
+      {
+        "scenario": "stationary",
+        "seed": 3105
+      }
+    ],
+    "development": [
+      {
+        "scenario": "stationary",
+        "seed": 3200
+      },
+      {
+        "scenario": "stationary",
+        "seed": 3201
+      },
+      {
+        "scenario": "stationary",
+        "seed": 3202
+      },
+      {
+        "scenario": "stationary",
+        "seed": 3203
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 3300
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 3301
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 3302
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 3303
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 3400
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 3401
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 3402
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 3403
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 3500
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 3501
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 3502
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 3503
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 3600
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 3601
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 3602
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 3603
+      }
+    ],
+    "test": [
+      {
+        "scenario": "stationary",
+        "seed": 4000
+      },
+      {
+        "scenario": "stationary",
+        "seed": 4001
+      },
+      {
+        "scenario": "stationary",
+        "seed": 4002
+      },
+      {
+        "scenario": "stationary",
+        "seed": 4003
+      },
+      {
+        "scenario": "stationary",
+        "seed": 4004
+      },
+      {
+        "scenario": "stationary",
+        "seed": 4005
+      },
+      {
+        "scenario": "stationary",
+        "seed": 4006
+      },
+      {
+        "scenario": "stationary",
+        "seed": 4007
+      },
+      {
+        "scenario": "stationary",
+        "seed": 4008
+      },
+      {
+        "scenario": "stationary",
+        "seed": 4009
+      },
+      {
+        "scenario": "stationary",
+        "seed": 4010
+      },
+      {
+        "scenario": "stationary",
+        "seed": 4011
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 4100
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 4101
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 4102
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 4103
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 4104
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 4105
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 4106
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 4107
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 4108
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 4109
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 4110
+      },
+      {
+        "scenario": "novel_cluster",
+        "seed": 4111
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 4200
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 4201
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 4202
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 4203
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 4204
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 4205
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 4206
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 4207
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 4208
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 4209
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 4210
+      },
+      {
+        "scenario": "low_contrast",
+        "seed": 4211
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 4300
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 4301
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 4302
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 4303
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 4304
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 4305
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 4306
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 4307
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 4308
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 4309
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 4310
+      },
+      {
+        "scenario": "nuisance_heavy",
+        "seed": 4311
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 4400
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 4401
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 4402
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 4403
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 4404
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 4405
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 4406
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 4407
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 4408
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 4409
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 4410
+      },
+      {
+        "scenario": "process_shift",
+        "seed": 4411
+      }
+    ],
+    "train": [
+      {
+        "scenario": "stationary",
+        "seed": 3000
+      },
+      {
+        "scenario": "stationary",
+        "seed": 3001
+      },
+      {
+        "scenario": "stationary",
+        "seed": 3002
+      },
+      {
+        "scenario": "stationary",
+        "seed": 3003
+      },
+      {
+        "scenario": "stationary",
+        "seed": 3004
+      },
+      {
+        "scenario": "stationary",
+        "seed": 3005
+      },
+      {
+        "scenario": "stationary",
+        "seed": 3006
+      },
+      {
+        "scenario": "stationary",
+        "seed": 3007
+      },
+      {
+        "scenario": "stationary",
+        "seed": 3008
+      },
+      {
+        "scenario": "stationary",
+        "seed": 3009
+      },
+      {
+        "scenario": "stationary",
+        "seed": 3010
+      },
+      {
+        "scenario": "stationary",
+        "seed": 3011
+      }
+    ]
+  },
+  "v2_variants": [
+    {
+      "calibration": "identity",
+      "family": "logistic",
+      "id": "v1_logistic_learned",
+      "policy": "learned"
+    },
+    {
+      "calibration": "identity",
+      "family": "logistic",
+      "id": "v1_logistic_falsify",
+      "policy": "falsify"
+    },
+    {
+      "calibration": "identity",
+      "family": "logistic",
+      "id": "v1_logistic_no_audit",
+      "policy": "falsify_no_audit"
+    },
+    {
+      "calibration": "identity",
+      "family": "catboost",
+      "id": "catboost_learned",
+      "policy": "learned"
+    },
+    {
+      "calibration": "isotonic",
+      "family": "catboost",
+      "id": "calibrated_learned",
+      "policy": "learned"
+    },
+    {
+      "calibration": "isotonic",
+      "family": "catboost",
+      "id": "calibrated_adaptive_audit",
+      "policy": "adaptive_audit"
+    },
+    {
+      "calibration": "isotonic",
+      "family": "catboost",
+      "id": "calibrated_route",
+      "policy": "route_aware"
+    },
+    {
+      "calibration": "isotonic",
+      "family": "catboost",
+      "id": "calibrated_adaptive_route",
+      "policy": "adaptive_route"
+    }
+  ]
+}

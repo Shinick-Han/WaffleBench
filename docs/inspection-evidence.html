@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>검사 v3 근거 | Falsify Lab — Research Workbench</title>
+<meta name="description" content="검사 v3 합성 연구의 주 결과, 95% 신뢰구간, 분류 지표와 웨이퍼 3장의 유료 측정 기록 재생을 저장된 근거로 보여 줍니다.">
+<meta property="og:title" content="검사 v3 근거 | Falsify Lab">
+<meta property="og:description" content="검사 v3 합성 연구의 저장된 근거 대시보드입니다. 실제 팹 측정 자료가 아닙니다.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="./inspection-evidence.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<header class="masthead"><div class="mast-inner"><div class="identity"><span class="brand">Falsify Lab</span><span class="divider" aria-hidden="true"></span><span>Research Workbench</span></div><nav class="mast-links" aria-label="관련 화면"><a href="./inspection-quality.html">미탐과 검사 예산</a><a href="./synthetic-wafers.html">합성 웨이퍼</a><a href="./inspection-images.html">실제 PCB 사진</a><a href="./inspection-live.html">실제 에이전트 실행</a></nav></div></header>
+<main id="main" class="layout">
+ <div class="heading">
+  <div><h1>검사 v3 근거</h1><p class="lead">사전에 선택한 검사 정책의 성능을 비교 정책과 대조하고, 웨이퍼 3장의 유료 측정 순서를 다시 따라가 봅니다.</p></div>
+  <div class="downloads"><button id="download" type="button" class="control" disabled>원본 JSON 내려받기</button></div>
+ </div>
+ <p class="notice"><strong>합성 연구 범위</strong> · 생성기로 만든 웨이퍼·센서 응답에 대한 수치 실험입니다. 실제 팹 측정, 실제 웨이퍼 정확도, 수율 개선 효과를 입증하지 않습니다.</p>
+
+ <div id="loadState" class="load-state" role="status" aria-live="polite">
+  <div class="skeleton" aria-hidden="true"><span></span><span></span><span></span></div>
+  <p>저장된 검사 v3 근거를 불러오는 중…</p>
+ </div>
+
+ <div id="app" hidden>
+  <dl id="studyMeta" class="study-meta"></dl>
+
+  <section id="primary" class="band" aria-labelledby="primaryTitle">
+   <div class="section-head"><div><h2 id="primaryTitle">주 결과</h2><p>사전 지정한 후보 정책과 비교 정책의 lot 쌍별 확인 DOI 차이 · paired bootstrap 95% CI</p></div><span id="primaryVerdict"></span></div>
+   <div id="primaryBody"></div>
+  </section>
+
+  <section id="replay" class="band" aria-labelledby="replayTitle">
+   <div class="section-head"><div><h2 id="replayTitle">측정 재생 · 웨이퍼 3장</h2><p id="replayMeta">저장된 유료 측정 기록을 순서대로 다시 보여 줍니다. 연구 결과는 바뀌지 않습니다.</p></div></div>
+   <div id="replayEmpty" hidden></div>
+   <div id="replayContent">
+    <div class="replay-controls" role="group" aria-label="측정 재생 조작">
+     <div class="step-buttons">
+      <button type="button" class="control" id="stepFirst">처음</button>
+      <button type="button" class="control" id="stepPrev">이전</button>
+      <button type="button" class="control primary-action" id="stepPlay" aria-pressed="false">재생</button>
+      <button type="button" class="control" id="stepNext">다음</button>
+      <button type="button" class="control" id="stepLast">끝</button>
+     </div>
+     <label class="scrub"><span>단계 <output id="stepOut" for="stepRange">0 / 0</output></span><input id="stepRange" type="range" min="0" max="0" value="0" step="1"></label>
+    </div>
+    <div class="spend" id="spend"></div>
+    <div class="replay-grid">
+     <div class="wafers-wrap">
+      <div id="wafers" class="wafers"></div>
+      <div class="legend" id="legend">
+       <span><i class="swatch unknown" aria-hidden="true"></i>측정 안 함 · 결과 모름</span>
+       <span><i class="swatch positive" aria-hidden="true"></i>검토 양성 (채움)</span>
+       <span><i class="swatch negative" aria-hidden="true"></i>관측 음성 (테두리)</span>
+       <span><i class="swatch failed" aria-hidden="true"></i>측정 실패·누락 (빗금)</span>
+       <span><i class="swatch current" aria-hidden="true"></i>현재 단계</span>
+       <label class="check"><input type="checkbox" id="showCandidates">원래 후보 다이 표시</label>
+      </div>
+      <p class="footnote pick-note" id="pickNote" role="status" aria-live="polite"></p>
+      <p class="footnote" id="geometryNote"></p>
+     </div>
+     <aside class="step-detail" aria-labelledby="stepTitle"><h3 id="stepTitle">현재 단계</h3><div id="stepDetail" aria-live="polite"></div></aside>
+    </div>
+    <div class="table-tools">
+     <label class="field">웨이퍼<select id="waferFilter"><option value="all">전체 웨이퍼</option></select></label>
+     <label class="field">결과<select id="resultFilter"><option value="all">전체 결과</option><option value="positive">검토 양성</option><option value="negative">관측 음성</option><option value="failed">측정 실패·누락</option></select></label>
+     <label class="check"><input type="checkbox" id="untilCursor" checked>현재 단계까지만</label>
+     <span id="rowCount" class="count-line" role="status" aria-live="polite"></span>
+    </div>
+    <div class="table-scroll record-scroll" role="region" tabindex="0" aria-label="유료 측정 기록 표 · 스크롤 가능">
+     <table class="obs-table"><caption>선택된 유료 측정만 기록됩니다. 기록에 없는 다이는 결과를 알 수 없습니다.</caption>
+      <thead><tr><th scope="col">단계</th><th scope="col">사이트</th><th scope="col">웨이퍼</th><th scope="col">결과</th><th scope="col" class="num">청구 CU</th><th scope="col" class="num">누적 CU</th><th scope="col" class="num">baseline p</th><th scope="col" class="num">selection reward</th><th scope="col">선택 사유</th></tr></thead>
+      <tbody id="obsRows"></tbody>
+     </table>
+    </div>
+   </div>
+  </section>
+
+  <section id="variants" class="band" aria-labelledby="variantsTitle">
+   <div class="section-head"><div><h2 id="variantsTitle">정책 변형 비교</h2><p>모든 변형과 ablation을 그대로 보존합니다 · 평균 확인 DOI, 평균 지출, 정책 계산 시간</p></div><label class="field inline">정렬<select id="variantSort"><option value="doi">평균 DOI 높은 순</option><option value="id">변형 ID 순</option><option value="spent">평균 지출 낮은 순</option></select></label></div>
+   <div id="variantsBody"></div>
+  </section>
+
+  <section id="classification" class="band" aria-labelledby="classTitle">
+   <div class="section-head"><div><h2 id="classTitle">분류 성능 <span class="tag">부차 결과</span></h2><p>DOI 분류기의 오탐 FP·미탐 FN 지표입니다. 위의 운영상 발견(확인 DOI)과 별개로 해석하세요.</p></div></div>
+   <div id="classBody"></div>
+  </section>
+
+  <div class="split">
+   <section id="audit" class="band" aria-labelledby="auditTitle"><div class="section-head"><h2 id="auditTitle">감사</h2></div><div id="auditBody"></div></section>
+   <section id="inference" class="band" aria-labelledby="inferTitle"><div class="section-head"><h2 id="inferTitle">추론 시간 <span class="tag">부차 결과</span></h2></div><div id="inferBody"></div></section>
+  </div>
+
+  <section class="limitations" aria-labelledby="limitationsTitle"><details open><summary id="limitationsTitle">해석 범위와 한계</summary><ul id="limitationsList"></ul></details></section>
+ </div>
+</main>
+<script src="./inspection-evidence.js" defer></script>
+</body>
+</html>

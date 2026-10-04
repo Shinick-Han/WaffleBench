@@ -1,0 +1,250 @@
+{
+  "audit_cpu_s": 90.15625,
+  "audit_script_sha256": "404b7347893174fc9e3df922068daee9e3c1357ce212c2887da7a5fe6c044880",
+  "audit_wall_s": 74.57884959992953,
+  "candidate": "gmm_diag8x6_platt_route_full",
+  "checks": {
+    "baseline_parity_tolerance": 1e-14,
+    "budget_violations": 0,
+    "classification_models_recomputed": 11,
+    "decisions_equal_value_ties": 0,
+    "decisions_exact_argmax": 118014,
+    "development_runs_replayed": 880,
+    "duplicate_or_missing_runs": 0,
+    "expected_test_runs": 2640,
+    "frozen_sources_verified": 33,
+    "hidden_truth_keys": 0,
+    "learned_decisions": 59001,
+    "lots_regenerated": {
+      "calibration": 20,
+      "development": 40,
+      "test": 120,
+      "train": 60
+    },
+    "models_verified": 11,
+    "online_updates": 0,
+    "protected_files_preserved": 8,
+    "retries_recomputed": 7295,
+    "route_decisions": 59013,
+    "selected_sites_replayed": 118014,
+    "sensor_attempts_recomputed": 125309,
+    "test_runs_replayed": 2640,
+    "variants": 22
+  },
+  "comparator": "cb400_route_full",
+  "development_selection_reproduced": "gmm_diag8x6_platt_route_full",
+  "freeze_sha256": "bd4ba4f70e793d44ac51210c8fe95b9d943cc32ab949986d1316ef008e8458ae",
+  "generated_at": "2026-10-04T08:03:51.713635+00:00",
+  "hypothesis_note": "Audit PASS certifies ledgers and recomputed statistics; primary_recomputed.success is the hypothesis outcome.",
+  "limitations": [
+    "Posthoc audit of authored numeric synthetic lots from the unchanged v1 generator and sensor; not SEM-image, factory or physical accuracy.",
+    "The frozen generator/sensor table (inspection_review.data) and frozen model API (inspection_v4.model.predict, compiled v3 predictor for baselines) are trusted inputs; lots are regenerated and compared, models are checked by hash, not refitted.",
+    "learned and route_full_gamma choices are replayed by an independent reimplementation; equal-value ties within a 1e-12 relative tolerance are accepted.",
+    "Software CPU/wall timing fields, risk-coverage curves and the recorded source_commit are not independently verified.",
+    "An audit PASS certifies ledger integrity and recomputed statistics; it is not a claim that the hypothesis succeeded."
+  ],
+  "primary_recomputed": {
+    "ci95_difference": [
+      -0.5666666666666667,
+      0.008333333333333333
+    ],
+    "comparator": "cb400_route_full",
+    "complete_pairs": 120,
+    "mean_comparator": 29.45,
+    "mean_difference": -0.2833333333333333,
+    "mean_policy": 29.166666666666668,
+    "policy": "gmm_diag8x6_platt_route_full",
+    "reason": "target not met",
+    "relative_gain": -0.009620826259196358,
+    "success": false
+  },
+  "scope": "full_protocol",
+  "secondary_recomputed": {
+    "secondary_vs_logistic_learned": {
+      "ci95_difference": [
+        0.55,
+        1.3416666666666666
+      ],
+      "comparator": "logistic_learned",
+      "complete_pairs": 120,
+      "mean_comparator": 28.225,
+      "mean_difference": 0.9416666666666667,
+      "mean_policy": 29.166666666666668,
+      "policy": "gmm_diag8x6_platt_route_full",
+      "relative_gain": 0.03336285798641869
+    },
+    "secondary_vs_same_model_learned": {
+      "ci95_difference": [
+        -0.05854166666666666,
+        0.6918749999999988
+      ],
+      "comparator": "gmm_diag8x6_platt_learned",
+      "complete_pairs": 120,
+      "mean_comparator": 28.85,
+      "mean_difference": 0.31666666666666665,
+      "mean_policy": 29.166666666666668,
+      "policy": "gmm_diag8x6_platt_route_full",
+      "relative_gain": 0.010976314269208531
+    }
+  },
+  "source_commit_recorded": "8a8c70859a88d10b4c3074999cc077463b6f470a",
+  "stale_audit_replaced": false,
+  "status": "passed",
+  "study": "v4",
+  "variant_means_recomputed": {
+    "cb400_learned": {
+      "lots": 120,
+      "mean_doi": 29.141666666666666,
+      "mean_loading_cost_cu": 11.666666666666666,
+      "mean_spent_cu": 352.1019984814114,
+      "mean_stage_cost_cu": 57.20199848141144
+    },
+    "cb400_route_full": {
+      "lots": 120,
+      "mean_doi": 29.45,
+      "mean_loading_cost_cu": 13.066666666666666,
+      "mean_spent_cu": 351.96451774175756,
+      "mean_stage_cost_cu": 55.23118440842423
+    },
+    "gmm_diag4x3_identity_learned": {
+      "lots": 120,
+      "mean_doi": 28.208333333333332,
+      "mean_loading_cost_cu": 24.533333333333335,
+      "mean_spent_cu": 352.34033645930674,
+      "mean_stage_cost_cu": 60.87366979264004
+    },
+    "gmm_diag4x3_identity_route_full": {
+      "lots": 120,
+      "mean_doi": 28.25,
+      "mean_loading_cost_cu": 27.333333333333332,
+      "mean_spent_cu": 351.97766000725755,
+      "mean_stage_cost_cu": 57.47766000725753
+    },
+    "gmm_diag4x3_platt_learned": {
+      "lots": 120,
+      "mean_doi": 28.683333333333334,
+      "mean_loading_cost_cu": 12.266666666666667,
+      "mean_spent_cu": 352.3993574100354,
+      "mean_stage_cost_cu": 57.9660240767021
+    },
+    "gmm_diag4x3_platt_route_full": {
+      "lots": 120,
+      "mean_doi": 28.925,
+      "mean_loading_cost_cu": 13.933333333333334,
+      "mean_spent_cu": 351.8681900320846,
+      "mean_stage_cost_cu": 55.93485669875131
+    },
+    "gmm_diag4x3_temperature_learned": {
+      "lots": 120,
+      "mean_doi": 27.891666666666666,
+      "mean_loading_cost_cu": 23.266666666666666,
+      "mean_spent_cu": 352.0399798943991,
+      "mean_stage_cost_cu": 63.839979894399086
+    },
+    "gmm_diag4x3_temperature_route_full": {
+      "lots": 120,
+      "mean_doi": 27.891666666666666,
+      "mean_loading_cost_cu": 27.933333333333334,
+      "mean_spent_cu": 352.2250538650306,
+      "mean_stage_cost_cu": 59.09172053169724
+    },
+    "gmm_diag8x6_identity_learned": {
+      "lots": 120,
+      "mean_doi": 28.716666666666665,
+      "mean_loading_cost_cu": 11.8,
+      "mean_spent_cu": 351.7521583075705,
+      "mean_stage_cost_cu": 56.38549164090384
+    },
+    "gmm_diag8x6_identity_route_full": {
+      "lots": 120,
+      "mean_doi": 29.333333333333332,
+      "mean_loading_cost_cu": 13.0,
+      "mean_spent_cu": 352.34928945837476,
+      "mean_stage_cost_cu": 54.84928945837475
+    },
+    "gmm_diag8x6_platt_learned": {
+      "lots": 120,
+      "mean_doi": 28.85,
+      "mean_loading_cost_cu": 12.0,
+      "mean_spent_cu": 352.08007147033663,
+      "mean_stage_cost_cu": 57.84673813700331
+    },
+    "gmm_diag8x6_platt_route_full": {
+      "lots": 120,
+      "mean_doi": 29.166666666666668,
+      "mean_loading_cost_cu": 13.466666666666667,
+      "mean_spent_cu": 352.0138726090127,
+      "mean_stage_cost_cu": 55.947205942346
+    },
+    "gmm_diag8x6_temperature_learned": {
+      "lots": 120,
+      "mean_doi": 28.65,
+      "mean_loading_cost_cu": 11.8,
+      "mean_spent_cu": 351.6664350927087,
+      "mean_stage_cost_cu": 56.83310175937535
+    },
+    "gmm_diag8x6_temperature_route_full": {
+      "lots": 120,
+      "mean_doi": 29.175,
+      "mean_loading_cost_cu": 13.0,
+      "mean_spent_cu": 352.1688573154755,
+      "mean_stage_cost_cu": 55.23552398214223
+    },
+    "gmm_full4x3_identity_learned": {
+      "lots": 120,
+      "mean_doi": 28.233333333333334,
+      "mean_loading_cost_cu": 23.666666666666668,
+      "mean_spent_cu": 352.2633099298479,
+      "mean_stage_cost_cu": 60.796643263181174
+    },
+    "gmm_full4x3_identity_route_full": {
+      "lots": 120,
+      "mean_doi": 28.291666666666668,
+      "mean_loading_cost_cu": 26.666666666666668,
+      "mean_spent_cu": 351.9124066899172,
+      "mean_stage_cost_cu": 57.34574002325052
+    },
+    "gmm_full4x3_platt_learned": {
+      "lots": 120,
+      "mean_doi": 28.833333333333332,
+      "mean_loading_cost_cu": 12.0,
+      "mean_spent_cu": 351.8024522625675,
+      "mean_stage_cost_cu": 57.969118929234156
+    },
+    "gmm_full4x3_platt_route_full": {
+      "lots": 120,
+      "mean_doi": 29.216666666666665,
+      "mean_loading_cost_cu": 13.8,
+      "mean_spent_cu": 352.13495108032123,
+      "mean_stage_cost_cu": 56.00161774698789
+    },
+    "gmm_full4x3_temperature_learned": {
+      "lots": 120,
+      "mean_doi": 27.983333333333334,
+      "mean_loading_cost_cu": 22.8,
+      "mean_spent_cu": 352.4250451709647,
+      "mean_stage_cost_cu": 63.55837850429802
+    },
+    "gmm_full4x3_temperature_route_full": {
+      "lots": 120,
+      "mean_doi": 28.083333333333332,
+      "mean_loading_cost_cu": 27.533333333333335,
+      "mean_spent_cu": 352.04630141759907,
+      "mean_stage_cost_cu": 59.1129680842657
+    },
+    "logistic_learned": {
+      "lots": 120,
+      "mean_doi": 28.225,
+      "mean_loading_cost_cu": 12.666666666666666,
+      "mean_spent_cu": 351.5330395109021,
+      "mean_stage_cost_cu": 60.699706177568764
+    },
+    "logistic_route_full": {
+      "lots": 120,
+      "mean_doi": 28.425,
+      "mean_loading_cost_cu": 15.733333333333333,
+      "mean_spent_cu": 351.40215679986505,
+      "mean_stage_cost_cu": 58.035490133198394
+    }
+  }
+}

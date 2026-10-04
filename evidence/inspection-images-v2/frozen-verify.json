@@ -1,0 +1,34 @@
+{
+  "command": "python -m inspection_images_v2.cli verify --build-dir <build> --root <build>/runs/train-reviewed-candidate",
+  "note": "Frozen verify_freeze re-checked digest, protocol, LF-normalized source hashes, full package environment, memory artifacts, model identity, split CSV, identities and all 1,101 image byte hashes after evaluation; it scores nothing and reads no labels. Paths redacted to <build>.",
+  "read_only": {
+    "run_root_sha256_after": {
+      "evaluation.json": "a2ed03a68e82da855e3339c922a0fcb7c80bcadd2d164fc591d3269017352ed5",
+      "evaluation.started": "77d28dd5fc271f2584ef9155198bb51c361d8730731e48be299f6a599245adb9",
+      "freeze.json": "3ba3ce8f9faec4637de2d39eab6551f8f1c90dda3036fe09e65ce9698816706d",
+      "memory_r224.npz": "97ec871fbb577ae54774165a73f2ebb666abf788d7f053582f0907e4bec13ca6",
+      "memory_r448.npz": "1cdb758eae5af8bab84d59f49710c93f089f808cacb4a1718ae63756f3a68f1b",
+      "progress.json": "d652df04741c4d1a5c15b2f660395987ebf80fdb0f915632375fb54ad46571c9",
+      "test-scores.json": "eac3dee802bffe882252b54df0006017108519d71d19887f23500c6aba0f2de4"
+    },
+    "run_root_sha256_before": {
+      "evaluation.json": "a2ed03a68e82da855e3339c922a0fcb7c80bcadd2d164fc591d3269017352ed5",
+      "evaluation.started": "77d28dd5fc271f2584ef9155198bb51c361d8730731e48be299f6a599245adb9",
+      "freeze.json": "3ba3ce8f9faec4637de2d39eab6551f8f1c90dda3036fe09e65ce9698816706d",
+      "memory_r224.npz": "97ec871fbb577ae54774165a73f2ebb666abf788d7f053582f0907e4bec13ca6",
+      "memory_r448.npz": "1cdb758eae5af8bab84d59f49710c93f089f808cacb4a1718ae63756f3a68f1b",
+      "progress.json": "d652df04741c4d1a5c15b2f660395987ebf80fdb0f915632375fb54ad46571c9",
+      "test-scores.json": "eac3dee802bffe882252b54df0006017108519d71d19887f23500c6aba0f2de4"
+    },
+    "unchanged": true
+  },
+  "result": {
+    "freeze_digest": "a15a37ae78b7234aefedd4f69b89c9fec2148a7a86e1c1d1d2000b94094a6fed",
+    "note": "verification only; no test image was scored and no test label was read",
+    "status": "verified"
+  },
+  "run_at": "2026-10-04",
+  "schema_version": 1,
+  "source_commit": "c1ba83a9024e96638fcb55c5dfe026a03ad5d5d3",
+  "study": "inspection-image-pilot-v2-pcb2"
+}

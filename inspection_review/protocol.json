@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "study_id": "inspection-review-v1-20261004",
+  "data_mode": "authored_synthetic_tabular",
+  "geometry": {"wafer_diameter_mm": 300, "die_width_mm": 8, "die_height_mm": 6, "scribe_mm": 0.08, "edge_exclusion_mm": 3, "wafers_per_lot": 3, "care_sites_per_die": 1},
+  "splits": {"train_seeds": [100,101,102,103,104,105,106,107,108,109,110,111], "validation_seeds": [200,201,202,203], "test_seeds_by_scenario": {"stationary": [1000,1001,1002,1003,1004,1005,1006,1007,1008,1009,1010,1011], "novel_cluster": [1100,1101,1102,1103,1104,1105,1106,1107,1108,1109,1110,1111], "low_contrast": [1200,1201,1202,1203,1204,1205,1206,1207,1208,1209,1210,1211], "nuisance_heavy": [1300,1301,1302,1303,1304,1305,1306,1307,1308,1309,1310,1311], "process_shift": [1400,1401,1402,1403,1404,1405,1406,1407,1408,1409,1410,1411]}},
+  "generator": {"base_doi_rate": 0.045, "benign_physical_rate": 0.06, "nuisance_rate": 0.15, "optical_threshold": 0.62, "feature_noise_sd": 0.14, "cluster_radius_normalized": 0.22, "cluster_excess_doi_rate": 0.22, "novel_cluster_excess_rate": 0.32, "low_contrast_factor": 0.5, "nuisance_heavy_rate": 0.45, "process_shift_offset": -0.24, "review_failure_rate": 0.025, "review_missing_rate": 0.04, "review_sensitivity": {"particle": 0.97, "bridge": 0.94, "scratch": 0.96, "void": 0.85, "novel": 0.80}, "review_false_positive_rate": 0.01, "electrical_effect_probability_given_doi": 0.45},
+  "features": ["signal", "size", "texture", "design_delta", "process_context", "radius", "layer"],
+  "model": {"family": "numpy_l2_logistic", "l2": 0.01, "epochs": 250, "learning_rate": 0.1, "classification_threshold": 0.5, "confident_negative_threshold": 0.1, "online_learning_rate": 0.08},
+  "cost": {"unit": "synthetic_equipment_cost_unit", "wafer_load": 8.0, "stage_base": 1.0, "stage_per_normalized_distance": 2.0, "dwell": 8.0, "retry_dwell": 4.0, "outside_rescan": 12.0, "retry_limit": 1},
+  "budgets": [120,360,720],
+  "primary_budget": 360,
+  "modes": ["candidate_only", "with_rescan"],
+  "policies": ["random", "recipe", "learned", "uncertainty_diversity", "falsify", "falsify_no_audit", "falsify_no_spatial", "falsify_no_update"],
+  "selection": {"audit_period": 5, "rescan_period": 10, "spatial_bandwidth": 0.22, "spatial_prior_strength": 4.0, "spatial_weight": 0.4, "uncertainty_weight": 0.35, "diversity_weight": 0.15, "novelty_weight": 0.35, "cost_aware": true},
+  "statistics": {"bootstrap_seed": 20261004, "bootstrap_replicates": 2000, "primary_comparator": "learned", "primary_mode": "candidate_only", "primary_metric": "true_doi_confirmed", "scenario_weighting": "equal_lot", "ci_unit": "paired_independent_lot", "success_relative_gain_target": 0.2, "cost_reduction_target": 0.3, "matched_capture_target": 5, "success_requires_positive_lower_ci": true},
+  "test_campaign_rule": "Freeze protocol, generator, model and policies before first held-out campaign. No tuning to these test seeds. Engineering defect repairs require disclosure and exact changed commits; invalidated results remain marked superseded."
+}

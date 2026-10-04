@@ -1,0 +1,219 @@
+{
+  "status": "research_completed_implementation_not_started",
+  "checked_on": "2026-10-04",
+  "scope": "Public primary-source desktop research for a separate wafer-inspection follow-up proposal; no fab logs or validated vendor comparison acquired",
+  "sources": [
+    {
+      "id": "kla_inspection",
+      "url": "https://www.kla.com/products/chip-manufacturing/defect-inspection-review",
+      "publisher": "KLA",
+      "type": "manufacturer_product_description",
+      "publication_date": null,
+      "claims": [
+        "3935/3920 EP intended for <=5nm logic and leading-edge memory; node is not defect detection limit",
+        "Voyager 1035 and 8935 use DefectWise",
+        "eDRX1 links optical inspection to e-beam review"
+      ],
+      "unknown": [
+        "Absolute wafer/hour under matched recipe",
+        "Absolute per-type recall and false positive curves"
+      ]
+    },
+    {
+      "id": "asml_escan",
+      "url": "https://www.asml.com/en/products/metrology-and-inspection-systems/hmi-escan-1100",
+      "publisher": "ASML",
+      "type": "manufacturer_product_claim",
+      "publication_date": null,
+      "claims": [
+        "25 beams",
+        "Up to 15x throughput compared with single e-beam inspection tools",
+        "Patterning defects down to 7 nm"
+      ],
+      "not_supported": [
+        "15x improvement from AI alone",
+        "Universal recall at 7nm",
+        "Comparison with optical inspection at same coverage"
+      ]
+    },
+    {
+      "id": "amat_h20",
+      "url": "https://ir.appliedmaterials.com/news-releases/news-release-details/applied-materials-accelerates-chip-defect-review-next-gen-ebeam/",
+      "publisher": "Applied Materials",
+      "type": "manufacturer_press_release",
+      "publication_date": "2025-02-19",
+      "claims": [
+        "Up to 100x increase in candidate demand described for advanced-node optical inspection",
+        "Sub-nanometer imaging resolution",
+        "Same information in one-third of time",
+        "Deep-learning nuisance extraction and defect classification"
+      ],
+      "not_supported": [
+        "3x speed solely caused by AI",
+        "Independent overall defect recall or yield-gain estimate"
+      ]
+    },
+    {
+      "id": "hitachi_cr7300",
+      "url": "https://www.hitachi-hightech.com/in/en/products/semiconductor-manufacturing/cd-sem/dr-sem/cr7300.html",
+      "publisher": "Hitachi High-Tech",
+      "type": "manufacturer_product_claim",
+      "publication_date": null,
+      "claims": [
+        "2x throughput versus previous model",
+        "AI-based automatic defect classification"
+      ],
+      "unknown": [
+        "Absolute classification accuracy and false negative rate"
+      ]
+    },
+    {
+      "id": "asml_yieldstar",
+      "url": "https://www.asml.com/en/products/metrology-and-inspection-systems/yieldstar-1375f",
+      "publisher": "ASML",
+      "type": "manufacturer_product_description",
+      "publication_date": null,
+      "claims": [
+        "Nanometer-level CD and overlay measurement",
+        "Machine learning for robustness to stack variations"
+      ],
+      "not_supported": [
+        "Defect detection accuracy from metrology precision"
+      ]
+    },
+    {
+      "id": "kla_software",
+      "url": "https://www.kla.com/products/software-solutions/semiconductor",
+      "publisher": "KLA",
+      "type": "manufacturer_product_description",
+      "publication_date": null,
+      "claims": [
+        "SPOT already optimizes targeted review sample plans using ML and statistics",
+        "Klarity supports excursion detection, review sampling and yield analysis",
+        "I-PAT adds an independent check of end-of-line electrical testing"
+      ],
+      "not_supported": [
+        "Our proposed sampler is novel or superior to SPOT"
+      ]
+    },
+    {
+      "id": "formfactor",
+      "url": "https://www.formfactor.com/products/",
+      "publisher": "FormFactor",
+      "type": "manufacturer_product_description",
+      "publication_date": null,
+      "claims": [
+        "On-wafer device test and measurement and probe cards"
+      ],
+      "not_supported": [
+        "Absolute throughput or full test coverage of a particular fab"
+      ]
+    },
+    {
+      "id": "amat_extractai",
+      "url": "https://ir.appliedmaterials.com/node/24121/pdf",
+      "publisher": "Applied Materials",
+      "type": "manufacturer_press_release",
+      "publication_date": "2021-03-16",
+      "locations": [
+        "PDF page 1, lines 24-35"
+      ],
+      "claims": [
+        "Manufacturer states classification of all potential candidates after reviewing 0.001x samples",
+        "Real-time optical/e-beam connection"
+      ],
+      "not_supported": [
+        "Zero missed defects",
+        "1000x measured gain versus a matched baseline",
+        "Recovery of defects absent from the candidate map"
+      ]
+    },
+    {
+      "id": "kla_investor_case",
+      "url": "https://ir.kla.com/sec-filings/all-sec-filings/content/0001193125-22-175500/d341367dex991.htm",
+      "publisher": "KLA",
+      "type": "manufacturer_investor_case_study",
+      "publication_year": 2022,
+      "locations": [
+        "Slide 47"
+      ],
+      "claims": [
+        "2x critical defect detection improvement for optical inspection plus e-beam assist in a critical metal layer"
+      ],
+      "not_supported": [
+        "AI-only causal contribution",
+        "Same ratio across all layers or devices"
+      ]
+    },
+    {
+      "id": "ibm_sem",
+      "url": "https://arxiv.org/pdf/2506.03345",
+      "publisher": "Authors at IBM Research via arXiv",
+      "type": "research_preprint",
+      "publication_date": "2025-06-03",
+      "locations": [
+        "Section III A: wafer-separated train/test",
+        "Section IV: >90% classification with 5 and 15 labels/class at two layers"
+      ],
+      "claims": [
+        "Over 7400 real fab SEM images, 11 defect types",
+        "Few-shot fine-tuning classification >90%"
+      ],
+      "not_supported": [
+        "Overall wafer detection recall",
+        "Measured manufacturing yield improvement",
+        "Published dataset licensing or public download"
+      ]
+    },
+    {
+      "id": "hu_dicing",
+      "url": "https://arxiv.org/pdf/2407.20268",
+      "publisher": "Hu et al. via arXiv",
+      "type": "work_in_progress_research_preprint",
+      "publication_date": "2024-07-24",
+      "claims": [
+        "Dicing-street balanced accuracy 65.1% baseline to 88.2% DCGAN augmentation; 23.1 percentage points"
+      ],
+      "not_supported": [
+        "23.1% relative improvement",
+        "Nanoscale inline inspection performance",
+        "Guaranteed gain from our tabular synthetic data"
+      ]
+    },
+    {
+      "id": "korea_active_learning",
+      "url": "https://jkiie.org/_common/do.php?a=full&aidx=32830&b=12&bidx=2918",
+      "publisher": "Journal of the Korean Institute of Industrial Engineers",
+      "type": "research_article",
+      "publication_date": "2022-04-15",
+      "doi": "10.7232/JKIIE.2022.48.2.163",
+      "claims": [
+        "WM-811K active learning study of new wafer-bin-map patterns",
+        "EDS produces spatial wafer-bin maps"
+      ],
+      "not_supported": [
+        "SEM detection recall or real production improvement"
+      ]
+    }
+  ],
+  "proposal": {
+    "primary_use_case": "Budgeted post-inspection review selection with independent false-negative auditing",
+    "differentiation": "Evidence-linked sequential decisions and reproducible evaluation under drift; not claiming invention of AI sample planning",
+    "main_hypothesis": "Higher confirmed DOI capture at equal total review time versus strong fixed/AI baselines",
+    "secondary_hypothesis": "Earlier confirmation of errors in a frozen initial scorer under new-pattern/shift conditions",
+    "business_targets": {
+      "status": "proposed_not_achieved",
+      "capture_gain_relative": 0.2,
+      "cost_reduction_at_matched_capture": 0.3
+    },
+    "baseline_sensor_probability": {
+      "current_synthetic": 0.82,
+      "field_calibration": false
+    },
+    "required_next_evidence": [
+      "Recipe-specific sensitivity/cost/coverage curves",
+      "Candidate-level weak observations and paid follow-up results",
+      "Independent lots or wafers with verified provenance and usage permissions"
+    ]
+  }
+}
