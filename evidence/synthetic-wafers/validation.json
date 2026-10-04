@@ -1,0 +1,255 @@
+{
+  "status": "accepted",
+  "checked_at": "2026-10-04T13:07:50.437901+09:00",
+  "scope": "Separate synthetic wafer-inspection extension; no primary evidence/model/threshold change",
+  "source_base": "e427bb7d47ed1c47d29994ba7030390c86753187",
+  "implementation_provider": "Lovable UI plus coordinator generator/integration",
+  "provider_commit": "46c75e53ffb93936bd6141fe691f0c4265e7ae05",
+  "source_files": [
+    "public/workbench/synthetic-wafers.html",
+    "public/workbench/synthetic-wafers.css",
+    "public/workbench/synthetic-wafers.js"
+  ],
+  "design_source": "Actual previously consulted Origin UI MIT table source via 21st.dev retained; portable semantic tables, no new library",
+  "synthetic_manifest": {
+    "schema_version": 1,
+    "data_mode": "synthetic",
+    "seed": 7001305,
+    "generator_version": 1,
+    "counts": {
+      "wafers": 3,
+      "dies": 3915,
+      "measurements": 156600
+    },
+    "test_count": 40,
+    "missing_measurements": 127,
+    "catalog_count": 34,
+    "modeled_catalog_count": 19,
+    "limits": "Authored illustrative limits, not fab specifications.",
+    "sha256": {
+      "ground-truth.json": "a08e03ad640c1d307b48febe412a4762b54b864c2eee14766ed19809a7e7c661",
+      "measurements.csv": "5d5fe20b97f9b71e03c8f1623763b41b86c6749b506e58e0dd8141b4d2b8f7e2",
+      "observed-only.json": "ebc9304a540ddd7dfd079d532daebed715e653e6cd3e2b7eed5a64562cadcd4d",
+      "synthetic-wafers.json": "bcfedbb05fe1969d9b3d58fabea964414a9bd8431ba9abcd29b977e3ef2a3638"
+    }
+  },
+  "wafer_summaries": [
+    {
+      "wafer_id": "W01",
+      "total": 1305,
+      "pass": 1248,
+      "fail": 14,
+      "inconclusive": 43,
+      "defect_dies": 63,
+      "detected_dies": 62,
+      "measurement_count": 52200,
+      "successful_measurements": 52156,
+      "defects": {
+        "contact_resistance": 7,
+        "contamination": 6,
+        "particle": 41,
+        "residue": 15
+      }
+    },
+    {
+      "wafer_id": "W02",
+      "total": 1305,
+      "pass": 1090,
+      "fail": 183,
+      "inconclusive": 32,
+      "defect_dies": 296,
+      "detected_dies": 248,
+      "measurement_count": 52200,
+      "successful_measurements": 52161,
+      "defects": {
+        "cd_shift": 85,
+        "contact_resistance": 14,
+        "contamination": 1,
+        "dishing": 19,
+        "erosion": 11,
+        "etch_bias": 117,
+        "junction_leakage": 25,
+        "oxide_failure": 9,
+        "particle": 52,
+        "residue": 7,
+        "vth_shift": 46
+      }
+    },
+    {
+      "wafer_id": "W03",
+      "total": 1305,
+      "pass": 1128,
+      "fail": 136,
+      "inconclusive": 41,
+      "defect_dies": 195,
+      "detected_dies": 164,
+      "measurement_count": 52200,
+      "successful_measurements": 52156,
+      "defects": {
+        "bridge": 59,
+        "broken_line": 16,
+        "contact_resistance": 8,
+        "contamination": 4,
+        "crack": 2,
+        "edge_chip": 7,
+        "gapfill_void": 12,
+        "merged_contact": 24,
+        "missing_contact": 27,
+        "particle": 44,
+        "residue": 5,
+        "scratch": 40
+      }
+    }
+  ],
+  "primary_sources": [
+    {
+      "id": "applied",
+      "title": "Applied Materials · Defect Control",
+      "url": "https://www.appliedmaterials.com/us/en/semiconductor/products/analyze/defect-control.html"
+    },
+    {
+      "id": "imec",
+      "title": "imec · EUV stochastic printing failures",
+      "url": "https://www.imec-int.com/en/imec-magazine/imec-magazine-march-2018/imec-pushes-the-limits-of-euv-lithography-single-exposure-for-future-logic-and-memory-applications"
+    },
+    {
+      "id": "onto",
+      "title": "Onto Innovation · PrimaScan",
+      "url": "https://ontoinnovation.com/products/primascan-system/"
+    },
+    {
+      "id": "keysight",
+      "title": "Keysight · Parametric Test Solutions",
+      "url": "https://www.keysight.com/nl/en/products/semiconductors/parametric-test-solutions.html"
+    },
+    {
+      "id": "cmp",
+      "title": "Applied Materials · CMP dishing and erosion",
+      "url": "https://ir.appliedmaterials.com/news-releases/news-release-details/applied-materials-launches-300mm-cmp-product-line-reflexion/"
+    },
+    {
+      "id": "lam",
+      "title": "Lam Research · Asymmetric wafer defects",
+      "url": "https://newsroom.lamresearch.com/techniques-identify-correct-asymmetric-wafer-map-defects?blog=true"
+    },
+    {
+      "id": "epi",
+      "title": "Applied Materials · Epitaxy defects",
+      "url": "https://ir.appliedmaterials.com/static-files/f2fbf48d-a761-4c4f-ab4c-73f312ab1ebc"
+    },
+    {
+      "id": "gapfill",
+      "title": "Applied Materials · HDP CVD gapfill",
+      "url": "https://www.appliedmaterials.com/sg/en/product-library/centura-ultima-hdp-cvd.html"
+    },
+    {
+      "id": "bond",
+      "title": "Onto Innovation · Hybrid bonding process control",
+      "url": "https://ontoinnovation.com/resources/enabling-in-line-process-control-for-hybrid-bonding-applications/"
+    },
+    {
+      "id": "maps",
+      "title": "MixedWM38 · Author repository (real + GAN augmented)",
+      "url": "https://github.com/Junliangwangdhu/WaferMap"
+    },
+    {
+      "id": "wm811k",
+      "title": "WM-811K · Original lab download index",
+      "url": "http://mirlab.org/dataSet/public/"
+    },
+    {
+      "id": "secom",
+      "title": "UCI · SECOM (CC BY 4.0)",
+      "url": "https://archive.ics.uci.edu/dataset/179/secom"
+    },
+    {
+      "id": "bright",
+      "title": "Bright Data · Public-web Dataset Marketplace",
+      "url": "https://brightdata.com/products/datasets"
+    },
+    {
+      "id": "bright_ai",
+      "title": "Bright Data · Custom datasets: public data only",
+      "url": "https://brightdata.com/products/datasets/ai"
+    }
+  ],
+  "procurement": {
+    "brightdata": "No wafer/die-defect offering found in public catalog search on 2026-10-04; not proof none exists. Aside content filter prevented dashboard inspection. No purchase or vendor inquiry.",
+    "recommendation": "Use publicly available research datasets directly for reference; synthesized inspection data stays separate.",
+    "mixedwm38": "Author describes real wafer maps with GAN-generated augmentation; not all samples are real measurements.",
+    "secom": "1567 production entities, 591 feature columns according to UCI; no die coordinates supplied. Not a wafer-map replacement.",
+    "wm811k": "Real wafer-bin-map research dataset; original lab endpoint unavailable during this lookup. License and download availability not verified."
+  },
+  "checks": {
+    "generator_unittest": {
+      "tests": 5,
+      "failures": 0,
+      "covers": "Full raw measurement reconciliation, physical fit, stable seed/archive, misses/false positives, oracle-free input"
+    },
+    "local_server_unittest": {
+      "tests": 26,
+      "failures": 0
+    },
+    "existing_workbench_focused_usability": {
+      "failures": [],
+      "snapshot_sha256": "f6d56930a1b7a483d8ff751c4620eae262c584307f1eb65207f9fe86a09e2c90"
+    },
+    "new_viewer": {
+      "failures": [],
+      "results": [
+        {
+          "width": 360,
+          "overflow": 0,
+          "canvas": 330,
+          "observed_scratch": 34,
+          "ground_truth_scratch": 40,
+          "errors": []
+        },
+        {
+          "width": 1440,
+          "overflow": 0,
+          "canvas": 660,
+          "observed_scratch": 34,
+          "ground_truth_scratch": 40,
+          "errors": []
+        }
+      ],
+      "json_sha256": "bcfedbb05fe1969d9b3d58fabea964414a9bd8431ba9abcd29b977e3ef2a3638",
+      "recovery_attempts": 2
+    }
+  },
+  "visual_review": {
+    "disposition": "ship",
+    "reviewer": "coordinator inline; worker subagents disabled",
+    "rounds": 1,
+    "captures": [
+      "round1/1440-overview.png",
+      "round1/360-overview.png"
+    ],
+    "persistence": "Brief-pinned local extension; original DESIGN.md and mockup remain untouched. New surface rules recorded in web/DESIGN.md.",
+    "fidelity": {
+      "TYPE": "match incumbent Korean system sans",
+      "MATERIAL": "match user-pinned geometric wafer with bounded iridescence",
+      "GROUND": "match #f3f5f0",
+      "data_map": "1305 measured synthetic die positions per wafer",
+      "responsive": "stacked controls/map/detail, labeled table scroll"
+    },
+    "ceiling": "Dense geometry, keyboard selection, flat tables, source-linked defect catalog",
+    "material_fixes": [],
+    "keep": "Persistent synthetic notice and oracle distinction. No claim of real manufacturing yield."
+  },
+  "limitations": [
+    "Chromium-only visual/interaction verification",
+    "Authored uncalibrated process/noise/limits; not predictive fabrication model",
+    "Three correlated wafers are one example lot; insufficient for independent generalization",
+    "Bright Data public offering not found; authenticated dashboard not inspected; no purchase"
+  ],
+  "frozen_files_sha256": {
+    "RESEARCH_PROTOCOL.md": "45e04ba3feea0d0fea1ccf236530ee7168f061753d82c1bc8f9d0fc3dd473ff9",
+    "research-manifest.json": "8a9c760c6da7db8dcd769992cf73a255df9b1cad9f8e7d60b8fd7336f772b16c",
+    "mockup/index.html": "65bb3499fce138c1af7ec684766da6ccd1e675ef08ec24e88f8fbf85d25eaa76",
+    "web/app.js": "62a8552760b4a462842bcdc6d70d4b375cb8225b99356513649b95316c7ca216",
+    "web/app.css": "5b2f2efe96118224d8142b66e7cb9906e709f41d2b9ffdabb9c86de530b8d218",
+    "web/data/snapshot.json": "644d7eaa5238e5a7bbd04ac2eec60f220dca54ac922f3cd7c8a8b4319c00a5dd"
+  }
+}

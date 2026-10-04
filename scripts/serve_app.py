@@ -57,6 +57,11 @@ STATIC_ASSETS = {
     "/index.html": ("index.html", "text/html; charset=utf-8"),
     "/app.css": ("app.css", "text/css; charset=utf-8"),
     "/app.js": ("app.js", "text/javascript; charset=utf-8"),
+    "/synthetic-wafers.html": ("synthetic-wafers.html", "text/html; charset=utf-8"),
+    "/synthetic-wafers.css": ("synthetic-wafers.css", "text/css; charset=utf-8"),
+    "/synthetic-wafers.js": ("synthetic-wafers.js", "text/javascript; charset=utf-8"),
+    "/data/synthetic-wafers.json": ("data/synthetic-wafers.json", "application/json; charset=utf-8"),
+    "/data/synthetic-wafers.zip": ("data/synthetic-wafers.zip", "application/zip"),
 }
 SNAPSHOT_PATHS = ("/api/snapshot", "/data/snapshot.json")
 
