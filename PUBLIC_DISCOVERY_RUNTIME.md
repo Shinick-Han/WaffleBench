@@ -1,6 +1,6 @@
 # Public discovery runtime
 
-`scripts/public_discovery_runtime.py` runs one fresh, isolated Omnigent diagnostic cycle for a public judge job. It is a new public mode. The frozen protocol, existing evidence and recorded replay stay unchanged. Omnigent's private data uses `.public-discovery-runtime/o/<full UUID without hyphens>` so artifact filenames fit Windows path limits; each job retains a distinct namespace. Ledgers, bundles and raw proof remain under the private job directory.
+`scripts/public_discovery_runtime.py` runs one fresh, isolated Omnigent diagnostic cycle for a public judge job. It is a new public mode. The frozen protocol, existing evidence and recorded replay stay unchanged. Omnigent's private data uses `.public-discovery-runtime/o/<full UUID without hyphens>` so artifact filenames fit Windows path limits; longer checkout paths use `%LOCALAPPDATA%/WaffleBench/o/<full UUID>` instead. Each job retains a distinct namespace. Ledgers, bundles and raw proof remain under the private job directory. Public JSON identifies its own logical `public-runs/<UUID>/cycle/events.jsonl` hash; this is a provenance label, not a file-serving route.
 
 ## Interface
 

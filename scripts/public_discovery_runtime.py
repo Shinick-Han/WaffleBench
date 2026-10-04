@@ -156,6 +156,16 @@ def scoped_env(base: dict, data_dir: Path) -> dict:
     return env
 
 
+def private_data_dir(root: Path, job_id: str, base_env: dict) -> Path:
+    namespace = uuid.UUID(job_id).hex
+    candidate = root / '.public-discovery-runtime' / 'o' / namespace
+    longest = candidate / 'artifacts' / ('a' * 32) / (('b' * 64) + '.' + ('c' * 32) + '.tmp')
+    if len(str(longest)) >= 250:
+        cache = Path(base_env.get('LOCALAPPDATA') or Path.home() / 'AppData' / 'Local')
+        candidate = cache / 'WaffleBench' / 'o' / namespace
+    return candidate
+
+
 def check_job_args(job_root: Path, output: Path) -> tuple[Path, Path]:
     job_root, output = job_root.resolve(), output.resolve()
     try:
@@ -261,7 +271,7 @@ def execute(job_root: Path, output: Path, *, ops=None, root: Path = ROOT, omni_p
     # Omnigent artifact filenames add about 150 characters. A nested job/private
     # prefix exceeds Windows MAX_PATH in a normal checkout, so keep a distinct
     # full UUID namespace under a short private runtime directory.
-    data_dir = root / '.public-discovery-runtime' / 'o' / uuid.UUID(job_root.name).hex
+    data_dir = private_data_dir(root, job_root.name, base_env)
     bundle = private / 'bundle' / 'discovery_agent'
     (root / '.discovery-live-runtime').mkdir(parents=True, exist_ok=True)
     start = ops.monotonic()

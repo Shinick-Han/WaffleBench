@@ -38,7 +38,7 @@
    <div id="runStatus" class="run-status">
     <p class="state-line" role="status" aria-live="polite" aria-atomic="true"><span id="stateBadge" class="state-badge" data-kind="idle">Idle</span><span id="stateText">No run started from this tab.</span></p>
     <dl id="statusMeta" class="run-meta status-meta" hidden></dl>
-    <div id="hypothesisBox" class="hypothesis" hidden><h3>Latest hypothesis reported by the ledger</h3><p id="hypothesisText"></p><p class="sub">Agent-authored and provisional. Shown as the server reported it.</p></div>
+    <div id="hypothesisBox" class="hypothesis" hidden><h3>Latest hypothesis · ledger excerpt</h3><p id="hypothesisText"></p><p class="sub">Agent-authored and provisional. Progress excerpts are limited to 500 characters; the verified result includes the complete recorded hypothesis.</p></div>
    </div>
   </div>
  </section>
@@ -71,6 +71,7 @@
   <li>Verification confirms session completion and ledger/source integrity only. It says nothing about inspection accuracy or discovery speed.</li>
   <li>A proposal first made at one update may be executed by the next plan; this is labelled. The final proposal of the cycle is not executed.</li>
   <li>Runs are limited by the server (one at a time, with a quota and cooldown). The run identifier is kept only in this browser tab's session storage.</li>
+  <li>Fresh runs require the owner's PC, authenticated Claude session and tunnel to remain online. If unavailable, the verified recorded cycle remains accessible from the navigation above.</li>
  </ul></details></section>
 </main>
 <script src="./discovery-run.js" defer></script>

@@ -38,3 +38,5 @@
 @media(max-width:600px){.run-actions .control{flex:1 1 100%}.run-status{padding:12px}#resultSection .downloads{width:100%}}
 @media(prefers-reduced-motion:reduce){.state-badge[data-kind=active]::before{animation:none}}
 @media(forced-colors:active){.state-badge{border:1px solid CanvasText}}
+/* Component display rules must not override state-controlled visibility. */
+[hidden] { display: none !important; }

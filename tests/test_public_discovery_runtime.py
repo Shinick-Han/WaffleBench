@@ -205,9 +205,13 @@ class RuntimeTest(unittest.TestCase):
         self.assertFalse((self.job / 'cycle').exists())
 
     def test_windows_artifact_path_fits_normal_checkout(self):
-        base = REPO / '.public-discovery-runtime/o' / uuid.UUID(self.job.name).hex
+        base = rt.private_data_dir(REPO, self.job.name, {})
         artifact = base / 'artifacts' / ('a' * 32) / (('b' * 64) + '.' + ('c' * 32) + '.tmp')
         self.assertLess(len(str(artifact)), 260)
+
+    def test_long_checkout_uses_short_user_cache_namespace(self):
+        base = rt.private_data_dir(Path('C:/') / ('long' * 50), self.job.name, {'LOCALAPPDATA': 'C:/Users/user/AppData/Local'})
+        self.assertEqual(base, Path('C:/Users/user/AppData/Local/WaffleBench/o') / uuid.UUID(self.job.name).hex)
 
     @unittest.skipUnless((EVIDENCE / 'omnigent/sdk-records.json').is_file(), 'published cycle not available')
     def test_changed_export_values_are_rejected(self):
