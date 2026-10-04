@@ -5,9 +5,9 @@
   const DATA_FILE = 'web/data/inspection-v3.json';
   // Drawing fallback only, named in the UI when used; never reported as a result.
   const CONTRACT_GEOMETRY = Object.freeze({wafer_diameter_mm:300,die_width_mm:8,die_height_mm:6,scribe_mm:0.08,edge_exclusion_mm:3});
-  const OUTCOME = {positive:'검토 양성',negative:'관측 음성',failed:'측정 실패·누락'};
-  const STATUS = {failure:'측정 실패',missing:'측정 누락',ok:'정상'};
-  const REWARD = {reported_review_positive:'보고된 검토 양성 확률',latent_doi_probability:'잠재 DOI 확률'};
+  const OUTCOME = {positive:'Review positive',negative:'Observed negative',failed:'Failed or missing'};
+  const STATUS = {failure:'Measurement failed',missing:'Measurement missing',ok:'OK'};
+  const REWARD = {reported_review_positive:'Reported review-positive probability',latent_doi_probability:'Latent DOI probability'};
   const PLAY_MS = 520;
   const state = {data:null,raw:'',rows:[],sites:[],wafers:[],geometry:null,geometryFallback:false,cursor:0,timer:null,
     wafer:'all',result:'all',until:true,showCandidates:false,variantSort:'doi'};
@@ -17,13 +17,13 @@
   const arr = v => Array.isArray(v) ? v : [];
   const text = v => v == null || v === '' ? '—' : String(v);
   const e = v => text(v).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const fmt = (n, d=2) => finite(n) ? n.toLocaleString('ko-KR', {minimumFractionDigits:d, maximumFractionDigits:d}) : '—';
+  const fmt = (n, d=2) => finite(n) ? n.toLocaleString('en-US', {minimumFractionDigits:d, maximumFractionDigits:d}) : '—';
   const signed = (n, d=2) => finite(n) ? (n > 0 ? '+' : n < 0 ? '−' : '') + fmt(Math.abs(n), d) : '—';
   const pct = (n, d=1) => finite(n) ? signed(n * 100, d) + '%' : '—';
-  const count = n => finite(n) ? n.toLocaleString('ko-KR') : '—';
-  const yesNo = v => v === true ? '예' : v === false ? '아니오' : '—';
+  const count = n => finite(n) ? n.toLocaleString('en-US') : '—';
+  const yesNo = v => v === true ? 'Yes' : v === false ? 'No' : '—';
   const waferName = w => w == null ? '—' : typeof w === 'number' ? `W${w}` : String(w);
-  const empty = (title, detail) => `<div class="empty"><strong>${e(title)}</strong>${detail} · 파일 <code>${DATA_FILE}</code></div>`;
+  const empty = (title, detail) => `<div class="empty"><strong>${e(title)}</strong>${detail} · file <code>${DATA_FILE}</code></div>`;
 
   function outcome(row) {
     if (row.status != null && row.status !== 'ok') return 'failed';
@@ -34,40 +34,40 @@
   }
   const outcomeText = row => {
     const o = outcome(row);
-    return o === 'failed' ? (STATUS[row.status] && row.status !== 'ok' ? STATUS[row.status] : '결과 없음') : OUTCOME[o];
+    return o === 'failed' ? (STATUS[row.status] && row.status !== 'ok' ? STATUS[row.status] : 'No result') : OUTCOME[o];
   };
   const badge = row => `<span class="result ${outcome(row)}"><i aria-hidden="true"></i>${e(outcomeText(row))}</span>`;
 
   // ---------- loading ----------
   function showState(html) { const box = $('loadState'); box.hidden = false; box.innerHTML = html; }
-  function retryButton() { const b = document.createElement('button'); b.type = 'button'; b.className = 'control'; b.textContent = '다시 불러오기'; b.addEventListener('click', load); $('loadState').append(b); }
+  function retryButton() { const b = document.createElement('button'); b.type = 'button'; b.className = 'control'; b.textContent = 'Retry'; b.addEventListener('click', load); $('loadState').append(b); }
   async function load() {
     stop(); $('app').hidden = true; $('download').disabled = true;
-    showState('<div class="skeleton" aria-hidden="true"><span></span><span></span><span></span></div><p>저장된 검사 v3 근거를 불러오는 중…</p>');
+    showState('<div class="skeleton" aria-hidden="true"><span></span><span></span><span></span></div><p>Loading stored Inspection v3 evidence…</p>');
     let response;
     try { response = await fetch(DATA_URL, {cache:'no-store'}); }
     catch (error) {
       console.error('Inspection v3 fetch:', error);
-      showState(`<h2>근거 파일에 접근할 수 없습니다</h2><p>네트워크 또는 로컬 파일 열기 제한으로 <code>${DATA_FILE}</code> 파일을 읽지 못했습니다. 정적 서버로 <code>web/</code>을 연 뒤 다시 시도하세요.</p>`);
+      showState(`<h2>Cannot access the evidence file</h2><p>Could not read <code>${DATA_FILE}</code> because of a network error or a local file-access restriction. Serve <code>web/</code> with a static server and try again.</p>`);
       return retryButton();
     }
     if (response.status === 404) {
-      showState(`<h2>아직 검증된 결과가 없습니다</h2><p>검사 v3 근거가 아직 내보내지지 않았습니다. 코디네이터가 저장된 결과를 <code>${DATA_FILE}</code> 파일로 내보내면 이 화면이 채워집니다. 예시 수치나 임시 벤치마크는 표시하지 않습니다.</p>`);
+      showState(`<h2>No verified result yet</h2><p>Inspection v3 evidence has not been exported yet. This page fills in once the coordinator exports the stored result to <code>${DATA_FILE}</code>. No example values or provisional benchmarks are shown.</p>`);
       return retryButton();
     }
     try {
       if (!response.ok) throw Error(`HTTP ${response.status}`);
       const raw = await response.text();
       const data = JSON.parse(raw);
-      if (!obj(data)) throw Error('최상위 값이 객체가 아닙니다');
-      if (data.schema_version != null && data.schema_version !== 1) throw Error(`지원하지 않는 schema_version ${data.schema_version}`);
+      if (!obj(data)) throw Error('Top-level value is not an object');
+      if (data.schema_version != null && data.schema_version !== 1) throw Error(`Unsupported schema_version ${data.schema_version}`);
       state.raw = raw; state.data = data;
       prepareReplay(obj(data.replay));
       $('loadState').hidden = true; $('app').hidden = false; $('download').disabled = false;
       renderAll();
     } catch (error) {
       console.error('Inspection v3 parse:', error);
-      showState(`<h2>근거 파일을 해석할 수 없습니다</h2><p>${e(error.message)}. <code>${DATA_FILE}</code>의 내보내기 형식을 확인한 뒤 다시 시도하세요.</p>`);
+      showState(`<h2>Cannot parse the evidence file</h2><p>${e(error.message)}. Check the export format of <code>${DATA_FILE}</code> and try again.</p>`);
       retryButton();
     }
   }
@@ -85,7 +85,7 @@
     const complete = g && Object.keys(CONTRACT_GEOMETRY).every(k => finite(g[k]));
     state.geometry = complete ? g : CONTRACT_GEOMETRY; state.geometryFallback = !complete;
     state.cursor = 0; state.wafer = 'all'; state.result = 'all';
-    $('waferFilter').innerHTML = '<option value="all">전체 웨이퍼</option>' + state.wafers.map(w => `<option value="${e(w)}">${e(waferName(w))}</option>`).join('');
+    $('waferFilter').innerHTML = '<option value="all">All wafers</option>' + state.wafers.map(w => `<option value="${e(w)}">${e(waferName(w))}</option>`).join('');
     $('resultFilter').value = 'all';
   }
 
@@ -97,8 +97,8 @@
   function renderStudy() {
     const s = obj(state.data.study) || {};
     let generated = text(s.generated_at);
-    if (typeof s.generated_at === 'string' && !Number.isNaN(Date.parse(s.generated_at))) generated = new Date(s.generated_at).toLocaleString('ko-KR', {dateStyle:'medium', timeStyle:'short'});
-    const items = [['연구', s.name], ['유형', s.kind], ['생성', generated], ['freeze SHA-256', s.freeze_sha256 ? String(s.freeze_sha256).slice(0, 12) + '…' : null, s.freeze_sha256], ['source commit', s.source_commit ? String(s.source_commit).slice(0, 10) : null, s.source_commit]];
+    if (typeof s.generated_at === 'string' && !Number.isNaN(Date.parse(s.generated_at))) generated = new Date(s.generated_at).toLocaleString('en-US', {dateStyle:'medium', timeStyle:'short'});
+    const items = [['Study', s.name], ['Kind', s.kind], ['Generated', generated], ['freeze SHA-256', s.freeze_sha256 ? String(s.freeze_sha256).slice(0, 12) + '…' : null, s.freeze_sha256], ['source commit', s.source_commit ? String(s.source_commit).slice(0, 10) : null, s.source_commit]];
     $('studyMeta').innerHTML = items.map(([k, v, full]) => `<div><dt>${e(k)}</dt><dd${full ? ` class="mono" title="${e(full)}"` : ''}>${e(v)}</dd></div>`).join('');
   }
 
@@ -108,7 +108,7 @@
     const icon = met ? '<path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>'
       : missed ? '<path d="M4 4l8 8M12 4l-8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>'
       : '<path d="M4 8h8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
-    return `<span class="verdict ${met ? 'met' : missed ? 'missed' : 'none'}"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">${icon}</svg>${met ? '사전 목표 달성' : missed ? '사전 목표 미달' : '판정 없음'}</span>`;
+    return `<span class="verdict ${met ? 'met' : missed ? 'missed' : 'none'}"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">${icon}</svg>${met ? 'Preregistered target met' : missed ? 'Preregistered target missed' : 'No verdict'}</span>`;
   }
   function niceTicks(lo, hi, n=5) {
     const span = hi - lo || 1, raw = span / n, mag = 10 ** Math.floor(Math.log10(raw));
@@ -118,30 +118,30 @@
   }
   function ciChart(p) {
     const ci = arr(p.ci95), lo = ci[0], hi = ci[1], mid = p.mean_difference;
-    if (!finite(lo) || !finite(hi)) return `<figure class="ci-figure">${empty('95% CI가 아직 없습니다', 'primary.ci95가 내보내지지 않았습니다')}</figure>`;
+    if (!finite(lo) || !finite(hi)) return `<figure class="ci-figure">${empty('No 95% CI yet', 'primary.ci95 was not exported')}</figure>`;
     const vals = [0, lo, hi].concat(finite(mid) ? [mid] : []);
     let min = Math.min(...vals), max = Math.max(...vals); const pad = (max - min || 1) * 0.14; min -= pad; max += pad;
     const {ticks, step} = niceTicks(min, max); const digits = Math.max(0, Math.min(3, -Math.floor(Math.log10(step)) + (step / 10 ** Math.floor(Math.log10(step)) === 2.5 ? 1 : 0)));
     const W = 560, L = 16, R = 544, x = v => L + (v - min) / (max - min) * (R - L), Y = 58;
     const tickSvg = ticks.map(t => `<line x1="${x(t)}" x2="${x(t)}" y1="96" y2="101" stroke="#b9c5bd"/><text x="${x(t)}" y="116" text-anchor="middle">${fmt(t, digits)}</text>`).join('');
-    return `<figure class="ci-figure"><svg viewBox="0 0 ${W} 124" role="img" aria-label="평균 차이 ${signed(mid)}, 95% 신뢰구간 ${signed(lo)}에서 ${signed(hi)}. 0은 차이 없음.">
+    return `<figure class="ci-figure"><svg viewBox="0 0 ${W} 124" role="img" aria-label="Mean difference ${signed(mid)}, 95% confidence interval ${signed(lo)} to ${signed(hi)}. 0 means no difference.">
       <line x1="${L}" x2="${R}" y1="96" y2="96" stroke="#b9c5bd"/>${tickSvg}
-      <line x1="${x(0)}" x2="${x(0)}" y1="18" y2="96" stroke="#596860" stroke-dasharray="3 3"/><text x="${x(0)}" y="12" text-anchor="middle">차이 0</text>
+      <line x1="${x(0)}" x2="${x(0)}" y1="18" y2="96" stroke="#596860" stroke-dasharray="3 3"/><text x="${x(0)}" y="12" text-anchor="middle">No difference</text>
       <line x1="${x(lo)}" x2="${x(hi)}" y1="${Y}" y2="${Y}" stroke="#202b28" stroke-width="2"/>
       <line x1="${x(lo)}" x2="${x(lo)}" y1="${Y - 8}" y2="${Y + 8}" stroke="#202b28" stroke-width="2"/><line x1="${x(hi)}" x2="${x(hi)}" y1="${Y - 8}" y2="${Y + 8}" stroke="#202b28" stroke-width="2"/>
       <text x="${x(lo)}" y="${Y + 24}" text-anchor="middle">${signed(lo)}</text><text x="${x(hi)}" y="${Y + 24}" text-anchor="middle">${signed(hi)}</text>
-      ${finite(mid) ? `<circle cx="${x(mid)}" cy="${Y}" r="7" fill="#276449" stroke="#fff" stroke-width="2"><title>평균 차이 ${signed(mid)}</title></circle><text class="ink" x="${x(mid)}" y="${Y - 14}" text-anchor="middle">${signed(mid)}</text>` : ''}
-    </svg><figcaption>쌍별 평균 차이(후보 − 비교, 확인 DOI 개수)와 95% CI. 구간이 0선을 포함하면 차이가 불확실합니다.</figcaption></figure>`;
+      ${finite(mid) ? `<circle cx="${x(mid)}" cy="${Y}" r="7" fill="#276449" stroke="#fff" stroke-width="2"><title>Mean difference ${signed(mid)}</title></circle><text class="ink" x="${x(mid)}" y="${Y - 14}" text-anchor="middle">${signed(mid)}</text>` : ''}
+    </svg><figcaption>Paired mean difference (candidate − comparator, confirmed DOI count) with 95% CI. If the interval includes the zero line, the difference is uncertain.</figcaption></figure>`;
   }
   function renderPrimary() {
     const p = obj(state.data.primary);
-    if (!p) { $('primaryVerdict').innerHTML = ''; $('primaryBody').innerHTML = empty('주 결과가 아직 검증되지 않았습니다', 'primary 필드가 내보내기에 없습니다'); return; }
+    if (!p) { $('primaryVerdict').innerHTML = ''; $('primaryBody').innerHTML = empty('Primary result not yet verified', 'the export has no primary field'); return; }
     $('primaryVerdict').innerHTML = verdictChip(p.success);
     const ci = arr(p.ci95);
-    const statement = `<code>${e(p.candidate)}</code>의 평균 확인 DOI는 <span class="num">${fmt(p.mean_candidate)}</span>, 비교 <code>${e(p.comparator)}</code>는 <span class="num">${fmt(p.mean_comparator)}</span>입니다.`;
-    const sub = `동일 예산 ${fmt(p.budget, 0)} CU · ${e(p.mode)} · lot 쌍 ${count(p.pairs)}개의 paired bootstrap 결과입니다. 상대 이득 ${pct(p.relative_gain)}, 사전 목표 ${finite(p.target) ? fmt(p.target * 100, 1) + '%' : '—'}.`;
-    const figures = [['후보 평균', fmt(p.mean_candidate)], ['비교 평균', fmt(p.mean_comparator)], ['평균 차이', signed(p.mean_difference)],
-      ['95% CI', finite(ci[0]) && finite(ci[1]) ? `${signed(ci[0])} ~ ${signed(ci[1])}` : '—'], ['상대 이득', `${pct(p.relative_gain)} <small>목표 ${finite(p.target) ? fmt(p.target * 100, 1) + '%' : '—'}</small>`], ['lot 쌍', count(p.pairs)]];
+    const statement = `Mean confirmed DOI is <span class="num">${fmt(p.mean_candidate)}</span> for <code>${e(p.candidate)}</code> and <span class="num">${fmt(p.mean_comparator)}</span> for the comparator <code>${e(p.comparator)}</code>.`;
+    const sub = `Paired bootstrap over ${count(p.pairs)} lot pairs · same budget of ${fmt(p.budget, 0)} CU · ${e(p.mode)}. Relative gain ${pct(p.relative_gain)}; preregistered target ${finite(p.target) ? fmt(p.target * 100, 1) + '%' : '—'}.`;
+    const figures = [['Candidate mean', fmt(p.mean_candidate)], ['Comparator mean', fmt(p.mean_comparator)], ['Mean difference', signed(p.mean_difference)],
+      ['95% CI', finite(ci[0]) && finite(ci[1]) ? `${signed(ci[0])} to ${signed(ci[1])}` : '—'], ['Relative gain', `${pct(p.relative_gain)} <small>target ${finite(p.target) ? fmt(p.target * 100, 1) + '%' : '—'}</small>`], ['Lot pairs', count(p.pairs)]];
     $('primaryBody').innerHTML = `<div class="primary-grid"><div><p class="statement">${statement}</p><p class="statement-sub">${sub}</p><dl class="figures">${figures.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl></div>${ciChart(p)}</div>`;
   }
 
@@ -150,13 +150,13 @@
     const replay = obj(state.data.replay);
     const hasAny = state.rows.length || state.sites.length;
     $('replayEmpty').hidden = !!hasAny; $('replayContent').hidden = !hasAny;
-    if (!hasAny) { $('replayEmpty').innerHTML = empty('측정 재생 기록이 아직 없습니다', 'replay.rows와 replay.sites가 내보내기에 없습니다'); $('replayMeta').textContent = '저장된 유료 측정 기록을 순서대로 다시 보여 줍니다.'; return; }
-    $('replayMeta').textContent = `lot ${text(replay.lot_id)} · 변형 ${text(replay.variant)} · 예산 ${fmt(replay.budget, 0)} CU · 지출 ${fmt(replay.spent, 1)} CU · 유료 측정 ${count(state.rows.length)}건. 기록을 다시 보여 줄 뿐 연구 결과는 바뀌지 않습니다.`;
+    if (!hasAny) { $('replayEmpty').innerHTML = empty('No measurement replay records yet', 'the export has no replay.rows or replay.sites'); $('replayMeta').textContent = 'Replays the stored paid-measurement records in order.'; return; }
+    $('replayMeta').textContent = `Lot ${text(replay.lot_id)} · variant ${text(replay.variant)} · budget ${fmt(replay.budget, 0)} CU · spent ${fmt(replay.spent, 1)} CU · ${count(state.rows.length)} paid measurements. This only replays the record; the study result does not change.`;
     const range = $('stepRange'); range.max = String(state.rows.length); range.value = '0'; range.disabled = !state.rows.length;
     const g = state.geometry, per = state.wafers.map(w => state.sites.filter(s => s.wafer === w).length);
-    $('geometryNote').textContent = `⌀${fmt(g.wafer_diameter_mm, 0)} mm · 다이 ${fmt(g.die_width_mm, 0)} × ${fmt(g.die_height_mm, 0)} mm · 스크라이브 ${fmt(g.scribe_mm * 1000, 0)} μm · 가장자리 제외 ${fmt(g.edge_exclusion_mm, 0)} mm · 웨이퍼별 사이트 ${per.map(count).join(' / ') || '—'}개${state.geometryFallback ? ' · replay.geometry가 없어 계약 형상으로 그렸습니다' : ''}. 색 대신 채움·테두리·빗금으로도 결과를 구분합니다.`;
+    $('geometryNote').textContent = `⌀${fmt(g.wafer_diameter_mm, 0)} mm · die ${fmt(g.die_width_mm, 0)} × ${fmt(g.die_height_mm, 0)} mm · scribe ${fmt(g.scribe_mm * 1000, 0)} μm · edge exclusion ${fmt(g.edge_exclusion_mm, 0)} mm · sites per wafer ${per.map(count).join(' / ') || '—'}${state.geometryFallback ? ' · replay.geometry is missing, so the contract geometry was used for drawing' : ''}. Outcomes are also distinguished by fill, outline and hatching, not only by color.`;
     $('pickNote').textContent = '';
-    if (!state.sites.length) { $('wafers').innerHTML = empty('다이 좌표가 아직 없습니다', 'replay.sites가 없어 웨이퍼 지도를 그리지 않았습니다. 아래 측정 기록 표는 사용할 수 있습니다'); return; }
+    if (!state.sites.length) { $('wafers').innerHTML = empty('No die coordinates yet', 'replay.sites is missing, so no wafer map was drawn. The measurement records table below is still available'); return; }
     $('wafers').innerHTML = state.wafers.map((w, i) => `<figure class="wafer"><figcaption><strong>${e(waferName(w))}</strong><span id="waferCount${i}"></span></figcaption><canvas width="600" height="600" data-wafer-index="${i}" role="img"></canvas></figure>`).join('');
     $('wafers').querySelectorAll('canvas').forEach(c => c.addEventListener('click', pickDie));
   }
@@ -172,31 +172,31 @@
     const n = state.rows.length, cur = state.cursor, row = cur ? state.rows[cur - 1] : null, replay = obj(state.data.replay) || {};
     $('stepRange').value = String(cur);
     $('stepOut').textContent = `${count(cur)} / ${count(n)}`;
-    $('stepRange').setAttribute('aria-valuetext', cur ? `단계 ${cur} / ${n}, ${text(row.site_id)}, ${outcomeText(row)}` : `재생 전, 총 ${n}단계`);
+    $('stepRange').setAttribute('aria-valuetext', cur ? `Step ${cur} of ${n}, ${text(row.site_id)}, ${outcomeText(row)}` : `Before replay, ${n} steps in total`);
     $('stepFirst').disabled = $('stepPrev').disabled = cur === 0;
     $('stepNext').disabled = $('stepLast').disabled = cur >= n;
     $('stepPlay').disabled = !n;
     const spentNow = row && finite(row.cumulative_spend) ? row.cumulative_spend : 0;
     const width = finite(replay.budget) && replay.budget > 0 ? Math.min(100, spentNow / replay.budget * 100) : 0;
-    $('spend').innerHTML = `누적 지출 <strong class="num">${fmt(spentNow, 1)}</strong> / 예산 ${fmt(replay.budget, 0)} CU<div class="bar" role="img" aria-label="예산 대비 누적 지출 ${fmt(width, 0)}%"><i style="width:${width}%"></i></div>`;
+    $('spend').innerHTML = `Cumulative spend <strong class="num">${fmt(spentNow, 1)}</strong> / budget ${fmt(replay.budget, 0)} CU<div class="bar" role="img" aria-label="Cumulative spend ${fmt(width, 0)}% of budget"><i style="width:${width}%"></i></div>`;
     const obs = observedMap();
     state.wafers.forEach((w, i) => {
       const values = [...obs.values()].filter(o => o.row.wafer === w);
       const pos = values.filter(o => o.outcome === 'positive').length, neg = values.filter(o => o.outcome === 'negative').length, fail = values.length - pos - neg;
-      const label = $(`waferCount${i}`); if (label) label.textContent = `측정 ${values.length} · 양성 ${pos}`;
+      const label = $(`waferCount${i}`); if (label) label.textContent = `Measured ${values.length} · positive ${pos}`;
       const canvas = $('wafers').querySelector(`canvas[data-wafer-index="${i}"]`);
-      if (canvas) { canvas.setAttribute('aria-label', `${waferName(w)} 웨이퍼 지도. 측정한 다이 ${values.length}개: 검토 양성 ${pos}, 관측 음성 ${neg}, 실패·누락 ${fail}. 나머지 다이는 측정하지 않아 결과를 모릅니다. 같은 내용을 아래 표로 확인할 수 있습니다.`); draw(canvas, w, obs, row); }
+      if (canvas) { canvas.setAttribute('aria-label', `Wafer map ${waferName(w)}. ${values.length} dies measured: ${pos} review positive, ${neg} observed negative, ${fail} failed or missing. All other dies were not measured, so their outcome is unknown. The same information is in the table below.`); draw(canvas, w, obs, row); }
     });
     renderStepDetail(row, n);
     renderRows();
   }
 
   function renderStepDetail(row, n) {
-    if (!row) { $('stepDetail').innerHTML = `<p class="hint">재생 전입니다. 다음 또는 재생을 누르면 저장된 ${count(n)}건의 유료 측정이 순서대로 나타납니다. 측정하지 않은 다이는 끝까지 결과를 모르는 상태로 남습니다.</p>`; return; }
+    if (!row) { $('stepDetail').innerHTML = `<p class="hint">Before replay. Press Next or Play to reveal the ${count(n)} stored paid measurements in order. Dies that were never measured stay unknown to the end.</p>`; return; }
     const semantics = REWARD[row.selection_reward_semantics] || text(row.selection_reward_semantics);
-    $('stepDetail').innerHTML = `<p class="step-lead">단계 ${e(row.step)} ${badge(row)}</p><p class="mono">${e(row.site_id)}</p>
-      <dl class="detail-list"><dt>웨이퍼</dt><dd>${e(waferName(row.wafer))}</dd><dt>측정 상태</dt><dd>${e(STATUS[row.status] || row.status)}</dd><dt>청구 비용</dt><dd>${fmt(row.charged, 1)} CU</dd><dt>누적 지출</dt><dd>${fmt(row.cumulative_spend, 1)} CU</dd><dt>baseline p</dt><dd>${fmt(row.baseline_p, 3)}</dd><dt>selection reward</dt><dd>${fmt(row.selection_reward, 3)}</dd><dt>reward 의미</dt><dd>${e(semantics)}</dd></dl>
-      <p class="hint">선택 사유 <code>${e(row.reason)}</code>. baseline p는 고정된 DOI 분류기 점수이며 측정 결과가 아닙니다.</p>`;
+    $('stepDetail').innerHTML = `<p class="step-lead">Step ${e(row.step)} ${badge(row)}</p><p class="mono">${e(row.site_id)}</p>
+      <dl class="detail-list"><dt>Wafer</dt><dd>${e(waferName(row.wafer))}</dd><dt>Measurement status</dt><dd>${e(STATUS[row.status] || row.status)}</dd><dt>Charged cost</dt><dd>${fmt(row.charged, 1)} CU</dd><dt>Cumulative spend</dt><dd>${fmt(row.cumulative_spend, 1)} CU</dd><dt>baseline p</dt><dd>${fmt(row.baseline_p, 3)}</dd><dt>selection reward</dt><dd>${fmt(row.selection_reward, 3)}</dd><dt>Reward meaning</dt><dd>${e(semantics)}</dd></dl>
+      <p class="hint">Selection reason <code>${e(row.reason)}</code>. baseline p is a frozen DOI-classifier score, not a measurement result.</p>`;
   }
 
   function draw(canvas, waferKey, obs, currentRow) {
@@ -247,8 +247,8 @@
     const site = state.sites.find(s => s.wafer === w && Math.abs(s.x_mm - xmm) <= g.die_width_mm / 2 && Math.abs(s.y_mm - ymm) <= g.die_height_mm / 2);
     if (!site) { $('pickNote').textContent = ''; return; }
     const index = state.rows.findIndex(row => String(row.site_id) === String(site.id));
-    if (index < 0) { $('pickNote').textContent = `${site.id}: 이 기록에서 측정하지 않은 다이입니다. 결과를 알 수 없습니다.`; return; }
-    $('pickNote').textContent = `${site.id}: 단계 ${state.rows[index].step ?? index + 1}로 이동했습니다.`;
+    if (index < 0) { $('pickNote').textContent = `${site.id}: this die was not measured in this record. Its outcome is unknown.`; return; }
+    $('pickNote').textContent = `${site.id}: moved to step ${state.rows[index].step ?? index + 1}.`;
     stop(); setCursor(index + 1);
   }
 
@@ -258,11 +258,11 @@
   }
   function renderRows() {
     const list = filteredRows(), focused = document.activeElement?.dataset?.step;
-    $('rowCount').textContent = `표시 ${count(list.length)} / ${count(state.rows.length)}건`;
+    $('rowCount').textContent = `Showing ${count(list.length)} of ${count(state.rows.length)}`;
     $('obsRows').innerHTML = list.map(({row, index}) => {
       const cls = index === state.cursor - 1 ? 'is-current' : index >= state.cursor ? 'is-future' : '';
-      return `<tr class="${cls}"><th scope="row"><button type="button" class="step-link" data-step="${index + 1}" aria-label="단계 ${e(row.step ?? index + 1)}로 이동"${cls === 'is-current' ? ' aria-current="step"' : ''}>${e(row.step ?? index + 1)}</button></th><td class="site">${e(row.site_id)}</td><td>${e(waferName(row.wafer))}</td><td>${badge(row)}${index >= state.cursor ? ' <span class="footnote">미재생</span>' : ''}</td><td class="num">${fmt(row.charged, 1)}</td><td class="num">${fmt(row.cumulative_spend, 1)}</td><td class="num">${fmt(row.baseline_p, 3)}</td><td class="num" title="${e(REWARD[row.selection_reward_semantics] || row.selection_reward_semantics)}">${fmt(row.selection_reward, 3)}</td><td class="reason">${e(row.reason)}</td></tr>`;
-    }).join('') || `<tr><td colspan="9">${state.until && state.cursor === 0 ? '아직 재생한 단계가 없습니다. 다음 또는 재생을 누르거나 “현재 단계까지만”을 해제하세요.' : '조건에 맞는 측정 기록이 없습니다. 웨이퍼·결과 필터를 바꿔 보세요.'}</td></tr>`;
+      return `<tr class="${cls}"><th scope="row"><button type="button" class="step-link" data-step="${index + 1}" aria-label="Go to step ${e(row.step ?? index + 1)}"${cls === 'is-current' ? ' aria-current="step"' : ''}>${e(row.step ?? index + 1)}</button></th><td class="site">${e(row.site_id)}</td><td>${e(waferName(row.wafer))}</td><td>${badge(row)}${index >= state.cursor ? ' <span class="footnote">not yet replayed</span>' : ''}</td><td class="num">${fmt(row.charged, 1)}</td><td class="num">${fmt(row.cumulative_spend, 1)}</td><td class="num">${fmt(row.baseline_p, 3)}</td><td class="num" title="${e(REWARD[row.selection_reward_semantics] || row.selection_reward_semantics)}">${fmt(row.selection_reward, 3)}</td><td class="reason">${e(row.reason)}</td></tr>`;
+    }).join('') || `<tr><td colspan="9">${state.until && state.cursor === 0 ? 'No steps replayed yet. Press Next or Play, or clear “Up to current step only”.' : 'No measurement records match. Try changing the wafer or outcome filter.'}</td></tr>`;
     if (focused) $('obsRows').querySelector(`[data-step="${focused}"]`)?.focus({preventScroll:true});
     const tr = $('obsRows').querySelector('tr.is-current'), box = tr?.closest('.record-scroll');
     if (tr && box) {
@@ -274,12 +274,12 @@
   function setCursor(value) { state.cursor = Math.max(0, Math.min(state.rows.length, value)); renderReplay(); }
   function stop() {
     if (state.timer) clearInterval(state.timer); state.timer = null;
-    const b = $('stepPlay'); b.textContent = '재생'; b.setAttribute('aria-pressed', 'false'); $('stepDetail').setAttribute('aria-live', 'polite');
+    const b = $('stepPlay'); b.textContent = 'Play'; b.setAttribute('aria-pressed', 'false'); $('stepDetail').setAttribute('aria-live', 'polite');
   }
   function play() {
     if (state.timer) return stop();
     if (state.cursor >= state.rows.length) state.cursor = 0;
-    const b = $('stepPlay'); b.textContent = '일시정지'; b.setAttribute('aria-pressed', 'true'); $('stepDetail').setAttribute('aria-live', 'off');
+    const b = $('stepPlay'); b.textContent = 'Pause'; b.setAttribute('aria-pressed', 'true'); $('stepDetail').setAttribute('aria-live', 'off');
     state.timer = setInterval(() => { if (state.cursor >= state.rows.length) return stop(); setCursor(state.cursor + 1); if (state.cursor >= state.rows.length) stop(); }, PLAY_MS);
     setCursor(state.cursor + (state.cursor === 0 ? 1 : 0));
   }
@@ -288,49 +288,49 @@
   function renderVariants() {
     const all = arr(state.data.variants).filter(obj), p = obj(state.data.primary) || {};
     $('variantSort').disabled = !all.length;
-    if (!all.length) { $('variantsBody').innerHTML = empty('변형 비교가 아직 없습니다', 'variants 배열이 비어 있거나 없습니다'); return; }
+    if (!all.length) { $('variantsBody').innerHTML = empty('No variant comparison yet', 'the variants array is empty or missing'); return; }
     const sorted = [...all].sort(state.variantSort === 'id' ? (a, b) => String(a.id).localeCompare(String(b.id))
       : state.variantSort === 'spent' ? (a, b) => (finite(a.mean_spent) ? a.mean_spent : Infinity) - (finite(b.mean_spent) ? b.mean_spent : Infinity)
       : (a, b) => (finite(b.mean_doi) ? b.mean_doi : -Infinity) - (finite(a.mean_doi) ? a.mean_doi : -Infinity));
-    const role = v => v.id === p.candidate ? '<span class="role">후보</span>' : v.id === p.comparator ? '<span class="role comparator">비교</span>' : '';
+    const role = v => v.id === p.candidate ? '<span class="role">candidate</span>' : v.id === p.comparator ? '<span class="role comparator">comparator</span>' : '';
     const values = all.map(v => v.mean_doi).filter(finite), top = values.length ? Math.max(...values) : 0;
     const {ticks} = niceTicks(0, top > 0 ? top : 1, 4);
     const tickStep = ticks.length > 1 ? ticks[1] - ticks[0] : 1;
     const axisMax = Math.max(1, Math.ceil(top / tickStep) * tickStep);
-    const dots = sorted.map(v => `<li class="${v.id === p.candidate ? 'is-candidate' : v.id === p.comparator ? 'is-comparator' : ''}" title="${e(v.id)} · 평균 DOI ${fmt(v.mean_doi)}"><span class="name">${e(v.id)}${role(v)}</span><span class="track">${finite(v.mean_doi) ? `<i style="left:${Math.max(0, v.mean_doi / axisMax * 100)}%"></i>` : ''}</span><span class="val">${fmt(v.mean_doi)}</span></li>`).join('');
+    const dots = sorted.map(v => `<li class="${v.id === p.candidate ? 'is-candidate' : v.id === p.comparator ? 'is-comparator' : ''}" title="${e(v.id)} · mean DOI ${fmt(v.mean_doi)}"><span class="name">${e(v.id)}${role(v)}</span><span class="track">${finite(v.mean_doi) ? `<i style="left:${Math.max(0, v.mean_doi / axisMax * 100)}%"></i>` : ''}</span><span class="val">${fmt(v.mean_doi)}</span></li>`).join('');
     const rows = sorted.map(v => `<tr><th scope="row">${e(v.id)}${role(v)}</th><td class="num">${fmt(v.mean_doi)}</td><td class="num">${fmt(v.mean_spent, 1)}</td><td class="num">${fmt(v.mean_policy_wall_s, 4)}</td></tr>`).join('');
-    $('variantsBody').innerHTML = `<div class="variant-grid"><figure class="dot-chart" aria-label="변형별 평균 확인 DOI 점 그래프"><ol class="dots">${dots}</ol><div class="dots-axis" aria-hidden="true"><span></span><span><span>0</span><span>${fmt(axisMax, axisMax < 10 ? 1 : 0)}</span></span><span></span></div><figcaption>평균 확인 DOI · 초록 원은 후보, 사각형은 비교 정책</figcaption></figure>
-      <div class="table-scroll" role="region" tabindex="0" aria-label="정책 변형 표"><table class="data-table"><caption>모든 변형 · 사후 교체 없음 · 정책 시간은 lot 전체 선택 호출의 합계</caption><thead><tr><th scope="col">변형</th><th scope="col" class="num">평균 DOI</th><th scope="col" class="num">평균 지출 CU</th><th scope="col" class="num">평균 정책 s/lot</th></tr></thead><tbody>${rows}</tbody></table></div></div>`;
+    $('variantsBody').innerHTML = `<div class="variant-grid"><figure class="dot-chart" aria-label="Dot chart of mean confirmed DOI by variant"><ol class="dots">${dots}</ol><div class="dots-axis" aria-hidden="true"><span></span><span><span>0</span><span>${fmt(axisMax, axisMax < 10 ? 1 : 0)}</span></span><span></span></div><figcaption>Mean confirmed DOI · green circle = candidate, square = comparator policy</figcaption></figure>
+      <div class="table-scroll" role="region" tabindex="0" aria-label="Policy variant table"><table class="data-table"><caption>All variants · no post-hoc replacement · policy time is the sum of all selection calls in a lot</caption><thead><tr><th scope="col">Variant</th><th scope="col" class="num">Mean DOI</th><th scope="col" class="num">Mean spend CU</th><th scope="col" class="num">Mean policy s/lot</th></tr></thead><tbody>${rows}</tbody></table></div></div>`;
   }
 
   function renderClassification() {
     const list = arr(state.data.classification).filter(obj);
-    if (!list.length) { $('classBody').innerHTML = empty('분류 지표가 아직 없습니다', 'classification 배열이 비어 있거나 없습니다'); return; }
-    $('classBody').innerHTML = `<div class="table-scroll" role="region" tabindex="0" aria-label="분류 성능 표"><table class="data-table class-table"><caption>held-out 분류 지표 · 확인 DOI(운영 발견)와 다른 결과입니다</caption><thead><tr><th scope="col">모델</th><th scope="col" class="num">precision</th><th scope="col" class="num">recall</th><th scope="col" class="num">AP</th><th scope="col" class="num">Brier</th><th scope="col" class="num">ECE</th><th scope="col" class="num grp">TP</th><th scope="col" class="num">오탐 FP</th><th scope="col" class="num">미탐 FN</th><th scope="col" class="num">TN</th></tr></thead><tbody>${
+    if (!list.length) { $('classBody').innerHTML = empty('No classification metrics yet', 'the classification array is empty or missing'); return; }
+    $('classBody').innerHTML = `<div class="table-scroll" role="region" tabindex="0" aria-label="Classification performance table"><table class="data-table class-table"><caption>Held-out classification metrics · a different result from confirmed DOI (operational finding)</caption><thead><tr><th scope="col">Model</th><th scope="col" class="num">precision</th><th scope="col" class="num">recall</th><th scope="col" class="num">AP</th><th scope="col" class="num">Brier</th><th scope="col" class="num">ECE</th><th scope="col" class="num grp">TP</th><th scope="col" class="num">False alarm FP</th><th scope="col" class="num">Miss FN</th><th scope="col" class="num">TN</th></tr></thead><tbody>${
       list.map(c => `<tr><th scope="row">${e(c.id)}</th><td class="num">${fmt(c.precision, 3)}</td><td class="num">${fmt(c.recall, 3)}</td><td class="num">${fmt(c.average_precision, 3)}</td><td class="num">${fmt(c.brier, 4)}</td><td class="num">${fmt(c.ece, 4)}</td><td class="num grp">${count(c.tp)}</td><td class="num">${count(c.fp)}</td><td class="num">${count(c.fn)}</td><td class="num">${count(c.tn)}</td></tr>`).join('')}</tbody></table></div>`;
   }
 
   function renderAudit() {
     const a = obj(state.data.audit);
-    if (!a) { $('auditBody').innerHTML = empty('감사 결과가 아직 없습니다', 'audit 필드가 없습니다'); return; }
+    if (!a) { $('auditBody').innerHTML = empty('No audit result yet', 'the audit field is missing'); return; }
     const okStatus = ['pass', 'passed', 'ok', 'complete'].includes(String(a.status).toLowerCase());
     const hidden = Array.isArray(a.hidden_truth_fields_in_components) ? a.hidden_truth_fields_in_components.length : a.hidden_truth_fields_in_components;
     const cls = (good, v) => v == null ? '' : good ? 'ok' : 'bad';
-    const protectedValue = finite(a.protected_files_preserved) ? `${count(a.protected_files_preserved)}개 파일` : yesNo(a.protected_files_preserved);
+    const protectedValue = finite(a.protected_files_preserved) ? `${count(a.protected_files_preserved)} files` : yesNo(a.protected_files_preserved);
     const protectedOK = a.protected_files_preserved === true || (finite(a.protected_files_preserved) && a.protected_files_preserved > 0);
-    $('auditBody').innerHTML = `<dl class="state-list"><dt>상태</dt><dd class="${a.status == null ? '' : okStatus ? 'ok' : 'bad'}">${e(a.status)}</dd><dt>검사한 run</dt><dd>${count(a.runs_checked)}</dd><dt>예산 위반</dt><dd class="${cls(a.budget_violations === 0, a.budget_violations)}">${count(a.budget_violations)}</dd><dt>정책 입력의 숨은 정답 필드</dt><dd class="${cls(hidden === 0, hidden)}">${count(hidden)}</dd><dt>보호 파일 보존</dt><dd class="${cls(protectedOK, a.protected_files_preserved)}">${protectedValue}</dd></dl>`;
+    $('auditBody').innerHTML = `<dl class="state-list"><dt>Status</dt><dd class="${a.status == null ? '' : okStatus ? 'ok' : 'bad'}">${e(a.status)}</dd><dt>Runs checked</dt><dd>${count(a.runs_checked)}</dd><dt>Budget violations</dt><dd class="${cls(a.budget_violations === 0, a.budget_violations)}">${count(a.budget_violations)}</dd><dt>Hidden-truth fields in policy inputs</dt><dd class="${cls(hidden === 0, hidden)}">${count(hidden)}</dd><dt>Protected files preserved</dt><dd class="${cls(protectedOK, a.protected_files_preserved)}">${protectedValue}</dd></dl>`;
   }
 
   function renderInference() {
     const i = obj(state.data.inference);
-    if (!i) { $('inferBody').innerHTML = empty('추론 시간이 아직 없습니다', 'inference 필드가 없습니다'); return; }
+    if (!i) { $('inferBody').innerHTML = empty('No inference timing yet', 'the inference field is missing'); return; }
     const ratio = finite(i.baseline_ms) && finite(i.compiled_ms) && i.compiled_ms > 0 ? i.baseline_ms / i.compiled_ms : null;
-    $('inferBody').innerHTML = `<dl class="state-list"><dt>baseline</dt><dd>${fmt(i.baseline_ms, 2)} ms</dd><dt>compiled</dt><dd>${fmt(i.compiled_ms, 2)} ms</dd><dt>배율 (두 값에서 계산)</dt><dd>${ratio == null ? '—' : fmt(ratio, 1) + '×'}</dd></dl><p class="scope-note">측정 범위: ${e(i.scope)}</p>`;
+    $('inferBody').innerHTML = `<dl class="state-list"><dt>baseline</dt><dd>${fmt(i.baseline_ms, 2)} ms</dd><dt>compiled</dt><dd>${fmt(i.compiled_ms, 2)} ms</dd><dt>Speedup (computed from both values)</dt><dd>${ratio == null ? '—' : fmt(ratio, 1) + '×'}</dd></dl><p class="scope-note">Measurement scope: ${e(i.scope)}</p>`;
   }
 
   function renderLimitations() {
     const list = arr(obj(state.data.study)?.limitations).filter(x => x != null);
-    $('limitationsList').innerHTML = list.length ? list.map(x => `<li>${e(x)}</li>`).join('') : '<li>내보낸 한계 항목이 없습니다. 위의 합성 연구 범위 안내를 기준으로 해석하세요.</li>';
+    $('limitationsList').innerHTML = list.length ? list.map(x => `<li>${e(x)}</li>`).join('') : '<li>No limitations were exported. Interpret the results within the synthetic study scope stated above.</li>';
   }
 
   // ---------- events ----------

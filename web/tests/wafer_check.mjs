@@ -22,11 +22,11 @@ async function audit(page,tag){
    const expected=c.kind==='failed'?'failed':c.kind==='unobserved'?'unknown':
     e?.clear_counterexample===true?'bad':e?.clear_counterexample===false&&e?.secondary_counterexample===true?'boundary':
     e?.clear_counterexample===false&&e?.secondary_counterexample===false?'good':'unknown';
-   const found=/양품/.test(label)?'good':/불량/.test(label)?'bad':/경계/.test(label)?'boundary':'unknown';
-   if(expected==='failed'){if(found!=='unknown'||!/실패/.test(label))failures.push(b.dataset.key+' failed mislabeled');}
+   const found=/\bGood\b/.test(label)?'good':/\bBad\b/.test(label)?'bad':/\bBoundary\b/.test(label)?'boundary':'unknown';
+   if(expected==='failed'){if(found!=='unknown'||!/Failure/.test(label))failures.push(b.dataset.key+' failed mislabeled');}
    else if(expected!==found)failures.push(b.dataset.key+' expected '+expected+', got '+label);
-   if(c.kind==='held_out'&&!/사후/.test(label))failures.push(b.dataset.key+' lost posthoc label');
-   if(c.candidate&&c.kind==='unobserved'&&!/추정/.test(label))failures.push(b.dataset.key+' lost estimate label');
+   if(c.kind==='held_out'&&!/post hoc/.test(label))failures.push(b.dataset.key+' lost posthoc label');
+   if(c.candidate&&c.kind==='unobserved'&&!/estimate/.test(label))failures.push(b.dataset.key+' lost estimate label');
    const r=b.getBoundingClientRect();if(r.width<24||r.height<24)failures.push(b.dataset.key+' target below 24px');
    if(r.right>innerWidth+1||r.left<0)failures.push(b.dataset.key+' clipped target');
   }
@@ -42,7 +42,7 @@ for(const width of [360,390,768,1440]){
   await p.click('[data-step="'+stage+'"]');
   for(const corner of ['SS','TT','FF','FS','SF']){
    await p.click('[data-corner="'+corner+'"]');await audit(p,width+' stage'+stage+' '+corner);
-   counts.push({stage,corner,...await p.locator('#heatmap [data-key]').evaluateAll(bs=>({good:bs.filter(b=>/양품/.test(b.getAttribute('aria-label'))).length,bad:bs.filter(b=>/불량/.test(b.getAttribute('aria-label'))).length,boundary:bs.filter(b=>/경계/.test(b.getAttribute('aria-label'))).length}))});
+   counts.push({stage,corner,...await p.locator('#heatmap [data-key]').evaluateAll(bs=>({good:bs.filter(b=>/\bGood\b/.test(b.getAttribute('aria-label'))).length,bad:bs.filter(b=>/\bBad\b/.test(b.getAttribute('aria-label'))).length,boundary:bs.filter(b=>/\bBoundary\b/.test(b.getAttribute('aria-label'))).length}))});
   }
  }
  const focus=p.locator('#heatmap [data-key]').first(),key=await focus.getAttribute('data-key');await focus.focus();await p.keyboard.press('Enter');

@@ -108,7 +108,7 @@ def main() -> None:
     # development history includes account/credit preparation notes.
     source_files = (
         ".gitattributes", ".gitignore", "LICENSE", "README.md", "RESULTS.md", "THIRD_PARTY.md", "CORE_API.md", "DATA_CONTRACT.md",
-        "RESEARCH_PROTOCOL.md", "research-manifest.json", "pyproject.toml", "uv.lock", "launch.ps1",
+        "RESEARCH_PROTOCOL.md", "RESEARCH_PROTOCOL.en.md", "research-manifest.json", "pyproject.toml", "uv.lock", "launch.ps1",
     )
     for name in source_files:
         copy_source(PROJECT / name, destination / name)

@@ -48,7 +48,8 @@ The original research application and mockup keep their existing design rules.
 **Key Characteristics:**
 
 - A physical-scale dense wafer is the main data surface.
-- Korean copy distinguishes generated truth, simulated detection and observed bins.
+- English copy distinguishes generated truth, simulated detection and observed bins.
+  Korean source labels in the dataset are mapped to English only at render time.
 - Native controls and semantic tables support an alternative to tiny map targets.
 
 ## Colors
@@ -63,7 +64,7 @@ physical manufacture or a unique root cause.
 
 ## Typography
 
-The incumbent Korean system sans is retained. Table and metadata text uses tabular
+The incumbent system sans stack is retained. Table and metadata text uses tabular
 numerals. Measurement precision varies by unit, while the JSON preserves raw values.
 Titles stay compact and controls readable; no decorative display typography is added.
 

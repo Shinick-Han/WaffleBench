@@ -1,56 +1,56 @@
-# 검사 선택 연구 실행 안내
+# Inspection Selection Study: Run Guide
 
-전체 설계는 [INSPECTION_PROTOCOL.md](INSPECTION_PROTOCOL.md), 현장 근거는 [INSPECTION_RESEARCH.md](INSPECTION_RESEARCH.md), 기계가 읽는 조건은 `inspection_review/protocol.json`에 있다. 기존 PVT 연구·공개 웨이퍼 데모와 별도 namespace 및 출력 폴더를 사용한다.
+The full design is in [INSPECTION_PROTOCOL.md](INSPECTION_PROTOCOL.md) (frozen Korean original; English translation: [INSPECTION_PROTOCOL.en.md](INSPECTION_PROTOCOL.en.md)), the field evidence is in [INSPECTION_RESEARCH.md](INSPECTION_RESEARCH.md), and the machine-readable conditions are in `inspection_review/protocol.json`. It uses a namespace and output folders separate from the existing PVT study and the public wafer demo.
 
-## 데이터와 관측
+## Data and observation
 
 ```mermaid
 flowchart LR
-    T[과거 12개 lot의 후보와 주석] --> M[동결 logistic 모델]
-    C[현재 lot의 광학 후보·공정 문맥] --> P[리뷰 선택 정책]
+    T[Candidates and annotations of 12 past lots] --> M[Frozen logistic model]
+    C[Current lot optical candidates and process context] --> P[Review selection policy]
     M --> P
-    P --> B[예산 승인: 로딩·이동·dwell·재시도 예약]
-    B --> S[선택한 위치만 모의 정밀 리뷰]
-    S --> E[유료 관측과 비용 ledger]
+    P --> B[Budget approval: reserve loading, move, dwell, retry]
+    B --> S[Simulated precision review of selected locations only]
+    S --> E[Paid observations and cost ledger]
     E --> P
-    E --> A[선택 종료 후 독립 사후 평가]
-    O[별도 oracle 파일] --> S
+    E --> A[Independent post-hoc evaluation after selection ends]
+    O[Separate oracle file] --> S
     O --> A
 ```
 
-`public.npz`에는 초기 관측, `oracle.npz`에는 생성 정답과 위치별 잠재 센서 결과가 들어간다. `metadata.json`은 lot·split·scenario·seed와 파일 해시다. 훈련 전용 loader는 과거 주석과 split 메타데이터를 읽고, 정책용 loader는 seed/scenario를 전달하지 않는다. 정책의 ID는 평문 scenario를 포함하지 않는다. 이 경계는 재현 가능한 프로그램 인터페이스이며 adversarial 코드에 대한 암호학적 보안 경계는 아니다.
+`public.npz` holds the initial observations, and `oracle.npz` holds the generated ground truth and the latent per-location sensor results. `metadata.json` holds the lot, split, scenario, seed and file hashes. The training-only loader reads past annotations and split metadata; the policy loader does not pass seed/scenario. Policy IDs do not include the plaintext scenario. This boundary is a reproducible program interface, not a cryptographic security boundary against adversarial code.
 
-센서 양성과 진양성 확인 수는 다르다. oracle를 읽는 사후 평가만 진양성·오탐을 계산한다. 신규 DOI 위치를 만난 것과 관측에서 신규 유형으로 식별한 것도 별도다. 후보 밖 위치에는 초기 분류기의 유효한 판정이 없으므로 후보 밖 발견을 분류기 false negative 감사 성과에 더하지 않는다.
+Sensor positives and true-positive confirmation counts are different. Only the post-hoc evaluation that reads the oracle computes true positives and false positives. Encountering a new-DOI location and identifying it as a new type from observation are also separate. Out-of-candidate locations have no valid judgment from the initial classifier, so out-of-candidate discoveries are not added to the classifier false-negative audit result.
 
-## 실행
+## Running
 
-저장소 루트에서 Python 3.12 및 잠긴 numpy 의존성 환경을 사용한다. PowerShell 예시의 `<새 출력 폴더>`는 아직 준비하거나 실행한 적 없는 경로로 바꾼다.
+Use Python 3.12 and an environment with the locked numpy dependency from the repository root. Replace `<new output folder>` in the PowerShell examples with a path that has never been prepared or run.
 
 ```powershell
-& '.\.venv\Scripts\python.exe' -m inspection_review.cli prepare --root '<새 출력 폴더>'
-& '.\.venv\Scripts\python.exe' -m inspection_review.cli reproduce --root '<새 출력 폴더>' --lots 1 --budgets 120
-& '.\.venv\Scripts\python.exe' -m inspection_review.cli campaign --root '<새 출력 폴더>'
-& '.\.venv\Scripts\python.exe' -m inspection_review.cli report --root '<새 출력 폴더>'
+& '.\.venv\Scripts\python.exe' -m inspection_review.cli prepare --root '<new output folder>'
+& '.\.venv\Scripts\python.exe' -m inspection_review.cli reproduce --root '<new output folder>' --lots 1 --budgets 120
+& '.\.venv\Scripts\python.exe' -m inspection_review.cli campaign --root '<new output folder>'
+& '.\.venv\Scripts\python.exe' -m inspection_review.cli report --root '<new output folder>'
 ```
 
-`prepare`는 훈련 12·검증 4 lot를 저장하고 모델을 학습해 소스·설정·모델·데이터 해시를 동결한다. `reproduce`는 저장된 검증 lot만 사용하는 개발 확인이며 테스트 성과가 아니다. `campaign`은 동결 검증 후 처음으로 테스트 60 lot를 생성하고 8정책 × 2행동범위 × 3독립예산을 실행한다. 실행이 끝난 뒤 `report`는 저장된 증거에서만 보고서를 만든다. 해시가 달라지면 거절하고, 완결·부분 실행을 조용히 재개하거나 덮어쓰지 않는다.
+`prepare` stores the 12 training and 4 validation lots, trains the model and freezes the source, configuration, model and data hashes. `reproduce` is a development check that uses only the stored validation lots and is not test performance. `campaign` generates the 60 test lots for the first time after frozen verification and runs 8 policies × 2 action scopes × 3 independent budgets. After the run ends, `report` builds the report only from stored evidence. If a hash differs it refuses, and it never silently resumes or overwrites a complete or partial run.
 
-무효화된 준비·실행은 원본 폴더를 보존하고 이유와 수정 commit을 기록한다. 테스트 결과를 확인한 뒤 파라미터를 개선하려면 새로운 연구 버전·학습/검증·아직 사용하지 않은 테스트 lot를 별도로 설계한다.
+Invalidated preparations and runs keep their original folders and record the reason and the fix commit. To improve parameters after seeing the test results, design a new study version, new training/validation and not-yet-used test lots separately.
 
-## 결과를 읽는 순서
+## Order for reading results
 
-1. `freeze.json`: 어떤 소스·환경·모델·seed를 동결했는지.
-2. `model_validation.json`: 후보 분류의 precision/recall/Brier. 전체 웨이퍼 탐지 정확도가 아니다.
-3. `campaign/report.json`과 `report.md`: 같은 장비 비용의 확인 DOI 수, 대응 lot 비교와 신뢰구간, 조건별·예산별 정책 결과, 후보 포착 상한.
-4. `campaign/ledgers/`: 선택 근거, 이전 유료 증거, 초기·갱신 확률, 관측 시도, 실제 소비와 실패/누락 비용.
-5. `dataset_manifest.json` 및 `campaign/test_manifest.json`: 분리된 public/oracle 데이터와 해시.
+1. `freeze.json`: which source, environment, model and seeds were frozen.
+2. `model_validation.json`: precision/recall/Brier of candidate classification. Not whole-wafer detection accuracy.
+3. `campaign/report.json` and `report.md`: number of confirmed DOIs at the same tool cost, paired lot comparisons and confidence intervals, per-condition and per-budget policy results, the candidate capture ceiling.
+4. `campaign/ledgers/`: selection rationale, prior paid evidence, initial and updated probabilities, observation attempts, actual consumption and failure/dropout costs.
+5. `dataset_manifest.json` and `campaign/test_manifest.json`: the separated public/oracle data and hashes.
 
-분류 오답률·센서 놓침·선택 정책의 발견량을 각각 본다. 후기 5개 DOI 비용 비교는 두 정책이 목표에 도달한 공통 lot에 한정되고 각각의 도달률도 함께 보고한다. 합성 비용 단위를 실제 초·원·장비 처리량으로 환산하지 않는다. 전기 영향 필드는 모의 잠재 영향이며 전기 검사나 수율 개선의 실증이 아니다.
+Look separately at the classification error rate, sensor misses and the discovery yield of the selection policy. The cost-to-5-DOIs comparison is restricted to the common lots where both policies reached the goal, and each policy's reach rate is reported alongside. Synthetic cost units are not converted into real seconds, won or tool throughput. The electrical impact field is a simulated latent impact, not a demonstration of electrical testing or yield improvement.
 
-프로그램 경계 검증은 아래 네 모듈을 실행한다. 실제 저장·훈련·개발 재현 경로를 다루는 추가 통합 검증은 `tests.test_inspection_prepare_integration`에 있다.
+Program-boundary verification runs the four modules below. An additional integration check covering the real storage, training and development-reproduction path is in `tests.test_inspection_prepare_integration`.
 
 ```powershell
 & '.\.venv\Scripts\python.exe' -m unittest tests.test_inspection_data tests.test_inspection_harness tests.test_inspection_acceptance tests.test_inspection_scheduler_acceptance tests.test_inspection_prepare_integration
 ```
 
-현장 적용 전 필요한 자료는 같은 lot/층의 광학 후보 특징, 위치를 연결할 수 있는 리뷰 관측, 독립 감사 정답, 실제 비용과 레시피 변경 이력이다. 그 자료가 확보되면 생성 가정을 보정하고 외부 lot로 다시 평가한다. 현재 구현은 합성 연구의 유효성과 누출 방지부터 검증하는 단계다.
+The data needed before field application are optical candidate features for the same lot/layer, review observations that can be linked to locations, independent audit ground truth, and actual costs and recipe change history. Once those data are available, the generation assumptions are calibrated and re-evaluated on external lots. The current implementation is at the stage of first verifying the validity and leakage prevention of the synthetic study.

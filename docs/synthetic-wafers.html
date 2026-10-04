@@ -1,41 +1,41 @@
 <!doctype html>
-<html lang="ko">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light">
-<title>합성 웨이퍼 검사 | Falsify Lab — Research Workbench</title>
-<meta name="description" content="세 장의 합성 웨이퍼 검사 결과를 지도와 다이 기록으로 탐색합니다. 실제 팹 측정 자료가 아닙니다.">
-<meta property="og:title" content="합성 웨이퍼 검사 | Falsify Lab">
-<meta property="og:description" content="세 장의 합성 웨이퍼 검사 결과를 지도와 다이 기록으로 탐색합니다. 실제 팹 측정 자료가 아닙니다.">
+<title>Synthetic Wafer Inspection | Falsify Lab — Research Workbench</title>
+<meta name="description" content="Explore inspection results for three synthetic wafers through wafer maps and die records. Not real fab measurement data.">
+<meta property="og:title" content="Synthetic Wafer Inspection | Falsify Lab">
+<meta property="og:description" content="Explore inspection results for three synthetic wafers through wafer maps and die records. Not real fab measurement data.">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
-<link rel="stylesheet" href="./synthetic-wafers.css">
+<link rel="stylesheet" href="./synthetic-wafers.css?v=6db062d2c824">
 </head>
 <body>
-<a class="skip" href="#main">본문으로 건너뛰기</a>
-<header class="masthead"><div class="mast-inner"><div class="identity"><span class="brand">Falsify Lab</span><span class="divider" aria-hidden="true"></span><span>Research Workbench</span></div><a href="./index.html" class="return-link">연구 작업대</a></div></header>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="masthead"><div class="mast-inner"><div class="identity"><span class="brand">Falsify Lab</span><span class="divider" aria-hidden="true"></span><span>Research Workbench</span></div><a href="./index.html" class="return-link">Research workbench</a></div></header>
 <main id="main" class="layout">
- <div class="heading"><div><h1>합성 웨이퍼 검사</h1><p class="lead">웨이퍼를 선택하고 불량 분포에서 다이별 검사 근거를 확인하세요.</p></div><div class="downloads"><button id="download" type="button" class="control" disabled>전체 JSON 내려받기</button><a class="control" href="./data/synthetic-wafers.zip" download>전체 ZIP 내려받기</a></div></div>
- <p class="notice">합성 웨이퍼 검사 데이터 · 실제 팹 측정·기존 연구 결과 아님</p>
- <div id="loadState" class="load-state" role="status" aria-live="polite">합성 데이터 불러오는 중…</div>
+ <div class="heading"><div><h1>Synthetic wafer inspection</h1><p class="lead">Select a wafer, then trace per-die inspection evidence from the failure distribution.</p></div><div class="downloads"><button id="download" type="button" class="control" disabled>Download full JSON</button><a class="control" href="./data/synthetic-wafers.zip" download>Download full ZIP</a></div></div>
+ <p class="notice">Synthetic wafer inspection data · not real fab measurements or results of the existing study</p>
+ <div id="loadState" class="load-state" role="status" aria-live="polite">Loading synthetic data…</div>
  <div id="app" hidden>
   <div class="context"><p id="scenario"></p><p id="datasetMeta" class="muted"></p></div>
   <div id="patternSummary" class="pattern-summary"></div>
-  <div class="tools" aria-label="웨이퍼 검사 도구">
-   <fieldset class="wafer-switch"><legend>웨이퍼</legend><div id="waferButtons" class="segmented"></div></fieldset>
-   <div class="filter-row"><label class="field">판정<select id="binFilter"><option value="all">전체 판정</option><option value="pass">양품</option><option value="fail">불량</option><option value="inconclusive">판정 보류</option></select></label><label class="field">결함 유형<select id="defectFilter"><option value="all">전체 유형</option></select></label></div>
-   <fieldset class="view-switch"><legend>표시 기준</legend><div class="segmented"><button type="button" data-view="bin" aria-pressed="true">관측 판정</button><button type="button" data-view="truth" aria-pressed="false">생성된 정답 레이블</button></div></fieldset>
+  <div class="tools" aria-label="Wafer inspection tools">
+   <fieldset class="wafer-switch"><legend>Wafer</legend><div id="waferButtons" class="segmented"></div></fieldset>
+   <div class="filter-row"><label class="field">Verdict<select id="binFilter"><option value="all">All verdicts</option><option value="pass">Pass</option><option value="fail">Fail</option><option value="inconclusive">Inconclusive</option></select></label><label class="field">Defect type<select id="defectFilter"><option value="all">All types</option></select></label></div>
+   <fieldset class="view-switch"><legend>Display basis</legend><div class="segmented"><button type="button" data-view="bin" aria-pressed="true">Observed verdict</button><button type="button" data-view="truth" aria-pressed="false">Generated ground-truth label</button></div></fieldset>
   </div>
-  <div class="summary-strip"><div id="summaryMetrics"></div><span id="filterCount" class="count-line" role="status" aria-live="polite"></span><button id="resetFilters" class="control reset" type="button" hidden>필터 초기화</button></div>
+  <div class="summary-strip"><div id="summaryMetrics"></div><span id="filterCount" class="count-line" role="status" aria-live="polite"></span><button id="resetFilters" class="control reset" type="button" hidden>Reset filters</button></div>
   <p id="viewExplanation" class="view-explanation"></p>
-  <div class="inspection-grid"><section class="map-section" aria-labelledby="mapTitle"><div class="section-head"><h2 id="mapTitle">웨이퍼 지도</h2><span class="muted">⌀300 mm · 다이 8 × 6 mm</span></div><div class="wafer-stage"><canvas id="waferMap" width="600" height="600" tabindex="0" role="img" aria-label="웨이퍼 다이 지도. 화살표 키로 이동하고 Enter로 상세 기록에 접근할 수 있습니다." aria-describedby="mapHelp"></canvas></div><p id="mapHelp" class="map-help">선택된 다이: 없음 · 화살표 키로 이동, Enter 키로 상세 기록 이동</p><div class="legend" id="legend"></div><p class="footnote">스크라이브 80 μm · 가장자리 제외 3 mm · 위치는 합성 데이터의 기하 좌표입니다.</p></section>
-   <section class="detail-section" aria-labelledby="detailTitle"><div class="section-head"><h2 id="detailTitle">다이 상세</h2><span id="detailRef" class="mono"></span></div><div id="dieDetail" aria-live="polite"></div></section></div>
-  <section class="records" aria-labelledby="recordsTitle"><div class="section-head"><div><h2 id="recordsTitle">다이 기록</h2><p>전기 지표 · 1.0 V / 25 °C · 오버레이 X</p></div><label class="search-field">다이 ID 검색<input id="dieSearch" type="search" autocomplete="off" placeholder="예: W01-R24-C18"></label></div><div class="table-scroll record-scroll" role="region" tabindex="0" aria-label="다이 기록 표 · 가로로 스크롤 가능"><table><caption>선택한 웨이퍼의 합성 다이 검사 기록</caption><thead><tr><th scope="col">다이 ID</th><th scope="col">판정</th><th scope="col" class="num">누설 nA</th><th scope="col" class="num">지연 ps</th><th scope="col" class="num">접촉 Ω</th><th scope="col" class="num">Vth V</th><th scope="col" class="num">CD nm</th><th scope="col" class="num">오버레이 X nm</th><th scope="col">검사</th><th scope="col">기록</th></tr></thead><tbody id="dieRows"></tbody></table></div><div class="table-footer"><span id="pageInfo" aria-live="polite"></span><div class="paging"><button class="control" id="prevPage" type="button">이전</button><button class="control" id="nextPage" type="button">다음</button></div></div></section>
-  <section class="catalog" aria-labelledby="catalogTitle"><div class="section-head"><div><h2 id="catalogTitle">결함·검사 목록</h2><p>생성기의 결함 분류와 참고 문헌</p></div></div><details><summary>목록 펼치기 / 접기</summary><p class="catalog-caution">생성된 정답 레이블은 생성기가 부여한 값이며, 센서로 입증한 근본 원인이 아닙니다.</p><div class="table-scroll" role="region" tabindex="0" aria-label="결함·검사 목록 표"><table><thead><tr><th scope="col">기전</th><th scope="col">분류</th><th scope="col">단계</th><th scope="col">탐지 단서</th><th scope="col">모델링</th><th scope="col">출처</th></tr></thead><tbody id="catalogRows"></tbody></table></div></details></section>
-  <section class="limitations" aria-labelledby="limitationsTitle"><details><summary id="limitationsTitle">해석 범위와 한계</summary><ul id="limitationsList"></ul></details></section>
+  <div class="inspection-grid"><section class="map-section" aria-labelledby="mapTitle"><div class="section-head"><h2 id="mapTitle">Wafer map</h2><span class="muted">⌀300 mm · die 8 × 6 mm</span></div><div class="wafer-stage"><canvas id="waferMap" width="600" height="600" tabindex="0" role="img" aria-label="Wafer die map. Use arrow keys to move and Enter to open the die details." aria-describedby="mapHelp"></canvas></div><p id="mapHelp" class="map-help">Selected die: none · Arrow keys to move, Enter to open details</p><div class="legend" id="legend"></div><p class="footnote">Scribe 80 μm · edge exclusion 3 mm · positions are geometric coordinates from the synthetic data.</p></section>
+   <section class="detail-section" aria-labelledby="detailTitle"><div class="section-head"><h2 id="detailTitle">Die details</h2><span id="detailRef" class="mono"></span></div><div id="dieDetail" aria-live="polite"></div></section></div>
+  <section class="records" aria-labelledby="recordsTitle"><div class="section-head"><div><h2 id="recordsTitle">Die records</h2><p>Electrical metrics · 1.0 V / 25 °C · Overlay X</p></div><label class="search-field">Search die ID<input id="dieSearch" type="search" autocomplete="off" placeholder="e.g. W01-R24-C18"></label></div><div class="table-scroll record-scroll" role="region" tabindex="0" aria-label="Die records table · scrolls horizontally"><table><caption>Synthetic die inspection records for the selected wafer</caption><thead><tr><th scope="col">Die ID</th><th scope="col">Verdict</th><th scope="col" class="num">Leakage nA</th><th scope="col" class="num">Delay ps</th><th scope="col" class="num">Contact Ω</th><th scope="col" class="num">Vth V</th><th scope="col" class="num">CD nm</th><th scope="col" class="num">Overlay X nm</th><th scope="col">Tests</th><th scope="col">Record</th></tr></thead><tbody id="dieRows"></tbody></table></div><div class="table-footer"><span id="pageInfo" aria-live="polite"></span><div class="paging"><button class="control" id="prevPage" type="button">Previous</button><button class="control" id="nextPage" type="button">Next</button></div></div></section>
+  <section class="catalog" aria-labelledby="catalogTitle"><div class="section-head"><div><h2 id="catalogTitle">Defect and inspection catalog</h2><p>The generator’s defect taxonomy and references</p></div></div><details><summary>Expand / collapse catalog</summary><p class="catalog-caution">Generated ground-truth labels are assigned by the generator; they are not root causes proven by sensors.</p><div class="table-scroll" role="region" tabindex="0" aria-label="Defect and inspection catalog table"><table><thead><tr><th scope="col">Mechanism</th><th scope="col">Family</th><th scope="col">Stage</th><th scope="col">Detection cues</th><th scope="col">Modeling</th><th scope="col">Sources</th></tr></thead><tbody id="catalogRows"></tbody></table></div></details></section>
+  <section class="limitations" aria-labelledby="limitationsTitle"><details><summary id="limitationsTitle">Scope of interpretation and limitations</summary><ul id="limitationsList"></ul></details></section>
  </div>
 </main>
-<script src="./synthetic-wafers.js" defer></script>
+<script src="./synthetic-wafers.js?v=ea1b3a2a893f" defer></script>
 </body>
 </html>

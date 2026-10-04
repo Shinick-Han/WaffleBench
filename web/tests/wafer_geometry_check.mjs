@@ -34,6 +34,6 @@ for(const width of [360,390,768,1440]){
  if(r.targets!==35||r.backgroundDataKeys!==0||r.ariaHidden!=='true'||r.svgNodes>20)failures.push(width+' geometry/data separation');
  if(r.overflow>0||Math.abs(r.aspect-1)>.01)failures.push(width+' layout');
  if(r.focus.style==='none'||parseFloat(r.focus.width)<2)failures.push(width+' focus');
- if(!/300\s*mm/.test(r.dimensionNote)||!/8\s*[×x]\s*6\s*mm/.test(r.dimensionNote)||!/형상 예시/.test(r.dimensionNote))failures.push(width+' missing dimensional disclosure');
+ if(!/300\s*mm/.test(r.dimensionNote)||!/8\s*[×x]\s*6\s*mm/.test(r.dimensionNote)||!/Illustrative geometry/.test(r.dimensionNote))failures.push(width+' missing dimensional disclosure');
  await p.close();
 }await browser.close();writeFileSync(out,JSON.stringify({results,failures},null,2));console.log(JSON.stringify({failures,geometry:results[360]}));process.exit(failures.length?1:0);

@@ -7,7 +7,7 @@
 // (local mode). Optional environment:
 //   ALT_SNAPSHOT  second snapshot used for data replacement
 //                 (default web/tests/fixtures/snapshot.fixture.json)
-//   APP_JS        serve this file as app.js instead (e.g. a baseline build, to compare)
+//   APP_JS        serve this file as app.en.js (the page script) instead (e.g. a baseline build, to compare)
 //   REPS          fresh browser contexts per timing sample (default 5)
 //
 // Rendering work is measured from the outside: a MutationObserver attributes DOM
@@ -79,7 +79,7 @@ async function openPage({ mode = 'local', snapshot = 'primary', viewport = [1440
   const errors = [];
   page.on('pageerror', e => errors.push(String(e)));
   page.on('console', m => { if (m.type() === 'error' && !(mode === 'static' && /status of 404/.test(m.text()))) errors.push(m.text()); });
-  if (appJs) await page.route('**/app.js', r => r.fulfill({ body: appJs, contentType: 'text/javascript; charset=utf-8' }));
+  if (appJs) await page.route('**/app.en.js', r => r.fulfill({ body: appJs, contentType: 'text/javascript; charset=utf-8' }));
   if (mode === 'static') {
     await page.route('**/api/job', r => r.fulfill({ status: 404, body: 'not found' }));
     await page.route('**/data/snapshot.json', r => r.fulfill({ body: SNAP[ctl.current], contentType: 'application/json' }));
@@ -111,7 +111,7 @@ const timedClick = (page, selector) => page.evaluate(sel => { const el = documen
 const html = (page, sel) => page.evaluate(s => document.querySelector(s).innerHTML.replaceAll(' class=""', ''), sel);
 const viewHtml = async page => ({ lab: await html(page, '#view-lab'), benchmark: await html(page, '#view-benchmark'), records: await html(page, '#view-records') });
 
-const result = { app: process.env.APP_JS || 'served app.js', primarySha: SHA.primary, altSha: SHA.alt };
+const result = { app: process.env.APP_JS || 'served app.en.js', primarySha: SHA.primary, altSha: SHA.alt };
 
 // 1. Initial load (fresh context each): time to snapshot shown, DOM work per view, CPU.
 {
@@ -276,7 +276,7 @@ result.referenceHashes = Object.fromEntries(Object.entries(REF).map(([k, v]) => 
   const s = await openPage({ mode: 'static' });
   const { page } = s;
   const notice = await page.$eval('#noticeStack', n => n.innerText);
-  check(/기록된 실행 재생/.test(notice), 'static mode notice missing');
+  check(/Recorded-run replay/.test(notice), 'static mode notice missing');
   await page.click('[data-view=benchmark]');
   const chart = await page.$$eval('#benchmarkChart path', x => x.length);
   check(chart > 0, 'static benchmark chart empty');

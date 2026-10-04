@@ -16,10 +16,10 @@ for(const width of [360,1440]){
  await page.goto(base,{waitUntil:'networkidle'});
  await page.locator('#app').waitFor({state:'visible'});
  const first=await page.locator('#filterCount').innerText();
- check(first==='표시 1,305 / 1,305',width+' first wafer counts');
+ check(first==='Showing 1,305 / 1,305',width+' first wafer counts');
  check((await page.locator('#dieDetail').innerText()).includes(data.wafers[0].dies.find(d=>d.bin==='fail').die_id),width+' first failure automatically selected');
  check(await page.evaluate(()=>document.activeElement===document.body),width+' initial selection does not steal focus');
- check(await page.locator('.notice').innerText()==='합성 웨이퍼 검사 데이터 · 실제 팹 측정·기존 연구 결과 아님',width+' provenance notice');
+ check(await page.locator('.notice').innerText()==='Synthetic wafer inspection data · not real fab measurements or results of the existing study',width+' provenance notice');
  for(let w=0;w<3;w++){
   await page.locator(`[data-wafer="${w}"]`).click();
   const summary=await page.locator('#summaryMetrics strong').allTextContents();
@@ -35,10 +35,10 @@ for(const width of [360,1440]){
  await page.locator('[data-wafer="2"]').click();
  await page.selectOption('#defectFilter','scratch');
  const detectionCount=data.wafers[2].dies.filter(d=>d.detections.includes('scratch')).length;
- check((await page.locator('#filterCount').innerText()).includes('표시 '+detectionCount+' /'),width+' observed mechanism filter');
+ check((await page.locator('#filterCount').innerText()).includes('Showing '+detectionCount+' /'),width+' observed mechanism filter');
  await page.locator('[data-view="truth"]').click();
  const truthCount=data.wafers[2].dies.filter(d=>d.defects.includes('scratch')).length;
- check((await page.locator('#filterCount').innerText()).includes('표시 '+truthCount+' /'),width+' truth mechanism filter');
+ check((await page.locator('#filterCount').innerText()).includes('Showing '+truthCount+' /'),width+' truth mechanism filter');
  await page.selectOption('#defectFilter','all');
  await page.locator('[data-view="bin"]').click();
  await page.locator('#waferMap').focus();await page.keyboard.press('ArrowRight');
@@ -49,12 +49,12 @@ for(const width of [360,1440]){
  await page.fill('#dieSearch',bad.die_id);
  await page.locator('#dieRows [data-die]').click();
  const detail=await page.locator('#dieDetail').innerText();
- check(detail.includes(bad.die_id)&&detail.includes('불량')&&detail.includes('센서로 검증되지 않음'),width+' die detail provenance');
+ check(detail.includes(bad.die_id)&&detail.includes('Fail')&&detail.includes('not sensor-verified'),width+' die detail provenance');
  check(await page.evaluate(()=>document.activeElement.id==='detailTitle'),width+' table button focus');
  await page.fill('#dieSearch','no-match');
- check((await page.locator('#dieRows').innerText()).includes('일치하는 다이가 없습니다'),width+' empty search');
+ check((await page.locator('#dieRows').innerText()).includes('No matching dies'),width+' empty search');
  check(await page.locator('#nextPage').isDisabled()&&await page.locator('#prevPage').isDisabled(),width+' empty paging');
- check((await page.locator('#dieDetail').innerText()).includes('일치하는 다이가 없습니다'),width+' empty inspector reconciled');
+ check((await page.locator('#dieDetail').innerText()).includes('No matching dies'),width+' empty inspector reconciled');
  await page.locator('#resetFilters').click();
  check(await page.inputValue('#dieSearch')===''&&await page.inputValue('#binFilter')==='all'&&await page.inputValue('#defectFilter')==='all',width+' reset restores filters');
  await page.locator('#nextPage').click();
@@ -96,7 +96,7 @@ for(const width of [360,1440]){
 // The error surface exposes a recovery action and restores a working full dataset.
 const recovery=await browser.newPage();let attempts=0;
 await recovery.route('**/data/synthetic-wafers.json',r=>++attempts===1?r.fulfill({status:503,body:'unavailable'}):r.fulfill({body:raw,contentType:'application/json'}));
-await recovery.goto(base);await recovery.getByRole('button',{name:'다시 시도',exact:true}).click();
+await recovery.goto(base);await recovery.getByRole('button',{name:'Retry',exact:true}).click();
 await recovery.locator('#app').waitFor({state:'visible'});check(attempts===2,'recovery retries once');
 await browser.close();
 const report={failures,results,json_sha256:createHash('sha256').update(raw).digest('hex'),recovery_attempts:attempts};

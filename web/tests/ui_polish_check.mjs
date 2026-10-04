@@ -63,20 +63,20 @@ const pctVal = s => s === '—' ? null : parseFloat(s);
   }
   await page.selectOption('#recordSort', 'original');
   check(JSON.stringify(await rows(page)) === JSON.stringify(orig), 'original sort does not restore recorded order');
-  // Phases: Korean label with the raw value kept.
+  // Phases: English label with the raw value kept.
   const phases = await page.$$eval('#recordsTable tr td:nth-child(3) span', s => s.map(x => [x.innerText, x.title]));
-  check(phases.length && phases.every(([t, raw]) => /보정|공통 초기|탐색|보류/.test(t) && /^phase = (calibration|initial|search|held_out|heldout|evaluation)$/.test(raw)), `phase cells ${JSON.stringify(phases.slice(0, 3))}`);
-  check(phases.every(([t]) => !/[a-z_]{4,}/.test(t)), 'raw phase keys shown in visible phase labels');
+  check(phases.length && phases.every(([t, raw]) => /Calibration|Shared initial|Search|Held-out|Evaluation only/.test(t) && /^phase = (calibration|initial|search|held_out|heldout|evaluation)$/.test(raw)), `phase cells ${JSON.stringify(phases.slice(0, 3))}`);
+  check(phases.every(([t, raw]) => !/_/.test(t) && t !== raw.replace(/^phase = /, '')), 'raw phase keys shown in visible phase labels');
   // Filters + search combine; zero match offers reset.
   check(await page.isDisabled('#recordReset'), 'reset enabled with no filter');
   await page.selectOption('#recordSort', 'error-desc');
-  await page.fill('#recordSearch', '탐색');
+  await page.fill('#recordSearch', 'Search');
   const searchRows = (await rows(page)).length;
-  check(searchRows > 0 && searchRows < orig.length, `Korean phase search rows ${searchRows}`);
+  check(searchRows > 0 && searchRows < orig.length, `phase label search rows ${searchRows}`);
   await page.selectOption('#recordCorner', 'FF');
   await page.selectOption('#recordFilter', 'heldout');
   const zero = await page.evaluate(() => ({ rows: document.querySelectorAll('#recordsTable tr').length, empty: document.getElementById('emptyRecords').innerText, btn: !!document.querySelector('#emptyRecords [data-reset-records]') }));
-  check(zero.rows === 0 && zero.btn && /조건에 맞는 기록이 없습니다/.test(zero.empty), `zero-match recovery ${JSON.stringify(zero)}`);
+  check(zero.rows === 0 && zero.btn && /No records match/.test(zero.empty), `zero-match recovery ${JSON.stringify(zero)}`);
   await page.click('#emptyRecords [data-reset-records]');
   const after = await page.evaluate(() => ({ n: document.querySelectorAll('#recordsTable tr').length, sort: document.getElementById('recordSort').value, q: document.getElementById('recordSearch').value, f: document.getElementById('recordFilter').value, c: document.getElementById('recordCorner').value, focus: document.activeElement.id, dis: document.getElementById('recordReset').disabled }));
   check(after.n === orig.length && after.q === '' && after.f === 'all' && after.c === 'all' && after.dis, `reset did not restore all rows ${JSON.stringify(after)}`);
@@ -127,10 +127,10 @@ const pctVal = s => s === '—' ? null : parseFloat(s);
   await page.keyboard.press('Enter');
   check(await active(page) === '0', 'step focus lost');
   const prog0 = await page.textContent('#replayProgress');
-  check(/^1 \/ \d+단계/.test(prog0) && /숨김/.test(prog0), `progress at stage 0 ${prog0}`);
+  check(/^Step 1 \/ \d+/.test(prog0) && /hidden/.test(prog0), `progress at stage 0 ${prog0}`);
   await page.click('#finalButton');
   const fin = await page.evaluate(() => ({ stage: state.stage, D: state.m.decisions.length, dis: document.getElementById('finalButton').disabled, focus: document.activeElement.id, prog: document.getElementById('replayProgress').textContent, adv: document.getElementById('advanceButton').innerText }));
-  check(fin.stage === fin.D && fin.dis && fin.focus === 'advanceButton' && /정책 비교 보기/.test(fin.adv), `final step ${JSON.stringify(fin)}`);
+  check(fin.stage === fin.D && fin.dis && fin.focus === 'advanceButton' && /View policy comparison/.test(fin.adv), `final step ${JSON.stringify(fin)}`);
   // Legend toggle keeps focus on the legend button.
   await page.click('[data-view=benchmark]');
   const pid = await page.$eval('#chartLegend [data-policy]', b => b.dataset.policy);
@@ -146,8 +146,8 @@ const pctVal = s => s === '—' ? null : parseFloat(s);
 for (const [w, h] of [[360, 780], [390, 844], [768, 1024], [1440, 900]]) {
   const { page, errors } = await open('real', [w, h]);
   const names = await page.evaluate(() => [...document.querySelectorAll('.nav [data-view]')].map(b => b.getAttribute('aria-label') || b.innerText.trim()));
-  check(JSON.stringify(names) === JSON.stringify(['연구 작업대', '정책 비교', '실험 기록']), `${w}px nav names ${names}`);
-  for (const name of ['연구 작업대', '정책 비교', '실험 기록']) check(await page.getByRole('button', { name, exact: true }).count() >= 1, `${w}px nav button "${name}" has no accessible name`);
+  check(JSON.stringify(names) === JSON.stringify(['Research workbench', 'Policy comparison', 'Experiment records']), `${w}px nav names ${names}`);
+  for (const name of ['Research workbench', 'Policy comparison', 'Experiment records']) check(await page.getByRole('button', { name, exact: true }).count() >= 1, `${w}px nav button "${name}" has no accessible name`);
   await page.keyboard.press('Tab');
   check(await page.evaluate(() => document.activeElement.classList.contains('skip-link')), `${w}px first tab is not the skip link`);
   await page.keyboard.press('Enter');
@@ -182,12 +182,12 @@ for (const [w, h] of [[360, 780], [390, 844], [768, 1024], [1440, 900]]) {
     return { closed: all.every(x => !x.open), count: all.length, visiblePre: [...document.querySelectorAll('#view-benchmark pre')].filter(p => p.checkVisibility()).length, text: body.innerText, height: body.getBoundingClientRect().height };
   });
   check(d.closed && d.count >= 8 && d.visiblePre === 0, `disclosures not collapsed ${JSON.stringify({ closed: d.closed, count: d.count, pre: d.visiblePre })}`);
-  check(/한계/.test(d.text) && /Generic SPICE Level-1/.test(d.text), 'limitations not visible by default');
-  check(/본 연구 비용/.test(d.text) && /작업대 시연 비용/.test(d.text), 'primary and live costs not separated');
+  check(/Limitations/.test(d.text) && /Generic SPICE Level-1/.test(d.text), 'limitations not visible by default');
+  check(/Primary-study cost/.test(d.text) && /Workbench demo cost/.test(d.text), 'primary and live costs not separated');
   check(/969/.test(d.text) && /\b23\b/.test(d.text), 'exported logical query counts missing from cost summaries');
   check(/4\.9%/.test(d.text) && /28\.2%/.test(d.text), 'held-out error summary missing');
   check(!/clear_counterexamples|logical_queries|mean_abs_relative_error/.test(d.text), 'raw keys duplicated under summary labels');
-  check(await page.$eval('#benchmarkDetails dt[title="logical_queries"]', x => x.innerText) === '논리 질의', 'raw key not kept as title');
+  check(await page.$eval('#benchmarkDetails dt[title="logical_queries"]', x => x.innerText) === 'Logical queries', 'raw key not kept as title');
   check(await page.evaluate(() => [...document.querySelectorAll('#benchmarkDetails .detail-card')].every(c => { const s = getComputedStyle(c); return s.borderLeftWidth === '0px' && s.borderRadius === '0px' && s.backgroundColor === 'rgba(0, 0, 0, 0)'; })), 'detail groups are boxed as nested cards');
   // Raw JSON keeps full precision and every field.
   const snap = JSON.parse(SNAP.real);
@@ -198,7 +198,7 @@ for (const [w, h] of [[360, 780], [390, 844], [768, 1024], [1440, 900]]) {
   check(opened > 0, 'opened raw JSON not shown');
   // Primary paired seeds behind a disclosure; conclusion numbers unchanged.
   const concl = await page.$eval('#benchmarkConclusion', n => n.innerText);
-  check(/주 성공 기준 충족/.test(concl) && /3\.20 ~ 4\.20|3\.2/.test(concl) && /\+3\.70개/.test(concl), `conclusion values ${concl}`);
+  check(/Primary success criterion met/.test(concl) && /3\.20 ~ 4\.20|3\.2/.test(concl) && /\+3\.70\b/.test(concl), `conclusion values ${concl}`);
   check(!errors.length, `disclosure errors ${errors}`);
   await page.close();
 }
@@ -210,7 +210,7 @@ for (const [w, h] of [[360, 780], [390, 844], [768, 1024], [1440, 900]]) {
   check(/FIXTURE: incomplete benchmark runs/.test(t), 'fixture limitations missing');
   await page.evaluate(() => document.querySelectorAll('#benchmarkConclusion details').forEach(d => { d.open = true; }));
   const c = await page.$eval('#benchmarkConclusion', n => n.innerText);
-  check(/주 판정 불가/.test(c) && /seed 1002: \+2/.test(c) && /null · 계산되지 않음/.test(c), `fixture conclusion ${c}`);
+  check(/Primary verdict unavailable/.test(c) && /seed 1002: \+2/.test(c) && /null · not computed/.test(c), `fixture conclusion ${c}`);
   check(!errors.length, `fixture errors ${errors}`);
   await page.close();
 }
@@ -218,9 +218,9 @@ for (const [w, h] of [[360, 780], [390, 844], [768, 1024], [1440, 900]]) {
   const { page, errors } = await open('empty');
   await page.click('[data-view=benchmark]');
   const t = await page.$eval('#benchmarkDetails', n => n.innerText);
-  check(/기록 없음 \(빈 배열\)/.test(t) && /비용 기록 없음/.test(t), `empty details ${t.slice(0, 200)}`);
+  check(/No record \(empty array\)/.test(t) && /No cost record/.test(t), `empty details ${t.slice(0, 200)}`);
   await page.click('[data-view=records]');
-  check(await page.isHidden('#emptyRecords [data-reset-records]') && /아직 없습니다/.test(await page.textContent('#emptyRecords')), 'empty snapshot records state');
+  check(await page.isHidden('#emptyRecords [data-reset-records]') && /records yet/.test(await page.textContent('#emptyRecords')), 'empty snapshot records state');
   await page.click('[data-view=lab]');
   check(await page.isDisabled('#finalButton') && (await page.textContent('#replayProgress')) === '', 'empty lab replay controls');
   check(!errors.length, `empty errors ${errors}`);

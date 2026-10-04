@@ -1,126 +1,126 @@
-# 웨이퍼 현장 검사 병목과 AI 정밀 리뷰 연구 제안
+# Wafer Field Inspection Bottlenecks and an AI Precision Review Research Proposal
 
-2026년 10월 4일 공개 1차 자료를 확인한 연구 메모다. 장비 회사의 발표, 연구 논문의 결과, 우리 프로젝트의 제안을 구분한다. 특정 팹의 레시피·가격·처리량 로그를 확보한 현장 실증은 아니다.
+A research memo based on public primary sources checked on October 4, 2026. It distinguishes tool vendors' announcements, research paper results and our project's proposals. It is not a field demonstration with a specific fab's recipes, prices or throughput logs.
 
-추천하는 문제는 **빠른 검사에서 나온 많은 의심 후보 중 제한된 정밀 검사 시간으로 중요한 결함과 기존 모델의 놓침을 더 빨리 확인하는 것**이다. 발표의 중심은 검사 순서를 선택하고 확인 결과로 다음 선택을 바꾸는 과정이다. 장비의 센서 성능, 기존 분류 AI, 우리의 추가적인 선택 정책을 각각 평가한다.
+The recommended problem is **confirming important defects and the existing model's misses faster, using limited precision inspection time, among the many suspect candidates produced by fast inspection**. The core of the presentation is the process of choosing the inspection order and changing the next choice based on confirmed results. The tool's sensor performance, the existing classification AI and our additional selection policy are each evaluated separately.
 
-이 제안은 별도 웨이퍼 검사 확장의 후속 연구다. 확정된 PVT 연구 프로토콜과 그 결과를 수정하거나 웨이퍼 검사 성과로 전용하지 않는다. 모델·하네스 구현과 실험 결과는 아직 없다.
+This proposal is follow-up research for a separate wafer inspection extension. It does not modify the finalized PVT research protocol or its results, nor repurpose them as wafer inspection results. No model/harness implementation or experimental results exist yet.
 
-## 실제 검사 흐름
+## Real inspection flow
 
-공정 중 광학 검사로 의심 위치를 찾고, 그중 일부를 전자빔 리뷰로 자세히 확인하는 흐름이 실제 장비 업체에 설명되어 있다. 검사 후보는 실제 결함, 무해한 패턴·공정 변동, 영상 노이즈를 함께 포함할 수 있다. 후보 지도와 확인된 결함 지도는 서로 다른 산출물이다. [Applied Materials SEMVision H20 발표](https://ir.appliedmaterials.com/news-releases/news-release-details/applied-materials-accelerates-chip-defect-review-next-gen-ebeam/)
+A flow in which in-process optical inspection finds suspect locations and some of them are examined in detail by electron-beam review is described by real tool vendors. Inspection candidates can include real defects, harmless pattern/process variations and image noise together. The candidate map and the confirmed defect map are different outputs. [Applied Materials SEMVision H20 announcement](https://ir.appliedmaterials.com/news-releases/news-release-details/applied-materials-accelerates-chip-defect-review-next-gen-ebeam/)
 
-| 단계 | 얻는 관측 | 장비 사례 | 우리 실험에서의 역할 |
+| Stage | Observation obtained | Tool examples | Role in our experiment |
 | --- | --- | --- | --- |
-| 광학 선별 검사 | 의심 위치, 광학 신호, 결함 후보 | KLA 3935·Voyager 1035·8935, Applied Enlight | 빠르지만 불완전한 초기 정보 |
-| 정밀 전자빔 리뷰 | 선택한 위치의 SEM 영상, 형태·재료·전압 대비 등 | KLA eDRX1, Applied SEMVision H20, Hitachi CR7300 | 비용을 지불하고 새 증거를 획득하는 행동 |
-| 계측 | CD·오버레이 등의 수치 | ASML YieldStar 1375F 등 | 패턴 치수 편차에 대한 별도 측정 경로 |
-| 전기 검사 | 테스트 조건별 전기적 통과·실패 | 웨이퍼 프로빙과 EDS | 전기 기능 결과와 공간 빈 맵 |
-| 분석과 조치 | 결함 분포, 설비 이력, 원인 후보 | KLA Klarity·SPOT | 조사 우선순위와 엔지니어 판단 지원 |
+| Optical screening inspection | Suspect locations, optical signal, defect candidates | KLA 3935, Voyager 1035, 8935, Applied Enlight | Fast but incomplete initial information |
+| Precision e-beam review | SEM images of selected locations, morphology, material, voltage contrast, etc. | KLA eDRX1, Applied SEMVision H20, Hitachi CR7300 | An action that pays a cost to acquire new evidence |
+| Metrology | Values such as CD and overlay | ASML YieldStar 1375F, etc. | A separate measurement path for pattern dimension deviations |
+| Electrical test | Electrical pass/fail per test condition | Wafer probing and EDS | Electrical function results and spatial bin maps |
+| Analysis and action | Defect distribution, tool history, root-cause candidates | KLA Klarity, SPOT | Supporting investigation priorities and engineer judgment |
 
-장비 역할은 [KLA 검사·리뷰 제품](https://www.kla.com/products/chip-manufacturing/defect-inspection-review), [ASML 계측 제품](https://www.asml.com/en/products/metrology-and-inspection-systems/yieldstar-1375f), [FormFactor 웨이퍼 측정 제품](https://www.formfactor.com/products/), [KLA 분석 제품](https://www.kla.com/products/software-solutions/semiconductor)을 근거로 정리했다. 전기 검사와 WBM의 연결은 [고려대 연구진의 2022년 원 논문](https://jkiie.org/_common/do.php?a=full&aidx=32830&b=12&bidx=2918)에도 설명된다. 모든 팹이 동일한 순서·빈도·장비를 사용한다는 뜻은 아니다.
+The tool roles are summarized based on [KLA inspection and review products](https://www.kla.com/products/chip-manufacturing/defect-inspection-review), [ASML metrology products](https://www.asml.com/en/products/metrology-and-inspection-systems/yieldstar-1375f), [FormFactor wafer measurement products](https://www.formfactor.com/products/) and [KLA analysis products](https://www.kla.com/products/software-solutions/semiconductor). The link between electrical testing and WBM is also described in [the original 2022 paper by Korea University researchers](https://jkiie.org/_common/do.php?a=full&aidx=32830&b=12&bidx=2918). This does not mean every fab uses the same order, frequency and tools.
 
-1305개 다이를 전기적으로 검사하는 것과 그 다이 내부의 수많은 미세 위치를 정밀 영상으로 검사하는 것은 다른 범위다. 따라서 35회라는 예산은 특정 후속 리뷰 행동의 예산으로 설명할 수 있다. 웨이퍼에서 오직 35개 다이만 검사해 전체 품질을 보장한다고 설명해서는 안 된다.
+Electrically testing 1305 dies and inspecting the many fine locations inside those dies with precision imaging are different scopes. A budget of 35 can therefore be explained as the budget of a specific follow-up review action. It must not be described as inspecting only 35 dies on a wafer to guarantee overall quality.
 
-## 공개 자료로 확인한 장비 성능
+## Tool performance confirmed from public sources
 
-아래는 제조사 발표의 조건부 수치다. 해상도, 검출 가능한 결함 크기, 설계 노드, 처리량, 분류 정확도는 서로 다른 지표다. 특정 제품의 전체 미검률·오탐률을 이 수치로 계산할 수 없다.
+Below are conditional numbers from manufacturer announcements. Resolution, detectable defect size, design node, throughput and classification accuracy are different metrics. The overall miss rate or false-positive rate of a specific product cannot be computed from these numbers.
 
-| 제품 또는 연구 | 공개된 수치·기능 | 해석 범위 |
+| Product or study | Published numbers/features | Scope of interpretation |
 | --- | --- | --- |
-| KLA 3935·3920 EP | ≤5nm 로직 등 대상, 광학 검사와 전자빔 연결, ML 기반 nuisance 분리 | 대상 설계 노드는 최소 검출 크기나 탐지율이 아니다. [제품 자료](https://www.kla.com/products/chip-manufacturing/defect-inspection-review) |
-| ASML HMI eScan 1100 | 25개 빔, 단일 빔 검사 대비 최대 15배 처리량, 7nm까지의 패턴 결함 검출을 설명 | 병렬 빔·스테이지·계산 기술의 결합. AI 단독 개선율이나 모든 조건에서의 검출 보장이 아니다. [제품 자료](https://www.asml.com/en/products/metrology-and-inspection-systems/hmi-escan-1100) |
-| Applied SEMVision H20 | 서브 nm 영상 해상도, 같은 정보 획득 시간을 1/3로 줄이는 발표, 딥러닝 분류 | 광원과 영상 하드웨어 개선이 포함된다. 분류 AI만으로 3배 개선했다고 말할 수 없다. [2025년 발표](https://ir.appliedmaterials.com/news-releases/news-release-details/applied-materials-accelerates-chip-defect-review-next-gen-ebeam/) |
-| Hitachi CR7300 | 이전 모델 대비 처리량 2배, AI 기반 자동 결함 분류 | 공개 페이지에는 분류 정확도·미검률의 절대 수치가 없다. [제품 자료](https://www.hitachi-hightech.com/in/en/products/semiconductor-manufacturing/cd-sem/dr-sem/cr7300.html) |
-| ASML YieldStar 1375F | nm 수준 CD·오버레이 계측, SEM 대비 빠른 측정, ML로 스택 변동에 견디는 계측 | 치수 측정 성능이다. 결함 분류 정확도와 동일하지 않다. [제품 자료](https://www.asml.com/en/products/metrology-and-inspection-systems/yieldstar-1375f) |
+| KLA 3935, 3920 EP | Targets such as ≤5nm logic, linking optical inspection with e-beam, ML-based nuisance separation | The target design node is not a minimum detection size or detection rate. [Product page](https://www.kla.com/products/chip-manufacturing/defect-inspection-review) |
+| ASML HMI eScan 1100 | Describes 25 beams, up to 15× throughput versus single-beam inspection, pattern defect detection down to 7nm | A combination of parallel beams, stage and computation technology. Not an AI-only improvement rate or a detection guarantee under all conditions. [Product page](https://www.asml.com/en/products/metrology-and-inspection-systems/hmi-escan-1100) |
+| Applied SEMVision H20 | Sub-nm image resolution, an announcement of cutting the time to acquire the same information to 1/3, deep-learning classification | Includes improvements to the source and imaging hardware. It cannot be said that classification AI alone gave a 3× improvement. [2025 announcement](https://ir.appliedmaterials.com/news-releases/news-release-details/applied-materials-accelerates-chip-defect-review-next-gen-ebeam/) |
+| Hitachi CR7300 | 2× throughput versus the previous model, AI-based automatic defect classification | The public page has no absolute figures for classification accuracy or miss rate. [Product page](https://www.hitachi-hightech.com/in/en/products/semiconductor-manufacturing/cd-sem/dr-sem/cr7300.html) |
+| ASML YieldStar 1375F | nm-level CD and overlay metrology, faster measurement than SEM, ML-based metrology robust to stack variation | This is dimensional measurement performance. It is not the same as defect classification accuracy. [Product page](https://www.asml.com/en/products/metrology-and-inspection-systems/yieldstar-1375f) |
 
-이번 공개 자료 조사에서는 동일 제품·층·결함 유형·크기·검사 속도에서 측정한 통일된 ROC 곡선이나 재현 가능한 절대 wafers/hour 비교표를 확보하지 못했다. 따라서 장비의 탐지율을 임의로 82%로 놓거나 가격·검사 초를 현장 값처럼 만들지 않는다. 실제 비교에는 레시피, 층, ROI 면적, 결함 크기·대비, dwell/dose, 이동·로딩 시간, 확인 레이블, 반복 측정 조건이 필요하다.
+This public-source survey did not obtain unified ROC curves measured on the same product, layer, defect type, size and inspection speed, or a reproducible absolute wafers/hour comparison table. We therefore do not arbitrarily set a tool's detection rate to 82% or make up prices or inspection seconds as if they were field values. A real comparison needs the recipe, layer, ROI area, defect size and contrast, dwell/dose, move and loading time, confirmation labels and repeat-measurement conditions.
 
-## 병목과 AI가 기여할 수 있는 지점
+## Bottlenecks and where AI can contribute
 
-| 병목 | AI 또는 선택 정책의 역할 | 검증할 지표 |
+| Bottleneck | Role of AI or a selection policy | Metric to verify |
 | --- | --- | --- |
-| 광학 후보에 nuisance가 많이 섞임 | 영상·신호·패턴 문맥으로 중요한 후보를 우선 확인 | 같은 리뷰 시간의 확인된 중요 결함 수, 리뷰 precision |
-| 정밀 리뷰의 시간·처리량 제약 | 중복 후보를 줄이고 공간·패턴 다양성과 비용을 함께 고려 | 유효 발견 수/총 시간, 선택 위치 커버리지 |
-| 알려진 결함에 편향되어 새로운 결함을 놓침 | 불확실·분포 이탈 후보와 정상으로 확신한 후보 일부를 추가 검사 | 신규 유형 첫 발견 시간, 확인된 미검 반례 수 |
-| 영상 레이블을 만드는 엔지니어 작업 | 전이학습·능동학습으로 필요한 확인·라벨링을 줄임 | 목표 성능까지의 확인 비용, 유형별 recall |
-| 여러 장비·공정 기록이 분리됨 | 검사·계측·설비 이력을 연결하고 근거를 추적 | 실제 원인 확인까지의 시간; 원인 추천은 가설로 표시 |
+| Optical candidates contain much nuisance | Confirm important candidates first using image, signal and pattern context | Number of confirmed important defects in the same review time, review precision |
+| Time and throughput limits of precision review | Reduce duplicate candidates and consider spatial/pattern diversity together with cost | Valid discoveries/total time, coverage of selected locations |
+| Bias toward known defects misses new ones | Additionally inspect uncertain or out-of-distribution candidates and some candidates confidently judged normal | Time to first discovery of a new type, number of confirmed miss counterexamples |
+| Engineer work to create image labels | Reduce the confirmation and labeling needed through transfer learning and active learning | Confirmation cost to reach target performance, per-type recall |
+| Records of multiple tools and processes are siloed | Link inspection, metrology and tool history and trace evidence | Time to confirm the real cause; root-cause recommendations are marked as hypotheses |
 
-현장에 AI가 없는 것은 아니다. KLA SPOT는 이미 ML·통계로 리뷰 샘플을 최적화하고, Klarity는 결함·공정 분석을 수행한다. 따라서 단순한 AI 우선순위 추천 자체를 새로운 발명이라고 주장하지 않는다. 제안하는 차별점은 장비별 증거를 연결한 독립적인 감사, 새로운 패턴에 대한 반증 탐색, 선택·비용·확인 결과를 재현 가능한 하네스로 비교하는 것이다. 경쟁 제품 대비 우월성은 별도 검증이 필요하다. [KLA SPOT와 Klarity](https://www.kla.com/products/software-solutions/semiconductor)
+It is not that the field has no AI. KLA SPOT already optimizes review samples with ML and statistics, and Klarity performs defect and process analysis. We therefore do not claim simple AI priority recommendation itself as a new invention. The proposed differentiators are an independent audit that links per-tool evidence, falsification search for new patterns, and comparing selection, cost and confirmation results in a reproducible harness. Superiority over competing products requires separate verification. [KLA SPOT and Klarity](https://www.kla.com/products/software-solutions/semiconductor)
 
-이 역할 분담은 조사 자료에서 도출한 우리의 연구 제안이다. 영상에 신호가 없거나 초기 후보에 포함되지 않은 결함을 후보 재정렬만으로 복구할 수는 없다. 후보 밖의 미검을 찾으려면 별도 care-area 재검사 등 추가 관측을 행동으로 넣고 비용도 포함해야 한다.
+This division of roles is our research proposal derived from the surveyed sources. Defects with no signal in the image, or not included in the initial candidates, cannot be recovered just by reordering candidates. Finding out-of-candidate misses requires adding extra observations such as a separate care-area rescan as an action, including its cost.
 
-## AI 효과에 관해 인용할 수 있는 근거
+## Evidence that can be cited about AI effects
 
-| 근거 | 관측 또는 발표된 결과 | 우리 발표에서 허용하는 주장 |
+| Evidence | Observed or announced result | Claim we allow in our presentation |
 | --- | --- | --- |
-| Applied ExtractAI 2021 | 후보의 0.001배, 즉 0.1%를 리뷰한 뒤 전체 후보를 분류한다는 제조사 발표 | 소수 정밀 확인과 대량 후보 추론을 연결하는 상용 흐름이 존재한다. 미검률 0% 또는 우리 시스템 1000배 향상을 뜻하지 않는다. [원 발표](https://ir.appliedmaterials.com/node/24121/pdf) |
-| KLA Investor Day 2022의 광학·전자빔 연결 사례 | 특정 critical metal layer의 중요 결함 검출 2배 개선 발표 | 연결된 검사 흐름의 효과 사례. AI만의 효과나 모든 층에 적용할 수치로 확대하지 않는다. [원 자료 슬라이드 47](https://ir.kla.com/sec-filings/all-sec-filings/content/0001193125-22-175500/d341367dex991.htm) |
-| IBM 연구진 2025 SEM 분류 연구 | 약 7400개 이상 SEM 영상, 두 검사 층·11개 유형. fine-tuning에서 유형당 5개와 15개 레이블로 각각 90% 초과 분류 정확도 | 실제 팹 영상에서 적은 레이블로 분류할 가능성. 동일 웨이퍼가 train/test에 걸치지 않도록 분리했다. 전체 웨이퍼 검출 recall이나 실수율 개선 수치가 아니다. [원 논문](https://arxiv.org/pdf/2506.03345) |
-| Hu 등 2024 dicing 영상 연구 | 원본 학습의 balanced accuracy 65.1%에서 DCGAN 보강 시 88.2%, 차이 23.1%p | 제한된 절단 결함 영상 연구의 예비 결과. 합성 이미지 보강 결과를 나노 공정 검사나 현재 합성 표 데이터에 전용하지 않는다. [원 논문](https://arxiv.org/pdf/2407.20268) |
-| 고려대 연구진 2022 WBM 능동학습 연구 | 신규 패턴을 포함한 선택적 레이블링을 WM-811K로 평가 | 신규 패턴 발견과 레이블 효율을 함께 평가할 근거. 공간 빈 맵 분류는 SEM 결함 검출과 다른 문제다. [원 논문](https://jkiie.org/_common/do.php?a=full&aidx=32830&b=12&bidx=2918) |
+| Applied ExtractAI 2021 | Manufacturer announcement of reviewing 0.001× of candidates, i.e. 0.1%, and then classifying all candidates | A commercial flow linking a few precision confirmations with large-scale candidate inference exists. It does not mean a 0% miss rate or a 1000× improvement for our system. [Original announcement](https://ir.appliedmaterials.com/node/24121/pdf) |
+| KLA Investor Day 2022 optical/e-beam linking case | Announcement of a 2× improvement in important defect detection on a specific critical metal layer | An example of the effect of a linked inspection flow. Not extended to an AI-only effect or a figure applicable to all layers. [Original slide 47](https://ir.kla.com/sec-filings/all-sec-filings/content/0001193125-22-175500/d341367dex991.htm) |
+| IBM researchers' 2025 SEM classification study | About 7400+ SEM images, two inspection layers, 11 types. With fine-tuning, over 90% classification accuracy with 5 and 15 labels per type respectively | The possibility of classifying real fab images with few labels. The same wafer was kept from spanning train/test. Not a whole-wafer detection recall or error-rate improvement figure. [Original paper](https://arxiv.org/pdf/2506.03345) |
+| Hu et al. 2024 dicing image study | Balanced accuracy from 65.1% with original training to 88.2% with DCGAN augmentation, a difference of 23.1%p | A preliminary result of a study on limited dicing defect images. Synthetic-image augmentation results are not carried over to nanoscale process inspection or the current synthetic tabular data. [Original paper](https://arxiv.org/pdf/2407.20268) |
+| Korea University researchers' 2022 WBM active learning study | Selective labeling including new patterns evaluated on WM-811K | Grounds for evaluating new-pattern discovery and labeling efficiency together. Spatial bin-map classification is a different problem from SEM defect detection. [Original paper](https://jkiie.org/_common/do.php?a=full&aidx=32830&b=12&bidx=2918) |
 
-이 결과들을 하나의 AI 개선율로 평균내거나 곱하지 않는다. 하드웨어·검사 연결·영상 분류·레이블 효율·수율을 각각의 기준선과 단위로 보고한다. 우리 시스템의 개선 폭은 아직 측정되지 않았다.
+These results are not averaged or multiplied into a single AI improvement rate. Hardware, inspection linking, image classification, labeling efficiency and yield are each reported against their own baselines and units. The size of our system's improvement has not yet been measured.
 
-## 추천 발표 스토리
+## Recommended presentation story
 
-공정 엔지니어에게는 빠른 검사에서 나온 후보 지도와 제한된 정밀 리뷰 시간이 있다. 이미 분류 점수도 있지만, 같은 패턴의 후보를 반복 확인하거나 새로운 공정 이상을 정상으로 판단할 수 있다. Falsify Lab은 현재 증거에서 가장 가치 있는 다음 검사와 기존 판단을 반박할 검사를 고른다. 확인한 결과를 받아 우선순위를 갱신하고, 같은 예산의 고정 계획과 비교한다. 엔지니어는 어떤 위치를 왜 검사했고, 무엇이 확인됐으며, 어디에는 아직 근거가 없는지 볼 수 있다.
+A process engineer has a candidate map from fast inspection and limited precision review time. There are already classification scores, but candidates of the same pattern may be confirmed repeatedly, or a new process anomaly may be judged normal. Falsify Lab chooses the most valuable next inspection given current evidence and an inspection that could refute existing judgments. It takes in confirmed results, updates priorities, and compares against a fixed plan with the same budget. The engineer can see which locations were inspected and why, what was confirmed, and where there is still no evidence.
 
-이 스토리의 핵심 장면은 불확실한 점에 색을 칠하는 것이 아니라 **검사 행동 → 새 관측 → 기존 판단과의 불일치 → 다음 검사 변경**이다. 새로운 유형의 영상 또는 데이터 변화에서 확신에 찬 오판을 찾아내는 장면은 Falsify의 반증 주제와 연결된다.
+The key scene of this story is not coloring uncertain points but **inspection action → new observation → disagreement with the existing judgment → change of the next inspection**. The scene of catching a confident misjudgment in images of a new type or under data shift connects to Falsify's falsification theme.
 
-LLM의 역할은 제한된 관측에서 조사 가설을 설명하고 허용된 도구를 호출하는 것이다. 위험 점수와 불확실성은 평가 가능한 모델에서 계산하고, 관측 결과와 예산 집행은 하네스가 기록한다. 엔지니어가 lot disposition이나 공정 변경을 결정할 근거를 제공한다. 자연어 설명을 센서 관측이나 확정된 원인으로 저장하지 않는다.
+The LLM's role is to explain investigation hypotheses from limited observations and to call permitted tools. Risk scores and uncertainty are computed in evaluable models, and observation results and budget execution are recorded by the harness. It provides grounds for the engineer to decide lot disposition or process changes. Natural-language explanations are not stored as sensor observations or confirmed causes.
 
-## 하네스가 검증해야 할 가설
+## Hypotheses the harness must test
 
-아래는 후속 실험 설계 제안이며 기존 PVT 연구의 사전 고정 기준을 바꾸지 않는다.
+The following is a proposed follow-up experiment design and does not change the prespecified criteria of the existing PVT study.
 
-주 가설은 같은 정밀 리뷰 총 시간에서 적응형 선택이 강한 고정 기준선보다 더 많은 확인된 중요 결함을 발견한다는 것이다. 보조 가설은 신규 패턴·분포 변화에서 동결한 초기 모델의 확인된 false negative를 더 빨리 발견한다는 것이다. 결함 발견과 모델 오류 발견은 목적이 다르므로 두 곡선을 따로 보고한다.
+The primary hypothesis is that, for the same total precision review time, adaptive selection finds more confirmed important defects than a strong fixed baseline. The secondary hypothesis is that, under new patterns and distribution shift, it finds confirmed false negatives of the frozen initial model faster. Defect discovery and model-error discovery serve different purposes, so the two curves are reported separately.
 
-| 비교 정책 | 비교하는 이유 |
+| Compared policy | Reason for comparison |
 | --- | --- |
-| 무작위 선택 | 최소 대조군, 주장의 유일한 비교군으로 쓰지 않음 |
-| 장비/레시피 유사 고정 점수 순위 | 실제로 가능한 점수·크기·신호 기준. 제조사 제품을 재현했다고 주장하지 않음 |
-| 고정 학습 모델의 중요도 순위 | AI 분류를 추가한 효과와 순차 선택 효과를 분리 |
-| 불확실성·다양성 기반 능동 선택 | 기존의 강한 AI 샘플링 대조군 |
-| Falsify 적응형 선택 | 확인 결과, 공간 다양성, 비용, 미검 감사 행동을 반영 |
-| 구성 요소 제거 | 감사 행동·공간 문맥·갱신을 하나씩 제거해 기여 평가 |
+| Random selection | Minimal control; not used as the sole comparator for a claim |
+| Fixed tool/recipe-like score ranking | A realistically possible score/size/signal criterion. No claim of reproducing a vendor product |
+| Importance ranking from a fixed learned model | Separates the effect of adding AI classification from the effect of sequential selection |
+| Uncertainty/diversity-based active selection | The existing strong AI sampling control |
+| Falsify adaptive selection | Reflects confirmation results, spatial diversity, cost and miss-audit actions |
+| Component ablation | Removes the audit action, spatial context and updates one at a time to assess their contributions |
 
-모든 정책은 같은 초기 정보, 초기 모델, 허용 행동, 검사 예산을 받는다. 아직 선택하지 않은 위치의 SEM 결과나 전기 측정값, 생성 정답은 입력에서 숨긴다. 초기 광학 검사를 완료한 시점의 정보만 무료 초기 상태로 인정한다. 학습·갱신·추론 비용과 이동·로딩·재시도 시간도 별도로 기록한다.
+All policies receive the same initial information, initial model, allowed actions and inspection budget. SEM results or electrical measurements of not-yet-selected locations and the generated ground truth are hidden from the inputs. Only the information available when initial optical inspection is complete is accepted as the free initial state. Training, update and inference costs and move, loading and retry times are also recorded separately.
 
-주 지표는 예산 내 확인된 DOI 수와 해당 후보 모집단의 capture다. 이를 전체 현장의 결함 recall과 혼동하지 않는다. 후보 밖 결함까지 분모에 넣는 end-to-end 평가에는 별도 전수 정답과 재검사 경로가 필요하다. 형상으로 확인된 결함과 수율 영향이 전기 검사·고장 분석으로 입증된 결함도 레이블을 구분한다.
+The primary metric is the number of confirmed DOIs within budget and the capture of that candidate population. This is not to be confused with field-wide defect recall. End-to-end evaluation that puts out-of-candidate defects in the denominator needs separate exhaustive ground truth and a rescan path. Labels also distinguish defects confirmed by morphology from defects whose yield impact is proven by electrical testing or failure analysis.
 
-보조 지표는 신규 유형 발견까지의 비용, 동결 모델의 false negative 발견 수, 유형별 recall, nuisance 리뷰 비율, 잔여 미확인 수, 누락·실패 비용이다. 선택한 샘플만 평가해서 전체 recall을 높게 추정하지 않는다. 평가용 전수 정답은 정책 실행이 끝난 뒤에만 집계에 사용한다.
+Secondary metrics are the cost to discover a new type, the number of frozen-model false negatives found, per-type recall, the nuisance review rate, the number remaining unconfirmed, and dropout/failure costs. Overall recall is not estimated high by evaluating only selected samples. The exhaustive evaluation ground truth is used for aggregation only after policy execution ends.
 
-먼저 여러 예산에서 발견 수/비용 곡선을 비교한다. 동일 발견 목표에 필요한 시간 감소율은 `1 - AI 시간 / 기준선 시간`, 동일 시간의 발견 증가율은 `AI 발견 수 / 기준선 발견 수 - 1`로 정의한다. 후보 이동의 기하 비용까지 포함하면 리뷰 횟수 35회와 실제 시간 예산은 동일하지 않을 수 있다.
+First, discovery/cost curves are compared across several budgets. The time reduction for the same discovery goal is defined as `1 - AI time / baseline time`, and the discovery increase for the same time as `AI discoveries / baseline discoveries - 1`. If the geometric cost of moving between candidates is included, 35 reviews and the actual time budget may not be the same.
 
-사업성 판단의 제안 기준은 강한 기준선 대비 동일 시간의 발견 20% 상대 증가 또는 동일 확인 목표의 총 비용 30% 감소다. **둘 다 아직 달성하지 않은 목표**이며 검증 전에 채택 여부와 계산 단위를 고정해야 한다. 비용 절감 때문에 중요 결함의 누락이 증가하면 성공으로 처리하지 않는다. 필수 고객 recall 기준이 확보되지 않았다면 임의의 95%를 업계 기준으로 적지 않는다.
+The proposed criterion for business viability is a 20% relative increase in discoveries for the same time, or a 30% reduction in total cost for the same confirmation goal, versus a strong baseline. **Neither is a goal achieved yet**, and adoption and the unit of computation must be fixed before verification. If cost savings increase misses of important defects, it is not treated as success. If no required customer recall standard is available, an arbitrary 95% is not written down as an industry standard.
 
-평가 데이터는 lot·wafer·시간별로 분리하고 신규 유형·신호 대비·nuisance 밀도·결함 빈도·관측 누락·레시피 변화에 대한 별도 실험을 둔다. 신뢰구간은 다이 3915개를 독립 표본으로 잡지 않고 독립 lot 단위의 대응 비교로 계산한다. 3장 한 lot은 UI 데모로 유지하고, 본 비교 전에는 독립 lot을 추가해야 한다. 테스트 결과에 맞춰 임계값·탐지 확률·seed를 고르지 않는다.
+Evaluation data are separated by lot, wafer and time, with separate experiments for new types, signal contrast, nuisance density, defect frequency, observation dropouts and recipe changes. Confidence intervals are computed by paired comparisons at the independent-lot level, not by treating the 3915 dies as independent samples. One 3-wafer lot is kept as the UI demo, and independent lots must be added before the main comparison. Thresholds, detection probabilities and seeds are not chosen to fit the test results.
 
-## 현재 합성 데이터에서 필요한 변경
+## Changes needed in the current synthetic data
 
-현재 데이터는 표 기반의 전기·계측 값, 생성 결함 레이블, 확률적으로 만들어진 모의 탐지를 포함한다. 단일 장비에서 동시에 출력되는 실제 검사 로그가 아니다. 생성된 모의 탐지는 결함별 82% 확률과 추가 탐지 확률 0.8%로 만들어졌으며 장비 측정에서 보정한 값이 아니다.
+The current data include tabular electrical and metrology values, generated defect labels and stochastically generated simulated detections. It is not a real inspection log output simultaneously by a single tool. The generated simulated detections were made with an 82% per-defect probability and a 0.8% extra-detection probability, and are not values calibrated from tool measurements.
 
-현재 3915개 다이에서 결함 유무의 모의 탐지 recall은 82.67%, 정밀도는 96.62%다. 이는 새 모델의 성과나 현장 장비의 기준 성능이 아니다. 40개 원시 검사로 계산한 bin과의 일치도는 판정 규칙의 구현 검증에 해당한다. 이 두 수치를 연구 가설의 기준선으로 자동 승격하지 않는다.
+On the current 3915 dies, the simulated detection recall for defect presence is 82.67% and the precision is 96.62%. These are neither results of a new model nor reference performance of a field tool. Agreement with bins computed from the 40 raw inspections is an implementation check of the judgment rules. These two figures are not automatically promoted to baselines for the research hypotheses.
 
-| 추가해야 할 자료 또는 필드 | 필요한 이유 |
+| Data or field to add | Why it is needed |
 | --- | --- |
-| candidate/site/layer 식별자와 다이 내부 좌표 | 실제 후속 리뷰 단위가 다이 전체와 다를 수 있음 |
-| 광학 신호·영상 특징과 초기 후보 포함 여부 | 선별과 정밀 확인을 분리하고 선별 미검도 평가 |
-| 설비·chamber·시간·lot 이력 | 새로운 분포와 설비 연관 가설을 검토 |
-| 선택 이후에만 공개되는 관측 결과 | 미래 검사 결과를 미리 읽는 누출 방지 |
-| 행동별 관측 품질·비용·누락·실패 | 센서 성능과 선택 정책 효과를 분리 |
-| 형상 확인, 전기 영향, 원인 확정의 별도 레이블 | 물리 결함과 전기 불량·근본 원인 혼동 방지 |
+| candidate/site/layer identifiers and in-die coordinates | The actual follow-up review unit may differ from the whole die |
+| Optical signal, image features and initial candidate membership | Separates screening from precision confirmation and also evaluates screening misses |
+| Tool, chamber, time and lot history | Examines new distributions and tool-association hypotheses |
+| Observation results revealed only after selection | Prevents leakage from reading future inspection results in advance |
+| Per-action observation quality, cost, dropouts and failures | Separates sensor performance from selection policy effects |
+| Separate labels for morphology confirmation, electrical impact and confirmed root cause | Prevents confusing physical defects with electrical failures and root causes |
 
-실제 SEM 이미지를 확보하지 않은 표 데이터의 실험은 검사 일정 선택 시뮬레이션으로 명시한다. 이미지 분류 모델이 실제 미세 결함을 봤다고 표현하지 않는다. 센서 모델의 누락·오탐은 결함 종류·크기·대비·검사 방식에 따라 달라지는 가정으로 만들고 여러 조건에서 비교한다. AI 정책만 바꿨는데 센서의 탐지 확률이 올라가도록 구현하지 않는다.
+Experiments on tabular data without real SEM images are stated as inspection scheduling selection simulations. They are not described as an image classification model having seen real microscopic defects. The sensor model's misses and false positives are built as assumptions that vary with defect type, size, contrast and inspection method, and are compared across several conditions. It is not implemented so that the sensor's detection probability rises when only the AI policy is changed.
 
-## 구현 전에 정할 항목
+## Items to decide before implementation
 
-1. 주 사용자와 행동을 공정 엔지니어의 후속 리뷰 선택으로 고정한다.
-2. 정답을 형상 확인 DOI와 모델의 미검 반례로 나누고 각각의 분모를 정의한다.
-3. 초기 정보와 유료 관측, 후보 밖 재검사 경로, 비용 단위를 정한다.
-4. 강한 기준선, 순차 갱신 범위, 미검 감사 비중을 결과를 보기 전에 고정한다.
-5. 공개 연구 데이터의 권한·lot 정보와 현장 로그 확보 가능성을 확인한다.
-6. 비교를 통과한 실제 수치만 발표하고, 확보하지 못한 현장 지표는 가정으로 남긴다.
+1. Fix the primary user and action as a process engineer's selection of follow-up reviews.
+2. Split the ground truth into morphology-confirmed DOIs and model miss counterexamples, and define the denominator of each.
+3. Decide the initial information and paid observations, the out-of-candidate rescan path and the cost unit.
+4. Fix the strong baselines, the scope of sequential updates and the miss-audit share before seeing results.
+5. Check the permissions and lot information of public research data and the feasibility of obtaining field logs.
+6. Present only real numbers that passed the comparison, and leave field metrics that could not be obtained as assumptions.
 
-이번 조사의 결과물은 위 연구 방향과 근거다. 기존 UI·데이터·모델을 자동 교체하거나 공개 데모를 변경하지 않았다.
+The outputs of this survey are the research direction above and its evidence. The existing UI, data and models were not automatically replaced and the public demo was not changed.

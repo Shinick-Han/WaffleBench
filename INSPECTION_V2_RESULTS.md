@@ -1,36 +1,36 @@
-# 검사 개선 v2 결과
+# Inspection Improvements v2: Results
 
-동결된 모델을 새로운 60개 합성 lot(180장·234,900개 site), 2,880회 정책 실행으로 비교했다. 실제 SEM 이미지나 공장 성능을 측정한 결과가 아니다.
+The frozen models were compared on 60 new synthetic lots (180 wafers, 234,900 sites) with 2,880 policy runs. These are not measurements of real SEM images or factory performance.
 
-## 확인된 결과
+## Confirmed results
 
-개발 데이터로 먼저 선택한 후보는 `catboost_learned`다. 360 CU·광학 후보 안에서 평균 확인 DOI는 28.30개로, 강한 logistic learned 기준선 28.33개와 사실상 같았다. 짝지은 평균 차이는 −0.033개, lot bootstrap 95% 구간은 [−0.583, 0.550]다. 사전에 정한 20% 발견량 개선 목표는 달성하지 못했다. 5개 DOI까지의 비용도 2.63% 증가해 30% 비용 절감 목표를 달성하지 못했다.
+The candidate selected first on development data is `catboost_learned`. At 360 CU within optical candidates, its mean confirmed DOI count was 28.30, effectively the same as the strong logistic learned baseline at 28.33. The paired mean difference is −0.033, with a lot-bootstrap 95% interval of [−0.583, 0.550]. The prespecified 20% discovery-improvement goal was not met. Cost to 5 DOIs also increased by 2.63%, so the 30% cost-saving goal was not met.
 
-후보 47,406개에서 분류 결과는 다음과 같다. threshold는 0.5이며, 광학 후보 밖 결함은 이 분류 표에 포함되지 않는다.
+Classification results on 47,406 candidates are as follows. The threshold is 0.5, and defects outside the optical candidates are not included in this classification table.
 
-| 모델 | Precision | Recall | AP | Brier ↓ | ECE ↓ |
+| Model | Precision | Recall | AP | Brier ↓ | ECE ↓ |
 |---|---:|---:|---:|---:|---:|
 | Logistic | 81.51% | 75.34% | 0.8723 | 0.07970 | 0.04577 |
 | CatBoost | 81.56% | 76.89% | 0.8843 | 0.07461 | 0.01774 |
 | CatBoost + isotonic | 79.53% | 79.10% | 0.8730 | 0.07507 | 0.01794 |
 
-CatBoost의 확률 추정과 recall은 개선됐다. Isotonic 보정은 recall을 추가로 높였지만 precision과 AP는 낮아져 모든 지표가 함께 좋아지지는 않았다.
+CatBoost's probability estimates and recall improved. Isotonic calibration raised recall further but lowered precision and AP, so not every metric improved together.
 
-## 탐색적 결과와 다음 병목
+## Exploratory results and the next bottleneck
 
-이동 계획 정책은 29.07개를 발견해 같은 보정 모델의 learned 28.62개보다 0.45개 많았다. 95% 구간 [−0.133, 1.017]이 0을 포함한다. Logistic 기준선 대비 +2.59%는 사후 탐색 결과로, 이를 개발 단계의 선택을 대신하는 확정 승자로 발표하지 않는다. 기존 고정 감사 Falsify 대비 선택 후보의 +16.62%도 보조 비교다.
+The route-planning policy found 29.07, 0.45 more than the 28.62 of learned with the same calibrated model. The 95% interval [−0.133, 1.017] includes 0. The +2.59% versus the logistic baseline is a post-hoc exploratory result and is not presented as a confirmed winner replacing the development-stage selection. The selected candidate's +16.62% versus the existing fixed-audit Falsify is also a secondary comparison.
 
-CatBoost의 3,915개 site 추론은 첫 호출 438.9 ms, warm 중앙값 6.68 ms(p95 9.23 ms)였다. Logistic warm 중앙값은 0.091 ms다. 분류 개선과 계산 속도 개선을 구분해야 한다. 이동 정책의 CPU 비용도 lot당 약 109 ms로 단순 learned보다 크다. 장비의 CU를 실제 초로 환산하지 않았다.
+CatBoost inference over 3,915 sites took 438.9 ms on the first call and a warm median of 6.68 ms (p95 9.23 ms). The logistic warm median is 0.091 ms. Classification improvement and compute speed improvement must be distinguished. The CPU cost of the route policy, about 109 ms per lot, is also larger than simple learned. Tool CU were not converted to real seconds.
 
-다음 실험은 실제 센서 관측의 검출 가능성과 이동 계획, 순위를 보존하는 확률 보정을 분리해 조사한다. 새로운 개발·검증 seed를 사용하며 v2 test 결과는 다시 후보 선정에 사용하지 않는다.
+The next experiment separately investigates the detectability of real sensor observations, route planning, and rank-preserving probability calibration. It uses new development and validation seeds, and the v2 test results are not used again for candidate selection.
 
-## 검증과 재현
+## Verification and reproduction
 
-145개 테스트가 통과했다. 독립 감사는 2,880개 실행의 106,667개 선택과 114,048개 센서 시도, 3,091개 감사 결정을 재계산했다. 예산 위반·정책 구성요소의 숨은 정답 노출·동결 확률 불일치는 모두 0건이며 기존 보호 파일 8개가 보존됐다.
+145 tests passed. The independent audit recomputed 106,667 selections, 114,048 sensor attempts and 3,091 audit decisions across the 2,880 runs. Budget violations, hidden-ground-truth exposure to policy components and frozen-probability mismatches were all 0, and the 8 existing protected files were preserved.
 
-- 동결 source: `7e64e95db102c71fbee57c2726616093b1f6f64f`
-- 동결 receipt: `ac99238f00af278cd56ce79fdfed66ab0061ff2c4cbe3ba6492bb72f43b4d374`
-- [구조화 결과](evidence/inspection-improvements-v2/results.json), [감사](evidence/inspection-improvements-v2/audit.json), [추론 시간](evidence/inspection-improvements-v2/inference-timing.json), [그래프](evidence/inspection-improvements-v2/summary.png)
-- 전체 실행 경로와 파일 SHA는 [artifact manifest](evidence/inspection-improvements-v2/artifact-manifest.json)에 보존했다. [실행 안내](INSPECTION_V2_GUIDE.md)와 `scripts/audit_inspection_v2.py`로 재검증할 수 있다.
+- Frozen source: `7e64e95db102c71fbee57c2726616093b1f6f64f`
+- Frozen receipt: `ac99238f00af278cd56ce79fdfed66ab0061ff2c4cbe3ba6492bb72f43b4d374`
+- [Structured results](evidence/inspection-improvements-v2/results.json), [audit](evidence/inspection-improvements-v2/audit.json), [inference timing](evidence/inspection-improvements-v2/inference-timing.json), [graph](evidence/inspection-improvements-v2/summary.png)
+- The full run paths and file SHAs are preserved in the [artifact manifest](evidence/inspection-improvements-v2/artifact-manifest.json). They can be re-verified with the [run guide](INSPECTION_V2_GUIDE.md) and `scripts/audit_inspection_v2.py`.
 
-Jev는 genuine 검사 노트가 없어 이번 수치 실험에서 unavailable이다. 실제 API 성능과 반도체 검사 정확도를 주장하지 않는다.
+Jev was unavailable in this numerical experiment because there were no genuine inspection notes. No claims are made about real API performance or semiconductor inspection accuracy.

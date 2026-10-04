@@ -6,8 +6,9 @@ next simulation under a fixed budget. An Omnigent supervisor coordinates two spe
 agents in a live workbench. Every number comes from a deterministic local tool that
 stores and re-reads ngspice results. The LLMs never supply numeric evidence.
 
-The research design is fixed in [`RESEARCH_PROTOCOL.md`](RESEARCH_PROTOCOL.md) (Korean) and
-[`research-manifest.json`](research-manifest.json). The integration contract is
+Read the research design in English at [`RESEARCH_PROTOCOL.en.md`](RESEARCH_PROTOCOL.en.md).
+The hash-bound [`RESEARCH_PROTOCOL.md`](RESEARCH_PROTOCOL.md) original and
+[`research-manifest.json`](research-manifest.json) remain unchanged for provenance. The integration contract is
 [`DATA_CONTRACT.md`](DATA_CONTRACT.md) and the core API is [`CORE_API.md`](CORE_API.md).
 
 **Result.** Forty actual runs completed. Adaptive selection found an average of 5.1
@@ -280,3 +281,7 @@ The project's own code is MIT ([`LICENSE`](LICENSE)). Third-party components are
 [Actual Omnigent recorded execution](https://shinick-han.github.io/falsify-lab-hacknation7/inspection-live.html) shows five SDK delegations, two paid synthetic reviews and two result updates. The LLM coordinates; the frozen numerical planner selects sites. The browser replays an already completed run and never starts a remote experiment.
 
 The mixture v4 and deeper beam v5 hypotheses failed and were not promoted. INSPECTION_V3_RESULTS.md, INSPECTION_V4_RESULTS.md and INSPECTION_ROUTE_V5_RESULTS.md keep those separate comparisons. Numeric dependencies: `uv sync --extra inspection`; the image studies use the separate CPU environment pinned in inspection_images/requirements-cpu.txt. Large images, model binaries, local campaign outputs, API keys and runtime/provider logs are excluded.
+
+## English submission materials
+
+Start with [`SUBMISSION_EN.md`](SUBMISSION_EN.md) for the current project, measured outcomes, unsuccessful hypotheses, limitations and the three submission videos. All six demo pages are now in English. [`ENGLISH_DELIVERY.md`](ENGLISH_DELIVERY.md) explains how translations preserve archived evidence. The illustrative English mockup is [`mockup/index.en.html`](mockup/index.en.html); its invented numbers are not results.
