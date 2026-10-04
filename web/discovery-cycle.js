@@ -118,7 +118,8 @@
     plans.forEach((p, i) => {
       const r = results.find(x => x.plan_id != null && x.plan_id === p.plan_id) || null;
       const u = r ? updates.find(x => x.result_id != null && x.result_id === r.result_id) || null : null;
-      out.push(card(p, r, u, i, sourceShas));
+      const later = results.find(x => plans.findIndex(plan => plan.plan_id === x.plan_id) > i && str(u?.next_experiment)?.includes(x.test_id));
+      out.push(card(p, r, u, i, sourceShas, later));
     });
     const orphan = results.filter(r => !plans.some(p => p.plan_id === r.plan_id));
     if (orphan.length) out.push(h('p', {class:'warn', role:'note'}, `${orphan.length} recorded result(s) reference no plan in this file: `, orphan.map(r => show(r.result_id)).join(', ')));
@@ -130,7 +131,7 @@
   }
   const para = (label, v) => h('p', null, label ? h('span', {class:'sub'}, `${label}: `) : null, show(str(v) ?? v));
 
-  function card(p, r, u, i, sourceShas) {
+  function card(p, r, u, i, sourceShas, later) {
     const cands = arr(p.candidates).filter(x => typeof x === 'string');
     const sel = p.selected_test_id;
     const selInCands = str(sel) ? cands.includes(sel) : null;
@@ -156,10 +157,13 @@
     if (r) {
       const values = obj(r.values) || {};
       const numeric = Object.entries(values).filter(([, v]) => finite(v));
+      for (const [key, value] of Object.entries(obj(obj(values.overall)?.mean_per_lot) || {})) {
+        if (finite(value)) numeric.push([`overall mean per lot · ${key}`, value]);
+      }
       const rest = Object.fromEntries(Object.entries(values).filter(([, v]) => !finite(v)));
       const restN = Object.keys(rest).length;
       steps.push(step('Measured result', who('det', 'Deterministic computation'), [
-        numeric.length ? h('dl', {class:'kv'}, numeric.map(([k, v]) => h('div', null, h('dt', null, k), h('dd', null, String(v))))) : h('p', null, 'No numeric fields recorded.'),
+        numeric.length ? h('dl', {class:'kv'}, numeric.map(([k, v]) => h('div', null, h('dt', null, k), h('dd', null, String(v))))) : h('p', null, 'Expand the recorded diagnostic groups below.'),
         h('details', {class:'raw'}, h('summary', null, restN ? `Remaining fields (${restN}) as JSON` : 'Remaining fields (none)'), h('pre', null, restN ? json(rest) : '{}')),
         h('p', {class:'integrity'},
           'Result ', code(r.result_id), ' · test ', code(r.test_id),
@@ -176,9 +180,9 @@
         para(null, u.interpretation),
         para('Next hypothesis', u.next_hypothesis),
       ]));
-      steps.push(step('Next proposed experiment', who('prop', 'Proposed · not executed'), [
+      steps.push(step('Next proposed experiment', who('prop', later ? 'Proposal at this update · later executed' : 'Proposed · not executed'), [
         para(null, u.next_experiment),
-        h('p', {class:'sub'}, 'This is a proposal only. It was not run and has no measured result.'),
+        later ? h('p', {class:'sub'}, 'The proposal was unexecuted when this update was recorded. A later plan selected ', code(later.test_id), ' and executed it as ', code(later.result_id), '; see the next experiment card.') : h('p', {class:'sub'}, 'This is a proposal only. It was not run and has no measured result.'),
       ], 'proposed'));
     } else {
       steps.push(step('Result-bound interpretation', who('agent', 'Agent-authored'), h('p', null, '— No interpretation recorded for this result.')));
@@ -197,7 +201,7 @@
       h('dl', {class:'roles'},
         h('div', null, h('dt', null, 'Omnigent agent (agent-authored)'), h('dd', null, 'Writes hypotheses, chooses one test from the fixed catalog among competing candidates, states the reason and expected learning, interprets the measured result and proposes the next experiment.')),
         h('div', null, h('dt', null, 'Deterministic runner (computation)'), h('dd', null, 'Executes only the selected catalog test and records the values, elapsed time and source hash. The agent cannot edit these numbers.')),
-        h('div', null, h('dt', null, 'Controls'), h('dd', null, 'No free-form code or arbitrary commands: tests are catalog IDs. Proposed next experiments are recorded as text and never executed in this cycle.'))),
+        h('div', null, h('dt', null, 'Controls'), h('dd', null, 'No free-form code or arbitrary commands: tests are catalog IDs. A subsequent catalog diagnostic needs a separate recorded plan. The final prospective proposal remains unexecuted.'))),
       h('div', {class:'budget'},
         h('p', null, h('strong', null, `Budget cap: ${RUN_CAP} diagnostic runs`), ` · runs recorded: ${used}`),
         bar,
@@ -249,7 +253,7 @@
       'This page only re-reads a recorded, completed cycle. It does not run experiments in the browser and has no replay or live execution.',
       'Diagnostics are post-hoc and authored synthetic. They are not a new hold-out gain, a factory result or a physical measurement.',
       'Verification confirms session completion and source integrity only; it says nothing about inspection accuracy or discovery speed.',
-      'Next experiments are proposals and were not executed.',
+      'Proposal status reflects its recorded update. A later catalog execution is linked when present; the final prospective proposal was not executed.',
     ];
     const list = [...arr(d.limits).filter(x => typeof x === 'string'), ...own];
     $('limitationsList').replaceChildren(...list.map(x => h('li', null, x)));

@@ -8,7 +8,8 @@ WaffleBench treats each expensive precision review after optical screening as an
 experiment: question, evidence, hypothesis, competing tests under a budget, result, and an
 updated decision. It is a research workflow, not a claim of superiority over commercial
 inspection tools. Start with [`SUBMISSION_EN.md`](SUBMISSION_EN.md), which traces the loop
-with actual result IDs and receipts:
+with actual result IDs and receipts. The judge-facing [demo guide](DEMO_GUIDE.md) explains the browser replay and local reproduction:
+
 
 - **Inner loop (per lot).** A frozen numerical planner chooses each next review site.
   Omnigent coordinates role-limited specialists and carries result IDs. Recorded session

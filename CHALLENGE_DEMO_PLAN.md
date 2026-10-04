@@ -2,7 +2,7 @@
 
 **An agentic lab for smarter wafer inspection.**
 
-This is a storyboard for the brief's two-minute demo item. It is a plan only: nothing has been rendered, and it has not been uploaded. The three existing HackOS clips (`participant-introduction.mp4` 50.0 s, `product-demo.mp4` 59.6 s, `technical-explanation.mp4` 58.0 s, under `../output/pitch-delivery/`) are the submission set; the team introduction is being extended with the participant's real profile photo. Whether a separate two-minute field exists has not been confirmed. Every figure below comes from [`SUBMISSION_EN.md`](SUBMISSION_EN.md) and its linked reports. Nothing is taken from the mockup.
+This is a storyboard for the brief's two-minute demo item. It is a plan only: nothing has been rendered, and it has not been uploaded. The three existing HackOS clips (`participant-introduction.mp4` 58.0 s, `product-demo.mp4` 59.6 s, `technical-explanation.mp4` 58.0 s, under `../output/pitch-delivery/`) are the submission set; the team introduction includes the participant's real profile photo and solo-team closing. Whether a separate two-minute field exists has not been confirmed. Every figure below comes from [`SUBMISSION_EN.md`](SUBMISSION_EN.md) and its linked reports. Nothing is taken from the mockup.
 
 Target length: about 120 s, English narration and captions, 1920 × 1080.
 

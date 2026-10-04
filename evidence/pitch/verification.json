@@ -1,0 +1,59 @@
+{
+  "ok": true,
+  "videos": [
+    {
+      "file": "participant-introduction.mp4",
+      "bytes": 9045978,
+      "duration_seconds": 58.0,
+      "width": 1920,
+      "height": 1080,
+      "fps": "30/1",
+      "video_codec": "h264",
+      "audio_codec": "aac",
+      "mean_volume_db": -24.4,
+      "max_volume_db": -2.8,
+      "sha256": "ddb5cc11a6b4b8609ca8e05102b1e61f2c9362a72300bcfa65651463e16984d4",
+      "frames": [
+        "participant-introduction-frame-0.png",
+        "participant-introduction-frame-1.png",
+        "participant-introduction-frame-2.png"
+      ]
+    },
+    {
+      "file": "product-demo.mp4",
+      "bytes": 21226881,
+      "duration_seconds": 59.6,
+      "width": 1920,
+      "height": 1080,
+      "fps": "30/1",
+      "video_codec": "h264",
+      "audio_codec": "aac",
+      "mean_volume_db": -24.5,
+      "max_volume_db": -1.4,
+      "sha256": "161a7aae060c054e9b183ae93e4ac327bafb24069156f13f7331239d28cd9603",
+      "frames": [
+        "product-demo-frame-0.png",
+        "product-demo-frame-1.png",
+        "product-demo-frame-2.png"
+      ]
+    },
+    {
+      "file": "technical-explanation.mp4",
+      "bytes": 7469146,
+      "duration_seconds": 58.0,
+      "width": 1920,
+      "height": 1080,
+      "fps": "30/1",
+      "video_codec": "h264",
+      "audio_codec": "aac",
+      "mean_volume_db": -25.3,
+      "max_volume_db": -1.5,
+      "sha256": "c985dc4b06474756c92e7c89a8052dc38aec6d83fc915006452cab3d2bf645fb",
+      "frames": [
+        "technical-explanation-frame-0.png",
+        "technical-explanation-frame-1.png",
+        "technical-explanation-frame-2.png"
+      ]
+    }
+  ]
+}

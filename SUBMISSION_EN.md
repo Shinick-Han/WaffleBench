@@ -93,7 +93,7 @@ The wafer results are authored synthetic numerical evidence. The photo results u
 
 English narration and captions; 1920 × 1080, 30 fps, H.264/AAC. Local files are under `../output/pitch-delivery/`.
 
-1. `participant-introduction.mp4` — 50.0 seconds.
+1. `participant-introduction.mp4` — 58.0 seconds.
 2. `product-demo.mp4` — 59.6 seconds.
 3. `technical-explanation.mp4` — 58.0 seconds.
 
