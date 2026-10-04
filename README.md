@@ -27,7 +27,7 @@ with actual result IDs and receipts. The judge-facing [demo guide](DEMO_GUIDE.md
 Agent decisions, tools and policy boundaries are documented in
 [`AGENTS_AND_POLICIES.md`](AGENTS_AND_POLICIES.md). The separate Omnigent diagnostic cycle is completed and verified: agent-authored hypotheses, two study choices, two computations and result-bound updates. See [`DISCOVERY_CYCLE_RESULTS.md`](DISCOVERY_CYCLE_RESULTS.md). It is posthoc analysis, not new performance evidence. The two-minute
 demo storyboard is [`CHALLENGE_DEMO_PLAN.md`](CHALLENGE_DEMO_PLAN.md). The
-[inspection workbench](https://shinick-han.github.io/falsify-lab-hacknation7/inspection-evidence.html)
+[inspection workbench](https://shinick-han.github.io/WaffleBench/inspection-evidence.html)
 separates synthetic wafer evidence, real PCB photographs, and recorded agent coordination.
 
 ## Supporting study: circuit-model falsification
@@ -80,8 +80,8 @@ preserved. See `evidence/wafer-scale/validation.json` and `web/tests/wafer_geome
 The `mockup/` folder is the original UI mockup. Its numbers are invented placeholders and
 are not results.
 
-- Public repository: https://github.com/Shinick-Han/falsify-lab-hacknation7
-- Recorded-run demo: https://shinick-han.github.io/falsify-lab-hacknation7/
+- Public repository: https://github.com/Shinick-Han/WaffleBench
+- Recorded-run demo: https://shinick-han.github.io/WaffleBench/
 
 ## Research model
 
@@ -309,11 +309,11 @@ The project's own code is MIT ([`LICENSE`](LICENSE)). Third-party components are
 
 ## Separately validated inspection studies
 
-[Inspection evidence](https://shinick-han.github.io/falsify-lab-hacknation7/inspection-evidence.html) shows a numerical synthetic three-wafer inspection campaign: +7.12% confirmed DOI at the same 360 CU budget versus a logistic comparator. The supplementary 30% cost-saving target failed. [Coverage and budget diagnosis](https://shinick-han.github.io/falsify-lab-hacknation7/inspection-quality.html) explains missed optical candidates and unmeasured sites.
+[Inspection evidence](https://shinick-han.github.io/WaffleBench/inspection-evidence.html) shows a numerical synthetic three-wafer inspection campaign: +7.12% confirmed DOI at the same 360 CU budget versus a logistic comparator. The supplementary 30% cost-saving target failed. [Coverage and budget diagnosis](https://shinick-han.github.io/WaffleBench/inspection-quality.html) explains missed optical candidates and unmeasured sites.
 
-[Real PCB photographs](https://shinick-han.github.io/falsify-lab-hacknation7/inspection-images.html) separately shows PCB2 recall 51%→72% and the fixed pipeline's PCB3 replication 44%→55%; 28/100 and 45/100 defects remain missed. These are not SEM, wafer or factory accuracy. Sources, fixed thresholds, paired intervals and independent audit receipts are preserved in IMAGE_PILOT_V2_RESULTS.md and IMAGE_PILOT_V3_RESULTS.md.
+[Real PCB photographs](https://shinick-han.github.io/WaffleBench/inspection-images.html) separately shows PCB2 recall 51%→72% and the fixed pipeline's PCB3 replication 44%→55%; 28/100 and 45/100 defects remain missed. These are not SEM, wafer or factory accuracy. Sources, fixed thresholds, paired intervals and independent audit receipts are preserved in IMAGE_PILOT_V2_RESULTS.md and IMAGE_PILOT_V3_RESULTS.md.
 
-[Actual Omnigent recorded execution](https://shinick-han.github.io/falsify-lab-hacknation7/inspection-live.html) shows five SDK delegations, two paid synthetic reviews and two result updates. The LLM coordinates; the frozen numerical planner selects sites. The browser replays an already completed run and never starts a remote experiment.
+[Actual Omnigent recorded execution](https://shinick-han.github.io/WaffleBench/inspection-live.html) shows five SDK delegations, two paid synthetic reviews and two result updates. The LLM coordinates; the frozen numerical planner selects sites. The browser replays an already completed run and never starts a remote experiment.
 
 The mixture v4 and deeper beam v5 hypotheses failed and were not promoted. INSPECTION_V3_RESULTS.md, INSPECTION_V4_RESULTS.md and INSPECTION_ROUTE_V5_RESULTS.md keep those separate comparisons. Numeric dependencies: `uv sync --extra inspection`; the image studies use the separate CPU environment pinned in inspection_images/requirements-cpu.txt. Large images, model binaries, local campaign outputs, API keys and runtime/provider logs are excluded.
 

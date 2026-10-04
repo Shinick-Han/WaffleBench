@@ -16,4 +16,4 @@ Participant facts come from the prepared CV. The product video uses the actual s
 
 Final gates: each project’s browser/runtime/layout checks passed; every encoded file’s duration, resolution, audio stream, file size and SHA-256 were checked with ffprobe/ffmpeg; actual encoded opening/middle/ending frames were captured and sampled for visual review. Audio volume was measured; this is not a claim of a complete human listening review. Dense-timeline authoring warnings remain, without runtime/layout errors. Machine-readable receipt: `evidence/pitch/verification.json`.
 
-Public demo: https://shinick-han.github.io/falsify-lab-hacknation7/inspection-evidence.html . Source report: OPTIMIZATION_3H.md. No video was submitted to HackOS or published to a video account in this delivery step.
+Public demo: https://shinick-han.github.io/WaffleBench/inspection-evidence.html . Source report: OPTIMIZATION_3H.md. No video was submitted to HackOS or published to a video account in this delivery step.

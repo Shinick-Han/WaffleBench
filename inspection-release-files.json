@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "source_commit": "de831a087a7860c37fcc4cb1162e5ca19e6cdc2f",
+  "source_commit": "e9ac7400fbb89b56ef4274a81eae6e36f02ff17b",
   "sha256": {
     "inspection_review/cli.py": "661757e71af88dcc209255a00b8bb4fdb80277acf0c40816a1dc20cbd08cb710",
     "inspection_review/data.py": "297c250a786a0bdecdae2111514cc7d89d1d1ac94b6d497202e2ca80ece116cf",
@@ -208,7 +208,7 @@
     "ENGLISH_DELIVERY.md": "4c7d7bb39dcc7e4cfab929b648ef4ef48e52805433644ed1b849b829d4076f11",
     "INSPECTION_PROTOCOL.en.md": "aa52ef73c95f56b4a0a93867e4a4d414f751a1488268bf956c85493759f221a5",
     "RESEARCH_PROTOCOL.en.md": "43be847be0e4f20a63b2f5ba6ea30dc3e89579b9a975093e7df50203695e76ed",
-    "SUBMISSION_EN.md": "f3794b21dfe7dee48cf9716e8a41733c9ad2441afb8992a091d37faf4859941d",
+    "SUBMISSION_EN.md": "13fa7e4524358239f6d86aedc1b5c135d959e5e5e8697e194fc8a9c7c56ebc52",
     "mockup/index.en.html": "f59f8373f39c74faf5c851ff841d462d4983d7f42ddb63847faf24e201015e2d",
     "scripts/package_release.py": "0781f23cdfa6db0824b413b646e1313e8d440c7a00e26234d43303de4da9847c",
     "web/DESIGN.md": "51e136649b6e6374bdcadeffd035e2ba12710ede22d38420bcd71deea6d7171b",
@@ -226,7 +226,7 @@
     "web/tests/ui_polish_check.mjs": "da3cb54a8858e2c032539260997a76fb212f3b4781c3490cf01763ca4bd9897a",
     "web/tests/wafer_check.mjs": "c23ed41b7b6f1db7de6d2b9cec8d9d8c1384ed52b4dd4eb62c32ebd17507deec",
     "web/tests/wafer_geometry_check.mjs": "a9f71ea74f5793110efb38ad1d42d7e0527411ec148777c532f1c4ef6e80694c",
-    "README.md": "781c2ddfb6eb6f6b288f71a0d6a02f96579fad87a15dcf4f7632b2722c509b5f",
+    "README.md": "59f3e54bab9b09a0d9df9715781b61034797f8cc3cf1f39c4caecd79a2e22a73",
     "scripts/serve_app.py": "f3e62b9411c3d67133b49ef85ceb6330dd97c9323920518de901781abfae3ced",
     "tests/test_app_frontend.py": "55d5e226ff2068296a22e3389b5ede6e482dc0ce78c48572a5d9b4193b899707",
     "tests/test_app_server.py": "394d222025dccf7461d16de0ddd61b30af017055d13937b2e9e46f07be655063",
@@ -236,7 +236,7 @@
     "docs/synthetic-wafers.css": "8ebf8bbab1b0286d78dcb246b104320c2cc85ab23d15a42eba2b7f4ab78bd199",
     ".gitignore": "a7beba89d550c76c0226f5dbd42b47dae187c13d22541883eb75593ab223c8f7",
     "AGENTS_AND_POLICIES.md": "51304fd3b5bc95c04755dc3f42d671e401d1ae0aa93e71114db1a3c54bf3cbf1",
-    "CHALLENGE_DEMO_PLAN.md": "19e0b94a6d42bfbb822599945b1fe38efc4b61c2dbb2713d2779152014417fba",
+    "CHALLENGE_DEMO_PLAN.md": "f7a5d9d9d265c90d3236b194f4352f48e94784d9173772982c5130ca438c96a6",
     "CORE_API.md": "dee4b32a138dacb84ec0946b31a21046c90367a9654d74ac25b8b3d7c6fe4a7e",
     "DISCOVERY_CYCLE_RESULTS.md": "4257be7d98658086d00f00b7f1346f3a6dfb8e42e122213883adb80ab9a2dc0d",
     "discovery_agent/agents/discovery_analyst/config.yaml": "7f2f45664fd5f0d0c91433f79c64a4d402448cf957fda59ac26a01e94b568efa",
@@ -259,13 +259,14 @@
     "docs/data/discovery-cycle.json": "53dd1b25454583c750cb666c38a0e4c1786a269f29041f84d83725b4c4c84ee1",
     "web/discovery-cycle.css": "3d1f00219c851af4dfdf17c9228265014d8f5c869ab88fdc644bfb8b5ba719c4",
     "docs/discovery-cycle.css": "3d1f00219c851af4dfdf17c9228265014d8f5c869ab88fdc644bfb8b5ba719c4",
-    "web/discovery-cycle.html": "9bcb763dc7e78fae8eee07813dde6f7448999867707432c2e3815ef4bf856694",
-    "docs/discovery-cycle.html": "9bcb763dc7e78fae8eee07813dde6f7448999867707432c2e3815ef4bf856694",
+    "web/discovery-cycle.html": "416458a1a5f4ad6df9596b71e94e8732698152dc7491aaa6f5e1e4eccdfd47c0",
+    "docs/discovery-cycle.html": "416458a1a5f4ad6df9596b71e94e8732698152dc7491aaa6f5e1e4eccdfd47c0",
     "web/discovery-cycle.js": "289607084533666a1ce156cf8e64db223695e43c264e88dabf529a2abf94bc2c",
     "docs/discovery-cycle.js": "289607084533666a1ce156cf8e64db223695e43c264e88dabf529a2abf94bc2c",
-    "DEMO_GUIDE.md": "395cc9d053b7da3edf5ffc27fd0bcdd1f8195170250cffa1ebfee8a0d66569a0",
-    "PITCH_DELIVERY.md": "ba5d42168915606570ecc1d3e07bdfb7c48c3cfc20275a470fb92e6b70e09d73",
-    "evidence/pitch/verification.json": "332d118a5fb5a8604d13965685d3479d4647f276999b31a5b755acf160654866"
+    "DEMO_GUIDE.md": "09eed23f5da94787dbc591e0fbfc1b9157590148c92489b30d26f0106f5c896e",
+    "PITCH_DELIVERY.md": "b9a0258d22c47360c76a45ce5f6822c985fdaa1285c358be1a2e5b713efb89fe",
+    "evidence/pitch/verification.json": "332d118a5fb5a8604d13965685d3479d4647f276999b31a5b755acf160654866",
+    "OPTIMIZATION_3H.md": "9805e91189eb2cb86c1c3413dfb861b9155039ea4ae49d8ed789ff40919338c2"
   },
   "translation_base": "0fec5a5fcabc18a3b2fb8955e5e2bd2a57652860"
 }

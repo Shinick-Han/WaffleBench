@@ -71,15 +71,15 @@ The wafer results are authored synthetic numerical evidence. The photo results u
 
 **Agents and policies:** [`AGENTS_AND_POLICIES.md`](AGENTS_AND_POLICIES.md) documents each specialist's decision, tools, inputs, outputs, budget boundaries and denied capabilities. There is currently no runtime human-approval gate and no Omnigent-led parallel experiment.
 
-**Verified diagnostic discovery cycle.** A separate actual Omnigent session compared competing tests, chose `miss_partition`, revised its overall bottleneck hypothesis for low-contrast lots, then chose `capacity_bound` and proposed a fresh admission experiment. Two read-only diagnostics and five delegations passed provenance verification. This is privileged posthoc analysis of existing synthetic evidence, **not a new performance gain**. See [`DISCOVERY_CYCLE_RESULTS.md`](DISCOVERY_CYCLE_RESULTS.md) and the [recorded cycle](https://shinick-han.github.io/falsify-lab-hacknation7/discovery-cycle.html).
+**Verified diagnostic discovery cycle.** A separate actual Omnigent session compared competing tests, chose `miss_partition`, revised its overall bottleneck hypothesis for low-contrast lots, then chose `capacity_bound` and proposed a fresh admission experiment. Two read-only diagnostics and five delegations passed provenance verification. This is privileged posthoc analysis of existing synthetic evidence, **not a new performance gain**. See [`DISCOVERY_CYCLE_RESULTS.md`](DISCOVERY_CYCLE_RESULTS.md) and the [recorded cycle](https://shinick-han.github.io/WaffleBench/discovery-cycle.html).
 
 ## Demo and source
 
-- [Agent diagnostic discovery cycle](https://shinick-han.github.io/falsify-lab-hacknation7/discovery-cycle.html)
-- [Inspection evidence](https://shinick-han.github.io/falsify-lab-hacknation7/inspection-evidence.html)
-- [Real-photo evaluation](https://shinick-han.github.io/falsify-lab-hacknation7/inspection-images.html)
-- [Recorded agent session](https://shinick-han.github.io/falsify-lab-hacknation7/inspection-live.html)
-- [Source repository](https://github.com/Shinick-Han/falsify-lab-hacknation7)
+- [Agent diagnostic discovery cycle](https://shinick-han.github.io/WaffleBench/discovery-cycle.html)
+- [Inspection evidence](https://shinick-han.github.io/WaffleBench/inspection-evidence.html)
+- [Real-photo evaluation](https://shinick-han.github.io/WaffleBench/inspection-images.html)
+- [Recorded agent session](https://shinick-han.github.io/WaffleBench/inspection-live.html)
+- [Source repository](https://github.com/Shinick-Han/WaffleBench)
 - Two-minute demo storyboard: [`CHALLENGE_DEMO_PLAN.md`](CHALLENGE_DEMO_PLAN.md)
 
 ## Sources
