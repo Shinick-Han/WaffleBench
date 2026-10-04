@@ -144,3 +144,18 @@ does not recompute any image score from pixels. Score correctness rests on the p
 freeze/score/evaluation hash chain, the image and artifact hashes, and the root's separate review
 of the v3 source. The audit cannot detect a scoring bug that was present at freeze time and
 recorded consistently.
+
+
+## Descriptive CPU cost of the improvement
+
+A separate posthoc profile used the first 16 frozen normal-calibration images (no test image), one warmup and six measured batches, on this workstation with the existing four-thread CPU extractor. Scores matched the frozen calibration scores exactly (maximum absolute difference 0.0). No model or threshold changed.
+
+| Warm batch, 16 images | baseline224 | primary448 |
+|---|---:|---:|
+| Median end-to-end CPU batch | 262.25 ms | 806.98 ms |
+| Median batch / 16, amortized per image | 16.39 ms | 50.44 ms |
+| Feature extraction, batch median | 231.35 ms | 608.54 ms |
+| Distances + normalization + aggregation, batch median | 31.14 ms | 195.12 ms |
+| Descriptor bank array | 1.50 MiB | 3.00 MiB |
+
+The composite pipeline costs about **3.08x** the warm batch time and **2x** the descriptor-bank bytes here. Batch time includes image loading, preprocessing, features and scoring, and excludes setup and freeze verification. The amortized number is **not single-image latency**, and six batches do not estimate a stable tail. This does not measure device inspection time or factory throughput. `scripts/profile_inspection_images_v3.py` and `evidence/inspection-images-v3/software-profile.json` preserve the workload and timings. The test score files remain unchanged.

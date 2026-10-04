@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "scope": "posthoc_calibration_only_cpu_software_profile",
+  "freeze_digest": "6bda4bd8bdae26f27366d0edc17612b683133f9d44b55b15527f6444af9334a1",
+  "source_sha256": "76b382cf34ff76cead571a493e6d48ea6a2e4161d4f87d841ad4bdd72ea093f8",
+  "model_setup_seconds": 2.364326700102538,
+  "calibration_ids": [
+    "pcb3/Data/Images/Normal/0004.JPG",
+    "pcb3/Data/Images/Normal/0019.JPG",
+    "pcb3/Data/Images/Normal/0032.JPG",
+    "pcb3/Data/Images/Normal/0041.JPG",
+    "pcb3/Data/Images/Normal/0054.JPG",
+    "pcb3/Data/Images/Normal/0075.JPG",
+    "pcb3/Data/Images/Normal/0105.JPG",
+    "pcb3/Data/Images/Normal/0108.JPG",
+    "pcb3/Data/Images/Normal/0121.JPG",
+    "pcb3/Data/Images/Normal/0127.JPG",
+    "pcb3/Data/Images/Normal/0128.JPG",
+    "pcb3/Data/Images/Normal/0149.JPG",
+    "pcb3/Data/Images/Normal/0164.JPG",
+    "pcb3/Data/Images/Normal/0175.JPG",
+    "pcb3/Data/Images/Normal/0182.JPG",
+    "pcb3/Data/Images/Normal/0185.JPG"
+  ],
+  "test_images_scored": 0,
+  "thresholds_changed": false,
+  "methods": {
+    "baseline224": {
+      "images_per_batch": 16,
+      "measured_batches": 6,
+      "total_batch_seconds": [
+        0.26197570003569126,
+        0.26350050000473857,
+        0.2625191999832168,
+        0.2619456999236718,
+        0.2574814000399783,
+        0.26412149996031076
+      ],
+      "warm_batch_median_ms": 262.24745000945404,
+      "warm_batch_p95_ms": 263.9662499714177,
+      "amortized_ms_per_image": 16.390465625590878,
+      "feature_batch_median_ms": 231.34850000496954,
+      "distance_and_aggregation_batch_median_ms": 31.14094998454675,
+      "bank_array_bytes": 1572864,
+      "memory_artifact_bytes": 1988436,
+      "frozen_calibration_max_abs_score_difference": 0.0
+    },
+    "primary448": {
+      "images_per_batch": 16,
+      "measured_batches": 6,
+      "total_batch_seconds": [
+        0.7972901000175625,
+        0.8183608999243006,
+        0.8461714000441134,
+        0.7911497000604868,
+        0.8026050999760628,
+        0.8113553000148386
+      ],
+      "warm_batch_median_ms": 806.9801999954507,
+      "warm_batch_p95_ms": 839.2187750141602,
+      "amortized_ms_per_image": 50.43626249971567,
+      "feature_batch_median_ms": 608.5411499952897,
+      "distance_and_aggregation_batch_median_ms": 195.12210000539199,
+      "bank_array_bytes": 3145728,
+      "memory_artifact_bytes": 3569492,
+      "frozen_calibration_max_abs_score_difference": 0.0
+    }
+  },
+  "primary_over_baseline_warm_batch_ratio": 3.0771708169759475,
+  "limitations": [
+    "One workstation, CPU ResNet18 with frozen 4-thread extractor; 16 fixed normal calibration images, one warmup plus six measured batches.",
+    "Amortized per-image time is batch total divided by 16, not single-image latency or p95 per-image. Batch p95 has six samples only.",
+    "Includes image loading, preprocessing, feature extraction, normalization, exact nearest distances and aggregation; excludes model setup, freeze verification and equipment time.",
+    "Posthoc descriptive timing. No test image is scored, no parameter/threshold/model is refit or selected, no factory throughput claim."
+  ],
+  "executed_source_sha256": "76b382cf34ff76cead571a493e6d48ea6a2e4161d4f87d841ad4bdd72ea093f8",
+  "source_lf_sha256": "f5a3871e698d9fc851281cff78fb5f186e298f86f63ed68e847b4a389d8f3f18",
+  "source_hash_note": "Execution used Windows CRLF source; source_lf_sha256 matches the committed LF source, with identical Python code."
+}
