@@ -181,7 +181,7 @@ async def run(args):
     proof_path = root/'omnigent/session-proof.json'
     if proof_path.exists() and not args.recover:
         raise RuntimeError('one SDK session per prepared cycle; use --recover to collect the same session')
-    local = ROOT/'.discovery-live-runtime/proof'
+    local = args.proof_dir or ROOT/'.discovery-live-runtime/proof'
     local.mkdir(parents=True, exist_ok=True)
     raw_file = local/f'{root.name}-stream.jsonl'
     async with OmnigentClient(base_url=args.server) as client:
@@ -235,9 +235,10 @@ def main():
     parser.add_argument('--timeout',type=float,default=900)
     parser.add_argument('--verify',action='store_true')
     parser.add_argument('--recover',action='store_true')
+    parser.add_argument('--proof-dir',type=Path,help='private raw proof directory (default: project-local runtime proof)')
     args = parser.parse_args()
-    if args.server != 'http://127.0.0.1:6773':
-        parser.error('only isolated project-local port 6773 is supported')
+    if args.server not in ('http://127.0.0.1:6773', 'http://127.0.0.1:6775'):
+        parser.error('only isolated project-local port 6773 or public-runtime port 6775 is supported')
     if args.verify:
         root = args.root.resolve()
         capture = json.loads((root/'omnigent/sdk-records.json').read_text(encoding='utf-8'))

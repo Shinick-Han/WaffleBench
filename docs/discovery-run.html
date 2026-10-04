@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Run a discovery cycle | WaffleBench — Research Workbench</title>
+<meta name="description" content="Start a fresh Claude CLI-backed Omnigent diagnostic cycle: two fixed, read-only post-hoc diagnostics over existing authored synthetic evidence. Results appear only after session and ledger verification pass.">
+<meta property="og:title" content="Run a discovery cycle | WaffleBench">
+<meta property="og:description" content="A genuine agent session states a hypothesis, picks catalog diagnostics and interprets deterministic results. No new hardware measurements and no hold-out gain.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="./inspection-evidence.css">
+<link rel="stylesheet" href="./discovery-cycle.css">
+<link rel="stylesheet" href="./discovery-run.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="masthead"><div class="mast-inner"><div class="identity"><span class="brand">WaffleBench</span><span class="divider" aria-hidden="true"></span><span>Research Workbench</span></div><nav class="mast-links" aria-label="Related pages"><a href="./discovery-cycle.html">Recorded cycle</a><a href="./inspection-evidence.html">Evidence explorer</a><a href="https://github.com/Shinick-Han/WaffleBench">Repository</a></nav></div></header>
+<main id="main" class="layout">
+ <div class="heading">
+  <div><p class="tagline">An agentic lab for smarter wafer inspection.</p><h1>Run a fresh discovery cycle</h1><p class="lead">Start a new research loop. A genuine Omnigent agent session, backed by the Claude CLI, states a hypothesis, chooses between competing catalog diagnostics, reads each deterministic result and proposes what to test next. Results appear here only after the session completes and its ledger passes verification.</p></div>
+ </div>
+ <p class="notice"><strong>Read-only post-hoc diagnostics · authored synthetic evidence</strong> · Each cycle runs exactly two fixed diagnostics over evidence that already exists in this repository. It makes no new hardware or physical measurements and cannot produce a new hold-out gain. You cannot supply prompts, models, files or commands; the button only asks the server to start its fixed cycle.</p>
+
+ <section class="band run-panel" aria-labelledby="runTitle">
+  <div class="section-head"><div><h2 id="runTitle">Start a research loop</h2><p>Nothing starts until you press the button. One request is sent per press, and a request already sent from this tab is resumed rather than repeated.</p></div></div>
+  <div class="run-grid">
+   <div class="run-control">
+    <dl id="serviceMeta" class="run-meta"></dl>
+    <div class="run-actions">
+     <button id="startRun" type="button" class="control primary-action" disabled aria-describedby="runReason">Start new research loop</button>
+     <button id="recheck" type="button" class="control" hidden>Check again</button>
+     <button id="newRun" type="button" class="control" hidden>Set up another run</button>
+    </div>
+    <p id="runReason" class="run-reason">Checking whether the run service is configured…</p>
+   </div>
+   <div id="runStatus" class="run-status">
+    <p class="state-line" role="status" aria-live="polite" aria-atomic="true"><span id="stateBadge" class="state-badge" data-kind="idle">Idle</span><span id="stateText">No run started from this tab.</span></p>
+    <dl id="statusMeta" class="run-meta status-meta" hidden></dl>
+    <div id="hypothesisBox" class="hypothesis" hidden><h3>Latest hypothesis reported by the ledger</h3><p id="hypothesisText"></p><p class="sub">Agent-authored and provisional. Shown as the server reported it.</p></div>
+   </div>
+  </div>
+ </section>
+
+ <section class="band" aria-labelledby="howTitle">
+  <div class="section-head"><div><h2 id="howTitle">What happens after you press start</h2><p>Only steps the server actually reports are shown in the status panel; this page never estimates progress.</p></div></div>
+  <ol class="loop-steps how-steps">
+   <li><span class="step-n">1</span><strong>Queued</strong><span class="who det">Server</span></li>
+   <li><span class="step-n">2</span><strong>Hypothesis and competing tests</strong><span class="who agent">Agent-authored</span></li>
+   <li><span class="step-n">3</span><strong>Catalog diagnostic runs</strong><span class="who det">Deterministic computation</span></li>
+   <li><span class="step-n">4</span><strong>Interpretation, then second diagnostic</strong><span class="who agent">Agent-authored</span></li>
+   <li><span class="step-n">5</span><strong>Session and ledger verification</strong><span class="who det">Server check</span></li>
+   <li><span class="step-n">6</span><strong>Next experiment proposed</strong><span class="who prop">Proposed · not executed</span></li>
+  </ol>
+ </section>
+
+ <section id="resultSection" class="band" aria-labelledby="resultTitle" hidden>
+  <div class="section-head"><div><h2 id="resultTitle" tabindex="-1">Verified result of this run</h2><p>Session completed and verification passed. Plans, results and interpretations are joined by their recorded IDs; a mismatch is shown, never repaired.</p></div>
+   <div class="downloads"><button id="download" type="button" class="control" disabled aria-describedby="downloadNote">Download exact JSON</button><span id="downloadNote" class="visually-hidden">Saves the result bytes exactly as received from the server.</span></div>
+  </div>
+  <dl id="resultMeta" class="study-meta"></dl>
+  <p id="resultQuestion" class="question"></p>
+  <div id="resultCards" class="exp-cards"></div>
+  <div id="resultVerification"></div>
+ </section>
+
+ <section class="limitations" aria-labelledby="limitationsTitle"><details open><summary id="limitationsTitle">Scope and limitations</summary><ul>
+  <li>Each run is a fresh agent session over the same existing authored synthetic diagnostics. It is post-hoc and read-only, not a new hold-out gain, a factory result or a physical measurement.</li>
+  <li>The agent chooses tests and writes interpretations; a deterministic runner computes every number. Agent text is provisional, not a verified conclusion.</li>
+  <li>Verification confirms session completion and ledger/source integrity only. It says nothing about inspection accuracy or discovery speed.</li>
+  <li>A proposal first made at one update may be executed by the next plan; this is labelled. The final proposal of the cycle is not executed.</li>
+  <li>Runs are limited by the server (one at a time, with a quota and cooldown). The run identifier is kept only in this browser tab's session storage.</li>
+ </ul></details></section>
+</main>
+<script src="./discovery-run.js" defer></script>
+</body>
+</html>

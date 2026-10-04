@@ -1,0 +1,40 @@
+/* discovery-run: extends inspection-evidence.css and discovery-cycle.css (linked first). Light scheme only. */
+.run-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:18px 36px;align-items:start}
+.run-control,.run-status{min-width:0}
+.run-status{background:var(--surface);border:1px solid var(--line);padding:14px 16px}
+.run-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.run-actions .control{min-width:0;white-space:normal;text-align:center}
+.run-reason{margin-top:10px;font-size:13px;color:var(--muted);max-width:62ch}
+.run-reason.is-problem{color:var(--red)}
+.run-meta{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));margin:0;border-top:1px solid var(--line)}
+.run-meta div{padding:7px 12px 7px 0;border-bottom:1px solid var(--line);min-width:0}
+.run-meta dt{font-size:12px;color:var(--muted)}
+.run-meta dd{margin:2px 0 0;font-weight:600;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.status-meta{margin-top:12px}
+.state-line{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 10px;font-size:14px}
+.state-line #stateText{min-width:0;overflow-wrap:anywhere}
+.state-badge{display:inline-block;padding:2px 9px;border:1px solid var(--line);border-radius:3px;font-size:12px;font-weight:650;white-space:nowrap;background:var(--panel);color:var(--muted)}
+.state-badge[data-kind=active]{color:var(--green);border-color:#a9c7b2;background:var(--quiet)}
+.state-badge[data-kind=done]{color:var(--surface);background:var(--green);border-color:var(--green)}
+.state-badge[data-kind=wait]{color:var(--amber);border-color:#e2cf9d;background:#fbf8ef}
+.state-badge[data-kind=error]{color:var(--red);border-color:#dcb8b1;background:#f7ebe8}
+.state-badge[data-kind=active]::before{content:"";display:inline-block;width:7px;height:7px;margin-right:6px;border-radius:50%;background:currentColor;vertical-align:1px;animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.25}}
+.hypothesis{margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}
+.hypothesis h3{font-size:13px;margin-bottom:4px}
+.hypothesis p{max-width:70ch}
+.hypothesis .sub,.run-status .sub{color:var(--muted);font-size:12px;margin-top:4px}
+.how-steps li strong{overflow-wrap:anywhere}
+#resultSection .section-head{align-items:end}
+#resultMeta{margin-bottom:10px}
+#resultQuestion{margin-bottom:18px}
+#resultVerification{margin-top:22px}
+.value-table{min-width:0}
+.value-table td{font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.value-table th[scope=row]{overflow-wrap:anywhere}
+.value-note{font-size:12px;color:var(--muted);margin-top:6px}
+
+@media(max-width:900px){.run-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.run-actions .control{flex:1 1 100%}.run-status{padding:12px}#resultSection .downloads{width:100%}}
+@media(prefers-reduced-motion:reduce){.state-badge[data-kind=active]::before{animation:none}}
+@media(forced-colors:active){.state-badge{border:1px solid CanvasText}}

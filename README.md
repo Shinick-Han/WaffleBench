@@ -1,14 +1,14 @@
 # WaffleBench
 
 **An agentic lab for smarter wafer inspection.** WaffleBench is the Hack Nation 07
-submission name for this repository (`falsify-lab`). Package names, module names and public
-URLs are unchanged.
+submission name and public repository name. Existing Python package and module names
+retain their original `falsify_lab` identifiers.
 
 WaffleBench treats each expensive precision review after optical screening as an
 experiment: question, evidence, hypothesis, competing tests under a budget, result, and an
 updated decision. It is a research workflow, not a claim of superiority over commercial
 inspection tools. Start with [`SUBMISSION_EN.md`](SUBMISSION_EN.md), which traces the loop
-with actual result IDs and receipts. The judge-facing [demo guide](DEMO_GUIDE.md) explains the browser replay and local reproduction:
+with actual result IDs and receipts. The judge-facing [demo guide](DEMO_GUIDE.md) explains fresh public diagnostic runs, recorded evidence and local reproduction:
 
 
 - **Inner loop (per lot).** A frozen numerical planner chooses each next review site.
@@ -29,6 +29,8 @@ Agent decisions, tools and policy boundaries are documented in
 demo storyboard is [`CHALLENGE_DEMO_PLAN.md`](CHALLENGE_DEMO_PLAN.md). The
 [inspection workbench](https://shinick-han.github.io/WaffleBench/inspection-evidence.html)
 separates synthetic wafer evidence, real PCB photographs, and recorded agent coordination.
+
+Judges can also [start a fresh research loop](https://shinick-han.github.io/WaffleBench/discovery-run.html) without installing Claude or entering a key. A bounded server runs the owner's authenticated Claude CLI through Omnigent, with an isolated ledger and two read-only diagnostic computations. Results appear only after actual SDK and ledger verification pass. This diagnoses existing synthetic evidence; it does not establish a new held-out improvement. One run at a time, a cooldown and a limited public quota apply. Fresh runs require the owner's PC and tunnel to stay online; recorded evidence remains available independently. See [public execution scope](PUBLIC_DISCOVERY_CONTRACT.md) and [runtime setup](PUBLIC_DISCOVERY_RUNTIME.md).
 
 ## Supporting study: circuit-model falsification
 

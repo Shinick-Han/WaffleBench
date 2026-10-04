@@ -2,7 +2,7 @@
 
 **An agentic lab for smarter wafer inspection.**
 
-WaffleBench is the submission name; the source repository, Python packages and public URLs keep the original `falsify-lab` names.
+WaffleBench is the submission and public repository name. Existing Python package identifiers retain their original names.
 
 ## Project summary
 

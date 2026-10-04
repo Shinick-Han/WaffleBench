@@ -25,6 +25,7 @@ agent/agents/*/tools/mcp/falsify.yaml
 .inspection-live-runtime/
 inspection_agent/agents/*/tools/mcp/inspection.yaml
 .discovery-live-runtime/
+.public-discovery-runtime/
 web/.video-review/
 evidence/discovery-cycle/.lock
 discovery_agent/tools/mcp/discovery.yaml
