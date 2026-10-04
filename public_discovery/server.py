@@ -228,7 +228,10 @@ def verify_result(raw: bytes, job_dir: Path, started_epoch: float, private: list
         capture = strict_json((cycle / "omnigent" / "sdk-records.json").read_bytes())
         proof = strict_json((cycle / "omnigent" / "session-proof.json").read_bytes())
         receipt = strict_json((cycle / "verification.json").read_bytes())
-        if doc != export_cycle(cycle, capture, receipt):
+        public_id = doc.get("public_run_id")
+        if public_id is not None and public_id != job_dir.name:
+            return False
+        if doc != export_cycle(cycle, capture, receipt, public_run_id=public_id):
             return False
         session = capture.get("session_id")
         if not (isinstance(session, str) and session and capture.get("outcome") == "completed"):

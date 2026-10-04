@@ -231,7 +231,10 @@ def check_and_read_export(cycle: Path, root: Path, job_root: Path) -> bytes:
         raise Failure('export_invalid')
     if export != driver.export(cycle, capture, receipt):
         raise Failure('verification_failed')
-    return raw
+    # Public records name their own logical run namespace instead of incorrectly
+    # pointing at the older published session's ledger. No private path is exposed.
+    public = driver.export(cycle, capture, receipt, public_run_id=job_root.name)
+    return (json.dumps(public, ensure_ascii=False, indent=2) + '\n').encode('utf-8')
 
 
 def _bound_log(path: Path) -> None:
@@ -254,7 +257,11 @@ def execute(job_root: Path, output: Path, *, ops=None, root: Path = ROOT, omni_p
     assert PORT not in PROTECTED_PORTS
     job_root, output = check_job_args(Path(job_root), Path(output))
     cycle, private = job_root / 'cycle', job_root / 'private'
-    logs, raw_dir, data_dir = private / 'logs', private / 'raw', private / 'omnigent'
+    logs, raw_dir = private / 'logs', private / 'raw'
+    # Omnigent artifact filenames add about 150 characters. A nested job/private
+    # prefix exceeds Windows MAX_PATH in a normal checkout, so keep a distinct
+    # full UUID namespace under a short private runtime directory.
+    data_dir = root / '.public-discovery-runtime' / 'o' / uuid.UUID(job_root.name).hex
     bundle = private / 'bundle' / 'discovery_agent'
     (root / '.discovery-live-runtime').mkdir(parents=True, exist_ok=True)
     start = ops.monotonic()

@@ -152,18 +152,20 @@ def verify(root: Path, capture: dict) -> dict:
             'verifier_sha256': digest(__file__), 'sdk_helper_sha256': digest(sdk.__file__)}
 
 
-def export(root: Path, capture: dict, receipt: dict) -> dict:
+def export(root: Path, capture: dict, receipt: dict, public_run_id: str | None = None) -> dict:
     if receipt['status'] != 'passed':
         raise RuntimeError('unverified cycle cannot be exported')
     events = [json.loads(x) for x in (root/'events.jsonl').read_text(encoding='utf-8').splitlines()]
     rows = lambda kind: [e['data'] for e in events if e['type'] == kind]
+    event_source = f'public-runs/{public_run_id}/cycle/events.jsonl' if public_run_id else 'evidence/discovery-cycle/events.jsonl'
     return {'schema_version': 1, 'project': 'WaffleBench',
-            'label': 'Actual Omnigent posthoc diagnostics of authored synthetic evidence; recorded replay, no new held-out gain or physical experiment.',
+            **({'public_run_id': public_run_id} if public_run_id else {}),
+            'label': ('Fresh public Omnigent diagnostic session over existing authored synthetic evidence; no new held-out gain or physical experiment.' if public_run_id else 'Actual Omnigent posthoc diagnostics of authored synthetic evidence; recorded replay, no new held-out gain or physical experiment.'),
             'question': 'What limits confirmed defect discovery under the same precision-review budget, and which experiment should we run next?',
             'sdk': {'session_id': capture['session_id'], 'status': 'completed', 'model': 'claude-opus-5-5', 'harness': 'claude-sdk'},
             'verification': {k: receipt[k] for k in ('status', 'checked_at', 'checks')},
             'sources': [{'path': 'evidence/inspection-improvements-v3/quality-diagnostics.json', 'sha256': receipt['input_sha256']},
-                        {'path': 'evidence/discovery-cycle/events.jsonl', 'sha256': receipt['events_sha256']}],
+                        {'path': event_source, 'sha256': receipt['events_sha256']}],
             'plans': rows('plan_recorded'),
             'results': [{**r, 'elapsed_seconds': r['elapsed_s'], 'source_sha256': r['input_sha256']} for r in rows('experiment_completed')],
             'updates': [{**u, 'next_hypothesis': u['next_hypothesis']['text'], 'next_experiment': u['next_experiment']['text']} for u in rows('update_recorded')],

@@ -1,6 +1,6 @@
 # Public discovery runtime
 
-`scripts/public_discovery_runtime.py` runs one fresh, isolated Omnigent diagnostic cycle for a public judge job. It is a new public mode. The frozen protocol, existing evidence and recorded replay stay unchanged.
+`scripts/public_discovery_runtime.py` runs one fresh, isolated Omnigent diagnostic cycle for a public judge job. It is a new public mode. The frozen protocol, existing evidence and recorded replay stay unchanged. Omnigent's private data uses `.public-discovery-runtime/o/<full UUID without hyphens>` so artifact filenames fit Windows path limits; each job retains a distinct namespace. Ledgers, bundles and raw proof remain under the private job directory.
 
 ## Interface
 

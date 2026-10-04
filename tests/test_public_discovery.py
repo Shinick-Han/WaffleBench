@@ -49,6 +49,8 @@ if MODE == "sdk_incomplete":
     doc["sdk"]["status"] = "failed"
 if MODE == "forged":
     doc["results"][1]["result_id"] = "res_ffffffffffffffff"
+if MODE == "numbers_tampered":
+    doc["results"][0]["values"]["invented_gain"] = 999
 if MODE == "private_path":
     doc["label"] = "written to " + str(job)
 if MODE == "unbound":
@@ -164,7 +166,7 @@ class RunTests(Base):
         self.assertEqual(m.result_bytes(body["id"])[0], "unavailable")
 
     def test_unverified_or_forged_outputs_fail_closed(self):
-        for mode in ("fail", "stale", "unverified", "sdk_incomplete", "forged", "private_path", "unbound",
+        for mode in ("fail", "stale", "unverified", "sdk_incomplete", "forged", "numbers_tampered", "private_path", "unbound",
                      "capture_tampered", "ledger_tampered", "partial"):
             with self.subTest(mode=mode):
                 state = self.base / f"state_{mode}"

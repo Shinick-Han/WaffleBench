@@ -162,7 +162,13 @@ class RuntimeTest(unittest.TestCase):
         ops = FakeOps(self, driver=fake_driver_success)
         rc, out = self.run_rt(ops)
         self.assertEqual((rc, out), (0, {'status': 'completed', 'error': None}))
-        self.assertEqual(self.output.read_bytes(), (self.job / 'cycle/export.json').read_bytes())
+        public = json.loads(self.output.read_bytes())
+        original = json.loads((self.job / 'cycle/export.json').read_bytes())
+        self.assertEqual(public['public_run_id'], self.job.name)
+        self.assertEqual(public['sources'][1]['path'], f'public-runs/{self.job.name}/cycle/events.jsonl')
+        self.assertIn('Fresh public', public['label'])
+        for key in ('plans', 'results', 'updates', 'sdk', 'verification', 'limits'):
+            self.assertEqual(public[key], original[key])
         self.assertEqual(ops.kinds(), ['validate', 'server', 'host', 'driver'])
         self.assertEqual(sorted(ops.killed), ['host', 'server'])
         server, host, drv = ops.spawned[1:]
@@ -178,7 +184,7 @@ class RuntimeTest(unittest.TestCase):
         self.assertNotIn('OPENAI_API_KEY', env)
         self.assertEqual(env['ENABLE_CLAUDEAI_MCP_SERVERS'], 'false')
         self.assertEqual(env['OMNIGENT_DISABLE_TELEMETRY'], '1')
-        self.assertEqual(Path(env['OMNIGENT_DATA_DIR']), self.job.resolve() / 'private/omnigent')
+        self.assertEqual(Path(env['OMNIGENT_DATA_DIR']), self.root / '.public-discovery-runtime/o' / uuid.UUID(self.job.name).hex)
         self.assertNotIn('npm', env['PATH'])
         mcp = (self.job / 'private/bundle/discovery_agent/agents/discovery_analyst/tools/mcp/discovery.yaml').read_text()
         self.assertIn(str(self.job.resolve() / 'cycle').replace('\\', '/'), mcp)
@@ -197,6 +203,25 @@ class RuntimeTest(unittest.TestCase):
         self.assertEqual((ops.spawned, ops.killed), ([], []))
         self.assertFalse(self.output.exists())
         self.assertFalse((self.job / 'cycle').exists())
+
+    def test_windows_artifact_path_fits_normal_checkout(self):
+        base = REPO / '.public-discovery-runtime/o' / uuid.UUID(self.job.name).hex
+        artifact = base / 'artifacts' / ('a' * 32) / (('b' * 64) + '.' + ('c' * 32) + '.tmp')
+        self.assertLess(len(str(artifact)), 260)
+
+    @unittest.skipUnless((EVIDENCE / 'omnigent/sdk-records.json').is_file(), 'published cycle not available')
+    def test_changed_export_values_are_rejected(self):
+        def tamper(cycle, root):
+            fake_driver_success(cycle, root)
+            file = cycle / 'export.json'
+            doc = json.loads(file.read_text(encoding='utf-8'))
+            doc['results'][0]['values']['invented_gain'] = 999
+            driver.write(file, doc)
+            return 0
+        ops = FakeOps(self, driver=tamper)
+        rc, out = self.run_rt(ops)
+        self.assertEqual((rc, out['error']), (1, 'verification_failed'))
+        self.assertFalse(self.output.exists())
 
     def test_driver_timeout_fails_closed_and_cleans_up(self):
         ops = FakeOps(self, driver_hang=True)
