@@ -158,10 +158,25 @@ function mapStatus(c){
   if(e&&e.clear_counterexample===false&&e.secondary_counterexample===false)return ['good','양품 · 모델 허용'];
   return ['unknown','미평가'];
 }
+/* Illustrative physical dimensions only; no scientific value is inferred from placement. */
+const WAFER_GEOMETRY=Object.freeze({diameter:300,dieWidth:8,dieHeight:6,scribe:0.08,edgeExclusion:3});
+function waferDisplayGeometry(){
+  const g=WAFER_GEOMETRY,pitchX=g.dieWidth+g.scribe,pitchY=g.dieHeight+g.scribe;
+  const radius=g.diameter/2-g.edgeExclusion,rects=[];
+  const siteFits=(x,y)=>Math.hypot(Math.abs(x)+g.dieWidth/2,Math.abs(y)+g.dieHeight/2)<=radius;
+  for(let row=-24;row<=24;row++)for(let col=-18;col<=18;col++){
+    const x=col*pitchX,y=row*pitchY;
+    if(siteFits(x,y))rects.push(`M${(150+x-g.dieWidth/2).toFixed(2)} ${(150+y-g.dieHeight/2).toFixed(2)}h${g.dieWidth}v${g.dieHeight}h-${g.dieWidth}Z`);
+  }
+  const sites=TEMPS.map((_,r)=>VDDS.map((_,c)=>({x:150+(c-3)*4*pitchX,y:150+(r-2)*6*pitchY})));
+  return {path:rects.join(''),sites};
+}
+const WAFER_DISPLAY=waferDisplayGeometry();
 function renderMap(){
-  let html='<span></span>'+VDDS.map(v=>`<span class="axis">${v.toFixed(1)}</span>`).join('');
-  TEMPS.forEach(t=>{html+=`<span class="axis y">${t}°</span>`;VDDS.forEach(v=>{
+  let html=`<svg class="wafer-geometry" viewBox="0 0 300 300" aria-hidden="true" focusable="false"><circle class="wafer-edge-ring" cx="150" cy="150" r="147"/><path class="wafer-dies" d="${WAFER_DISPLAY.path}"/></svg>`;
+  TEMPS.forEach((t,row)=>{VDDS.forEach((v,col)=>{
     const k=pointId(state.corner,v,t),c=cellAt(k);const selected=state.point===k;
+    const site=WAFER_DISPLAY.sites[row][col];
     const [status,statusLabel]=mapStatus(c);
     const estimate=c.kind==='unobserved'&&!!c.candidate;
     const held=c.kind==='held_out';
@@ -172,9 +187,8 @@ function renderMap(){
     const marks={good:'<path d="m3 8 3 3 6-7"/>',bad:'<path d="M4 4 12 12M12 4 4 12"/>',boundary:'<path d="m8 2 6 6-6 6-6-6Z"/>',unknown:'<circle cx="8" cy="8" r="1.6"/>',failed:'<path d="M8 2v8m0 3v1"/>'};
     const mark=estimate?'<span class="die-mark" aria-hidden="true">~</span>':`<svg class="die-mark" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${marks[status]}</svg>`;
     const value=estimate?num(c.candidate.idw_predicted_abs_error):c.err;
-    const valueText=value==null?'':(estimate?'~':'')+fmtPct(value);
     const provenance=held?'보류 평가 · 사후':c.kind==='calibration'?'보정 관측':c.kind==='observed'?'관측':c.kind==='failed'?'실패 기록':estimate?'후보 · IDW 추정':'미관측';
-    html+=`<button type="button" class="${cls.join(' ')}" data-key="${esc(k)}" aria-pressed="${selected}" aria-label="${esc(fmtKey(k))}, ${esc(provenance)}, ${esc(statusLabel)}${c.err!=null?', 오차 '+fmtPct(c.err):estimate&&value!=null?', IDW 추정 오차 '+fmtPct(value):''}">${mark}<span class="die-value">${esc(valueText)}</span></button>`;});});
+    html+=`<button type="button" class="${cls.join(' ')}" style="--site-x:${(site.x/3).toFixed(4)}%;--site-y:${(site.y/3).toFixed(4)}%" data-key="${esc(k)}" aria-pressed="${selected}" aria-label="${esc(fmtKey(k))}, ${esc(provenance)}, ${esc(statusLabel)}${c.err!=null?', 오차 '+fmtPct(c.err):estimate&&value!=null?', IDW 추정 오차 '+fmtPct(value):''}"><span class="site-die">${mark}</span></button>`;});});
   const fk=$('heatmap').contains(document.activeElement)?document.activeElement.dataset.key:null;
   $('heatmap').innerHTML=html;
   if(fk){const b=$('heatmap').querySelector(`[data-key="${CSS.escape(fk)}"]`);if(b)b.focus();}

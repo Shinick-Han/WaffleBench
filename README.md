@@ -35,6 +35,12 @@ snapshot evaluation flags; unmeasured conditions, estimates, failures and postho
 provenance remain distinct. This is a PVT diagram, not measured die positions or
 manufacturing yield. All 35 conditions per corner and exact snapshot exports are
 preserved. See `evidence/wafer/validation.json` and `web/tests/wafer_check.mjs`.
+**Wafer scale.** The wafer uses explicitly illustrative dimensions: 300mm diameter, 8x6mm die
+with 0.08mm streets and 3mm edge exclusion. A dense neutral geometry layer supports
+35 conditions with status from snapshot flags; unobserved, estimates and posthoc
+provenance remain distinct. This is a PVT diagram, not measured die positions or
+manufacturing yield. All 35 conditions per corner and exact snapshot exports are
+preserved. See `evidence/wafer-scale/validation.json` and `web/tests/wafer_geometry_check.mjs`.
 The `mockup/` folder is the original UI mockup. Its numbers are invented placeholders and
 are not results.
 
