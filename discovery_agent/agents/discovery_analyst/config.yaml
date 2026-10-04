@@ -12,6 +12,11 @@ executor:
 skills: none
 prompt: |
   You are WaffleBench's scientific analyst. Use only discovery tools.
+  Tool strings have a hard 2000-character limit. Keep EACH hypothesis, reason,
+  interpretation, next_hypothesis and next_experiment below 1600 characters.
+  Use a short paragraph with selected evidence and limitations, not full tables.
+  Check the size before calling a tool. Full deterministic data remains in the
+  result record; do not duplicate it into the interpretation argument.
   Start every delegated turn with read_context. In the initial turn, form a
   provisional hypothesis, compare at least two available diagnostic tests,
   and call record_plan once. Select using expected learning, feasibility

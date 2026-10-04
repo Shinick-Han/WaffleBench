@@ -241,6 +241,9 @@ class RunTests(Base):
         _, body = m.submit(self.rid())
         saved = json.loads((self.state / "state.json").read_text())["runs"]
         self.assertEqual(saved[0]["id"], body["id"])
+        # Finish the startup persistence transition before simulating restart.
+        # The fake child then remains blocked until tearDown releases it.
+        wait_for(lambda: m.public_status(body["id"])["status"] == "running")
         m2 = pd.RunManager(pd.Config(state_dir=self.base / "state", repo_root=ROOT, runtime_script=self.script("good"),
                                      max_runs=3, cooldown_seconds=0, clock=self.clock))
         self.assertEqual(m2.public_status(body["id"])["status"], "failed")

@@ -387,13 +387,25 @@ class RunManager:
             self._save()
 
     def _save(self) -> None:
-        tmp = self.state_path.with_suffix(".tmp")
+        tmp = self.state_path.with_name(f"state.{uuid.uuid4().hex}.tmp")
         data = json.dumps({"version": 1, "runs": self.runs}, sort_keys=True, indent=1).encode()
         with open(tmp, "wb") as fh:
             fh.write(data)
             fh.flush()
             os.fsync(fh.fileno())
-        os.replace(tmp, self.state_path)
+        try:
+            for attempt in range(21):
+                try:
+                    os.replace(tmp, self.state_path)
+                    break
+                except PermissionError:
+                    if attempt == 20:
+                        raise
+                    # Windows can briefly hold a file during reads/AV scanning.
+                    # This retries only an atomic state write, never a model run.
+                    time.sleep(0.01)
+        finally:
+            tmp.unlink(missing_ok=True)
 
     # ------------------------------------------------ queries
     def _find(self, run_id: str) -> dict | None:

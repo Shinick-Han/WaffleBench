@@ -184,7 +184,7 @@ class RuntimeTest(unittest.TestCase):
         self.assertNotIn('OPENAI_API_KEY', env)
         self.assertEqual(env['ENABLE_CLAUDEAI_MCP_SERVERS'], 'false')
         self.assertEqual(env['OMNIGENT_DISABLE_TELEMETRY'], '1')
-        self.assertEqual(Path(env['OMNIGENT_DATA_DIR']), self.root / '.public-discovery-runtime/o' / uuid.UUID(self.job.name).hex)
+        self.assertEqual(Path(env['OMNIGENT_DATA_DIR']), rt.private_data_dir(self.root, self.job.name, self.env))
         self.assertNotIn('npm', env['PATH'])
         mcp = (self.job / 'private/bundle/discovery_agent/agents/discovery_analyst/tools/mcp/discovery.yaml').read_text()
         self.assertIn(str(self.job.resolve() / 'cycle').replace('\\', '/'), mcp)
