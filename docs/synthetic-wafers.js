@@ -19,6 +19,10 @@
   const wafer = () => state.data.wafers[state.wafer];
   const matches = die => (state.filter === 'all' || die.bin === state.filter) && (state.defect === 'all' || (state.view === 'truth' ? die.defects : die.detections).includes(state.defect)) && die.die_id.toLowerCase().includes(state.search);
   const filtered = () => wafer().dies.filter(matches);
+  const firstMatching = () => filtered().find(d => d.bin === 'fail') || filtered()[0];
+  const reconcileSelection = preferFailure => {
+    if (preferFailure || !wafer().dies.some(d => d.die_id === state.selected && matches(d))) state.selected = firstMatching()?.die_id || null;
+  };
   const names = ids => ids.map(id => state.data.catalog.find(item => item.id === id)?.name || id).join(', ') || '없음';
   const testNames = ids => ids.map(id => state.data.tests.find(item => item.id === id)?.name || id).join(', ') || '없음';
 
@@ -54,15 +58,15 @@
       const response=await fetch('./data/synthetic-wafers.json', {cache:'no-store'});
       if (!response.ok) throw Error(`데이터를 불러오지 못했습니다 (${response.status}).`);
       const raw=await response.text(); const data=JSON.parse(raw); validate(data);
-      rawJSON=raw; state.data=data; state.wafer=0; state.filter='all'; state.view='bin'; state.search=''; state.page=0; state.selected=null;
-      state.defect='all'; $('binFilter').value='all'; $('defectFilter').value='all'; $('dieSearch').value='';
+      rawJSON=raw; state.data=data; state.wafer=0; state.filter='all'; state.defect='all'; state.view='bin'; state.search=''; state.page=0; state.selected=null;
+      $('binFilter').value='all'; $('defectFilter').value='all'; $('dieSearch').value='';
       $('loadState').hidden=true; $('app').hidden=false; $('download').disabled=false;
-      renderStatic(); render();
+      renderStatic(); reconcileSelection(true); render();
     } catch (error) { console.error('Synthetic wafer load:',error); setStateMessage(`${error.message || '데이터를 읽을 수 없습니다.'} 원본 파일을 확인한 뒤 다시 시도하세요.`,true); }
   }
   function renderStatic() {
-    $('defectFilter').innerHTML='<option value="all">모든 종류</option>'+state.data.catalog.filter(c=>c.modeled).map(c=>`<option value="${e(c.id)}">${e(c.name)}</option>`).join('');
-    $('waferButtons').innerHTML=state.data.wafers.map((w,i)=>`<button type="button" data-wafer="${i}" aria-pressed="false">${e(w.wafer_id)}</button>`).join('');
+    $('waferButtons').innerHTML=state.data.wafers.map((w,i)=>`<button type="button" data-wafer="${i}" aria-pressed="false"><strong>${e(w.wafer_id)}</strong><span class="wafer-caption">${e(w.scenario)}</span><small>불량 ${e(w.summary.fail)} · 보류 ${e(w.summary.inconclusive)}</small></button>`).join('');
+    $('defectFilter').innerHTML='<option value="all">전체 유형</option>'+state.data.catalog.filter(item=>item.modeled).map(item=>`<option value="${e(item.id)}">${e(item.name)}</option>`).join('');
     const sources=new Map(state.data.sources.map(source=>[source.id,source]));
     $('catalogRows').innerHTML=state.data.catalog.map(item=>{
       const links=(item.source_ids || []).map(id=>sources.get(id)).filter(source=>source && /^https:\/\//.test(source.url)).map(source=>`<a href="${e(source.url)}" target="_blank" rel="noopener noreferrer">${e(source.title)}</a>`).join('') || '—';
@@ -74,10 +78,13 @@
     const w=wafer(), rows=filtered();
     $('scenario').textContent=`${w.wafer_id} · ${w.scenario}`;
     $('datasetMeta').textContent=`시드 ${state.data.seed} · ${state.data.counts.wafers}장 · ${state.data.counts.dies.toLocaleString('ko-KR')}개 다이 · ${state.data.counts.measurements.toLocaleString('ko-KR')}회 합성 검사 시도`;
-    $('patternSummary').textContent='작성한 공간 패턴: '+w.patterns.map(id=>state.data.patterns.find(p=>p.id===id)?.name || id).join(' · ')+' · 결함 필터는 '+(state.view==='truth'?'생성 정답':'모의 탐지')+' 기준';
+    $('patternSummary').textContent='작성한 공간 패턴: '+w.patterns.map(id=>state.data.patterns.find(p=>p.id===id)?.name || id).join(' · ');
     $('waferButtons').querySelectorAll('button').forEach((button,i)=>button.setAttribute('aria-pressed', String(i===state.wafer)));
     document.querySelectorAll('[data-view]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.view===state.view)));
-    $('filterCount').textContent=`${w.wafer_id} · 표시 ${rows.length.toLocaleString('ko-KR')} / ${w.dies.length.toLocaleString('ko-KR')} 다이 · 양품 ${w.summary.pass} / 불량 ${w.summary.fail} / 판정 보류 ${w.summary.inconclusive} · 결함 레이블 ${w.summary.defect_dies} / 탐지 레이블 ${w.summary.detected_dies}`;
+    $('summaryMetrics').innerHTML=`<span>전체 <strong>${e(w.summary.total)}</strong></span><span class="summary-pass">양품 <strong>${e(w.summary.pass)}</strong></span><span class="summary-fail">불량 <strong>${e(w.summary.fail)}</strong></span><span class="summary-hold">보류 <strong>${e(w.summary.inconclusive)}</strong></span><span>생성 결함 <strong>${e(w.summary.defect_dies)}</strong></span><span>모의 탐지 <strong>${e(w.summary.detected_dies)}</strong></span>`;
+    $('filterCount').textContent=`표시 ${rows.length.toLocaleString('ko-KR')} / ${w.dies.length.toLocaleString('ko-KR')}`;
+    $('resetFilters').hidden=rows.length!==0;
+    $('viewExplanation').textContent=state.view==='truth' ? '생성된 정답 레이블은 생성기가 부여한 값입니다. 센서로 입증한 원인이 아닙니다. 이 화면의 결함 필터는 생성 결함 기준입니다.' : '관측 판정은 합성 검사의 결과입니다. 이 화면의 결함 필터는 모의 탐지 기준입니다.';
     $('legend').innerHTML=state.view==='bin'
       ? '<span><i class="swatch pass"></i>양품</span><span><i class="swatch fail"></i>불량</span><span><i class="swatch inconclusive"></i>판정 보류</span><span><i class="swatch neutral"></i>필터 제외</span>'
       : '<span><i class="swatch defect"></i>생성된 결함 레이블</span><span><i class="swatch detected"></i>모의 탐지 레이블</span><span><i class="swatch neutral"></i>해당 레이블 없음 / 필터 제외</span>';
@@ -86,20 +93,25 @@
   function renderDetail() {
     const d=wafer().dies.find(item=>item.die_id===state.selected);
     $('detailRef').textContent=d?.die_id || '';
-    if (!d) { $('dieDetail').innerHTML='<p class="detail-text">지도 또는 아래 기록에서 다이를 선택하세요.</p>'; $('mapHelp').textContent='선택된 다이: 없음 · 화살표 키로 이동, Enter 키로 상세 기록 이동'; return; }
+    if (!d) { $('dieDetail').innerHTML='<p class="detail-text">일치하는 다이가 없습니다. 필터를 초기화하거나 검색어를 바꿔 주세요.</p><button type="button" class="control" data-reset="true">필터 초기화</button>'; $('mapHelp').textContent='선택된 다이: 없음 · 화살표 키로 이동, Enter 키로 상세 기록 이동'; return; }
     $('mapHelp').textContent=`선택된 다이: ${d.die_id}, ${BIN[d.bin]} · 화살표 키로 이동, Enter 키로 상세 기록 이동`;
-    $('dieDetail').innerHTML=`<p class="detail-lead">${e(d.die_id)} · ${BIN[d.bin]}</p><p class="detail-text">행 ${d.row}, 열 ${d.col} · (${metric(d.x_mm,2)}, ${metric(d.y_mm,2)}) mm</p><dl class="detail-list">${METRICS.map(([id,name,unit,precision])=>`<dt>${name}</dt><dd>${metric(d.metrics[id],precision)} ${unit}</dd>`).join('')}<dt>실패 검사</dt><dd>${e(d.tests_failed)}</dd><dt>누락 검사</dt><dd>${e(d.tests_missing)}</dd></dl><div class="detail-block"><strong>판정 사유 · 검사 항목</strong><p>${e(testNames(d.fail_reasons))}</p></div><div class="detail-block"><strong>생성된 정답 레이블 · 센서로 검증되지 않음</strong><p>${e(names(d.defects))}</p></div><div class="detail-block"><strong>모의 탐지 레이블 · 불완전한 검사</strong><p>${e(names(d.detections))}</p></div>`;
+    $('dieDetail').innerHTML=`<p class="detail-lead">${e(d.die_id)} <span class="verdict ${d.bin}"><i aria-hidden="true"></i>${BIN[d.bin]}</span></p><p class="detail-text">행 ${d.row}, 열 ${d.col} · (${metric(d.x_mm,2)}, ${metric(d.y_mm,2)}) mm</p><p class="detail-context">전기 지표 1.0 V / 25 °C · 오버레이 X</p><dl class="detail-list">${METRICS.map(([id,name,unit,precision])=>`<dt>${name}</dt><dd>${metric(d.metrics[id],precision)} ${unit}</dd>`).join('')}<dt>실패 검사</dt><dd>${e(d.tests_failed)}</dd><dt>누락 검사</dt><dd>${e(d.tests_missing)}</dd></dl><div class="detail-block"><strong>실패 사유 · 검사 항목</strong><p>${e(testNames(d.fail_reasons))}</p></div><div class="detail-block"><strong>모의 탐지 · 불완전한 검사</strong><p>${e(names(d.detections))}</p></div><div class="detail-block"><strong>생성된 정답 레이블 · 센서로 검증되지 않음</strong><p>${e(names(d.defects))}</p></div>`;
   }
   function renderRows(rows) {
     const pageCount=Math.max(1,Math.ceil(rows.length/PAGE_SIZE)); state.page=Math.min(state.page,pageCount-1);
     const start=state.page*PAGE_SIZE, pageRows=rows.slice(start,start+PAGE_SIZE);
-    $('dieRows').innerHTML=pageRows.map(d=>`<tr class="${d.die_id===state.selected?'is-selected':''}"><th scope="row" class="mono">${e(d.die_id)}</th><td>${BIN[d.bin]}</td>${METRICS.map(([id,, ,precision])=>`<td class="num">${metric(d.metrics[id],precision)}</td>`).join('')}<td class="reason">${e(testNames(d.fail_reasons))}${d.detections.length ? ` · 탐지: ${e(names(d.detections))}` : ''}</td><td><button class="control" type="button" data-die="${e(d.die_id)}" aria-label="${e(d.die_id)} 상세 보기">선택</button></td></tr>`).join('') || '<tr><td colspan="10">일치하는 다이가 없습니다. 검색어나 필터를 변경하세요.</td></tr>';
+    $('dieRows').innerHTML=pageRows.map(d=>`<tr class="${d.die_id===state.selected?'is-selected':''}"><th scope="row" class="mono">${e(d.die_id)}</th><td><span class="verdict ${d.bin}"><i aria-hidden="true"></i>${BIN[d.bin]}</span></td>${METRICS.map(([id,, ,precision])=>`<td class="num">${metric(d.metrics[id],precision)}</td>`).join('')}<td class="reason">실패 ${e(d.tests_failed)} · 누락 ${e(d.tests_missing)}</td><td><button class="control" type="button" data-die="${e(d.die_id)}" aria-label="${e(d.die_id)} 상세 보기">선택</button></td></tr>`).join('') || '<tr><td colspan="10">일치하는 다이가 없습니다. 필터를 초기화하거나 검색어를 변경하세요.</td></tr>';
     $('pageInfo').textContent=rows.length ? `${start+1}–${Math.min(start+PAGE_SIZE,rows.length)} / ${rows.length} · ${state.page+1} / ${pageCount}쪽` : '0개 기록';
     $('prevPage').disabled=state.page===0; $('nextPage').disabled=state.page>=pageCount-1;
   }
   function select(d, focusDetail=false) {
     if (!d) return; state.selected=d.die_id; draw(); renderDetail(); renderRows(filtered());
     if (focusDetail) { $('detailTitle').setAttribute('tabindex','-1'); $('detailTitle').focus({preventScroll:true}); $('detailTitle').scrollIntoView({block:'nearest'}); }
+  }
+  function resetFilters() {
+    state.filter='all'; state.defect='all'; state.search=''; state.page=0;
+    $('binFilter').value='all'; $('defectFilter').value='all'; $('dieSearch').value='';
+    reconcileSelection(true); render();
   }
   function draw() {
     if (!ctx || !state.data) return;
@@ -118,8 +130,8 @@
     for (const d of dies) {
       const x=300+d.x_mm*2-8,y=300+d.y_mm*2-6;
       if (!visible.has(d.die_id)) ctx.fillStyle='rgba(229,235,226,.55)';
-      else if (state.view==='truth') ctx.fillStyle=d.defects.length ? '#963f34' : d.detections.length ? '#276449' : 'rgba(245,249,243,.74)';
-      else ctx.fillStyle=d.bin==='pass'?'rgba(39,100,73,.52)':d.bin==='fail'?'#963f34':'#916414';
+      else if (state.view==='truth') ctx.fillStyle=d.defects.length ? '#963f34' : d.detections.length ? '#276449' : 'rgba(245,249,243,.70)';
+      else ctx.fillStyle=d.bin==='pass'?'rgba(232,242,232,.70)':d.bin==='fail'?'#963f34':'#916414';
       ctx.fillRect(x,y,16,12);
       if (visible.has(d.die_id) && state.view==='truth' && d.defects.length && d.detections.length) {ctx.fillStyle='#276449';ctx.fillRect(x+11,y,5,12);}
     }
@@ -147,11 +159,13 @@
     });
     select(options[0]||current);
   });
-  $('waferButtons').addEventListener('click',event=>{const button=event.target.closest('[data-wafer]');if (!button)return;state.wafer=Number(button.dataset.wafer);state.selected=null;state.page=0;render();});
-  document.querySelector('.view-switch').addEventListener('click',event=>{const button=event.target.closest('[data-view]');if(!button)return;state.view=button.dataset.view;state.page=0;state.selected=null;render();});
-  $('binFilter').addEventListener('change',event=>{state.filter=event.target.value;state.page=0;if(!wafer().dies.some(d=>d.die_id===state.selected&&matches(d)))state.selected=null;render();});
-  $('defectFilter').addEventListener('change',event=>{state.defect=event.target.value;state.page=0;state.selected=null;render();});
-  $('dieSearch').addEventListener('input',event=>{state.search=event.target.value.trim().toLowerCase();state.page=0;if(!wafer().dies.some(d=>d.die_id===state.selected&&matches(d)))state.selected=null;render();});
+  $('waferButtons').addEventListener('click',event=>{const button=event.target.closest('[data-wafer]');if (!button)return;state.wafer=Number(button.dataset.wafer);state.page=0;reconcileSelection(true);render();});
+  document.querySelector('.view-switch').addEventListener('click',event=>{const button=event.target.closest('[data-view]');if(!button)return;state.view=button.dataset.view;state.page=0;reconcileSelection(false);render();});
+  $('binFilter').addEventListener('change',event=>{state.filter=event.target.value;state.page=0;reconcileSelection(false);render();});
+  $('defectFilter').addEventListener('change',event=>{state.defect=event.target.value;state.page=0;reconcileSelection(false);render();});
+  $('dieSearch').addEventListener('input',event=>{state.search=event.target.value.trim().toLowerCase();state.page=0;reconcileSelection(false);render();});
+  $('resetFilters').addEventListener('click',resetFilters);
+  $('dieDetail').addEventListener('click',event=>{if(event.target.closest('[data-reset]'))resetFilters();});
   $('dieRows').addEventListener('click',event=>{const button=event.target.closest('[data-die]');if(button)select(wafer().dies.find(d=>d.die_id===button.dataset.die),true);});
   $('prevPage').addEventListener('click',()=>{state.page--;renderRows(filtered());});
   $('nextPage').addEventListener('click',()=>{state.page++;renderRows(filtered());});

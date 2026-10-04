@@ -1,0 +1,68 @@
+{
+  "status": "accepted",
+  "checked_at": "2026-10-04T13:35:00.396882+09:00",
+  "base": "0fb4db1ef7592694fde8f3516d191259b1f91380",
+  "scope": "Synthetic inspection UI polish only; data, geometry and primary science unchanged",
+  "workflow": [
+    "Impeccable inline polish coaching",
+    "Lovable refinement",
+    "Actual 21st Origin UI MIT table source supplied to Lovable for final pass"
+  ],
+  "provider": {
+    "project_id": "64613203-b9eb-4f38-ace6-06029924a4ee",
+    "stage1_commit": "d2473dae804c5f93477fbbd61041bdbf3221127c",
+    "stage2_commit": "28bbee5b858a891db1ae47568999acb6b6d51b7f",
+    "stage2_message": "umsg_01m42js4ayfy2t9rhb9sy415j7",
+    "credits": 7,
+    "source": "Actual Origin UI table MIT source supplied inline to second Lovable pass; no paid 21st upgrade"
+  },
+  "design_source": "https://21st.dev/@originui/components/table/data-table-with-filters-made-with-tan-stack-table",
+  "checks": {
+    "failures": [],
+    "results": [
+      {
+        "width": 360,
+        "overflow": 0,
+        "canvas": 330,
+        "observed_scratch": 34,
+        "ground_truth_scratch": 40,
+        "errors": []
+      },
+      {
+        "width": 1440,
+        "overflow": 0,
+        "canvas": 710,
+        "observed_scratch": 34,
+        "ground_truth_scratch": 40,
+        "errors": []
+      }
+    ],
+    "json_sha256": "bcfedbb05fe1969d9b3d58fabea964414a9bd8431ba9abcd29b977e3ef2a3638",
+    "recovery_attempts": 2
+  },
+  "visual_review": {
+    "disposition": "ship",
+    "reviewer": "coordinator inline; worker subagents disabled",
+    "rounds": 1,
+    "viewports": [
+      360,
+      1440
+    ],
+    "fixes": []
+  },
+  "frozen_files_sha256": {
+    "RESEARCH_PROTOCOL.md": "45e04ba3feea0d0fea1ccf236530ee7168f061753d82c1bc8f9d0fc3dd473ff9",
+    "research-manifest.json": "8a9c760c6da7db8dcd769992cf73a255df9b1cad9f8e7d60b8fd7336f772b16c",
+    "mockup/index.html": "65bb3499fce138c1af7ec684766da6ccd1e675ef08ec24e88f8fbf85d25eaa76",
+    "web/app.js": "62a8552760b4a462842bcdc6d70d4b375cb8225b99356513649b95316c7ca216",
+    "web/app.css": "5b2f2efe96118224d8142b66e7cb9906e709f41d2b9ffdabb9c86de530b8d218",
+    "web/index.html": "6f922dbafebf68175b0b7ab24eda703022ee5d7dd654b9e1a180aea6c092cecc",
+    "web/data/snapshot.json": "644d7eaa5238e5a7bbd04ac2eec60f220dca54ac922f3cd7c8a8b4319c00a5dd",
+    "web/data/synthetic-wafers.json": "bcfedbb05fe1969d9b3d58fabea964414a9bd8431ba9abcd29b977e3ef2a3638",
+    "web/data/synthetic-wafers.zip": "326b0ae2f60c9f3e8c7daec9283ebc60a9b2f86dc7ba26214d1fae52700a57a6"
+  },
+  "limitations": [
+    "Chromium-only interaction/visual verification",
+    "Authored synthetic data remains uncalibrated and is not fabrication yield evidence"
+  ]
+}

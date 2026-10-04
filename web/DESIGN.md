@@ -27,6 +27,10 @@ components:
     backgroundColor: "{colors.primary}"
     textColor: "{colors.surface}"
     height: "44px"
+  wafer-selected:
+    backgroundColor: "transparent"
+    textColor: "{colors.ink}"
+    borderBottomColor: "{colors.primary}"
   button-default:
     backgroundColor: "{colors.surface}"
     textColor: "{colors.ink}"
@@ -67,7 +71,10 @@ Titles stay compact and controls readable; no decorative display typography is a
 
 Desktop uses a large wafer to the left and die details to the right. At 850px the
 columns stack; at 600px the filters and downloads stack. The die table scrolls inside
-its labeled container, without document overflow. Tested widths are 360 and 1440px.
+its labeled container with a 440px height ceiling, pinned headers and a pinned die ID
+column. It has no document overflow. Tested widths are 360 and 1440px, including 200%
+zoom reflow. Compact summary text precedes the map; long reference material uses
+native disclosures.
 
 ## Elevation & Depth
 
@@ -81,11 +88,19 @@ use modest corners and 44px minimum height. Selected dies use a dual map outline
 
 ## Components
 
-Wafer selection uses pressed native buttons. Filters use labeled native selects.
+Wafer selection uses pressed native buttons with a green underline and scenario
+text. The display-mode switch retains its filled selected state. Filters use labeled native selects.
 Canvas arrow navigation has a textual selected-die description and Enter moves to
 details; each paginated table row has a full-sized selection button. Downloads include
 an exact-byte JSON export and a deterministic raw-data archive. Catalog entries retain
 source links, and loading failures expose a retry button.
+
+The first matching failed die is selected on arrival and wafer changes without moving
+keyboard focus. Filter changes reconcile the inspector with visible results. Empty
+results offer a filter reset. Table rows summarize failed/missing test counts; complete
+test names remain in die details. Quiet separators, aligned numeric cells and selected
+row backgrounds adapt the actual Origin UI MIT table component consulted through
+[21st](https://21st.dev/@originui/components/table/data-table-with-filters-made-with-tan-stack-table).
 
 **The Oracle Boundary Rule.** Generated labels are visibly named as such. Blinded
 agent/model inputs come from `observed-only.json`, not the joined viewer export.

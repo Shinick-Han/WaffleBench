@@ -16,11 +16,16 @@ for(const width of [360,1440]){
  await page.goto(base,{waitUntil:'networkidle'});
  await page.locator('#app').waitFor({state:'visible'});
  const first=await page.locator('#filterCount').innerText();
- check(first.includes('1,305')&&first.includes('불량 14'),width+' first wafer counts');
+ check(first==='표시 1,305 / 1,305',width+' first wafer counts');
+ check((await page.locator('#dieDetail').innerText()).includes(data.wafers[0].dies.find(d=>d.bin==='fail').die_id),width+' first failure automatically selected');
+ check(await page.evaluate(()=>document.activeElement===document.body),width+' initial selection does not steal focus');
  check(await page.locator('.notice').innerText()==='합성 웨이퍼 검사 데이터 · 실제 팹 측정·기존 연구 결과 아님',width+' provenance notice');
  for(let w=0;w<3;w++){
   await page.locator(`[data-wafer="${w}"]`).click();
-  check((await page.locator('#filterCount').innerText()).includes('불량 '+data.wafers[w].summary.fail),width+' wafer summary '+w);
+  const summary=await page.locator('#summaryMetrics strong').allTextContents();
+  const expectedSummary=['total','pass','fail','inconclusive','defect_dies','detected_dies'].map(k=>String(data.wafers[w].summary[k]));
+  check(JSON.stringify(summary)===JSON.stringify(expectedSummary),width+' exact wafer summary '+w);
+  check(await page.evaluate(()=>document.activeElement.matches('[data-wafer]')),width+' wafer selection keeps control focus');
   await page.selectOption('#binFilter','fail');
   const rowIDs=await page.locator('#dieRows tr th').allTextContents();
   const expected=data.wafers[w].dies.filter(d=>d.bin==='fail').slice(0,25).map(d=>d.die_id);
@@ -49,14 +54,29 @@ for(const width of [360,1440]){
  await page.fill('#dieSearch','no-match');
  check((await page.locator('#dieRows').innerText()).includes('일치하는 다이가 없습니다'),width+' empty search');
  check(await page.locator('#nextPage').isDisabled()&&await page.locator('#prevPage').isDisabled(),width+' empty paging');
- await page.fill('#dieSearch','');
+ check((await page.locator('#dieDetail').innerText()).includes('일치하는 다이가 없습니다'),width+' empty inspector reconciled');
+ await page.locator('#resetFilters').click();
+ check(await page.inputValue('#dieSearch')===''&&await page.inputValue('#binFilter')==='all'&&await page.inputValue('#defectFilter')==='all',width+' reset restores filters');
  await page.locator('#nextPage').click();
  check((await page.locator('#pageInfo').innerText()).startsWith('26–50'),width+' paging');
  await page.locator('#prevPage').click();
  const downloadEvent=page.waitForEvent('download');await page.locator('#download').click();
  const download=await downloadEvent;const downloaded=readFileSync(await download.path());
  check(downloaded.equals(raw),width+' full JSON export exact bytes');
+ const zip=page.locator('a[download][href="./data/synthetic-wafers.zip"]');
+ check(await zip.count()===1,width+' archive download available');
+ const archiveEvent=page.waitForEvent('download');await zip.click();
+ const archive=await archiveEvent;
+ check(readFileSync(await archive.path()).equals(readFileSync(dataPath.replace(/\.json$/,'.zip'))),width+' archive export exact bytes');
+ const placeholder=await page.locator('#dieSearch').getAttribute('placeholder');
+ check(data.wafers[0].dies.some(d=>placeholder.includes(d.die_id)),width+' example search ID exists');
  await page.locator('.catalog summary').click();
+ const scroll=await page.locator('.record-scroll').evaluate(n=>({height:n.clientHeight,content:n.scrollHeight,sticky:getComputedStyle(n.querySelector('thead th')).position,pinnedID:getComputedStyle(n.querySelector('tbody th')).position}));
+ check(scroll.content>scroll.height&&scroll.sticky==='sticky',width+' bounded record table with sticky headers');
+ check(scroll.pinnedID==='sticky',width+' die IDs pinned while scrolling');
+ await page.evaluate(()=>document.body.style.zoom='2');
+ check(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),width+' 200 percent zoom reflow');
+ await page.evaluate(()=>document.body.style.zoom='');
  check(await page.locator('#catalogRows tr').count()===34,width+' research catalog complete');
  const dims=await page.evaluate(()=>({overflow:document.documentElement.scrollWidth-innerWidth,canvas:document.querySelector('canvas').getBoundingClientRect().width}));
  check(dims.overflow<=0,width+' document overflow');
@@ -65,6 +85,7 @@ for(const width of [360,1440]){
  await page.locator('.catalog summary').click();
  if(process.env.CAPTURE){
   await page.locator('[data-wafer="1"]').click();
+  await page.locator('.record-scroll').evaluate(n=>{n.scrollLeft=0;n.scrollTop=0});
   await page.screenshot({path:out+'/'+width+'-overview.png',fullPage:true});
   await page.locator('#waferMap').screenshot({path:out+'/'+width+'-wafer.png'});
  }
