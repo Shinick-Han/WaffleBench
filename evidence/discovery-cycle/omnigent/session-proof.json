@@ -1,0 +1,9 @@
+{
+  "status": "completed",
+  "session_id": "93ce9d9f48e9453d88898c13ebe8f83d",
+  "agent": "discovery_supervisor",
+  "finished_at": "2026-10-04T11:55:24+00:00",
+  "error": null,
+  "raw_local_only": true,
+  "verification_status": "passed"
+}

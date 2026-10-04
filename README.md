@@ -1,4 +1,38 @@
-# falsify-lab
+# WaffleBench
+
+**An agentic lab for smarter wafer inspection.** WaffleBench is the Hack Nation 07
+submission name for this repository (`falsify-lab`). Package names, module names and public
+URLs are unchanged.
+
+WaffleBench treats each expensive precision review after optical screening as an
+experiment: question, evidence, hypothesis, competing tests under a budget, result, and an
+updated decision. It is a research workflow, not a claim of superiority over commercial
+inspection tools. Start with [`SUBMISSION_EN.md`](SUBMISSION_EN.md), which traces the loop
+with actual result IDs and receipts:
+
+- **Inner loop (per lot).** A frozen numerical planner chooses each next review site.
+  Omnigent coordinates role-limited specialists and carries result IDs. Recorded session
+  `ef847c8a38b549ce861f69998966858c` ran two paid reviews (`ir_71b91846930cb176`,
+  `ir_6573c8a47872df63`) for 26.0666 of 120 CU ([`INSPECTION_LIVE_RESULTS.md`](INSPECTION_LIVE_RESULTS.md)).
+- **Outer loop (per study).** The human coordinator and Claude Code workers revised the
+  study between preregistered campaigns. Omnigent did not make these revisions. On 100 fresh
+  synthetic lots at 360 CU, the route-aware planner confirmed 29.33 vs 27.38 defects of
+  interest: +7.12%, paired difference +1.95, 95% CI [1.46, 2.43]
+  ([`INSPECTION_V3_RESULTS.md`](INSPECTION_V3_RESULTS.md)). The 30% cost-saving target
+  failed (7.29%). The follow-up model swap and the deeper planner also failed and were not promoted.
+- **Real photographs (VisA PCB, not SEM).** PCB2 recall rose from 51% to 72% and false alarms fell from 11% to 5%. On a fixed
+  PCB3 replication, recall rose from 44% to 55% and false alarms fell from 8/101 to 3/101, but 45 of 100 defects were still missed.
+
+Agent decisions, tools and policy boundaries are documented in
+[`AGENTS_AND_POLICIES.md`](AGENTS_AND_POLICIES.md). The separate Omnigent diagnostic cycle is completed and verified: agent-authored hypotheses, two study choices, two computations and result-bound updates. See [`DISCOVERY_CYCLE_RESULTS.md`](DISCOVERY_CYCLE_RESULTS.md). It is posthoc analysis, not new performance evidence. The two-minute
+demo storyboard is [`CHALLENGE_DEMO_PLAN.md`](CHALLENGE_DEMO_PLAN.md). The
+[inspection workbench](https://shinick-han.github.io/falsify-lab-hacknation7/inspection-evidence.html)
+separates synthetic wafer evidence, real PCB photographs, and recorded agent coordination.
+
+## Supporting study: circuit-model falsification
+
+The following setup and original study evidence are preserved for reproduction.
+
 
 Find the PVT conditions (synthetic process condition × VDD × temperature) where a small,
 frozen CMOS inverter delay model fails against ngspice, and compare rules that choose the

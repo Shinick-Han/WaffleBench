@@ -64,7 +64,7 @@ These results are not averaged or multiplied into a single AI improvement rate. 
 
 ## Recommended presentation story
 
-A process engineer has a candidate map from fast inspection and limited precision review time. There are already classification scores, but candidates of the same pattern may be confirmed repeatedly, or a new process anomaly may be judged normal. Falsify Lab chooses the most valuable next inspection given current evidence and an inspection that could refute existing judgments. It takes in confirmed results, updates priorities, and compares against a fixed plan with the same budget. The engineer can see which locations were inspected and why, what was confirmed, and where there is still no evidence.
+A process engineer has a candidate map from fast inspection and limited precision review time. There are already classification scores, but candidates of the same pattern may be confirmed repeatedly, or a new process anomaly may be judged normal. WaffleBench chooses the most valuable next inspection given current evidence and an inspection that could refute existing judgments. It takes in confirmed results, updates priorities, and compares against a fixed plan with the same budget. The engineer can see which locations were inspected and why, what was confirmed, and where there is still no evidence.
 
 The key scene of this story is not coloring uncertain points but **inspection action → new observation → disagreement with the existing judgment → change of the next inspection**. The scene of catching a confident misjudgment in images of a new type or under data shift connects to Falsify's falsification theme.
 

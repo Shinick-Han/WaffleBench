@@ -1,0 +1,1653 @@
+{
+  "status": "passed",
+  "checked_at": "2026-10-04T12:08:28+00:00",
+  "checks": [
+    {
+      "name": "core finalized without blocked admission",
+      "passed": true
+    },
+    {
+      "name": "two-experiment cap",
+      "passed": true
+    },
+    {
+      "name": "two plans, results and updates",
+      "passed": true
+    },
+    {
+      "name": "plan 1 competing tests",
+      "passed": true
+    },
+    {
+      "name": "plan 1 observed evidence only",
+      "passed": true
+    },
+    {
+      "name": "result 1 selected test",
+      "passed": true
+    },
+    {
+      "name": "result 1 recomputed values",
+      "passed": true
+    },
+    {
+      "name": "result 1 scope disclosure",
+      "passed": true
+    },
+    {
+      "name": "update 1 binds real result",
+      "passed": true
+    },
+    {
+      "name": "update 1 proposal is unexecuted",
+      "passed": true
+    },
+    {
+      "name": "plan 2 competing tests",
+      "passed": true
+    },
+    {
+      "name": "plan 2 observed evidence only",
+      "passed": true
+    },
+    {
+      "name": "result 2 selected test",
+      "passed": true
+    },
+    {
+      "name": "result 2 recomputed values",
+      "passed": true
+    },
+    {
+      "name": "result 2 scope disclosure",
+      "passed": true
+    },
+    {
+      "name": "update 2 binds real result",
+      "passed": true
+    },
+    {
+      "name": "update 2 proposal is unexecuted",
+      "passed": true
+    },
+    {
+      "name": "SDK workflow completed",
+      "passed": true
+    },
+    {
+      "name": "five accepted ordered delegations",
+      "passed": true
+    },
+    {
+      "name": "dispatch identities match",
+      "passed": true
+    },
+    {
+      "name": "one supervisor finalize tool call",
+      "passed": true
+    },
+    {
+      "name": "exact direct child subtree",
+      "passed": true
+    },
+    {
+      "name": "same-agent conversation reuse 1297d61f8de54d0ea422a192476d2a07",
+      "passed": true
+    },
+    {
+      "name": "direct child 1297d61f8de54d0ea422a192476d2a07",
+      "passed": true
+    },
+    {
+      "name": "child metadata identity 1297d61f8de54d0ea422a192476d2a07",
+      "passed": true
+    },
+    {
+      "name": "ordered child turn mapping 1297d61f8de54d0ea422a192476d2a07",
+      "passed": true
+    },
+    {
+      "name": "allowed child tool discovery__run_experiment",
+      "passed": true
+    },
+    {
+      "name": "child tool success discovery__run_experiment",
+      "passed": true
+    },
+    {
+      "name": "allowed child tool discovery__run_experiment",
+      "passed": true
+    },
+    {
+      "name": "child tool success discovery__run_experiment",
+      "passed": true
+    },
+    {
+      "name": "same-agent conversation reuse a000a3e0fbd94d9a9947929d0497de7d",
+      "passed": true
+    },
+    {
+      "name": "direct child a000a3e0fbd94d9a9947929d0497de7d",
+      "passed": true
+    },
+    {
+      "name": "child metadata identity a000a3e0fbd94d9a9947929d0497de7d",
+      "passed": true
+    },
+    {
+      "name": "ordered child turn mapping a000a3e0fbd94d9a9947929d0497de7d",
+      "passed": true
+    },
+    {
+      "name": "allowed child tool discovery__read_context",
+      "passed": true
+    },
+    {
+      "name": "child tool success discovery__read_context",
+      "passed": true
+    },
+    {
+      "name": "allowed child tool discovery__record_plan",
+      "passed": true
+    },
+    {
+      "name": "child tool success discovery__record_plan",
+      "passed": true
+    },
+    {
+      "name": "allowed child tool discovery__read_context",
+      "passed": true
+    },
+    {
+      "name": "child tool success discovery__read_context",
+      "passed": true
+    },
+    {
+      "name": "allowed child tool discovery__record_update",
+      "passed": true
+    },
+    {
+      "name": "child tool success discovery__record_update",
+      "passed": true
+    },
+    {
+      "name": "allowed child tool discovery__record_plan",
+      "passed": true
+    },
+    {
+      "name": "child tool success discovery__record_plan",
+      "passed": true
+    },
+    {
+      "name": "allowed child tool discovery__read_context",
+      "passed": true
+    },
+    {
+      "name": "child tool success discovery__read_context",
+      "passed": true
+    },
+    {
+      "name": "allowed child tool discovery__record_update",
+      "passed": true
+    },
+    {
+      "name": "child tool success discovery__record_update",
+      "passed": true
+    },
+    {
+      "name": "cycle 1 exact specialist calls",
+      "passed": true
+    },
+    {
+      "name": "cycle 1 SDK plan arguments match ledger",
+      "passed": true
+    },
+    {
+      "name": "cycle 1 SDK plan matches ledger",
+      "passed": true
+    },
+    {
+      "name": "cycle 1 SDK experiment matches ledger",
+      "passed": true
+    },
+    {
+      "name": "cycle 1 SDK update matches ledger",
+      "passed": true
+    },
+    {
+      "name": "cycle 1 SDK update arguments match ledger",
+      "passed": true
+    },
+    {
+      "name": "cycle 2 exact specialist calls",
+      "passed": true
+    },
+    {
+      "name": "cycle 2 SDK plan arguments match ledger",
+      "passed": true
+    },
+    {
+      "name": "cycle 2 SDK plan matches ledger",
+      "passed": true
+    },
+    {
+      "name": "cycle 2 SDK experiment matches ledger",
+      "passed": true
+    },
+    {
+      "name": "cycle 2 SDK update matches ledger",
+      "passed": true
+    },
+    {
+      "name": "cycle 2 SDK update arguments match ledger",
+      "passed": true
+    },
+    {
+      "name": "SDK finalization matches ledger",
+      "passed": true
+    },
+    {
+      "name": "no extra specialist mutations",
+      "passed": true
+    },
+    {
+      "name": "distinct diagnostic studies",
+      "passed": true
+    }
+  ],
+  "failure_reasons": [],
+  "head_hash": "83ce9131e04a1ac53e3ac24030c3189c2f5627bf46c38699c52de65f1e6af77a",
+  "input_sha256": "ffae6077a5e96e237ad1ad4c5887cffa6e382529bfdace50cf3ae2da44c366ee",
+  "events_sha256": "749cfca96e04575a7f5881b637d8937bc46475ed836316662356b72d23f33f04",
+  "delegations": [
+    {
+      "index": 1,
+      "agent": "discovery_analyst",
+      "output_agent": "discovery_analyst",
+      "child_session_id": "a000a3e0fbd94d9a9947929d0497de7d",
+      "title": "wafflebench-analysis",
+      "accepted": true,
+      "sdk_call_id": "toolu_01Hifj4N76PATBr46yDqXhGi",
+      "record_item_ids": [
+        "4cebe444b097431290b7472c0daca716",
+        "1955caae02d341e09d57376d7ddafb6e"
+      ]
+    },
+    {
+      "index": 2,
+      "agent": "discovery_experimenter",
+      "output_agent": "discovery_experimenter",
+      "child_session_id": "1297d61f8de54d0ea422a192476d2a07",
+      "title": "wafflebench-runs",
+      "accepted": true,
+      "sdk_call_id": "toolu_017BvEop8jziCRY5QSsL6tst",
+      "record_item_ids": [
+        "5253254d4fc2469a85aae6ac1685a95d"
+      ]
+    },
+    {
+      "index": 3,
+      "agent": "discovery_analyst",
+      "output_agent": "discovery_analyst",
+      "child_session_id": "a000a3e0fbd94d9a9947929d0497de7d",
+      "title": "wafflebench-analysis",
+      "accepted": true,
+      "sdk_call_id": "toolu_01XYhruxZvqzqnsKq6pq3RJM",
+      "record_item_ids": [
+        "460ea22f330c4510ab91e132778cc6d6"
+      ]
+    },
+    {
+      "index": 4,
+      "agent": "discovery_experimenter",
+      "output_agent": "discovery_experimenter",
+      "child_session_id": "1297d61f8de54d0ea422a192476d2a07",
+      "title": "wafflebench-runs",
+      "accepted": true,
+      "sdk_call_id": "toolu_01RbqGjy5j9apU9AHPsTvWLG",
+      "record_item_ids": [
+        "95f32dfd40d74bc9af1960e575721a23"
+      ]
+    },
+    {
+      "index": 5,
+      "agent": "discovery_analyst",
+      "output_agent": "discovery_analyst",
+      "child_session_id": "a000a3e0fbd94d9a9947929d0497de7d",
+      "title": "wafflebench-analysis",
+      "accepted": true,
+      "sdk_call_id": "toolu_01XN4E7ZrTN18rZoG5FxjQpG",
+      "record_item_ids": [
+        "10435249ac7e4aa5b5acd9ad5f138f66"
+      ]
+    }
+  ],
+  "specialist_calls": [
+    {
+      "agent": "discovery_experimenter",
+      "delegation": 2,
+      "tool": "run_experiment",
+      "arguments": {
+        "plan_id": "plan_0b596e830db41aec"
+      },
+      "output": {
+        "replayed": false,
+        "result": {
+          "elapsed_s": 8.9899986051023e-05,
+          "evaluation_label": "privileged posthoc oracle evaluation over immutable frozen ledgers; never production selection, never a new held-out gain",
+          "input_sha256": "ffae6077a5e96e237ad1ad4c5887cffa6e382529bfdace50cf3ae2da44c366ee",
+          "new_heldout_gain": false,
+          "plan_id": "plan_0b596e830db41aec",
+          "privileged_posthoc_oracle": true,
+          "production_selection": false,
+          "result_id": "res_aed06de352d5a8af",
+          "test_id": "miss_partition",
+          "values": {
+            "labels": {
+              "confirmed": "selected latent DOI the paid review reported positive",
+              "sensor_missed": "selected latent DOI reported negative (sensor error)",
+              "unresolved": "all attempts failed or missing; unknown, never a physical negative"
+            },
+            "overall": {
+              "confirmed_share_of_selected_doi": 0.9083307525549705,
+              "conservation": {
+                "latent=unadmitted+unselected+selected": true,
+                "selected=confirmed+sensor_missed+unresolved": true
+              },
+              "counts": {
+                "latent_doi": 27260,
+                "missed_candidate_doi": 16248,
+                "never_optically_admitted_doi": 7783,
+                "selected_candidate_doi": 3229,
+                "selected_latent_doi": 3229,
+                "sensor_missed_doi": 280,
+                "tp_reported_positive": 2933,
+                "unresolved_doi": 16
+              },
+              "mean_per_lot": {
+                "latent_doi": 272.6,
+                "missed_candidate_doi": 162.48,
+                "never_optically_admitted_doi": 77.83,
+                "selected_candidate_doi": 32.29,
+                "selected_latent_doi": 32.29,
+                "sensor_missed_doi": 2.8,
+                "tp_reported_positive": 29.33,
+                "unresolved_doi": 0.16
+              },
+              "optical_recall_ceiling": 0.714490095377843,
+              "selected_share_of_latent": 0.11845194424064563
+            },
+            "per_scenario": {
+              "low_contrast": {
+                "confirmed_share_of_selected_doi": 0.8942307692307693,
+                "conservation": {
+                  "latent=unadmitted+unselected+selected": true,
+                  "selected=confirmed+sensor_missed+unresolved": true
+                },
+                "counts": {
+                  "latent_doi": 5071,
+                  "missed_candidate_doi": 995,
+                  "never_optically_admitted_doi": 3556,
+                  "selected_candidate_doi": 520,
+                  "selected_latent_doi": 520,
+                  "sensor_missed_doi": 48,
+                  "tp_reported_positive": 465,
+                  "unresolved_doi": 7
+                },
+                "mean_per_lot": {
+                  "latent_doi": 253.55,
+                  "missed_candidate_doi": 49.75,
+                  "never_optically_admitted_doi": 177.8,
+                  "selected_candidate_doi": 26.0,
+                  "selected_latent_doi": 26.0,
+                  "sensor_missed_doi": 2.4,
+                  "tp_reported_positive": 23.25,
+                  "unresolved_doi": 0.35
+                },
+                "optical_recall_ceiling": 0.29875764149083023,
+                "selected_share_of_latent": 0.10254387694734766
+              },
+              "novel_cluster": {
+                "confirmed_share_of_selected_doi": 0.8954802259887006,
+                "conservation": {
+                  "latent=unadmitted+unselected+selected": true,
+                  "selected=confirmed+sensor_missed+unresolved": true
+                },
+                "counts": {
+                  "latent_doi": 6620,
+                  "missed_candidate_doi": 5228,
+                  "never_optically_admitted_doi": 684,
+                  "selected_candidate_doi": 708,
+                  "selected_latent_doi": 708,
+                  "sensor_missed_doi": 70,
+                  "tp_reported_positive": 634,
+                  "unresolved_doi": 4
+                },
+                "mean_per_lot": {
+                  "latent_doi": 331.0,
+                  "missed_candidate_doi": 261.4,
+                  "never_optically_admitted_doi": 34.2,
+                  "selected_candidate_doi": 35.4,
+                  "selected_latent_doi": 35.4,
+                  "sensor_missed_doi": 3.5,
+                  "tp_reported_positive": 31.7,
+                  "unresolved_doi": 0.2
+                },
+                "optical_recall_ceiling": 0.8966767371601209,
+                "selected_share_of_latent": 0.10694864048338369
+              },
+              "nuisance_heavy": {
+                "confirmed_share_of_selected_doi": 0.9143686502177069,
+                "conservation": {
+                  "latent=unadmitted+unselected+selected": true,
+                  "selected=confirmed+sensor_missed+unresolved": true
+                },
+                "counts": {
+                  "latent_doi": 5020,
+                  "missed_candidate_doi": 3856,
+                  "never_optically_admitted_doi": 475,
+                  "selected_candidate_doi": 689,
+                  "selected_latent_doi": 689,
+                  "sensor_missed_doi": 58,
+                  "tp_reported_positive": 630,
+                  "unresolved_doi": 1
+                },
+                "mean_per_lot": {
+                  "latent_doi": 251.0,
+                  "missed_candidate_doi": 192.8,
+                  "never_optically_admitted_doi": 23.75,
+                  "selected_candidate_doi": 34.45,
+                  "selected_latent_doi": 34.45,
+                  "sensor_missed_doi": 2.9,
+                  "tp_reported_positive": 31.5,
+                  "unresolved_doi": 0.05
+                },
+                "optical_recall_ceiling": 0.9053784860557769,
+                "selected_share_of_latent": 0.13725099601593627
+              },
+              "process_shift": {
+                "confirmed_share_of_selected_doi": 0.9159935379644588,
+                "conservation": {
+                  "latent=unadmitted+unselected+selected": true,
+                  "selected=confirmed+sensor_missed+unresolved": true
+                },
+                "counts": {
+                  "latent_doi": 5565,
+                  "missed_candidate_doi": 2390,
+                  "never_optically_admitted_doi": 2556,
+                  "selected_candidate_doi": 619,
+                  "selected_latent_doi": 619,
+                  "sensor_missed_doi": 52,
+                  "tp_reported_positive": 567,
+                  "unresolved_doi": 0
+                },
+                "mean_per_lot": {
+                  "latent_doi": 278.25,
+                  "missed_candidate_doi": 119.5,
+                  "never_optically_admitted_doi": 127.8,
+                  "selected_candidate_doi": 30.95,
+                  "selected_latent_doi": 30.95,
+                  "sensor_missed_doi": 2.6,
+                  "tp_reported_positive": 28.35,
+                  "unresolved_doi": 0.0
+                },
+                "optical_recall_ceiling": 0.540700808625337,
+                "selected_share_of_latent": 0.11123090745732254
+              },
+              "stationary": {
+                "confirmed_share_of_selected_doi": 0.9191919191919192,
+                "conservation": {
+                  "latent=unadmitted+unselected+selected": true,
+                  "selected=confirmed+sensor_missed+unresolved": true
+                },
+                "counts": {
+                  "latent_doi": 4984,
+                  "missed_candidate_doi": 3779,
+                  "never_optically_admitted_doi": 512,
+                  "selected_candidate_doi": 693,
+                  "selected_latent_doi": 693,
+                  "sensor_missed_doi": 52,
+                  "tp_reported_positive": 637,
+                  "unresolved_doi": 4
+                },
+                "mean_per_lot": {
+                  "latent_doi": 249.2,
+                  "missed_candidate_doi": 188.95,
+                  "never_optically_admitted_doi": 25.6,
+                  "selected_candidate_doi": 34.65,
+                  "selected_latent_doi": 34.65,
+                  "sensor_missed_doi": 2.6,
+                  "tp_reported_positive": 31.85,
+                  "unresolved_doi": 0.2
+                },
+                "optical_recall_ceiling": 0.8972712680577849,
+                "selected_share_of_latent": 0.13904494382022473
+              }
+            }
+          },
+          "values_sha256": "ccd37191897d508b70776f312f9de1bacbb3252bae63e3967b2a0127b74ec3f2"
+        }
+      },
+      "sdk_call_id": "toolu_015BydP4h7rMivzcsKhMgiig",
+      "record_item_ids": [
+        "75a555aa71554df5af680c6d25dc7ff4",
+        "fd48a6243c684138a9d77d8571036c15"
+      ]
+    },
+    {
+      "agent": "discovery_experimenter",
+      "delegation": 4,
+      "tool": "run_experiment",
+      "arguments": {
+        "plan_id": "plan_f7708d977d1d9f5a"
+      },
+      "output": {
+        "replayed": false,
+        "result": {
+          "elapsed_s": 9.240000508725643e-05,
+          "evaluation_label": "privileged posthoc oracle evaluation over immutable frozen ledgers; never production selection, never a new held-out gain",
+          "input_sha256": "ffae6077a5e96e237ad1ad4c5887cffa6e382529bfdace50cf3ae2da44c366ee",
+          "new_heldout_gain": false,
+          "plan_id": "plan_f7708d977d1d9f5a",
+          "privileged_posthoc_oracle": true,
+          "production_selection": false,
+          "result_id": "res_13e4a5ad1338e30f",
+          "test_id": "capacity_bound",
+          "values": {
+            "authored_min_fees_cu": {
+              "budget": 360.0,
+              "first_review": 17.0,
+              "later_review": 9.0,
+              "retry_reserve": 4.0
+            },
+            "bound_matches_recorded": true,
+            "charged_at_bound_cu": 350.0,
+            "current_mean_visits_per_lot": 34.65,
+            "current_review_fraction_of_bound": 0.9118421052631579,
+            "dies_reviewed_fraction": 0.008850574712643678,
+            "labels": {
+              "bound": "loose optimistic bound: zero movement, one wafer, no failures; not an achievable planner, not factory throughput",
+              "visit_slack_vs_bound": "visits, not achievable gain or confirmed DOI"
+            },
+            "min_cu_review_every_candidate_per_lot": 7073.07,
+            "min_cu_review_every_die_per_lot": 35259.0,
+            "optimistic_review_bound": 38,
+            "per_scenario": {
+              "low_contrast": {
+                "extra_wafer_loads_cu": 14.8,
+                "mean_visits_per_lot": 32.7,
+                "retry_cu": 9.0,
+                "review_fraction_of_bound": 0.8605263157894738,
+                "stage_movement_cu_above_minimum": 26.170741367866775,
+                "unspent_cu": 7.729258632133226
+              },
+              "novel_cluster": {
+                "extra_wafer_loads_cu": 0.0,
+                "mean_visits_per_lot": 35.65,
+                "retry_cu": 9.8,
+                "review_fraction_of_bound": 0.9381578947368421,
+                "stage_movement_cu_above_minimum": 13.422267616137708,
+                "unspent_cu": 7.927732383862289
+              },
+              "nuisance_heavy": {
+                "extra_wafer_loads_cu": 0.40000000000000036,
+                "mean_visits_per_lot": 35.3,
+                "retry_cu": 8.6,
+                "review_fraction_of_bound": 0.9289473684210525,
+                "stage_movement_cu_above_minimum": 17.369315809452473,
+                "unspent_cu": 7.930684190547498
+              },
+              "process_shift": {
+                "extra_wafer_loads_cu": 4.4,
+                "mean_visits_per_lot": 34.25,
+                "retry_cu": 7.8,
+                "review_fraction_of_bound": 0.9013157894736842,
+                "stage_movement_cu_above_minimum": 23.421708975863954,
+                "unspent_cu": 8.128291024136042
+              },
+              "stationary": {
+                "extra_wafer_loads_cu": 0.8000000000000007,
+                "mean_visits_per_lot": 35.35,
+                "retry_cu": 8.2,
+                "review_fraction_of_bound": 0.9302631578947369,
+                "stage_movement_cu_above_minimum": 17.17931536782097,
+                "unspent_cu": 7.67068463217903
+              }
+            },
+            "unspent_at_bound_cu": 10.0,
+            "visit_slack_vs_bound": 3.3500000000000014
+          },
+          "values_sha256": "b82f87678932fa0c4789c73f73734be08ba89a33bfaa28cce793515c4e7dce05"
+        }
+      },
+      "sdk_call_id": "toolu_015nrNcau79R2V8wD5Lb6Mgx",
+      "record_item_ids": [
+        "ed9edbf93e0a46039dab1bea1c00dc66"
+      ]
+    },
+    {
+      "agent": "discovery_analyst",
+      "delegation": 1,
+      "tool": "read_context",
+      "arguments": {},
+      "output": {
+        "available_test_ids": [
+          "miss_partition",
+          "capacity_bound",
+          "calibration_shift"
+        ],
+        "blocked": false,
+        "budget": {
+          "limit": 2,
+          "remaining": 2,
+          "used": 0
+        },
+        "catalog": [
+          {
+            "available": true,
+            "computation": "read-only sums over overall and per_scenario counts/means; checks both conservation identities exactly on integer counts",
+            "cost": {
+              "cu": 0,
+              "external_calls": 0,
+              "physical_actions": 0,
+              "training_runs": 0
+            },
+            "feasibility": "available: local read-only arithmetic on the copied frozen file",
+            "question": "Where do latent DOI per lot go: never optically admitted, admitted but unselected, or selected (and of those confirmed, sensor-missed or unresolved)?",
+            "test_id": "miss_partition",
+            "title": "Conserved partition of latent DOI"
+          },
+          {
+            "available": true,
+            "computation": "recomputes max n with first + later*(n-1) + retry_reserve <= budget from the authored fees and compares with the recorded visit bound and observed visits",
+            "cost": {
+              "cu": 0,
+              "external_calls": 0,
+              "physical_actions": 0,
+              "training_runs": 0
+            },
+            "feasibility": "available: local read-only arithmetic on the copied frozen file",
+            "question": "How many paid reviews can 360 CU hold at the authored minimum fees, and what fraction of that loose bound do observed visits reach?",
+            "test_id": "capacity_bound",
+            "title": "Optimistic review-capacity bound"
+          },
+          {
+            "available": true,
+            "computation": "count-weighted signed and absolute (mean_p - latent rate) gaps over the five fixed per_scenario calibration_candidates bins, recomputed from n and latent_doi",
+            "cost": {
+              "cu": 0,
+              "external_calls": 0,
+              "physical_actions": 0,
+              "training_runs": 0
+            },
+            "feasibility": "available: local read-only arithmetic on the copied frozen file",
+            "question": "Is the frozen model's probability calibrated against latent truth, and does the gap shift by scenario?",
+            "test_id": "calibration_shift",
+            "title": "Calibration gap by scenario"
+          }
+        ],
+        "completed_results": [],
+        "data_label": "authored numeric synthetic posthoc diagnostic of the frozen v3 cb400_route_full candidate-only ledgers; not SEM-image accuracy, factory throughput, wafer yield, a new held-out gain or a physical experiment",
+        "evaluation_label": "privileged posthoc oracle evaluation over immutable frozen ledgers; never production selection, never a new held-out gain",
+        "event_count": 1,
+        "failed_experiments": [],
+        "finalized": null,
+        "head_hash": "724a19481d72f66cb422c1d58fa0137930cacc4509db3304c50ff580d7a51a44",
+        "input_sha256": "ffae6077a5e96e237ad1ad4c5887cffa6e382529bfdace50cf3ae2da44c366ee",
+        "kind": "discovery_cycle_posthoc",
+        "latest_result_id": null,
+        "latest_result_needs_update": false,
+        "pending_plan": null,
+        "primary": {
+          "baseline_mean": 27.38,
+          "candidate_mean": 29.33,
+          "ci95": [
+            1.46,
+            2.43
+          ],
+          "comparison": "cb400_route_full vs freshly fitted logistic probability-per-cost baseline, 360 CU, 100 paired lots",
+          "metric": "confirmed DOI per lot",
+          "paired_mean_difference": 1.95,
+          "relative_gain_pct": 7.12,
+          "source": "INSPECTION_V3_RESULTS.md preregistered primary (unchanged by this cycle)"
+        },
+        "schema_version": 1
+      },
+      "sdk_call_id": "toolu_01XbpcNB6hu2wK27VRALEVYW",
+      "record_item_ids": [
+        "d5d0c049512d410f9a0cd77b05ea3fd4",
+        "7d3d5c58c8a640988e2ed043394df229"
+      ]
+    },
+    {
+      "agent": "discovery_analyst",
+      "delegation": 1,
+      "tool": "record_plan",
+      "arguments": {
+        "candidates": [
+          "miss_partition",
+          "capacity_bound",
+          "calibration_shift"
+        ],
+        "selected_test_id": "miss_partition",
+        "hypothesis": "Provisional (agent-authored): the dominant loss of latent DOI for cb400_route_full at 360 CU is selection-limited, i.e. most latent DOI that are lost were optically admitted as candidates but not selected for paid review because the review budget runs out, rather than being lost at optical admission or to sensor misses/unresolved reviews after selection. Rejected if the partition shows the largest lost share is 'never optically admitted' or 'selected but sensor-missed/unresolved'.",
+        "expected_learning": "A conserved per-lot partition of latent DOI into never-admitted, admitted-but-unselected, and selected (confirmed / sensor-missed / unresolved), checked by exact integer conservation identities, overall and per scenario. This discriminates between admission-limited, budget/selection-limited, and review-quality-limited bottlenecks in one pass, and indicates whether capacity_bound or calibration_shift is the more informative follow-up.",
+        "reason": "All three candidates cost 0 CU, 0 external calls, 0 physical actions and are feasible as local read-only arithmetic, so the choice rests on expected learning. miss_partition directly tests the bottleneck hypothesis by locating where DOI are lost and includes self-checking conservation identities. capacity_bound only gives a loose optimistic upper bound on review count versus observed visits; it can suggest budget pressure but cannot say whether unreviewed candidates contained DOI. calibration_shift checks probability calibration by scenario, which matters mainly if the losses are in the selected/unselected ranking, so it is a better second step conditional on the partition. Budget is 2 tests, and miss_partition maximizes information for the first.",
+        "evidence_result_ids": []
+      },
+      "output": {
+        "plan": {
+          "candidates": [
+            "miss_partition",
+            "capacity_bound",
+            "calibration_shift"
+          ],
+          "evidence_result_ids": [],
+          "expected_learning": "A conserved per-lot partition of latent DOI into never-admitted, admitted-but-unselected, and selected (confirmed / sensor-missed / unresolved), checked by exact integer conservation identities, overall and per scenario. This discriminates between admission-limited, budget/selection-limited, and review-quality-limited bottlenecks in one pass, and indicates whether capacity_bound or calibration_shift is the more informative follow-up.",
+          "hypothesis": "Provisional (agent-authored): the dominant loss of latent DOI for cb400_route_full at 360 CU is selection-limited, i.e. most latent DOI that are lost were optically admitted as candidates but not selected for paid review because the review budget runs out, rather than being lost at optical admission or to sensor misses/unresolved reviews after selection. Rejected if the partition shows the largest lost share is 'never optically admitted' or 'selected but sensor-missed/unresolved'.",
+          "plan_id": "plan_0b596e830db41aec",
+          "reason": "All three candidates cost 0 CU, 0 external calls, 0 physical actions and are feasible as local read-only arithmetic, so the choice rests on expected learning. miss_partition directly tests the bottleneck hypothesis by locating where DOI are lost and includes self-checking conservation identities. capacity_bound only gives a loose optimistic upper bound on review count versus observed visits; it can suggest budget pressure but cannot say whether unreviewed candidates contained DOI. calibration_shift checks probability calibration by scenario, which matters mainly if the losses are in the selected/unselected ranking, so it is a better second step conditional on the partition. Budget is 2 tests, and miss_partition maximizes information for the first.",
+          "remaining_budget_before": 2,
+          "selected_test_id": "miss_partition",
+          "sequence": 1
+        },
+        "status": "pending"
+      },
+      "sdk_call_id": "toolu_01LYMTjYXXmNYf9wsemY625Z",
+      "record_item_ids": [
+        "fc4f1667831b4656b64c981d685216db",
+        "cff22dacf34547e393371c6d32258252"
+      ]
+    },
+    {
+      "agent": "discovery_analyst",
+      "delegation": 3,
+      "tool": "read_context",
+      "arguments": {},
+      "output": {
+        "available_test_ids": [
+          "capacity_bound",
+          "calibration_shift"
+        ],
+        "blocked": false,
+        "budget": {
+          "limit": 2,
+          "remaining": 1,
+          "used": 1
+        },
+        "catalog": [
+          {
+            "available": false,
+            "computation": "read-only sums over overall and per_scenario counts/means; checks both conservation identities exactly on integer counts",
+            "cost": {
+              "cu": 0,
+              "external_calls": 0,
+              "physical_actions": 0,
+              "training_runs": 0
+            },
+            "feasibility": "available: local read-only arithmetic on the copied frozen file",
+            "question": "Where do latent DOI per lot go: never optically admitted, admitted but unselected, or selected (and of those confirmed, sensor-missed or unresolved)?",
+            "test_id": "miss_partition",
+            "title": "Conserved partition of latent DOI"
+          },
+          {
+            "available": true,
+            "computation": "recomputes max n with first + later*(n-1) + retry_reserve <= budget from the authored fees and compares with the recorded visit bound and observed visits",
+            "cost": {
+              "cu": 0,
+              "external_calls": 0,
+              "physical_actions": 0,
+              "training_runs": 0
+            },
+            "feasibility": "available: local read-only arithmetic on the copied frozen file",
+            "question": "How many paid reviews can 360 CU hold at the authored minimum fees, and what fraction of that loose bound do observed visits reach?",
+            "test_id": "capacity_bound",
+            "title": "Optimistic review-capacity bound"
+          },
+          {
+            "available": true,
+            "computation": "count-weighted signed and absolute (mean_p - latent rate) gaps over the five fixed per_scenario calibration_candidates bins, recomputed from n and latent_doi",
+            "cost": {
+              "cu": 0,
+              "external_calls": 0,
+              "physical_actions": 0,
+              "training_runs": 0
+            },
+            "feasibility": "available: local read-only arithmetic on the copied frozen file",
+            "question": "Is the frozen model's probability calibrated against latent truth, and does the gap shift by scenario?",
+            "test_id": "calibration_shift",
+            "title": "Calibration gap by scenario"
+          }
+        ],
+        "completed_results": [
+          {
+            "elapsed_s": 8.9899986051023e-05,
+            "evaluation_label": "privileged posthoc oracle evaluation over immutable frozen ledgers; never production selection, never a new held-out gain",
+            "input_sha256": "ffae6077a5e96e237ad1ad4c5887cffa6e382529bfdace50cf3ae2da44c366ee",
+            "new_heldout_gain": false,
+            "plan_id": "plan_0b596e830db41aec",
+            "privileged_posthoc_oracle": true,
+            "production_selection": false,
+            "result_id": "res_aed06de352d5a8af",
+            "test_id": "miss_partition",
+            "update": null,
+            "values": {
+              "labels": {
+                "confirmed": "selected latent DOI the paid review reported positive",
+                "sensor_missed": "selected latent DOI reported negative (sensor error)",
+                "unresolved": "all attempts failed or missing; unknown, never a physical negative"
+              },
+              "overall": {
+                "confirmed_share_of_selected_doi": 0.9083307525549705,
+                "conservation": {
+                  "latent=unadmitted+unselected+selected": true,
+                  "selected=confirmed+sensor_missed+unresolved": true
+                },
+                "counts": {
+                  "latent_doi": 27260,
+                  "missed_candidate_doi": 16248,
+                  "never_optically_admitted_doi": 7783,
+                  "selected_candidate_doi": 3229,
+                  "selected_latent_doi": 3229,
+                  "sensor_missed_doi": 280,
+                  "tp_reported_positive": 2933,
+                  "unresolved_doi": 16
+                },
+                "mean_per_lot": {
+                  "latent_doi": 272.6,
+                  "missed_candidate_doi": 162.48,
+                  "never_optically_admitted_doi": 77.83,
+                  "selected_candidate_doi": 32.29,
+                  "selected_latent_doi": 32.29,
+                  "sensor_missed_doi": 2.8,
+                  "tp_reported_positive": 29.33,
+                  "unresolved_doi": 0.16
+                },
+                "optical_recall_ceiling": 0.714490095377843,
+                "selected_share_of_latent": 0.11845194424064563
+              },
+              "per_scenario": {
+                "low_contrast": {
+                  "confirmed_share_of_selected_doi": 0.8942307692307693,
+                  "conservation": {
+                    "latent=unadmitted+unselected+selected": true,
+                    "selected=confirmed+sensor_missed+unresolved": true
+                  },
+                  "counts": {
+                    "latent_doi": 5071,
+                    "missed_candidate_doi": 995,
+                    "never_optically_admitted_doi": 3556,
+                    "selected_candidate_doi": 520,
+                    "selected_latent_doi": 520,
+                    "sensor_missed_doi": 48,
+                    "tp_reported_positive": 465,
+                    "unresolved_doi": 7
+                  },
+                  "mean_per_lot": {
+                    "latent_doi": 253.55,
+                    "missed_candidate_doi": 49.75,
+                    "never_optically_admitted_doi": 177.8,
+                    "selected_candidate_doi": 26.0,
+                    "selected_latent_doi": 26.0,
+                    "sensor_missed_doi": 2.4,
+                    "tp_reported_positive": 23.25,
+                    "unresolved_doi": 0.35
+                  },
+                  "optical_recall_ceiling": 0.29875764149083023,
+                  "selected_share_of_latent": 0.10254387694734766
+                },
+                "novel_cluster": {
+                  "confirmed_share_of_selected_doi": 0.8954802259887006,
+                  "conservation": {
+                    "latent=unadmitted+unselected+selected": true,
+                    "selected=confirmed+sensor_missed+unresolved": true
+                  },
+                  "counts": {
+                    "latent_doi": 6620,
+                    "missed_candidate_doi": 5228,
+                    "never_optically_admitted_doi": 684,
+                    "selected_candidate_doi": 708,
+                    "selected_latent_doi": 708,
+                    "sensor_missed_doi": 70,
+                    "tp_reported_positive": 634,
+                    "unresolved_doi": 4
+                  },
+                  "mean_per_lot": {
+                    "latent_doi": 331.0,
+                    "missed_candidate_doi": 261.4,
+                    "never_optically_admitted_doi": 34.2,
+                    "selected_candidate_doi": 35.4,
+                    "selected_latent_doi": 35.4,
+                    "sensor_missed_doi": 3.5,
+                    "tp_reported_positive": 31.7,
+                    "unresolved_doi": 0.2
+                  },
+                  "optical_recall_ceiling": 0.8966767371601209,
+                  "selected_share_of_latent": 0.10694864048338369
+                },
+                "nuisance_heavy": {
+                  "confirmed_share_of_selected_doi": 0.9143686502177069,
+                  "conservation": {
+                    "latent=unadmitted+unselected+selected": true,
+                    "selected=confirmed+sensor_missed+unresolved": true
+                  },
+                  "counts": {
+                    "latent_doi": 5020,
+                    "missed_candidate_doi": 3856,
+                    "never_optically_admitted_doi": 475,
+                    "selected_candidate_doi": 689,
+                    "selected_latent_doi": 689,
+                    "sensor_missed_doi": 58,
+                    "tp_reported_positive": 630,
+                    "unresolved_doi": 1
+                  },
+                  "mean_per_lot": {
+                    "latent_doi": 251.0,
+                    "missed_candidate_doi": 192.8,
+                    "never_optically_admitted_doi": 23.75,
+                    "selected_candidate_doi": 34.45,
+                    "selected_latent_doi": 34.45,
+                    "sensor_missed_doi": 2.9,
+                    "tp_reported_positive": 31.5,
+                    "unresolved_doi": 0.05
+                  },
+                  "optical_recall_ceiling": 0.9053784860557769,
+                  "selected_share_of_latent": 0.13725099601593627
+                },
+                "process_shift": {
+                  "confirmed_share_of_selected_doi": 0.9159935379644588,
+                  "conservation": {
+                    "latent=unadmitted+unselected+selected": true,
+                    "selected=confirmed+sensor_missed+unresolved": true
+                  },
+                  "counts": {
+                    "latent_doi": 5565,
+                    "missed_candidate_doi": 2390,
+                    "never_optically_admitted_doi": 2556,
+                    "selected_candidate_doi": 619,
+                    "selected_latent_doi": 619,
+                    "sensor_missed_doi": 52,
+                    "tp_reported_positive": 567,
+                    "unresolved_doi": 0
+                  },
+                  "mean_per_lot": {
+                    "latent_doi": 278.25,
+                    "missed_candidate_doi": 119.5,
+                    "never_optically_admitted_doi": 127.8,
+                    "selected_candidate_doi": 30.95,
+                    "selected_latent_doi": 30.95,
+                    "sensor_missed_doi": 2.6,
+                    "tp_reported_positive": 28.35,
+                    "unresolved_doi": 0.0
+                  },
+                  "optical_recall_ceiling": 0.540700808625337,
+                  "selected_share_of_latent": 0.11123090745732254
+                },
+                "stationary": {
+                  "confirmed_share_of_selected_doi": 0.9191919191919192,
+                  "conservation": {
+                    "latent=unadmitted+unselected+selected": true,
+                    "selected=confirmed+sensor_missed+unresolved": true
+                  },
+                  "counts": {
+                    "latent_doi": 4984,
+                    "missed_candidate_doi": 3779,
+                    "never_optically_admitted_doi": 512,
+                    "selected_candidate_doi": 693,
+                    "selected_latent_doi": 693,
+                    "sensor_missed_doi": 52,
+                    "tp_reported_positive": 637,
+                    "unresolved_doi": 4
+                  },
+                  "mean_per_lot": {
+                    "latent_doi": 249.2,
+                    "missed_candidate_doi": 188.95,
+                    "never_optically_admitted_doi": 25.6,
+                    "selected_candidate_doi": 34.65,
+                    "selected_latent_doi": 34.65,
+                    "sensor_missed_doi": 2.6,
+                    "tp_reported_positive": 31.85,
+                    "unresolved_doi": 0.2
+                  },
+                  "optical_recall_ceiling": 0.8972712680577849,
+                  "selected_share_of_latent": 0.13904494382022473
+                }
+              }
+            },
+            "values_sha256": "ccd37191897d508b70776f312f9de1bacbb3252bae63e3967b2a0127b74ec3f2"
+          }
+        ],
+        "data_label": "authored numeric synthetic posthoc diagnostic of the frozen v3 cb400_route_full candidate-only ledgers; not SEM-image accuracy, factory throughput, wafer yield, a new held-out gain or a physical experiment",
+        "evaluation_label": "privileged posthoc oracle evaluation over immutable frozen ledgers; never production selection, never a new held-out gain",
+        "event_count": 4,
+        "failed_experiments": [],
+        "finalized": null,
+        "head_hash": "ddd3dcbce8f3cc96f1e94a187c12e32c0a248dbf7ab0df572d1a810c8af0a7a1",
+        "input_sha256": "ffae6077a5e96e237ad1ad4c5887cffa6e382529bfdace50cf3ae2da44c366ee",
+        "kind": "discovery_cycle_posthoc",
+        "latest_result_id": "res_aed06de352d5a8af",
+        "latest_result_needs_update": true,
+        "pending_plan": null,
+        "primary": {
+          "baseline_mean": 27.38,
+          "candidate_mean": 29.33,
+          "ci95": [
+            1.46,
+            2.43
+          ],
+          "comparison": "cb400_route_full vs freshly fitted logistic probability-per-cost baseline, 360 CU, 100 paired lots",
+          "metric": "confirmed DOI per lot",
+          "paired_mean_difference": 1.95,
+          "relative_gain_pct": 7.12,
+          "source": "INSPECTION_V3_RESULTS.md preregistered primary (unchanged by this cycle)"
+        },
+        "schema_version": 1
+      },
+      "sdk_call_id": "toolu_01HsvLGtzVMkF1r9CSe9PXLM",
+      "record_item_ids": [
+        "7f189f61056b4092990a15c34a5bca25",
+        "efc6ef9dac964b81a37cc742e506efa5"
+      ]
+    },
+    {
+      "agent": "discovery_analyst",
+      "delegation": 3,
+      "tool": "record_update",
+      "arguments": {
+        "result_id": "res_aed06de352d5a8af",
+        "interpretation": "SUPPORTS the provisional hypothesis overall, with a scenario-level REVISION. Both conservation identities hold overall and in every scenario (tool-reported). Overall latent DOI = 27260 (272.6/lot). Admitted-but-unselected (missed_candidate_doi) = 16248 (162.48/lot, ~59.6% of latent by my arithmetic). Never optically admitted = 7783 (77.83/lot, ~28.6%). Selected = 3229 (32.29/lot, selected_share_of_latent 0.118). Of the selected DOI, 2933 were confirmed (share 0.908), 280 sensor-missed and 16 unresolved. Post-selection loss (~1.1% of latent) is small, so review quality is not the bottleneck. The largest loss overall is admitted-but-unselected, as hypothesized. Heterogeneity: novel_cluster (261.4 vs 34.2/lot), nuisance_heavy (192.8 vs 23.75), and stationary (188.95 vs 25.6) are strongly selection-dominated, with optical recall ceilings of about 0.90. low_contrast is ADMISSION-dominated: never-admitted 177.8/lot vs unselected 49.75/lot, with an optical_recall_ceiling of 0.299. That rejects the hypothesis for this scenario. process_shift is mixed: never-admitted 127.8 vs unselected 119.5/lot, ceiling 0.541. Caveat: a large unselected pool shows where DOI are lost, but it does not by itself show that the 360 CU budget is saturated rather than that the selection policy is under-spending or ranking poorly.",
+        "next_hypothesis": "In the selection-dominated scenarios, the unselected loss is mainly caused by review-budget capacity. Observed paid visits per lot therefore sit close to the optimistic maximum that 360 CU can fund at the authored minimum fees, so improving the ranking alone could recover only a small fraction of the ~162 unselected DOI/lot. In low_contrast, and partly in process_shift, optical admission is the separate dominant limit.",
+        "next_experiment": "PROPOSED, not executed: run capacity_bound. It recomputes the maximum n with first + later*(n-1) + retry_reserve <= 360 and compares it with the recorded visit bound and the observed visits. Falsifiable prediction: observed visits reach a high fraction of the optimistic bound (roughly >= 0.8). If observed visits are well below the bound (roughly < 0.6), budget saturation is not the binding cause. The unselected loss would then point to the selection policy or other costs, and calibration_shift would become the priority follow-up."
+      },
+      "output": {
+        "replayed": false,
+        "update": {
+          "authorship": "agent interpretation; not a verified conclusion",
+          "interpretation": "SUPPORTS the provisional hypothesis overall, with a scenario-level REVISION. Both conservation identities hold overall and in every scenario (tool-reported). Overall latent DOI = 27260 (272.6/lot). Admitted-but-unselected (missed_candidate_doi) = 16248 (162.48/lot, ~59.6% of latent by my arithmetic). Never optically admitted = 7783 (77.83/lot, ~28.6%). Selected = 3229 (32.29/lot, selected_share_of_latent 0.118). Of the selected DOI, 2933 were confirmed (share 0.908), 280 sensor-missed and 16 unresolved. Post-selection loss (~1.1% of latent) is small, so review quality is not the bottleneck. The largest loss overall is admitted-but-unselected, as hypothesized. Heterogeneity: novel_cluster (261.4 vs 34.2/lot), nuisance_heavy (192.8 vs 23.75), and stationary (188.95 vs 25.6) are strongly selection-dominated, with optical recall ceilings of about 0.90. low_contrast is ADMISSION-dominated: never-admitted 177.8/lot vs unselected 49.75/lot, with an optical_recall_ceiling of 0.299. That rejects the hypothesis for this scenario. process_shift is mixed: never-admitted 127.8 vs unselected 119.5/lot, ceiling 0.541. Caveat: a large unselected pool shows where DOI are lost, but it does not by itself show that the 360 CU budget is saturated rather than that the selection policy is under-spending or ranking poorly.",
+          "next_experiment": {
+            "executed": false,
+            "status": "PROPOSED",
+            "text": "PROPOSED, not executed: run capacity_bound. It recomputes the maximum n with first + later*(n-1) + retry_reserve <= 360 and compares it with the recorded visit bound and the observed visits. Falsifiable prediction: observed visits reach a high fraction of the optimistic bound (roughly >= 0.8). If observed visits are well below the bound (roughly < 0.6), budget saturation is not the binding cause. The unselected loss would then point to the selection policy or other costs, and calibration_shift would become the priority follow-up."
+          },
+          "next_hypothesis": {
+            "status": "PROPOSED",
+            "text": "In the selection-dominated scenarios, the unselected loss is mainly caused by review-budget capacity. Observed paid visits per lot therefore sit close to the optimistic maximum that 360 CU can fund at the authored minimum fees, so improving the ranking alone could recover only a small fraction of the ~162 unselected DOI/lot. In low_contrast, and partly in process_shift, optical admission is the separate dominant limit."
+          },
+          "result_id": "res_aed06de352d5a8af",
+          "result_sha256": "ccd37191897d508b70776f312f9de1bacbb3252bae63e3967b2a0127b74ec3f2",
+          "test_id": "miss_partition"
+        }
+      },
+      "sdk_call_id": "toolu_01PMCxJjVgKB2SSZdzBBB5v2",
+      "record_item_ids": [
+        "17baef380384410cb1672e3ae5fda05c",
+        "5bd6caa22aa749f08e1f333dd5583c2a"
+      ]
+    },
+    {
+      "agent": "discovery_analyst",
+      "delegation": 3,
+      "tool": "record_plan",
+      "arguments": {
+        "candidates": [
+          "capacity_bound",
+          "calibration_shift"
+        ],
+        "selected_test_id": "capacity_bound",
+        "hypothesis": "Agent-authored, following res_aed06de352d5a8af: in the selection-dominated scenarios, the ~162 admitted-but-unselected DOI/lot are lost mainly because the 360 CU review budget is saturated. Observed paid visits should reach a high fraction of the optimistic capacity bound (roughly >= 0.8). The hypothesis is falsified if observed visits are well below the bound (roughly < 0.6). Separately, low_contrast and partly process_shift are admission-limited, which this test does not address.",
+        "expected_learning": "Whether the dominant overall loss (admitted-but-unselected) reflects a binding review budget or under-use of the budget by the selection policy. This decides whether ranking or calibration improvements could plausibly recover much of the unselected pool, or whether capacity itself is the limit. The answer would be an optimistic upper bound only, not a production throughput claim.",
+        "reason": "Both remaining tests cost 0 CU, 0 external calls, 0 physical actions and 0 training runs, and both are local read-only arithmetic, so the choice comes down to expected learning with 1 test left in the budget. miss_partition showed the largest loss is admitted-but-unselected, with selected DOI only ~32/lot against ~162/lot unselected. The open question is why: budget saturation or policy. capacity_bound answers that directly and falsifiably. calibration_shift would show whether probabilities are miscalibrated by scenario. That is useful for the low_contrast/process_shift heterogeneity, but if the budget is saturated, better calibration could only reshuffle a fixed number of reviews and could not explain a 5x unselected-to-selected gap. capacity_bound therefore discriminates more on the main hypothesis. Its limitation: it is a loose optimistic bound and does not report per-scenario calibration.",
+        "evidence_result_ids": [
+          "res_aed06de352d5a8af"
+        ]
+      },
+      "output": {
+        "plan": {
+          "candidates": [
+            "capacity_bound",
+            "calibration_shift"
+          ],
+          "evidence_result_ids": [
+            "res_aed06de352d5a8af"
+          ],
+          "expected_learning": "Whether the dominant overall loss (admitted-but-unselected) reflects a binding review budget or under-use of the budget by the selection policy. This decides whether ranking or calibration improvements could plausibly recover much of the unselected pool, or whether capacity itself is the limit. The answer would be an optimistic upper bound only, not a production throughput claim.",
+          "hypothesis": "Agent-authored, following res_aed06de352d5a8af: in the selection-dominated scenarios, the ~162 admitted-but-unselected DOI/lot are lost mainly because the 360 CU review budget is saturated. Observed paid visits should reach a high fraction of the optimistic capacity bound (roughly >= 0.8). The hypothesis is falsified if observed visits are well below the bound (roughly < 0.6). Separately, low_contrast and partly process_shift are admission-limited, which this test does not address.",
+          "plan_id": "plan_f7708d977d1d9f5a",
+          "reason": "Both remaining tests cost 0 CU, 0 external calls, 0 physical actions and 0 training runs, and both are local read-only arithmetic, so the choice comes down to expected learning with 1 test left in the budget. miss_partition showed the largest loss is admitted-but-unselected, with selected DOI only ~32/lot against ~162/lot unselected. The open question is why: budget saturation or policy. capacity_bound answers that directly and falsifiably. calibration_shift would show whether probabilities are miscalibrated by scenario. That is useful for the low_contrast/process_shift heterogeneity, but if the budget is saturated, better calibration could only reshuffle a fixed number of reviews and could not explain a 5x unselected-to-selected gap. capacity_bound therefore discriminates more on the main hypothesis. Its limitation: it is a loose optimistic bound and does not report per-scenario calibration.",
+          "remaining_budget_before": 1,
+          "selected_test_id": "capacity_bound",
+          "sequence": 2
+        },
+        "status": "pending"
+      },
+      "sdk_call_id": "toolu_01At8GNUfAab3yxJPDfv6oU2",
+      "record_item_ids": [
+        "755633d3c5294f449cda71ef7a22e370",
+        "ca5b9b84aa4f4c3d866a6e4b506bc87f"
+      ]
+    },
+    {
+      "agent": "discovery_analyst",
+      "delegation": 5,
+      "tool": "read_context",
+      "arguments": {},
+      "output": {
+        "available_test_ids": [
+          "calibration_shift"
+        ],
+        "blocked": false,
+        "budget": {
+          "limit": 2,
+          "remaining": 0,
+          "used": 2
+        },
+        "catalog": [
+          {
+            "available": false,
+            "computation": "read-only sums over overall and per_scenario counts/means; checks both conservation identities exactly on integer counts",
+            "cost": {
+              "cu": 0,
+              "external_calls": 0,
+              "physical_actions": 0,
+              "training_runs": 0
+            },
+            "feasibility": "available: local read-only arithmetic on the copied frozen file",
+            "question": "Where do latent DOI per lot go: never optically admitted, admitted but unselected, or selected (and of those confirmed, sensor-missed or unresolved)?",
+            "test_id": "miss_partition",
+            "title": "Conserved partition of latent DOI"
+          },
+          {
+            "available": false,
+            "computation": "recomputes max n with first + later*(n-1) + retry_reserve <= budget from the authored fees and compares with the recorded visit bound and observed visits",
+            "cost": {
+              "cu": 0,
+              "external_calls": 0,
+              "physical_actions": 0,
+              "training_runs": 0
+            },
+            "feasibility": "available: local read-only arithmetic on the copied frozen file",
+            "question": "How many paid reviews can 360 CU hold at the authored minimum fees, and what fraction of that loose bound do observed visits reach?",
+            "test_id": "capacity_bound",
+            "title": "Optimistic review-capacity bound"
+          },
+          {
+            "available": true,
+            "computation": "count-weighted signed and absolute (mean_p - latent rate) gaps over the five fixed per_scenario calibration_candidates bins, recomputed from n and latent_doi",
+            "cost": {
+              "cu": 0,
+              "external_calls": 0,
+              "physical_actions": 0,
+              "training_runs": 0
+            },
+            "feasibility": "available: local read-only arithmetic on the copied frozen file",
+            "question": "Is the frozen model's probability calibrated against latent truth, and does the gap shift by scenario?",
+            "test_id": "calibration_shift",
+            "title": "Calibration gap by scenario"
+          }
+        ],
+        "completed_results": [
+          {
+            "elapsed_s": 8.9899986051023e-05,
+            "evaluation_label": "privileged posthoc oracle evaluation over immutable frozen ledgers; never production selection, never a new held-out gain",
+            "input_sha256": "ffae6077a5e96e237ad1ad4c5887cffa6e382529bfdace50cf3ae2da44c366ee",
+            "new_heldout_gain": false,
+            "plan_id": "plan_0b596e830db41aec",
+            "privileged_posthoc_oracle": true,
+            "production_selection": false,
+            "result_id": "res_aed06de352d5a8af",
+            "test_id": "miss_partition",
+            "update": {
+              "authorship": "agent interpretation; not a verified conclusion",
+              "interpretation": "SUPPORTS the provisional hypothesis overall, with a scenario-level REVISION. Both conservation identities hold overall and in every scenario (tool-reported). Overall latent DOI = 27260 (272.6/lot). Admitted-but-unselected (missed_candidate_doi) = 16248 (162.48/lot, ~59.6% of latent by my arithmetic). Never optically admitted = 7783 (77.83/lot, ~28.6%). Selected = 3229 (32.29/lot, selected_share_of_latent 0.118). Of the selected DOI, 2933 were confirmed (share 0.908), 280 sensor-missed and 16 unresolved. Post-selection loss (~1.1% of latent) is small, so review quality is not the bottleneck. The largest loss overall is admitted-but-unselected, as hypothesized. Heterogeneity: novel_cluster (261.4 vs 34.2/lot), nuisance_heavy (192.8 vs 23.75), and stationary (188.95 vs 25.6) are strongly selection-dominated, with optical recall ceilings of about 0.90. low_contrast is ADMISSION-dominated: never-admitted 177.8/lot vs unselected 49.75/lot, with an optical_recall_ceiling of 0.299. That rejects the hypothesis for this scenario. process_shift is mixed: never-admitted 127.8 vs unselected 119.5/lot, ceiling 0.541. Caveat: a large unselected pool shows where DOI are lost, but it does not by itself show that the 360 CU budget is saturated rather than that the selection policy is under-spending or ranking poorly.",
+              "next_experiment": {
+                "executed": false,
+                "status": "PROPOSED",
+                "text": "PROPOSED, not executed: run capacity_bound. It recomputes the maximum n with first + later*(n-1) + retry_reserve <= 360 and compares it with the recorded visit bound and the observed visits. Falsifiable prediction: observed visits reach a high fraction of the optimistic bound (roughly >= 0.8). If observed visits are well below the bound (roughly < 0.6), budget saturation is not the binding cause. The unselected loss would then point to the selection policy or other costs, and calibration_shift would become the priority follow-up."
+              },
+              "next_hypothesis": {
+                "status": "PROPOSED",
+                "text": "In the selection-dominated scenarios, the unselected loss is mainly caused by review-budget capacity. Observed paid visits per lot therefore sit close to the optimistic maximum that 360 CU can fund at the authored minimum fees, so improving the ranking alone could recover only a small fraction of the ~162 unselected DOI/lot. In low_contrast, and partly in process_shift, optical admission is the separate dominant limit."
+              },
+              "result_id": "res_aed06de352d5a8af",
+              "result_sha256": "ccd37191897d508b70776f312f9de1bacbb3252bae63e3967b2a0127b74ec3f2",
+              "test_id": "miss_partition"
+            },
+            "values": {
+              "labels": {
+                "confirmed": "selected latent DOI the paid review reported positive",
+                "sensor_missed": "selected latent DOI reported negative (sensor error)",
+                "unresolved": "all attempts failed or missing; unknown, never a physical negative"
+              },
+              "overall": {
+                "confirmed_share_of_selected_doi": 0.9083307525549705,
+                "conservation": {
+                  "latent=unadmitted+unselected+selected": true,
+                  "selected=confirmed+sensor_missed+unresolved": true
+                },
+                "counts": {
+                  "latent_doi": 27260,
+                  "missed_candidate_doi": 16248,
+                  "never_optically_admitted_doi": 7783,
+                  "selected_candidate_doi": 3229,
+                  "selected_latent_doi": 3229,
+                  "sensor_missed_doi": 280,
+                  "tp_reported_positive": 2933,
+                  "unresolved_doi": 16
+                },
+                "mean_per_lot": {
+                  "latent_doi": 272.6,
+                  "missed_candidate_doi": 162.48,
+                  "never_optically_admitted_doi": 77.83,
+                  "selected_candidate_doi": 32.29,
+                  "selected_latent_doi": 32.29,
+                  "sensor_missed_doi": 2.8,
+                  "tp_reported_positive": 29.33,
+                  "unresolved_doi": 0.16
+                },
+                "optical_recall_ceiling": 0.714490095377843,
+                "selected_share_of_latent": 0.11845194424064563
+              },
+              "per_scenario": {
+                "low_contrast": {
+                  "confirmed_share_of_selected_doi": 0.8942307692307693,
+                  "conservation": {
+                    "latent=unadmitted+unselected+selected": true,
+                    "selected=confirmed+sensor_missed+unresolved": true
+                  },
+                  "counts": {
+                    "latent_doi": 5071,
+                    "missed_candidate_doi": 995,
+                    "never_optically_admitted_doi": 3556,
+                    "selected_candidate_doi": 520,
+                    "selected_latent_doi": 520,
+                    "sensor_missed_doi": 48,
+                    "tp_reported_positive": 465,
+                    "unresolved_doi": 7
+                  },
+                  "mean_per_lot": {
+                    "latent_doi": 253.55,
+                    "missed_candidate_doi": 49.75,
+                    "never_optically_admitted_doi": 177.8,
+                    "selected_candidate_doi": 26.0,
+                    "selected_latent_doi": 26.0,
+                    "sensor_missed_doi": 2.4,
+                    "tp_reported_positive": 23.25,
+                    "unresolved_doi": 0.35
+                  },
+                  "optical_recall_ceiling": 0.29875764149083023,
+                  "selected_share_of_latent": 0.10254387694734766
+                },
+                "novel_cluster": {
+                  "confirmed_share_of_selected_doi": 0.8954802259887006,
+                  "conservation": {
+                    "latent=unadmitted+unselected+selected": true,
+                    "selected=confirmed+sensor_missed+unresolved": true
+                  },
+                  "counts": {
+                    "latent_doi": 6620,
+                    "missed_candidate_doi": 5228,
+                    "never_optically_admitted_doi": 684,
+                    "selected_candidate_doi": 708,
+                    "selected_latent_doi": 708,
+                    "sensor_missed_doi": 70,
+                    "tp_reported_positive": 634,
+                    "unresolved_doi": 4
+                  },
+                  "mean_per_lot": {
+                    "latent_doi": 331.0,
+                    "missed_candidate_doi": 261.4,
+                    "never_optically_admitted_doi": 34.2,
+                    "selected_candidate_doi": 35.4,
+                    "selected_latent_doi": 35.4,
+                    "sensor_missed_doi": 3.5,
+                    "tp_reported_positive": 31.7,
+                    "unresolved_doi": 0.2
+                  },
+                  "optical_recall_ceiling": 0.8966767371601209,
+                  "selected_share_of_latent": 0.10694864048338369
+                },
+                "nuisance_heavy": {
+                  "confirmed_share_of_selected_doi": 0.9143686502177069,
+                  "conservation": {
+                    "latent=unadmitted+unselected+selected": true,
+                    "selected=confirmed+sensor_missed+unresolved": true
+                  },
+                  "counts": {
+                    "latent_doi": 5020,
+                    "missed_candidate_doi": 3856,
+                    "never_optically_admitted_doi": 475,
+                    "selected_candidate_doi": 689,
+                    "selected_latent_doi": 689,
+                    "sensor_missed_doi": 58,
+                    "tp_reported_positive": 630,
+                    "unresolved_doi": 1
+                  },
+                  "mean_per_lot": {
+                    "latent_doi": 251.0,
+                    "missed_candidate_doi": 192.8,
+                    "never_optically_admitted_doi": 23.75,
+                    "selected_candidate_doi": 34.45,
+                    "selected_latent_doi": 34.45,
+                    "sensor_missed_doi": 2.9,
+                    "tp_reported_positive": 31.5,
+                    "unresolved_doi": 0.05
+                  },
+                  "optical_recall_ceiling": 0.9053784860557769,
+                  "selected_share_of_latent": 0.13725099601593627
+                },
+                "process_shift": {
+                  "confirmed_share_of_selected_doi": 0.9159935379644588,
+                  "conservation": {
+                    "latent=unadmitted+unselected+selected": true,
+                    "selected=confirmed+sensor_missed+unresolved": true
+                  },
+                  "counts": {
+                    "latent_doi": 5565,
+                    "missed_candidate_doi": 2390,
+                    "never_optically_admitted_doi": 2556,
+                    "selected_candidate_doi": 619,
+                    "selected_latent_doi": 619,
+                    "sensor_missed_doi": 52,
+                    "tp_reported_positive": 567,
+                    "unresolved_doi": 0
+                  },
+                  "mean_per_lot": {
+                    "latent_doi": 278.25,
+                    "missed_candidate_doi": 119.5,
+                    "never_optically_admitted_doi": 127.8,
+                    "selected_candidate_doi": 30.95,
+                    "selected_latent_doi": 30.95,
+                    "sensor_missed_doi": 2.6,
+                    "tp_reported_positive": 28.35,
+                    "unresolved_doi": 0.0
+                  },
+                  "optical_recall_ceiling": 0.540700808625337,
+                  "selected_share_of_latent": 0.11123090745732254
+                },
+                "stationary": {
+                  "confirmed_share_of_selected_doi": 0.9191919191919192,
+                  "conservation": {
+                    "latent=unadmitted+unselected+selected": true,
+                    "selected=confirmed+sensor_missed+unresolved": true
+                  },
+                  "counts": {
+                    "latent_doi": 4984,
+                    "missed_candidate_doi": 3779,
+                    "never_optically_admitted_doi": 512,
+                    "selected_candidate_doi": 693,
+                    "selected_latent_doi": 693,
+                    "sensor_missed_doi": 52,
+                    "tp_reported_positive": 637,
+                    "unresolved_doi": 4
+                  },
+                  "mean_per_lot": {
+                    "latent_doi": 249.2,
+                    "missed_candidate_doi": 188.95,
+                    "never_optically_admitted_doi": 25.6,
+                    "selected_candidate_doi": 34.65,
+                    "selected_latent_doi": 34.65,
+                    "sensor_missed_doi": 2.6,
+                    "tp_reported_positive": 31.85,
+                    "unresolved_doi": 0.2
+                  },
+                  "optical_recall_ceiling": 0.8972712680577849,
+                  "selected_share_of_latent": 0.13904494382022473
+                }
+              }
+            },
+            "values_sha256": "ccd37191897d508b70776f312f9de1bacbb3252bae63e3967b2a0127b74ec3f2"
+          },
+          {
+            "elapsed_s": 9.240000508725643e-05,
+            "evaluation_label": "privileged posthoc oracle evaluation over immutable frozen ledgers; never production selection, never a new held-out gain",
+            "input_sha256": "ffae6077a5e96e237ad1ad4c5887cffa6e382529bfdace50cf3ae2da44c366ee",
+            "new_heldout_gain": false,
+            "plan_id": "plan_f7708d977d1d9f5a",
+            "privileged_posthoc_oracle": true,
+            "production_selection": false,
+            "result_id": "res_13e4a5ad1338e30f",
+            "test_id": "capacity_bound",
+            "update": null,
+            "values": {
+              "authored_min_fees_cu": {
+                "budget": 360.0,
+                "first_review": 17.0,
+                "later_review": 9.0,
+                "retry_reserve": 4.0
+              },
+              "bound_matches_recorded": true,
+              "charged_at_bound_cu": 350.0,
+              "current_mean_visits_per_lot": 34.65,
+              "current_review_fraction_of_bound": 0.9118421052631579,
+              "dies_reviewed_fraction": 0.008850574712643678,
+              "labels": {
+                "bound": "loose optimistic bound: zero movement, one wafer, no failures; not an achievable planner, not factory throughput",
+                "visit_slack_vs_bound": "visits, not achievable gain or confirmed DOI"
+              },
+              "min_cu_review_every_candidate_per_lot": 7073.07,
+              "min_cu_review_every_die_per_lot": 35259.0,
+              "optimistic_review_bound": 38,
+              "per_scenario": {
+                "low_contrast": {
+                  "extra_wafer_loads_cu": 14.8,
+                  "mean_visits_per_lot": 32.7,
+                  "retry_cu": 9.0,
+                  "review_fraction_of_bound": 0.8605263157894738,
+                  "stage_movement_cu_above_minimum": 26.170741367866775,
+                  "unspent_cu": 7.729258632133226
+                },
+                "novel_cluster": {
+                  "extra_wafer_loads_cu": 0.0,
+                  "mean_visits_per_lot": 35.65,
+                  "retry_cu": 9.8,
+                  "review_fraction_of_bound": 0.9381578947368421,
+                  "stage_movement_cu_above_minimum": 13.422267616137708,
+                  "unspent_cu": 7.927732383862289
+                },
+                "nuisance_heavy": {
+                  "extra_wafer_loads_cu": 0.40000000000000036,
+                  "mean_visits_per_lot": 35.3,
+                  "retry_cu": 8.6,
+                  "review_fraction_of_bound": 0.9289473684210525,
+                  "stage_movement_cu_above_minimum": 17.369315809452473,
+                  "unspent_cu": 7.930684190547498
+                },
+                "process_shift": {
+                  "extra_wafer_loads_cu": 4.4,
+                  "mean_visits_per_lot": 34.25,
+                  "retry_cu": 7.8,
+                  "review_fraction_of_bound": 0.9013157894736842,
+                  "stage_movement_cu_above_minimum": 23.421708975863954,
+                  "unspent_cu": 8.128291024136042
+                },
+                "stationary": {
+                  "extra_wafer_loads_cu": 0.8000000000000007,
+                  "mean_visits_per_lot": 35.35,
+                  "retry_cu": 8.2,
+                  "review_fraction_of_bound": 0.9302631578947369,
+                  "stage_movement_cu_above_minimum": 17.17931536782097,
+                  "unspent_cu": 7.67068463217903
+                }
+              },
+              "unspent_at_bound_cu": 10.0,
+              "visit_slack_vs_bound": 3.3500000000000014
+            },
+            "values_sha256": "b82f87678932fa0c4789c73f73734be08ba89a33bfaa28cce793515c4e7dce05"
+          }
+        ],
+        "data_label": "authored numeric synthetic posthoc diagnostic of the frozen v3 cb400_route_full candidate-only ledgers; not SEM-image accuracy, factory throughput, wafer yield, a new held-out gain or a physical experiment",
+        "evaluation_label": "privileged posthoc oracle evaluation over immutable frozen ledgers; never production selection, never a new held-out gain",
+        "event_count": 8,
+        "failed_experiments": [],
+        "finalized": null,
+        "head_hash": "6697876aa99ae40364644dbce821251b9c1d04e0eb430da767b10c2b21667647",
+        "input_sha256": "ffae6077a5e96e237ad1ad4c5887cffa6e382529bfdace50cf3ae2da44c366ee",
+        "kind": "discovery_cycle_posthoc",
+        "latest_result_id": "res_13e4a5ad1338e30f",
+        "latest_result_needs_update": true,
+        "pending_plan": null,
+        "primary": {
+          "baseline_mean": 27.38,
+          "candidate_mean": 29.33,
+          "ci95": [
+            1.46,
+            2.43
+          ],
+          "comparison": "cb400_route_full vs freshly fitted logistic probability-per-cost baseline, 360 CU, 100 paired lots",
+          "metric": "confirmed DOI per lot",
+          "paired_mean_difference": 1.95,
+          "relative_gain_pct": 7.12,
+          "source": "INSPECTION_V3_RESULTS.md preregistered primary (unchanged by this cycle)"
+        },
+        "schema_version": 1
+      },
+      "sdk_call_id": "toolu_01HZtaBxdEqA9G5aF6W4dbdD",
+      "record_item_ids": [
+        "2d73a1520711410b83689c5301519439"
+      ]
+    },
+    {
+      "agent": "discovery_analyst",
+      "delegation": 5,
+      "tool": "record_update",
+      "arguments": {
+        "result_id": "res_13e4a5ad1338e30f",
+        "interpretation": "SUPPORTS the hypothesis as revised by scenario. The threshold set in advance is met overall and in every scenario. Tool-reported values: authored minimum fees are first 17, later 9 and retry_reserve 4 CU against a 360 CU budget. optimistic_review_bound = 38 visits, bound_matches_recorded = true, and current_mean_visits_per_lot = 34.65. current_review_fraction_of_bound = 0.912, which is >= 0.8, so the hypothesis holds, and visit_slack_vs_bound = 3.35 visits. Per-scenario review_fraction_of_bound: novel_cluster 0.938, stationary 0.930, nuisance_heavy 0.929, process_shift 0.901, low_contrast 0.861 (lowest). All are >= 0.8 and none is near the 0.6 falsification threshold. The tool reports min_cu_review_every_candidate_per_lot = 7073.07, so reviewing every candidate would cost about 20x the 360 CU budget by my arithmetic. Conclusion (agent interpretation): the review budget is binding. The ~162 admitted-but-unselected DOI/lot are therefore structurally out of reach at 360 CU, and the remaining visit slack (<= 3.35 visits against an optimistic bound with no movement and no failures) leaves little room for better use of the budget. By my arithmetic, mean selected DOI per lot (32.29) is about 0.93 of mean visits per lot (34.65), so the ranking already spends visits mostly on DOI. In low_contrast the review fraction is the lowest (0.861), with the most CU spent on overhead (extra_wafer_loads_cu 14.8, stage_movement_cu_above_minimum 26.17), and it is also admission-limited (optical recall ceiling 0.299 from res_aed06de352d5a8af). Limitations: the bound is a loose optimistic bound and not achievable throughput. The every-candidate CU is an oracle quantity and not a policy input. calibration_shift was not run, so calibration remains unknown. This is not a new held-out gain or a multiplier.",
+        "next_hypothesis": "For the main scenarios, the remaining lever at a fixed 360 CU is not ranking; for low_contrast, it is optical admission. Raising low_contrast optical admission recall (for example, with a contrast-adapted admission threshold or a second optical pass) would increase the confirmed DOI per lot in that scenario without reducing it elsewhere, while the review budget stays fixed.",
+        "next_experiment": "PROPOSED, UNEXECUTED, REQUIRES A FRESH PREREGISTRATION on new held-out lots; it cannot reuse these frozen ledgers. Design: compare current admission against a contrast-adapted admission variant, with the review policy and 360 CU budget held fixed, on paired lots stratified by scenario. Preregistered primary: paired difference in confirmed DOI per lot in low_contrast. Falsifiable criteria: SUPPORT requires the paired 95% CI lower bound > 0 in low_contrast, and no other scenario's paired mean decreasing by more than a preregistered non-inferiority margin (e.g. 1 DOI/lot). REJECT if the low_contrast CI includes or falls below 0, or if the non-inferiority margin is breached. Secondary: the optical recall ceiling in low_contrast (current posthoc value 0.299) should increase. Optional preregistered companion: calibration_shift on the same data, to check whether admission changes shift calibration."
+      },
+      "output": {
+        "replayed": false,
+        "update": {
+          "authorship": "agent interpretation; not a verified conclusion",
+          "interpretation": "SUPPORTS the hypothesis as revised by scenario. The threshold set in advance is met overall and in every scenario. Tool-reported values: authored minimum fees are first 17, later 9 and retry_reserve 4 CU against a 360 CU budget. optimistic_review_bound = 38 visits, bound_matches_recorded = true, and current_mean_visits_per_lot = 34.65. current_review_fraction_of_bound = 0.912, which is >= 0.8, so the hypothesis holds, and visit_slack_vs_bound = 3.35 visits. Per-scenario review_fraction_of_bound: novel_cluster 0.938, stationary 0.930, nuisance_heavy 0.929, process_shift 0.901, low_contrast 0.861 (lowest). All are >= 0.8 and none is near the 0.6 falsification threshold. The tool reports min_cu_review_every_candidate_per_lot = 7073.07, so reviewing every candidate would cost about 20x the 360 CU budget by my arithmetic. Conclusion (agent interpretation): the review budget is binding. The ~162 admitted-but-unselected DOI/lot are therefore structurally out of reach at 360 CU, and the remaining visit slack (<= 3.35 visits against an optimistic bound with no movement and no failures) leaves little room for better use of the budget. By my arithmetic, mean selected DOI per lot (32.29) is about 0.93 of mean visits per lot (34.65), so the ranking already spends visits mostly on DOI. In low_contrast the review fraction is the lowest (0.861), with the most CU spent on overhead (extra_wafer_loads_cu 14.8, stage_movement_cu_above_minimum 26.17), and it is also admission-limited (optical recall ceiling 0.299 from res_aed06de352d5a8af). Limitations: the bound is a loose optimistic bound and not achievable throughput. The every-candidate CU is an oracle quantity and not a policy input. calibration_shift was not run, so calibration remains unknown. This is not a new held-out gain or a multiplier.",
+          "next_experiment": {
+            "executed": false,
+            "status": "PROPOSED",
+            "text": "PROPOSED, UNEXECUTED, REQUIRES A FRESH PREREGISTRATION on new held-out lots; it cannot reuse these frozen ledgers. Design: compare current admission against a contrast-adapted admission variant, with the review policy and 360 CU budget held fixed, on paired lots stratified by scenario. Preregistered primary: paired difference in confirmed DOI per lot in low_contrast. Falsifiable criteria: SUPPORT requires the paired 95% CI lower bound > 0 in low_contrast, and no other scenario's paired mean decreasing by more than a preregistered non-inferiority margin (e.g. 1 DOI/lot). REJECT if the low_contrast CI includes or falls below 0, or if the non-inferiority margin is breached. Secondary: the optical recall ceiling in low_contrast (current posthoc value 0.299) should increase. Optional preregistered companion: calibration_shift on the same data, to check whether admission changes shift calibration."
+          },
+          "next_hypothesis": {
+            "status": "PROPOSED",
+            "text": "For the main scenarios, the remaining lever at a fixed 360 CU is not ranking; for low_contrast, it is optical admission. Raising low_contrast optical admission recall (for example, with a contrast-adapted admission threshold or a second optical pass) would increase the confirmed DOI per lot in that scenario without reducing it elsewhere, while the review budget stays fixed."
+          },
+          "result_id": "res_13e4a5ad1338e30f",
+          "result_sha256": "b82f87678932fa0c4789c73f73734be08ba89a33bfaa28cce793515c4e7dce05",
+          "test_id": "capacity_bound"
+        }
+      },
+      "sdk_call_id": "toolu_0196JrEWfNJnmGg5C6M7XhPW",
+      "record_item_ids": [
+        "3818d3b72c3449b7a16f1ffcb4550212",
+        "08f9101c25ff4d44a95c4fda9e8e8fe8"
+      ]
+    }
+  ],
+  "collapsed_record_artifacts": [
+    {
+      "rule": "stale_fifo_call_id",
+      "sdk_call_id": "toolu_01Hifj4N76PATBr46yDqXhGi",
+      "name": "sys_session_send",
+      "response_id": "resp_b45fd7dc08a242b5afc68ff2",
+      "mirror_item_id": "4cebe444b097431290b7472c0daca716",
+      "dispatch_item_id": "1955caae02d341e09d57376d7ddafb6e",
+      "dispatch_stamped_call_id": "toolu_01J5BVACohtEbYLe9EmNGq8S",
+      "stamped_call_id_belongs_to": "ToolSearch"
+    },
+    {
+      "rule": "stale_fifo_call_id",
+      "sdk_call_id": "toolu_012aDy59uZB2FYtRgEezZa14",
+      "name": "sys_read_inbox",
+      "response_id": "resp_b45fd7dc08a242b5afc68ff2",
+      "mirror_item_id": "e0b9124c3d1a45cf82abcdb403ba340c",
+      "dispatch_item_id": "c272bd45f6ba4c28b6ed6f0dc6c5b694",
+      "dispatch_stamped_call_id": "toolu_01Hifj4N76PATBr46yDqXhGi",
+      "stamped_call_id_belongs_to": "sys_session_send"
+    },
+    {
+      "rule": "stale_fifo_call_id",
+      "sdk_call_id": "toolu_015BydP4h7rMivzcsKhMgiig",
+      "name": "discovery__run_experiment",
+      "response_id": "resp_d34d5410cf9c4199b2ad44e5",
+      "mirror_item_id": "75a555aa71554df5af680c6d25dc7ff4",
+      "dispatch_item_id": "fd48a6243c684138a9d77d8571036c15",
+      "dispatch_stamped_call_id": "toolu_012phXewScJEikUWhNcJcpMr",
+      "stamped_call_id_belongs_to": "ToolSearch",
+      "child_session_id": "1297d61f8de54d0ea422a192476d2a07",
+      "delegation": 2
+    },
+    {
+      "rule": "stale_fifo_call_id",
+      "sdk_call_id": "toolu_01XbpcNB6hu2wK27VRALEVYW",
+      "name": "discovery__read_context",
+      "response_id": "resp_c9768c530eb5498a8010ec84",
+      "mirror_item_id": "d5d0c049512d410f9a0cd77b05ea3fd4",
+      "dispatch_item_id": "7d3d5c58c8a640988e2ed043394df229",
+      "dispatch_stamped_call_id": "toolu_01RoJC8XuDvTmRtHrEAVL74y",
+      "stamped_call_id_belongs_to": "ToolSearch",
+      "child_session_id": "a000a3e0fbd94d9a9947929d0497de7d",
+      "delegation": 1
+    },
+    {
+      "rule": "stale_fifo_call_id",
+      "sdk_call_id": "toolu_01LYMTjYXXmNYf9wsemY625Z",
+      "name": "discovery__record_plan",
+      "response_id": "resp_c9768c530eb5498a8010ec84",
+      "mirror_item_id": "fc4f1667831b4656b64c981d685216db",
+      "dispatch_item_id": "cff22dacf34547e393371c6d32258252",
+      "dispatch_stamped_call_id": "toolu_01XbpcNB6hu2wK27VRALEVYW",
+      "stamped_call_id_belongs_to": "discovery__read_context",
+      "child_session_id": "a000a3e0fbd94d9a9947929d0497de7d",
+      "delegation": 1
+    },
+    {
+      "rule": "stale_fifo_call_id",
+      "sdk_call_id": "toolu_01HsvLGtzVMkF1r9CSe9PXLM",
+      "name": "discovery__read_context",
+      "response_id": "resp_76fd7c53b32e4a15bb4789df",
+      "mirror_item_id": "7f189f61056b4092990a15c34a5bca25",
+      "dispatch_item_id": "efc6ef9dac964b81a37cc742e506efa5",
+      "dispatch_stamped_call_id": "toolu_01G21eGGsD3iRSrtg3LStfsm",
+      "stamped_call_id_belongs_to": "ToolSearch",
+      "child_session_id": "a000a3e0fbd94d9a9947929d0497de7d",
+      "delegation": 3
+    },
+    {
+      "rule": "stale_fifo_call_id",
+      "sdk_call_id": "toolu_01PMCxJjVgKB2SSZdzBBB5v2",
+      "name": "discovery__record_update",
+      "response_id": "resp_76fd7c53b32e4a15bb4789df",
+      "mirror_item_id": "17baef380384410cb1672e3ae5fda05c",
+      "dispatch_item_id": "5bd6caa22aa749f08e1f333dd5583c2a",
+      "dispatch_stamped_call_id": "toolu_01HsvLGtzVMkF1r9CSe9PXLM",
+      "stamped_call_id_belongs_to": "discovery__read_context",
+      "child_session_id": "a000a3e0fbd94d9a9947929d0497de7d",
+      "delegation": 3
+    },
+    {
+      "rule": "stale_fifo_call_id",
+      "sdk_call_id": "toolu_01At8GNUfAab3yxJPDfv6oU2",
+      "name": "discovery__record_plan",
+      "response_id": "resp_76fd7c53b32e4a15bb4789df",
+      "mirror_item_id": "755633d3c5294f449cda71ef7a22e370",
+      "dispatch_item_id": "ca5b9b84aa4f4c3d866a6e4b506bc87f",
+      "dispatch_stamped_call_id": "toolu_01PMCxJjVgKB2SSZdzBBB5v2",
+      "stamped_call_id_belongs_to": "discovery__record_update",
+      "child_session_id": "a000a3e0fbd94d9a9947929d0497de7d",
+      "delegation": 3
+    },
+    {
+      "rule": "stale_fifo_call_id",
+      "sdk_call_id": "toolu_0196JrEWfNJnmGg5C6M7XhPW",
+      "name": "discovery__record_update",
+      "response_id": "resp_f2151c2eb3674e6c86272196",
+      "mirror_item_id": "3818d3b72c3449b7a16f1ffcb4550212",
+      "dispatch_item_id": "08f9101c25ff4d44a95c4fda9e8e8fe8",
+      "dispatch_stamped_call_id": "toolu_01MWjfFcryGvTRa7qUHqPs8o",
+      "stamped_call_id_belongs_to": "ToolSearch",
+      "child_session_id": "a000a3e0fbd94d9a9947929d0497de7d",
+      "delegation": 5
+    }
+  ],
+  "verifier_sha256": "aae7e5d8fa2e465179329a9299a07346c0a1f62da3ad97accaa10e6847406a2b",
+  "sdk_helper_sha256": "35e303a055c27dc6ec5c8aacb6697b0d14ad3378f4fa0104efea3470247d0604"
+}

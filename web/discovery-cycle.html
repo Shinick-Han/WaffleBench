@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Diagnostic discovery cycle | WaffleBench — Research Workbench</title>
+<meta name="description" content="Recorded post-hoc diagnostic cycle run by an Omnigent session on authored synthetic diagnostics. Shown only after session and source verification pass.">
+<meta property="og:title" content="Diagnostic discovery cycle | WaffleBench">
+<meta property="og:description" content="Hypothesis, competing tests, chosen study, measured result and proposed next experiment, read from one verified record. Not a hold-out, factory or physical result.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<link rel="stylesheet" href="./inspection-evidence.css?v=36ba43d333ad">
+<link rel="stylesheet" href="./discovery-cycle.css?v=3d1f00219c85">
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="masthead"><div class="mast-inner"><div class="identity"><span class="brand">WaffleBench</span><span class="divider" aria-hidden="true"></span><span>Research Workbench</span></div><nav class="mast-links" aria-label="Related pages"><a href="./inspection-evidence.html">Inspection v3 evidence</a><a href="./inspection-live.html">Omnigent run replay</a><a id="reportLink" href="https://github.com/Shinick-Han/falsify-lab-hacknation7/blob/main/DISCOVERY_CYCLE_RESULTS.md">English report</a></nav></div></header>
+<main id="main" class="layout">
+ <div class="heading">
+  <div><p class="tagline">An agentic lab for smarter wafer inspection.</p><h1>Diagnostic discovery cycle</h1><p class="lead">One recorded post-hoc diagnostic cycle: an Omnigent agent states a hypothesis, weighs competing catalog tests, picks one, and a deterministic runner measures it. The agent then interprets the result and proposes — but does not run — the next experiment.</p></div>
+  <div class="downloads"><button id="download" type="button" class="control" disabled aria-describedby="downloadNote">Download exact JSON</button><span id="downloadNote" class="visually-hidden">Saves the record bytes exactly as received from the server.</span></div>
+ </div>
+ <p class="notice"><strong>Recorded, completed results · authored synthetic diagnostics</strong> · Everything on this page is read from one stored file. Nothing runs in your browser, and there is no replay or live execution. This is not a new hold-out gain, a factory result or a physical measurement.</p>
+
+ <div id="loadState" class="load-state" role="status" aria-live="polite">
+  <div class="skeleton" aria-hidden="true"><span></span><span></span><span></span></div>
+  <p>Loading stored cycle record…</p>
+ </div>
+
+ <div id="app" hidden>
+  <dl id="studyMeta" class="study-meta"></dl>
+
+  <nav class="toc" aria-label="Sections on this page">
+   <a href="#question">Question</a><a href="#loop">Scientific loop</a><a href="#experiments">Experiments</a><a href="#roles">Roles and budget</a><a href="#verification">Verification</a>
+  </nav>
+
+  <section id="question" class="band" aria-labelledby="questionTitle">
+   <div class="section-head"><div><h2 id="questionTitle">Research question</h2></div></div>
+   <p id="questionText" class="question"></p>
+   <p id="scopeLabel" class="scope-label"></p>
+  </section>
+
+  <section id="loop" class="band" aria-labelledby="loopTitle">
+   <div class="section-head"><div><h2 id="loopTitle">The scientific loop</h2><p>Each experiment card below follows these steps in order. Tags show who produced each output.</p></div></div>
+   <ol class="loop-steps">
+    <li><span class="step-n">1</span><strong>Hypothesis</strong><span class="who agent">Agent-authored</span></li>
+    <li><span class="step-n">2</span><strong>Competing tests</strong><span class="who agent">Agent-authored from fixed catalog</span></li>
+    <li><span class="step-n">3</span><strong>Chosen study and rationale</strong><span class="who agent">Agent-authored</span></li>
+    <li><span class="step-n">4</span><strong>Measured result</strong><span class="who det">Deterministic computation</span></li>
+    <li><span class="step-n">5</span><strong>Interpretation</strong><span class="who agent">Agent-authored, bound to the result</span></li>
+    <li><span class="step-n">6</span><strong>Next proposed experiment</strong><span class="who prop">Proposed · not executed</span></li>
+   </ol>
+  </section>
+
+  <section id="experiments" class="band" aria-labelledby="expTitle">
+   <div class="section-head"><div><h2 id="expTitle">Experiments, in recorded order</h2><p>Plans, results and interpretations are joined by their recorded IDs. A mismatch is shown, never repaired.</p></div></div>
+   <div id="experimentCards" class="exp-cards"></div>
+  </section>
+
+  <section id="roles" class="band" aria-labelledby="rolesTitle">
+   <div class="section-head"><div><h2 id="rolesTitle">Roles, controls and budget</h2><p>The agent decides what to test and how to read it; it never computes measured values.</p></div></div>
+   <div id="rolesBody"></div>
+  </section>
+
+  <section id="verification" class="band" aria-labelledby="verTitle">
+   <div class="section-head"><div><h2 id="verTitle">Session and source verification</h2><p>These checks confirm the record is complete and its sources match their hashes. They are provenance checks, not a measure of inspection performance.</p></div></div>
+   <div id="verificationBody"></div>
+  </section>
+
+  <section class="limitations" aria-labelledby="limitationsTitle"><details open><summary id="limitationsTitle">Scope and limitations</summary><ul id="limitationsList"></ul></details></section>
+ </div>
+</main>
+<script src="./discovery-cycle.js?v=9f9cd3d7242c" defer></script>
+</body>
+</html>

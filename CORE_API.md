@@ -1,4 +1,4 @@
-# Falsify Lab core API (M1–M2)
+# WaffleBench core API (M1–M2)
 
 Research-path modules under `falsify_lab/`. The legacy `experiment.py` surrogate is
 connection-test only and is never used here.
