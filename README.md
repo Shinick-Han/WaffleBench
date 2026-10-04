@@ -29,6 +29,12 @@ an Origin UI table-pattern pass using the actual MIT-licensed source from 21st.d
 Short screen headings, flat research sections and a quiet navigation rail put
 measurements and charts first. Scientific values and the snapshot are unchanged;
 see `evidence/lovable-21st/validation.json` for independent acceptance.
+**Wafer view.** The PVT map is arranged within a circular silicon-wafer silhouette
+with localized rainbow reflections. Good, boundary and bad markers read the
+snapshot evaluation flags; unmeasured conditions, estimates, failures and posthoc
+provenance remain distinct. This is a PVT diagram, not measured die positions or
+manufacturing yield. All 35 conditions per corner and exact snapshot exports are
+preserved. See `evidence/wafer/validation.json` and `web/tests/wafer_check.mjs`.
 The `mockup/` folder is the original UI mockup. Its numbers are invented placeholders and
 are not results.
 

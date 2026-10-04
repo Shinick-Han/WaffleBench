@@ -166,3 +166,40 @@ dialog{border-radius:3px;background:var(--surface)}.evidence-field{background:va
  .records-toolbar{padding:14px 0}.records-toolbar .field-search{max-width:none}.records-meta{margin-left:0;width:100%}
  .footer-note{line-height:1.7}
 }
+
+/* PVT conditions arranged on a wafer silhouette, not physical die positions. */
+.wafer-frame{width:min(100%,580px);margin:0 auto;container-type:inline-size}
+.wafer-frame .heatmap{position:relative;isolation:isolate;width:100%;aspect-ratio:1;display:grid;align-content:center;grid-template-columns:26px repeat(7,minmax(0,1fr));grid-template-rows:20px repeat(5,minmax(0,calc((58cqw - 20px)/5)));gap:3px;padding:0 12%;border-radius:50%;overflow:visible;background:
+  linear-gradient(154deg,#ffffffc7 4%,transparent 25%,#ffffff93 36%,transparent 47%,#ffffff80 70%,transparent 91%),
+  linear-gradient(132deg,#ad9dcc 3%,#89b1d1 18%,#84cbd0 32%,#a3c99f 48%,#e6cb96 64%,#dfa9c1 79%,#b6a7d0 96%),
+  #dfe7e2;
+  border:2px solid #a8b6af;box-shadow:inset 0 0 0 5px #ffffff80,inset 0 0 0 7px #9aaba683}
+.wafer-frame .heatmap:before{content:"";position:absolute;inset:13px;border:1px solid #8a9d9770;border-radius:50%;pointer-events:none;z-index:-1}
+.wafer-frame .heatmap:after{content:"";position:absolute;bottom:-2px;left:50%;transform:translateX(-50%);width:12%;height:6%;background:var(--surface);border:1px solid #a8b6af;border-bottom:0;border-radius:50% 50% 0 0;pointer-events:none}
+.wafer-frame .axis{position:relative;z-index:1;font-size:12px;color:var(--ink);padding:0;text-align:center;align-self:center;font-weight:600}
+.wafer-frame .axis.y{text-align:right;padding-right:3px}
+.wafer-frame .heat-cell{position:relative;z-index:1;min-width:0;min-height:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;padding:1px;border:1px solid #ffffff;outline:1px solid #657b7070;outline-offset:-1px;border-radius:0;background:var(--die-fill);color:var(--die-ink);font-size:12px;font-weight:650;line-height:1.15;box-shadow:none;transition:filter .18s}
+.wafer-frame .heat-cell:hover{filter:brightness(.96);outline:2px solid var(--ink);outline-offset:1px}
+.wafer-frame .heat-cell:focus-visible{outline:3px solid var(--focus,#559b75);outline-offset:2px;z-index:3}
+.wafer-frame .heat-cell.selected{outline:3px solid var(--ink);outline-offset:2px;z-index:2}
+.wafer-frame .heat-cell.selected:focus-visible{outline-color:var(--focus,#559b75)}
+.die-mark{width:16px;height:16px;flex:none;display:block;font:700 19px/16px var(--font);text-align:center}
+.die-value{font-size:12px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.wafer-frame .die-good{--die-fill:#dce9d8;--die-ink:#214b34}
+.wafer-frame .die-bad{--die-fill:#efd7d1;--die-ink:#81392e}
+.wafer-frame .die-boundary{--die-fill:#f4e6bd;--die-ink:#77551f}
+.wafer-frame .die-unknown{--die-fill:#f1f3ef;--die-ink:#65716b}
+.wafer-frame .die-failed{--die-fill:#d9dde0;--die-ink:#424b52}
+.wafer-frame .die-estimate{border:2px dashed #586b60;--die-fill:#eff1e8;--die-ink:#45574a}
+.wafer-frame .die-heldout{background-image:repeating-linear-gradient(135deg,transparent 0 5px,#ffffffa6 5px 7px)}
+.heatmap-content .axis-caption{padding:0;gap:10px;margin:13px 0 14px;font-size:12px;flex-wrap:wrap}
+.heatmap-content .map-legend{gap:8px 17px;align-items:center;font-size:12px}
+.wafer-key{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.key-die{width:19px;height:19px;display:inline-grid;place-items:center;border:1px solid #91a197;font:700 15px/1 var(--font);flex:none}
+.key-die svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.key-die.good{background:#dce9d8;color:#214b34}.key-die.bad{background:#efd7d1;color:#81392e}
+.key-die.boundary{background:#f4e6bd;color:#77551f}.key-die.unknown{background:#f1f3ef;color:#65716b}
+.key-die.failed{background:#d9dde0;color:#424b52}.key-die.estimate{border-style:dashed;background:#eff1e8;color:#45574a}
+.key-die.heldout{background:#f1f3ef repeating-linear-gradient(135deg,transparent 0 4px,#a9b7aa88 4px 6px);color:#45574a}
+.wafer-note{width:100%;color:var(--muted);font-size:13px;line-height:1.6}
+@container (max-width:450px){.wafer-frame .heatmap{grid-template-columns:21px repeat(7,minmax(0,1fr));grid-template-rows:18px repeat(5,minmax(0,calc((58cqw - 18px)/5)));gap:2px}.wafer-frame .die-value{display:none}.wafer-frame .heat-cell{min-height:24px}.wafer-frame .axis{font-size:12px}}

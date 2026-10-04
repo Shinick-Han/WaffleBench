@@ -149,19 +149,32 @@ const dirty={lab:true,benchmark:true,records:true};
 function renderView(v){dirty[v]=false;if(v==='lab')renderLab();else if(v==='benchmark')renderBenchmark();else renderRecords();}
 
 /* ---------- workbench ---------- */
+function mapStatus(c){
+  if(c.kind==='failed')return ['failed','실패 기록'];
+  if(c.kind==='unobserved')return ['unknown','미평가'];
+  const e=c.ev;
+  if(e&&e.clear_counterexample===true)return ['bad','불량 · 명확한 반례'];
+  if(e&&e.clear_counterexample===false&&e.secondary_counterexample===true)return ['boundary','경계 · 보조 반례'];
+  if(e&&e.clear_counterexample===false&&e.secondary_counterexample===false)return ['good','양품 · 모델 허용'];
+  return ['unknown','미평가'];
+}
 function renderMap(){
   let html='<span></span>'+VDDS.map(v=>`<span class="axis">${v.toFixed(1)}</span>`).join('');
   TEMPS.forEach(t=>{html+=`<span class="axis y">${t}°</span>`;VDDS.forEach(v=>{
     const k=pointId(state.corner,v,t),c=cellAt(k);const selected=state.point===k;
-    let cls=['heat-cell'],text='·',label='미관측',s=null;
-    if(c.kind==='observed'||c.kind==='calibration'){cls.push('observed');label=c.kind==='calibration'?'보정 관측':'관측';text=c.err!=null?fmtPct(c.err):'평가 없음';s=c.err;}
-    else if(c.kind==='held_out'){cls.push('heldout');label='보류 평가(사후)';text=c.err!=null?fmtPct(c.err):'보류';s=c.err;}
-    else if(c.kind==='failed'){cls.push('failed');label='실패';text='실패';}
-    if(c.candidate){cls.push('upcoming');if(s==null&&c.kind==='unobserved'){const e=num(c.candidate.idw_predicted_abs_error);cls.push('estimate');label='후보 · IDW 추정';text=e!=null?'~'+fmtPct(e):'후보';if(e!=null)s=e*.5;}}
-    if(s==null&&!cls.includes('failed'))cls.push('unobserved');
+    const [status,statusLabel]=mapStatus(c);
+    const estimate=c.kind==='unobserved'&&!!c.candidate;
+    const held=c.kind==='held_out';
+    const cls=['heat-cell','die-'+status];
+    if(held)cls.push('die-heldout');
+    if(estimate)cls.push('die-estimate');
     if(selected)cls.push('selected');
-    const sc=s==null?0:Math.min(s*100/38,1);const style=s==null?'':`style="--cell:rgb(${Math.round(237-21*sc)},${Math.round(241-88*sc)},${Math.round(212-124*sc)})"`;
-    html+=`<button class="${cls.join(' ')}" ${style} data-key="${esc(k)}" aria-pressed="${selected}" aria-label="${esc(fmtKey(k))}, ${esc(label)}${c.err!=null?', 오차 '+fmtPct(c.err):''}">${esc(text)}</button>`;});});
+    const marks={good:'<path d="m3 8 3 3 6-7"/>',bad:'<path d="M4 4 12 12M12 4 4 12"/>',boundary:'<path d="m8 2 6 6-6 6-6-6Z"/>',unknown:'<circle cx="8" cy="8" r="1.6"/>',failed:'<path d="M8 2v8m0 3v1"/>'};
+    const mark=estimate?'<span class="die-mark" aria-hidden="true">~</span>':`<svg class="die-mark" viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${marks[status]}</svg>`;
+    const value=estimate?num(c.candidate.idw_predicted_abs_error):c.err;
+    const valueText=value==null?'':(estimate?'~':'')+fmtPct(value);
+    const provenance=held?'보류 평가 · 사후':c.kind==='calibration'?'보정 관측':c.kind==='observed'?'관측':c.kind==='failed'?'실패 기록':estimate?'후보 · IDW 추정':'미관측';
+    html+=`<button type="button" class="${cls.join(' ')}" data-key="${esc(k)}" aria-pressed="${selected}" aria-label="${esc(fmtKey(k))}, ${esc(provenance)}, ${esc(statusLabel)}${c.err!=null?', 오차 '+fmtPct(c.err):estimate&&value!=null?', IDW 추정 오차 '+fmtPct(value):''}">${mark}<span class="die-value">${esc(valueText)}</span></button>`;});});
   const fk=$('heatmap').contains(document.activeElement)?document.activeElement.dataset.key:null;
   $('heatmap').innerHTML=html;
   if(fk){const b=$('heatmap').querySelector(`[data-key="${CSS.escape(fk)}"]`);if(b)b.focus();}
@@ -174,7 +187,7 @@ function renderMap(){
   const pred=ev?ev.predicted_tpd_s:cov&&c.kind!=='unobserved'?cov.predicted_tpd_s:null;
   const obsv=o?o.tpd_s:ev?ev.simulated_tpd_s:cov&&c.kind!=='unobserved'?cov.observed_tpd_s:null;
   const sub=c.kind==='unobserved'?(c.candidate?`현재 결정의 후보 · IDW 추정 오차 ${fmtPct(c.candidate.idw_predicted_abs_error)} (관측 아님)`:'이 재생 단계까지 관측 기록 없음'):`${kindText}${rid!=null?' · ':''}${rid!=null?`<button class="text-action" data-evidence="${esc(rid)}">${esc(rid)}</button>`:''} · 예측 ${fmtPs(pred)} ps · 관측 ${fmtPs(obsv)} ps`;
-  $('pointDetail').innerHTML=`<div><strong>${esc(fmtKey(k))}</strong><small>${sub}</small></div><div class="value data">${c.kind==='unobserved'?'—':fmtPct(c.err)}<small>${c.kind==='unobserved'?'관측 오차 없음':c.err==null?'평가 기록 없음':'|예측−관측| / 관측'}</small></div>`;
+  $('pointDetail').innerHTML=`<div><strong>${esc(fmtKey(k))} · ${esc(mapStatus(c)[1])}</strong><small>${sub}</small></div><div class="value data">${c.kind==='unobserved'?'—':fmtPct(c.err)}<small>${c.kind==='unobserved'?'관측 오차 없음':c.err==null?'평가 기록 없음':'|예측−관측| / 관측'}</small></div>`;
 }
 function renderSteps(){
   const m=state.m,n=D();
