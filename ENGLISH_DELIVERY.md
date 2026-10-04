@@ -9,3 +9,5 @@ Stored scientific JSON, original datasets, ledger events, model artifacts, froze
 All three submission videos have English narration and captions. The product demo was re-rendered with two new English screenshots of the actual stored replay. It is still 59.6 seconds; the participant and technical videos remain 50.0 and 58.0 seconds. Encoding, duration, audio presence and hashes were rechecked.
 
 The concise English submission text is in `SUBMISSION_EN.md`; full results remain in the individual study reports and `OPTIMIZATION_3H.md`.
+
+Verification covered all six pages at 390, 768 and 1440 pixels, replay controls, all three synthetic wafers, expanded descriptions and exact-byte JSON export. Additional checks covered the records filters at 390 pixels and the synthetic wafer page at 360 pixels with 200% zoom. The focused frontend/server suite passed 36 tests. A separate English stylesheet handles longer translated text while the original frozen CSS stays unchanged. Static publishing includes the English assets and disables local execution through the existing static-mode metadata.

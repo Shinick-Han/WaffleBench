@@ -166,7 +166,7 @@ def main() -> None:
     combined["limitations"].insert(0, "Recorded live workbench and separate primary benchmark. snapshot.cost is live-only; benchmark.cost includes the primary campaign and its posthoc reference. No remote execution is provided.")
     docs = destination / "docs"
     docs.mkdir()
-    for name in ("index.html", "app.css", "app.js"):
+    for name in ("index.html", "app.css", "app.js", "app.en.js", "english-presentation.css"):
         copy_source(PROJECT / "web" / name, docs / name)
     index = docs / "index.html"
     index.write_text(index.read_text(encoding="utf-8").replace("<head>", '<head>\n<meta name="falsify-mode" content="static">', 1), encoding="utf-8", newline="\n")

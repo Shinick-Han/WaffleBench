@@ -104,9 +104,9 @@ class StaticAndSnapshotTests(ServerCase):
     def test_index_and_assets_served(self):
         status, headers, body = self.request("GET", "/")
         self.assertEqual(status, 200)
-        self.assertIn(b"./app.js", body)
+        self.assertIn(b"./app.en.js", body)
         self.assertIn("default-src 'self'", headers["Content-Security-Policy"])
-        for path in ("/app.js", "/app.css", "/index.html"):
+        for path in ("/app.js", "/app.en.js?v=translation-check", "/app.css", "/english-presentation.css?v=translation-check", "/index.html"):
             self.assertEqual(self.request("GET", path)[0], 200, path)
 
     def test_path_traversal_and_unknown_paths_denied(self):

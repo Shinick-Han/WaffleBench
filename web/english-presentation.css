@@ -1,0 +1,3 @@
+/* English text reflow; the original app.css remains hash-bound. */
+.records-toolbar select{max-width:100%;width:100%;min-width:0}
+.records-toolbar .field{max-width:100%}

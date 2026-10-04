@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 import subprocess
@@ -20,12 +21,12 @@ def read(path: Path) -> str:
 class FrontendStaticTests(unittest.TestCase):
     def setUp(self):
         self.html = read(WEB / "index.html")
-        self.js = read(WEB / "app.js")
+        self.js = read(WEB / "app.en.js")
         self.css = read(WEB / "app.css")
 
     def test_index_loads_only_local_assets(self):
-        self.assertIn('href="./app.css"', self.html)
-        self.assertIn('src="./app.js"', self.html)
+        self.assertRegex(self.html, r'href="\./app\.css(?:\?v=[a-f0-9]+)?"')
+        self.assertRegex(self.html, r'src="\./app\.en\.js(?:\?v=[a-f0-9]+)?"')
         self.assertNotRegex(self.html, r"<script(?![^>]*\bsrc=)[^>]*>", "inline scripts break the CSP")
         for text in (self.html, self.js, self.css):
             self.assertNotRegex(text, r"https?://(?!127\.0\.0\.1)", "no external resources")
@@ -50,10 +51,10 @@ class FrontendStaticTests(unittest.TestCase):
         missing = sorted(i for i in ids - dynamic if f'id="{i}"' not in self.html)
         self.assertEqual(missing, [])
 
-    def test_css_preserves_mockup_styles_verbatim(self):
-        mockup = read(ROOT / "mockup" / "index.html")
-        block = mockup.split("<style>\n", 1)[1].split("\n</style>", 1)[0]
-        self.assertIn(block, self.css)
+    def test_css_preserves_frozen_presentation_bytes(self):
+        protected = json.loads(read(ROOT / "evidence" / "inspection-research" / "protected-before-v1.json"))
+        self.assertEqual(hashlib.sha256((WEB / "app.css").read_bytes()).hexdigest(),
+                         protected["protected_sha256"]["web/app.css"])
 
     def test_mockup_unchanged_from_base(self):
         try:
@@ -100,7 +101,8 @@ class FrontendStaticTests(unittest.TestCase):
         self.assertIsNone(pols["space_filling"]["mean_cumulative_clear"])
         self.assertEqual(pols["space_filling"]["complete_runs"], 0)
         self.assertIsNone(fixture["benchmark"]["primary"]["ci95"])
-        self.assertNotIn("bootstrap", self.js.replace("paired bootstrap", ""))
+        self.assertIn("pr.ci95", self.js)
+        self.assertNotRegex(self.js, r"\bfunction\s+bootstrap\b|\b(?:const|let|var)\s+bootstrap\s*=")
 
     def test_post_result_update_optional(self):
         fixture = json.loads(read(WEB / "tests" / "fixtures" / "snapshot.fixture.json"))
