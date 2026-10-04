@@ -19,6 +19,11 @@ ranking time. The UI avoids rebuilding hidden views and invariant chart details.
 A separate 180-run load-sensitivity study rejected a proposed kernel policy as the
 default. Measurements, raw evidence and reproduction steps are in
 [`PERFORMANCE.md`](PERFORMANCE.md); the original primary result is unchanged.
+**Usability update.** Policy comparison shows the conclusion first on narrow screens,
+with readable summaries and expandable raw evidence. Records have labelled filters,
+stable error sorting and filter reset. Replay progress, keyboard focus restoration
+and larger touch targets improve navigation. Research values and snapshot bytes
+remain unchanged. See `evidence/ui-polish/validation.json` for the acceptance checks.
 The `mockup/` folder is the original UI mockup. Its numbers are invented placeholders and
 are not results.
 

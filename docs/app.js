@@ -22,6 +22,8 @@ function keyOf(r){if(!r||typeof r!=='object')return null;const p=r.pvt;if(p&&typ
 function fmtKey(k){if(!k)return '조건 기록 없음';const [c,v,t]=k.split('|');return `${c} · ${(+v).toFixed(1)} V · ${+t} °C`;}
 const fmtTime=ts=>{const d=new Date(ts);return ts&&!isNaN(d)?d.toLocaleString('ko-KR',{hour12:false}):'—';};
 const isHeld=r=>r&&(r.phase==='held_out'||r.phase==='heldout');
+const PHASE_LABEL={calibration:'보정',initial:'공통 초기',search:'탐색',held_out:'보류 평가 · 사후',heldout:'보류 평가 · 사후',evaluation:'평가 전용'};
+const phaseLabel=p=>p==null?'단계 null':PHASE_LABEL[p]||String(p);
 
 const state={view:'lab',mode:null,controller:null,snap:null,raw:null,sha:null,loadError:null,m:null,stage:0,corner:'SS',point:null,playing:false,visiblePolicies:null,job:null,pollError:null,serverSha:null};
 
@@ -91,6 +93,9 @@ function cellAt(k){
 /* ---------- loading ---------- */
 async function sha256(text){try{if(!crypto.subtle)return null;const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('');}catch{return null;}}
 async function detectMode(){if(document.querySelector('meta[name="falsify-mode"]')?.content==='static')return null;try{const r=await fetch('./api/job',{cache:'no-store'});if(r.ok&&(r.headers.get('content-type')||'').includes('application/json')){const j=await r.json();if(j&&j.controller==='falsify-lab-local')return j;}}catch{}return null;}
+/* Manual retry after a failed load. One request at a time; the alert notice is
+   re-rendered with the outcome and focus returns to its retry button if it remains. */
+async function retryLoad(){if(state.loading)return;state.loading=true;renderChrome();try{await loadSnapshot();}finally{state.loading=false;}renderChrome();const b=document.querySelector('[data-retry-load]');if(b)b.focus();else{$('mainContent').focus({preventScroll:true});showToast('스냅샷을 다시 불러왔습니다.');}}
 async function loadSnapshot(){
   const url=state.mode==='local'?'./api/snapshot':'./data/snapshot.json';
   let raw=null,err=null;
@@ -118,7 +123,7 @@ function renderChrome(){
   notes.push(local?`<div class="preview-notice"><svg class="icon notice-icon"><use href="#i-info"/></svg><span><strong>로컬 모드</strong> · 이 컴퓨터의 저장된 실험 기록을 표시합니다. 허용된 두 작업(demo-prepare, reproduce)만 시작할 수 있습니다.</span></div>`:`<div class="preview-notice"><svg class="icon notice-icon"><use href="#i-info"/></svg><span><strong>기록된 실행 재생</strong> · 공개 화면은 저장된 실제 기록을 탐색·재생합니다. 원격 계산이나 새 실험 실행은 하지 않습니다.</span></div>`);
   if(s&&s.release)notes.push(`<div class="preview-notice"><svg class="icon notice-icon"><use href="#i-info"/></svg><span><strong>두 실제 실행의 기록</strong> · 작업대는 seed 1001의 에이전트 시연, 정책 비교는 별도 본 연구 40회입니다. 시연 비용과 본 연구 비용을 각각 표시합니다.</span></div>`);
   else if(s&&s.campaign&&['development','reproduce'].includes(s.campaign.kind))notes.push(`<div class="preview-notice"><svg class="icon notice-icon"><use href="#i-info"/></svg><span><strong>${s.campaign.kind==='development'?'개발 검증':'짧은 재현 검사'}</strong> · 본 연구 결과와 분리된 실제 계산 기록입니다.</span></div>`);
-  if(state.loadError)notes.push(`<div class="preview-notice warn" role="alert"><svg class="icon notice-icon"><use href="#i-info"/></svg><span><strong>표시할 스냅샷 없음</strong> · ${esc(state.loadError.message)} 화면의 모든 과학적 값은 비어 있습니다.</span></div>`);
+  if(state.loadError)notes.push(`<div class="preview-notice warn" role="alert"><svg class="icon notice-icon"><use href="#i-info"/></svg><span><strong>표시할 스냅샷 없음</strong> · ${esc(state.loadError.message)} 화면의 모든 과학적 값은 비어 있습니다.</span><button class="btn compact notice-action" data-retry-load ${state.loading?'disabled':''}>${state.loading?'다시 불러오는 중…':'다시 시도'}</button></div>`);
   if(s&&s.data_mode!=='real')notes.push(`<div class="preview-notice fixture" role="alert"><svg class="icon notice-icon"><use href="#i-info"/></svg><span><strong>실제 데이터 아님 · data_mode=${esc(s.data_mode)}</strong> · 테스트용 픽스처입니다. 연구 결과로 해석하거나 인용하지 마세요.</span></div>`);
   else if(m&&m.empty)notes.push(`<div class="preview-notice warn"><svg class="icon notice-icon"><use href="#i-info"/></svg><span><strong>결과가 아직 없습니다</strong> · 스냅샷에 관측·결정·비교 기록이 없습니다. 빈 화면을 예시 수치로 채우지 않습니다.</span></div>`);
   if(m&&m.warn.length)notes.push(`<div class="preview-notice warn"><svg class="icon notice-icon"><use href="#i-info"/></svg><span><strong>스냅샷 형식 경고</strong><ul>${m.warn.slice(0,6).map(w=>`<li>${esc(w)}</li>`).join('')}</ul></span></div>`);
@@ -157,7 +162,9 @@ function renderMap(){
     if(selected)cls.push('selected');
     const sc=s==null?0:Math.min(s*100/38,1);const style=s==null?'':`style="--cell:rgb(${Math.round(237-21*sc)},${Math.round(241-88*sc)},${Math.round(212-124*sc)})"`;
     html+=`<button class="${cls.join(' ')}" ${style} data-key="${esc(k)}" aria-pressed="${selected}" aria-label="${esc(fmtKey(k))}, ${esc(label)}${c.err!=null?', 오차 '+fmtPct(c.err):''}">${esc(text)}</button>`;});});
+  const fk=$('heatmap').contains(document.activeElement)?document.activeElement.dataset.key:null;
   $('heatmap').innerHTML=html;
+  if(fk){const b=$('heatmap').querySelector(`[data-key="${CSS.escape(fk)}"]`);if(b)b.focus();}
   document.querySelectorAll('[data-corner]').forEach(b=>{b.classList.toggle('active',b.dataset.corner===state.corner);b.setAttribute('aria-pressed',b.dataset.corner===state.corner);});
   const k=state.point&&state.point.startsWith(state.corner+'|')?state.point:null;
   if(!k){$('pointDetail').innerHTML=`<div><strong>${esc(state.corner)} 코너</strong><small>조건을 선택하면 저장된 관측·예측·보류 평가를 표시합니다.</small></div>`;return;}
@@ -171,10 +178,14 @@ function renderMap(){
 }
 function renderSteps(){
   const m=state.m,n=D();
-  if(!m||(!n&&!m.observations.length)){$('steps').innerHTML='<span class="steps-empty">기록된 루프 단계가 없습니다.</span>';return;}
-  const labels=['초기 근거',...m.decisions.map((d,i)=>`결정 ${d.sequence??i+1} 결과`)];
+  if(!m||(!n&&!m.observations.length)){$('steps').innerHTML='<span class="steps-empty">기록된 루프 단계가 없습니다.</span>';$('replayProgress').textContent='';return;}
+  const labels=stageLabels();
+  $('replayProgress').textContent=`${state.stage+1} / ${n+1}단계 · ${labels[state.stage]} · ${state.stage>=n?'기록된 모든 결과 공개':'이후 결정의 관측 결과는 아직 숨김'}`;
+  const fs=$('steps').contains(document.activeElement)?document.activeElement.dataset.step:null;
   $('steps').innerHTML=labels.map((label,i)=>`${i?'<span class="step-connector" aria-hidden="true"></span>':''}<button class="step ${state.stage===i?'active':state.stage>i?'done':''}" data-step="${i}" ${state.stage===i?'aria-current="step"':''} aria-label="${i+1}단계 ${esc(label)} 보기"><i>${i+1}</i>${esc(label)}</button>`).join('');
+  if(fs!=null){const b=$('steps').querySelector(`[data-step="${fs}"]`);if(b)b.focus();}
 }
+const stageLabels=()=>['초기 근거',...state.m.decisions.map((d,i)=>`결정 ${d.sequence??i+1} 결과`)];
 function renderBudget(){
   const m=state.m,run=m&&m.run,b=run&&run.budget&&typeof run.budget==='object'?run.budget:null;
   const limit=b?num(b.limit):null;let used=b?num(b.used):null,remaining=b?num(b.remaining):null;
@@ -228,10 +239,10 @@ function renderLab(){
   const n=D(),m=state.m,local=state.mode==='local';
   const atEnd=state.stage>=n,label=!n?(local?'실행 제어 열기':'정책 비교 보기'):atEnd?'정책 비교 보기':'다음 기록 단계';
   $('nextTitle').textContent=!m?'표시할 스냅샷이 없습니다.':!n?'기록된 발견 루프가 아직 없습니다.':atEnd?'기록된 루프를 끝까지 재생했습니다.':state.stage===0?'첫 번째 결정의 관측 결과를 볼 차례입니다.':'다음 결정의 관측 결과를 볼 차례입니다.';
-  $('nextDescription').textContent=!n?(local?'데모 준비 작업을 실행하면 보정·초기 관측이 기록됩니다. 적응형 결정은 이후 에이전트 루프에서 기록됩니다.':'공개 화면은 저장된 기록만 재생합니다.'):atEnd?'정책 비교에서 효과와 한계를 확인하세요.':'기록된 순서대로 한 단계씩 재생합니다. 실시간 계산이 아닙니다.';
+  $('nextDescription').textContent=!n?(local?'데모 준비 작업을 실행하면 보정·초기 관측이 기록됩니다. 적응형 결정은 이후 에이전트 루프에서 기록됩니다.':'공개 화면은 저장된 기록만 재생합니다.'):atEnd?'다음 단계: 정책 비교에서 같은 예산의 선택 방식별 결과, 주 판정과 한계를 확인하세요.':'기록된 순서대로 한 단계씩 재생합니다. 실시간 계산이 아닙니다.';
   $('advanceButton').innerHTML=`${label}${icon('arrow')}`;$('topAdvanceButton').textContent=label;
   $('topAdvanceButton').disabled=$('advanceButton').disabled=false;
-  $('playButton').disabled=$('resetButton').disabled=n===0;
+  $('playButton').disabled=$('resetButton').disabled=n===0;$('finalButton').disabled=n===0||atEnd;
 }
 function advance(){stopPlaying();const n=D();if(!n){state.mode==='local'?openJobs():setView('benchmark');return;}if(state.stage>=n)setView('benchmark');else setStage(state.stage+1);}
 function setStage(i){state.stage=Math.max(0,Math.min(i,D()));const m=state.m,d=m&&m.decisions[state.stage],prev=m&&m.decisions[state.stage-1];
@@ -290,16 +301,71 @@ function renderBenchmark(){
   const tag=pr.success===true?['green','주 성공 기준 충족']:pr.success===false?['amber','주 성공 기준 미충족']:['gray','주 판정 불가 (null)'];
   const head=pr.success===true?'같은 예산으로<br>반례를 더 발견했습니다.':pr.success===false?'우월성이 확인되지<br>않았습니다.':'주 성공 판정을<br>수행할 수 없습니다.';
   const md=num(pr.mean_difference);
-  $('benchmarkConclusion').innerHTML=`<span class="tag ${tag[0]}">${tag[1]}</span><h2>${head}</h2><p>${pr.reason!=null?esc(pr.reason):'판정 이유가 기록되지 않았습니다 (reason = null).'}</p><div class="conclusion-metric"><span>완전한 seed 쌍</span><strong>${pr.complete_pairs??'—'}</strong></div><div class="conclusion-metric"><span>적응형 − 무작위 평균 차이</span><strong>${md==null?'—':(md>0?'+':'')+md.toFixed(2)+'개'}</strong></div><div class="conclusion-metric"><span>paired bootstrap 95% 구간</span><strong style="font-size:14px">${ci?`${ci[0].toFixed(2)} ~ ${ci[1].toFixed(2)}`:'null · 계산되지 않음'}</strong></div><div class="conclusion-note">값은 코어가 기록한 primary 결과입니다. 화면은 구간이나 평균을 다시 계산하지 않습니다.${Array.isArray(pr.paired_differences)&&pr.paired_differences.length?`<div class="paired">${pr.paired_differences.map(x=>{const v=x&&typeof x==='object'?num(x.difference):num(x);const sd=x&&typeof x==='object'&&x.seed!=null?`seed ${esc(x.seed)}: `:'';return `<span>${sd}${v==null?'null':(v>0?'+':'')+v}</span>`;}).join('')}</div>`:''}</div>`;
+  $('benchmarkConclusion').innerHTML=`<span class="tag ${tag[0]}">${tag[1]}</span><h2>${head}</h2><p>${pr.reason!=null?esc(pr.reason):'판정 이유가 기록되지 않았습니다 (reason = null).'}</p><div class="conclusion-metric"><span>완전한 seed 쌍</span><strong>${pr.complete_pairs??'—'}</strong></div><div class="conclusion-metric"><span>적응형 − 무작위 평균 차이</span><strong>${md==null?'—':(md>0?'+':'')+md.toFixed(2)+'개'}</strong></div><div class="conclusion-metric"><span>paired bootstrap 95% 구간</span><strong style="font-size:14px">${ci?`${ci[0].toFixed(2)} ~ ${ci[1].toFixed(2)}`:'null · 계산되지 않음'}</strong></div><div class="conclusion-note">값은 코어가 기록한 primary 결과입니다. 화면은 구간이나 평균을 다시 계산하지 않습니다.${pr.comparison!=null?`<br>비교: ${compLabel(pr.comparison,policyLabel(pol))}`:''}</div>${Array.isArray(pr.paired_differences)&&pr.paired_differences.length?disclosure(`seed별 차이 · ${pr.paired_differences.length}쌍`,pairChips(pr.paired_differences)):''}${b.primary!=null?rawJson('primary 원본 필드',b.primary):''}`;
   const ri=pol.findIndex(p=>p.id==='random');const rm=ri<0?null:curves[ri].meanFinal;
   $('benchmarkTable').innerHTML=pol.length?pol.map((p,i)=>{const c=curves[i],mean=c.meanFinal;const diff=p.id==='random'?'기준':mean!=null&&rm!=null?((mean-rm>0?'+':'')+(mean-rm).toFixed(2)+'개'):'—';const inc=c.incomplete.map(r=>`seed ${r.seed??'null'}: ${r.status??'null'}`);return `<tr><td><span class="policy-name"><span class="dot" style="color:${POLICY_COLORS[i%POLICY_COLORS.length]}"></span>${esc(p.label??p.id)}</span></td><td>${mean==null?'— <span class="muted">평균 없음 (null)</span>':mean.toFixed(2)}</td><td>${diff}</td><td>${esc(c.completeRuns)}/${c.runs.length} 완료${inc.length?`<br><span class="muted">미완료 · ${esc(inc.join(', '))}</span>`:''}</td><td class="muted">${esc(POLICY_PURPOSE[p.id]||'')}</td></tr>`;}).join(''):'<tr><td colspan="5" class="muted">policies 배열이 비어 있습니다.</td></tr>';
   $('benchmarkTableNote').textContent='평균은 코어가 완료 실행만으로 내보낸 mean_cumulative_clear의 마지막 값입니다. 미완료 실행은 평균과 완료 수에서 제외되며 성공값으로 대체하지 않습니다. 평균이 null이면 —로 표시합니다. 무작위 대비 차이는 두 내보낸 평균의 단순 차이이며, 주 판정은 seed 쌍 기반 primary 결과만 사용합니다.';
   renderBenchDetails(b);
 }
 function kvList(o){if(o==null)return `<p>${NULL}</p>`;if(typeof o!=='object')return `<p>${esc(o)}</p>`;if(Array.isArray(o))return o.length?`<ul>${o.map(x=>`<li>${show(x)}</li>`).join('')}</ul>`:'<p class="muted">빈 배열</p>';const ks=Object.keys(o);return ks.length?`<dl class="kv">${ks.map(k=>`<dt>${esc(k)}</dt><dd>${show(o[k])}</dd>`).join('')}</dl>`:'<p class="muted">빈 객체</p>';}
-function renderBenchDetails(b){const m=state.m;const parts=[];
-  parts.push(`<h3>보류 평가</h3>${kvList(b?b.held_out:null)}`,`<h3>전수 참조</h3>${kvList(b?b.reference:null)}`,`<h3>본 연구 비용</h3>${kvList(b?b.cost:null)}`,`<h3>보조 비교</h3>${kvList(b?b.secondary_comparisons:null)}`,`<h3>${state.snap&&state.snap.release?'작업대 시연 비용':'스냅샷 실행 비용'}</h3>${kvList(m?m.cost:null)}`,`<h3>한계</h3>${kvList([...(m?m.limitations:[]),...(b&&Array.isArray(b.limitations)?b.limitations:[])])}`);
-  $('benchmarkDetails').innerHTML=parts.join('');}
+/* Supporting evidence. Summaries read exact exported fields (formatted values keep
+   the raw number in a title); bulky per-run/per-seed arrays and each full original
+   object stay in closed disclosures with their original precision. Absent keys are
+   not shown; present nulls render as null. */
+const disclosure=(sum,body)=>`<details class="disclosure"><summary>${sum}</summary><div class="disclosure-body">${body}</div></details>`;
+const rawJson=(label,v)=>disclosure(esc(label),`<pre class="json-block">${esc(JSON.stringify(v,null,2))}</pre>`);
+const isObj=v=>v!=null&&typeof v==='object'&&!Array.isArray(v);
+const has=(o,k)=>isObj(o)&&Object.prototype.hasOwnProperty.call(o,k);
+const keyTitle=k=>` title="${esc(k)}"`;
+const raw=(v,text)=>`<span class="data" title="${esc(v)}">${text}</span>`;
+const vVal=v=>v==null?NULL:typeof v==='object'?'<span class="muted">원본 필드 참고</span>':typeof v==='number'?`<span class="data">${esc(v)}</span>`:esc(v);
+const vPct=v=>num(v)==null?vVal(v):raw(v,fmtPct(v));
+const vNum=v=>num(v)==null?vVal(v):raw(v,v.toFixed(4));
+const vSec=v=>num(v)==null?vVal(v):raw(v,v.toFixed(1)+'초');
+const vDiff=v=>num(v)==null?vVal(v):raw(v,(v>0?'+':'')+v.toFixed(2)+'개');
+const vCi=v=>v==null?'null · 계산되지 않음':Array.isArray(v)&&v.length===2&&v.every(x=>num(x)!=null)?raw(JSON.stringify(v),`${v[0].toFixed(2)} ~ ${v[1].toFixed(2)}`):`<span class="mono">${esc(JSON.stringify(v))}</span>`;
+const vCount=v=>Array.isArray(v)?`<span class="data">${v.length}개</span>`:vVal(v);
+function fields(o,spec){const rows=spec.filter(([k])=>has(o,k)).map(([k,l,f])=>`<dt${keyTitle(k)}>${esc(l)}</dt><dd>${(f||vVal)(o[k])}</dd>`);return rows.length?`<dl class="kv">${rows.join('')}</dl>`:'';}
+const policyLabel=pol=>id=>{const p=pol.find(x=>String(x.id)===String(id));return p&&p.label!=null?String(p.label):String(id);};
+function compLabel(c,pl){const mm=typeof c==='string'&&c.match(/^(.+) minus (.+)$/);return mm?`<span${keyTitle(c)}>${esc(pl(mm[1]))} − ${esc(pl(mm[2]))}</span>`:esc(c);}
+function pairChips(a){return `<div class="paired">${a.map(x=>{const v=x&&typeof x==='object'?num(x.difference):num(x);const sd=x&&typeof x==='object'&&x.seed!=null?`seed ${esc(x.seed)}: `:'';return `<span>${sd}${v==null?'null':(v>0?'+':'')+v}</span>`;}).join('')}</div>`;}
+const ERR_SPEC=[['points','평가 지점'],['clear_counterexamples','명확한 반례 (>11%)'],['secondary_counterexamples','보조 반례 (>10%)'],['mean_abs_relative_error','평균 절대 상대오차',vPct],['max_abs_relative_error','최대 절대 상대오차',vPct]];
+const COST_SPEC=[['campaign_kind','캠페인 종류'],['logical_queries','논리 질의'],['attempts','시뮬레이션 시도'],['successes','성공'],['failures','실패'],['unfinished_attempts','미완료 시도'],['cache_hits','캐시 적중'],['restricted_cache_hits','제한 캐시 적중'],['simulation_seconds','시뮬레이션 시간',vSec],['policy_seconds','정책 계산 시간',vSec],['wall_seconds','전체 경과 시간',vSec],['posthoc_attempts_separate_from_research_budget','연구 예산과 별도인 사후 평가 시도']];
+const PURPOSE_LABEL={preflight:'수치 사전 검증',calibration:'보정',benchmark:'본 연구 탐색',posthoc:'사후 평가',postflight:'사후 검증',live:'작업대 시연',attempts_max:'시도 상한',wall_seconds_max:'경과 시간 상한 (초)'};
+const PART_LABEL={training:'보정 지점',search_pool:'탐색 후보',held_out:'보류 지점',prior_excluded:'이전 검증 제외',low_vdd:'저전압 구간',high_vdd:'고전압 구간'};
+const mapList=(o,labels)=>`<dl class="kv">${Object.keys(o).map(k=>`<dt${keyTitle(k)}>${esc(labels[k]||k)}</dt><dd>${vVal(o[k])}</dd>`).join('')}</dl>`;
+function statTable(rows){return `<div class="table-wrap" tabindex="0" role="region" aria-label="구간별 오차 표"><table class="results-table mini-table"><thead><tr><th scope="col">구간</th><th scope="col">지점</th><th scope="col">명확 반례</th><th scope="col">보조 반례</th><th scope="col">평균 오차</th><th scope="col">최대 오차</th></tr></thead><tbody>${rows.map(([k,o])=>`<tr><th scope="row"${keyTitle(k)}>${esc(PART_LABEL[k]||k)}</th><td>${vVal(o.points)}</td><td>${vVal(o.clear_counterexamples)}</td><td>${vVal(o.secondary_counterexamples)}</td><td>${vPct(o.mean_abs_relative_error)}</td><td>${vPct(o.max_abs_relative_error)}</td></tr>`).join('')}</tbody></table></div>`;}
+const card=(title,body,cls='')=>`<section class="detail-card${cls}"><h3>${title}</h3>${body}</section>`;
+function heldOutCard(h,pl){if(!isObj(h))return card('보류 평가',h==null?`<p>${NULL}</p>`:rawJson('held_out 원본 필드',h));
+  let body='';
+  if(isObj(h.model_errors))body+=`<p class="card-lead">고정 모델의 보류 지점 오차</p>${fields(h.model_errors,ERR_SPEC)}`;else body+=fields(h,[['model_errors','고정 모델 오차']]);
+  body+=fields(h,[['missing_points','누락 지점',vCount]]);
+  const bp=h.idw_error_map_mae_by_policy;
+  if(isObj(bp))body+=`<p class="card-lead">정책별 IDW 오차 지도 MAE</p><dl class="kv">${Object.keys(bp).map(k=>`<dt${keyTitle(k)}>${esc(pl(k))}</dt><dd>${vNum(bp[k])}</dd>`).join('')}</dl>`;else body+=fields(h,[['idw_error_map_mae_by_policy','정책별 IDW 오차 지도 MAE']]);
+  if(h.note!=null)body+=`<p class="card-note">${esc(h.note)}</p>`;
+  const runs=h.idw_error_map_mae;
+  if(Array.isArray(runs)&&runs.length)body+=disclosure(`실행별 IDW 오차 지도 MAE · ${runs.length}개`,`<div class="table-wrap" tabindex="0" role="region" aria-label="실행별 IDW 오차 지도 MAE 표"><table class="results-table mini-table"><thead><tr><th scope="col">정책</th><th scope="col">seed</th><th scope="col">상태</th><th scope="col">MAE</th></tr></thead><tbody>${runs.map(r=>isObj(r)?`<tr><td>${esc(pl(r.policy))}</td><td>${vVal(r.seed)}</td><td>${vVal(r.status)}</td><td>${vNum(r.idw_map_mae)}</td></tr>`:`<tr><td colspan="4">${vVal(r)}</td></tr>`).join('')}</tbody></table></div>`);
+  return card('보류 평가',body+rawJson('held_out 원본 필드',h));}
+function referenceCard(r){if(!isObj(r))return card('전수 참조',r==null?`<p>${NULL}</p>`:rawJson('reference 원본 필드',r));
+  let body=fields(r,[['points_evaluated','전수 평가 지점'],['missing_points','누락 지점',vCount]]);
+  if(r.h2_note!=null)body+=`<p class="card-note">${esc(r.h2_note)}</p>`;
+  const rows=[...(isObj(r.by_partition)?Object.entries(r.by_partition):[]),...['low_vdd','high_vdd'].filter(k=>has(r,k)).map(k=>[k,r[k]])].filter(([,o])=>isObj(o));
+  if(rows.length)body+=disclosure(`분할·전압 구간별 오차 분해 · ${rows.length}개 구간`,statTable(rows));
+  return card('전수 참조',body+rawJson('reference 원본 필드',r));}
+function costCard(title,c,key){if(!isObj(c))return card(title,c==null?`<p>${NULL}</p><p class="card-note">비용 기록 없음 (null)</p>`:rawJson(key+' 원본 필드',c));
+  let body=fields(c,COST_SPEC);const sub=['attempts_by_purpose','caps'].filter(k=>isObj(c[k]));
+  if(sub.length)body+=disclosure('목적별 시도 · 상한',sub.map(k=>`<p class="card-lead"${keyTitle(k)}>${k==='caps'?'상한':'목적별 시도'}</p>${mapList(c[k],PURPOSE_LABEL)}`).join(''));
+  return card(title,body+rawJson(key+' 원본 필드',c));}
+function secondaryCard(sc,pl){if(!Array.isArray(sc))return card('보조 비교',sc==null?`<p>${NULL}</p>`:rawJson('secondary_comparisons 원본 필드',sc));
+  const body=sc.length?sc.map(c=>{if(!isObj(c))return `<div class="comparison">${vVal(c)}</div>`;
+    const pairs=Array.isArray(c.paired_differences)?c.paired_differences:null;
+    const extra=(pairs&&pairs.length?pairChips(pairs):'')+fields(c,[['excluded_pairs','제외된 쌍',vCount]])+(isObj(c.bootstrap)?`<p class="card-lead">bootstrap</p>${mapList(c.bootstrap,{})}`:'');
+    return `<div class="comparison"><strong>${has(c,'comparison')?compLabel(c.comparison,pl):'comparison 없음'}</strong>${fields(c,[['complete_pairs','완전한 seed 쌍'],['mean_difference','평균 차이',vDiff],['ci95','paired bootstrap 95% 구간',vCi],['reason','판정 이유']])}${disclosure(`seed별 차이${pairs?' · '+pairs.length+'쌍':''}`,extra||'<p class="muted">기록 없음</p>')}</div>`;}).join(''):'<p class="muted">빈 배열</p>';
+  return card('보조 비교',body+rawJson('secondary_comparisons 원본 필드',sc));}
+function limitsCard(snapL,benchL){const list=a=>a.length?`<ul class="limit-list">${a.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:'<p class="muted">기록 없음 (빈 배열)</p>';
+  return card('한계',`<p class="card-lead" title="limitations">스냅샷 한계 · ${snapL.length}개</p>${list(snapL)}${benchL?`<p class="card-lead" title="benchmark.limitations">본 연구 한계 · ${benchL.length}개</p>${list(benchL)}`:''}`,' wide');}
+function renderBenchDetails(b){const m=state.m,pol=b&&Array.isArray(b.policies)?b.policies.filter(p=>p&&typeof p==='object'):[],pl=policyLabel(pol);
+  $('benchmarkDetails').innerHTML=[heldOutCard(b?b.held_out:null,pl),referenceCard(b?b.reference:null),secondaryCard(b?b.secondary_comparisons:null,pl),costCard('본 연구 비용',b?b.cost:null,'benchmark.cost'),costCard(state.snap&&state.snap.release?'작업대 시연 비용':'스냅샷 실행 비용',m?m.cost:null,'cost'),limitsCard(m?m.limitations:[],b&&Array.isArray(b.limitations)?b.limitations.map(String):null)].join('');}
 
 /* ---------- records ---------- */
 function recordRows(){const m=state.m;if(!m)return [];return m.recordRows||(m.recordRows=buildRecordRows(m));}
@@ -307,16 +373,39 @@ function buildRecordRows(m){const rows=m.observations.map(o=>({id:o.result_id,ke
   m.evaluations.forEach(e=>{if(!m.obsById.has(String(e.result_id)))rows.push({id:e.result_id,key:keyOf(e),phase:isHeld(m.covByKey.get(keyOf(e))&&{phase:m.covByKey.get(keyOf(e)).state==='held_out'?'held_out':''})?'held_out':'evaluation',obs:null,ev:e});});return rows;}
 function verdict(ev){if(!ev)return ['gray','평가 없음'];if(ev.clear_counterexample===true)return ['amber','명확한 반례'];if(ev.secondary_counterexample===true)return ['gray','보조 반례 (>10%)'];if(ev.clear_counterexample===false&&ev.secondary_counterexample===false)return ['green','허용 범위'];return ['gray','판정 null'];}
 function renderRecords(){
-  const q=$('recordSearch').value.trim().toLowerCase(),f=$('recordFilter').value,corner=$('recordCorner').value;const all=recordRows();
-  const list=all.filter(r=>{const ev=r.ev;if(!(String(r.id)+' '+(r.key||'')+' '+fmtKey(r.key)+' '+(r.phase||'')).toLowerCase().includes(q))return false;if(corner!=='all'&&!(r.key||'').startsWith(corner+'|'))return false;
+  const q=$('recordSearch').value.trim().toLowerCase(),f=$('recordFilter').value,corner=$('recordCorner').value,sort=$('recordSort').value;const all=recordRows();
+  let list=all.filter(r=>{const ev=r.ev;if(!(String(r.id)+' '+(r.key||'')+' '+fmtKey(r.key)+' '+(r.phase||'')+' '+phaseLabel(r.phase)).toLowerCase().includes(q))return false;if(corner!=='all'&&!(r.key||'').startsWith(corner+'|'))return false;
     if(f==='clear')return ev&&ev.clear_counterexample===true;if(f==='secondary')return ev&&ev.secondary_counterexample===true&&ev.clear_counterexample!==true;if(f==='pass')return ev&&ev.clear_counterexample===false&&ev.secondary_counterexample===false;if(f==='unevaluated')return !ev;if(f==='heldout')return r.phase==='held_out'||r.phase==='heldout';return true;});
+  /* Error sorts read the exported abs_relative_error only. Rows without a numeric
+     error stay last in recorded order; ties keep recorded order. */
+  if(sort==='error-desc'||sort==='error-asc'){const dir=sort==='error-desc'?-1:1,err=r=>num(r.ev?r.ev.abs_relative_error:null);
+    list=list.map((r,i)=>[r,i,err(r)]).sort((a,b)=>a[2]==null||b[2]==null?(a[2]==null)-(b[2]==null)||a[1]-b[1]:(a[2]-b[2])*dir||a[1]-b[1]).map(x=>x[0]);}
+  const filtered=q!==''||f!=='all'||corner!=='all';
+  $('recordReset').disabled=!filtered;
   $('recordCount').textContent=`${list.length} / ${all.length}개 기록`;
-  $('recordsTable').innerHTML=list.map(r=>{const [c,l]=verdict(r.ev);const obs=r.obs?r.obs.tpd_s:r.ev?r.ev.simulated_tpd_s:null;return `<tr><td class="mono">${esc(r.id)}</td><td>${esc(fmtKey(r.key))}</td><td>${esc(r.phase??'null')}</td><td>${fmtPs(r.ev?r.ev.predicted_tpd_s:null)}</td><td>${fmtPs(obs)}</td><td>${fmtPct(r.ev?r.ev.abs_relative_error:null)}</td><td><span class="tag ${c}">${esc(l)}</span></td><td><button class="text-action" data-evidence="${esc(r.id)}">상세 보기</button></td></tr>`;}).join('');
-  $('emptyRecords').hidden=list.length!==0;$('emptyRecords').textContent=all.length?'조건에 맞는 기록이 없습니다. 검색어나 필터를 바꿔보세요.':'스냅샷에 관측·평가 기록이 아직 없습니다.';
+  $('recordsTable').innerHTML=list.map(r=>{const [c,l]=verdict(r.ev);const obs=r.obs?r.obs.tpd_s:r.ev?r.ev.simulated_tpd_s:null;return `<tr><td class="mono">${esc(r.id)}</td><td>${esc(fmtKey(r.key))}</td><td><span class="phase" title="phase = ${esc(r.phase??'null')}">${esc(phaseLabel(r.phase))}</span></td><td>${fmtPs(r.ev?r.ev.predicted_tpd_s:null)}</td><td>${fmtPs(obs)}</td><td>${fmtPct(r.ev?r.ev.abs_relative_error:null)}</td><td><span class="tag ${c}">${esc(l)}</span></td><td><button class="text-action" data-evidence="${esc(r.id)}">상세 보기</button></td></tr>`;}).join('');
+  const active=[q!==''?`검색어 “${esc($('recordSearch').value.trim())}”`:'',corner!=='all'?`코너 ${esc(corner)}`:'',f!=='all'?`판정 “${esc($('recordFilter').selectedOptions[0].textContent)}”`:''].filter(Boolean);
+  $('emptyRecords').hidden=list.length!==0;$('emptyRecords').innerHTML=all.length?`<p>${active.join(', ')} 조건에 맞는 기록이 없습니다.</p><button class="btn compact" type="button" data-reset-records>필터 초기화하고 ${all.length}개 기록 모두 보기</button>`:'<p>스냅샷에 관측·평가 기록이 아직 없습니다.</p>';
 }
 
 /* ---------- dialogs ---------- */
-function openDialog(title,html){$('dialogTitle').textContent=title;$('dialogBody').innerHTML=html;if(!$('detailDialog').open)$('detailDialog').showModal();}
+/* Focus return. The trigger is remembered when the dialog first opens (links followed
+   inside an open dialog keep the original). On close (button, Escape or backdrop) focus
+   goes back to it, or, if a re-render replaced it, to the equivalent control in the
+   same view, else to the main region. Closing restores synchronously: the 'close'
+   event is queued and may arrive after a later reopen, so it is only a fallback. */
+let dialogReturn=null;
+function rememberTrigger(){const el=document.activeElement;if(!el||el===document.body||$('detailDialog').contains(el))return null;
+  const d=el.dataset||{},sel=el.id?'#'+CSS.escape(el.id):d.evidence!=null?`[data-evidence="${CSS.escape(d.evidence)}"]`:d.candidate!=null?`[data-candidate="${CSS.escape(d.candidate)}"]`:d.openJobs!=null?'[data-open-jobs]':null;
+  const v=el.closest('[id^="view-"]');return {el,sel,view:v?v.id:null};}
+function restoreFocus(){if($('detailDialog').open)return;const r=dialogReturn;dialogReturn=null;if(!r){if(document.activeElement===document.body)$('mainContent').focus({preventScroll:true});return;}const ok=el=>el&&el.isConnected&&!el.disabled&&el.getClientRects().length>0;
+  if(ok(r.el)){r.el.focus();return;}
+  if(r.sel){const scope=r.view?$(r.view):document;const alt=scope&&[...scope.querySelectorAll(r.sel)].find(ok);if(alt){alt.focus();return;}}
+  $('mainContent').focus({preventScroll:true});}
+/* Content replaced inside an open dialog must not drop focus to the page. */
+function closeDialog(){$('detailDialog').close();restoreFocus();}
+function keepDialogFocus(){if($('detailDialog').open&&!$('detailDialog').contains(document.activeElement))$('closeDialog').focus();}
+function openDialog(title,html){const dlg=$('detailDialog');if(!dlg.open)dialogReturn=rememberTrigger();$('dialogTitle').textContent=title;$('dialogBody').innerHTML=html;$('dialogBody').scrollTop=0;if(!dlg.open)dlg.showModal();keepDialogFocus();}
 function evidence(id){const m=state.m;if(!m)return;const o=m.obsById.get(String(id))||null,e=m.evalById.get(String(id))||null;
   if(!o&&!e){openDialog('근거 상세 · '+id,`<span class="tag amber">기록 없음</span><p style="margin-top:13px">결과 ID ${esc(id)}에 해당하는 관측·평가가 스냅샷에 없습니다.</p>`);return;}
   const k=keyOf(o||e),pv=o&&o.provenance&&typeof o.provenance==='object'?o.provenance:null;
@@ -354,7 +443,7 @@ async function cancelJob(){try{const r=await postJSON('./api/jobs/cancel',state.
 let pollTimer=null,pollDelay=2000,polling=false;
 function applyController(j){const prev=state.job;state.controller=j;state.job=j.job||null;state.pollError=null;
   const changed=JSON.stringify(prev)!==JSON.stringify(state.job);
-  if(changed&&$('detailDialog').open&&$('dialogTitle').textContent==='로컬 실행 제어'){$('dialogBody').innerHTML=jobPanel();fillJobPre();}
+  if(changed&&$('detailDialog').open&&$('dialogTitle').textContent==='로컬 실행 제어'){$('dialogBody').innerHTML=jobPanel();fillJobPre();keepDialogFocus();}
   if(prev&&state.job&&prev.job_id===state.job.job_id&&prev.state!==state.job.state&&!['queued','running'].includes(state.job.state))showToast(`작업 ${state.job.kind}: ${(JOB_STATE[state.job.state]||[state.job.state])[0]}`);
   const sha=j.snapshot&&j.snapshot.sha256||null;return sha!==state.serverSha?(state.serverSha=sha,true):false;}
 async function pollNow(){if(polling)return;polling=true;clearTimeout(pollTimer);
@@ -370,12 +459,15 @@ document.querySelectorAll('[data-corner]').forEach(b=>b.addEventListener('click'
 $('heatmap').addEventListener('click',e=>{const b=e.target.closest('[data-key]');if(b){state.point=b.dataset.key;renderMap();}});
 $('steps').addEventListener('click',e=>{const b=e.target.closest('[data-step]');if(b){stopPlaying();setStage(Number(b.dataset.step));}});
 $('candidates').addEventListener('click',e=>{const b=e.target.closest('[data-candidate]');if(b)showCandidate(Number(b.dataset.candidate));});
-document.addEventListener('click',e=>{const ev=e.target.closest('[data-evidence]');if(ev){evidence(ev.dataset.evidence);return;}if(e.target.closest('#traceAll')){showTraceAll();return;}if(e.target.closest('[data-open-jobs]')){openJobs();return;}const sj=e.target.closest('[data-start-job]');if(sj){sj.disabled=true;startJob(sj.dataset.startJob);return;}if(e.target.closest('#cancelJob')){cancelJob();}});
+document.addEventListener('click',e=>{const ev=e.target.closest('[data-evidence]');if(ev){evidence(ev.dataset.evidence);return;}if(e.target.closest('#traceAll')){showTraceAll();return;}if(e.target.closest('[data-open-jobs]')){openJobs();return;}const sj=e.target.closest('[data-start-job]');if(sj){sj.disabled=true;startJob(sj.dataset.startJob);return;}if(e.target.closest('#cancelJob')){cancelJob();return;}if(e.target.closest('[data-reset-records]')){resetRecords();return;}if(e.target.closest('[data-retry-load]')){retryLoad();}});
 $('chartLegend').addEventListener('click',e=>{const b=e.target.closest('[data-policy]');if(b){const p=b.dataset.policy;state.visiblePolicies.has(p)?state.visiblePolicies.delete(p):state.visiblePolicies.add(p);renderBenchChart();$('chartLegend').querySelectorAll('[data-policy]').forEach(x=>x.setAttribute('aria-pressed',state.visiblePolicies.has(x.dataset.policy)));}});
 $('advanceButton').addEventListener('click',advance);$('topAdvanceButton').addEventListener('click',advance);
-$('resetButton').addEventListener('click',()=>{stopPlaying();setStage(0);});$('playButton').addEventListener('click',play);
-$('recordSearch').addEventListener('input',renderRecords);$('recordFilter').addEventListener('change',renderRecords);$('recordCorner').addEventListener('change',renderRecords);
+$('resetButton').addEventListener('click',()=>{stopPlaying();setStage(0);});$('finalButton').addEventListener('click',()=>{stopPlaying();setStage(D());if(state.view==='lab')$('advanceButton').focus();});$('playButton').addEventListener('click',play);
+$('recordSearch').addEventListener('input',renderRecords);$('recordFilter').addEventListener('change',renderRecords);$('recordCorner').addEventListener('change',renderRecords);$('recordSort').addEventListener('change',renderRecords);
+/* Reset clears search and filters; the chosen sort order is kept. */
+function resetRecords(){$('recordSearch').value='';$('recordCorner').value='all';$('recordFilter').value='all';renderRecords();$('recordSearch').focus();}
+$('recordReset').addEventListener('click',resetRecords);
 $('protocolButton').addEventListener('click',showProtocol);$('exportButton').addEventListener('click',exportSnapshot);$('jobButton').addEventListener('click',openJobs);
-$('closeDialog').addEventListener('click',()=>$('detailDialog').close());$('detailDialog').addEventListener('click',e=>{if(e.target===$('detailDialog')){const r=$('detailDialog').getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)$('detailDialog').close();}});
+$('closeDialog').addEventListener('click',closeDialog);$('detailDialog').addEventListener('cancel',e=>{e.preventDefault();closeDialog();});$('detailDialog').addEventListener('close',restoreFocus);$('detailDialog').addEventListener('click',e=>{if(e.target===$('detailDialog')){const r=$('detailDialog').getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)closeDialog();}});
 
 (async function init(){state.visiblePolicies=null;renderAll();const ctl=await detectMode();state.mode=ctl?'local':'static';if(ctl){applyController(ctl);}await loadSnapshot();if(ctl)pollTimer=setTimeout(pollNow,pollDelay);})();

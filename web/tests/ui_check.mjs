@@ -101,6 +101,8 @@ for (const [w, h] of [[390, 844], [1440, 900]]) {
     check(/Omnigent 3개/.test(s0.subtitle), `omnigent subtitle ${s0.subtitle}`);
     await page.click('[data-view=benchmark]');
     await page.waitForTimeout(150);
+    // Paired seed differences sit in a closed disclosure; expand it so innerText includes them.
+    await page.evaluate(() => document.querySelectorAll('#benchmarkConclusion details').forEach(d => { d.open = true; }));
     r.bench = await page.evaluate(() => ({
       rows: [...document.querySelectorAll('#benchmarkTable tr')].map(tr => [...tr.cells].map(c => c.innerText)),
       dashed: document.querySelectorAll('#benchmarkChart path.run-line.incomplete').length,

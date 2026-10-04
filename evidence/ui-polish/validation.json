@@ -1,0 +1,290 @@
+{
+  "status": "accepted",
+  "checked_at": "2026-10-04T11:24:02.787959+09:00",
+  "scope": "UI usability polish only; no scientific experiments or changed claims",
+  "widths": [
+    360,
+    390,
+    768,
+    1440
+  ],
+  "responsive_and_interaction": {
+    "results": {
+      "360": {
+        "captures": {
+          "lab": {
+            "height": 3489,
+            "overflow": 0
+          },
+          "benchmark": {
+            "height": 6760,
+            "overflow": 0
+          },
+          "records": {
+            "height": 2292,
+            "overflow": 0
+          }
+        },
+        "sortHighest": {
+          "id": "res_871bbcf166f64a31",
+          "err": "38.2%"
+        },
+        "exportSha": "f6d56930a1b7a483d8ff751c4620eae262c584307f1eb65207f9fe86a09e2c90",
+        "errors": []
+      },
+      "390": {
+        "captures": {
+          "lab": {
+            "height": 3361,
+            "overflow": 0
+          },
+          "benchmark": {
+            "height": 6661,
+            "overflow": 0
+          },
+          "records": {
+            "height": 2292,
+            "overflow": 0
+          }
+        },
+        "sortHighest": {
+          "id": "res_871bbcf166f64a31",
+          "err": "38.2%"
+        },
+        "exportSha": "f6d56930a1b7a483d8ff751c4620eae262c584307f1eb65207f9fe86a09e2c90",
+        "errors": []
+      },
+      "768": {
+        "captures": {
+          "lab": {
+            "height": 2637,
+            "overflow": 0
+          },
+          "benchmark": {
+            "height": 4862,
+            "overflow": 0
+          },
+          "records": {
+            "height": 1819,
+            "overflow": 0
+          }
+        },
+        "sortHighest": {
+          "id": "res_871bbcf166f64a31",
+          "err": "38.2%"
+        },
+        "exportSha": "f6d56930a1b7a483d8ff751c4620eae262c584307f1eb65207f9fe86a09e2c90",
+        "errors": []
+      },
+      "1440": {
+        "captures": {
+          "lab": {
+            "height": 1770,
+            "overflow": 0
+          },
+          "benchmark": {
+            "height": 2885,
+            "overflow": 0
+          },
+          "records": {
+            "height": 1446,
+            "overflow": 0
+          }
+        },
+        "sortHighest": {
+          "id": "res_871bbcf166f64a31",
+          "err": "38.2%"
+        },
+        "exportSha": "f6d56930a1b7a483d8ff751c4620eae262c584307f1eb65207f9fe86a09e2c90",
+        "errors": []
+      }
+    },
+    "failures": []
+  },
+  "focused_usability_check": {
+    "failures": [],
+    "covers": [
+      "null/partial/empty snapshots",
+      "stable sort",
+      "filter reset",
+      "dialog focus return",
+      "keyboard navigation",
+      "load retry"
+    ]
+  },
+  "rendering_invariants": {
+    "failures": [],
+    "hidden_views_not_rebuilt": true,
+    "legend_updates_chart_only": true,
+    "cache_invalidates_on_snapshot_replacement": true
+  },
+  "snapshot_sha256": "f6d56930a1b7a483d8ff751c4620eae262c584307f1eb65207f9fe86a09e2c90",
+  "visual_review": {
+    "rounds": 2,
+    "detector_runs": 1,
+    "findings": "Small copy enlarged; held-out stripes retained as data provenance. Raw monospace remains compact.",
+    "confirmation_repair": "Replay control row wraps to keep every button visible; independently checked by bounding boxes without another visual iteration."
+  },
+  "timing_claims": "No new speedup claim; REPS=1 used only as a functional regression gate.",
+  "limitations": [
+    "Automated interactions tested in Chromium; other browser engines untested.",
+    "Retry with local polling concurrently active was not stress-tested."
+  ],
+  "control_bounds": {
+    "results": {
+      "360": [
+        {
+          "label": "처음으로",
+          "left": 50.375,
+          "right": 145.375,
+          "top": 762.46875,
+          "height": 44,
+          "parentLeft": 14,
+          "parentRight": 346
+        },
+        {
+          "label": "마지막 단계",
+          "left": 150.375,
+          "right": 237.6875,
+          "top": 762.46875,
+          "height": 44,
+          "parentLeft": 14,
+          "parentRight": 346
+        },
+        {
+          "label": "기록 재생",
+          "left": 242.6875,
+          "right": 346,
+          "top": 762.46875,
+          "height": 44,
+          "parentLeft": 14,
+          "parentRight": 346
+        },
+        {
+          "label": "다음 기록 단계",
+          "left": 243.390625,
+          "right": 346,
+          "top": 811.46875,
+          "height": 44,
+          "parentLeft": 14,
+          "parentRight": 346
+        }
+      ],
+      "390": [
+        {
+          "label": "처음으로",
+          "left": 80.375,
+          "right": 175.375,
+          "top": 739.078125,
+          "height": 44,
+          "parentLeft": 14,
+          "parentRight": 376
+        },
+        {
+          "label": "마지막 단계",
+          "left": 180.375,
+          "right": 267.6875,
+          "top": 739.078125,
+          "height": 44,
+          "parentLeft": 14,
+          "parentRight": 376
+        },
+        {
+          "label": "기록 재생",
+          "left": 272.6875,
+          "right": 376,
+          "top": 739.078125,
+          "height": 44,
+          "parentLeft": 14,
+          "parentRight": 376
+        },
+        {
+          "label": "다음 기록 단계",
+          "left": 273.390625,
+          "right": 376,
+          "top": 788.078125,
+          "height": 44,
+          "parentLeft": 14,
+          "parentRight": 376
+        }
+      ],
+      "768": [
+        {
+          "label": "처음으로",
+          "left": 94,
+          "right": 189,
+          "top": 547.546875,
+          "height": 38,
+          "parentLeft": 94,
+          "parentRight": 497.234375
+        },
+        {
+          "label": "마지막 단계",
+          "left": 194,
+          "right": 281.3125,
+          "top": 547.546875,
+          "height": 38,
+          "parentLeft": 94,
+          "parentRight": 497.234375
+        },
+        {
+          "label": "기록 재생",
+          "left": 286.3125,
+          "right": 389.625,
+          "top": 547.546875,
+          "height": 38,
+          "parentLeft": 94,
+          "parentRight": 497.234375
+        },
+        {
+          "label": "다음 기록 단계",
+          "left": 394.625,
+          "right": 497.234375,
+          "top": 547.546875,
+          "height": 38,
+          "parentLeft": 94,
+          "parentRight": 497.234375
+        }
+      ],
+      "1440": [
+        {
+          "label": "처음으로",
+          "left": 1003.765625,
+          "right": 1098.765625,
+          "top": 419.78125,
+          "height": 38,
+          "parentLeft": 1003.765625,
+          "parentRight": 1407
+        },
+        {
+          "label": "마지막 단계",
+          "left": 1103.765625,
+          "right": 1191.078125,
+          "top": 419.78125,
+          "height": 38,
+          "parentLeft": 1003.765625,
+          "parentRight": 1407
+        },
+        {
+          "label": "기록 재생",
+          "left": 1196.078125,
+          "right": 1299.390625,
+          "top": 419.78125,
+          "height": 38,
+          "parentLeft": 1003.765625,
+          "parentRight": 1407
+        },
+        {
+          "label": "다음 기록 단계",
+          "left": 1304.390625,
+          "right": 1407,
+          "top": 419.78125,
+          "height": 38,
+          "parentLeft": 1003.765625,
+          "parentRight": 1407
+        }
+      ]
+    },
+    "failures": []
+  }
+}
