@@ -14,7 +14,13 @@
     "stage2_commit": "28bbee5b858a891db1ae47568999acb6b6d51b7f",
     "stage2_message": "umsg_01m42js4ayfy2t9rhb9sy415j7",
     "credits": 7,
-    "source": "Actual Origin UI table MIT source supplied inline to second Lovable pass; no paid 21st upgrade"
+    "source": "Actual Origin UI table MIT source supplied inline to second Lovable pass; no paid 21st upgrade",
+    "integration_corrections": [
+      "Preserve canonical dataset ID example and modeled-only defect filter",
+      "Keep attempted-measurement wording and authored pattern names",
+      "Remove decorative source glyphs",
+      "Pin die IDs and strengthen input/focus contrast"
+    ]
   },
   "design_source": "https://21st.dev/@originui/components/table/data-table-with-filters-made-with-tan-stack-table",
   "checks": {
@@ -38,17 +44,25 @@
       }
     ],
     "json_sha256": "bcfedbb05fe1969d9b3d58fabea964414a9bd8431ba9abcd29b977e3ef2a3638",
-    "recovery_attempts": 2
+    "recovery_attempts": 2,
+    "design_review_21st": {
+      "errors": 0,
+      "warnings": 0,
+      "informational_suggestions": 9,
+      "disposition": "Local palette declarations retained; no new dependency"
+    }
   },
   "visual_review": {
     "disposition": "ship",
     "reviewer": "coordinator inline; worker subagents disabled",
-    "rounds": 1,
+    "rounds": 2,
     "viewports": [
       360,
       1440
     ],
-    "fixes": []
+    "fixes": [
+      "Pin die ID while scrolling; strengthen focus and placeholder contrast"
+    ]
   },
   "frozen_files_sha256": {
     "RESEARCH_PROTOCOL.md": "45e04ba3feea0d0fea1ccf236530ee7168f061753d82c1bc8f9d0fc3dd473ff9",
