@@ -24,6 +24,11 @@ with readable summaries and expandable raw evidence. Records have labelled filte
 stable error sorting and filter reset. Replay progress, keyboard focus restoration
 and larger touch targets improve navigation. Research values and snapshot bytes
 remain unchanged. See `evidence/ui-polish/validation.json` for the acceptance checks.
+**Visual refinement.** Lovable refined the existing static workbench, followed by
+an Origin UI table-pattern pass using the actual MIT-licensed source from 21st.dev.
+Short screen headings, flat research sections and a quiet navigation rail put
+measurements and charts first. Scientific values and the snapshot are unchanged;
+see `evidence/lovable-21st/validation.json` for independent acceptance.
 The `mockup/` folder is the original UI mockup. Its numbers are invented placeholders and
 are not results.
 

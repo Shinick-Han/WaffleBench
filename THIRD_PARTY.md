@@ -56,6 +56,14 @@ Direct dependencies: `mcp==1.30.0`, `numpy==2.3.3`. The full locked set installe
 | typing-inspection | 0.4.4 | MIT |
 | uvicorn | 0.54.0 | BSD-3-Clause |
 
+## UI design reference
+
+The static workbench adapts the flat table spacing, row dividers and hover treatment
+from [Origin UI's Table on 21st.dev](https://21st.dev/@originui/components/table/data-table-with-filters-made-with-tan-stack-table)
+(MIT). The component source was consulted during the Lovable refinement; its React
+implementation and dependencies are not bundled. Existing native HTML tables and
+filters retain their scientific data and behavior.
+
 ## Device models
 
 The inverter netlist uses generic SPICE Level-1 textbook MOSFET parameters written in this

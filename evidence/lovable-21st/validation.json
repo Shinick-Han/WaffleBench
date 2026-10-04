@@ -1,0 +1,440 @@
+{
+  "status": "accepted",
+  "checked_at": "2026-10-04T11:49:54.506341+09:00",
+  "scope": "Visual refinement of existing static application; only headings changed in app.js",
+  "provider": "Lovable",
+  "lovable_project": "https://lovable.dev/projects/64613203-b9eb-4f38-ace6-06029924a4ee",
+  "lovable_source_commits": {
+    "lovable_project_id": "64613203-b9eb-4f38-ace6-06029924a4ee",
+    "initial_commit": "66f00b5827fd904fb4c59d13805ae9cbc21f342e",
+    "21st_pass_commit": "0aed3404ee8c561c8bc1f9c7937e1fee2d0b5e59",
+    "css_repair_commit": "1c54146296361575f7ff978cd6552286fd15ed40",
+    "source_note": "Actual response commit_sha fields and exact read_file refs used; prose summaries reported different hashes. Final repair was CSS only. app.js contains four screen-heading literal replacements."
+  },
+  "component_reference": {
+    "provider": "21st.dev",
+    "author": "Origin UI",
+    "name": "Table",
+    "license": "MIT",
+    "url": "https://21st.dev/@originui/components/table/data-table-with-filters-made-with-tan-stack-table",
+    "adaptation": "Flat semantic table styles, grouped filters, cell padding, row dividers and hover. Existing native controls and scientific algorithms retained; no React source vendored."
+  },
+  "responsive_and_interaction": {
+    "results": {
+      "360": {
+        "captures": {
+          "lab": {
+            "height": 3283,
+            "overflow": 0
+          },
+          "benchmark": {
+            "height": 6586,
+            "overflow": 0
+          },
+          "records": {
+            "height": 2171,
+            "overflow": 0
+          }
+        },
+        "sortHighest": {
+          "id": "res_871bbcf166f64a31",
+          "err": "38.2%"
+        },
+        "exportSha": "f6d56930a1b7a483d8ff751c4620eae262c584307f1eb65207f9fe86a09e2c90",
+        "errors": [],
+        "apiRequests": [
+          "http://127.0.0.1:8784/api/job",
+          "http://127.0.0.1:8784/api/snapshot"
+        ]
+      },
+      "390": {
+        "captures": {
+          "lab": {
+            "height": 3217,
+            "overflow": 0
+          },
+          "benchmark": {
+            "height": 6403,
+            "overflow": 0
+          },
+          "records": {
+            "height": 2129,
+            "overflow": 0
+          }
+        },
+        "sortHighest": {
+          "id": "res_871bbcf166f64a31",
+          "err": "38.2%"
+        },
+        "exportSha": "f6d56930a1b7a483d8ff751c4620eae262c584307f1eb65207f9fe86a09e2c90",
+        "errors": [],
+        "apiRequests": [
+          "http://127.0.0.1:8784/api/job",
+          "http://127.0.0.1:8784/api/snapshot"
+        ]
+      },
+      "768": {
+        "captures": {
+          "lab": {
+            "height": 2519,
+            "overflow": 0
+          },
+          "benchmark": {
+            "height": 4208,
+            "overflow": 0
+          },
+          "records": {
+            "height": 1714,
+            "overflow": 0
+          }
+        },
+        "sortHighest": {
+          "id": "res_871bbcf166f64a31",
+          "err": "38.2%"
+        },
+        "exportSha": "f6d56930a1b7a483d8ff751c4620eae262c584307f1eb65207f9fe86a09e2c90",
+        "errors": [],
+        "apiRequests": [
+          "http://127.0.0.1:8784/api/job",
+          "http://127.0.0.1:8784/api/snapshot"
+        ]
+      },
+      "1440": {
+        "captures": {
+          "lab": {
+            "height": 1676,
+            "overflow": 0
+          },
+          "benchmark": {
+            "height": 2849,
+            "overflow": 0
+          },
+          "records": {
+            "height": 1346,
+            "overflow": 0
+          }
+        },
+        "sortHighest": {
+          "id": "res_871bbcf166f64a31",
+          "err": "38.2%"
+        },
+        "exportSha": "f6d56930a1b7a483d8ff751c4620eae262c584307f1eb65207f9fe86a09e2c90",
+        "errors": [],
+        "apiRequests": [
+          "http://127.0.0.1:8784/api/job",
+          "http://127.0.0.1:8784/api/snapshot"
+        ]
+      }
+    },
+    "failures": []
+  },
+  "focused_usability": {
+    "failures": []
+  },
+  "control_and_text_bounds": {
+    "results": {
+      "360": {
+        "lab": {
+          "overflow": 0,
+          "escaped": [],
+          "buttons": [
+            {
+              "id": "resetButton",
+              "text": "처음으로",
+              "width": 109.125,
+              "height": 44,
+              "left": 13,
+              "right": 122.125
+            },
+            {
+              "id": "finalButton",
+              "text": "마지막 단계",
+              "width": 101.4375,
+              "height": 44,
+              "left": 125.125,
+              "right": 226.5625
+            },
+            {
+              "id": "playButton",
+              "text": "기록 재생",
+              "width": 117.4375,
+              "height": 44,
+              "left": 229.5625,
+              "right": 347
+            },
+            {
+              "id": "topAdvanceButton",
+              "text": "다음 기록 단계",
+              "width": 334,
+              "height": 44,
+              "left": 13,
+              "right": 347
+            }
+          ],
+          "notes": [],
+          "chartFontSizes": []
+        },
+        "benchmark": {
+          "overflow": 0,
+          "escaped": [],
+          "buttons": [],
+          "notes": [
+            {
+              "text": "평균은 코어가 완료 실행만으로 내보낸 mean_cumulative_clear의 마지막 값입니다. 미완료 실행은 평균과 완료 수에서 제외되며 성공값으로 대체하지 않습니다. 평균이 null이면 —로 표시합니다. 무작위 대비 차이는 두 내보낸 평균의 단순 차이이며, 주 판정은 seed 쌍 기반 primary 결과만 사용합니다.",
+              "right": 346.375,
+              "overflowWrap": "anywhere"
+            }
+          ],
+          "chartFontSizes": [
+            "24px"
+          ]
+        },
+        "records": {
+          "overflow": 0,
+          "escaped": [],
+          "buttons": [],
+          "notes": [
+            {
+              "text": "판정은 스냅샷의 clear_counterexample(>11%)·secondary_counterexample(>10%) 값을 그대로 표시합니다. 화면에서 다시 계산하지 않습니다.",
+              "right": 341.84375,
+              "overflowWrap": "anywhere"
+            }
+          ],
+          "chartFontSizes": [
+            "24px"
+          ]
+        }
+      },
+      "390": {
+        "lab": {
+          "overflow": 0,
+          "escaped": [],
+          "buttons": [
+            {
+              "id": "resetButton",
+              "text": "처음으로",
+              "width": 119.125,
+              "height": 44,
+              "left": 13,
+              "right": 132.125
+            },
+            {
+              "id": "finalButton",
+              "text": "마지막 단계",
+              "width": 111.4375,
+              "height": 44,
+              "left": 135.125,
+              "right": 246.5625
+            },
+            {
+              "id": "playButton",
+              "text": "기록 재생",
+              "width": 127.4375,
+              "height": 44,
+              "left": 249.5625,
+              "right": 377
+            },
+            {
+              "id": "topAdvanceButton",
+              "text": "다음 기록 단계",
+              "width": 364,
+              "height": 44,
+              "left": 13,
+              "right": 377
+            }
+          ],
+          "notes": [],
+          "chartFontSizes": []
+        },
+        "benchmark": {
+          "overflow": 0,
+          "escaped": [],
+          "buttons": [],
+          "notes": [
+            {
+              "text": "평균은 코어가 완료 실행만으로 내보낸 mean_cumulative_clear의 마지막 값입니다. 미완료 실행은 평균과 완료 수에서 제외되며 성공값으로 대체하지 않습니다. 평균이 null이면 —로 표시합니다. 무작위 대비 차이는 두 내보낸 평균의 단순 차이이며, 주 판정은 seed 쌍 기반 primary 결과만 사용합니다.",
+              "right": 373.765625,
+              "overflowWrap": "anywhere"
+            }
+          ],
+          "chartFontSizes": [
+            "24px"
+          ]
+        },
+        "records": {
+          "overflow": 0,
+          "escaped": [],
+          "buttons": [],
+          "notes": [
+            {
+              "text": "판정은 스냅샷의 clear_counterexample(>11%)·secondary_counterexample(>10%) 값을 그대로 표시합니다. 화면에서 다시 계산하지 않습니다.",
+              "right": 375.390625,
+              "overflowWrap": "anywhere"
+            }
+          ],
+          "chartFontSizes": [
+            "24px"
+          ]
+        }
+      },
+      "768": {
+        "lab": {
+          "overflow": 0,
+          "escaped": [],
+          "buttons": [
+            {
+              "id": "resetButton",
+              "text": "처음으로",
+              "width": 99,
+              "height": 44,
+              "left": 86,
+              "right": 185
+            },
+            {
+              "id": "finalButton",
+              "text": "마지막 단계",
+              "width": 91.3125,
+              "height": 44,
+              "left": 190,
+              "right": 281.3125
+            },
+            {
+              "id": "playButton",
+              "text": "기록 재생",
+              "width": 107.3125,
+              "height": 44,
+              "left": 286.3125,
+              "right": 393.625
+            },
+            {
+              "id": "topAdvanceButton",
+              "text": "다음 기록 단계",
+              "width": 106.609375,
+              "height": 44,
+              "left": 398.625,
+              "right": 505.234375
+            }
+          ],
+          "notes": [],
+          "chartFontSizes": []
+        },
+        "benchmark": {
+          "overflow": 0,
+          "escaped": [],
+          "buttons": [],
+          "notes": [
+            {
+              "text": "평균은 코어가 완료 실행만으로 내보낸 mean_cumulative_clear의 마지막 값입니다. 미완료 실행은 평균과 완료 수에서 제외되며 성공값으로 대체하지 않습니다. 평균이 null이면 —로 표시합니다. 무작위 대비 차이는 두 내보낸 평균의 단순 차이이며, 주 판정은 seed 쌍 기반 primary 결과만 사용합니다.",
+              "right": 744.65625,
+              "overflowWrap": "anywhere"
+            }
+          ],
+          "chartFontSizes": [
+            "12px"
+          ]
+        },
+        "records": {
+          "overflow": 0,
+          "escaped": [],
+          "buttons": [],
+          "notes": [
+            {
+              "text": "판정은 스냅샷의 clear_counterexample(>11%)·secondary_counterexample(>10%) 값을 그대로 표시합니다. 화면에서 다시 계산하지 않습니다.",
+              "right": 736.5,
+              "overflowWrap": "anywhere"
+            }
+          ],
+          "chartFontSizes": [
+            "12px"
+          ]
+        }
+      },
+      "1440": {
+        "lab": {
+          "overflow": 0,
+          "escaped": [],
+          "buttons": [
+            {
+              "id": "resetButton",
+              "text": "처음으로",
+              "width": 99,
+              "height": 44,
+              "left": 990.765625,
+              "right": 1089.765625
+            },
+            {
+              "id": "finalButton",
+              "text": "마지막 단계",
+              "width": 91.3125,
+              "height": 44,
+              "left": 1094.765625,
+              "right": 1186.078125
+            },
+            {
+              "id": "playButton",
+              "text": "기록 재생",
+              "width": 107.3125,
+              "height": 44,
+              "left": 1191.078125,
+              "right": 1298.390625
+            },
+            {
+              "id": "topAdvanceButton",
+              "text": "다음 기록 단계",
+              "width": 106.609375,
+              "height": 44,
+              "left": 1303.390625,
+              "right": 1410
+            }
+          ],
+          "notes": [],
+          "chartFontSizes": []
+        },
+        "benchmark": {
+          "overflow": 0,
+          "escaped": [],
+          "buttons": [],
+          "notes": [
+            {
+              "text": "평균은 코어가 완료 실행만으로 내보낸 mean_cumulative_clear의 마지막 값입니다. 미완료 실행은 평균과 완료 수에서 제외되며 성공값으로 대체하지 않습니다. 평균이 null이면 —로 표시합니다. 무작위 대비 차이는 두 내보낸 평균의 단순 차이이며, 주 판정은 seed 쌍 기반 primary 결과만 사용합니다.",
+              "right": 1402.921875,
+              "overflowWrap": "anywhere"
+            }
+          ],
+          "chartFontSizes": [
+            "12px"
+          ]
+        },
+        "records": {
+          "overflow": 0,
+          "escaped": [],
+          "buttons": [],
+          "notes": [
+            {
+              "text": "판정은 스냅샷의 clear_counterexample(>11%)·secondary_counterexample(>10%) 값을 그대로 표시합니다. 화면에서 다시 계산하지 않습니다.",
+              "right": 1047,
+              "overflowWrap": "anywhere"
+            }
+          ],
+          "chartFontSizes": [
+            "12px"
+          ]
+        }
+      }
+    },
+    "failures": []
+  },
+  "rendering_invariants": {
+    "failures": [],
+    "dirty_views_preserved": true,
+    "legend_chart_only": true,
+    "export_byte_identity": true
+  },
+  "snapshot_sha256": "f6d56930a1b7a483d8ff751c4620eae262c584307f1eb65207f9fe86a09e2c90",
+  "visual_rounds": 2,
+  "new_scientific_or_speedup_claims": false,
+  "limitations": [
+    "Chromium checks only; other browser engines untested.",
+    "Concurrent manual retry and local polling not stress-tested."
+  ]
+}
