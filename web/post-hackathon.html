@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Inspection v3 overview | WaffleBench post-hackathon</title>
+<meta name="description" content="Post-hackathon development, not part of the submitted version. A one-page overview of the frozen Inspection v3 synthetic study: the problem, the recorded primary outcome, a replay of recorded paid measurements, and a proposed (unexecuted) next study.">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="./post-hackathon.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<div class="ph-banner" role="note">
+ <div class="ph-banner-inner"><strong>Post-hackathon development — not part of the submitted version.</strong>
+ <span>Local preview built after the submission deadline and excluded from judging. It re-reads the original frozen Inspection v3 evidence; it runs nothing new and claims no improved performance.</span></div>
+</div>
+<header class="masthead"><div class="mast-inner"><div class="identity"><span class="brand">WaffleBench</span><span class="divider" aria-hidden="true"></span><span>Post-hackathon overview</span></div><nav class="mast-links" aria-label="Original evidence pages"><a href="./inspection-evidence.html">Full Inspection v3 evidence</a><a href="./inspection-quality.html">Misses and review budget</a></nav></div></header>
+
+<main id="main" class="layout">
+ <div class="heading">
+  <h1>Which dies are worth a paid review?</h1>
+  <p class="lead" id="problem">A scanned wafer lot has thousands of care sites, but each SEM review costs equipment budget, so only a few dozen can be reviewed. The question is which sites to pay for so that the most real defects of interest (DOI) are confirmed. Dies that are never reviewed stay unknown.</p>
+  <p class="scope">Evidence source: the original frozen <strong>synthetic</strong> Inspection v3 study (generator-made wafers and sensor responses), read from <code>web/data/inspection-v3.json</code>. Not real fab data, SEM-image accuracy or yield.</p>
+ </div>
+
+ <div id="loadState" class="load-state" role="status" aria-live="polite">
+  <div class="skeleton" aria-hidden="true"><span></span><span></span><span></span></div>
+  <p>Loading stored Inspection v3 evidence…</p>
+ </div>
+
+ <div id="app" hidden>
+  <section class="band" aria-labelledby="outcomeTitle">
+   <div class="section-head"><div><h2 id="outcomeTitle">Recorded outcome</h2><p>Preregistered primary comparison, exactly as exported. Nothing here was re-run or re-tuned.</p></div><span id="verdict"></span></div>
+   <div id="outcome"></div>
+  </section>
+
+  <section class="band" aria-labelledby="replayTitle">
+   <div class="section-head"><div><h2 id="replayTitle">Recorded measurements · three wafers</h2><p id="replayMeta">Steps through the stored paid reviews in their recorded order.</p></div></div>
+   <div id="replayEmpty" hidden></div>
+   <div id="replayBody">
+    <div class="replay-controls" role="group" aria-label="Recorded step controls">
+     <div class="step-buttons">
+      <button type="button" class="control" id="stepFirst">First</button>
+      <button type="button" class="control" id="stepPrev">Previous</button>
+      <button type="button" class="control primary-action" id="stepNext">Next</button>
+      <button type="button" class="control" id="stepLast">Last</button>
+     </div>
+     <label class="scrub"><span>Step <output id="stepOut" for="stepRange">0 / 0</output></span><input id="stepRange" type="range" min="0" max="0" value="0" step="1"></label>
+    </div>
+    <div class="spend" id="spend"></div>
+    <div class="replay-grid">
+     <div>
+      <div id="wafers" class="wafers"></div>
+      <div class="legend">
+       <span><i class="swatch unknown" aria-hidden="true"></i>Not measured · outcome unknown</span>
+       <span><i class="swatch positive" aria-hidden="true"></i>Review positive (filled)</span>
+       <span><i class="swatch negative" aria-hidden="true"></i>Observed negative (outlined)</span>
+       <span><i class="swatch failed" aria-hidden="true"></i>Failed or missing (hatched)</span>
+       <span><i class="swatch current" aria-hidden="true"></i>Selected step</span>
+      </div>
+      <p class="footnote pick-note" id="pickNote" role="status" aria-live="polite"></p>
+     </div>
+     <aside class="step-detail" aria-labelledby="stepTitle"><h3 id="stepTitle">Selected step</h3><div id="stepDetail" aria-live="polite"></div></aside>
+    </div>
+   </div>
+  </section>
+
+  <section class="band" aria-labelledby="chainTitle">
+   <div class="section-head"><div><h2 id="chainTitle">Research chain</h2><p>What was hypothesised, what was recorded, and what could be measured next. Only the first two are evidence.</p></div></div>
+   <ol class="chain">
+    <li class="link recorded">
+     <span class="kind">Hypothesis · preregistered</span>
+     <h3>A better review policy confirms more DOI at the same budget</h3>
+     <p id="chainHypothesis">Before the test campaign, one candidate policy was chosen and a minimum relative gain over a comparator was fixed as the target.</p>
+    </li>
+    <li class="link recorded">
+     <span class="kind">Result and diagnostic · recorded</span>
+     <h3>Target outcome, then why the count stays small</h3>
+     <p id="chainResult"></p>
+     <p>A separate <strong>posthoc</strong> diagnostic of the same frozen ledgers (it tunes nothing) found that the number of affordable reviews, not ranking, is the binding limit in the high-recall scenarios, while in the process-shift and low-contrast scenarios many DOI are never offered by the optical scan (most of them in low contrast) and the classifier is overconfident. Figures: <code>INSPECTION_QUALITY_DIAGNOSTICS.md</code> and the <a href="./inspection-quality.html">misses and review budget</a> page.</p>
+    </li>
+    <li class="link proposed">
+     <span class="kind">Proposed next study · not executed</span>
+     <h3>Can shift-aware screening and admission reach DOI the scan never offered?</h3>
+     <p>Re-ranking alone cannot recover sites that were never admitted as candidates. A new prospective study could test shift-aware screening, optical retest and candidate admission in shifted scenarios, with every retest and admission charged within the same total budget as the reviews, against the frozen v3 policy. It would need its own preregistration, fresh paired holdout lots (the v3 test lots are consumed), recorded costs and independent verification.</p>
+     <p class="unrun">No data, run or result exists for this proposal. Its outcome is unknown.</p>
+    </li>
+   </ol>
+  </section>
+
+  <details class="limitations"><summary>Study scope and limitations (as exported)</summary><ul id="limitations"></ul></details>
+ </div>
+
+ <footer class="page-foot" id="foot">Post-hackathon overview · created 5 October 2026 · branch <code>post-hackathon/roi-20261005</code> · separate from the submitted pages, which are unchanged.</footer>
+</main>
+<script src="./post-hackathon.js" defer></script>
+</body>
+</html>

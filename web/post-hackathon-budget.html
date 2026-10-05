@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Recorded spend explainer | WaffleBench post-hackathon</title>
+<meta name="description" content="Post-hackathon development, not part of the submitted version. Cuts one recorded 360-CU Inspection v3 review sequence at a chosen spend cap to explain where the review budget went. Not a rerun and not a new budget experiment.">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="./post-hackathon.css">
+<link rel="stylesheet" href="./post-hackathon-budget.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<div class="ph-banner" role="note">
+ <div class="ph-banner-inner"><strong>Post-hackathon development — not part of the submitted version.</strong>
+ <span>Local preview built after the submission deadline and excluded from judging. It re-reads the original frozen Inspection v3 evidence; it runs nothing new and claims no improved performance.</span></div>
+</div>
+<header class="masthead"><div class="mast-inner"><div class="identity"><span class="brand">WaffleBench</span><span class="divider" aria-hidden="true"></span><span>Recorded spend explainer</span></div><nav class="mast-links" aria-label="Related pages"><a href="./post-hackathon.html">Post-hackathon overview</a><a href="./inspection-evidence.html">Full Inspection v3 evidence</a></nav></div></header>
+
+<main id="main" class="layout">
+ <div class="heading">
+  <h1>Where did one recorded review budget go?</h1>
+  <p class="lead">One stored lot run of the original policy spent its review budget one paid SEM review at a time. Move the cap to see how much of that <strong>same recorded sequence</strong> fits under it, what each review actually cost, and what was observed.</p>
+  <p class="scope">Evidence source: the original frozen <strong>synthetic</strong> Inspection v3 study, read once from <code>web/data/inspection-v3.json</code>. Not real fab data, SEM-image accuracy, yield, hardware speed or cost savings.</p>
+ </div>
+
+ <div id="loadState" class="load-state" role="status" aria-live="polite">
+  <div class="skeleton" aria-hidden="true"><span></span><span></span><span></span></div>
+  <p>Loading stored Inspection v3 evidence…</p>
+ </div>
+
+ <div id="app" hidden>
+  <section class="band" aria-labelledby="capTitle">
+   <div class="section-head"><div><h2 id="capTitle">Cut the recorded sequence at a spend cap</h2><p id="ledgerMeta"></p></div></div>
+   <div class="caveat" role="note" id="capCaveat">
+    <strong>This is a cut, not a rerun.</strong>
+    The cap truncates the stored measurements of the original <span id="caveatBudget">exported-budget</span> policy run. The adaptive policy is <em>not</em> re-run at the new budget: routes, wafer loads, reservations and retries are not replanned, and an expensive review is never skipped to admit a cheaper later one. The result establishes no new accuracy, DOI capture, hardware speed or commercial gain, and the 100-lot primary mean and CI below are not interpolated to any other budget.
+   </div>
+   <div id="ledgerIssues" hidden></div>
+   <div class="cap-controls" id="capControls">
+    <label class="cap-range"><span>Spend cap</span><input id="capRange" type="range" min="0" max="0" value="0" step="0.1" aria-describedby="capCaveat"></label>
+    <label class="cap-number"><span>CU</span><input id="capNumber" type="number" min="0" max="0" step="any" inputmode="decimal" aria-describedby="capError"></label>
+    <div class="snap" role="group" aria-label="Jump to recorded thresholds">
+     <button type="button" class="control" id="snapPrev">Previous threshold</button>
+     <button type="button" class="control" id="snapNext">Next threshold</button>
+     <button type="button" class="control" id="snapFull">Original budget</button>
+    </div>
+   </div>
+   <p class="cap-error" id="capError" role="alert"></p>
+   <div id="capResults">
+   <div id="summary" aria-live="polite"></div>
+   <div class="chart-wrap">
+    <h3 class="chart-title">Recorded cumulative charge by paid review</h3>
+    <div id="chart"></div>
+    <div class="legend" id="chartLegend">
+     <span><i class="line retained" aria-hidden="true"></i>Retained under the cap</span>
+     <span><i class="line beyond" aria-hidden="true"></i>Recorded beyond the cap · outcome not shown</span>
+     <span><i class="line cap" aria-hidden="true"></i>Chosen cap</span>
+     <span><i class="dot positive" aria-hidden="true"></i>Review positive</span>
+     <span><i class="dot negative" aria-hidden="true"></i>Observed negative</span>
+     <span><i class="dot failed" aria-hidden="true"></i>Failed or missing</span>
+    </div>
+    <p class="footnote">Each step is one recorded paid review; its height is the CU actually charged, including stage movement, wafer loads and retries as recorded. The chart replays the stored order; it does not show what the policy would have chosen with less money.</p>
+   </div>
+   <div class="tables">
+    <div>
+     <h3>Retained records</h3>
+     <div class="table-scroll" id="retainedTable"></div>
+    </div>
+    <details class="beyond" id="beyondBox">
+     <summary id="beyondSummary">Recorded beyond the cap</summary>
+     <p class="footnote">Recorded later in the original run. Site and charge only: their outcomes are not part of this cut and are not shown.</p>
+     <div class="table-scroll" id="beyondTable"></div>
+    </details>
+   </div>
+   </div>
+  </section>
+
+  <section class="band original" aria-labelledby="primaryTitle">
+   <div class="section-head"><div><h2 id="primaryTitle">Original primary outcome · at its exported budget only</h2><p>Preregistered comparison over paired lots, exactly as exported. It belongs to the original setting and is independent of the cap above.</p></div><span id="verdict"></span></div>
+   <div id="primary"></div>
+  </section>
+ </div>
+
+ <footer class="page-foot" id="foot">Post-hackathon recorded spend explainer · created 5 October 2026 · branch <code>post-hackathon/budget-20261005</code> · separate from the submitted pages, which are unchanged.</footer>
+</main>
+<script src="./post-hackathon-budget-core.js" defer></script>
+<script src="./post-hackathon-budget.js" defer></script>
+</body>
+</html>

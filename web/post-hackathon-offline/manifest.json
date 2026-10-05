@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "kind": "wafflebench_post_hackathon_offline_replay_pack",
+  "notice": "Post-hackathon offline replay — not part of the submitted version.",
+  "scope": "Recorded replay of original frozen evidence; no execution, no new results; excluded from judging.",
+  "source_commit": "f42e096f4eaae0298200c53c1775d56972a6964b",
+  "source_date": "2026-10-05T11:23:29+09:00",
+  "generator": {
+    "path": "scripts/build_post_hackathon_offline.py",
+    "bytes": 21157,
+    "sha256": "3a58960cadd30cdb28f3a4a093c564cf433f49a1805182c581e8674256b9a9d8"
+  },
+  "online_reference_base": "https://shinick-han.github.io/WaffleBench/",
+  "inputs": [
+    {
+      "path": "web/data/discovery-cycle.json",
+      "bytes": 29330,
+      "sha256": "53dd1b25454583c750cb666c38a0e4c1786a269f29041f84d83725b4c4c84ee1",
+      "embedded_in": [
+        "discovery-cycle.html"
+      ]
+    },
+    {
+      "path": "web/data/inspection-live.json",
+      "bytes": 611874,
+      "sha256": "cf31a7fa461b3dfa38cfda56eaef41a42efdba26572c3b1cad1f56484782700a",
+      "embedded_in": [
+        "inspection-live.html"
+      ]
+    },
+    {
+      "path": "web/data/inspection-v3.json",
+      "bytes": 798624,
+      "sha256": "d844b9482a0ef7fcc4154ac646db3e32772299ae95b8a6989a34d184793bc6a9",
+      "embedded_in": [
+        "index.html"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "path": "web/discovery-cycle.css",
+      "bytes": 6087,
+      "sha256": "3d1f00219c851af4dfdf17c9228265014d8f5c869ab88fdc644bfb8b5ba719c4",
+      "inlined_in": [
+        "discovery-cycle.html"
+      ]
+    },
+    {
+      "path": "web/discovery-cycle.html",
+      "bytes": 5909,
+      "sha256": "b59db63b733ce9c37aec2a12f29b79a76d555ee37791fd86e8666e68e6e6df7d",
+      "inlined_in": [
+        "discovery-cycle.html"
+      ]
+    },
+    {
+      "path": "web/discovery-cycle.js",
+      "bytes": 17456,
+      "sha256": "289607084533666a1ce156cf8e64db223695e43c264e88dabf529a2abf94bc2c",
+      "inlined_in": [
+        "discovery-cycle.html"
+      ]
+    },
+    {
+      "path": "web/inspection-evidence.css",
+      "bytes": 14286,
+      "sha256": "36ba43d333ad49dd956aadfb27cbc85abe879f6fad1430775d8546c3485670c4",
+      "inlined_in": [
+        "inspection-live.html",
+        "discovery-cycle.html"
+      ]
+    },
+    {
+      "path": "web/inspection-live.css",
+      "bytes": 4484,
+      "sha256": "3edb1c13810676f946f9ccae011c786d8df073c132b765aa55f268c4aa448cf7",
+      "inlined_in": [
+        "inspection-live.html"
+      ]
+    },
+    {
+      "path": "web/inspection-live.html",
+      "bytes": 7000,
+      "sha256": "95b0dbc024f58383fe3754e2df19fa430bc3457a48fc0dab76af20c1b94acf53",
+      "inlined_in": [
+        "inspection-live.html"
+      ]
+    },
+    {
+      "path": "web/inspection-live.js",
+      "bytes": 38567,
+      "sha256": "14022ae0b5c499ea27194d006819ed84a472d66f831f10a3971b3fd935e3dfee",
+      "inlined_in": [
+        "inspection-live.html"
+      ]
+    },
+    {
+      "path": "web/post-hackathon.css",
+      "bytes": 10386,
+      "sha256": "9b49bd857ebbc2e91d6f48767cc77021b25ab036053f86ad0809658072af4cf6",
+      "inlined_in": [
+        "index.html"
+      ]
+    },
+    {
+      "path": "web/post-hackathon.html",
+      "bytes": 7091,
+      "sha256": "f6584890c19026f35d3143029838d13370e94979876f9f2fdf62a1cc9f32cd9e",
+      "inlined_in": [
+        "index.html"
+      ]
+    },
+    {
+      "path": "web/post-hackathon.js",
+      "bytes": 21683,
+      "sha256": "4310d19cecc65604bda04afc5ae951cdec766cef5b64f0cafb7726ed193586e8",
+      "inlined_in": [
+        "index.html"
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "path": "web/post-hackathon-offline/README.md",
+      "bytes": 2406,
+      "sha256": "11f86474567180b739c7d85377ab88bb52edc046c5496a1a412c73f6cc6742ae"
+    },
+    {
+      "path": "web/post-hackathon-offline/discovery-cycle.html",
+      "bytes": 90721,
+      "sha256": "26c36729dc5fe1da6925da008a3c67ef68f54f209ff4b96b3ee2128fd5c16afc"
+    },
+    {
+      "path": "web/post-hackathon-offline/index.html",
+      "bytes": 1112176,
+      "sha256": "55b331ff669905820f54622f45039785fa74c31700ac0136a3f18f554d1e0451"
+    },
+    {
+      "path": "web/post-hackathon-offline/inspection-live.html",
+      "bytes": 888360,
+      "sha256": "944bfafdeedaf75d2bfc73f555cc7cc870523690fbd696cfc5c05f2548f7fe9f"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+/* Recorded spend explainer. Loaded after post-hackathon.css and reuses its tokens, banner, masthead and outcome styling. */
+.caveat{border:1px solid #e0c99a;border-left:4px solid var(--amber);background:#fbf5e8;color:#4f3a12;padding:10px 14px;font-size:13px;max-width:110ch;margin-bottom:14px}
+.caveat strong{display:block;color:#5b3b0c;font-size:14px;margin-bottom:2px}
+#ledgerIssues{margin-bottom:12px}
+#ledgerIssues ul{margin:6px 0;padding-left:18px}
+
+.cap-controls{display:flex;flex-wrap:wrap;align-items:end;gap:10px 18px;padding:12px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.cap-range{flex:1 1 300px;display:grid;gap:4px;font-size:12px;font-weight:600;color:var(--muted)}
+.cap-range input{width:100%;min-height:44px;margin:0}
+.cap-number{display:grid;gap:4px;font-size:12px;font-weight:600;color:var(--muted)}
+.cap-number input{width:130px;min-height:44px;border:1px solid var(--line);border-radius:5px;padding:6px 10px;background:var(--surface);color:var(--ink);font-variant-numeric:tabular-nums}
+.cap-number input[aria-invalid=true]{border-color:var(--red);outline-color:var(--red)}
+.snap{display:flex;flex-wrap:wrap;gap:6px}
+.cap-error{min-height:1.55em;color:var(--red);font-size:12px;font-weight:600;padding-top:4px}
+
+.tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin:0;border-top:1px solid var(--line)}
+.tile{padding:10px 14px 12px 0;border-bottom:1px solid var(--line);min-width:0}
+.tile.wide{grid-column:1/-1}
+.tile dt{font-size:12px;color:var(--muted)}
+.tile dd{margin:3px 0 0}
+.tile .big{display:block;font-size:22px;font-weight:650;font-variant-numeric:tabular-nums;line-height:1.25}
+.tile small{display:block;font-size:12px;color:var(--muted);margin-top:2px;overflow-wrap:anywhere}
+.tile .outcomes{display:grid;gap:4px;padding-top:3px}
+#summary .footnote{margin-top:8px;max-width:100ch}
+
+.chart-wrap{margin-top:20px}
+.chart-title{margin-bottom:6px}
+.spend-chart{display:block;width:100%;height:auto;max-width:960px;overflow:visible}
+.spend-chart .grid{stroke:#e6ebe4}
+.spend-chart .axis{stroke:#b9c5bd}
+.spend-chart .retained-path{fill:none;stroke:var(--green);stroke-width:2;stroke-linejoin:round}
+.spend-chart .beyond-path{fill:none;stroke:#9aa79f;stroke-width:2;stroke-dasharray:4 4}
+.spend-chart .cap-line{stroke:var(--amber);stroke-width:2;stroke-dasharray:7 4}
+.spend-chart .cap-text{fill:#6e4c10;font-weight:650}
+.spend-chart .cut-line{stroke:var(--ink);stroke-width:1;stroke-dasharray:2 3}
+.spend-chart .hit{fill:transparent}
+.spend-chart .mark{stroke:var(--surface);stroke-width:2}
+.spend-chart .mark.positive{fill:var(--red)}
+.spend-chart .mark.negative{fill:#eef5ee;stroke:var(--green)}
+.spend-chart .mark.failed{fill:#f5ecd6;stroke:var(--amber);stroke-width:2.5}
+.spend-chart .mark.beyond{fill:var(--surface);stroke:#9aa79f;stroke-width:1.5}
+.spend-chart .pt:hover .mark{stroke:var(--ink)}
+.legend .line{display:inline-block;width:20px;height:0;border-top:2px solid var(--green)}
+.legend .line.beyond{border-top:2px dashed #9aa79f}
+.legend .line.cap{border-top:2px dashed var(--amber)}
+.legend .dot{display:inline-block;width:10px;height:10px;border-radius:50%}
+.legend .dot.positive{background:var(--red)}
+.legend .dot.negative{background:#eef5ee;box-shadow:inset 0 0 0 2px var(--green)}
+.legend .dot.failed{background:#f5ecd6;box-shadow:inset 0 0 0 2px var(--amber)}
+
+/* minmax(0,1fr) and min-width:0 keep the nowrap tables from setting the grid's min-content width; they scroll inside .table-scroll instead. */
+.tables{display:grid;grid-template-columns:minmax(0,1fr);gap:14px;margin-top:20px;min-width:0}
+.tables>*{min-width:0}
+.tables h3{margin-bottom:6px}
+.table-scroll{max-width:100%;min-width:0;overflow-x:auto;max-height:420px;overflow-y:auto;border:1px solid var(--line);background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:12px}
+th,td{padding:6px 10px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+thead th{position:sticky;top:0;background:var(--panel);font-weight:650;color:var(--muted)}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+.beyond summary{cursor:pointer;min-height:44px;display:list-item;padding:10px 2px;font-weight:650}
+.beyond .footnote{margin-bottom:6px}
+
+.original .statement{max-width:70ch;margin-bottom:12px}
+.original .figures{max-width:640px}
+
+@media(max-width:1000px){.tiles{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.tiles{grid-template-columns:1fr}.snap{width:100%}.snap .control{flex:1;min-width:0;padding-inline:6px;white-space:normal}.cap-number input{width:100%}.cap-number{flex:1 1 100%}}
+@media(forced-colors:active){.legend .dot,.legend .line{forced-color-adjust:none}}

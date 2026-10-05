@@ -1,0 +1,21 @@
+# Isolated SEM env: output/post-hackathon/sem-build-20261005/images-env (Python 3.12.10).
+# torch 2.14.1+cpu, torchvision 0.29.1+cpu, numpy 2.5.2 and pillow 12.3.0 are reused read-only via
+# Lib/site-packages/zz_reuse_inspection_image_venv.pth -> tools/inspection-image-venv/Lib/site-packages.
+# Installed with: uv pip install --no-deps <smp + direct deps>, then the hub client deps below.
+segmentation-models-pytorch @ git+https://github.com/qubvel-org/segmentation_models.pytorch@d2f65c5e3c9a34a02d90e19ad798c5f8f99c21ae
+timm==1.0.30
+safetensors==0.8.0
+huggingface-hub==2.1.1
+tqdm==4.70.1
+pyyaml==6.0.3
+packaging==26.3
+colorama==0.4.6
+anyio==4.15.1
+click==8.5.0
+h11==0.16.0
+hf-xet==1.6.0
+httpcore2==2.13.1
+httpx2==2.13.1
+idna==3.20
+truststore==0.10.4
+typing-extensions==4.16.0
